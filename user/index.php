@@ -6,7 +6,7 @@ require('./assets/require/head.php');
 
   <main>
     <div class="col2 hero">
-      <h1>A Teaching Platform with Flexibility, Finally.</h1>
+      <h1>A Teaching Platform with Flexibilit, Finally.</h1>
       <div class="form">
         <label for="email">Notify me when it releases:</label>
         <div class="col2">
