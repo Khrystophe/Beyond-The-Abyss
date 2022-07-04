@@ -6,6 +6,7 @@
 
 .logo {
   width: 8em;
+  position: absolute;
 }
 
 h1 {
@@ -16,6 +17,10 @@ h1 {
   transform: translateY(100px);
   text-align: center;
 }
+ 
+// .open h1 {
+//   visibility: hidden;
+// }
 
 main {
   margin-top: 4em;

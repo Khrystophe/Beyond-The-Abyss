@@ -17,10 +17,10 @@
   <header>
     <nav>
       <div class="toggle">
-        <a href="https://skillform.io"><img src="https://assets.codepen.io/2621168/logo_1.svg" class="logo" alt="SkillForm Logo"></a>
         <i class="fas fa-bars ouvrir"></i>
         <i class="fas fa-times fermer"></i>
       </div>
+      <a href="https://skillform.io"><img src="https://assets.codepen.io/2621168/logo_1.svg" class="logo" alt="SkillForm Logo"></a>
       <div class="menu">
         <div class="menu__left">
           <div class="menu__left__inner">
@@ -32,6 +32,12 @@
             </div>
             <div class="menu__left__inner__item">
               <a href="#">Products <span class="menu__left__inner__item__small">#03</span></a>
+            </div>
+            <div class="menu__left__inner__item">
+              <a href="#">Contact <span class="menu__left__inner__item__small">#04</span></a>
+            </div>
+            <div class="menu__left__inner__item">
+              <a href="#">Contact <span class="menu__left__inner__item__small">#04</span></a>
             </div>
             <div class="menu__left__inner__item">
               <a href="#">Contact <span class="menu__left__inner__item__small">#04</span></a>

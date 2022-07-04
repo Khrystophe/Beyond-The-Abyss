@@ -46,6 +46,7 @@ nav {
 
 .logo {
   width: 8em;
+  position: absolute;
 }
 
 h1 {
