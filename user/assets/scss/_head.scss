@@ -1,0 +1,150 @@
+/* ///////////////////////////////////HEAD/////////////////////////////////// */
+
+/* Toggle */
+
+.toggle {
+  color: var(--third-color);
+  font-size: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.ouvrir {
+  display: block;
+}
+
+.fermer {
+  display: none;
+}
+
+.open .ouvrir {
+  display: none;
+}
+
+.open .fermer {
+  display: block;
+}
+
+/* Menu */
+
+.menu {
+  height: 100%;
+  display: flex;
+  opacity: 0.9;
+}
+
+.menu__left, .menu__right {
+  width: 50%;
+  height: 100%;
+  background: var(--primary-color);
+  transition: transform 0.5s;
+}
+
+.menu__left, .menu__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu__left {
+  transform: translateX(-100%);
+}
+
+.menu__right {
+  transform: translateX(100%);
+}
+
+.open .menu__left, .open .menu__right {
+  transform: translateX(0);
+}
+
+/* Inner Menu Left */
+
+.menu__left__inner__item {
+  font-family: var(--primary-font);
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.menu__left__inner__item:last-child {
+  margin-bottom: 0;
+}
+
+.menu__left__inner__item a {
+  color: var(--third-color);
+  text-decoration: none;
+  transition: color 1s;
+}
+
+.menu__left__inner__item a:hover {
+  color: var(--secondary-color);
+}
+
+.menu__left__inner__item__small {
+  font-family: var(--secondary-font);
+  font-size: 1.25rem;
+}
+
+/* Inner Right Menu */
+.menu__right__inner__item__title {
+  font-family: var(--primary-font);
+  font-size: 3rem;
+  color: var(--third-color);
+}
+
+.menu__right__inner__item ul {
+  list-style: none;
+}
+
+.menu__right__inner__item ul li {
+  margin-top: .5rem;
+}
+
+.menu__right__inner__item ul li a {
+  color: var(--fourth-color);
+  font-family: var(--secondary-font);
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: color 1s;
+}
+
+.menu__right__inner__item ul li a:hover {
+  color: var(--secondary-color);
+}
+
+.menu__right__inner__item:first-child {
+  margin-bottom: 3rem;
+}
+
+/* Sep */
+
+
+
+.sep {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  background: var(--secondary-color);
+}
+
+.sep__icon {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--third-color);
+  font-family: var(--secondary-font);
+  font-size: 1.5rem;
+  opacity: 0;
+}
