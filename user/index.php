@@ -6,32 +6,31 @@ require('./assets/require/head.php');
 
   <main>
     <div class="col2 hero">
-      <h1>A Teaching Platform with Flexibilit, Finally.</h1>
+      <h1><span>Au delà de l'abîme</span><br>La musique des profondeurs</h1>
       <div class="form">
-        <label for="email">Notify me when it releases:</label>
+        <label for="email">Notifiez moi en cas de nouveau contenu</label>
         <div class="col2">
-          <input type="text" id="email" placeholder="Email Address">
-          <input type="submit" value="Add me">
+          <input type="text" id="email" placeholder="Adresse Email">
+          <input type="submit" value="Ajoutez-moi">
         </div>
       </div>
     </div>
     <div class="features">
       <div class="card">
-        <p class="title">Modular</p>
-        <p class="desc">Go beyond teaching with just video. Choose from our library of interactive modules or create your own.</p>
+        <p class="title">Tutoriels</p>
+        <img src="./assets/img/piano-1846719_1920.jpg" class="desc" />
       </div>
       <div class="card">
-        <p class="title">Customizable</p>
+        <p class="title">Performances</p>
+        <img src="./assets/img/bride-301814_1920.jpg" class="desc" />
         <p class="desc">Use our Headless API to build truly custom frontends.</p>
       </div>
       <div class="card">
-        <p class="title">PPP &amp; Managed Payments</p>
+        <p class="title">Partitions</p>
+        <img src="./assets/img/sheet-music-4121936_1920.jpg" class="desc" />
         <p class="desc">Offer parity pricing, and leave the headache of processing to us.</p>
       </div>
-      <div class="card">
-        <p class="title">Built by Teachers</p>
-        <p class="desc">Co-Founder Gary Simon has been teaching online for over 12 years. We know what teachers want.</p>
-      </div>
+
     </div>
   </main>
 </div>

@@ -20,7 +20,14 @@
         <i class="fas fa-bars ouvrir"></i>
         <i class="fas fa-times fermer"></i>
       </div>
-      <a href="https://skillform.io"><img src="https://assets.codepen.io/2621168/logo_1.svg" class="logo" alt="SkillForm Logo"></a>
+
+      <div class="ringOne logo">
+        <img src="./assets/img/ring.png" alt="ring">
+      </div>
+      <div class="ringTwo logo">
+        <img src="./assets/img/ring.png" alt="ring">
+      </div>
+
       <div class="menu">
         <div class="menu__left">
           <div class="menu__left__inner">

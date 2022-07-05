@@ -1,0 +1,41 @@
+/* //////////////////////////////////LOADINGDSCREEN///////////////////////////// */
+
+img{
+      width: 100%;
+      
+}
+
+
+
+.ringOne img {
+      animation: rotateFirstRing 2s linear infinite;
+}
+
+.ringTwo img {
+      animation: rotateFirstRing 8s linear infinite;
+}
+
+@keyframes rotateFirstRing {
+      from {
+            transform: rotate(0deg);
+      }
+      to {
+            transform: rotate(360deg);
+      }
+}
+
+
+/* @media(max-width: 900px) {
+
+      .loading-screen {
+            display: none;
+      }
+      .ring img {
+            display: none;
+      }
+
+      .header p, button, .media, h1 {
+            display: none;
+      }
+
+} */

@@ -39,14 +39,52 @@ nav {
   height: 100%;
 }
 
+/* //////////////////////////////////LOADINGDSCREEN///////////////////////////// */
+img {
+  width: 100%;
+}
+
+.ringOne img {
+  animation: rotateFirstRing 2s linear infinite;
+}
+
+.ringTwo img {
+  animation: rotateFirstRing 8s linear infinite;
+}
+
+@keyframes rotateFirstRing {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* @media(max-width: 900px) {
+
+      .loading-screen {
+            display: none;
+      }
+      .ring img {
+            display: none;
+      }
+
+      .header p, button, .media, h1 {
+            display: none;
+      }
+
+} */
 /* /////////////////////////////////////////////INDEX//////////////////////////////////////// */
 .wrapper {
   margin: 1em 1em 5em;
 }
 
 .logo {
-  width: 8em;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 h1 {
@@ -143,6 +181,7 @@ input[type=submit]:hover {
   color: #697887;
   opacity: 0;
   transform: translateY(100px);
+  width: 19rem;
 }
 
 footer {
@@ -210,7 +249,6 @@ footer .angle-line {
   .hero {
     display: flex;
     justify-content: space-between;
-    margin: 8em 0 6em;
   }
   .hero h1 {
     width: 40%;
@@ -255,39 +293,10 @@ footer .angle-line {
     margin: 3em auto 0;
   }
 }
-/* imagePrincipale */
-.imagePrincipale {
-  background: url("../img/guitarist.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
 span {
   color: #f1c40f;
 }
 
-/* responsive*/
-/* @media all and (max-width: 767px) {
-  .menu__right, .sep__icon {
-      display: none;
-  }
-
-  .menu__left {
-      width: 100%;
-  }
-
-  .sep {
-      width: 1rem;
-      left: 0;
-  }
-
-} */
 /* ///////////////////////////////////HEAD/////////////////////////////////// */
 /* Toggle */
 .toggle {
