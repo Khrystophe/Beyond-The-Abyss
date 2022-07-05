@@ -8,7 +8,7 @@ require('./assets/require/head.php');
     <div class="col2 hero">
       <h1><span>Au delà de l'abîme</span><br>La musique des profondeurs</h1>
       <div class="form">
-        <label for="email">Notifiez moi en cas de nouveau contenu</label>
+        <label for="email">Notifiez-moi en cas de nouveau contenu</label>
         <div class="col2">
           <input type="text" id="email" placeholder="Adresse Email">
           <input type="submit" value="Ajoutez-moi">
