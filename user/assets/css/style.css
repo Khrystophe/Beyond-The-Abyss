@@ -7,7 +7,7 @@
 
 :root {
   --primary-color: #112121;
-  --secondary-color: #f94658;
+  --secondary-color: #5e4b4b;
   --third-color: #fff;
   --fourth-color: #8f8f8f;
   --primary-font: "Inria Serif", serif;
@@ -52,6 +52,10 @@ img {
   animation: rotateFirstRing 8s linear infinite;
 }
 
+.ringThree img {
+  animation: rotateFirstRing 8s linear infinite;
+}
+
 @keyframes rotateFirstRing {
   from {
     transform: rotate(0deg);
@@ -77,14 +81,6 @@ img {
 /* /////////////////////////////////////////////INDEX//////////////////////////////////////// */
 .wrapper {
   margin: 1em 1em 5em;
-}
-
-.logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
 }
 
 h1 {
@@ -251,9 +247,8 @@ footer .angle-line {
     justify-content: space-between;
   }
   .hero h1 {
-    width: 40%;
+    width: 50%;
     margin-bottom: 0;
-    text-align: left;
   }
   .hero .form {
     width: 50%;
@@ -323,6 +318,28 @@ span {
 
 .open .fermer {
   display: block;
+}
+
+.logo {
+  margin: 0%;
+  padding: 0%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 40%;
+  opacity: 0.7;
+}
+
+.logo2 {
+  margin: 0%;
+  padding: 0%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 30%;
+  opacity: 0;
 }
 
 /* Menu */
@@ -441,6 +458,22 @@ span {
   opacity: 0;
 }
 
+.sep__icon img {
+  width: 8rem;
+}
+
+.sep__icon img {
+  animation: rotateFirstRing 8s linear infinite;
+}
+
+@keyframes rotateFirstRing {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 /* FOOT */
 
 /*# sourceMappingURL=style.css.map */

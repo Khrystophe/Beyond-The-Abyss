@@ -7,28 +7,24 @@ require('./assets/require/head.php');
   <main>
     <div class="col2 hero">
       <h1><span>Au delà de l'abîme</span><br>La musique des profondeurs</h1>
-      <div class="form">
-        <label for="email">Notifiez-moi en cas de nouveau contenu</label>
-        <div class="col2">
-          <input type="text" id="email" placeholder="Adresse Email">
-          <input type="submit" value="Ajoutez-moi">
-        </div>
-      </div>
+
     </div>
+
     <div class="features">
       <div class="card">
         <p class="title">Tutoriels</p>
         <img src="./assets/img/piano-1846719_1920.jpg" class="desc" />
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit blanditiis fugiat nostrum quas? Sapiente repellendus distinctio aut! Debitis tenetur dolorum .</p>
       </div>
       <div class="card">
         <p class="title">Performances</p>
         <img src="./assets/img/bride-301814_1920.jpg" class="desc" />
-        <p class="desc">Use our Headless API to build truly custom frontends.</p>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ratione exercitationem quae delectus illum esse, quam voluptatem molestiae fugit ullam voluptatum </p>
       </div>
       <div class="card">
         <p class="title">Partitions</p>
         <img src="./assets/img/sheet-music-4121936_1920.jpg" class="desc" />
-        <p class="desc">Offer parity pricing, and leave the headache of processing to us.</p>
+        <p class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque dolores soluta corrupti est, deleniti voluptatem amet perferendis eligendi autem, facere modi </p>
       </div>
 
     </div>

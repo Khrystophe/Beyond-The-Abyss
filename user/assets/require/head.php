@@ -20,12 +20,16 @@
         <i class="fas fa-bars ouvrir"></i>
         <i class="fas fa-times fermer"></i>
       </div>
-
-      <div class="ringOne logo">
-        <img src="./assets/img/ring.png" alt="ring">
-      </div>
-      <div class="ringTwo logo">
-        <img src="./assets/img/ring.png" alt="ring">
+      <div class="loading-screen">
+        <div class="ringOne logo">
+          <img src="./assets/img/ring.png" alt="ring">
+        </div>
+        <div class="ringTwo logo">
+          <img src="./assets/img/ring.png" alt="ring">
+        </div>
+        <div class=" ringThree logo2">
+          <img src="./assets/img/musicgrise" alt="">
+        </div>
       </div>
 
       <div class="menu">
@@ -85,7 +89,7 @@
           </div>
         </div>
         <div class="sep"></div>
-        <div class="sep__icon">#128BPM</div>
+        <div class="sep__icon"><img src="./assets/img/music-g8090509f0_1920.png" alt=""></div>
       </div>
     </nav>
   </header>
