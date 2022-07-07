@@ -15,11 +15,11 @@ tl
 tl2
 .from('.ringOne',{duration: 2, delay:0.4,opacity:0,y:400,ease:Expo.easeInOut})
 .from('.ringTwo',{duration: 2, delay:0.9,opacity:0,y:400,ease:Expo.easeInOut},"-=3")
-.to('.ringOne',{duration: 2, delay:0.4,x:211,ease:Expo.easeInOut})
-.to('.ringTwo',{duration: 2, delay:0.9,x:211,ease:Expo.easeInOut},"-=3")
+.to('.ringOne',{duration: 2, delay:0.4,x:180,ease:Expo.easeInOut})
+.to('.ringTwo',{duration: 2, delay:0.9,x:180,ease:Expo.easeInOut},"-=3")
 .to('.ringOne',{duration: 2, delay:0.4,opacity:0,y:-166,ease:Expo.easeInOut})
 .to('.ringTwo',{duration: 2, delay:0.9,opacity:0,y:-166,ease:Expo.easeInOut},"-=3")
-.to('.ringThree',{ x:211, y:-166, ease:Expo.easeInOut},"-=3")
+.to('.ringThree',{duration:0, x:180, y:-166, ease:Expo.easeInOut},"-=3")
 .to('.ringThree',{duration: 3, delay:0.9,opacity: 1,ease:Expo.easeInOut},"-=3")
 
 toggle.addEventListener('click', function() {
