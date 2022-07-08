@@ -20,17 +20,6 @@
         <i class="fas fa-bars ouvrir"></i>
         <i class="fas fa-times fermer"></i>
       </div>
-      <div class="loading-screen">
-        <div class="ringOne logo">
-          <img src="./assets/img/ring.png" alt="ring">
-        </div>
-        <div class="ringTwo logo">
-          <img src="./assets/img/ring.png" alt="ring">
-        </div>
-        <div class=" ringThree logo2">
-          <img src="./assets/img/musicgrise" alt="">
-        </div>
-      </div>
 
       <div class="menu">
         <div class="menu__left">
