@@ -28,14 +28,19 @@ toggle.addEventListener('click', function() {
       tl
       .set('h1', {autoAlpha: 1})
       .set('.ringThree', {autoAlpha: 1})
-      .to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1 ,y: 0, duration: 2.2},"-=1")
-      .to('.ringThree', {scaleY:1, stagger:.2, opacity: 1 ,y: -166, duration: 2.2},"-=2")
+      .to('.ringThree', {scaleY:1, stagger:.2, opacity: 1 ,y: -166, duration: 2.2})
+      .to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1 ,y: 0, duration: 2.2},"-=1.5")
       .to('.card', { scaleY: 1, stagger: .2}, "-=2")
       .to('.title, .desc, .desc1, .desc2', { stagger: .1, duration: 1.2, opacity: 1, y: 0}, "-=2")
       .to('footer', { opacity: 1}, "-=2")
       tl1
       .to('.sep', { duration: 0,height: 0})
       .to('.sep__icon', { duration: 0,opacity: 0})
+      .to('.menu__left, .menu__right', {transition: 2})
+      .to('.menu__left__inner__item', {x:-80,y: -180,opacity: 0,stagger: 0.25},"<-0.5")
+      .to('.menu__right__inner__item', {x:80,y: -80,opacity: 0,stagger: 0.25},"<0.3")
+      
+      
   
     
   } else {
@@ -43,18 +48,21 @@ toggle.addEventListener('click', function() {
       body.classList.add('open');
       
       tl
-      .to('h1', { 'clip-path': 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)', opacity: 0, y: 100, duration: 2.2},"-=1")
-      .to('.ringThree', {scaleY:0, stagger:.2, opacity: 0, y: 100, duration: 2.2},"-=2")
-      .to('.card', { scaleY: 0, stagger: .2}, "-=2")
-      .to('.title, .desc, .desc1, .desc2', { stagger: .1, duration: 1.2, opacity: 0, y: 100}, "-=2")
+      .to('.ringThree', {scaleY:0, stagger:.2, opacity: 0, y: 100, duration: 2.2})
+      .to('.card', { scaleY: 0, stagger: .2}, "-=3")
+      .to('.title, .desc, .desc1, .desc2', { stagger: .1, duration: 1.2, opacity: 0, y: 100}, "-=3")
+      .to('h1', { 'clip-path': 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)', opacity: 0, y: 100, duration: 2.2},"-=3")
       .to('footer', { opacity: 1}, "-=2")
       .set('h1', {autoAlpha: 0 })
       .set('.ringThree', {autoAlpha: 0 })
       tl1
-      .to('.sep', {duration: 0.75,height: '100%',delay: 0.5})
+      .set('.menu__left__inner__item',{opacity: 1, y:0, x:0 })
+      .set('.menu__right__inner__item',{opacity: 1, y:0, x:0 })
+      .from('.menu__left, .menu__right', {transition: 2.5})
+      .to('.sep', {duration: 0.75,height: '100%',delay: 0.5},"+=0.5")
       .to('.sep__icon', {opacity: 1,duration: 0.25,delay: -0.5}) 
-      .from('.menu__left__inner__item', {y: 40,opacity: 0,stagger: 0.25}, "<-0.5")
-      .from('.menu__right__inner__item', {y: 40,opacity: 0,stagger: 0.25}, "<0.5")
+      .from('.menu__left__inner__item', {x:-40, y: -40,opacity: 0,stagger: 0.25}, "<-0.5")
+      .from('.menu__right__inner__item', {x:40, y: -40,opacity: 0,stagger: 0.25},"<0.5")
       
   }
 })

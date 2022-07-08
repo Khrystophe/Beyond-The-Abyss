@@ -16,6 +16,8 @@ h1 {
   opacity: 0;
   transform: translateY(100px);
   text-align: center;
+  width: 77%;
+  margin-top: 2rem;
 }
  
 
@@ -38,6 +40,8 @@ label {
 
 .hero {
   display: block;
+  display: flex;
+  justify-content: center;
 }
 
 .form {
@@ -225,13 +229,15 @@ input[type="submit"] {
   
 }
 
-@media only screen and (min-width: 615px) {
+@media only screen and (min-width: 539px) {
   // .wrapper {
   //     margin: 3em;
   // }
 
   h1 {
-      font-size: 3rem;
+      font-size: 2rem;
+      width: 53%;
+      
   }
 }
 
@@ -249,40 +255,26 @@ input[type="submit"] {
           }
       }
   }
+  h1 {
+    font-size: 3rem;
+    width: 54%;
+    margin-top: 0rem;
+}
 
   footer {
       padding: 3em;
   }
 }
 
-@media only screen and (min-width: 900px) {
-  .form {
-      width: 75%;
-  }
-}
 
-@media only screen and (min-width: 1200px) { 
-  .hero {
-      display: flex;
-      justify-content: center;
-      // margin: 8em 0 6em;
 
-      h1 {
-          width: 50%;
-          
-          
-      }
-
-      .form {
-          width: 50%;
-          align-self: flex-end;
-          padding-bottom: 1em;
-          margin: unset;
-      }
+@media only screen and (min-width: 1115px) { 
+  h1{
+    width: 50%;
   }
   .features {
      display: flex;
-     justify-content: space-between;
+     justify-content: space-around;
   }
 
   .wrapper, .features {
