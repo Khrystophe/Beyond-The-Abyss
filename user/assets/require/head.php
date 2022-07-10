@@ -28,7 +28,7 @@
         <div class="menu__left">
           <div class="menu__left__inner">
             <div class="menu__left__inner__item">
-              <a class="link" href="index.php">Home <span class="menu__left__inner__item__small">#01</span></a>
+              <a class="link" href="index.php">Hom <span class="menu__left__inner__item__small">#01</span></a>
             </div>
             <div class="menu__left__inner__item">
               <a class="link" href="about.php">About <span class="menu__left__inner__item__small">#02</span></a>
