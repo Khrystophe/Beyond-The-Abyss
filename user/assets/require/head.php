@@ -13,7 +13,10 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body>
+<body data-barba="wrapper">
+  <div class="load-container">
+    <div class="load-screen"><img src="./assets/img/music-g8090509f0_1920.png" alt=""></div>
+  </div>
   <header>
     <nav>
       <div class="toggle">
@@ -25,22 +28,22 @@
         <div class="menu__left">
           <div class="menu__left__inner">
             <div class="menu__left__inner__item">
-              <a href="#">Home <span class="menu__left__inner__item__small">#01</span></a>
+              <a class="link" href="index.php">Home <span class="menu__left__inner__item__small">#01</span></a>
             </div>
             <div class="menu__left__inner__item">
-              <a href="#">About <span class="menu__left__inner__item__small">#02</span></a>
+              <a class="link" href="about.php">About <span class="menu__left__inner__item__small">#02</span></a>
             </div>
             <div class="menu__left__inner__item">
-              <a href="#">Products <span class="menu__left__inner__item__small">#03</span></a>
+              <a class="link" href="#">Products <span class="menu__left__inner__item__small">#03</span></a>
             </div>
             <div class="menu__left__inner__item">
-              <a href="#">Contact <span class="menu__left__inner__item__small">#04</span></a>
+              <a class="link" href="#">Contact <span class="menu__left__inner__item__small">#04</span></a>
             </div>
             <div class="menu__left__inner__item">
-              <a href="#">Contact <span class="menu__left__inner__item__small">#04</span></a>
+              <a class="link" href="#">Contact <span class="menu__left__inner__item__small">#04</span></a>
             </div>
             <div class="menu__left__inner__item">
-              <a href="#">Contact <span class="menu__left__inner__item__small">#04</span></a>
+              <a class="link" href="#">Contact <span class="menu__left__inner__item__small">#04</span></a>
             </div>
           </div>
         </div>
@@ -52,7 +55,7 @@
               </div>
               <ul>
                 <li>
-                  <a href="mailto:contact@website.com">contact@website.com</a>
+                  <a class="link" href="mailto:contact@website.com">contact@website.com</a>
                 </li>
               </ul>
             </div>
@@ -62,16 +65,16 @@
               </div>
               <ul>
                 <li>
-                  <a href="#">Facebook</a>
+                  <a class="link" href="#">Facebook</a>
                 </li>
                 <li>
-                  <a href="#">Instagram</a>
+                  <a class="link" href="#">Instagram</a>
                 </li>
                 <li>
-                  <a href="#">Youtube</a>
+                  <a class="link" href="#">Youtube</a>
                 </li>
                 <li>
-                  <a href="#">Twitter</a>
+                  <a class="link" href="#">Twitter</a>
                 </li>
               </ul>
             </div>

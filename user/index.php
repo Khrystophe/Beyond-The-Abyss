@@ -2,7 +2,7 @@
 $page = 'index';
 require('./assets/require/head.php');
 ?>
-<div class="wrapper">
+<div class="wrapp">
   <div class="loading-screen">
     <div class="ringOne">
       <img src="./assets/img/ring.png" alt="ring">
@@ -11,7 +11,7 @@ require('./assets/require/head.php');
       <img src="./assets/img/ring.png" alt="ring">
     </div>
   </div>
-  <main>
+  <main data-barba="container" data-barba-namespace="index-section">
     <div class="col2 hero">
       <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
       <h1><span>Au delà de l'abîme</span><br>La musique des profondeurs</h1>
