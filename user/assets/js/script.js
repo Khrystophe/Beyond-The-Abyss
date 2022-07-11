@@ -1,3 +1,7 @@
+gsap.config({
+  nullTargetWarn: false,
+});
+
 let toggle = document.querySelector('.toggle');
 let body = document.querySelector('body');
 

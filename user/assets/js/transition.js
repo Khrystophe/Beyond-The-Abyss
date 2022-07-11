@@ -9,8 +9,18 @@ tl
 .to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1 ,y: 0, duration: 2.2},"<0.1")
 .to('.title, .line.one, .line.two, .line.three', { stagger: .1, duration: 1.2, opacity: 1, y: 0}, "-=2")
 .to('footer', { opacity: 1}, "-=2")
+.from(".box", {
+    duration: 1,
+    scale: 0.1,
+    y: 40,
+    ease: "power1.inOut",
+    stagger: {
+      grid: [7,15],
+      from: "edges",
+      amount: 1.5
+    }
+  },"<-2");
 }
-
 
 let link= document.querySelectorAll('.link');
 

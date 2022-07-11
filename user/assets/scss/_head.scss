@@ -44,21 +44,20 @@
   height: 100%;
   background: var(--primary-color);
   transition: transform 2.5s;
- 
-}
-
-.menu__left, .menu__right {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
 .menu__left {
   transform: translateX(-100%);
+  overflow: hidden;
 }
 
 .menu__right {
   transform: translateX(100%);
+  overflow: hidden;
 }
 
 .open .menu__left, .open .menu__right {

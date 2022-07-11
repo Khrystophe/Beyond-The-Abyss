@@ -1,9 +1,21 @@
 /* /////////////////////////////////////////////INDEX//////////////////////////////////////// */
+.box{
+  width : 5rem;
+  height: 5rem;
+  margin: 1rem;
+  border: 1px solid white;
+}
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 13rem;
+}
+
 
 .wrapp {
-
   margin: 1em 1em 7em;
-  height: 100vh;
+  height: 100%;
 }
 
 .ringOne, .ringTwo {
@@ -27,11 +39,9 @@
   opacity: 0;   
 }
 
-
- 
-
 main {
   margin-top: 4em;
+  height: 100%;
 }
 
 
@@ -177,9 +187,6 @@ main {
 }
 
 @media only screen and (min-width: 539px) {
-  // .wrapper {
-  //     margin: 3em;
-  // }
 
   h1 {
       font-size: 2rem;
@@ -208,9 +215,7 @@ main {
     margin-top: 0rem;
 }
 
-  footer {
-      padding: 3em;
-  }
+  
 }
 
 
@@ -219,46 +224,14 @@ main {
   h1{
     width: 50%;
   }
-  .features {
-     display: flex;
-     justify-content: space-around;
-  }
 
-  .wrapp, .features {
-      margin-bottom: 0;
-  }
-  footer {
-      margin: 0;
-      padding: 6em;
 
-      .parent {
-          max-width: 1150px;
-          margin: 0 auto;
-          display: flex;
-          justify-content: space-between;
-      }
-
-      .social {
-          margin: 0;
-      }
-
-      .learn, .skillform {
-          margin: 1em;
-      }
-
-  }
   .features .card {
       margin-bottom: 0;
       
   }
-  .wrapp {
-      width: 1150px;
-      margin: 3em auto 0;
-  }
+  
 }
-
-
-
 
 
 span {

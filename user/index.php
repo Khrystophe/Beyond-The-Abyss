@@ -17,24 +17,25 @@ require('./assets/require/head.php');
       <h1><span>Au delà de l'abîme</span><br>La musique des profondeurs</h1>
     </div>
 
+
     <div class="features">
       <div class="card one">
-        <p class="title">Tutoriels</p>
-        <p class="line one"></p>
-        <p class="line two"></p>
-        <p class="line three"></p>
+        <div class="title">Tutoriels</div>
+        <div class="line one"></div>
+        <div class="line two"></div>
+        <div class="line three"></div>
       </div>
       <div class="card two">
-        <p class="title">Performances</p>
-        <p class="line one"></p>
-        <p class="line two"></p>
-        <p class="line three"></p>
+        <div class="title">Tutoriels</div>
+        <div class="line one"></div>
+        <div class="line two"></div>
+        <div class="line three"></div>
       </div>
       <div class="card three">
-        <p class="title">Partitions</p>
-        <p class="line one"></p>
-        <p class="line two"></p>
-        <p class="line three"></p>
+        <div class="title">Tutoriels</div>
+        <div class="line one"></div>
+        <div class="line two"></div>
+        <div class="line three"></div>
       </div>
 
     </div>
@@ -43,3 +44,6 @@ require('./assets/require/head.php');
 <?php
 require('./assets/require/foot.php');
 ?>
+</body>
+
+</html>
