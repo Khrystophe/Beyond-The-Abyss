@@ -39,6 +39,7 @@ require('./assets/require/head.php');
       </div>
 
     </div>
+
   </main>
 </div>
 <?php
