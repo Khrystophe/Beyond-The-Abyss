@@ -31,6 +31,7 @@ toggle.addEventListener('click', function() {
       .to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1 ,y: 0, duration: 2.2},"<0.1")
       .to('.title, .line.one, .line.two, .line.three', { stagger: .1, duration: 1.2, opacity: 1, y: 0}, "-=2")
       .to('footer', { opacity: 1}, "-=2")
+      .to('.hero-slider', { opacity: 1, duration: 3.9}, "-=2")
 
       tl1
       .to('.sep', { duration: 0.75,height: 0})
@@ -50,6 +51,7 @@ toggle.addEventListener('click', function() {
       .to('.title, .line.one, .line.two, .line.three', { stagger: -0.1, duration: 0.7, opacity: 0, y: 100}, "-=2")
       .to('h1', { 'clip-path': 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)', opacity: 0, y: 100, duration: 2},"-=2.3")
       .to('footer', { opacity: 0}, "-=2")
+      .to('.hero-slider', { opacity: 0}, "-=2")
       .set('h1, .ringThree', {autoAlpha: 0 })
 
       tl1

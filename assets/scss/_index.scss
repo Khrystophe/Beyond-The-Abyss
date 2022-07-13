@@ -9,13 +9,20 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 13rem;
+  margin-top: 4rem;
 }
 
 
 .wrapp {
-  margin: 1em 1em 1em;
-  height: 100%;
+  // margin: 1em 1em 1em;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.features{
+  height: 60vh;
 }
 
 .ringOne, .ringTwo {
@@ -39,10 +46,10 @@
   opacity: 0;   
 }
 
-main {
-  margin-top: 4em;
-  height: 100%;
-}
+// main {
+//   margin-top: 4rem;
+//   height: 100%;
+// }
 
 
 .col2 {

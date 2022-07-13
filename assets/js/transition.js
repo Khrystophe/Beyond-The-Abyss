@@ -9,6 +9,7 @@ tl
 .to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1 ,y: 0, duration: 2.2},"<0.1")
 .to('.title, .line.one, .line.two, .line.three', { stagger: .1, duration: 1.2, opacity: 1, y: 0}, "-=2")
 .to('footer', { opacity: 1}, "-=2")
+.to('.hero-slider', { opacity: 1}, "-=2")
 .from(".box", {
     duration: 1,
     scale: 0.1,
@@ -68,19 +69,7 @@ function pageTransition() {
   });
   
 }
-// function contentAnimation() {
-    
-//     let tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: 2}})
 
-//   tl
-  
-// //   .from(".animate-this", { duration: 1, y: 30, opacity: 0, stagger: 0.4, delay: 0.2 })
-//   .set('h1, .ringThree', {autoAlpha: 1})
-//   .to('.ringThree', { opacity: 1 , duration: 3})
-//   .to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1 ,y: 0, duration: 2.2},"<0.1")
-//   .to('.title, .line.one, .line.two, .line.three', { stagger: .1, duration: 1.2, opacity: 1, y: 0}, "-=2")
-//   .to('footer', { opacity: 1}, "-=2")
-// }
 
 
 $(function () {
