@@ -40,17 +40,39 @@ nav {
 }
 
 h1 {
+  width: 77%;
+}
+
+.miror {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.miror h1 {
   font-family: "Merriweather", serif;
-  font-size: 2rem;
-  margin-bottom: 2em;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   opacity: 0;
   transform: translateY(100px);
   text-align: center;
-  width: 77%;
   margin-top: 2rem;
   position: absolute;
-  top: 8%;
+  text-shadow: 0px 0px 1rem currentColor;
+  box-shadow: 0px 0px 1rem currentColor, 0px 0px 1rem currentColor inset;
+}
+
+.miror h1::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: white;
+  position: absolute;
+  left: 0;
+  top: 150%;
+  pointer-events: none;
+  transform: perspective(1.5rem) rotateX(35deg) scale(1, 0.5);
+  filter: blur(1.5rem);
+  opacity: 0.4;
 }
 
 footer {
@@ -490,7 +512,7 @@ footer .angle-line {
   margin-top: 1.2em;
 }
 
-@media only screen and (min-width: 539px) {
+@media only screen and (min-width: 526px) {
   h1 {
     font-size: 2rem;
     width: 53%;

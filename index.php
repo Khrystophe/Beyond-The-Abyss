@@ -16,8 +16,10 @@ require('./assets/require/head.php');
       </div> -->
       <div class="col2 hero">
         <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
-        <h1><span>Au delà de l'abîme</span><br>La musique des profondeurs</h1>
-        <!-- <h1 class="mirror"><span>Au delà de l'abîme</span><br>La musique des profondeurs</h1> -->
+        <div class="miror">
+          <h1><span>Au delà de l'abîme</span><br>La musique des profondeurs</h1>
+        </div>
+
       </div>
     </div>
 

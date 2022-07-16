@@ -1,35 +1,6 @@
 /* /////////////////////////////////////////////INDEX//////////////////////////////////////// */
 
-// .miroir { 
-//   position: absolute;
-//   color: black; 
-//   font-size: 54px; 
-//   } 
-  
-//   .miroir::after { 
-//   content: attr(data-text); 
-//   position: absolute; 
-//   top: 0; 
-//   left: 0;
-//   transform-origin: bottom; 
-//   transform: rotateX(180deg); 
-//   line-height: 0.85em; 
-//   background-image: linear-gradient(0deg, rgb(244, 235, 235) 0, transparent 99%); 
-//   background-clip: text ;
-//   -webkit-background-clip: text; 
-//   color: transparent;          
-//   opacity: 0.8; 
-//   } 
 
-//////////////////////////////////////////
-// .mirror {
-//   -moz-transform:    scaleX(-1); /* Gecko */
-//   -o-transform:      scaleX(-1); /* Opera */
-//   -webkit-transform: scaleX(-1); /* Webkit */
-//   transform:         scaleX(-1); /* Standard */
-
-//   filter: FlipH;
-// }
   /////////////////////////////////////////////////////////////////////
 .wrapp{
   // margin: 1em 1em 1em;
@@ -211,7 +182,7 @@
   
 }
 
-@media only screen and (min-width: 539px) {
+@media only screen and (min-width: 526px) {
 
   h1 {
       font-size: 2rem;
