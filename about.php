@@ -2,13 +2,15 @@
 $page = 'about';
 require('./assets/require/head.php');
 ?>
-<main data-barba="wrapper">
+<main class="autoAlpha" data-barba="wrapper">
     <div data-barba="container" data-barba-namespace="about-section">
 
         <div class="wrapp">
             <div class="col2 hero">
                 <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
-                <h1><span>Au delà de l'abîme</span><br>La musique des profondeurs</h1>
+                <div class="miror">
+                    <h1><span>Au delà de l'abîme</span><br>La musique des profondeurs</h1>
+                </div>
             </div>
         </div>
 
@@ -84,6 +86,7 @@ require('./assets/require/head.php');
 <?php
 require('./assets/require/foot.php');
 ?>
+
 </body>
 
 </html>

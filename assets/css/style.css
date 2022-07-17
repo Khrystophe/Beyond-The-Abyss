@@ -24,6 +24,7 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   overflow-x: hidden;
+  opacity: 0;
 }
 
 header {
@@ -48,19 +49,14 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-
 .miror h1 {
   font-family: "Merriweather", serif;
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   opacity: 0;
   transform: translateY(100px);
   text-align: center;
   margin-top: 2rem;
   position: absolute;
-  text-shadow: 0px 0px 1rem currentColor;
-  box-shadow: 0px 0px 1rem currentColor, 0px 0px 1rem currentColor inset;
 }
-
 .miror h1::before {
   content: "";
   height: 100%;
@@ -68,11 +64,26 @@ h1 {
   background: white;
   position: absolute;
   left: 0;
-  top: 150%;
+  top: 96%;
   pointer-events: none;
-  transform: perspective(1.5rem) rotateX(35deg) scale(1, 0.5);
+  transform: perspective(4.5rem) rotateX(46deg) scale(1, 0.4);
   filter: blur(1.5rem);
-  opacity: 0.4;
+  opacity: 0.2;
+  border-radius: 50%;
+}
+.miror h1 span::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #f1c40f;
+  position: absolute;
+  left: 0;
+  top: 96%;
+  pointer-events: none;
+  transform: perspective(4.5rem) rotateX(46deg) scale(0.5, 0.1);
+  filter: blur(5.5rem);
+  opacity: 0.2;
+  border-radius: 50%;
 }
 
 footer {
@@ -260,7 +271,7 @@ h2 + p, p + p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 
 .card-wrap {
@@ -512,13 +523,21 @@ footer .angle-line {
   margin-top: 1.2em;
 }
 
-@media only screen and (min-width: 526px) {
+@media only screen and (min-width: 332px) {
+  .miror h1::before {
+    top: 140%;
+  }
+  .miror h1 span::before {
+    top: 140%;
+  }
+}
+@media only screen and (min-width: 507px) {
   h1 {
     font-size: 2rem;
     width: 53%;
   }
 }
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 736px) {
   .features {
     display: flex;
     justify-content: space-around;
@@ -534,6 +553,12 @@ footer .angle-line {
     font-size: 3rem;
     width: 54%;
     margin-top: 0rem;
+  }
+  .miror h1::before {
+    top: 96%;
+  }
+  .miror h1 span::before {
+    top: 96%;
   }
 }
 @media only screen and (min-width: 1115px) {

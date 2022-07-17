@@ -35,6 +35,7 @@
   opacity: 0;   
 }
 
+
 // main {
 //   margin-top: 4rem;
 //   height: 100%;
@@ -182,16 +183,26 @@
   
 }
 
-@media only screen and (min-width: 526px) {
+@media only screen and (min-width: 332px){
+  .miror {
+      h1::before {
+      top: 140%;
+      }
+      h1 span::before{
+      top:140%;
+      }
+    }
+}
+
+@media only screen and (min-width: 507px) {
 
   h1 {
       font-size: 2rem;
-      width: 53%;
-      
+      width: 53%;  
   }
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 736px) {
   .features {
       display: flex;
       justify-content: space-around;
@@ -205,13 +216,21 @@
           }
       }
   }
+
   h1 {
     font-size: 3rem;
     width: 54%;
     margin-top: 0rem;
-}
+  }
 
-  
+  .miror {
+    h1::before {
+    top: 96%;
+    }
+    h1 span::before{
+    top: 96%;
+    }
+  }
 }
 
 
