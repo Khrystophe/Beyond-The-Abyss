@@ -36,7 +36,7 @@ $results = $join->fetchAll();
                         #background {
                             background: url(./assets/img/piano) no-repeat fixed;
                             background-size: cover;
-                            height: 100vh;
+                            height: 100%;
                         }
                     </style>
 
@@ -49,7 +49,7 @@ $results = $join->fetchAll();
                         #background {
                             background: url(./assets/img/bride) no-repeat fixed;
                             background-size: cover;
-                            height: 100vh;
+                            height: 100%;
                         }
                     </style>
 
@@ -62,7 +62,7 @@ $results = $join->fetchAll();
                         #background {
                             background: url(./assets/img/sheet-music) no-repeat fixed;
                             background-size: cover;
-                            height: 100vh;
+                            height: 100%;
                         }
                     </style>
                 <?php } ?>
