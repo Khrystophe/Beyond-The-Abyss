@@ -61,7 +61,7 @@ h1 {
   content: "";
   height: 100%;
   width: 100%;
-  background: white;
+  background: rgb(48, 48, 84);
   position: absolute;
   left: 0;
   top: 96%;
@@ -561,12 +561,27 @@ footer .angle-line {
     top: 96%;
   }
 }
-@media only screen and (min-width: 1115px) {
+@media only screen and (min-width: 1083px) {
   h1 {
-    width: 50%;
+    width: 45%;
   }
   .features .card {
     margin-bottom: 0;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  h1 {
+    width: 33%;
+  }
+}
+@media only screen and (min-width: 1320px) {
+  h1 {
+    width: 29%;
+  }
+}
+@media only screen and (min-width: 1740px) {
+  h1 {
+    width: 22%;
   }
 }
 span {

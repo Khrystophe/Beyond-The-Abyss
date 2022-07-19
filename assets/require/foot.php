@@ -14,6 +14,3 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.pkgd.min.js"></script>
 <script src="assets/js/script.js"></script>
-<script src="assets/js/transition.js"></script>
-<script src="assets/js/card.js"></script>
-<script src="assets/js/carousel.js"></script>

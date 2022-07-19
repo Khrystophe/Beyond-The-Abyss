@@ -7,12 +7,12 @@ require('./assets/require/head.php');
 
     <div class="wrapp">
       <div class="loading-screen">
-        <div class="ringOne">
+        <!-- <div class="ringOne">
           <img src="./assets/img/ring.png" alt="ring">
         </div>
         <div class="ringTwo">
           <img src="./assets/img/ring.png" alt="ring">
-        </div>
+        </div> -->
       </div>
       <div class="col2 hero">
         <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
