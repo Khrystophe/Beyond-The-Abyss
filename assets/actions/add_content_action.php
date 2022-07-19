@@ -36,11 +36,11 @@ if ($content == null) {
 
   ));
   if ($_POST['category'] == "tuto") {
-    header('location: ../content.php?category=tuto&success=add_content');
+    header('location: ../../content.php?category=tuto&success=add_content');
   } else if ($_POST['category'] == "perf") {
-    header('location: ../content.php?category=perf&success=add_content');
+    header('location: ../../content.php?category=perf&success=add_content');
   } else if ($_POST['category'] == "sheet") {
-    header('location: ../content.php?category=sheet&success=add_content');
+    header('location: ../../content.php?category=sheet&success=add_content');
   }
 } else {
   $req = $bdd->prepare("INSERT INTO `contents`( `title`,`composer`, `level`, `category`,`content`, `price`) VALUES (?,?,?,?,?,?)");
@@ -56,8 +56,8 @@ if ($content == null) {
   if ($_POST['category'] == "tuto") {
     header('location: ../../content.php?category=tuto&success=add_content');
   } else if ($_POST['category'] == "perf") {
-    header('location: ./content.php?category=perf&success=add_content');
+    header('location: ../../content.php?category=perf&success=add_content');
   } else if ($_POST['category'] == "sheet") {
-    header('location: ./content.php?category=sheet&success=add_content');
+    header('location: ../../content.php?category=sheet&success=add_content');
   }
 }
