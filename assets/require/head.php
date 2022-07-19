@@ -31,22 +31,40 @@
         <div class="menu__left">
           <div class="menu__left__inner">
             <div class="menu__left__inner__item">
-              <a class="link" href="index.php">Hom <span class="menu__left__inner__item__small">#01</span></a>
+              <?php if ($page != 'index') { ?>
+                <a class="link" href="index.php">Page d'accueil<span class="menu__left__inner__item__small">#</span></a>
+              <?php } ?>
             </div>
             <div class="menu__left__inner__item">
-              <a class="link" href="about.php">About <span class="menu__left__inner__item__small">#02</span></a>
+              <?php
+              if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
+                if ($page != 'login') { ?>
+                  <a class="link" href="login.php">Connexion<span class="menu__left__inner__item__small">#</span></a>
+                <?php } ?>
             </div>
             <div class="menu__left__inner__item">
-              <a class="link" href="#">Products <span class="menu__left__inner__item__small">#03</span></a>
+              <?php if ($page != 'register') { ?>
+                <a class="link" href="register.php">S'inscrire<span class="menu__left__inner__item__small">#</span></a>
+            <?php }
+              } ?>
             </div>
             <div class="menu__left__inner__item">
-              <a class="link" href="#">Contact <span class="menu__left__inner__item__small">#04</span></a>
+              <?php
+              if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
+                if ($page != 'logout') { ?>
+                  <a class="link" href="logout">Déconnexion<span class="menu__left__inner__item__small">#</span></a>
+                <?php } ?>
             </div>
             <div class="menu__left__inner__item">
-              <a class="link" href="#">Contact <span class="menu__left__inner__item__small">#04</span></a>
+              <?php if ($page != 'index') { ?>
+                <a class="link" href="my_account.php">Mon compte<span class="menu__left__inner__item__small">#</span></a>
+            <?php }
+              } ?>
             </div>
             <div class="menu__left__inner__item">
-              <a class="link" href="#">Contact <span class="menu__left__inner__item__small">#04</span></a>
+              <?php if ($page != 'add_content') { ?>
+                <a class="link" href="add_content.php">Ajouter du contenu<span class="menu__left__inner__item__small">#</span></a>
+              <?php } ?>
             </div>
           </div>
         </div>

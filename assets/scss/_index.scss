@@ -12,6 +12,11 @@
 
 .features{
   height: 60vh;
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .ringOne, .ringTwo {
@@ -34,13 +39,6 @@
   width: 350px;
   opacity: 0;   
 }
-
-
-// main {
-//   margin-top: 4rem;
-//   height: 100%;
-// }
-
 
 .col2 {
   display: flex;
@@ -206,6 +204,7 @@
   .features {
       display: flex;
       justify-content: space-around;
+      align-items: center;
 
       .card {
           margin-bottom: 2em;

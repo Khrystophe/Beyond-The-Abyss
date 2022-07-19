@@ -1,4 +1,5 @@
 <?php
+session_start();
 $page = 'index';
 require('./assets/require/head.php');
 ?>
@@ -14,34 +15,41 @@ require('./assets/require/head.php');
           <img src="./assets/img/ring.png" alt="ring">
         </div> -->
       </div>
+
       <div class="col2 hero">
         <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
         <div class="miror">
           <h1><span>Au delà de l'abîme</span><br>La musique des profondeurs</h1>
         </div>
-
       </div>
+
     </div>
 
     <div class="features">
-      <div class="cards one">
-        <div class="titles">Tutoriels</div>
-        <div class="line one"></div>
-        <div class="line two"></div>
-        <div class="line three"></div>
-      </div>
-      <div class="cards two">
-        <div class="titles">Performances</div>
-        <div class="line one"></div>
-        <div class="line two"></div>
-        <div class="line three"></div>
-      </div>
-      <div class="cards three">
-        <div class="titles">Partitions</div>
-        <div class="line one"></div>
-        <div class="line two"></div>
-        <div class="line three"></div>
-      </div>
+      <a href="./content.php?category=tuto">
+        <div class="cards one">
+          <div class="titles">Tutoriels</div>
+          <div class="line one"></div>
+          <div class="line two"></div>
+          <div class="line three"></div>
+        </div>
+      </a>
+      <a href="./content.php?category=perf">
+        <div class="cards two">
+          <div class="titles">Performances</div>
+          <div class="line one"></div>
+          <div class="line two"></div>
+          <div class="line three"></div>
+        </div>
+      </a>
+      <a href="./content.php?category=sheet">
+        <div class="cards three">
+          <div class="titles">Partitions</div>
+          <div class="line one"></div>
+          <div class="line two"></div>
+          <div class="line three"></div>
+        </div>
+      </a>
 
     </div>
     <div class="hero-slider" data-carousel>
@@ -51,7 +59,7 @@ require('./assets/require/head.php');
         <div class="inner">
           <h3 class="subtitle">Tutoriel</h3>
           <h2 class="title">Compositeur</h2>
-          <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Voir</a>
+          <a href="./single_player_content.php?id=<?= $content['id'] ?>" class="btn">Voir</a>
         </div>
       </div>
       <div class="carousel-cell" style="background-image:url(https://68.media.tumblr.com/c40636a5a0d4aa39c335c8db40d2144f/tumblr_omc7z7Xv8N1slhhf0o1_1280.jpg);">
@@ -59,7 +67,7 @@ require('./assets/require/head.php');
         <div class="inner">
           <h3 class="subtitle">Performance</h3>
           <h2 class="title">Interprète</h2>
-          <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Voir</a>
+          <a href="./single_player_content.php?id=<?= $content['id'] ?>" class="btn">Voir</a>
         </div>
       </div>
       <div class="carousel-cell" style="background-image:url(https://68.media.tumblr.com/3beb13a4167aa8b5c4743eac17bf351c/tumblr_o8nyvtiHfC1slhhf0o1_1280.jpg);">
@@ -67,16 +75,16 @@ require('./assets/require/head.php');
         <div class="inner">
           <h3 class="subtitle">Partition</h3>
           <h2 class="title">Compositeur</h2>
-          <a href="https://flickity.metafizzy.co/" target="_blank" class="btn">Voir</a>
+          <a href="./single_player_content.php?id=<?= $content['id'] ?>" class="btn">Voir</a>
         </div>
       </div>
     </div>
   </div>
+  <?php
+  require('./assets/require/foot.php');
+  ?>
 </main>
 
-<?php
-require('./assets/require/foot.php');
-?>
 
 </body>
 

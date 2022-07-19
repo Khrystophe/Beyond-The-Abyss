@@ -382,6 +382,10 @@ h2 + p, p + p {
 .features {
   height: 60vh;
 }
+.features a {
+  text-decoration: none;
+  color: white;
+}
 
 .ringOne, .ringTwo {
   margin: 0%;
@@ -541,6 +545,7 @@ footer .angle-line {
   .features {
     display: flex;
     justify-content: space-around;
+    align-items: center;
   }
   .features .card {
     margin-bottom: 2em;
@@ -586,6 +591,10 @@ footer .angle-line {
 }
 span {
   color: #f1c40f;
+}
+
+.add_content_form {
+  z-index: 10;
 }
 
 /* ///////////////////////////////////HEAD/////////////////////////////////// */
