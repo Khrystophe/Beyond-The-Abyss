@@ -1,7 +1,13 @@
 <?php
 session_start();
 $page = 'index';
+require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
+
+
+$req = $bdd->query("SELECT * FROM contents ORDER BY RAND() LIMIT 3 ");
+$random = $req->fetchAll();
+
 ?>
 <main class="autoAlpha" data-barba="wrapper">
   <div data-barba="container" data-barba-namespace="index-section">
@@ -53,31 +59,18 @@ require('./assets/require/head.php');
 
     </div>
     <div class="hero-slider" data-carousel>
-      <div class="carousel-cell" style="background-image:url(https://68.media.tumblr.com/57836ee52bc9355ad7c5fed5abf91ccc/tumblr_oiboo6MaRS1slhhf0o1_1280.jpg);">
-        <div class="overlay">
+      <?php foreach ($random as $rand) { ?>
+        <div class="carousel-cell" style="background-image:url(./assets/contents_img/<?php echo $rand['content']; ?>);">
+          <div class="overlay">
+          </div>
+          <div class="inner">
+            <h3 class="subtitle">Tutoriel</h3>
+            <h2 class="title">Compositeur</h2>
+            <a href="./single_player_content.php?id=<?= $rand['id'] ?>" class="btn">Voir</a>
+          </div>
         </div>
-        <div class="inner">
-          <h3 class="subtitle">Tutoriel</h3>
-          <h2 class="title">Compositeur</h2>
-          <a href="./single_player_content.php?id=<?= $content['id'] ?>" class="btn">Voir</a>
-        </div>
-      </div>
-      <div class="carousel-cell" style="background-image:url(https://68.media.tumblr.com/c40636a5a0d4aa39c335c8db40d2144f/tumblr_omc7z7Xv8N1slhhf0o1_1280.jpg);">
-        <div class="overlay"></div>
-        <div class="inner">
-          <h3 class="subtitle">Performance</h3>
-          <h2 class="title">Interprète</h2>
-          <a href="./single_player_content.php?id=<?= $content['id'] ?>" class="btn">Voir</a>
-        </div>
-      </div>
-      <div class="carousel-cell" style="background-image:url(https://68.media.tumblr.com/3beb13a4167aa8b5c4743eac17bf351c/tumblr_o8nyvtiHfC1slhhf0o1_1280.jpg);">
-        <div class="overlay"></div>
-        <div class="inner">
-          <h3 class="subtitle">Partition</h3>
-          <h2 class="title">Compositeur</h2>
-          <a href="./single_player_content.php?id=<?= $content['id'] ?>" class="btn">Voir</a>
-        </div>
-      </div>
+      <?php } ?>
+
     </div>
   </div>
   <?php
