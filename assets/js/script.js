@@ -15,7 +15,7 @@ function contentAnimation() {
   tl
     .to('body', {
       opacity: 1,
-      duration: 2
+      duration: 0.5,
     })
     .to('.ringThree', {
       opacity: 1,

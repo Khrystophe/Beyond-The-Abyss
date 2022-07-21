@@ -5,8 +5,14 @@ require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
 
 
-$req = $bdd->query("SELECT * FROM contents ORDER BY RAND() LIMIT 3 ");
-$random = $req->fetchAll();
+$req = $bdd->query("SELECT * FROM contents WHERE category = 'tuto' ORDER BY RAND() LIMIT 1 ");
+$randomTuto = $req->fetch();
+
+$req1 = $bdd->query("SELECT * FROM contents WHERE category = 'perf' ORDER BY RAND() LIMIT 1 ");
+$randomPerf = $req1->fetch();
+
+$req2 = $bdd->query("SELECT * FROM contents WHERE category = 'sheet' ORDER BY RAND() LIMIT 1 ");
+$randomSheet = $req2->fetch();
 
 ?>
 <main class="autoAlpha" data-barba="wrapper">
@@ -59,17 +65,39 @@ $random = $req->fetchAll();
 
     </div>
     <div class="hero-slider" data-carousel>
-      <?php foreach ($random as $rand) { ?>
-        <div class="carousel-cell" style="background-image:url(./assets/contents_img/<?php echo $rand['content']; ?>);">
-          <div class="overlay">
-          </div>
-          <div class="inner">
-            <h3 class="subtitle">Tutoriel</h3>
-            <h2 class="title">Compositeur</h2>
-            <a href="./single_player_content.php?id=<?= $rand['id'] ?>" class="btn">Voir</a>
-          </div>
+
+      <div class="carousel-cell" style="background-image:url(./assets/contents_img/<?php echo $randomTuto['content']; ?>);">
+        <div class="overlay">
         </div>
-      <?php } ?>
+        <div class="inner">
+          <h3 class="subtitle">Tutoriel</h3>
+          <h2 class="title"><?php echo $randomTuto['composer']; ?></h2>
+          <h2 class="title"><?php echo $randomTuto['title']; ?></h2>
+          <a href="./single_player_content.php?id=<?= $randomTuto['id'] ?>" class="btn">Voir</a>
+        </div>
+      </div>
+
+      <div class="carousel-cell" style="background-image:url(./assets/contents_img/<?php echo $randomPerf['content']; ?>);">
+        <div class="overlay">
+        </div>
+        <div class="inner">
+          <h3 class="subtitle">Performance</h3>
+          <h2 class="title"><?php echo $randomPerf['composer']; ?></h2>
+          <h2 class="title"><?php echo $randomPerf['title']; ?></h2>
+          <a href="./single_player_content.php?id=<?= $randomPerf['id'] ?>" class="btn">Voir</a>
+        </div>
+      </div>
+
+      <div class="carousel-cell" style="background-image:url(./assets/contents_img/<?php echo $randomSheet['content']; ?>);">
+        <div class="overlay">
+        </div>
+        <div class="inner">
+          <h3 class="subtitle">Partition</h3>
+          <h2 class="title"><?php echo $randomSheet['composer']; ?></h2>
+          <h2 class="title"><?php echo $randomSheet['title']; ?></h2>
+          <a href="./single_player_content.php?id=<?= $randomSheet['id'] ?>" class="btn">Voir</a>
+        </div>
+      </div>
 
     </div>
   </div>
