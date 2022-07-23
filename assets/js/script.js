@@ -15,7 +15,7 @@ function contentAnimation() {
   tl
     .to('body', {
       opacity: 1,
-      duration: 0.5,
+      duration: 0.1,
     })
     .to('.ringThree', {
       opacity: 1,
@@ -32,9 +32,6 @@ function contentAnimation() {
       opacity: 1,
       y: 0
     }, "-=2")
-    .to('footer', {
-      opacity: 1
-    }, "-=2")
     .to('.hero-slider', {
       opacity: 1
     }, "-=2")
@@ -50,6 +47,9 @@ function contentAnimation() {
         amount: 1.5
       }
     }, "<-2")
+    .to('footer', {
+      opacity: 1
+    })
 }
 
 toggle.addEventListener('click', function() {
