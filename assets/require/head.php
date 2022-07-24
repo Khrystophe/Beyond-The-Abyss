@@ -52,7 +52,7 @@
               <?php
               if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                 if ($page != 'logout') { ?>
-                  <a class="link" href="logout">Déconnexion<span class="menu__left__inner__item__small">#</span></a>
+                  <a class="link" href="../actions/logout_action.php">Déconnexion<span class="menu__left__inner__item__small">#</span></a>
                 <?php } ?>
             </div>
             <div class="menu__left__inner__item">

@@ -593,6 +593,14 @@ span {
   z-index: 10;
 }
 
+.register_form {
+  z-index: 10;
+}
+
+.login_form {
+  z-index: 10;
+}
+
 /* ///////////////////////////////////HEAD/////////////////////////////////// */
 /* Toggle */
 .toggle {

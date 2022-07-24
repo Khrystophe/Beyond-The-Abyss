@@ -18,6 +18,14 @@ $randomSheet = $req2->fetch();
 <main class="autoAlpha" data-barba="wrapper">
   <div data-barba="container" data-barba-namespace="index-section">
 
+    <div>
+      <?php if (isset($_GET['success']) && !empty($_GET['success'])) {
+        if ($_GET['success'] == 'creation') { ?>
+          <h5>La création de votre compte est un succès</h5>
+      <?php }
+      } ?>
+    </div>
+
     <div class="wrapp">
       <!-- <div class="loading-screen"> -->
       <!-- <div class="ringOne">

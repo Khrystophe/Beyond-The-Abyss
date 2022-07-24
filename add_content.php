@@ -49,8 +49,6 @@ require('./assets/require/head.php');
   </div>
 </main>
 
-
-
 <?php
 require('./assets/require/foot.php');
 ?>
