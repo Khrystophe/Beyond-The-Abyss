@@ -14,8 +14,8 @@ $req2 = $bdd->query("SELECT * FROM contents WHERE category = 'sheet' ORDER BY RA
 $randomSheet = $req2->fetch();
 
 ?>
-<main class="autoAlpha" data-barba="wrapper">
-  <div data-barba="container" data-barba-namespace="index-section">
+<main class="autoAlpha">
+  <div>
 
     <div>
       <?php if (isset($_GET['success']) && !empty($_GET['success'])) {

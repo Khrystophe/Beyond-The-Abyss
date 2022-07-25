@@ -4,8 +4,8 @@ $page = 'login';
 require('./assets/require/head.php');
 ?>
 
-<main class="autoAlpha" data-barba="wrapper">
-    <div data-barba="container" data-barba-namespace="register-section">
+<main class="autoAlpha">
+    <div>
 
         <div>
             <?php if (isset($_GET['error']) && !empty($_GET['error'])) {

@@ -17,8 +17,8 @@ $req2->execute(array(
 $contents = $req2->fetchAll();
 ?>
 
-<main class="autoAlpha" data-barba="wrapper">
-    <div data-barba="container" data-barba-namespace="my_account-section">
+<main class="autoAlpha">
+    <div>
 
         <div class="wrapp">
             <div class="col2 hero">

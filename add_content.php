@@ -5,8 +5,8 @@ require('./assets/require/head.php');
 ?>
 
 
-<main class="autoAlpha" data-barba="wrapper">
-  <div data-barba="container" data-barba-namespace="add_content-section">
+<main class="autoAlpha">
+  <div>
 
     <div class="wrapp">
       <div class="col2 hero">

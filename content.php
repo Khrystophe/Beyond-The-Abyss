@@ -28,8 +28,8 @@ ON users.id = contents.id_users');
 $results = $join->fetchAll();
 
 ?>
-<main id="background" class="autoAlpha" data-barba="wrapper">
-    <div data-barba="container" data-barba-namespace="content-section">
+<main id="background" class="autoAlpha">
+    <div>
         <div class="wrapp">
             <div class="col2 hero">
                 <?php if ($_GET['category'] == 'tuto') {
