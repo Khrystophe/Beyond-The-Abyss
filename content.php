@@ -1,9 +1,14 @@
 <?php
 session_start();
-$page = 'content';
+if ($_GET['category'] == 'tuto') {
+    $page = 'contentTuto';
+} else if ($_GET['category'] == 'perf') {
+    $page = 'contentPerf';
+} else if ($_GET['category'] == 'sheet') {
+    $page = 'contentSheet';
+}
 require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
-var_dump($_SESSION);
 
 $req = $bdd->prepare('SELECT * FROM contents WHERE category = ? ');
 $req->execute(array(
@@ -27,7 +32,8 @@ $results = $join->fetchAll();
     <div data-barba="container" data-barba-namespace="content-section">
         <div class="wrapp">
             <div class="col2 hero">
-                <?php if ($_GET['category'] == 'tuto') { ?>
+                <?php if ($_GET['category'] == 'tuto') {
+                ?>
 
                     <div class="miror">
                         <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
@@ -41,7 +47,8 @@ $results = $join->fetchAll();
                         }
                     </style>
 
-                <?php } else if ($_GET['category'] == 'perf') { ?>
+                <?php } else if ($_GET['category'] == 'perf') {
+                ?>
                     <div class="miror">
                         <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
                         <h1><span>Au delà de l'abîme</span><br>Les performances des profondeurs</h1>
@@ -54,7 +61,8 @@ $results = $join->fetchAll();
                         }
                     </style>
 
-                <?php } else if ($_GET['category'] == 'sheet') { ?>
+                <?php } else if ($_GET['category'] == 'sheet') {
+                ?>
                     <div class="miror">
                         <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
                         <h1><span>Au delà de l'abîme</span><br>Les partitions des profondeurs</h1>

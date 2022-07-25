@@ -182,14 +182,6 @@ img {
   width: 100%;
 }
 
-.ringOne img {
-  animation: rotateFirstRing 2s linear infinite;
-}
-
-.ringTwo img {
-  animation: rotateFirstRing 8s linear infinite;
-}
-
 .ringThree {
   animation: rotateFirstRing 8s linear infinite;
 }
@@ -494,35 +486,6 @@ h2 + p, p + p {
   width: 25%;
 }
 
-footer {
-  opacity: 0;
-  background: linear-gradient(90.73deg, #C9729A 4%, #923ADB 97.46%);
-  padding: 2em 1em;
-  color: #1A1A1A;
-  font-weight: bold;
-}
-footer .all {
-  margin: 0.3em 0 0 0.5em;
-  font-size: 2rem;
-}
-footer .parent {
-  display: block;
-}
-footer .twitter {
-  width: 2em;
-  margin-left: 0.5em;
-}
-footer .social {
-  margin-top: 2em;
-}
-footer a {
-  color: black;
-  text-decoration: none;
-}
-footer .angle-line {
-  margin-top: 1.2em;
-}
-
 @media only screen and (min-width: 332px) {
   .miror h1::before {
     top: 140%;
@@ -598,6 +561,10 @@ span {
 }
 
 .login_form {
+  z-index: 10;
+}
+
+.align {
   z-index: 10;
 }
 
@@ -757,5 +724,33 @@ span {
   }
 }
 /* FOOT */
+footer {
+  opacity: 0;
+  background: linear-gradient(90.73deg, #C9729A 4%, #923ADB 97.46%);
+  padding: 2em 1em;
+  color: #1A1A1A;
+  font-weight: bold;
+}
+footer .all {
+  margin: 0.3em 0 0 0.5em;
+  font-size: 2rem;
+}
+footer .parent {
+  display: block;
+}
+footer .twitter {
+  width: 2em;
+  margin-left: 0.5em;
+}
+footer .social {
+  margin-top: 2em;
+}
+footer a {
+  color: black;
+  text-decoration: none;
+}
+footer .angle-line {
+  margin-top: 1.2em;
+}
 
 /*# sourceMappingURL=style.css.map */

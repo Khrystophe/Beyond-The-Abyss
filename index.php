@@ -3,8 +3,6 @@ session_start();
 $page = 'index';
 require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
-var_dump($_SESSION);
-
 
 $req = $bdd->query("SELECT * FROM contents WHERE category = 'tuto' ORDER BY RAND() LIMIT 1 ");
 $randomTuto = $req->fetch();
@@ -28,15 +26,6 @@ $randomSheet = $req2->fetch();
     </div>
 
     <div class="wrapp">
-      <!-- <div class="loading-screen"> -->
-      <!-- <div class="ringOne">
-          <img src="./assets/img/ring.png" alt="ring">
-        </div>
-        <div class="ringTwo">
-          <img src="./assets/img/ring.png" alt="ring">
-        </div> -->
-      <!-- </div> -->
-
       <div class="col2 hero">
         <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
         <div class="miror">

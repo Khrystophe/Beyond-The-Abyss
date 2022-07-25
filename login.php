@@ -2,8 +2,6 @@
 session_start();
 $page = 'login';
 require('./assets/require/head.php');
-var_dump($_SESSION);
-
 ?>
 
 <main class="autoAlpha" data-barba="wrapper">

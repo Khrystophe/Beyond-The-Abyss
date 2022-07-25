@@ -36,6 +36,21 @@
               <?php } ?>
             </div>
             <div class="menu__left__inner__item">
+              <?php if ($page != 'contentTuto') { ?>
+                <a class="link" href="content.php?category=tuto">Tutoriels<span class="menu__left__inner__item__small">#</span></a>
+              <?php } ?>
+            </div>
+            <div class="menu__left__inner__item">
+              <?php if ($page != 'contentPerf') { ?>
+                <a class="link" href="content.php?category=perf">Performances<span class="menu__left__inner__item__small">#</span></a>
+              <?php } ?>
+            </div>
+            <div class="menu__left__inner__item">
+              <?php if ($page != 'contentSheet') { ?>
+                <a class="link" href="content.php?category=sheet">Partitions<span class="menu__left__inner__item__small">#</span></a>
+              <?php } ?>
+            </div>
+            <div class="menu__left__inner__item">
               <?php
               if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
                 if ($page != 'login') { ?>
@@ -50,12 +65,8 @@
             </div>
             <div class="menu__left__inner__item">
               <?php
-              if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
-                if ($page != 'logout') { ?>
-                  <a class="link" href="/Diplome/assets/actions/logout_action.php">Déconnexion<span class="menu__left__inner__item__small">#</span></a>
-              <?php }
-              }
-              ?>
+              if (isset($_SESSION['users']) && !empty($_SESSION['users'])) { ?>
+                <a class="link" href="/Diplome/assets/actions/logout_action.php">Déconnexion<span class="menu__left__inner__item__small">#</span></a>
             </div>
             <div class="menu__left__inner__item">
               <?php if ($page != 'my_account') { ?>
@@ -66,7 +77,8 @@
             <div class="menu__left__inner__item">
               <?php if ($page != 'add_content') { ?>
                 <a class="link" href="add_content.php">Ajouter du contenu<span class="menu__left__inner__item__small">#</span></a>
-              <?php } ?>
+            <?php }
+              } ?>
             </div>
           </div>
         </div>
