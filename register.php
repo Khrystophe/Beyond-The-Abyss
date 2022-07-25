@@ -2,6 +2,7 @@
 session_start();
 $page = "register";
 require('./assets/require/head.php');
+var_dump($_SESSION);
 ?>
 
 <main class="autoAlpha" data-barba="wrapper">

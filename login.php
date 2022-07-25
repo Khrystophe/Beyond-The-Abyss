@@ -2,6 +2,7 @@
 session_start();
 $page = 'login';
 require('./assets/require/head.php');
+var_dump($_SESSION);
 
 ?>
 
@@ -14,6 +15,8 @@ require('./assets/require/head.php');
                     <h5>Mot de passe incorrect</h5>
                 <?php } else if ($_GET['error'] == 'nonexist') { ?>
                     <h5>Cet utilisateur n'existe pas</h5>
+                <?php } else if ($_GET['error'] == 'empty') { ?>
+                    <h5>Veuillez remplir tous les champs</h5>
             <?php }
             } ?>
         </div>

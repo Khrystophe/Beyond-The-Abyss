@@ -52,14 +52,16 @@
               <?php
               if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                 if ($page != 'logout') { ?>
-                  <a class="link" href="../actions/logout_action.php">Déconnexion<span class="menu__left__inner__item__small">#</span></a>
-                <?php } ?>
+                  <a class="link" href="/Diplome/assets/actions/logout_action.php">Déconnexion<span class="menu__left__inner__item__small">#</span></a>
+              <?php }
+              }
+              ?>
             </div>
             <div class="menu__left__inner__item">
-              <?php if ($page != 'index') { ?>
+              <?php if ($page != 'my_account') { ?>
                 <a class="link" href="my_account.php">Mon compte<span class="menu__left__inner__item__small">#</span></a>
-            <?php }
-              } ?>
+              <?php }
+              ?>
             </div>
             <div class="menu__left__inner__item">
               <?php if ($page != 'add_content') { ?>

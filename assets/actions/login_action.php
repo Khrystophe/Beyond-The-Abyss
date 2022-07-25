@@ -1,37 +1,43 @@
 <?php
 session_start();
-require('../require/co_bdd.php');
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password'])) {
 
-$req = $bdd->prepare('SELECT * FROM users WHERE email = ?');
-$req->execute([$email]);
-$user = $req->fetch();
+    require('../require/co_bdd.php');
 
-if ($user) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-    if (password_verify($password, $user['password'])) {
+    $req = $bdd->prepare('SELECT * FROM users WHERE email = ?');
+    $req->execute([$email]);
+    $user = $req->fetch();
 
-        $_SESSION['users']['id'] = $user['id'];
-        $_SESSION['users']['email'] = $user['email'];
-        $_SESSION['users']['name'] = $user['name'];
-        $_SESSION['users']['lastname'] = $user['lastname'];
-        $_SESSION['users']['type'] = $user['type'];
+    if ($user) {
 
-        if (isset($_GET['page']) && !empty($_GET['page'])) {
+        if (password_verify($password, $user['password'])) {
 
-            if ($_GET['page'] == 'ajout') {
-                header('location: ../ajout.php');
-            } else if ($_GET['page'] == 'compte') {
-                header('location: ../compte.php');
+            $_SESSION['users']['id'] = $user['id'];
+            $_SESSION['users']['email'] = $user['email'];
+            $_SESSION['users']['name'] = $user['name'];
+            $_SESSION['users']['lastname'] = $user['lastname'];
+            $_SESSION['users']['type'] = $user['type'];
+
+            if (isset($_GET['page']) && !empty($_GET['page'])) {
+
+                if ($_GET['page'] == 'add_content') {
+                    header('location: ../../add_content.php');
+                } else if ($_GET['page'] == 'my_account') {
+                    header('location: ../../my_account.php');
+                }
+            } else {
+                header('location: ../../index.php');
             }
         } else {
-            header('location: ../../index.php');
+            header('location: ../../login.php?error=password');
         }
     } else {
-        header('location: ../../connexionFormulaire.php?error=password');
+        header('location: ../../login.php?error=nonexist');
     }
 } else {
-    header('location: ../../connexionFormulaire.php?error=nonexist');
+    header('location: ../../login.php?error=empty');
 }

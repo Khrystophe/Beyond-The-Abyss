@@ -3,6 +3,7 @@ session_start();
 $page = 'content';
 require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
+var_dump($_SESSION);
 
 $req = $bdd->prepare('SELECT * FROM contents WHERE category = ? ');
 $req->execute(array(
