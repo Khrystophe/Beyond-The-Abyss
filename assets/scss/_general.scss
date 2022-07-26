@@ -92,3 +92,22 @@ h1{
   }
 }
 
+.main_logo {
+  margin: 0%;
+  padding: 0%;
+  top: 5%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 350px;
+  opacity: 0;  
+  animation: rotate_main_logo 8s linear infinite;
+}
+
+@keyframes rotate_main_logo {
+  from {
+        transform: rotate(0deg);
+  }
+  to {
+        transform: rotate(360deg);
+  }
+}

@@ -14,8 +14,8 @@ $req2 = $bdd->query("SELECT * FROM contents WHERE category = 'sheet' ORDER BY RA
 $randomSheet = $req2->fetch();
 
 ?>
-<main class="autoAlpha">
-  <div>
+<main class="autoAlpha" data-barba="wrapper">
+  <div data-barba="container" data-barba-namespace="index-section">
 
     <div>
       <?php if (isset($_GET['success']) && !empty($_GET['success'])) {
@@ -27,7 +27,7 @@ $randomSheet = $req2->fetch();
 
     <div class="wrapp">
       <div class="col2 hero">
-        <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
+        <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
         <div class="miror">
           <h1><span>Au delà de l'abîme</span><br>La musique des profondeurs</h1>
         </div>
@@ -36,7 +36,7 @@ $randomSheet = $req2->fetch();
     </div>
 
     <div class="features">
-      <a href="./content.php?category=tuto">
+      <a href="content.php?category=tuto">
         <div class="cards one">
           <div class="titles">Tutoriels</div>
           <div class="line one"></div>
@@ -44,7 +44,7 @@ $randomSheet = $req2->fetch();
           <div class="line three"></div>
         </div>
       </a>
-      <a href="./content.php?category=perf">
+      <a href="content.php?category=perf">
         <div class="cards two">
           <div class="titles">Performances</div>
           <div class="line one"></div>
@@ -52,7 +52,7 @@ $randomSheet = $req2->fetch();
           <div class="line three"></div>
         </div>
       </a>
-      <a href="./content.php?category=sheet">
+      <a href="content.php?category=sheet">
         <div class="cards three">
           <div class="titles">Partitions</div>
           <div class="line one"></div>

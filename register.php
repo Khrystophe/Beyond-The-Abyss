@@ -4,8 +4,8 @@ $page = "register";
 require('./assets/require/head.php');
 ?>
 
-<main class="autoAlpha">
-    <div>
+<main class="autoAlpha" data-barba="wrapper">
+    <div data-barba="container" data-barba-namespace="register-section">
 
         <div>
             <?php if (isset($_GET['error']) && !empty($_GET['error'])) {
@@ -21,7 +21,7 @@ require('./assets/require/head.php');
 
         <div class="wrapp">
             <div class="col2 hero">
-                <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
+                <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
                 <div class="miror">
                     <h1><span>Au delà de l'abîme</span><br>S'inscrire aux profondeurs</h1>
                 </div>

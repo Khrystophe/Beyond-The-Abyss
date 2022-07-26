@@ -5,12 +5,12 @@ require('./assets/require/head.php');
 ?>
 
 
-<main class="autoAlpha">
-  <div>
+<main class="autoAlpha" data-barba="wrapper">
+  <div data-barba="container" data-barba-namespace="add_content-section">
 
     <div class="wrapp">
       <div class="col2 hero">
-        <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
+        <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
         <div class="miror">
           <h1><span>Au delà de l'abîme</span><br>Ajouter du contenu des profondeurs</h1>
         </div>

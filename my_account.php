@@ -17,12 +17,12 @@ $req2->execute(array(
 $contents = $req2->fetchAll();
 ?>
 
-<main class="autoAlpha">
-    <div>
+<main class="autoAlpha" data-barba="wrapper">
+    <div data-barba="container" data-barba-namespace="my_account-section">
 
         <div class="wrapp">
             <div class="col2 hero">
-                <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
+                <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
                 <div class="miror">
                     <h1><span>Au delà de l'abîme</span><br>Votre compte des profondeurs</h1>
                 </div>

@@ -28,20 +28,20 @@ ON users.id = contents.id_users');
 $results = $join->fetchAll();
 
 ?>
-<main id="background" class="autoAlpha">
-    <div>
+<main id="background" class="autoAlpha" data-barba="wrapper">
+    <div data-barba="container" data-barba-namespace="content-section">
         <div class="wrapp">
             <div class="col2 hero">
                 <?php if ($_GET['category'] == 'tuto') {
                 ?>
 
                     <div class="miror">
-                        <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
+                        <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
                         <h1><span>Au delà de l'abîme</span><br>Les tutoriels des profondeurs</h1>
                     </div>
                     <style>
                         #background {
-                            background: url(./assets/img/piano) no-repeat fixed;
+                            background: var(--primary-color);
                             background-size: cover;
                             height: 100%;
                         }
@@ -50,12 +50,12 @@ $results = $join->fetchAll();
                 <?php } else if ($_GET['category'] == 'perf') {
                 ?>
                     <div class="miror">
-                        <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
+                        <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
                         <h1><span>Au delà de l'abîme</span><br>Les performances des profondeurs</h1>
                     </div>
                     <style>
                         #background {
-                            background: url(./assets/img/bride) no-repeat fixed;
+                            background: var(--primary-color);
                             background-size: cover;
                             height: 100%;
                         }
@@ -64,12 +64,12 @@ $results = $join->fetchAll();
                 <?php } else if ($_GET['category'] == 'sheet') {
                 ?>
                     <div class="miror">
-                        <img class="ringThree" src="./assets/img/musicgrise" alt="ringOfNotes">
+                        <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
                         <h1><span>Au delà de l'abîme</span><br>Les partitions des profondeurs</h1>
                     </div>
                     <style>
                         #background {
-                            background: url(./assets/img/sheet-music) no-repeat fixed;
+                            background: var(--primary-color);
                             background-size: cover;
                             height: 100%;
                         }
@@ -79,16 +79,25 @@ $results = $join->fetchAll();
             </div>
         </div>
 
-
-        <div id="app" class="content">
+        <div class="container">
             <?php foreach ($contents as $content) { ?>
-                <card class="box" data-image="./assets/contents_img/<?= $content['content'] ?>">
-                    <h2 slot="header">composituer<?= $content['title'] ?></h2>
-                    <h2 slot="header">composituer<?= $content['title'] ?></h2>
-                    <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </card>
+                <div class="box">
+                    <div class="card">
+                        <figure class="card__thumb">
+                            <img src="./assets/contents_img/<?= $content['content'] ?>" alt="" class="card__image">
+                            <figcaption class="card__caption">
+                                <h1 class="card__title"><?= $content['composer'] ?></h1>
+                                <h2 class="card__title"><?= $content['title'] ?></h2>
+                                <p class="card__snippet">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="<?= $content['id'] ?>" class="card__button">Read more</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
             <?php } ?>
         </div>
+
+
 
     </div>
     <?php

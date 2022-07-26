@@ -17,8 +17,8 @@
 </head>
 
 <body>
-  <div class="load-container">
-    <div class="load-screen"><img src="./assets/img/music-g8090509f0_1920.png" alt=""></div>
+  <div class="loading-container">
+    <div class="loading-screen"><img class="logo_transition" src="./assets/img/music-g8090509f0_1920.png" alt=""></div>
   </div>
   <header>
     <nav>
@@ -116,7 +116,7 @@
           </div>
         </div>
         <div class="sep"></div>
-        <div class="sep__icon"><img src="./assets/img/music-g8090509f0_1920.png" alt=""></div>
+        <div class="sep__icon"><img class="logo" src="./assets/img/music-g8090509f0_1920.png" alt=""></div>
       </div>
     </nav>
   </header>
