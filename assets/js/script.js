@@ -170,7 +170,8 @@ toggle.addEventListener('click', function() {
 let link= document.querySelectorAll('.link');
 
 for (let i = 0 ; i < link.length; i++) {
-  link[i].addEventListener('click', function(){
+  link[i].addEventListener('click', function(event){
+    event.preventDefault();
     if(body.classList.contains('open')) {
       
       body.classList.remove('open');
@@ -197,6 +198,9 @@ for (let i = 0 ; i < link.length; i++) {
             stagger: 0.25
           }, "<0.3")
     }
+    setTimeout(function(){
+      window.location.href = event.target.href
+    },1000)
   })
 }
 //////////////////////////////////CAROUSEL///////////////////////////////////
