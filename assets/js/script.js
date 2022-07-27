@@ -254,7 +254,7 @@ function contentAnimation() {
     opacity: 1
   },"-=3")
   .to('.hero-slider', {
-    opacity: 1
+    opacity: 1,
   }, "-=2")
   .from(".box, .box h2", {
     duration: 2,

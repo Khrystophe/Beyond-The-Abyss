@@ -22,10 +22,10 @@ $font-family-secondary: 'Roboto Slab', serif;
   .carousel-cell {
     width: 100%;
     height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
     .inner {
       position: relative;
       top: 40%;

@@ -66,7 +66,8 @@ $results = $join->fetchAll();
                 <div class="box">
                     <div class="card">
                         <figure class="card__thumb">
-                            <img src="./assets/contents_img/<?= $content['content'] ?>" alt="" class="card__image">
+                            <video class="card_video" src="./assets/contents_img/<?= $content['content'] ?>" type="video/mp4">
+                            </video>
                             <figcaption class="card__caption">
                                 <h1 class="card__title"><?= $content['composer'] ?></h1>
                                 <h2 class="card__title"><?= $content['title'] ?></h2>

@@ -64,7 +64,10 @@ $randomSheet = $req2->fetch();
     </div>
     <div class="hero-slider" data-carousel>
 
-      <div class="carousel-cell" style="background-image:url(./assets/contents_img/<?php echo $randomTuto['content']; ?>);">
+
+      <div class="carousel-cell">
+        <video class="carousel_video" src="./assets/contents_img/<?php echo $randomTuto['content']; ?>" type="video/mp4">
+        </video>
         <div class="overlay">
         </div>
         <div class="inner">
@@ -75,7 +78,9 @@ $randomSheet = $req2->fetch();
         </div>
       </div>
 
-      <div class="carousel-cell" style="background-image:url(./assets/contents_img/<?php echo $randomPerf['content']; ?>);">
+      <div class="carousel-cell">
+        <video class="carousel_video" src="./assets/contents_img/<?php echo $randomPerf['content']; ?>" type="video/mp4">
+        </video>
         <div class="overlay">
         </div>
         <div class="inner">
@@ -86,7 +91,9 @@ $randomSheet = $req2->fetch();
         </div>
       </div>
 
-      <div class="carousel-cell" style="background-image:url(./assets/contents_img/<?php echo $randomSheet['content']; ?>);">
+      <div class="carousel-cell">
+        <video class="carousel_video" src="./assets/contents_img/<?php echo $randomSheet['content']; ?>" type="video/mp4">
+        </video>
         <div class="overlay">
         </div>
         <div class="inner">
