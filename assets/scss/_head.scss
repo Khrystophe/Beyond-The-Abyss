@@ -54,11 +54,13 @@
 .menu__left {
   transform: translateX(-100%);
   overflow: hidden;
+ 
 }
 
 .menu__right {
   transform: translateX(100%);
   overflow: hidden;
+  
 }
 
 .open .menu__left, .open .menu__right {
@@ -152,7 +154,7 @@
 
   .logo{
     width: 8rem;
-  animation: rotateLogo 8s linear infinite;
+    animation: rotateLogo 8s linear infinite;
   }
 }
 
@@ -165,34 +167,3 @@
   }
 }
 
-//transition
-
-.logo_transition{
-  z-index: 10;
-  width: 350px;
-}
-.loading-screen {
-    position: relative;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    background-color: #4bedc2;
-    width: 0%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 10;
-}
-
-.loading-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 10;
-    pointer-events: none;
-}

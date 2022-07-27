@@ -31,6 +31,7 @@ $contents = $req2->fetchAll();
 
         <div class="features">
 
+
             <div class="align">
                 <?php if (isset($_GET['success']) && !empty($_GET['success'])) {
                     if ($_GET['success'] == 'modificationmotdepasse') { ?>
@@ -42,38 +43,37 @@ $contents = $req2->fetchAll();
                 <?php
                     }
                 } ?>
-            </div>
-            <div class="align">
                 <?php foreach ($account as $acc) { ?>
-                    <ul>
-                        <li>Nom d'utilsateur : <?= $acc['name'] ?> </li>
-                        <li>Email : <?= $acc['email'] ?></li>
-                        <li>
+                    <div>
+                        <div>Nom d'utilsateur : <?= $acc['name'] ?> </div>
+                        <div>Email : <?= $acc['email'] ?></div>
+                        <div>
                             <form>
-                                <button type="text"><a href="formulaireChangementMail.php"> Changer d'adresse mail</a></button>
+                                <button class="button" type="text"><a href="formulaireChangementMail.php"> Changer d'adresse mail</a></button>
                             </form>
-                        </li>
-                        <li>Mot de passe : </li>
-                        <li>
+                        </div>
+                        <div>Mot de passe : </div>
+                        <div>
                             <form>
-                                <button type="text"><a href="formulaireChangementDeMotDePasse.php"> Changer de mot de passe</a></button>
+                                <button class="button" type="text"><a href="formulaireChangementDeMotDePasse.php"> Changer de mot de passe</a></button>
                             </form>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 <?php } ?>
-            </div>
-            <div id="app" class="content">
-                <?php foreach ($contents as $content) { ?>
-                    <card class="box" data-image="./assets/contents_img/<?= $content['content'] ?>">
-                        <h2 slot="header"><?= $content['title'] ?></h2>
-                        <h2 slot="header"><?= $content['composer'] ?></h2>
-                        <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <a href="actions/modif.php?id=<?= $content['id'] ?>"><button>Modifier</button></a>
-                        <a href="actions/suppression.php?id=<?= $content['id'] ?>"><button>Supprimer</button></a>
-                    </card>
-                <?php } ?>
-            </div>
 
+                <div id="app" class="content">
+                    <?php foreach ($contents as $content) { ?>
+                        <card class="box" data-image="./assets/contents_img/<?= $content['content'] ?>">
+                            <h2 slot="header"><?= $content['title'] ?></h2>
+                            <h2 slot="header"><?= $content['composer'] ?></h2>
+                            <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="actions/modif.php?id=<?= $content['id'] ?>"><button>Modifier</button></a>
+                            <a href="actions/suppression.php?id=<?= $content['id'] ?>"><button>Supprimer</button></a>
+                        </card>
+                    <?php } ?>
+                </div>
+
+            </div>
         </div>
 
     </div>

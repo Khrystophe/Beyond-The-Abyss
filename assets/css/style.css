@@ -6,7 +6,7 @@
 }
 
 :root {
-  --primary-color: #161616;
+  --primary-color: #16161632;
   --secondary-color: #5e4b4b;
   --third-color: #fff;
   --fourth-color: #8f8f8f;
@@ -19,7 +19,12 @@ html {
 }
 
 body {
-  background: var(--primary-color);
+  background: url("/Diplome/assets/img/background.jpg") fixed;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: white;
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -42,6 +47,10 @@ nav {
 
 h1 {
   width: 77%;
+}
+
+.autoAlpha {
+  opacity: 0.9;
 }
 
 .miror {
@@ -106,6 +115,7 @@ h1 {
   }
 }
 .overlay {
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -119,8 +129,6 @@ h1 {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  margin-top: 7rem;
-  opacity: 0;
 }
 .hero-slider .carousel-cell {
   width: 100%;
@@ -131,7 +139,7 @@ h1 {
 }
 .hero-slider .carousel-cell .inner {
   position: relative;
-  top: -50%;
+  top: 40%;
   transform: translateY(-50%);
   color: white;
   text-align: center;
@@ -196,14 +204,76 @@ h1 {
   border: 0 solid #ff0000;
 }
 
-.load-screen {
+@media only screen and (max-width: 1240px) {
+  .hero-slider {
+    height: 69vh;
+  }
+}
+@media only screen and (max-width: 736px) {
+  .hero-slider {
+    height: 50vh;
+  }
+  .hero-slider .carousel-cell .inner .subtitle {
+    font-family: "Roboto Slab", serif;
+    font-size: 1.5rem;
+    line-height: 0.9em;
+    letter-spacing: 2.3px;
+    margin-bottom: 25px;
+  }
+  .hero-slider .carousel-cell .inner .title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    line-height: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .hero-slider {
+    height: 30vh;
+  }
+  .hero-slider .carousel-cell .inner .title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    line-height: 0.6em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+  }
+  .hero-slider .carousel-cell .inner .btn {
+    border: 1px solid #fff;
+    padding: 10px 12px;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+  }
+  .hero-slider .flickity-page-dots {
+    bottom: 15px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .flickity-prev-next-button {
+    display: none;
+  }
+}
+.logo_transition {
+  z-index: 10;
+  width: 350px;
+  animation: rotateLogo 8s linear infinite;
+}
+
+.loading-screen {
   position: relative;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  background-color: #4bedc2;
+  background: url("/Diplome/assets/img/bg.jpg") fixed;
   width: 0%;
   height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -211,7 +281,7 @@ h1 {
   z-index: 10;
 }
 
-.load-container {
+.loading-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -220,31 +290,6 @@ h1 {
   overflow: hidden;
   z-index: 10;
   pointer-events: none;
-}
-
-.button {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.button a {
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  color: white;
-  border: 1px solid white;
-  padding: 24px 40px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 10px;
-  transition: 0.3s;
-}
-
-.button:hover a {
-  background: white;
-  color: #161616;
-  transition: 0.3s;
 }
 
 .container {
@@ -537,18 +582,45 @@ span {
 
 .add_content_form {
   z-index: 10;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .register_form {
   z-index: 10;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .login_form {
   z-index: 10;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .align {
   z-index: 10;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+.align .button {
+  background-color: var(--secondary-color);
+}
+.align .button a {
+  color: black;
 }
 
 /* ///////////////////////////////////HEAD/////////////////////////////////// */
@@ -706,37 +778,6 @@ span {
     transform: rotate(360deg);
   }
 }
-.logo_transition {
-  z-index: 10;
-  width: 350px;
-}
-
-.loading-screen {
-  position: relative;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  background-color: #4bedc2;
-  width: 0%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  z-index: 10;
-}
-
-.loading-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  z-index: 10;
-  pointer-events: none;
-}
-
 /* FOOT */
 footer {
   opacity: 0;

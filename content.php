@@ -39,13 +39,7 @@ $results = $join->fetchAll();
                         <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
                         <h1><span>Au delà de l'abîme</span><br>Les tutoriels des profondeurs</h1>
                     </div>
-                    <style>
-                        #background {
-                            background: var(--primary-color);
-                            background-size: cover;
-                            height: 100%;
-                        }
-                    </style>
+
 
                 <?php } else if ($_GET['category'] == 'perf') {
                 ?>
@@ -53,13 +47,7 @@ $results = $join->fetchAll();
                         <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
                         <h1><span>Au delà de l'abîme</span><br>Les performances des profondeurs</h1>
                     </div>
-                    <style>
-                        #background {
-                            background: var(--primary-color);
-                            background-size: cover;
-                            height: 100%;
-                        }
-                    </style>
+
 
                 <?php } else if ($_GET['category'] == 'sheet') {
                 ?>
@@ -67,13 +55,7 @@ $results = $join->fetchAll();
                         <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
                         <h1><span>Au delà de l'abîme</span><br>Les partitions des profondeurs</h1>
                     </div>
-                    <style>
-                        #background {
-                            background: var(--primary-color);
-                            background-size: cover;
-                            height: 100%;
-                        }
-                    </style>
+
                 <?php } ?>
 
             </div>

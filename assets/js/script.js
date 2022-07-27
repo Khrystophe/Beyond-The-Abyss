@@ -167,10 +167,11 @@ for (let i = 0 ; i < link.length; i++) {
 //////////////////////////////////CAROUSEL///////////////////////////////////
 
 let options = {
-  accessibility: true,
+  autoPlay: true,
   prevNextButtons: true,
   pageDots: true,
   setGallerySize: false,
+  wrapAround: true,
   arrowShape: {
     x0: 10,
     x1: 60,
