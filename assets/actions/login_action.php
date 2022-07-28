@@ -1,9 +1,9 @@
 <?php
 session_start();
+require('../require/co_bdd.php');
 
 if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password'])) {
 
-    require('../require/co_bdd.php');
 
     $email = $_POST['email'];
     $password = $_POST['password'];

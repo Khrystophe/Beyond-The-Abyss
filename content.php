@@ -1,5 +1,6 @@
 <?php
 session_start();
+require('./assets/require/co_bdd.php');
 if ($_GET['category'] == 'tuto') {
     $page = 'contentTuto';
 } else if ($_GET['category'] == 'perf') {
@@ -7,8 +8,8 @@ if ($_GET['category'] == 'tuto') {
 } else if ($_GET['category'] == 'sheet') {
     $page = 'contentSheet';
 }
-require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
+
 
 $req = $bdd->prepare('SELECT * FROM contents WHERE category = ? ');
 $req->execute(array(

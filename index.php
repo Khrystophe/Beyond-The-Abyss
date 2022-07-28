@@ -1,7 +1,7 @@
 <?php
 session_start();
-$page = 'index';
 require('./assets/require/co_bdd.php');
+$page = 'index';
 require('./assets/require/head.php');
 
 $req = $bdd->query("SELECT * FROM contents WHERE category = 'tuto' ORDER BY RAND() LIMIT 1 ");
