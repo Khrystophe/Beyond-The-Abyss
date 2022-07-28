@@ -1,6 +1,4 @@
 <?php
-session_start();
-require('./assets/require/co_bdd.php');
 if ($_GET['category'] == 'tuto') {
     $page = 'contentTuto';
 } else if ($_GET['category'] == 'perf') {
@@ -8,6 +6,8 @@ if ($_GET['category'] == 'tuto') {
 } else if ($_GET['category'] == 'sheet') {
     $page = 'contentSheet';
 }
+session_start();
+require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
 
 
@@ -46,7 +46,7 @@ $results = $join->fetchAll();
                 ?>
                     <div class="miror">
                         <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
-                        <h1><span>Au delà de l'abîme</span><br>Les performances des profondeurs</h1>
+                        <h1 class="abyss"><span>Au delà de l'abîme</span><br>Les performances des profondeurs</h1>
                     </div>
 
 
@@ -54,7 +54,7 @@ $results = $join->fetchAll();
                 ?>
                     <div class="miror">
                         <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
-                        <h1><span>Au delà de l'abîme</span><br>Les partitions des profondeurs</h1>
+                        <h1 class="abyss"><span>Au delà de l'abîme</span><br>Les partitions des profondeurs</h1>
                     </div>
 
                 <?php } ?>

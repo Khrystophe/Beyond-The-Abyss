@@ -1,7 +1,7 @@
 <?php
+$page = 'add_content';
 session_start();
 require('./assets/require/co_bdd.php');
-$page = 'add_content';
 require('./assets/require/head.php');
 ?>
 

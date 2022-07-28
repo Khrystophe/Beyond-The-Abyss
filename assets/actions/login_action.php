@@ -4,7 +4,6 @@ require('../require/co_bdd.php');
 
 if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password'])) {
 
-
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -22,22 +21,11 @@ if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password'
             $_SESSION['users']['lastname'] = $user['lastname'];
             $_SESSION['users']['type'] = $user['type'];
 
-            if (isset($_GET['page']) && !empty($_GET['page'])) {
-
-                if ($_GET['page'] == 'add_content') {
-                    header('location: ../../add_content.php');
-                } else if ($_GET['page'] == 'my_account') {
-                    header('location: ../../my_account.php');
-                }
-            } else {
-                header('location: ../../index.php');
-            }
+            header('location: ../../index.php');
         } else {
             header('location: ../../login.php?error=password');
         }
     } else {
         header('location: ../../login.php?error=nonexist');
     }
-} else {
-    header('location: ../../login.php?error=empty');
 }

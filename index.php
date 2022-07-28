@@ -1,7 +1,7 @@
 <?php
+$page = 'index';
 session_start();
 require('./assets/require/co_bdd.php');
-$page = 'index';
 require('./assets/require/head.php');
 
 $req = $bdd->query("SELECT * FROM contents WHERE category = 'tuto' ORDER BY RAND() LIMIT 1 ");
@@ -148,11 +148,11 @@ $randomSheet = $req2->fetch();
             <h1 class="who">Contact</h1>
             <form class="contact_form">
               <label>Votre nom :</label>
-              <input type="text" placeholder="Omar Khattab">
+              <input type="text">
               <label>Votre email :</label>
-              <input type="text" placeholder="Example@mail.com">
+              <input type="text">
               <label>Votre message :</label>
-              <textarea placeholder="The Subject"></textarea>
+              <textarea></textarea>
               <input type="submit" value="Done">
             </form>
           </div>

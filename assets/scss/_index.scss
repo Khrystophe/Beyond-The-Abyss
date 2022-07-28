@@ -3,7 +3,6 @@
 
   /////////////////////////////////////////////////////////////////////
 .wrapp{
-  // margin: 1em 1em 1em;
   height: 40vh;
   display: flex;
   flex-direction: column;
@@ -12,6 +11,7 @@
 
 .features{
   height: 60vh;
+  margin: 0 15px 0 15px;
 
   a{
     text-decoration: none;
@@ -122,8 +122,6 @@
       }
     }
 }
-  
-
 
 @media only screen and (min-width: 332px){
   .miror {
@@ -183,12 +181,9 @@
     width: 45%;
   }
 
-
   .features .card {
       margin-bottom: 0;
-      
   }
-  
 }
 
 @media only screen and (min-width: 1170px) { 
@@ -208,7 +203,6 @@
     width: 22%;
   }
 }
-
 
 span {
   color: #f1c40f;

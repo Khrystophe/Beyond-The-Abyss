@@ -1,6 +1,6 @@
 <?php
-session_start();
 $page = 'login';
+session_start();
 require('./assets/require/head.php');
 ?>
 
@@ -13,8 +13,6 @@ require('./assets/require/head.php');
                     <h5>Mot de passe incorrect</h5>
                 <?php } else if ($_GET['error'] == 'nonexist') { ?>
                     <h5>Cet utilisateur n'existe pas</h5>
-                <?php } else if ($_GET['error'] == 'empty') { ?>
-                    <h5>Veuillez remplir tous les champs</h5>
             <?php }
             } ?>
         </div>
@@ -28,42 +26,23 @@ require('./assets/require/head.php');
             </div>
         </div>
 
-        <div class="features">
+        <div class="login">
+            <form class="login_form" action="./assets/actions/login_action.php" method="post">
+                <h3>Connexion</h3>
 
-            <?php if (isset($_GET['page']) && !empty($_GET['page'])) {
-                if ($_GET['page'] == 'add_content') { ?>
-                    <form class="login_form" action="./assets/actions/login_action.php?page=add_content" method="post">
+                <input class="login_input" type="text" placeholder="Email" name="email" required>
 
-                        <input type="email" name="email" placeholder="Votre email">
-                        <input type="password" name="password" placeholder="Votre mot de passe">
+                <input class="login_input" type="password" placeholder="Mot de passe" name="password" required>
 
-                        <input type="submit">
-                    </form>
-                <?php } else if ($_GET['page'] == 'account') { ?>
-                    <form class="login_form" action="./assets/actions/login_action.php?page=account" method="post">
-
-                        <input type="email" name="email" placeholder="Votre email">
-                        <input type="password" name="password" placeholder="Votre mot de passe">
-
-                        <input type="submit">
-                    </form>
-                <?php }
-            } else { ?>
-                <form class="login_form" action="./assets/actions/login_action.php" method="post">
-
-                    <input type="email" name="email" placeholder="Votre email">
-                    <input type="password" name="password" placeholder="Votre mot de passe">
-
-                    <input type="submit">
-                </form><?php } ?>
+                <button class="login_button" type="submit">Se connecter</button>
+            </form>
         </div>
-
     </div>
+    <?php
+    require('./assets/require/foot.php');
+    ?>
 </main>
 
-<?php
-require('./assets/require/foot.php');
-?>
 
 </body>
 

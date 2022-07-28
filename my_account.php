@@ -1,7 +1,7 @@
 <?php
+$page = 'my_account';
 session_start();
 require('./assets/require/co_bdd.php');
-$page = 'my_account';
 require('./assets/require/head.php');
 
 $req = $bdd->prepare('SELECT * FROM users WHERE id= ?');
