@@ -36,8 +36,8 @@ $results = $join->fetchAll();
                 ?>
 
                     <div class="miror">
-                        <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
-                        <h1><span>Au delà de l'abîme</span><br>Les tutoriels des profondeurs</h1>
+                        <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+                        <h1 class="abyss"><span>Au delà de l'abîme</span><br>Les tutoriels des profondeurs</h1>
                     </div>
 
 

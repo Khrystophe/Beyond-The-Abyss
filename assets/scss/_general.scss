@@ -48,7 +48,7 @@ nav {
   height: 100%;
 }
 
-h1{
+.abyss{
   width: 77%;
 }
 
@@ -61,7 +61,7 @@ h1{
   justify-content: center;
   align-items: center;
   
-  h1 {
+  .abyss {
     font-family: 'Merriweather', serif;
     opacity: 0;
     transform: translateY(100px);
@@ -70,7 +70,7 @@ h1{
     position: absolute;
   }
   
-  h1::before {
+  .abyss::before {
     content: '';
     height: 100%;
     width: 100%;
@@ -81,11 +81,11 @@ h1{
     pointer-events: none;
     transform: perspective(4.5rem) rotateX(46deg) scale(1,0.4);
     filter: blur(1.5rem);
-    opacity: 0.2;
+    opacity: 0.3;
     border-radius: 50%;
   }
 
-   h1 span::before{
+   .abyss span::before{
     content: '';
     height: 100%;
     width: 100%;
@@ -96,7 +96,7 @@ h1{
     pointer-events: none;
     transform: perspective(4.5rem) rotateX(46deg) scale(0.5,0.1);
     filter: blur(5.5rem);
-    opacity: 0.2;
+    opacity: 0.3;
     border-radius: 50%;
   }
 }

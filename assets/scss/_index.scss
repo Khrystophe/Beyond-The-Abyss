@@ -127,10 +127,10 @@
 
 @media only screen and (min-width: 332px){
   .miror {
-      h1::before {
+      .abyss::before {
       top: 140%;
       }
-      h1 span::before{
+      .abyss span::before{
       top:140%;
       }
     }
@@ -138,7 +138,7 @@
 
 @media only screen and (min-width: 507px) {
 
-  h1 {
+  .abyss {
       font-size: 2rem;
       width: 53%;  
   }
@@ -160,17 +160,17 @@
       }
   }
 
-  h1 {
+  .abyss {
     font-size: 3rem;
     width: 54%;
     margin-top: 0rem;
   }
 
   .miror {
-    h1::before {
+    .abyss::before {
     top: 96%;
     }
-    h1 span::before{
+    .abyss span::before{
     top: 96%;
     }
   }
@@ -179,7 +179,7 @@
 
 
 @media only screen and (min-width: 1083px) { 
-  h1{
+  .abyss{
     width: 45%;
   }
 
@@ -192,19 +192,19 @@
 }
 
 @media only screen and (min-width: 1170px) { 
-  h1{
+  .abyss{
     width: 33%;
   }
 }
 
 @media only screen and (min-width: 1320px) { 
-  h1{
+  .abyss{
     width: 29%;
   }
 }
 
 @media only screen and (min-width: 1740px) { 
-  h1{
+  .abyss{
     width: 22%;
   }
 }

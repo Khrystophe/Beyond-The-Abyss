@@ -21,9 +21,9 @@ require('./assets/require/head.php');
 
         <div class="wrapp">
             <div class="col2 hero">
-                <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
+                <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
                 <div class="miror">
-                    <h1><span>Au delà de l'abîme</span><br>S'inscrire aux profondeurs</h1>
+                    <h1 class="abyss"><span>Au delà de l'abîme</span><br>S'inscrire aux profondeurs</h1>
                 </div>
             </div>
         </div>

@@ -37,7 +37,7 @@ toggle.addEventListener('click', function() {
       .to('footer', {
         opacity: 1
       }, "-=2")
-      .to('.hero-slider', {
+      .to('.random_content', {
         opacity: 1,
         duration: 3.9
       }, "-=2")
@@ -87,7 +87,7 @@ toggle.addEventListener('click', function() {
       .to('footer', {
         opacity: 0
       }, "-=3")
-      .to('.hero-slider', {
+      .to('.random_content', {
         opacity: 0
       }, "-=2")
       .set('.autoAlpha', {
@@ -163,37 +163,6 @@ for (let i = 0 ; i < link.length; i++) {
   })
 }
 
-
-//////////////////////////////////CAROUSEL///////////////////////////////////
-
-let options = {
-  autoPlay: true,
-  prevNextButtons: true,
-  pageDots: true,
-  setGallerySize: false,
-  wrapAround: true,
-  arrowShape: {
-    x0: 10,
-    x1: 60,
-    y1: 50,
-    x2: 60,
-    y2: 45,
-    x3: 15
-  }
-};
-
-let carousel = document.querySelector('[data-carousel]');
-let slides = document.getElementsByClassName('carousel-cell');
-let flkty = new Flickity(carousel, options);
-
-flkty.on('scroll', function () {
-  flkty.slides.forEach(function (slide, i) {
-    let image = slides[i];
-    let x = (slide.target + flkty.x) * -1/3;
-    image.style.backgroundPosition = x + 'px';
-  });
-});
-
 ////////////////////// PAGE TRANSITION////////////////////////
 
 
@@ -253,7 +222,7 @@ function contentAnimation() {
   .to('footer', {
     opacity: 1
   },"-=3")
-  .to('.hero-slider', {
+  .to('.random_content', {
     opacity: 1,
   }, "-=2")
   .from(".box, .box h2", {

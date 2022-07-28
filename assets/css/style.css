@@ -1,4 +1,5 @@
 /* /////////////////////////////////GENERAL///////////////////////////////// */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800");
 * {
   margin: 0;
   padding: 0;
@@ -45,7 +46,7 @@ nav {
   height: 100%;
 }
 
-h1 {
+.abyss {
   width: 77%;
 }
 
@@ -58,7 +59,7 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-.miror h1 {
+.miror .abyss {
   font-family: "Merriweather", serif;
   opacity: 0;
   transform: translateY(100px);
@@ -66,7 +67,7 @@ h1 {
   margin-top: 2rem;
   position: absolute;
 }
-.miror h1::before {
+.miror .abyss::before {
   content: "";
   height: 100%;
   width: 100%;
@@ -77,10 +78,10 @@ h1 {
   pointer-events: none;
   transform: perspective(4.5rem) rotateX(46deg) scale(1, 0.4);
   filter: blur(1.5rem);
-  opacity: 0.2;
+  opacity: 0.3;
   border-radius: 50%;
 }
-.miror h1 span::before {
+.miror .abyss span::before {
   content: "";
   height: 100%;
   width: 100%;
@@ -91,7 +92,7 @@ h1 {
   pointer-events: none;
   transform: perspective(4.5rem) rotateX(46deg) scale(0.5, 0.1);
   filter: blur(5.5rem);
-  opacity: 0.2;
+  opacity: 0.3;
   border-radius: 50%;
 }
 
@@ -123,149 +124,319 @@ h1 {
   width: 100%;
 }
 
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to bottom, rgba(14, 29, 51, 0.8), rgba(14, 29, 51, 0.2));
+.random_content {
+  font-family: "Montserrat", helvetica, arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0;
 }
 
-.hero-slider {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-.hero-slider .carousel-cell {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.hero-slider .carousel-cell .inner {
+.content_card {
   position: relative;
-  top: 40%;
-  transform: translateY(-50%);
-  color: white;
-  text-align: center;
+  display: block;
+  width: 800px;
+  height: 350px;
+  margin: 100px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.4s;
 }
-.hero-slider .carousel-cell .inner .subtitle {
-  font-family: "Roboto Slab", serif;
-  font-size: 2.2rem;
-  line-height: 1.2em;
-  font-weight: 200;
-  font-style: italic;
-  letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 5px;
+.content_card:hover {
+  transform: scale(1.02);
+  transition: all 0.4s;
 }
-.hero-slider .carousel-cell .inner .title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 3rem;
-  line-height: 1.2em;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 40px;
+.content_card .info_section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-blend-mode: multiply;
+  z-index: 2;
+  border-radius: 10px;
 }
-.hero-slider .carousel-cell .inner .btn {
-  border: 1px solid #fff;
-  padding: 14px 18px;
-  text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 3px;
+.content_card .info_section .content_header {
+  position: relative;
+  padding: 25px;
+  height: 40%;
+}
+.content_card .info_section .content_header h3 {
   color: #fff;
+  font-weight: 400;
+  font-size: 2rem;
+}
+.content_card .info_section .content_header h4 {
+  color: #9ac7fa;
+  font-weight: 400;
+}
+.content_card .info_section .content_header .see_content {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+}
+.content_card .info_section .content_header .see_content a {
   text-decoration: none;
-  transition: all 0.2s ease;
+  color: #fff;
 }
-.hero-slider .carousel-cell .inner .btn:hover {
-  background: #fff;
-  color: #000;
+.content_card .info_section .content_header .type {
+  display: inline-block;
+  color: #cee4fd;
+  margin-top: 10px;
 }
-.hero-slider .flickity-prev-next-button {
-  width: 80px;
-  height: 80px;
-  background: transparent;
+.content_card .info_section .content_header .content {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  height: 120px;
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
 }
-.hero-slider .flickity-prev-next-button:hover {
-  background: transparent;
+.content_card .info_section .content_desc {
+  padding: 25px;
+  height: 50%;
 }
-.hero-slider .flickity-prev-next-button .arrow {
-  fill: white;
+.content_card .info_section .content_desc .text {
+  color: #cfd6e1;
 }
-.hero-slider .flickity-page-dots {
-  bottom: 30px;
+.content_card .info_section .content_social {
+  height: 10%;
+  padding-left: 15px;
+  padding-bottom: 20px;
 }
-.hero-slider .flickity-page-dots .dot {
-  width: 30px;
-  height: 4px;
-  opacity: 1;
-  background: rgba(255, 255, 255, 0.5);
-  border: 0 solid white;
-  border-radius: 0;
+.content_card .info_section .content_social ul {
+  list-style: none;
+  padding: 0;
 }
-.hero-slider .flickity-page-dots .dot.is-selected {
-  background: #ff0000;
-  border: 0 solid #ff0000;
+.content_card .info_section .content_social ul li {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s;
+  transition-delay: 0.15s;
+  margin: 0 10px;
+}
+.content_card .info_section .content_social ul li:hover {
+  transition: color 0.3s;
+  color: rgba(255, 255, 255, 0.8);
+}
+.content_card .info_section .content_social ul li i {
+  font-size: 19px;
+  cursor: pointer;
+}
+.content_card .blur_back {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  right: 0;
+  background-size: cover;
+  border-radius: 11px;
 }
 
-@media only screen and (max-width: 1240px) {
-  .hero-slider {
-    height: 69vh;
+@media screen and (min-width: 768px) {
+  .content_header {
+    width: 60%;
+  }
+  .content_desc {
+    width: 50%;
+  }
+  .info_section {
+    background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
+  }
+  .blur_back {
+    width: 80%;
+    background-position: -100% 10% !important;
   }
 }
-@media only screen and (max-width: 736px) {
-  .hero-slider {
-    height: 50vh;
+@media screen and (max-width: 768px) {
+  .content_card {
+    width: 95%;
+    margin: 70px auto;
+    min-height: 350px;
+    height: auto;
   }
-  .hero-slider .carousel-cell .inner .subtitle {
-    font-family: "Roboto Slab", serif;
-    font-size: 1.5rem;
-    line-height: 0.9em;
-    letter-spacing: 2.3px;
-    margin-bottom: 25px;
+  .blur_back {
+    width: 100%;
+    background-position: 50% 50% !important;
   }
-  .hero-slider .carousel-cell .inner .title {
-    font-family: "Montserrat", sans-serif;
-    font-size: 2rem;
-    line-height: 0.8em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 40px;
+  .content_header {
+    width: 100%;
+    margin-top: 85px;
   }
-}
-@media only screen and (max-width: 580px) {
-  .hero-slider {
-    height: 30vh;
+  .content_desc {
+    width: 100%;
   }
-  .hero-slider .carousel-cell .inner .title {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
-    line-height: 0.6em;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 30px;
-  }
-  .hero-slider .carousel-cell .inner .btn {
-    border: 1px solid #fff;
-    padding: 10px 12px;
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-  }
-  .hero-slider .flickity-page-dots {
-    bottom: 15px;
+  .info_section {
+    background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
+    display: inline-grid;
   }
 }
-@media only screen and (max-width: 400px) {
-  .flickity-prev-next-button {
-    display: none;
-  }
+#tuto {
+  box-shadow: 0px 0px 150px -45px rgba(255, 51, 0, 0.5);
 }
+#tuto:hover {
+  box-shadow: 0px 0px 120px -55px rgba(255, 51, 0, 0.5);
+}
+
+.tuto_back {
+  background: url("../img/piano-1846719_1920.jpg");
+}
+
+#perf {
+  box-shadow: 0px 0px 150px -45px rgba(19, 160, 134, 0.6);
+}
+#perf:hover {
+  box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
+}
+
+.perf_back {
+  background: url("../img/stage-curtain-660078_1920.jpg");
+}
+
+#sheet {
+  box-shadow: 0px 0px 150px -45px rgba(199, 147, 75, 0.7);
+}
+#sheet:hover {
+  box-shadow: 0px 0px 120px -55px rgba(199, 147, 75, 0.7);
+}
+
+.sheet_back {
+  background: url("../img/sheet-music-4121936_1920.jpg");
+}
+
+.reverse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: "Montserrat";
+  margin-bottom: 100px;
+}
+
+.contact_presentation {
+  min-width: 250px;
+  min-height: 350px;
+  border-radius: 20px;
+  position: relative;
+  transition: 1.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.side {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+
+.contact_content {
+  transform: translatez(70px) scale(0.8);
+  line-height: 1.5em;
+}
+
+.contact_content .who {
+  position: relative;
+}
+
+.contact_content p {
+  margin-top: 50px;
+  line-height: 2em;
+}
+
+.contact_content .who:before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  height: 3px;
+  background-color: #3e3;
+  width: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.front {
+  z-index: 2;
+  background-size: 100vh;
+  background-size: cover;
+  background-image: url("../img/abstract-g64ed80653_1920.jpg");
+}
+
+.front .who {
+  line-height: 2rem;
+}
+
+.back {
+  background-color: #333;
+  transform: rotateY(180deg);
+  z-index: 0;
+  padding-top: 10px;
+  background-image: url("../img/abstract-g64ed80653_1920.jpg");
+}
+
+.contact_presentation:hover {
+  transform: rotateY(180deg);
+}
+
+.contact_form {
+  text-align: left;
+  margin-top: 3rem;
+}
+
+.back .who {
+  margin-top: -1rem;
+}
+
+.contact_form label,
+.contact_form input {
+  display: block;
+}
+
+.contact_form input,
+.contact_form textarea {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid #444;
+  padding: 5px;
+  width: 100%;
+  color: #fff;
+}
+
+.contact_form label {
+  margin: 15px 0;
+}
+
+.contact_form input[type=submit] {
+  display: block;
+  width: auto;
+  margin: 10px auto;
+  padding: 5px 10px;
+  border: 3px solid #555;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* my button style  */
+.white-mode {
+  text-decoration: none;
+  padding: 7px 10px;
+  background-color: #122;
+  border-radius: 3px;
+  color: #fff;
+  transition: 0.35s ease-in-out;
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  font-family: "Montserrat";
+}
+
+.white-mode:hover {
+  background-color: #fff;
+  color: #122;
+}
+
 .logo_transition {
   z-index: 10;
   width: 350px;
@@ -313,9 +484,15 @@ h1 {
   width: 350px;
   margin: 10px;
   background-color: white;
-  box-shadow: 0 5px 10px 0 rgba(186, 178, 178, 0.5);
+  transition: all 0.4s;
+  box-shadow: 0px 0px 150px -45px rgba(199, 147, 75, 0.9);
   border-radius: 5px;
   overflow: hidden;
+}
+.card:hover {
+  box-shadow: 0px 0px 120px -55px rgba(199, 147, 75, 0.7);
+  transform: scale(1.02);
+  transition: all 0.4s;
 }
 .card:hover .card__caption {
   top: 50%;
@@ -524,15 +701,15 @@ h1 {
 }
 
 @media only screen and (min-width: 332px) {
-  .miror h1::before {
+  .miror .abyss::before {
     top: 140%;
   }
-  .miror h1 span::before {
+  .miror .abyss span::before {
     top: 140%;
   }
 }
 @media only screen and (min-width: 507px) {
-  h1 {
+  .abyss {
     font-size: 2rem;
     width: 53%;
   }
@@ -550,20 +727,20 @@ h1 {
   .features .card .title {
     margin-top: 0;
   }
-  h1 {
+  .abyss {
     font-size: 3rem;
     width: 54%;
     margin-top: 0rem;
   }
-  .miror h1::before {
+  .miror .abyss::before {
     top: 96%;
   }
-  .miror h1 span::before {
+  .miror .abyss span::before {
     top: 96%;
   }
 }
 @media only screen and (min-width: 1083px) {
-  h1 {
+  .abyss {
     width: 45%;
   }
   .features .card {
@@ -571,17 +748,17 @@ h1 {
   }
 }
 @media only screen and (min-width: 1170px) {
-  h1 {
+  .abyss {
     width: 33%;
   }
 }
 @media only screen and (min-width: 1320px) {
-  h1 {
+  .abyss {
     width: 29%;
   }
 }
 @media only screen and (min-width: 1740px) {
-  h1 {
+  .abyss {
     width: 22%;
   }
 }
@@ -589,15 +766,111 @@ span {
   color: #f1c40f;
 }
 
-.add_content_form {
-  z-index: 10;
-  height: 60vh;
+.add {
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 100px;
+  margin-top: 11rem;
 }
 
+.add_content {
+  opacity: 0.7;
+  width: 60rem;
+  margin: auto;
+  background: white;
+  position: center;
+  align-self: center;
+  top: 50rem;
+  border-radius: 1.5rem;
+  box-shadow: 4px 3px 20px rgba(53, 53, 53, 0.5490196078);
+  display: flex;
+  flex-direction: row;
+}
+
+.leftside {
+  background: #030303;
+  width: 25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+.leftside img {
+  width: 250px;
+  animation: rotateLogo 8s linear infinite;
+}
+
+.rightside {
+  background-color: #000000;
+  width: 35rem;
+  border-bottom-right-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  padding: 1rem 2rem 3rem 3rem;
+}
+
+p {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0.8rem 0;
+}
+
+.inputbox {
+  color: #030303;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1.5px solid #ccc;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  font-family: "Roboto", sans-serif;
+  color: #615a5a;
+  font-size: 1.1rem;
+  font-weight: 500;
+  outline: none;
+}
+
+.button {
+  background: linear-gradient(135deg, #753370 0%, #298096 100%);
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  width: 100%;
+  letter-spacing: 0.11rem;
+  outline: none;
+}
+
+.button:hover {
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 3px 3px 6px rgba(56, 55, 55, 0.5215686275);
+}
+
+@media only screen and (max-width: 1000px) {
+  .add_content {
+    flex-direction: column;
+    width: 80%;
+  }
+  .leftside {
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-radius: 0;
+  }
+  .rightside {
+    width: auto;
+    border-bottom-left-radius: 1.5rem;
+    padding: 0.5rem 3rem 3rem 2rem;
+    border-radius: 0;
+  }
+}
 .register_form {
   z-index: 10;
   height: 60vh;
@@ -790,7 +1063,7 @@ span {
 /* FOOT */
 footer {
   opacity: 0;
-  background: linear-gradient(90.73deg, #C9729A 4%, #923ADB 97.46%);
+  background: linear-gradient(90.73deg, #ddd8da 4%, #130121 97.46%);
   padding: 2em 1em;
   color: #1A1A1A;
   font-weight: bold;
