@@ -66,15 +66,18 @@ $randomSheet = $req2->fetch();
       <div class="content_card" id="tuto">
         <div class="info_section">
           <div class="content_header">
+            <div>
+              <h3><?php echo $randomTuto['title']; ?></h3>
+              <h4><?php echo $randomTuto['composer']; ?></h4>
+              <span class="see_content"><a href="./single_player_content.php?id=<?= $randomTuto['id'] ?>" class="btn">Voir</a>
+              </span>
+              <p class="type">Action, Crime, Fantasy</p>
+            </div>
             <video class="content" src="./assets/contents_img/<?php echo $randomTuto['content']; ?>" type="video/mp4"></video>
-            <h3><?php echo $randomTuto['title']; ?></h3>
-            <h4><?php echo $randomTuto['composer']; ?></h4>
-            <span class="see_content"><a href="./single_player_content.php?id=<?= $randomTuto['id'] ?>" class="btn">Voir</a></span>
-            <p class="type">Action, Crime, Fantasy</p>
           </div>
           <div class="content_desc">
             <p class="text">
-              Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur veritatis itaque illum accusantium ratione voluptatem autem culpa aut est possimus!
             </p>
           </div>
           <div class="content_social">
@@ -89,16 +92,18 @@ $randomSheet = $req2->fetch();
       <div class="content_card" id="perf">
         <div class="info_section">
           <div class="content_header">
+            <div>
+              <h3><?php echo $randomPerf['title']; ?></h3>
+              <h4><?php echo $randomPerf['composer']; ?></h4>
+              <span class="see_content"><a href="./single_player_content.php?id=<?= $randomPerf['id'] ?>" class="btn">Voir</a></span>
+              <p class="type">Action, Fantasy</p>
+            </div>
             <video class="content" src="./assets/contents_img/<?php echo $randomPerf['content']; ?>" type="video/mp4">
             </video>
-            <h3><?php echo $randomPerf['title']; ?></h3>
-            <h4><?php echo $randomPerf['composer']; ?></h4>
-            <span class="see_content"><a href="./single_player_content.php?id=<?= $randomPerf['id'] ?>" class="btn">Voir</a></span>
-            <p class="type">Action, Fantasy</p>
           </div>
           <div class="content_desc">
             <p class="text">
-              Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits when she finds herself on the island where her father disappeared.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ducimus autem enim delectus veritatis ab, possimus recusandae? Sequi, eligendi consequatur.
             </p>
           </div>
           <div class="content_social">
@@ -113,16 +118,18 @@ $randomSheet = $req2->fetch();
       <div class="content_card" id="sheet">
         <div class="info_section">
           <div class="content_header">
+            <div>
+              <h3><?php echo $randomSheet['title']; ?></h3>
+              <h4><?php echo $randomSheet['composer']; ?></h4>
+              <span class="see_content"><a href="./single_player_content.php?id=<?= $randomSheet['id'] ?>" class="btn">Voir</a></span>
+              <p class="type">Action, Adventure</p>
+            </div>
             <video class="content" src="./assets/contents_img/<?php echo $randomSheet['content']; ?>" type="video/mp4">
             </video>
-            <h3><?php echo $randomSheet['title']; ?></h3>
-            <h4><?php echo $randomSheet['composer']; ?></h4>
-            <span class="see_content"><a href="./single_player_content.php?id=<?= $randomSheet['id'] ?>" class="btn">Voir</a></span>
-            <p class="type">Action, Adventure</p>
           </div>
           <div class="content_desc">
             <p class="text">
-              T'Challa, the King of Wakanda, rises to the throne in the isolated, technologically advanced African nation, but his claim is challenged by a vengeful outsider who was a childhood victim of T'Challa's father's mistake.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus non ipsa quas dolorum accusantium iure quae esse debitis id tempore!
             </p>
           </div>
           <div class="content_social">
