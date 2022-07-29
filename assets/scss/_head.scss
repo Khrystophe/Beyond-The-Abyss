@@ -70,7 +70,6 @@
 /* Inner Menu Left */
 
 .menu__left__inner__item {
-  font-family: var(--primary-font);
   font-size: 3rem;
   margin-bottom: 2rem;
 }
@@ -89,14 +88,9 @@
   color: var(--secondary-color);
 }
 
-.menu__left__inner__item__small {
-  font-family: var(--secondary-font);
-  font-size: 1.25rem;
-}
 
 /* Inner Right Menu */
 .menu__right__inner__item__title {
-  font-family: var(--primary-font);
   font-size: 3rem;
   color: var(--third-color);
 }
@@ -111,7 +105,6 @@
 
 .menu__right__inner__item ul li a {
   color: var(--fourth-color);
-  font-family: var(--secondary-font);
   text-decoration: none;
   font-size: 1.25rem;
   transition: color 1s;

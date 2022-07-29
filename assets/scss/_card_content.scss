@@ -22,7 +22,6 @@ $desktop: 280px;
 	width: 350px;
 	margin: 10px;
 	background-color: white;
-	// box-shadow: 0 5px 10px 0 rgba(186, 178, 178, 0.5);
 	transition: all 0.4s;
 	box-shadow: 0px 0px 150px -45px rgba(199,147,75, 0.9);
   &:hover{
@@ -101,30 +100,22 @@ $desktop: 280px;
 	}
 
 	&__title {
-		display: -webkit-box;
 		max-height: 85px;
     overflow: hidden;
-		font-family: 'Playfair Display', serif;
 		font-size: 23px;
 		line-height: 28px;
 		text-shadow: 0px 1px 5px black;
 		text-overflow: ellipsis;
-    -webkit-line-clamp: 3;
-		-webkit-box-orient: vertical;
 	}
 
 	&__snippet {
-		display: -webkit-box;
 		max-height: 150px;
 		margin: 20px 0;
 		overflow: hidden;
-		font-family: 'Roboto', sans-serif;
 		font-size: 16px;
 		line-height: 20px;
 		text-overflow: ellipsis;
 		transition: .5s ease-in-out;
-    -webkit-line-clamp: 5;
-		-webkit-box-orient: vertical;
 		
 		@include breakpoint(desktop) {
 			margin: 60px 0;
@@ -136,7 +127,6 @@ $desktop: 280px;
 		padding: 10px 20px;
 		color: white;
 		border: 1px solid white;
-		font-family: 'Roboto', sans-serif;
 		font-size: 12px;
 		text-transform: uppercase;
 		text-decoration: none;
