@@ -80,33 +80,38 @@ $randomSheet = $req2->fetch();
       <div class="random_content">
 
 
-         <div class="content_card" id="tuto">
-            <div class="info_section">
-               <div class="content_header">
+         <div class="content_card tuto">
+
+            <div class="gradient tuto">
+            </div>
+
+            <div class="info_section tuto">
+               <div class="content_header tuto">
 
                   <div>
-                     <h3><?= htmlspecialchars($randomTuto['title']); ?></h3>
-                     <h4><?= htmlspecialchars($randomTuto['composer']); ?></h4>
+                     <h2><?= htmlspecialchars($randomTuto['title']); ?></h2>
+                     <h3><?= htmlspecialchars($randomTuto['composer']); ?></h3>
 
-                     <span class="see_content"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomTuto['id']); ?>" class="btn">Voir</a>
+                     <span class="see_content tuto"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomTuto['id']); ?>" class="btn">Voir</a>
                      </span>
 
-                     <p class="type">Action, Crime, Fantasy</p>
+                     <div class="type tuto">Action, Crime, Fantasy</div>
                   </div>
 
-                  <video class="content" src="./assets/contents_img/<?= htmlspecialchars($randomTuto['content']); ?>" type="video/mp4"></video>
 
                </div>
 
-               <div class="content_desc">
+               <div>
+                  <video class="content tuto" src="./assets/contents_img/<?= htmlspecialchars($randomTuto['content']); ?>" type="video/mp4"></video>
+               </div>
 
+               <div class="content_desc tuto">
                   <p class="text">
                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur veritatis itaque illum accusantium ratione voluptatem autem culpa aut est possimus!
                   </p>
-
                </div>
 
-               <div class="content_social">
+               <div class="content_social tuto">
                   <ul>
                      <li><i class="material-icons">User</i></li>
                   </ul>
@@ -119,29 +124,37 @@ $randomSheet = $req2->fetch();
 
 
 
-         <div class="content_card" id="perf">
-            <div class="info_section">
-               <div class="content_header">
+         <div class="content_card perf">
+
+            <div class="gradient perf">
+            </div>
+
+            <div class="info_section perf">
+               <div class="content_header perf">
 
                   <div>
-                     <h3><?= htmlspecialchars($randomPerf['title']); ?></h3>
-                     <h4><?= htmlspecialchars($randomPerf['composer']); ?></h4>
-                     <span class="see_content"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomPerf['id']); ?>" class="btn">Voir</a></span>
-                     <p class="type">Action, Fantasy</p>
-                  </div>
+                     <h2><?= htmlspecialchars($randomPerf['title']); ?></h2>
+                     <h3><?= htmlspecialchars($randomPerf['composer']); ?></h3>
 
-                  <video class="content" src="./assets/contents_img/<?= htmlspecialchars($randomPerf['content']); ?>" type="video/mp4">
-                  </video>
+                     <span class="see_content perf"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomPerf['id']); ?>" class="btn">Voir</a></span>
+
+                     <div class="type perf">Action, Fantasy</div>
+                  </div>
 
                </div>
 
-               <div class="content_desc">
+               <div>
+                  <video class="content perf" src="./assets/contents_img/<?= htmlspecialchars($randomPerf['content']); ?>" type="video/mp4">
+                  </video>
+               </div>
+
+               <div class="content_desc perf">
                   <p class="text">
                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ducimus autem enim delectus veritatis ab, possimus recusandae? Sequi, eligendi consequatur.
                   </p>
                </div>
 
-               <div class="content_social">
+               <div class="content_social perf">
                   <ul>
                      <li><i class="material-icons">User</i></li>
                   </ul>
@@ -154,29 +167,37 @@ $randomSheet = $req2->fetch();
 
 
 
-         <div class="content_card" id="sheet">
-            <div class="info_section">
-               <div class="content_header">
+         <div class="content_card sheet">
+
+            <div class="gradient sheet">
+            </div>
+
+            <div class="info_section sheet">
+               <div class="content_header sheet">
 
                   <div>
-                     <h3><?= htmlspecialchars($randomSheet['title']); ?></h3>
-                     <h4><?= htmlspecialchars($randomSheet['composer']); ?></h4>
-                     <span class="see_content"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomSheet['id']); ?>" class="btn">Voir</a></span>
-                     <p class="type">Action, Adventure</p>
-                  </div>
+                     <h2><?= htmlspecialchars($randomSheet['title']); ?></h2>
+                     <h3><?= htmlspecialchars($randomSheet['composer']); ?></h3>
 
-                  <video class="content" src="./assets/contents_img/<?= htmlspecialchars($randomSheet['content']); ?>" type="video/mp4">
-                  </video>
+                     <span class="see_content sheet"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomSheet['id']); ?>" class="btn">Voir</a></span>
+
+                     <div class="type sheet">Action, Adventure</div>
+                  </div>
 
                </div>
 
-               <div class="content_desc">
+               <div>
+                  <video class="content sheet" src="./assets/contents_img/<?= htmlspecialchars($randomSheet['content']); ?>" type="video/mp4">
+                  </video>
+               </div>
+
+               <div class="content_desc sheet">
                   <p class="text">
                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus non ipsa quas dolorum accusantium iure quae esse debitis id tempore!
                   </p>
                </div>
 
-               <div class="content_social">
+               <div class="content_social sheet">
                   <ul>
                      <li><i class="material-icons">User</i></li>
                   </ul>

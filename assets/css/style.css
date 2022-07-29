@@ -489,7 +489,7 @@ span {
   position: relative;
   display: block;
   width: 800px;
-  height: 400px;
+  height: 440px;
   margin: 100px auto;
   overflow: hidden;
   border-radius: 10px;
@@ -499,6 +499,24 @@ span {
   transform: scale(1.02);
   transition: all 0.4s;
 }
+.content_card.tuto {
+  box-shadow: 0px 0px 150px -45px rgba(255, 51, 0, 0.5);
+}
+.content_card.tuto:hover {
+  box-shadow: 0px 0px 120px -55px rgba(255, 51, 0, 0.5);
+}
+.content_card.perf {
+  box-shadow: 0px 0px 150px -45px rgba(19, 160, 134, 0.6);
+}
+.content_card.perf:hover {
+  box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
+}
+.content_card.sheet {
+  box-shadow: 0px 0px 150px -45px rgba(199, 147, 75, 0.7);
+}
+.content_card.sheet:hover {
+  box-shadow: 0px 0px 120px -55px rgba(199, 147, 75, 0.7);
+}
 .content_card .info_section {
   position: relative;
   width: 100%;
@@ -506,23 +524,27 @@ span {
   background-blend-mode: multiply;
   z-index: 2;
   border-radius: 10px;
+  padding-bottom: 20px;
+}
+.content_card .info_section .content {
+  height: 120px;
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
 }
 .content_card .info_section .content_header {
-  position: relative;
-  padding: 25px;
-  height: 40%;
+  line-height: 2.5rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
-.content_card .info_section .content_header h3 {
+.content_card .info_section .content_header h2 {
   color: #fff;
   font-weight: 400;
   font-size: 2rem;
 }
-.content_card .info_section .content_header h4 {
+.content_card .info_section .content_header h3 {
   color: #9ac7fa;
   font-weight: 400;
 }
 .content_card .info_section .content_header .see_content {
-  display: inline-block;
   margin-top: 10px;
   padding: 5px;
   border-radius: 5px;
@@ -535,26 +557,9 @@ span {
 .content_card .info_section .content_header .type {
   display: inline-block;
   color: #cee4fd;
-  margin-top: 10px;
-}
-.content_card .info_section .content_header .content {
-  position: relative;
-  float: left;
-  margin-right: 20px;
-  height: 120px;
-  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
-}
-.content_card .info_section .content_desc {
-  padding: 25px;
-  height: 50%;
 }
 .content_card .info_section .content_desc .text {
   color: #cfd6e1;
-}
-.content_card .info_section .content_social {
-  height: 10%;
-  padding-left: 15px;
-  padding-bottom: 20px;
 }
 .content_card .info_section .content_social ul {
   list-style: none;
@@ -565,7 +570,6 @@ span {
   color: rgba(255, 255, 255, 0.4);
   transition: color 0.3s;
   transition-delay: 0.15s;
-  margin: 0 10px;
 }
 .content_card .info_section .content_social ul li:hover {
   transition: color 0.3s;
@@ -582,22 +586,77 @@ span {
   height: 100%;
   right: 0;
   background-size: cover;
+  background-position: center;
   border-radius: 11px;
 }
 
 @media screen and (min-width: 768px) {
+  .info_section.tuto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+  .info_section.perf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .info_section.sheet {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+  }
   .content_header {
     width: 60%;
+  }
+  .content_header.tuto {
+    text-align: start;
+  }
+  .content_header.perf {
+    text-align: center;
+  }
+  .content_header.sheet {
+    text-align: end;
   }
   .content_desc {
     width: 50%;
   }
-  .info_section {
-    background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
+  .content_desc.tuto {
+    text-align: start;
+  }
+  .content_desc.perf {
+    text-align: center;
+  }
+  .content_desc.sheet {
+    text-align: end;
+  }
+  .gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-blend-mode: multiply;
+    z-index: 2;
+    border-radius: 10px;
+  }
+  .gradient.tuto {
+    background: linear-gradient(to right, #0d0d0c 33%, transparent 100%);
+  }
+  .gradient.perf {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #0d0d0d 26%, #0d0d0d 74%, rgba(255, 255, 255, 0) 100%);
+  }
+  .gradient.sheet {
+    background: linear-gradient(to left, #0d0d0c 33%, transparent 100%);
   }
   .blur_back {
     width: 80%;
-    background-position: -100% 10% !important;
+  }
+  .blur_back.perf_back {
+    width: 100%;
+  }
+  .blur_back.sheet_back {
+    left: 0;
   }
 }
 @media screen and (max-width: 768px) {
@@ -609,47 +668,36 @@ span {
   }
   .blur_back {
     width: 100%;
-    background-position: 50% 50% !important;
+    height: 0;
   }
   .content_header {
     width: 100%;
-    margin-top: 85px;
+  }
+  .content_header.tuto, .content_header.perf, .content_header.sheet {
+    text-align: center;
   }
   .content_desc {
-    width: 100%;
+    max-width: 400px;
+  }
+  .content_desc.tuto, .content_desc.perf, .content_desc.sheet {
+    text-align: center;
   }
   .info_section {
     background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
     display: inline-grid;
   }
+  .info_section.tuto, .info_section.sheet, .info_section.perf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
-#tuto {
-  box-shadow: 0px 0px 150px -45px rgba(255, 51, 0, 0.5);
-}
-#tuto:hover {
-  box-shadow: 0px 0px 120px -55px rgba(255, 51, 0, 0.5);
-}
-
 .tuto_back {
   background: url("../img/piano-1846719_1920.jpg");
 }
 
-#perf {
-  box-shadow: 0px 0px 150px -45px rgba(19, 160, 134, 0.6);
-}
-#perf:hover {
-  box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
-}
-
 .perf_back {
   background: url("../img/stage-curtain-660078_1920.jpg");
-}
-
-#sheet {
-  box-shadow: 0px 0px 150px -45px rgba(199, 147, 75, 0.7);
-}
-#sheet:hover {
-  box-shadow: 0px 0px 120px -55px rgba(199, 147, 75, 0.7);
 }
 
 .sheet_back {
