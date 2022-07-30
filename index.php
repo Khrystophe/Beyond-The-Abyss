@@ -46,31 +46,27 @@ $randomSheet = $req2->fetch();
 
       <div class="features">
 
-         <a href="content.php?category=tuto">
-            <div class="cards one">
-               <div class="titles">Tutoriels</div>
-               <div class="line one"></div>
-               <div class="line two"></div>
-               <div class="line three"></div>
-            </div>
+         <a class="cards one" href="content.php?category=tuto">
+            <div class="titles">Tutoriels</div>
+            <div class="line one"></div>
+            <div class="line two"></div>
+            <div class="line three"></div>
          </a>
 
-         <a href="content.php?category=perf">
-            <div class="cards two">
-               <div class="titles">Performances</div>
-               <div class="line one"></div>
-               <div class="line two"></div>
-               <div class="line three"></div>
-            </div>
+
+         <a class="cards two" href="content.php?category=perf">
+            <div class="titles">Performances</div>
+            <div class="line one"></div>
+            <div class="line two"></div>
+            <div class="line three"></div>
          </a>
 
-         <a href="content.php?category=sheet">
-            <div class="cards three">
-               <div class="titles">Partitions</div>
-               <div class="line one"></div>
-               <div class="line two"></div>
-               <div class="line three"></div>
-            </div>
+
+         <a class="cards three" href="content.php?category=sheet">
+            <div class="titles">Partitions</div>
+            <div class="line one"></div>
+            <div class="line two"></div>
+            <div class="line three"></div>
          </a>
 
       </div>
@@ -95,7 +91,7 @@ $randomSheet = $req2->fetch();
                      <span class="see_content tuto"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomTuto['id']); ?>" class="btn">Voir</a>
                      </span>
 
-                     <div class="type tuto">Action, Crime, Fantasy</div>
+                     <div class="type tuto">Classique</div>
                   </div>
 
 
@@ -138,7 +134,7 @@ $randomSheet = $req2->fetch();
 
                      <span class="see_content perf"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomPerf['id']); ?>" class="btn">Voir</a></span>
 
-                     <div class="type perf">Action, Fantasy</div>
+                     <div class="type perf">Jazz</div>
                   </div>
 
                </div>
@@ -181,7 +177,7 @@ $randomSheet = $req2->fetch();
 
                      <span class="see_content sheet"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomSheet['id']); ?>" class="btn">Voir</a></span>
 
-                     <div class="type sheet">Action, Adventure</div>
+                     <div class="type sheet">Métal</div>
                   </div>
 
                </div>

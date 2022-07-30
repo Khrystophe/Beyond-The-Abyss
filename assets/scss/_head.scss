@@ -15,9 +15,14 @@
 }
 
 .ouvrir {
+  width: 50px;
+  height: 50px;
   display: block;
-  
-}
+  border-radius: 131px;
+  background: #161616;
+  box-shadow: inset 5px -5px 5px #090909,
+            inset -5px 5px 5px #232323;
+  }
 
 .fermer {
   display: none;
@@ -28,7 +33,13 @@
 }
 
 .open .fermer {
+  width: 50px;
+  height: 50px;
   display: block;
+  border-radius: 131px;
+  background: linear-gradient(45deg, #141414, #181818);
+  box-shadow:  5px -5px 5px #090909,
+             -5px 5px 5px #232323;
 }
 
 

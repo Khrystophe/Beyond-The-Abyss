@@ -12,11 +12,6 @@
 .features{
   height: 60vh;
   margin: 0 15px 0 15px;
-
-  a{
-    text-decoration: none;
-    color: white;
-  }
 }
 
 .col2 {
@@ -29,11 +24,15 @@
   justify-content: center;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
 .cards {
   transform: translateY(100px) scaleY(1);
   transform-origin: 0% 100%;
   position: relative;
-  height: 5em;
+  height: 7em;
 
   .titles {
       font-size: 2rem;
@@ -51,9 +50,11 @@
       .line { 
       opacity: 0;
       transform: translateY(100px);
-      height: 1px;
-      background-color: #fffae1;
-      box-shadow: 1px 3px 2px black;
+      height: 11px;
+      border-radius: 10px;
+      background: #161616;
+      box-shadow: inset 5px -5px 5px #090909,
+                  inset -5px 5px 5px #232323;
 
       &.one{
       width: 100%;
@@ -77,10 +78,11 @@
         .line {
         opacity: 0;
         transform: translateY(100px);
-        height: 1px;
-        background-color: #fffae1;
-        box-shadow: 1px 3px 2px black;
-  
+        height: 11px;
+        border-radius: 10px;
+        background: #161616;
+        box-shadow: inset 5px -5px 5px #090909,
+                    inset -5px 5px 5px #232323;
         &.one{
         width: 100%;
         }
@@ -103,9 +105,11 @@
       .line { 
         opacity: 0;
         transform: translateY(100px);
-        height: 1px;
-        background-color: #fffae1;
-        box-shadow: 1px 3px 2px black;
+        height: 11px;
+        border-radius: 10px;
+        background: #161616;
+        box-shadow: inset 5px -5px 5px #090909,
+                    inset -5px 5px 5px #232323;
   
         &.one{
         width: 100%;

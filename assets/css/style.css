@@ -1,7 +1,6 @@
 /* /////////////////////////////////GENERAL///////////////////////////////// */
 @import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
 * {
-  font-family: "Merienda", cursive;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,8 +11,7 @@
   --secondary-color: #5e4b4b;
   --third-color: #fff;
   --fourth-color: #8f8f8f;
-  --primary-font: "Inria Serif", serif;
-  --secondary-font: "Arapey", serif;
+  --primary-font: "Merienda", cursive;
 }
 
 html {
@@ -21,14 +19,9 @@ html {
 }
 
 body {
-  background: url("/Diplome/assets/img/background.jpg") fixed;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-color: #161616;
+  font-family: var(--primary-font);
   color: white;
-  font-family: "Poppins", sans-serif;
   margin: 0;
   overflow-x: hidden;
   opacity: 0;
@@ -137,7 +130,12 @@ nav {
 }
 
 .ouvrir {
+  width: 50px;
+  height: 50px;
   display: block;
+  border-radius: 131px;
+  background: #161616;
+  box-shadow: inset 5px -5px 5px #090909, inset -5px 5px 5px #232323;
 }
 
 .fermer {
@@ -149,7 +147,12 @@ nav {
 }
 
 .open .fermer {
+  width: 50px;
+  height: 50px;
   display: block;
+  border-radius: 131px;
+  background: linear-gradient(45deg, #141414, #181818);
+  box-shadow: 5px -5px 5px #090909, -5px 5px 5px #232323;
 }
 
 /* Menu */
@@ -318,10 +321,6 @@ nav {
   height: 60vh;
   margin: 0 15px 0 15px;
 }
-.features a {
-  text-decoration: none;
-  color: white;
-}
 
 .col2 {
   display: flex;
@@ -333,11 +332,16 @@ nav {
   justify-content: center;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .cards {
   transform: translateY(100px) scaleY(1);
   transform-origin: 0% 100%;
   position: relative;
-  height: 5em;
+  height: 7em;
 }
 .cards .titles {
   font-size: 2rem;
@@ -354,9 +358,10 @@ nav {
 .cards.one .line {
   opacity: 0;
   transform: translateY(100px);
-  height: 1px;
-  background-color: #fffae1;
-  box-shadow: 1px 3px 2px black;
+  height: 11px;
+  border-radius: 10px;
+  background: #161616;
+  box-shadow: inset 5px -5px 5px #090909, inset -5px 5px 5px #232323;
 }
 .cards.one .line.one {
   width: 100%;
@@ -376,9 +381,10 @@ nav {
 .cards.two .line {
   opacity: 0;
   transform: translateY(100px);
-  height: 1px;
-  background-color: #fffae1;
-  box-shadow: 1px 3px 2px black;
+  height: 11px;
+  border-radius: 10px;
+  background: #161616;
+  box-shadow: inset 5px -5px 5px #090909, inset -5px 5px 5px #232323;
 }
 .cards.two .line.one {
   width: 100%;
@@ -398,9 +404,10 @@ nav {
 .cards.three .line {
   opacity: 0;
   transform: translateY(100px);
-  height: 1px;
-  background-color: #fffae1;
-  box-shadow: 1px 3px 2px black;
+  height: 11px;
+  border-radius: 10px;
+  background: #161616;
+  box-shadow: inset 5px -5px 5px #090909, inset -5px 5px 5px #232323;
 }
 .cards.three .line.one {
   width: 100%;
