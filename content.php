@@ -41,7 +41,7 @@ $results = $join->fetchAll();
             <?php } else if ($_GET['category'] == 'perf') {
             ?>
                <div class="miror">
-                  <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
+                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
                   <h1 class="abyss"><span>Au delà de l'abîme</span><br>Les performances des profondeurs</h1>
                </div>
 
@@ -49,7 +49,7 @@ $results = $join->fetchAll();
             <?php } else if ($_GET['category'] == 'sheet') {
             ?>
                <div class="miror">
-                  <img class="main_logo" src="./assets/img/musicgrise" alt="ringOfNotes">
+                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
                   <h1 class="abyss"><span>Au delà de l'abîme</span><br>Les partitions des profondeurs</h1>
                </div>
 
