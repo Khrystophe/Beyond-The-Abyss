@@ -108,12 +108,12 @@ $(function () {
   });
 });
 
-//////////////////////////////////ANIMATION ELEMENTS/////////////////////////
+//////////////////////////////////ANIMATION ELEMENTS/////////////////////////////////////
 
 
 toggle.addEventListener('click', function() {
   if (body.classList.contains('open')) {
-    //Fermer le menu.
+    ///////////////////////Fermer le menu////////////////////////////
     body.classList.remove('open');
 
     tl
@@ -166,7 +166,7 @@ toggle.addEventListener('click', function() {
       }, "<0.3")
 
   } else {
-    //Ouvrir le menu.
+    /////////////////////////Ouvrir le menu///////////////////////////////
     body.classList.add('open');
 
     tl
@@ -227,6 +227,8 @@ toggle.addEventListener('click', function() {
   }
 })
 
+
+//////////////////Animation menu avant changement de page/////////////////////////////////////
 let link= document.querySelectorAll('.link');
 
 for (let i = 0 ; i < link.length; i++) {

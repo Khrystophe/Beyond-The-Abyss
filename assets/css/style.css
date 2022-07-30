@@ -1099,26 +1099,5 @@ footer {
   color: #1A1A1A;
   font-weight: bold;
 }
-footer .all {
-  margin: 0.3em 0 0 0.5em;
-  font-size: 2rem;
-}
-footer .parent {
-  display: block;
-}
-footer .twitter {
-  width: 2em;
-  margin-left: 0.5em;
-}
-footer .social {
-  margin-top: 2em;
-}
-footer a {
-  color: black;
-  text-decoration: none;
-}
-footer .angle-line {
-  margin-top: 1.2em;
-}
 
 /*# sourceMappingURL=style.css.map */
