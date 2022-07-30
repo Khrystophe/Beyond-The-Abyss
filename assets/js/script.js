@@ -1,5 +1,14 @@
 ////////////////////// PAGE TRANSITION////////////////////////
 
+gsap.config({
+  nullTargetWarn: false,
+});
+
+let toggle = document.querySelector('.toggle');
+let body = document.querySelector('body');
+
+let tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: 2}})
+let tl1 = gsap.timeline();
 
 function delay(n) {
   n = n || 2000;
@@ -11,7 +20,6 @@ function delay(n) {
 }
 
 function pageTransition() {
-  var tl = gsap.timeline();
  
   tl.set(".loading-screen", { right: "-100%" });
   tl.to(".loading-screen", {
@@ -102,15 +110,6 @@ $(function () {
 
 //////////////////////////////////ANIMATION ELEMENTS/////////////////////////
 
-gsap.config({
-  nullTargetWarn: false,
-});
-
-let toggle = document.querySelector('.toggle');
-let body = document.querySelector('body');
-
-let tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: 2}})
-let tl1 = gsap.timeline();
 
 toggle.addEventListener('click', function() {
   if (body.classList.contains('open')) {
