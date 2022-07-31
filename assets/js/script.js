@@ -28,9 +28,9 @@ function pageTransition() {
       right: "0%",
       ease: "Expo.easeInOut",
   });
-  tl
-  .to('.sep', { duration: 0.75,height: 0})
-  .to('.sep__icon', { duration: 0.25,opacity: 0},"<0.25")
+  // tl
+  // .to('.sep', { duration: 0.75,height: 0})
+  // .to('.sep__icon', { duration: 0.25,opacity: 0},"<0.25")
   tl.to(".loading-screen", {
       duration: 0.7,
       width: "100%",
@@ -56,6 +56,18 @@ function contentAnimation() {
     y: 0,
     duration: 2.2
   }, "<0.1")
+  .to('.separator.one', {
+    width:"25%",
+    duration: 2.5,
+  }, "-=2")
+  .to('.separator.two', {
+    width:"50%",
+    duration: 2.5,
+  }, "-=2")
+  .to('.separator.three', {
+    width:"75%",
+    duration: 2.5,
+  }, "-=2")
   .to('.titles, .line.one, .line.two, .line.three', {
     stagger: .1,
     duration: 1.2,
@@ -135,6 +147,18 @@ toggle.addEventListener('click', function() {
         opacity: 1,
         y: 0
       }, "-=2")
+      .to('.separator.one', {
+        width:"25%",
+        duration: 2.5,
+      }, "-=2")
+      .to('.separator.two', {
+        width:"50%",
+        duration: 2.5,
+      }, "-=2")
+      .to('.separator.three', {
+        width:"75%",
+        duration: 2.5,
+      }, "-=2")
       .to('footer', {
         opacity: 1
       }, "-=2")
@@ -174,6 +198,18 @@ toggle.addEventListener('click', function() {
         opacity: 0,
         duration: 2.2
       })
+      .to('.separator.one', {
+        width:0,
+        duration: 1.2,
+      }, "-=2.5")
+      .to('.separator.two', {
+        width:0,
+        duration: 1.2,
+      }, "-=2.5")
+      .to('.separator.three', {
+        width:0,
+        duration: 1.2,
+      }, "-=2.5")
       .to('.titles, .line.one, .line.two, .line.three', {
         stagger: -0.1,
         duration: 0.7,

@@ -6,17 +6,28 @@
     width: 350px;
     animation: rotateLogo 8s linear infinite;
   }
+
+  .transition_circle{
+    width: 350px;
+    height: 350px;
+    animation: rotateLogo 8s linear infinite reverse;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(315deg, #141414, #181818);
+    box-shadow: -10px -10px 16px #090909, 10px 10px 16px #232323;
+  }
   .loading-screen {
       position: relative;
       padding-left: 0;
       padding-right: 0;
       padding-top: 0;
-      background: url("/Diplome/assets/img/bg.jpg") fixed;
+    //   background: url("/Diplome/assets/img/bg.jpg") fixed;
+    background-color: #161616;
       width: 0%;
       height: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
+    //   background-repeat: no-repeat;
+    //   background-size: cover;
+    //   background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
