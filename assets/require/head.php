@@ -82,7 +82,7 @@
                   <div class="menu__left__inner__item">
                      <?php
                      if (isset($_SESSION['users']) && !empty($_SESSION['users'])) { ?>
-                        <a class="link" href="./assets/actions/logout_action.php">Déconnexion</a>
+                        <a data-barba-prevent class="link" href="./assets/actions/logout_action.php">Déconnexion</a>
                   </div>
 
 
