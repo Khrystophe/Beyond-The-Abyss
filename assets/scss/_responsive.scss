@@ -1,0 +1,249 @@
+//////////////////////////////GENERAL///////////////////////////
+
+@media screen and (max-width: 500px){
+  .main_logo{
+    width: 250px;
+  }
+}
+
+/////////////////INDEX////////////////////////////////////////
+
+//en dessous de 736v + en dessous de 1000h OU en dessous de 500h
+@media screen and (max-height: 1000px) and (max-width: 736px), screen and (max-height: 500px){
+  .wrapp{
+    height: 25rem;
+  }
+  .features{
+    height: 38rem;
+  }
+}
+
+@media only screen and (min-width: 332px){
+  .miror {
+      .abyss::before {
+      top: 140%;
+      }
+      .abyss span::before{
+      top:140%;
+      }
+    }
+}
+
+@media only screen and (min-width: 507px) {
+
+  .abyss {
+      font-size: 2rem;
+      width: 53%;  
+  }
+}
+
+@media only screen and (min-width: 736px) {
+  .features {
+      display: flex;
+      justify-content: space-around;
+      // align-items: center;
+  }
+
+  .abyss {
+    font-size: 2.5rem;
+    width: 54%;
+    margin-top: 0rem;
+  }
+
+  .miror {
+    .abyss::before {
+    top: 96%;
+    }
+    .abyss span::before{
+    top: 96%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1083px) { 
+  .abyss{
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 1170px) { 
+  .abyss{
+    width: 33%;
+  }
+}
+
+@media only screen and (min-width: 1320px) { 
+  .abyss{
+    width: 29%;
+  }
+}
+
+@media only screen and (min-width: 1740px) { 
+  .abyss{
+    width: 22%;
+  }
+}
+
+////////////////////////////FORM///////////////////////////////
+
+@media only screen and (max-width: 1000px) {
+  .form_content{
+      flex-direction: column;
+      width: 63%;
+      min-width: 250px;
+    
+  }
+
+  .leftside{
+      width: 100%;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius:1.5rem;
+   
+  }
+
+  .rightside{
+      width:auto;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 1.5rem;
+      padding:1rem 2rem 1rem 2rem;
+  
+  }
+}
+
+///////////////////////////////////CARDS INDEX/////////////////////////
+
+@media screen and (min-width: 768px) {
+  .info_section{
+    &.tuto{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 20px;
+    }
+    &.perf{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &.sheet{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-right: 20px;
+    }
+  }
+  .content_header{
+    width: 60%;
+
+    &.tuto{
+      text-align: start;
+    }
+
+    &.perf{
+      text-align: center;
+    }
+
+    &.sheet{
+      text-align: end;
+    }
+  }
+  
+  .content_desc{
+    width: 50%;
+
+    &.tuto{
+      text-align: start;
+    }
+
+    &.perf{
+      text-align: center;
+    }
+
+    &.sheet{
+      text-align: end;
+    }
+  }
+  
+  .gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+	  background-blend-mode: multiply;
+    z-index: 2;
+    border-radius: 10px;
+
+    &.tuto{
+    background: linear-gradient(to right, #161616 33%, transparent 100%);
+    border-radius: 10px;
+    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
+    }
+
+    &.perf{
+      background: linear-gradient(to left, rgba(255,255,255,0) 0%, #161616 26%,#161616 74%, rgba(255,255,255,0) 100%);
+      border-radius: 10px;
+    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
+    }
+
+    &.sheet{
+      background: linear-gradient(to left, #161616 33%, transparent 100%);
+      border-radius: 10px;
+    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
+    }
+  }
+  
+  .blur_back{
+    width: 80%;
+
+    &.perf_back{
+      width: 100%;
+    }
+
+    &.sheet_back{
+      left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content_card{
+    width: 95%;
+    margin: 70px auto; 
+    min-height: 350px;
+    height: auto;
+  }
+  
+  .blur_back{
+    width: 100%;
+    height: 0;
+  }
+  
+  .content_header{
+    width: 100%;
+
+    &.tuto, &.perf, &.sheet{
+      text-align: center;
+    }
+  }
+  
+  .content_desc{
+    max-width: 400px;
+
+    &.tuto, &.perf, &.sheet{
+      text-align: center;
+    }
+
+  
+  }
+  
+  .info_section{
+    background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
+    display: inline-grid;
+    
+    &.tuto, &.sheet, &.perf {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

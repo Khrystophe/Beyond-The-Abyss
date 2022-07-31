@@ -14,7 +14,9 @@
 <body>
 
    <div class="loading-container">
-      <div class="loading-screen"><img class="logo_transition" src="./assets/img/musicgrise.png" alt=""></div>
+      <div class="loading-screen"><img class="logo_transition" src="./assets/img/musicgrise.png" alt="">
+         <div class="transition_circle"></div>
+      </div>
    </div>
 
    <header>

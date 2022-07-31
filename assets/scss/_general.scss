@@ -13,7 +13,7 @@
   --secondary-color: #5e4b4b;
   --third-color: #fff;
   --fourth-color: #8f8f8f;
-
+  
   --primary-font: 'Merienda', cursive;
 }
 
@@ -22,9 +22,22 @@ html {
 }
 
 body {
-  background-color: #161616;
   font-family: var(--primary-font);
-  color: white;
+  color: rgb(36, 36, 36);
+  text-shadow:
+  /*relief*/	 
+     0 1px 0 rgb(57, 57, 57),
+     0 2px 0 rgb(52, 52, 52),
+     0 3px 0 rgb(44, 44, 44),
+     0 4px 0 rgb(19, 19, 19),
+     0 5px 0 rgb(12, 12, 12),
+     0 6px 0 rgb(0, 0, 0),
+  /*ombre*/
+     6px 7px  5px  rgba(0, 0, 0, .40),
+     6px 12px 10px rgba(0, 0, 0, .30), 
+     6px 17px 20px rgba(0, 0, 0, .20),
+     6px 22px 30px rgba(0, 0, 0, .10);
+  background-color: #161616;
   margin: 0;
   overflow-x: hidden;
   opacity: 0;
@@ -47,6 +60,11 @@ nav {
   width: 77%;
 }
 
+span {
+  color: #000000;
+  position: absolute;
+}
+
 .autoAlpha{
   opacity: 0.9;
 }
@@ -61,49 +79,105 @@ nav {
     transform: translateY(100px);
     text-align: center;
     margin-top: 2rem;
-    position: absolute;
+    // position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
-  .abyss::before {
-    content: '';
-    height: 100%;
-    width: 100%;
-    background: rgb(48, 48, 84);
-    position: absolute;
-    left: 0;
-    top: 96%;
-    pointer-events: none;
-    transform: perspective(4.5rem) rotateX(46deg) scale(1,0.4);
-    filter: blur(1.5rem);
-    opacity: 0.3;
-    border-radius: 50%;
-  }
+  // .abyss::before {
+  //   content: '';
+  //   height: 100%;
+  //   width: 100%;
+  //   background: rgb(48, 48, 84);
+  //   position: absolute;
+  //   left: 0;
+  //   top: 96%;
+  //   pointer-events: none;
+  //   transform: perspective(4.5rem) rotateX(46deg) scale(1,0.4);
+  //   filter: blur(1.5rem);
+  //   opacity: 0.3;
+  //   border-radius: 50%;
+  //   border-radius: 10px;
+  // }
 
-   .abyss span::before{
-    content: '';
-    height: 100%;
-    width: 100%;
-    background:#f1c40f;
-    position: absolute;
-    left: 0;
-    top: 96%;
-    pointer-events: none;
-    transform: perspective(4.5rem) rotateX(46deg) scale(0.5,0.1);
-    filter: blur(5.5rem);
-    opacity: 0.3;
-    border-radius: 50%;
-  }
+  //  .abyss span::before{
+  //   content: '';
+  //   height: 100%;
+  //   width: 100%;
+  //   background:#f1c40f;
+  //   position: absolute;
+  //   left: 0;
+  //   top: 96%;
+  //   pointer-events: none;
+  //   transform: perspective(4.5rem) rotateX(46deg) scale(0.5,0.1);
+  //   filter: blur(5.5rem);
+  //   opacity: 0.3;
+  //   border-radius: 50%;
+  // }
 }
 
 .main_logo {
   margin: 0%;
   padding: 0%;
-  top: 5%;
+  top: -20%;
   transform: translate(-50%, -50%);
   position: absolute;
   width: 350px;
   opacity: 0;  
   animation: rotate_main_logo 8s linear infinite;
+  z-index: -10;
+}
+
+.ringOfNotes_circle{
+  width: 210px;
+  height: 210px;
+  animation: rotateLogo 8s linear infinite reverse;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(315deg, #141414, #181818);
+  box-shadow: -10px -10px 16px #090909, 10px 10px 16px #232323;
+  z-index: -20;
+  top: -12%;
+}
+
+.separators{
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.separator{
+  height: 11px;
+  border-radius: 10px;
+  background: #161616;
+  box-shadow:  5px -5px 5px #090909,
+               -5px 5px 5px #232323;
+               &.one{
+                
+                width: 0;
+                height: 12px;
+                border-radius: 10px;
+                background: #161616;
+                box-shadow: 5px 20px 12px #090909, -5px 12px 10px #232323;
+               }
+               &.two{
+                
+                width: 0;
+                height: 12px;
+                border-radius: 10px;
+                background: #161616;
+                box-shadow: 5px 20px 12px #090909, -5px 12px 10px #232323;
+               }
+               &.three{
+                
+                width: 0;
+                height: 12px;
+                border-radius: 10px;
+                background: #161616;
+                box-shadow: 5px 20px 12px #090909, -5px 12px 10px #232323;
+               }
 }
 
 @keyframes rotate_main_logo {
@@ -115,11 +189,4 @@ nav {
   }
 }
 
-.carousel_video{
-  position: absolute;
-  height: 100%;
-}
 
-.card_video{
-  width: 100%;
-}

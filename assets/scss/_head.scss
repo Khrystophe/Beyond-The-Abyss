@@ -20,8 +20,7 @@
   display: block;
   border-radius: 131px;
   background: #161616;
-  box-shadow: inset 5px -5px 5px #090909,
-            inset -5px 5px 5px #232323;
+  box-shadow: inset -5px 5px 5px #090909, inset 5px -5px 5px #232323;
   }
 
 .fermer {
@@ -38,8 +37,7 @@
   display: block;
   border-radius: 131px;
   background: linear-gradient(45deg, #141414, #181818);
-  box-shadow:  5px -5px 5px #090909,
-             -5px 5px 5px #232323;
+  box-shadow: -5px 5px 5px #090909, 5px -5px 5px #232323;
 }
 
 
@@ -90,7 +88,8 @@
 }
 
 .menu__left__inner__item a {
-  color: var(--third-color);
+  // color: var(--third-color);
+  color: rgb(36, 36, 36);
   text-decoration: none;
   transition: color 1s;
 }
@@ -103,7 +102,8 @@
 /* Inner Right Menu */
 .menu__right__inner__item__title {
   font-size: 3rem;
-  color: var(--third-color);
+  // color: var(--third-color);
+  color: rgb(36, 36, 36);
 }
 
 .menu__right__inner__item ul {

@@ -21,23 +21,29 @@
   }
 
   &.tuto{
-    box-shadow: 0px 0px 150px -45px rgba(255, 51, 0, 0.5);
+    border-radius: 30px;
+    box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
     &:hover{
-      box-shadow: 0px 0px 120px -55px rgba(255, 51, 0, 0.5);
+      border-radius: 10px;
+    box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
     }
   }
 
   &.perf{
-    box-shadow: 0px 0px 150px -45px rgba(19, 160, 134, 0.6);
+    border-radius: 30px;
+    box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
     &:hover{
-      box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
+      border-radius: 10px;
+    box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
     }
   }
   
   &.sheet{
-    box-shadow: 0px 0px 150px -45px rgba(199,147,75, 0.7);
+    border-radius: 30px;
+    box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
     &:hover{
-      box-shadow: 0px 0px 120px -55px rgba(199,147,75, 0.7);
+      border-radius: 10px;
+    box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
     }
   }
   
@@ -62,13 +68,13 @@
      margin-bottom: 15px;
 
       h2{
-        color: #fff;
+        // color: #fff;
         font-weight: 400;
         font-size: 2rem;
       }
 
       h3{
-        color: #9ac7fa;
+        // color: #9ac7fa;
         font-weight: 400;
       }
 
@@ -77,27 +83,28 @@
         padding: 5px;
         border-radius: 5px;
         border: 1px solid rgba(255,255,255,0.13);
+        position: relative;
 
         a{
         text-decoration: none;
-        color: #fff;
+        // color: #fff;
         }
       }
 
       .type{
         display: inline-block;
-        color: #cee4fd;
+        // color: #cee4fd;
         
       }
 
     }
 
 
-    .content_desc{
-      .text{
-        color: #cfd6e1;
-      }
-    }
+    // .content_desc{
+    //   .text{
+    //     color: #cfd6e1;
+    //   }
+    // }
 
 
     .content_social{
@@ -108,7 +115,7 @@
 
         li{
           display: inline-block;
-          color: rgba(255,255,255,0.4);
+          // color: rgba(255,255,255,0.4);
           transition: color 0.3s;
           transition-delay: 0.15s;
 
@@ -126,7 +133,6 @@
     }
   }
 
-
   .blur_back{
     position: absolute;
     top: 0;
@@ -135,135 +141,6 @@
     background-size: cover;
     background-position: center;
     border-radius: 11px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .info_section{
-    &.tuto{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding-left: 20px;
-    }
-    &.perf{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    &.sheet{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      padding-right: 20px;
-    }
-  }
-  .content_header{
-    width: 60%;
-
-    &.tuto{
-      text-align: start;
-    }
-
-    &.perf{
-      text-align: center;
-    }
-
-    &.sheet{
-      text-align: end;
-    }
-  }
-  
-  .content_desc{
-    width: 50%;
-
-    &.tuto{
-      text-align: start;
-    }
-
-    &.perf{
-      text-align: center;
-    }
-
-    &.sheet{
-      text-align: end;
-    }
-  }
-  
-  .gradient {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-	  background-blend-mode: multiply;
-    z-index: 2;
-    border-radius: 10px;
-
-    &.tuto{
-    background: linear-gradient(to right, #0d0d0c 33%, transparent 100%);
-    }
-
-    &.perf{
-      background: linear-gradient(to left, rgba(255,255,255,0) 0%, #0d0d0d 26%,#0d0d0d 74%, rgba(255,255,255,0) 100%);
-    }
-
-    &.sheet{
-      background: linear-gradient(to left, #0d0d0c 33%, transparent 100%);
-    }
-  }
-  
-  .blur_back{
-    width: 80%;
-
-    &.perf_back{
-      width: 100%;
-    }
-
-    &.sheet_back{
-      left: 0;
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .content_card{
-    width: 95%;
-    margin: 70px auto; 
-    min-height: 350px;
-    height: auto;
-  }
-  
-  .blur_back{
-    width: 100%;
-    height: 0;
-  }
-  
-  .content_header{
-    width: 100%;
-
-    &.tuto, &.perf, &.sheet{
-      text-align: center;
-    }
-  }
-  
-  .content_desc{
-    max-width: 400px;
-
-    &.tuto, &.perf, &.sheet{
-      text-align: center;
-    }
-
-  
-  }
-  
-  .info_section{
-    background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
-    display: inline-grid;
-    
-    &.tuto, &.sheet, &.perf {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
   }
 }
 

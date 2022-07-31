@@ -19,7 +19,7 @@ $randomSheet = $req2->fetch();
 
 <main class="autoAlpha" data-barba="wrapper">
 
-   <div data-barba="container" data-barba-namespace="index-section">
+   <div class="test" data-barba="container" data-barba-namespace="index-section">
 
 
 
@@ -35,14 +35,20 @@ $randomSheet = $req2->fetch();
 
       <div class="wrapp">
          <div class="col2 hero">
-            <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
             <div class="miror">
-               <h1 class="abyss"><span>Au delà de l'abîme</span><br>La musique des profondeurs</h1>
+               <h1 class="abyss"><span>Au delà de l'abîme</span><br>La musique des profondeurs
+                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+                  <div class="ringOfNotes_circle"></div>
+               </h1>
             </div>
          </div>
       </div>
 
-
+      <div class="separators">
+         <div class="separator one"></div>
+         <div class="separator two"></div>
+         <div class="separator three"></div>
+      </div>
 
       <div class="features">
 
