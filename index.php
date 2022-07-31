@@ -36,7 +36,7 @@ $randomSheet = $req2->fetch();
       <div class="wrapp">
          <div class="col2 hero">
             <div class="miror">
-               <h1 class="abyss"><span>Au delà de l'abîme !</span><br>La musique des profondeurs
+               <h1 class="abyss"><span>Beyond the abyss</span><br>Music from the depths
                   <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
                   <div class="ringOfNotes_circle"></div>
                </h1>
@@ -53,7 +53,7 @@ $randomSheet = $req2->fetch();
       <div class="features">
 
          <a class="cards one" href="content.php?category=tuto">
-            <div class="titles">Tutoriels</div>
+            <div class="titles">Tutorials</div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>
@@ -69,7 +69,7 @@ $randomSheet = $req2->fetch();
 
 
          <a class="cards three" href="content.php?category=sheet">
-            <div class="titles">Partitions</div>
+            <div class="titles">Sheet music</div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>

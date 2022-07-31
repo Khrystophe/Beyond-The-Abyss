@@ -97,7 +97,8 @@ function contentAnimation() {
 $(function () {
   barba.init({
       sync: true,
-
+      prefetchIgnore: true,
+      
       transitions: [
           {
               async leave(data) {
