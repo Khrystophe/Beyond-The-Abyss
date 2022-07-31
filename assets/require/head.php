@@ -83,8 +83,6 @@
                      <?php
                      if (isset($_SESSION['users']) && !empty($_SESSION['users'])) { ?>
                         <a class="link" href="./assets/actions/logout_action.php">Déconnexion</a>
-                     <?php }
-                     ?>
                   </div>
 
 
@@ -100,6 +98,7 @@
                      <?php if ($page != 'add_content') { ?>
                         <a class="link" href="add_content.php">Ajouter du contenu</a>
                      <?php }
+                     }
                      ?>
                   </div>
 
