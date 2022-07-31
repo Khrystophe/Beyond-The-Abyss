@@ -36,7 +36,7 @@ $randomSheet = $req2->fetch();
       <div class="wrapp">
          <div class="col2 hero">
             <div class="miror">
-               <h1 class="abyss"><span>,Beyond the abyss</span><br>Music from the depths
+               <h1 class="abyss"><span>Beyond the abyss</span><br>Music from the depths
                   <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
                   <div class="ringOfNotes_circle"></div>
                </h1>
