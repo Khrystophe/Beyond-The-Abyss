@@ -82,7 +82,7 @@
                   <div class="menu__left__inner__item">
                      <?php
                      if (isset($_SESSION['users']) && !empty($_SESSION['users'])) { ?>
-                        <a class="link" href="./assets/actions/logout_action.php">Déconnexion</a>
+                        <a class="link" href="/Diplome/assets/actions/logout_action.php">Déconnexion</a>
                   </div>
 
 
@@ -97,9 +97,9 @@
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'add_content') { ?>
                         <a class="link" href="add_content.php">Ajouter du contenu</a>
-                     <?php }
+                  <?php }
                      }
-                     ?>
+                  ?>
                   </div>
 
 
