@@ -52,7 +52,7 @@ $randomSheet = $req2->fetch();
 
       <div class="features">
 
-         <a class="cards one" href="content.php?category=tuto">
+         <a class="cards one" href="http://virt/Diplome/content.php?category=tuto">
             <div class="titles">Tutorials</div>
             <div class="line one"></div>
             <div class="line two"></div>

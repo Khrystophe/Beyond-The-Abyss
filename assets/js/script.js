@@ -50,7 +50,7 @@ function contentAnimation() {
   .to('.main_logo', {
     opacity: 1,
     duration: 3
-  }, "<1")
+  })
   .to('.miror h1', {
     opacity: 1,
     y: 0,
@@ -97,8 +97,9 @@ function contentAnimation() {
 $(function () {
   barba.init({
       sync: true,
-      prefetchIgnore: true,
-      
+      // prefetchIgnore: true,
+      // preventRunning: true,
+
       transitions: [
           {
               async leave(data) {
@@ -142,12 +143,6 @@ toggle.addEventListener('click', function() {
         y: 0,
         duration: 2.2
       }, "<0.1")
-      .to('.titles, .line.one, .line.two, .line.three', {
-        stagger: .1,
-        duration: 1.2,
-        opacity: 1,
-        y: 0
-      }, "-=2")
       .to('.separator.one', {
         width:"25%",
         duration: 2.5,
@@ -160,13 +155,30 @@ toggle.addEventListener('click', function() {
         width:"75%",
         duration: 2.5,
       }, "-=2")
+      .to('.titles, .line.one, .line.two, .line.three', {
+        stagger: .1,
+        duration: 1.2,
+        opacity: 1,
+        y: 0
+      }, "-=2")
       .to('footer', {
         opacity: 1
-      }, "-=2")
+      },"-=3")
       .to('.random_content', {
         opacity: 1,
-        duration: 3.9
       }, "-=2")
+      .to(".box, .box h2", {
+        duration: 2,
+        scale: 1,
+        opacity: 1,
+        y: 0,
+        ease: "power1.inOut",
+        stagger: {
+          grid: [7, 15],
+          from: "edges",
+          amount: 1.5
+        }
+      }, "<-2")
 
     tl1
       .to('.sep', {
@@ -199,6 +211,18 @@ toggle.addEventListener('click', function() {
         opacity: 0,
         duration: 2.2
       })
+      .to(".box, .box h2", {
+        duration: 2,
+        scale: 0.1,
+        opacity: 0,
+        y: 40,
+        ease: "power1.inOut",
+        stagger: {
+          grid: [7, 15],
+          from: "edges",
+          amount: 1.5
+        }
+      }, "-=3.6")
       .to('.separator.one', {
         width:0,
         duration: 1.2,

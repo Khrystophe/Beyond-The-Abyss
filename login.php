@@ -34,7 +34,7 @@ require('./assets/require/head.php');
             </div>
 
             <div class="rightside">
-               <form class="form_action" action="./assets/actions/login_action.php" method="post" enctype="multipart/form-data">
+               <form class="form_action" action="./assets/actions/login_action.php" method="post">
 
                   <label for="login_email"></label>
                   <input type="text" placeholder="Email" class="inputbox" id="login_email" name="email" required />
