@@ -19,15 +19,6 @@ require('./assets/require/head.php');
          } ?>
       </div>
 
-      <div class="wrapp">
-         <div class="col2 hero">
-            <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-            <div class="miror">
-               <h1 class="abyss"><span>Au delà de l'abîme</span><br>S'inscrire aux profondeurs</h1>
-            </div>
-         </div>
-      </div>
-
       <div class="form">
          <div class="form_content">
 
@@ -50,8 +41,8 @@ require('./assets/require/head.php');
                   <label for="register_password"></label>
                   <input type="password" class="inputbox" placeholder="Mot de passe" id="register_password" name="password" required />
 
-                  <label for="register_confirm_password"></label>
-                  <input type="password" class="inputbox" placeholder="Confirmez votre mot de passe" id="register_confirm_password" name="confirm_password" required />
+                  <label for="register_password_confirm"></label>
+                  <input type="password" class="inputbox" placeholder="Confirmez votre mot de passe" id="register_password_confirm" name="password_confirm" required />
 
                   <button type="submit" class="button">Ajouter</button>
                </form>

@@ -19,7 +19,7 @@ $randomSheet = $req2->fetch();
 
 <main class="autoAlpha" data-barba="wrapper">
 
-   <div class="test" data-barba="container" data-barba-namespace="index-section">
+   <div data-barba="container" data-barba-namespace="index-section">
 
 
 
@@ -31,49 +31,27 @@ $randomSheet = $req2->fetch();
          } ?>
       </div>
 
-
-
-      <div class="wrapp">
-         <div class="col2 hero">
-            <div class="miror">
-               <h1 class="abyss"><span>Beyond the abyss</span><br>Music from the depths
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <div class="ringOfNotes_circle"></div>
-               </h1>
-            </div>
-         </div>
-      </div>
-
-      <div class="separators">
-         <div class="separator one"></div>
-         <div class="separator two"></div>
-         <div class="separator three"></div>
-      </div>
-
       <div class="features">
-
-         <a class="cards one" href="http://virt/Diplome/content.php?category=tuto">
-            <div class="titles">Tutorials</div>
+         <div class="cards one">
+            <div class="titles"><a href="content.php?category=tuto">Tutorials</a></div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>
-         </a>
+         </div>
 
-
-         <a class="cards two" href="content.php?category=perf">
-            <div class="titles">Performances</div>
+         <div class="cards two">
+            <div class="titles"><a href="content.php?category=perf">Performances</a></div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>
-         </a>
+         </div>
 
-
-         <a class="cards three" href="content.php?category=sheet">
-            <div class="titles">Sheet music</div>
+         <div class="cards three">
+            <div class="titles"><a href="content.php?category=sheet">Sheet music</a></div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>
-         </a>
+         </div>
 
       </div>
 

@@ -84,37 +84,6 @@ span {
     flex-direction: column;
     align-items: center;
   }
-  
-  // .abyss::before {
-  //   content: '';
-  //   height: 100%;
-  //   width: 100%;
-  //   background: rgb(48, 48, 84);
-  //   position: absolute;
-  //   left: 0;
-  //   top: 96%;
-  //   pointer-events: none;
-  //   transform: perspective(4.5rem) rotateX(46deg) scale(1,0.4);
-  //   filter: blur(1.5rem);
-  //   opacity: 0.3;
-  //   border-radius: 50%;
-  //   border-radius: 10px;
-  // }
-
-  //  .abyss span::before{
-  //   content: '';
-  //   height: 100%;
-  //   width: 100%;
-  //   background:#f1c40f;
-  //   position: absolute;
-  //   left: 0;
-  //   top: 96%;
-  //   pointer-events: none;
-  //   transform: perspective(4.5rem) rotateX(46deg) scale(0.5,0.1);
-  //   filter: blur(5.5rem);
-  //   opacity: 0.3;
-  //   border-radius: 50%;
-  // }
 }
 
 .main_logo {
@@ -149,35 +118,16 @@ span {
     justify-content: space-between;
 }
 .separator{
-  height: 11px;
+  height: 10px;
   border-radius: 10px;
   background: #161616;
-  box-shadow:  5px -5px 5px #090909,
-               -5px 5px 5px #232323;
-               &.one{
-                
+  box-shadow: -2px 16px 5px #090909, -4px 12px 0px #232323;
+
+               &.one, &.two, &.three{
                 width: 0;
-                height: 12px;
-                border-radius: 10px;
-                background: #161616;
-                box-shadow: 5px 20px 12px #090909, -5px 12px 10px #232323;
                }
-               &.two{
-                
-                width: 0;
-                height: 12px;
-                border-radius: 10px;
-                background: #161616;
-                box-shadow: 5px 20px 12px #090909, -5px 12px 10px #232323;
-               }
-               &.three{
-                
-                width: 0;
-                height: 12px;
-                border-radius: 10px;
-                background: #161616;
-                box-shadow: 5px 20px 12px #090909, -5px 12px 10px #232323;
-               }
+
+              
 }
 
 @keyframes rotate_main_logo {

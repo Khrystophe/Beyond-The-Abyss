@@ -106,7 +106,7 @@ $(function () {
                   const done = this.async();
 
                   pageTransition();
-                  await delay(1000);
+                  await delay(1500);
                   done();
               },
 
@@ -290,6 +290,59 @@ toggle.addEventListener('click', function() {
 
 
 //////////////////Animation menu avant changement de page/////////////////////////////////////
+
+
+let cards= document.querySelectorAll('.cards');
+
+for (let i = 0 ; i < cards.length; i++) {
+  cards[i].addEventListener('click', function(e){
+    
+    e.preventDefault();
+
+    tl
+    .to('.main_logo', {
+      opacity: 0,
+      duration: 2.2
+    })
+    .to('.separator.one', {
+      width:0,
+      duration: 1.2,
+    }, "-=2.5")
+    .to('.separator.two', {
+      width:0,
+      duration: 1.2,
+    }, "-=2.5")
+    .to('.separator.three', {
+      width:0,
+      duration: 1.2,
+    }, "-=2.5")
+    .to('.titles, .line.one, .line.two, .line.three', {
+      stagger: -0.1,
+      duration: 0.7,
+      opacity: 0,
+      y: 100
+    }, "-=2")
+    .to('.miror h1', {
+      opacity: 0,
+      y: 100,
+      duration: 2
+    }, "-=2.3")
+    .to('footer', {
+      opacity: 0
+    }, "-=3")
+    .to('.random_content', {
+      opacity: 0
+    }, "-=2")
+    .set('.autoAlpha', {
+      autoAlpha: 0
+    })
+
+    setTimeout(function(){
+      window.location.href = e.target.href
+    },4500)
+  })
+}
+
 let link= document.querySelectorAll('.link');
 
 for (let i = 0 ; i < link.length; i++) {

@@ -24,6 +24,13 @@
     flex-direction: column;
     align-items: center;
 }
+
+.form_title{
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 0;
+}
+
 .leftside {
 	background-color: rgba(255, 255, 255, 0.13);
     backdrop-filter: blur(10px);
@@ -89,3 +96,6 @@
     box-shadow: 3px 3px 6px #ffffff85;
 }
 
+.margin{
+    height: 20px;
+}

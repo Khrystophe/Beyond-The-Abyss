@@ -35,28 +35,28 @@
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'index') { ?>
-                        <a class="link" href="index.php">Page d'accueil</a>
+                        <a class="link" href="index.php">Home</a>
                      <?php } ?>
                   </div>
 
 
                   <div class="menu__left__inner__item">
-                     <?php if ($page != 'contentTuto') { ?>
-                        <a class="link" href="content.php?category=tuto">Tutoriels</a>
+                     <?php if ($page != 'tuto_content') { ?>
+                        <a class="link" href="content.php?category=tuto">Tutorials</a>
                      <?php } ?>
                   </div>
 
 
                   <div class="menu__left__inner__item">
-                     <?php if ($page != 'contentPerf') { ?>
+                     <?php if ($page != 'perf_content') { ?>
                         <a class="link" href="content.php?category=perf">Performances</a>
                      <?php } ?>
                   </div>
 
 
                   <div class="menu__left__inner__item">
-                     <?php if ($page != 'contentSheet') { ?>
-                        <a class="link" href="content.php?category=sheet">Partitions</a>
+                     <?php if ($page != 'sheet_content') { ?>
+                        <a class="link" href="content.php?category=sheet">Sheet Music</a>
                      <?php } ?>
                   </div>
 
@@ -66,14 +66,14 @@
                      if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
 
                         if ($page != 'login') { ?>
-                           <a class="link" href="login.php">Connexion</a>
+                           <a class="link" href="login.php">Login</a>
                         <?php } ?>
                   </div>
 
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'register') { ?>
-                        <a class="link" href="register.php">S'inscrire</a>
+                        <a class="link" href="register.php">Register</a>
                   <?php }
                      } ?>
                   </div>
@@ -82,75 +82,133 @@
                   <div class="menu__left__inner__item">
                      <?php
                      if (isset($_SESSION['users']) && !empty($_SESSION['users'])) { ?>
-                        <a data-barba-prevent class="link" href="./assets/actions/logout_action.php">Déconnexion</a>
+                        <a data-barba-prevent class="link" href="./assets/actions/logout_action.php">Logout</a>
                   </div>
 
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'my_account') { ?>
-                        <a class="link" href="my_account.php">Mon compte</a>
+                        <a class="link" href="my_account.php">My Account</a>
                      <?php }
                      ?>
                   </div>
+               <?php } ?>
+               </div>
+
+            </div>
+         </div>
 
 
-                  <div class="menu__left__inner__item">
-                     <?php if ($page != 'add_content') { ?>
-                        <a class="link" href="add_content.php">Ajouter du contenu</a>
-                  <?php }
-                     }
-                  ?>
+
+         <div class="menu__right">
+            <div class="menu__right__inner">
+               <div class="menu__right__inner__item">
+
+
+                  <div class="menu__right__inner__item__title">
+                     Contact
                   </div>
+                  <ul>
+                     <li>
+                        <a class="link" href="index.php">contact@website.com</a>
+                     </li>
+                  </ul>
+               </div>
 
 
+               <div class="menu__right__inner__item">
+                  <div class="menu__right__inner__item__title">
+                     Socials
+                  </div>
+                  <ul>
+                     <li>
+                        <a class="link" href="#">Facebook</a>
+                     </li>
+                     <li>
+                        <a class="link" href="#">Instagram</a>
+                     </li>
+                     <li>
+                        <a class="link" href="#">Youtube</a>
+                     </li>
+                     <li>
+                        <a class="link" href="#">Twitter</a>
+                     </li>
+                  </ul>
                </div>
             </div>
+         </div>
 
 
-
-            <div class="menu__right">
-               <div class="menu__right__inner">
-                  <div class="menu__right__inner__item">
-
-
-                     <div class="menu__right__inner__item__title">
-                        Contact
-                     </div>
-                     <ul>
-                        <li>
-                           <a class="link" href="index.php">contact@website.com</a>
-                        </li>
-                     </ul>
-                  </div>
-
-
-                  <div class="menu__right__inner__item">
-                     <div class="menu__right__inner__item__title">
-                        Socials
-                     </div>
-                     <ul>
-                        <li>
-                           <a class="link" href="#">Facebook</a>
-                        </li>
-                        <li>
-                           <a class="link" href="#">Instagram</a>
-                        </li>
-                        <li>
-                           <a class="link" href="#">Youtube</a>
-                        </li>
-                        <li>
-                           <a class="link" href="#">Twitter</a>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-
-
-            <div class="sep"></div>
-            <div class="sep__icon"><img class="logo" src="./assets/img/music-g8090509f0_1920.png" alt=""></div>
+         <div class="sep"></div>
+         <div class="sep__icon"><img class="logo" src="./assets/img/music-g8090509f0_1920.png" alt=""></div>
 
 
          </div>
       </nav>
    </header>
+
+
+   <div class="wrapp">
+      <div class="col2 hero">
+         <div class="miror">
+
+            <?php if ($page == 'index') { ?>
+               <h1 class="abyss"><span>Beyond the abyss</span><br>Music from the depths
+                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+                  <div class="ringOfNotes_circle"></div>
+               </h1>
+            <?php } else if ($page == 'tuto_content') { ?>
+               <h1 class="abyss"><span>Beyond the abyss</span><br>Tutorials from the depths
+                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+                  <div class="ringOfNotes_circle"></div>
+               </h1>
+            <?php } else if ($page == 'perf_content') { ?>
+               <h1 class="abyss"><span>Beyond the abyss</span><br>Performances from the depths
+                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+                  <div class="ringOfNotes_circle"></div>
+               </h1>
+            <?php } else if ($page == 'sheet_content') { ?>
+               <h1 class="abyss"><span>Beyond the abyss</span><br>Sheet music from the depths
+                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+                  <div class="ringOfNotes_circle"></div>
+               </h1>
+            <?php } else if ($page == 'user_content') { ?>
+               <h1 class="abyss"><span>Beyond the abyss</span><br>Your content from the depths
+                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+                  <div class="ringOfNotes_circle"></div>
+               </h1>
+            <?php } else if ($page == 'user_purchased_content') { ?>
+               <h1 class="abyss"><span>Beyond the abyss</span><br>Your purchased content from the depths
+                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+                  <div class="ringOfNotes_circle"></div>
+               </h1>
+            <?php } else if ($page == 'register') { ?>
+               <h1 class="abyss"><span>Beyond the abyss</span><br>Register to the depths
+                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+                  <div class="ringOfNotes_circle"></div>
+               </h1>
+            <?php } else if ($page == 'login') { ?>
+               <h1 class="abyss"><span>Beyond the abyss</span><br>Connect to the depths
+                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+                  <div class="ringOfNotes_circle"></div>
+               </h1>
+            <?php } else if ($page == 'add_content') { ?>
+               <h1 class="abyss"><span>Beyond the abyss</span><br>Add content to the depths
+                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+                  <div class="ringOfNotes_circle"></div>
+               </h1>
+            <?php } else if ($page == 'my_account') { ?>
+               <h1 class="abyss"><span>Beyond the abyss</span><br>Your account of the depths
+                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+                  <div class="ringOfNotes_circle"></div>
+               </h1>
+            <?php } ?>
+         </div>
+      </div>
+   </div>
+
+   <div class="separators">
+      <div class="separator one"></div>
+      <div class="separator two"></div>
+      <div class="separator three"></div>
+   </div>

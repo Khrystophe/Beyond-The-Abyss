@@ -20,61 +20,126 @@ $contents = $req2->fetchAll();
 <main class="autoAlpha" data-barba="wrapper">
    <div data-barba="container" data-barba-namespace="my_account-section">
 
-      <div class="wrapp">
-         <div class="col2 hero">
-            <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-            <div class="miror">
-               <h1 class="abyss"><span>Au delà de l'abîme</span><br>Votre compte des profondeurs</h1>
+
+      <?php if (isset($_GET['success']) && !empty($_GET['success'])) {
+         if ($_GET['success'] == 'change_ok') { ?>
+            <h5>Mot de passe modifié avec succès</h5>
+         <?php
+         }
+         if ($_GET['success'] == 'modificationmail') { ?>
+            <h5>Adresse mail modifiée avec succès</h5>
+      <?php
+         }
+      } ?>
+
+
+      <div class="form">
+         <div class="form_content">
+
+            <div class="leftside">
+               <img src="./assets/img/music-g8090509f0_1920.png" alt="" />
             </div>
-         </div>
-      </div>
 
-      <div class="features">
+            <div class="rightside">
 
 
-         <div class="align">
-            <?php if (isset($_GET['success']) && !empty($_GET['success'])) {
-               if ($_GET['success'] == 'modificationmotdepasse') { ?>
-                  <h5>Mot de passe modifié avec succès</h5>
-               <?php
-               }
-               if ($_GET['success'] == 'modificationmail') { ?>
-                  <h5>Adresse mail modifiée avec succès</h5>
-            <?php
-               }
-            } ?>
-            <?php foreach ($account as $acc) { ?>
-               <div>
-                  <div>Nom d'utilsateur : <?= htmlspecialchars($acc['name']); ?> </div>
-                  <div>Email : <?= htmlspecialchars($acc['email']); ?></div>
-                  <div>
-                     <form>
-                        <button class="button" type="text"><a href="formulaireChangementMail.php"> Changer d'adresse mail</a></button>
-                     </form>
+               <?php foreach ($account as $acc) { ?>
+
+                  <h2 type="text" class="form_title">Hello <?= htmlspecialchars($acc['name']) . " " . htmlspecialchars($acc['lastname']); ?> </h2>
+
+                  <h2 type="text" class="form_title">Your Email : <?= htmlspecialchars($acc['email']); ?> </h2>
+
+                  <div class="margin"></div>
+
+                  <form data-barba-prevent class="form_action" action="./assets/actions/edit_name_lastname_action.php" method="post">
+
+
+                     <label for="name"></label>
+                     <input type="text" class="inputbox" placeholder="Your current name : <?= htmlspecialchars($acc['name']);  ?> " id="name" name="name" />
+
+                     <label for="lastname"></label>
+                     <input type="text" class="inputbox" placeholder="Your current last name : <?= htmlspecialchars($acc['lastname']);  ?> " id="lastname" name="lastname" />
+
+                     <button type="submit" class="button">Edit</button>
+
+                  </form>
+
+                  <div class="margin"></div>
+
+                  <form data-barba-prevent class="form_action" action="./assets/actions/edit_password_action.php" method="post">
+
+                     <label for="old_password"></label>
+                     <input type="password" placeholder=" Old password " class="inputbox" id="old_password" name="old_password" required />
+
+                     <label for="new_password"></label>
+                     <input type="password" placeholder=" New password " class="inputbox" id="new_password" name="new_password" required />
+
+                     <label for="new_password_confirm"></label>
+                     <input type="password" class="inputbox" placeholder="Confirm your new password" id="new_password_confirm" name="new_password_confirm" required />
+
+
+                     <button type="submit" class="button">Edit</button>
+
+                     <div class="margin"></div>
+
+                  </form>
+
+                  <h2 type="text" class="form_title">Add Content</h2>
+
+                  <div class="margin"></div>
+
+                  <form class="form_action" action="./assets/actions/add_content_action.php" method="post" enctype="multipart/form-data">
+
+                     <label for="title"></label>
+                     <input type="text" class="inputbox" placeholder="Titre" id="title" name="title" required />
+
+                     <label for="composer"></label>
+                     <input type="text" class="inputbox" placeholder="Compositeur" id="composer" name="composer" required />
+
+                     <label for="category"></label>
+                     <select class="inputbox" id="category" name="category" required>
+                        <option value="">--Category--</option>
+                        <option value="tuto">Tutorial</option>
+                        <option value="perf">Performances</option>
+                        <option value="sheet">Sheet Music</option>
+                     </select>
+
+                     <label for="level"></label>
+                     <select class="inputbox" id="level" name="level" required>
+                        <option value="">--Level--</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                        <option value="very-hard">Very Hard</option>
+                     </select>
+
+                     <label for="content"></label>
+                     <input type="file" class="inputbox" id="content" name="content" required />
+
+                     <button type="submit" class="button">Add</button>
+                  </form>
+
+                  <div class="margin"></div>
+
+                  <div class="form_action">
+                     <button class="button"><a href="content.php?category=user_content">Your content</a></button>
                   </div>
-                  <div>Mot de passe : </div>
-                  <div>
-                     <form>
-                        <button class="button" type="text"><a href="formulaireChangementDeMotDePasse.php"> Changer de mot de passe</a></button>
-                     </form>
-                  </div>
-               </div>
-            <?php } ?>
 
-            <div id="app" class="content">
-               <?php foreach ($contents as $content) { ?>
-                  <card class="box" data-image="./assets/contents_img/<?= htmlspecialchars($content['content']); ?>">
-                     <h2 slot="header"><?= htmlspecialchars($content['title']); ?></h2>
-                     <h2 slot="header"><?= htmlspecialchars($content['composer']); ?></h2>
-                     <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                     <a href="actions/modif.php?id=<?= htmlspecialchars($content['id']); ?>"><button>Modifier</button></a>
-                     <a href="actions/suppression.php?id=<?= htmlspecialchars($content['id']); ?>"><button>Supprimer</button></a>
-                  </card>
+                  <div class="margin"></div>
+
+                  <div class="form_action">
+                     <button class="button"><a href="content.php?category=user_purchased_content">Your purchased content</a></button>
+                  </div>
+
                <?php } ?>
             </div>
 
+
          </div>
       </div>
+
+
+
 
    </div>
 </main>

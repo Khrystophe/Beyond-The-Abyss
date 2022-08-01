@@ -1,15 +1,24 @@
 <?php
 session_start();
 if ($_GET['category'] == 'tuto') {
-   $page = 'contentTuto';
+
+   $page = 'tuto_content';
 } else if ($_GET['category'] == 'perf') {
-   $page = 'contentPerf';
+
+   $page = 'perf_content';
 } else if ($_GET['category'] == 'sheet') {
-   $page = 'contentSheet';
+
+   $page = 'sheet_content';
+} else if ($_GET['category'] == 'user_content') {
+
+   $page = 'user_content';
+} else if ($_GET['category'] == 'user_purchased_content') {
+
+   $page = 'user_purchased_content';
 }
+
 require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
-
 
 $req = $bdd->prepare('SELECT * FROM contents WHERE category = ? ');
 $req->execute(array(
@@ -24,39 +33,8 @@ ON users.id = contents.id_users');
 $results = $join->fetchAll();
 
 ?>
-<main id="background" class="autoAlpha" data-barba="wrapper">
+<main class="autoAlpha" data-barba="wrapper">
    <div data-barba="container" data-barba-namespace="content-section">
-
-      <div class="wrapp">
-         <div class="col2 hero">
-
-            <?php if ($_GET['category'] == 'tuto') {
-            ?>
-               <div class="miror">
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <h1 class="abyss"><span>Au delà de l'abîme</span><br>Les tutoriels des profondeurs</h1>
-               </div>
-
-
-            <?php } else if ($_GET['category'] == 'perf') {
-            ?>
-               <div class="miror">
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <h1 class="abyss"><span>Au delà de l'abîme</span><br>Les performances des profondeurs</h1>
-               </div>
-
-
-            <?php } else if ($_GET['category'] == 'sheet') {
-            ?>
-               <div class="miror">
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <h1 class="abyss"><span>Au delà de l'abîme</span><br>Les partitions des profondeurs</h1>
-               </div>
-
-            <?php } ?>
-
-         </div>
-      </div>
 
       <div class="container">
          <?php foreach ($contents as $content) { ?>
