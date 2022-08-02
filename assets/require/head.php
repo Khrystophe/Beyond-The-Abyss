@@ -74,25 +74,26 @@
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'register') { ?>
                         <a class="link" href="register.php">Register</a>
-                  <?php }
-                     } ?>
-                  </div>
-
-
-                  <div class="menu__left__inner__item">
-                     <?php
-                     if (isset($_SESSION['users']) && !empty($_SESSION['users'])) { ?>
-                        <a data-barba-prevent class="link" href="./assets/actions/logout_action.php">Logout</a>
-                  </div>
-
-
-                  <div class="menu__left__inner__item">
-                     <?php if ($page != 'my_account') { ?>
-                        <a class="link" href="my_account.php">My Account</a>
                      <?php }
                      ?>
                   </div>
                <?php } ?>
+
+
+               <div class="menu__left__inner__item">
+                  <?php
+                  if (isset($_SESSION['users']) && !empty($_SESSION['users'])) { ?>
+                     <a data-barba-prevent class="link" href="./assets/actions/logout_action.php">Logout</a>
+               </div>
+
+
+               <div class="menu__left__inner__item">
+                  <?php if ($page != 'my_account') { ?>
+                     <a class="link" href="my_account.php">My Account</a>
+                  <?php }
+                  ?>
+               </div>
+            <?php } ?>
                </div>
 
             </div>

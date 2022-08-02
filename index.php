@@ -26,7 +26,7 @@ $randomSheet = $req2->fetch();
       <div>
          <?php if (isset($_GET['success']) && !empty($_GET['success'])) {
             if ($_GET['success'] == 'creation') { ?>
-               <h5>La création de votre compte est un succès</h5>
+               <h5>The creation of your account is a success</h5>
          <?php }
          } ?>
       </div>

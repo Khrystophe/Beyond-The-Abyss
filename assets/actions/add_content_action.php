@@ -24,41 +24,20 @@ if (isset($_FILES) && !empty($_FILES)) {
    }
 }
 
+$req = $bdd->prepare("INSERT INTO contents( title,composer, level, category,content, price) VALUES (:title, :composer, :level, :category, :content, :price)");
+$req->execute(array(
+   ':title' => $_POST['title'],
+   ':composer' => $_POST['composer'],
+   ':level' => $_POST['level'],
+   'category' => $_POST['category'],
+   ':content' => $content,
+   ':price' => $_POST['price'],
+));
 
-
-if ($content == null) {
-   $req = $bdd->prepare("INSERT INTO `contents`( `title`,`composer`, `level`, `category`,`price`) VALUES (?,?,?,?,?)");
-   $req->execute(array(
-      $_POST['title'],
-      $_POST['composer'],
-      $_POST['level'],
-      $_POST['category'],
-      $_POST['price'],
-
-   ));
-   if ($_POST['category'] == "tuto") {
-      header('location: ../../content.php?category=tuto&success=add_content');
-   } else if ($_POST['category'] == "perf") {
-      header('location: ../../content.php?category=perf&success=add_content');
-   } else if ($_POST['category'] == "sheet") {
-      header('location: ../../content.php?category=sheet&success=add_content');
-   }
-} else {
-   $req = $bdd->prepare("INSERT INTO `contents`( `title`,`composer`, `level`, `category`,`content`, `price`) VALUES (?,?,?,?,?,?)");
-   $req->execute(array(
-      $_POST['title'],
-      $_POST['composer'],
-      $_POST['level'],
-      $_POST['category'],
-      $content,
-      $_POST['price'],
-
-   ));
-   if ($_POST['category'] == "tuto") {
-      header('location: ../../content.php?category=tuto&success=add_content');
-   } else if ($_POST['category'] == "perf") {
-      header('location: ../../content.php?category=perf&success=add_content');
-   } else if ($_POST['category'] == "sheet") {
-      header('location: ../../content.php?category=sheet&success=add_content');
-   }
+if ($_POST['category'] == "tuto") {
+   header('location: ../../content.php?category=tuto&success=add_content');
+} else if ($_POST['category'] == "perf") {
+   header('location: ../../content.php?category=perf&success=add_content');
+} else if ($_POST['category'] == "sheet") {
+   header('location: ../../content.php?category=sheet&success=add_content');
 }

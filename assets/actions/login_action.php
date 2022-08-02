@@ -4,16 +4,15 @@ require('../require/co_bdd.php');
 
 if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password'])) {
 
-   $email = $_POST['email'];
-   $password = $_POST['password'];
-
-   $req = $bdd->prepare('SELECT * FROM users WHERE email = ?');
-   $req->execute([$email]);
+   $req = $bdd->prepare('SELECT * FROM users WHERE email = :email');
+   $req->execute(array(
+      ':email' => $_POST['email']
+   ));
    $user = $req->fetch();
 
    if ($user) {
 
-      if (password_verify($password, $user['password'])) {
+      if (password_verify($_POST['password'], $user['password'])) {
 
          $_SESSION['users']['id'] = $user['id'];
          $_SESSION['users']['email'] = $user['email'];

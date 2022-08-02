@@ -9,12 +9,10 @@ require('./assets/require/head.php');
 
       <div>
          <?php if (isset($_GET['error']) && !empty($_GET['error'])) {
-            if ($_GET['error'] == 'vide') { ?>
-               <h5>Veuillez remplir tous les champs</h5>
-            <?php } else if ($_GET['error'] == 'invalidPassword') { ?>
-               <h5>Confirmation de mot de passe incorrecte</h5>
-            <?php  } else if ($_GET['error'] == 'adressexistante') { ?>
-               <h5>Adresse email déjà utilisée</h5>
+            if ($_GET['error'] == 'invalid_confirm') { ?>
+               <h5>Wrong password confirmation</h5>
+            <?php  } else if ($_GET['error'] == 'email_exist') { ?>
+               <h5>Email already exist</h5>
          <?php }
          } ?>
       </div>

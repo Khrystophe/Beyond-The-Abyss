@@ -10,22 +10,20 @@ if (isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['lastname'])
 
       if ($_POST['password'] == $_POST['password_confirm']) {
 
-         $req = $bdd->prepare("INSERT INTO users(name,lastname,email,password) VALUES (?,?,?,?)");
+         $req = $bdd->prepare("INSERT INTO users(name,lastname,email,password) VALUES (:name, :lastname, :email, :password)");
          $req->execute(array(
-            $_POST['name'],
-            $_POST['lastname'],
-            $_POST['email'],
-            password_hash($_POST['password'], PASSWORD_BCRYPT),
+            ':name' => $_POST['name'],
+            ':lastname' => $_POST['lastname'],
+            ':email' => $_POST['email'],
+            ':password' => password_hash($_POST['password'], PASSWORD_BCRYPT),
          ));
 
          header('location: ../../index.php?success=creation');
       } else {
 
-         header('location: ../../register.php?error=invalidPassword');
+         header('location: ../../register.php?error=invalid_confirm');
       }
    } else {
-      header('location: ../../register.php?error=adressexistante');
+      header('location: ../../register.php?error=email_exist');
    }
-} else {
-   header('location: ../../register.php?error=vide');
 }

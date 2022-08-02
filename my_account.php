@@ -4,15 +4,15 @@ $page = 'my_account';
 require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
 
-$req = $bdd->prepare('SELECT * FROM users WHERE id= ?');
+$req = $bdd->prepare('SELECT * FROM users WHERE id= :id');
 $req->execute(array(
-   $_SESSION['users']['id']
+   ':id' => $_SESSION['users']['id']
 ));
 $account = $req->fetchAll();
 
-$req2 = $bdd->prepare('SELECT * FROM contents WHERE id_users=?');
+$req2 = $bdd->prepare('SELECT * FROM contents WHERE id_users= :id_users');
 $req2->execute(array(
-   $_SESSION['users']['id']
+   ':id_users' => $_SESSION['users']['id']
 ));
 $contents = $req2->fetchAll();
 ?>
@@ -23,11 +23,17 @@ $contents = $req2->fetchAll();
 
       <?php if (isset($_GET['success']) && !empty($_GET['success'])) {
          if ($_GET['success'] == 'change_ok') { ?>
-            <h5>Mot de passe modifié avec succès</h5>
+            <h5>Password changed successfully</h5>
          <?php
          }
-         if ($_GET['success'] == 'modificationmail') { ?>
-            <h5>Adresse mail modifiée avec succès</h5>
+      }
+      if (isset($_GET['error']) && !empty($_GET['error'])) {
+         if ($_GET['error'] == 'confirm_false') { ?>
+            <h5>Wrong password confirmation</h5>
+         <?php
+         }
+         if ($_GET['error'] == 'invalid_password') { ?>
+            <h5>Wrong password</h5>
       <?php
          }
       } ?>

@@ -10,9 +10,9 @@ require('./assets/require/head.php');
       <div>
          <?php if (isset($_GET['error']) && !empty($_GET['error'])) {
             if ($_GET['error'] == 'password') { ?>
-               <h5>Mot de passe incorrect</h5>
+               <h5>Wrong password</h5>
             <?php } else if ($_GET['error'] == 'nonexist') { ?>
-               <h5>Cet utilisateur n'existe pas</h5>
+               <h5>This user does not exist</h5>
          <?php }
          } ?>
       </div>

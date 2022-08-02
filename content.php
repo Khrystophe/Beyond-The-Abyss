@@ -20,9 +20,9 @@ if ($_GET['category'] == 'tuto') {
 require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
 
-$req = $bdd->prepare('SELECT * FROM contents WHERE category = ? ');
+$req = $bdd->prepare('SELECT * FROM contents WHERE category = :category ');
 $req->execute(array(
-   $_GET['category']
+   ':category' => $_GET['category']
 ));
 $contents = $req->fetchAll();
 
