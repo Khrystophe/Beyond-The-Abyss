@@ -21,6 +21,24 @@ $randomSheet = $req2->fetch();
 
    <div data-barba="container" data-barba-namespace="index-section">
 
+      <div class="wrapp">
+
+         <div class="abyss">
+            <h1><span>Beyond the abyss</span>
+            </h1>
+            <h2>Music from the </h2>
+            <h2>depths</h2>
+            <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+            <div class="main_logo_disc"></div>
+         </div>
+
+      </div>
+
+      <div class="separators">
+         <div class="separator one"></div>
+         <div class="separator two"></div>
+         <div class="separator three"></div>
+      </div>
 
 
       <div>

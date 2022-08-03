@@ -1,4 +1,3 @@
-/* /////////////////////////////////GENERAL///////////////////////////////// */
 @import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
 * {
   margin: 0;
@@ -41,77 +40,11 @@ nav {
   height: 100%;
 }
 
-.abyss {
-  width: 77%;
-}
-
-span {
-  color: #000000;
-  position: absolute;
-}
-
 .autoAlpha {
-  opacity: 0.9;
+  opacity: 1;
 }
 
-.miror {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.miror .abyss {
-  opacity: 0;
-  transform: translateY(100px);
-  text-align: center;
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.main_logo {
-  margin: 0%;
-  padding: 0%;
-  top: -20%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  width: 350px;
-  opacity: 0;
-  animation: rotate_main_logo 8s linear infinite;
-  z-index: -10;
-}
-
-.ringOfNotes_circle {
-  width: 210px;
-  height: 210px;
-  animation: rotateLogo 8s linear infinite reverse;
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(315deg, #141414, #181818);
-  box-shadow: -10px -10px 16px #090909, 10px 10px 16px #232323;
-  z-index: -20;
-  top: -12%;
-}
-
-.separators {
-  height: 15vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.separator {
-  height: 10px;
-  border-radius: 10px;
-  background: #161616;
-  box-shadow: -2px 16px 5px #090909, -4px 12px 0px #232323;
-}
-.separator.one, .separator.two, .separator.three {
-  width: 0;
-}
-
-@keyframes rotate_main_logo {
+@keyframes rotate_one {
   from {
     transform: rotate(0deg);
   }
@@ -119,8 +52,14 @@ span {
     transform: rotate(360deg);
   }
 }
-/* ///////////////////////////////////HEAD/////////////////////////////////// */
-/* Toggle */
+@keyframes rotate_two {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .toggle {
   color: var(--third-color);
   font-size: 2rem;
@@ -157,7 +96,6 @@ span {
   box-shadow: -5px 5px 5px #090909, 5px -5px 5px #232323;
 }
 
-/* Menu */
 .menu {
   height: 100%;
   display: flex;
@@ -188,7 +126,6 @@ span {
   transform: translateX(0);
 }
 
-/* Inner Menu Left */
 .menu__left__inner__item {
   font-size: 3rem;
   margin-bottom: 2rem;
@@ -208,7 +145,6 @@ span {
   color: var(--secondary-color);
 }
 
-/* Inner Right Menu */
 .menu__right__inner__item__title {
   font-size: 3rem;
   color: rgb(36, 36, 36);
@@ -237,7 +173,6 @@ span {
   margin-bottom: 3rem;
 }
 
-/* Sep */
 .sep {
   position: absolute;
   left: 50%;
@@ -265,21 +200,13 @@ span {
 }
 .sep__icon .logo {
   width: 8rem;
-  animation: rotateLogo 8s linear infinite;
+  animation: rotate_one 8s linear infinite;
 }
 
-@keyframes rotateLogo {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .logo_transition {
   z-index: 10;
   width: 350px;
-  animation: rotateLogo 8s linear infinite;
+  animation: rotate_one 8s linear infinite;
 }
 
 .transition_circle {
@@ -318,17 +245,69 @@ span {
   pointer-events: none;
 }
 
-/* /////////////////////////////////////////////INDEX//////////////////////////////////////// */
 .wrapp {
-  height: 40vh;
+  height: 15rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 5rem;
+}
+.wrapp .abyss {
+  opacity: 0;
+  transform: translateY(100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapp .abyss h1 {
+  color: #000000;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+}
+.wrapp .abyss h2 {
+  font-size: 2rem;
+}
+.wrapp .abyss .main_logo {
+  margin: 0%;
+  padding: 0%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 350px;
+  animation: rotate_one 8s linear infinite;
+  z-index: -10;
+}
+.wrapp .abyss .main_logo_disc {
+  width: 200px;
+  height: 200px;
+  animation: rotate_two 8s linear infinite reverse;
+  border-radius: 50%;
+  background: linear-gradient(315deg, #141414, #181818);
+  box-shadow: -10px -10px 16px #090909, 10px 10px 16px #232323;
+  z-index: -20;
+  top: 10%;
+  position: absolute;
+}
+
+.separators {
+  height: 5.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.separator {
+  height: 10px;
+  border-radius: 10px;
+  background: #161616;
+  box-shadow: -2px 16px 5px #090909, -4px 12px 0px #232323;
+}
+.separator.one, .separator.two, .separator.three {
+  width: 0;
 }
 
 .features {
-  height: 40vh;
-  margin: 0 15px 0 15px;
+  height: 13.7rem;
+  margin: -70px 15px 0 15px;
 }
 
 a {
@@ -344,7 +323,6 @@ a {
 }
 .cards .titles {
   font-size: 2rem;
-  text-align: center;
   opacity: 0;
   transform: translateY(100px);
 }
@@ -774,7 +752,6 @@ a {
   cursor: pointer;
 }
 
-/* my button style  */
 .form {
   width: 100%;
   display: flex;
@@ -875,7 +852,6 @@ a {
   height: 20px;
 }
 
-/* FOOT */
 footer {
   opacity: 0;
   background: linear-gradient(90.73deg, #ddd8da 4%, #130121 97.46%);
@@ -884,70 +860,6 @@ footer {
   font-weight: bold;
 }
 
-@media screen and (max-width: 500px) {
-  .main_logo {
-    width: 250px;
-  }
-}
-@media screen and (max-height: 1000px) and (max-width: 736px), screen and (max-height: 500px) {
-  .wrapp {
-    height: 25rem;
-  }
-  .features {
-    height: 38rem;
-  }
-}
-@media only screen and (min-width: 332px) {
-  .miror .abyss::before {
-    top: 140%;
-  }
-  .miror .abyss span::before {
-    top: 140%;
-  }
-}
-@media only screen and (min-width: 507px) {
-  .abyss {
-    font-size: 2rem;
-    width: 53%;
-  }
-}
-@media only screen and (min-width: 736px) {
-  .features {
-    display: flex;
-    justify-content: space-around;
-  }
-  .abyss {
-    font-size: 2.5rem;
-    width: 54%;
-    margin-top: 0rem;
-  }
-  .miror .abyss::before {
-    top: 96%;
-  }
-  .miror .abyss span::before {
-    top: 96%;
-  }
-}
-@media only screen and (min-width: 1083px) {
-  .abyss {
-    width: 45%;
-  }
-}
-@media only screen and (min-width: 1170px) {
-  .abyss {
-    width: 33%;
-  }
-}
-@media only screen and (min-width: 1320px) {
-  .abyss {
-    width: 29%;
-  }
-}
-@media only screen and (min-width: 1740px) {
-  .abyss {
-    width: 22%;
-  }
-}
 @media only screen and (max-width: 1000px) {
   .form_content {
     flex-direction: column;
@@ -968,6 +880,10 @@ footer {
   }
 }
 @media screen and (min-width: 768px) {
+  .features {
+    display: flex;
+    justify-content: space-around;
+  }
   .info_section.tuto {
     display: flex;
     flex-direction: column;
@@ -1043,6 +959,53 @@ footer {
   }
 }
 @media screen and (max-width: 768px) {
+  .toggle {
+    top: 0.8rem;
+  }
+  .ouvrir {
+    width: 30px;
+    height: 30px;
+  }
+  .open .fermer {
+    width: 30px;
+    height: 30px;
+  }
+  .wrapp {
+    height: 12rem;
+    margin-top: 3.5rem;
+  }
+  .separators {
+    height: 3.4rem;
+  }
+  .separators .separator {
+    height: 6px;
+    border-radius: 6px;
+  }
+  .features {
+    height: 19rem;
+  }
+  .features .cards {
+    height: 4.8rem;
+  }
+  .features .cards .line {
+    height: 4.2px;
+  }
+  .cards .titles {
+    font-size: 1.2rem;
+  }
+  .abyss h1 {
+    font-size: 1.5rem;
+  }
+  .abyss h2 {
+    font-size: 1.2rem;
+  }
+  .abyss .main_logo {
+    width: 250px;
+  }
+  .abyss .main_logo_disc {
+    width: 146px;
+    height: 146px;
+  }
   .content_card {
     width: 95%;
     margin: 70px auto;

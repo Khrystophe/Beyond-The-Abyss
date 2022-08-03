@@ -1,8 +1,3 @@
-/* ///////////////////////////////////HEAD/////////////////////////////////// */
-
-
-
-/* Toggle */
 
 .toggle {
   color: var(--third-color);
@@ -40,9 +35,6 @@
   box-shadow: -5px 5px 5px #090909, 5px -5px 5px #232323;
 }
 
-
-/* Menu */
-
 .menu {
   height: 100%;
   display: flex;
@@ -76,7 +68,6 @@
   transform: translateX(0);
 }
 
-/* Inner Menu Left */
 
 .menu__left__inner__item {
   font-size: 3rem;
@@ -88,7 +79,6 @@
 }
 
 .menu__left__inner__item a {
-  // color: var(--third-color);
   color: rgb(36, 36, 36);
   text-decoration: none;
   transition: color 1s;
@@ -98,11 +88,8 @@
   color: var(--secondary-color);
 }
 
-
-/* Inner Right Menu */
 .menu__right__inner__item__title {
   font-size: 3rem;
-  // color: var(--third-color);
   color: rgb(36, 36, 36);
 }
 
@@ -128,8 +115,6 @@
 .menu__right__inner__item:first-child {
   margin-bottom: 3rem;
 }
-
-/* Sep */
 
 .sep {
   position: absolute;
@@ -158,16 +143,9 @@
 
   .logo{
     width: 8rem;
-    animation: rotateLogo 8s linear infinite;
+    animation: rotate_one 8s linear infinite;
   }
 }
 
-@keyframes rotateLogo {
-  from {
-        transform: rotate(0deg);
-  }
-  to {
-        transform: rotate(360deg);
-  }
-}
+
 

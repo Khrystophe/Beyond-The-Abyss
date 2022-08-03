@@ -1,30 +1,73 @@
-/* /////////////////////////////////////////////INDEX//////////////////////////////////////// */
 
 .wrapp{
-  height: 40vh;
+  height: 15rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 5rem;
+    
+    .abyss {
+      opacity: 0;
+      transform: translateY(100px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      h1{
+        color: #000000;
+        font-size: 2.5rem;
+        margin-top: 2rem;
+      }
+      h2{
+        font-size: 2rem;
+      }
+      .main_logo {
+        margin: 0%;
+        padding: 0%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        width: 350px;
+        animation: rotate_one 8s linear infinite;
+        z-index: -10;
+      }
+      .main_logo_disc{
+        width: 200px;
+        height: 200px;
+        animation: rotate_two 8s linear infinite reverse;
+        border-radius: 50%;
+        background: linear-gradient(315deg, #141414, #181818);
+        box-shadow: -10px -10px 16px #090909, 10px 10px 16px #232323;
+        z-index: -20;
+        top: 10%;
+        position: absolute;
+      }
+    }
 }
+
+.separators{
+  height: 5.7rem;
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.separator{
+  height: 10px;
+  border-radius: 10px;
+  background: #161616;
+  box-shadow: -2px 16px 5px #090909, -4px 12px 0px #232323;
+  &.one, &.two, &.three{
+    width: 0;
+  }        
+}
+
 
 .features{
-  height: 40vh;
-  margin: 0 15px 0 15px;
+  height: 13.7rem;
+  margin: -70px 15px 0 15px;
 }
-
-// .col2 {
-//   display: flex;
-// }
-
-// .hero {
-//   display: block;
-//   display: flex;
-//   justify-content: center;
-// }
 
 a{
   text-decoration: none;
-  // color: white;
   color: rgb(36, 36, 36);
 }
 .cards {
@@ -35,7 +78,6 @@ a{
 
   .titles {
       font-size: 2rem;
-      text-align: center;
       opacity: 0;
       transform: translateY(100px);
   }

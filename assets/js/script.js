@@ -21,17 +21,16 @@ function delay(n) {
 
 function pageTransition() {
  
-  tl.set(".loading-screen", { right: "-100%" });
-  tl.to(".loading-screen", {
+  tl
+  .set(".loading-screen", { 
+    right: "-100%" })
+  .to(".loading-screen", {
       duration: 0.9,
       width: "100%",
       right: "0%",
       ease: "Expo.easeInOut",
-  });
-  // tl
-  // .to('.sep', { duration: 0.75,height: 0})
-  // .to('.sep__icon', { duration: 0.25,opacity: 0},"<0.25")
-  tl.to(".loading-screen", {
+  })
+  .to(".loading-screen", {
       duration: 0.7,
       width: "100%",
       right: "100%",
@@ -51,7 +50,7 @@ function contentAnimation() {
     opacity: 1,
     duration: 3
   })
-  .to('.miror h1', {
+  .to('.abyss', {
     opacity: 1,
     y: 0,
     duration: 2.2
@@ -134,11 +133,14 @@ toggle.addEventListener('click', function() {
       .set('.autoAlpha', {
         autoAlpha: 1
       })
+      .set('wrapp', {
+        autoAlpha: 1
+      })
       .to('.main_logo', {
         opacity: 1,
         duration: 3
       })
-      .to('.miror h1', {
+      .to('.abyss', {
         opacity: 1,
         y: 0,
         duration: 2.2
@@ -241,7 +243,7 @@ toggle.addEventListener('click', function() {
         opacity: 0,
         y: 100
       }, "-=2")
-      .to('.miror h1', {
+      .to('.abyss', {
         opacity: 0,
         y: 100,
         duration: 2
@@ -322,7 +324,7 @@ for (let i = 0 ; i < cards.length; i++) {
       opacity: 0,
       y: 100
     }, "-=2")
-    .to('.miror h1', {
+    .to('.abyss', {
       opacity: 0,
       y: 100,
       duration: 2

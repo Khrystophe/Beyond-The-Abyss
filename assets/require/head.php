@@ -14,7 +14,8 @@
 <body>
 
    <div class="loading-container">
-      <div class="loading-screen"><img class="logo_transition" src="./assets/img/musicgrise.png" alt="">
+      <div class="loading-screen">
+         <img class="logo_transition" src="./assets/img/musicgrise.png" alt="">
          <div class="transition_circle"></div>
       </div>
    </div>
@@ -149,15 +150,19 @@
    </header>
 
 
-   <div class="wrapp">
+   <!-- <div class="wrapp">
       <div class="col2 hero">
          <div class="miror">
 
             <?php if ($page == 'index') { ?>
-               <h1 class="abyss"><span>Beyond the abyss</span><br>Music from the depths
+               <div class="abyss">
+                  <h1><span>Beyond the abyss</span>
+                  </h1>
+                  <h2>Music from the </h2>
+                  <h2>depths</h2>
                   <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <div class="ringOfNotes_circle"></div>
-               </h1>
+                  <div class="main_logo_disc"></div>
+               </div>
             <?php } else if ($page == 'tuto_content') { ?>
                <h1 class="abyss"><span>Beyond the abyss</span><br>Tutorials from the depths
                   <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
@@ -212,4 +217,4 @@
       <div class="separator one"></div>
       <div class="separator two"></div>
       <div class="separator three"></div>
-   </div>
+   </div> -->

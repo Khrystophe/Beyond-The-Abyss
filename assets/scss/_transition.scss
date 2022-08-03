@@ -1,10 +1,8 @@
 
-//transition
-
 .logo_transition{
     z-index: 10;
     width: 350px;
-    animation: rotateLogo 8s linear infinite;
+    animation: rotate_one 8s linear infinite;
   }
 
   .transition_circle{
@@ -21,13 +19,9 @@
       padding-left: 0;
       padding-right: 0;
       padding-top: 0;
-    //   background: url("/Diplome/assets/img/bg.jpg") fixed;
     background-color: #161616;
       width: 0%;
       height: 100%;
-    //   background-repeat: no-repeat;
-    //   background-size: cover;
-    //   background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
