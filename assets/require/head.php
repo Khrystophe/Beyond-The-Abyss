@@ -24,6 +24,33 @@
 
       <nav>
 
+         <div class="nav_bar">
+            <?php if ($page == 'tuto_content') { ?>
+               <h1>Tutorials from the depths</h1>
+
+            <?php } else if ($page == 'perf_content') { ?>
+               <h1>Performances from the depths</h1>
+
+            <?php } else if ($page == 'sheet_content') { ?>
+               <h1>Sheet music from the depths</h1>
+
+            <?php } else if ($page == 'user_content') { ?>
+               <h1>Your content from the depths</h1>
+
+            <?php } else if ($page == 'user_purchased_content') { ?>
+               <h1>Your purchased content from the depths</h1>
+
+            <?php } else if ($page == 'register') { ?>
+               <h1>Register to the depths</h1>
+
+            <?php } else if ($page == 'login') { ?>
+               <h1>Connect to the depths</h1>
+
+            <?php } else if ($page == 'my_account') { ?>
+               <h1>Your account of the depths</h1>
+
+            <?php } ?>
+         </div>
          <div class="toggle">
             <div class="ouvrir"></div>
             <div class="fermer"></div>
@@ -148,73 +175,3 @@
          </div>
       </nav>
    </header>
-
-
-   <!-- <div class="wrapp">
-      <div class="col2 hero">
-         <div class="miror">
-
-            <?php if ($page == 'index') { ?>
-               <div class="abyss">
-                  <h1><span>Beyond the abyss</span>
-                  </h1>
-                  <h2>Music from the </h2>
-                  <h2>depths</h2>
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <div class="main_logo_disc"></div>
-               </div>
-            <?php } else if ($page == 'tuto_content') { ?>
-               <h1 class="abyss"><span>Beyond the abyss</span><br>Tutorials from the depths
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <div class="ringOfNotes_circle"></div>
-               </h1>
-            <?php } else if ($page == 'perf_content') { ?>
-               <h1 class="abyss"><span>Beyond the abyss</span><br>Performances from the depths
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <div class="ringOfNotes_circle"></div>
-               </h1>
-            <?php } else if ($page == 'sheet_content') { ?>
-               <h1 class="abyss"><span>Beyond the abyss</span><br>Sheet music from the depths
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <div class="ringOfNotes_circle"></div>
-               </h1>
-            <?php } else if ($page == 'user_content') { ?>
-               <h1 class="abyss"><span>Beyond the abyss</span><br>Your content from the depths
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <div class="ringOfNotes_circle"></div>
-               </h1>
-            <?php } else if ($page == 'user_purchased_content') { ?>
-               <h1 class="abyss"><span>Beyond the abyss</span><br>Your purchased content from the depths
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <div class="ringOfNotes_circle"></div>
-               </h1>
-            <?php } else if ($page == 'register') { ?>
-               <h1 class="abyss"><span>Beyond the abyss</span><br>Register to the depths
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <div class="ringOfNotes_circle"></div>
-               </h1>
-            <?php } else if ($page == 'login') { ?>
-               <h1 class="abyss"><span>Beyond the abyss</span><br>Connect to the depths
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <div class="ringOfNotes_circle"></div>
-               </h1>
-            <?php } else if ($page == 'add_content') { ?>
-               <h1 class="abyss"><span>Beyond the abyss</span><br>Add content to the depths
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <div class="ringOfNotes_circle"></div>
-               </h1>
-            <?php } else if ($page == 'my_account') { ?>
-               <h1 class="abyss"><span>Beyond the abyss</span><br>Your account of the depths
-                  <img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-                  <div class="ringOfNotes_circle"></div>
-               </h1>
-            <?php } ?>
-         </div>
-      </div>
-   </div>
-
-   <div class="separators">
-      <div class="separator one"></div>
-      <div class="separator two"></div>
-      <div class="separator three"></div>
-   </div> -->

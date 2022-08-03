@@ -50,7 +50,18 @@ header {
   height: 100%;
   overflow: hidden;
 }
-
+.nav_bar{
+  height: 3.5rem;
+  background-color: #222222;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  z-index: 20;
+  border-bottom: 2px solid black;
+  opacity: 0;
+}
 nav {
   height: 100%;
 }

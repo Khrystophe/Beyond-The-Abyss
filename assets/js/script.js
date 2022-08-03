@@ -46,10 +46,6 @@ function contentAnimation() {
     opacity: 1,
     duration: 0.1,
   })
-  .to('.main_logo', {
-    opacity: 1,
-    duration: 3
-  })
   .to('.abyss', {
     opacity: 1,
     y: 0,
@@ -79,6 +75,10 @@ function contentAnimation() {
   .to('.random_content', {
     opacity: 1,
   }, "-=2")
+  .to(".nav_bar",{
+    opacity: 0.9,
+    duration:1
+  },"-=1")
   .from(".box, .box h2", {
     duration: 2,
     scale: 0.1,
@@ -95,14 +95,14 @@ function contentAnimation() {
 
 $(function () {
   barba.init({
-      sync: true,
+    sync: true,
       // prefetchIgnore: true,
       // preventRunning: true,
 
       transitions: [
-          {
-              async leave(data) {
-                  const done = this.async();
+        {
+          async leave(data) {
+            const done = this.async();
 
                   pageTransition();
                   await delay(1500);
@@ -133,13 +133,6 @@ toggle.addEventListener('click', function() {
       .set('.autoAlpha', {
         autoAlpha: 1
       })
-      .set('wrapp', {
-        autoAlpha: 1
-      })
-      .to('.main_logo', {
-        opacity: 1,
-        duration: 3
-      })
       .to('.abyss', {
         opacity: 1,
         y: 0,
@@ -169,6 +162,10 @@ toggle.addEventListener('click', function() {
       .to('.random_content', {
         opacity: 1,
       }, "-=2")
+      .to(".nav_bar",{
+        opacity: 0.9,
+        duration:1
+      },"-=1")
       .to(".box, .box h2", {
         duration: 2,
         scale: 1,
@@ -209,10 +206,10 @@ toggle.addEventListener('click', function() {
     body.classList.add('open');
 
     tl
-      .to('.main_logo', {
+      .to(".nav_bar",{
         opacity: 0,
-        duration: 2.2
-      })
+        duration:3
+        },"-=1")
       .to(".box, .box h2", {
         duration: 2,
         scale: 0.1,
@@ -224,7 +221,7 @@ toggle.addEventListener('click', function() {
           from: "edges",
           amount: 1.5
         }
-      }, "-=3.6")
+      }, "-=1.3")
       .to('.separator.one', {
         width:0,
         duration: 1.2,
@@ -302,9 +299,9 @@ for (let i = 0 ; i < cards.length; i++) {
     e.preventDefault();
 
     tl
-    .to('.main_logo', {
+    .to('.nav_bar', {
       opacity: 0,
-      duration: 2.2
+      duration: 2
     })
     .to('.separator.one', {
       width:0,

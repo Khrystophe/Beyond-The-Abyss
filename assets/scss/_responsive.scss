@@ -24,7 +24,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .features {
     display: flex;
     justify-content: space-around;
@@ -90,21 +90,21 @@
     border-radius: 10px;
 
     &.tuto{
-    background: linear-gradient(to right, #161616 33%, transparent 100%);
+    background: linear-gradient(to right, black 33%, transparent 100%);
     border-radius: 10px;
-    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
+    // box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
     }
 
     &.perf{
-      background: linear-gradient(to left, rgba(255,255,255,0) 0%, #161616 26%,#161616 74%, rgba(255,255,255,0) 100%);
+      background: linear-gradient(to left, rgba(255,255,255,0) 0%, black 26%,black 74%, rgba(255,255,255,0) 100%);
       border-radius: 10px;
-    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
+    // box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
     }
 
     &.sheet{
-      background: linear-gradient(to left, #161616 33%, transparent 100%);
+      background: linear-gradient(to left, black 33%, transparent 100%);
       border-radius: 10px;
-    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
+    // box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
     }
   }
   
@@ -121,7 +121,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 799px) {
   .toggle{
     top: 0.8rem;
   }
@@ -136,6 +136,21 @@
   .wrapp{
     height: 12rem;
     margin-top: 3.5rem;
+    .abyss{
+          h1{
+            font-size: 1.5rem;
+          }
+          h2{
+            font-size: 1.2rem;
+          }
+          .main_logo{
+            width: 250px;
+          }
+          .main_logo_disc{
+            width: 146px;
+            height: 146px;
+          }
+        }
   }
   .separators{
     height: 3.4rem;
@@ -156,21 +171,6 @@
   .cards .titles{
     font-size: 1.2rem;
   }
-  .abyss{
-        h1{
-          font-size: 1.5rem;
-        }
-        h2{
-          font-size: 1.2rem;
-        }
-        .main_logo{
-          width: 250px;
-        }
-        .main_logo_disc{
-          width: 146px;
-          height: 146px;
-        }
-      }
   .content_card{
     width: 95%;
     margin: 70px auto; 
@@ -202,7 +202,7 @@
   }
   
   .info_section{
-    background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
+    background: linear-gradient(to top, black 50%, transparent 100%);
     display: inline-grid;
     
     &.tuto, &.sheet, &.perf {

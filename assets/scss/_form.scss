@@ -3,7 +3,9 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 100px;
-    margin-top: 11rem;
+    margin-top: 5rem;
+    height: 100%;
+    min-height: 100vh;
 }
 
 .form_content {
@@ -43,7 +45,7 @@
     border-bottom-left-radius: 1.5rem;
     img{
         width: 250px;
-        animation: rotateLogo 8s linear infinite;
+        animation: rotate_one 8s linear infinite;
     }
 }
 

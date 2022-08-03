@@ -4,6 +4,9 @@
   font-weight: 400;
   opacity: 0;
   margin: 0 10px 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .content_card{
@@ -11,7 +14,7 @@
   display: block;
   width: 800px;
   height: 440px;
-  margin: 100px auto; 
+  margin: 100px 10px 0 10px; 
   overflow: hidden;
   border-radius: 10px;
   transition: all 0.4s;
@@ -21,29 +24,30 @@
   }
 
   &.tuto{
-    border-radius: 30px;
+    border-radius: 60px;
     box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
     &:hover{
       border-radius: 10px;
-    box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
+      box-shadow: 0px 0px 120px -55px rgba(199,147,75, 0.7);
+    
     }
   }
 
   &.perf{
-    border-radius: 30px;
+    border-radius: 60px;
     box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
     &:hover{
       border-radius: 10px;
-    box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
+      box-shadow: 0px 0px 120px -55px rgba(199,147,75, 0.7);
     }
   }
   
   &.sheet{
-    border-radius: 30px;
+    border-radius: 60px;
     box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
     &:hover{
       border-radius: 10px;
-    box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
+      box-shadow: 0px 0px 120px -55px rgba(199,147,75, 0.7);
     }
   }
   

@@ -36,6 +36,19 @@ header {
   overflow: hidden;
 }
 
+.nav_bar {
+  height: 3.5rem;
+  background-color: #222222;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  z-index: 20;
+  border-bottom: 2px solid black;
+  opacity: 0;
+}
+
 nav {
   height: 100%;
 }
@@ -64,15 +77,16 @@ nav {
   color: var(--third-color);
   font-size: 2rem;
   position: absolute;
-  top: 1rem;
+  top: 0.5rem;
   right: 1rem;
   z-index: 20;
   cursor: pointer;
+  position: fixed;
 }
 
 .ouvrir {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: block;
   border-radius: 131px;
   background: #161616;
@@ -88,8 +102,8 @@ nav {
 }
 
 .open .fermer {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: block;
   border-radius: 131px;
   background: linear-gradient(45deg, #141414, #181818);
@@ -100,6 +114,8 @@ nav {
   height: 100%;
   display: flex;
   opacity: 0.9;
+  width: 100%;
+  position: fixed;
 }
 
 .menu__left, .menu__right {
@@ -401,6 +417,9 @@ a {
   font-weight: 400;
   opacity: 0;
   margin: 0 10px 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .content_card {
@@ -408,7 +427,7 @@ a {
   display: block;
   width: 800px;
   height: 440px;
-  margin: 100px auto;
+  margin: 100px 10px 0 10px;
   overflow: hidden;
   border-radius: 10px;
   transition: all 0.4s;
@@ -418,28 +437,28 @@ a {
   transition: all 0.4s;
 }
 .content_card.tuto {
-  border-radius: 30px;
+  border-radius: 60px;
   box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
 }
 .content_card.tuto:hover {
   border-radius: 10px;
-  box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
+  box-shadow: 0px 0px 120px -55px rgba(199, 147, 75, 0.7);
 }
 .content_card.perf {
-  border-radius: 30px;
+  border-radius: 60px;
   box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
 }
 .content_card.perf:hover {
   border-radius: 10px;
-  box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
+  box-shadow: 0px 0px 120px -55px rgba(199, 147, 75, 0.7);
 }
 .content_card.sheet {
-  border-radius: 30px;
+  border-radius: 60px;
   box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
 }
 .content_card.sheet:hover {
   border-radius: 10px;
-  box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
+  box-shadow: 0px 0px 120px -55px rgba(199, 147, 75, 0.7);
 }
 .content_card .info_section {
   position: relative;
@@ -524,7 +543,8 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  margin: 11rem 0 3rem;
+  margin: 5rem 0 2rem;
+  height: 100%;
 }
 
 .card_video {
@@ -645,7 +665,7 @@ a {
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-bottom: 100px;
+  margin: 100px 0 100px 0;
 }
 
 .contact_presentation {
@@ -757,7 +777,9 @@ a {
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
-  margin-top: 11rem;
+  margin-top: 5rem;
+  height: 100%;
+  min-height: 100vh;
 }
 
 .form_content {
@@ -798,7 +820,7 @@ a {
 }
 .leftside img {
   width: 250px;
-  animation: rotateLogo 8s linear infinite;
+  animation: rotate_one 8s linear infinite;
 }
 
 .rightside {
@@ -879,7 +901,7 @@ footer {
     padding: 1rem 2rem 1rem 2rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .features {
     display: flex;
     justify-content: space-around;
@@ -934,19 +956,16 @@ footer {
     border-radius: 10px;
   }
   .gradient.tuto {
-    background: linear-gradient(to right, #161616 33%, transparent 100%);
+    background: linear-gradient(to right, black 33%, transparent 100%);
     border-radius: 10px;
-    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
   }
   .gradient.perf {
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #161616 26%, #161616 74%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, black 26%, black 74%, rgba(255, 255, 255, 0) 100%);
     border-radius: 10px;
-    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
   }
   .gradient.sheet {
-    background: linear-gradient(to left, #161616 33%, transparent 100%);
+    background: linear-gradient(to left, black 33%, transparent 100%);
     border-radius: 10px;
-    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
   }
   .blur_back {
     width: 80%;
@@ -958,7 +977,7 @@ footer {
     left: 0;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 799px) {
   .toggle {
     top: 0.8rem;
   }
@@ -973,6 +992,19 @@ footer {
   .wrapp {
     height: 12rem;
     margin-top: 3.5rem;
+  }
+  .wrapp .abyss h1 {
+    font-size: 1.5rem;
+  }
+  .wrapp .abyss h2 {
+    font-size: 1.2rem;
+  }
+  .wrapp .abyss .main_logo {
+    width: 250px;
+  }
+  .wrapp .abyss .main_logo_disc {
+    width: 146px;
+    height: 146px;
   }
   .separators {
     height: 3.4rem;
@@ -992,19 +1024,6 @@ footer {
   }
   .cards .titles {
     font-size: 1.2rem;
-  }
-  .abyss h1 {
-    font-size: 1.5rem;
-  }
-  .abyss h2 {
-    font-size: 1.2rem;
-  }
-  .abyss .main_logo {
-    width: 250px;
-  }
-  .abyss .main_logo_disc {
-    width: 146px;
-    height: 146px;
   }
   .content_card {
     width: 95%;
@@ -1029,7 +1048,7 @@ footer {
     text-align: center;
   }
   .info_section {
-    background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
+    background: linear-gradient(to top, black 50%, transparent 100%);
     display: inline-grid;
   }
   .info_section.tuto, .info_section.sheet, .info_section.perf {
