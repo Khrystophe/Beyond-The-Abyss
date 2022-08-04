@@ -66,111 +66,155 @@
   margin: -70px 15px 0 15px;
 }
 
-a{
-  text-decoration: none;
-  color: rgb(36, 36, 36);
-}
+
 .cards {
   transform: translateY(100px) scaleY(1);
   transform-origin: 0% 100%;
   position: relative;
   height: 8rem;
   
-
   .titles {
-      font-size: 2rem;
-      opacity: 0;
-      transform: translateY(100px);
+    font-size: 2rem;
+    opacity: 0;
+    transform: translateY(100px);
+    a{
+      text-decoration: none;
+      color: rgb(36, 36, 36);
+      transition: color 1s;
+      &:hover{
+        color: rgb(67, 67, 67);
+      }
+    }
   }
-
+  
   &.one{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-around;
-      
-      .line { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    
+    .line { 
       opacity: 0;
       transform: translateY(100px);
       height: 7px;
       border-radius: 7px;
       background: #161616;
       box-shadow:  3px -3px 3px #090909,
-                   -3px 3px 3px #232323;
-
+      -3px 3px 3px #232323;
+      
       &.one{
       width: 100%;
+      transition: width 1s;
       }
 
       &.two{
-      width: 50%;
+        width: 50%;
+        transition: width 1s;
       }
-
+      
       &.three{
-      width: 25%;
+        width: 25%;
+        transition: width 1s;
       }
     }
   }
   &.two{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-      
-        .line {
-        opacity: 0;
-        transform: translateY(100px);
-        height: 7px;
-        border-radius: 7px;
-        background: #161616;
-        box-shadow:  3px -3px 3px #090909,
-                     -3px 3px 3px #232323;
-        &.one{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+    .line {
+      opacity: 0;
+      transform: translateY(100px);
+      height: 7px;
+      border-radius: 7px;
+      background: #161616;
+      box-shadow:  3px -3px 3px #090909,
+      -3px 3px 3px #232323;
+      &.one{
         width: 100%;
-        }
-  
-        &.two{
+        transition: width 1s;
+      }
+      
+      &.two{
         width: 50%;
-        }
-  
-        &.three{
+        transition: width 1s;
+      }
+      
+      &.three{
         width: 25%;
-        }
+        transition: width 1s;
       }
     }
+  }
   &.three{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    
+    .line { 
+      opacity: 0;
+      transform: translateY(100px);
+      height: 7px;
+      border-radius: 7px;
+      background: #161616;
+      box-shadow:  3px -3px 3px #090909,
+      -3px 3px 3px #232323;
       
-      .line { 
-        opacity: 0;
-        transform: translateY(100px);
-        height: 7px;
-        border-radius: 7px;
-        background: #161616;
-        box-shadow:  3px -3px 3px #090909,
-                     -3px 3px 3px #232323;
-  
-        &.one{
+      &.one{
         width: 100%;
-        }
-  
-        &.two{
+        transition: width 1s;
+      }
+      
+      &.two{
         width: 50%;
-        }
-  
-        &.three{
+        transition: width 1s;
+      }
+      
+      &.three{
         width: 25%;
-        }
+        transition: width 1s;
       }
     }
+  }
+}
+
+.cards:hover{
+  &.one{
+    .line{
+      &.one{
+        width: 25%;
+      }
+      &.three{
+        width:100%;
+      }
+    }
+  }
+  &.two{
+    .line{
+      &.one{
+        width: 25%;
+      }
+      &.three{
+        width:100%;
+      }
+    }
+  }
+  &.three{
+    .line{
+      &.one{
+        width: 25%;
+      }
+      &.three{
+        width:100%;
+      }
+    }
+  }
 }
 
 
 
-  
 
-  
 

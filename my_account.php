@@ -43,7 +43,7 @@ $contents = $req2->fetchAll();
          <div class="form_content">
 
             <div class="leftside">
-               <img src="./assets/img/music-g8090509f0_1920.png" alt="" />
+               <img src="./assets/img/musicgrise.png" alt="" />
             </div>
 
             <div class="rightside">
@@ -128,13 +128,11 @@ $contents = $req2->fetchAll();
                   <div class="margin"></div>
 
                   <div class="form_action">
-                     <button class="button"><a href="content.php?category=user_content">Your content</a></button>
+                     <button class="btn_content"><a class="button link_page" href="content.php?category=user_content">Your content</a></button>
                   </div>
 
-                  <div class="margin"></div>
-
                   <div class="form_action">
-                     <button class="button"><a href="content.php?category=user_purchased_content">Your purchased content</a></button>
+                     <button class="btn_content"><a class="button link_page" href="content.php?category=user_purchased_content">Your purchased content</a></button>
                   </div>
 
                <?php } ?>

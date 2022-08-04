@@ -221,7 +221,7 @@ toggle.addEventListener('click', function() {
           from: "edges",
           amount: 1.5
         }
-      }, "-=1.3")
+      }, "<-0.1")
       .to('.separator.one', {
         width:0,
         duration: 1.2,
@@ -291,12 +291,12 @@ toggle.addEventListener('click', function() {
 //////////////////Animation menu avant changement de page/////////////////////////////////////
 
 
-let cards= document.querySelectorAll('.cards');
+let links_page= document.querySelectorAll('.link_page');
 
-for (let i = 0 ; i < cards.length; i++) {
-  cards[i].addEventListener('click', function(e){
+for (let i = 0 ; i < links_page.length; i++) {
+  links_page[i].addEventListener('click', function(event){
     
-    e.preventDefault();
+    event.preventDefault();
 
     tl
     .to('.nav_bar', {
@@ -337,15 +337,15 @@ for (let i = 0 ; i < cards.length; i++) {
     })
 
     setTimeout(function(){
-      window.location.href = e.target.href
+      window.location.href = event.target.href
     },4500)
   })
 }
 
-let link= document.querySelectorAll('.link');
+let links_menu= document.querySelectorAll('.link_menu');
 
-for (let i = 0 ; i < link.length; i++) {
-  link[i].addEventListener('click', function(event){
+for (let i = 0 ; i < links_menu.length; i++) {
+  links_menu[i].addEventListener('click', function(event){
     
     event.preventDefault();
 

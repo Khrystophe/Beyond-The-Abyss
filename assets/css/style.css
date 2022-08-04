@@ -326,11 +326,6 @@ nav {
   margin: -70px 15px 0 15px;
 }
 
-a {
-  text-decoration: none;
-  color: rgb(36, 36, 36);
-}
-
 .cards {
   transform: translateY(100px) scaleY(1);
   transform-origin: 0% 100%;
@@ -341,6 +336,14 @@ a {
   font-size: 2rem;
   opacity: 0;
   transform: translateY(100px);
+}
+.cards .titles a {
+  text-decoration: none;
+  color: rgb(36, 36, 36);
+  transition: color 1s;
+}
+.cards .titles a:hover {
+  color: rgb(67, 67, 67);
 }
 .cards.one {
   display: flex;
@@ -358,12 +361,15 @@ a {
 }
 .cards.one .line.one {
   width: 100%;
+  transition: width 1s;
 }
 .cards.one .line.two {
   width: 50%;
+  transition: width 1s;
 }
 .cards.one .line.three {
   width: 25%;
+  transition: width 1s;
 }
 .cards.two {
   display: flex;
@@ -381,12 +387,15 @@ a {
 }
 .cards.two .line.one {
   width: 100%;
+  transition: width 1s;
 }
 .cards.two .line.two {
   width: 50%;
+  transition: width 1s;
 }
 .cards.two .line.three {
   width: 25%;
+  transition: width 1s;
 }
 .cards.three {
   display: flex;
@@ -404,12 +413,34 @@ a {
 }
 .cards.three .line.one {
   width: 100%;
+  transition: width 1s;
 }
 .cards.three .line.two {
   width: 50%;
+  transition: width 1s;
 }
 .cards.three .line.three {
   width: 25%;
+  transition: width 1s;
+}
+
+.cards:hover.one .line.one {
+  width: 25%;
+}
+.cards:hover.one .line.three {
+  width: 100%;
+}
+.cards:hover.two .line.one {
+  width: 25%;
+}
+.cards:hover.two .line.three {
+  width: 100%;
+}
+.cards:hover.three .line.one {
+  width: 25%;
+}
+.cards:hover.three .line.three {
+  width: 100%;
 }
 
 .random_content {
@@ -801,14 +832,8 @@ a {
   align-items: center;
 }
 
-.form_title {
-  margin-bottom: 20px;
-  font-family: "Roboto", sans-serif;
-  margin-left: 0;
-}
-
 .leftside {
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: transparent;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   width: 25rem;
@@ -824,7 +849,7 @@ a {
 }
 
 .rightside {
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: transparent;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   width: 35rem;
@@ -862,6 +887,8 @@ a {
   letter-spacing: 0.11rem;
   outline: none;
   transition: all 0.4s;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -871,7 +898,14 @@ a {
 }
 
 .margin {
-  height: 20px;
+  height: 1rem;
+}
+
+.btn_content {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border: 0px;
 }
 
 footer {
@@ -880,6 +914,8 @@ footer {
   padding: 2em 1em;
   color: #1A1A1A;
   font-weight: bold;
+  position: relative;
+  z-index: 60;
 }
 
 @media only screen and (max-width: 1000px) {

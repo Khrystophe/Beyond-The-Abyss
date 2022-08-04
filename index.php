@@ -51,21 +51,21 @@ $randomSheet = $req2->fetch();
 
       <div class="features">
          <div class="cards one">
-            <div class="titles"><a href="content.php?category=tuto">Tutorials</a></div>
+            <div class="titles link_page"><a href="content.php?category=tuto">Tutorials</a></div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>
          </div>
 
          <div class="cards two">
-            <div class="titles"><a href="content.php?category=perf">Performances</a></div>
+            <div class="titles link_page"><a href="content.php?category=perf">Performances</a></div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>
          </div>
 
          <div class="cards three">
-            <div class="titles"><a href="content.php?category=sheet">Sheet music</a></div>
+            <div class="titles link_page"><a href="content.php?category=sheet">Sheet music</a></div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>

@@ -21,7 +21,7 @@ require('./assets/require/head.php');
          <div class="form_content">
 
             <div class="leftside">
-               <img src="./assets/img/music-g8090509f0_1920.png" alt="" />
+               <img src="./assets/img/musicgrise.png" alt="" />
             </div>
 
             <div class="rightside">

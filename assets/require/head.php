@@ -63,28 +63,28 @@
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'index') { ?>
-                        <a class="link" href="index.php">Home</a>
+                        <a class="link_menu" href="index.php">Home</a>
                      <?php } ?>
                   </div>
 
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'tuto_content') { ?>
-                        <a class="link" href="content.php?category=tuto">Tutorials</a>
+                        <a class="link_menu" href="content.php?category=tuto">Tutorials</a>
                      <?php } ?>
                   </div>
 
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'perf_content') { ?>
-                        <a class="link" href="content.php?category=perf">Performances</a>
+                        <a class="link_menu" href="content.php?category=perf">Performances</a>
                      <?php } ?>
                   </div>
 
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'sheet_content') { ?>
-                        <a class="link" href="content.php?category=sheet">Sheet Music</a>
+                        <a class="link_menu" href="content.php?category=sheet">Sheet Music</a>
                      <?php } ?>
                   </div>
 
@@ -94,14 +94,14 @@
                      if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
 
                         if ($page != 'login') { ?>
-                           <a class="link" href="login.php">Login</a>
+                           <a class="link_menu" href="login.php">Login</a>
                         <?php } ?>
                   </div>
 
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'register') { ?>
-                        <a class="link" href="register.php">Register</a>
+                        <a class="link_menu" href="register.php">Register</a>
                      <?php }
                      ?>
                   </div>
@@ -111,13 +111,13 @@
                <div class="menu__left__inner__item">
                   <?php
                   if (isset($_SESSION['users']) && !empty($_SESSION['users'])) { ?>
-                     <a data-barba-prevent class="link" href="./assets/actions/logout_action.php">Logout</a>
+                     <a data-barba-prevent class="link_menu" href="./assets/actions/logout_action.php">Logout</a>
                </div>
 
 
                <div class="menu__left__inner__item">
                   <?php if ($page != 'my_account') { ?>
-                     <a class="link" href="my_account.php">My Account</a>
+                     <a class="link_menu" href="my_account.php">My Account</a>
                   <?php }
                   ?>
                </div>
@@ -139,7 +139,7 @@
                   </div>
                   <ul>
                      <li>
-                        <a class="link" href="index.php">contact@website.com</a>
+                        <a class="link_menu" href="index.php">contact@website.com</a>
                      </li>
                   </ul>
                </div>
@@ -151,16 +151,16 @@
                   </div>
                   <ul>
                      <li>
-                        <a class="link" href="#">Facebook</a>
+                        <a class="link_menu" href="#">Facebook</a>
                      </li>
                      <li>
-                        <a class="link" href="#">Instagram</a>
+                        <a class="link_menu" href="#">Instagram</a>
                      </li>
                      <li>
-                        <a class="link" href="#">Youtube</a>
+                        <a class="link_menu" href="#">Youtube</a>
                      </li>
                      <li>
-                        <a class="link" href="#">Twitter</a>
+                        <a class="link_menu" href="#">Twitter</a>
                      </li>
                   </ul>
                </div>
