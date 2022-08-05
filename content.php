@@ -15,10 +15,14 @@ if ($_GET['category'] == 'tuto') {
 } else if ($_GET['category'] == 'user_purchased_content') {
 
    $page = 'user_purchased_content';
+} else if ($_GET['category'] == 'search_results') {
+
+   $page = 'search_results';
 }
 
 require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
+
 
 $req = $bdd->prepare('SELECT * FROM contents WHERE category = :category ');
 $req->execute(array(

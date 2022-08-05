@@ -610,6 +610,11 @@ nav {
   background: url("../img/sheet-music-4121936_1920.jpg");
 }
 
+.content_category {
+  position: absolute;
+  top: 0;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;

@@ -30,7 +30,7 @@
                   <div class="modal_form_content">
 
                      <span class="search_close">&times;</span>
-                     <form class="form_action" action="./assets/actions/search_action.php" method="post">
+                     <form class="form_action" action="/Diplome/search_results.php" method="post">
 
                         <label for="title"></label>
                         <input type="text" class="inputbox" placeholder="Title" id="title" name="title" />
@@ -90,7 +90,11 @@
             <?php } else if ($page == 'my_account') { ?>
                <h1>Your account of the depths</h1>
 
+            <?php } else if ($page == 'search_results') { ?>
+               <h1>Search results</h1>
+
             <?php } ?>
+
          </div>
          <div class="toggle">
             <div class="ouvrir"></div>
