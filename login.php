@@ -31,9 +31,9 @@ require('./assets/require/head.php');
                   <input type="text" placeholder="Email" class="inputbox" id="login_email" name="email" required />
 
                   <label for="login_password"></label>
-                  <input type="password" placeholder="Mot de passe" class="inputbox" id="login_password" name="password" required />
+                  <input type="password" placeholder="password" class="inputbox" id="login_password" name="password" required />
 
-                  <button type="submit" class="button">Connexion</button>
+                  <button type="submit" class="button">Login</button>
                </form>
             </div>
 

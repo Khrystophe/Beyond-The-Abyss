@@ -23,8 +23,49 @@
    <header>
 
       <nav>
+         <div id="search_modal" class="modal">
 
+            <div class="modal-content">
+               <div class="modal_form">
+                  <div class="modal_form_content">
+
+                     <span class="search_close">&times;</span>
+                     <form class="form_action" action="./assets/actions/search_action.php" method="post">
+
+                        <label for="title"></label>
+                        <input type="text" class="inputbox" placeholder="Title" id="title" name="title" />
+
+                        <label for="composer"></label>
+                        <input type="text" class="inputbox" placeholder="Composer" id="composer" name="composer" />
+
+                        <label for="category"></label>
+                        <select class="inputbox" id="category" name="category">
+                           <option value="">--Category--</option>
+                           <option value="tuto">Tutorial</option>
+                           <option value="perf">Performances</option>
+                           <option value="sheet">Sheet Music</option>
+                        </select>
+
+                        <label for="level"></label>
+                        <select class="inputbox" id="level" name="level">
+                           <option value="">--Level--</option>
+                           <option value="easy">Easy</option>
+                           <option value="medium">Medium</option>
+                           <option value="hard">Hard</option>
+                           <option value="very-hard">Very Hard</option>
+                        </select>
+
+                        <button type="submit" class="button">Search</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+
+         </div>
          <div class="nav_bar">
+            <button id="search_button">Search</button>
+
+
             <?php if ($page == 'tuto_content') { ?>
                <h1>Tutorials from the depths</h1>
 

@@ -42,6 +42,9 @@ function pageTransition() {
 function contentAnimation() {
   
   tl
+  .to('.ouvrir',{
+    display:"none"
+  },0)
   .to('body', {
     opacity: 1,
     duration: 0.1,
@@ -91,13 +94,15 @@ function contentAnimation() {
       amount: 1.5
     }
   }, "<-2")
+  .to('.ouvrir',{
+    duration: 0.5,
+    display:"block"
+  })
 }
 
 $(function () {
   barba.init({
     sync: true,
-      // prefetchIgnore: true,
-      // preventRunning: true,
 
       transitions: [
         {
@@ -130,7 +135,10 @@ toggle.addEventListener('click', function() {
     body.classList.remove('open');
 
     tl
-      .set('.autoAlpha', {
+      .to('.open .fermer',{
+        display: "none"
+      },0)
+      .set('.autoAlpha, .nav_bar', {
         autoAlpha: 1
       })
       .to('.abyss', {
@@ -178,6 +186,10 @@ toggle.addEventListener('click', function() {
           amount: 1.5
         }
       }, "<-2")
+      .to('.ouvrir',{
+        duration: 0.5,
+        display:"block"
+      })
 
     tl1
       .to('.sep', {
@@ -206,6 +218,12 @@ toggle.addEventListener('click', function() {
     body.classList.add('open');
 
     tl
+      .to('.open .fermer',{
+        display: "none"
+      },0)
+      .to('.ouvrir',{
+        display:"none"
+      },0)
       .to(".nav_bar",{
         opacity: 0,
         duration:3
@@ -251,8 +269,12 @@ toggle.addEventListener('click', function() {
       .to('.random_content', {
         opacity: 0
       }, "-=2")
-      .set('.autoAlpha', {
+      .set('.autoAlpha, .nav_bar', {
         autoAlpha: 0
+      })
+      .to('.open .fermer',{
+        display:"block",
+        duration:0.5,
       })
 
     tl1
@@ -383,4 +405,24 @@ for (let i = 0 ; i < links_menu.length; i++) {
 
 
 
+////////////////////////////////////modal/////////////////////////////////
 
+let search_modal = document.getElementById("search_modal");
+
+let search_button = document.getElementById("search_button");
+
+let search_close = document.getElementsByClassName("search_close")[0];
+
+search_button.onclick = function() {
+  search_modal.style.display = "block";
+}
+
+search_close.onclick = function() {
+  search_modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == search_modal) {
+    search_modal.style.display = "none";
+  }
+}

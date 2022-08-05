@@ -97,10 +97,10 @@ $contents = $req2->fetchAll();
                   <form class="form_action" action="./assets/actions/add_content_action.php" method="post" enctype="multipart/form-data">
 
                      <label for="title"></label>
-                     <input type="text" class="inputbox" placeholder="Titre" id="title" name="title" required />
+                     <input type="text" class="inputbox" placeholder="Title" id="title" name="title" required />
 
                      <label for="composer"></label>
-                     <input type="text" class="inputbox" placeholder="Compositeur" id="composer" name="composer" required />
+                     <input type="text" class="inputbox" placeholder="Composer" id="composer" name="composer" required />
 
                      <label for="category"></label>
                      <select class="inputbox" id="category" name="category" required>

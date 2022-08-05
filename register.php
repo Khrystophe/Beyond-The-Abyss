@@ -28,21 +28,21 @@ require('./assets/require/head.php');
                <form class="form_action" action="./assets/actions/register_action.php" method="post" enctype="multipart/form-data">
 
                   <label for="register_name"></label>
-                  <input type="text" class="inputbox" placeholder="Nom" id="register_name" name="name" required />
+                  <input type="text" class="inputbox" placeholder="Name" id="register_name" name="name" required />
 
                   <label for="register_lastname"></label>
-                  <input type="text" class="inputbox" placeholder="Prénom" id="register_lastname" name="lastname" required />
+                  <input type="text" class="inputbox" placeholder="Lastname" id="register_lastname" name="lastname" required />
 
                   <label for="register_email"></label>
                   <input type="text" class="inputbox" placeholder="Email" id="register_email" name="email" required />
 
                   <label for="register_password"></label>
-                  <input type="password" class="inputbox" placeholder="Mot de passe" id="register_password" name="password" required />
+                  <input type="password" class="inputbox" placeholder="Password" id="register_password" name="password" required />
 
                   <label for="register_password_confirm"></label>
-                  <input type="password" class="inputbox" placeholder="Confirmez votre mot de passe" id="register_password_confirm" name="password_confirm" required />
+                  <input type="password" class="inputbox" placeholder="Confirm your password" id="register_password_confirm" name="password_confirm" required />
 
-                  <button type="submit" class="button">Ajouter</button>
+                  <button type="submit" class="button">Register</button>
                </form>
             </div>
 
