@@ -30,7 +30,7 @@
                   <div class="modal_form_content">
 
                      <span class="search_close">&times;</span>
-                     <form class="form_action" action="/Diplome/search_results.php" method="post">
+                     <form class="form_action" action="/Diplome/content.php?category=search_results" method="post">
 
                         <label for="title"></label>
                         <input type="text" class="inputbox" placeholder="Title" id="title" name="title" />
@@ -41,9 +41,9 @@
                         <label for="category"></label>
                         <select class="inputbox" id="category" name="category">
                            <option value="">--Category--</option>
-                           <option value="tuto">Tutorial</option>
-                           <option value="perf">Performances</option>
-                           <option value="sheet">Sheet Music</option>
+                           <option value="Tutorial">Tutorial</option>
+                           <option value="Performance">Performances</option>
+                           <option value="Sheet Music">Sheet Music</option>
                         </select>
 
                         <label for="level"></label>
@@ -115,21 +115,21 @@
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'tuto_content') { ?>
-                        <a class="link_menu" href="content.php?category=tuto">Tutorials</a>
+                        <a class="link_menu" href="content.php?category=Tutorial">Tutorials</a>
                      <?php } ?>
                   </div>
 
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'perf_content') { ?>
-                        <a class="link_menu" href="content.php?category=perf">Performances</a>
+                        <a class="link_menu" href="content.php?category=Performance">Performances</a>
                      <?php } ?>
                   </div>
 
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'sheet_content') { ?>
-                        <a class="link_menu" href="content.php?category=sheet">Sheet Music</a>
+                        <a class="link_menu" href="content.php?category=Sheet Music">Sheet Music</a>
                      <?php } ?>
                   </div>
 

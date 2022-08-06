@@ -4,13 +4,13 @@ $page = 'index';
 require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
 
-$req = $bdd->query("SELECT * FROM contents WHERE category = 'tuto' ORDER BY RAND() LIMIT 1 ");
+$req = $bdd->query("SELECT * FROM contents WHERE category = 'Tutorial' ORDER BY RAND() LIMIT 1 ");
 $randomTuto = $req->fetch();
 
-$req1 = $bdd->query("SELECT * FROM contents WHERE category = 'perf' ORDER BY RAND() LIMIT 1 ");
+$req1 = $bdd->query("SELECT * FROM contents WHERE category = 'Performance' ORDER BY RAND() LIMIT 1 ");
 $randomPerf = $req1->fetch();
 
-$req2 = $bdd->query("SELECT * FROM contents WHERE category = 'sheet' ORDER BY RAND() LIMIT 1 ");
+$req2 = $bdd->query("SELECT * FROM contents WHERE category = 'Sheet Music' ORDER BY RAND() LIMIT 1 ");
 $randomSheet = $req2->fetch();
 
 ?>
@@ -51,21 +51,21 @@ $randomSheet = $req2->fetch();
 
       <div class="features">
          <div class="cards one">
-            <div class="titles link_page"><a href="content.php?category=tuto">Tutorials</a></div>
+            <div class="titles link_page"><a href="content.php?category=Tutorial">Tutorials</a></div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>
          </div>
 
          <div class="cards two">
-            <div class="titles link_page"><a href="content.php?category=perf">Performances</a></div>
+            <div class="titles link_page"><a href="content.php?category=Performance">Performances</a></div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>
          </div>
 
          <div class="cards three">
-            <div class="titles link_page"><a href="content.php?category=sheet">Sheet music</a></div>
+            <div class="titles link_page"><a href="content.php?category=Sheet Music">Sheet music</a></div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>

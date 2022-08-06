@@ -105,9 +105,9 @@ $contents = $req2->fetchAll();
                      <label for="category"></label>
                      <select class="inputbox" id="category" name="category" required>
                         <option value="">--Category--</option>
-                        <option value="tuto">Tutorial</option>
-                        <option value="perf">Performances</option>
-                        <option value="sheet">Sheet Music</option>
+                        <option value="Tutorial">Tutorial</option>
+                        <option value="Performance">Performances</option>
+                        <option value="Sheet Music">Sheet Music</option>
                      </select>
 
                      <label for="level"></label>
