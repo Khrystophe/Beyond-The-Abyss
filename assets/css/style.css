@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 * {
   margin: 0;
   padding: 0;
@@ -952,6 +953,216 @@ nav {
   margin-bottom: 1rem;
   background-color: transparent;
   border: 0px;
+}
+
+.movie-card {
+  color: #A9A8A3;
+  position: relative;
+  top: 7rem;
+}
+.movie-card a {
+  text-decoration: none;
+  color: #5C7FB8;
+}
+.movie-card a:hover {
+  text-decoration: underline;
+}
+
+.single_player_container {
+  margin: 0 auto;
+  width: 610px;
+  background-color: black;
+  position: relative;
+  border-radius: 10px;
+}
+
+.hero {
+  height: 342px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.hero video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -10;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.cover {
+  position: absolute;
+  top: 160px;
+  left: 40px;
+  z-index: 2;
+}
+
+.details {
+  padding: 20px 0 0 20px;
+}
+.details .title1 {
+  color: white;
+  font-size: 44px;
+  margin-bottom: 13px;
+}
+.details .title1 span {
+  position: absolute;
+  top: 3px;
+  margin-left: 12px;
+  background: #C4AF3D;
+  border-radius: 5px;
+  color: #544C21;
+  font-size: 14px;
+  padding: 0px 4px;
+}
+.details .title2 {
+  color: #C7C1BA;
+  font-size: 23px;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.likes {
+  margin-left: 24px;
+}
+
+.likes:before {
+  content: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/icon_like.png");
+  position: relative;
+  top: 2px;
+  padding-right: 7px;
+}
+
+.description {
+  display: flex;
+  line-height: 26px;
+}
+
+.column1 {
+  text-align: center;
+}
+
+.tag {
+  background: white;
+  border-radius: 10px;
+  padding: 3px 8px;
+  font-size: 14px;
+  margin-right: 4px;
+  line-height: 35px;
+  cursor: pointer;
+}
+
+.tag:hover {
+  background: #ddd;
+}
+
+.column2 {
+  padding-left: 41px;
+  padding-top: 30px;
+  margin-left: 20px;
+  width: 480px;
+}
+
+.avatars {
+  margin-top: 23px;
+}
+.avatars img {
+  cursor: pointer;
+}
+.avatars img:hover {
+  opacity: 0.6;
+}
+.avatars a:hover {
+  text-decoration: none;
+}
+
+.deck {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  margin: 5em auto 3em;
+}
+@media (max-width: 705px) {
+  .deck {
+    margin: 4em auto;
+  }
+}
+
+.single_player_card {
+  position: relative;
+  background-color: #161616;
+  padding: 1em;
+  z-index: 5;
+  border-radius: 2px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+  transition: 200ms ease-in-out;
+  margin-top: 1em;
+}
+.single_player_card:hover {
+  z-index: 7;
+  transform: scale(1.05);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+}
+.single_player_card:first-of-type {
+  margin-left: -3em;
+  margin-right: 3em;
+}
+.single_player_card:nth-of-type(2) {
+  margin-left: 5em;
+  margin-right: -5em;
+  margin-top: -6em;
+}
+.single_player_card:nth-of-type(3) {
+  margin-top: -2em;
+  margin-left: -1em;
+  margin-right: 1em;
+}
+
+.cardHeader {
+  display: grid;
+  grid-template-columns: 36px auto 100px;
+  align-items: center;
+  text-transform: uppercase;
+}
+.cardHeader .cardHeader_type {
+  margin: 10px;
+}
+.cardHeader .cardHeader_account {
+  font-size: 0.85em;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.cardHeader .cardHeader_date {
+  margin: 10px;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-align: right;
+}
+
+.cardBody {
+  display: flex;
+  margin: 0 10px 10px;
+}
+.cardBody .cardText {
+  margin: 0 10px 0 0;
+  white-space: pre-line;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.cardBody .cardStats {
+  font-size: 0.9em;
+  text-align: right;
+}
+.cardBody .cardStats .cardStats_stat {
+  display: inline-block;
+  white-space: nowrap;
+}
+.cardBody .cardStats .cardStats_stat .cardStats_stat {
+  margin-top: 5px;
 }
 
 footer {
