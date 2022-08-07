@@ -78,6 +78,9 @@ function contentAnimation() {
   .to('.random_content', {
     opacity: 1,
   }, "-=2")
+  .to('.single_player_container', {
+    opacity: 1,
+  }, "-=4")
   .to(".nav_bar",{
     opacity: 0.9,
     duration:1
@@ -325,6 +328,18 @@ for (let i = 0 ; i < links_page.length; i++) {
       opacity: 0,
       duration: 2
     })
+    .to(".box, .box h2", {
+      duration: 2,
+      scale: 0.1,
+      opacity: 0,
+      y: 40,
+      ease: "power1.inOut",
+      stagger: {
+        grid: [7, 15],
+        from: "edges",
+        amount: 1.5
+      }
+    }, "-=3")
     .to('.separator.one', {
       width:0,
       duration: 1.2,

@@ -1,7 +1,15 @@
 <?php
 session_start();
 $page = 'single_player';
+require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
+
+$req = $bdd->prepare('SELECT * FROM contents WHERE id = :id ');
+$req->execute(array(
+  ':id' => $_GET['id']
+));
+$contents = $req->fetch();
+
 ?>
 
 
@@ -15,11 +23,11 @@ require('./assets/require/head.php');
 
         <div class="hero">
 
-          <video src="./assets/contents_img/62e197730aab8.mp4" controls></video>
+          <video src="./assets/contents_img/<?= htmlspecialchars($contents['content']); ?>" controls></video>
 
           <div class="details">
-            <h1 class="title1">The Hobbit</h1>
-            <h2 class="title2">The Battle of the Five Armies</h2>
+            <h1 class="title1"><?= htmlspecialchars($contents['title']); ?></h1>
+            <h2 class="title2"><?= htmlspecialchars($contents['composer']); ?></h2>
           </div>
 
         </div>

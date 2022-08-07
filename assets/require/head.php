@@ -94,6 +94,9 @@
             <?php } else if ($page == 'search_results') { ?>
                <h1>Search results</h1>
 
+            <?php } else if ($page == 'single_player') { ?>
+               <h1>Watch the depths</h1>
+
             <?php } ?>
 
          </div>
