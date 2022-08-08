@@ -18,6 +18,46 @@ $contents = $req->fetch();
 
   <div data-barba="container" data-barba-namespace="single_player_content-section">
 
+
+    <div id="edit_modal" class="modal">
+
+      <div class="modal-content">
+        <div class="modal_form">
+          <div class="modal_form_content">
+
+            <span class="edit_close">&times;</span>
+            <form class="form_action" action="./assets/actions/edit_action.php" method="post">
+
+              <label for="title"></label>
+              <input type="text" class="inputbox" placeholder="Title" id="title" name="title" />
+
+              <label for="composer"></label>
+              <input type="text" class="inputbox" placeholder="Composer" id="composer" name="composer" />
+
+              <label for="category"></label>
+              <select class="inputbox" id="category" name="category">
+                <option value="">--Category--</option>
+                <option value="Tutorial">Tutorial</option>
+                <option value="Performance">Performances</option>
+                <option value="Sheet Music">Sheet Music</option>
+              </select>
+
+              <label for="level"></label>
+              <select class="inputbox" id="level" name="level">
+                <option value="">--Level--</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="very-hard">Very Hard</option>
+              </select>
+
+              <button type="submit" class="button">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
     <div class="movie-card">
       <div class="single_player_container">
 
@@ -31,8 +71,29 @@ $contents = $req->fetch();
           </div>
 
         </div>
+        <div class="player_bottom_bar">
+          <span class="likes"><i class="fas fa-thumbs-up"> 109</i></span>
 
-        <span class="likes">109 likes</span>
+          <?php if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
+            if ($_SESSION['users']['id'] == $contents['id_users']) { ?>
+              <div class="dropdown">
+                <button class="dropbtn">Edit/Delete</button>
+                <div class="dropdown-content">
+                  <a id="edit_button">Edit Content</a>
+                  <a href="#">Delete Content</a>
+                </div>
+              </div>
+            <?php } else { ?>
+              <div class="dropdown">
+                <button class="dropbtn"><i class="far fa-thumbs-up"></i></button>
+              </div>
+            <?php }
+          } else { ?>
+            <div class="dropdown">
+              <button class="dropbtn"><i class="far fa-thumbs-up"></i></button>
+            </div>
+          <?php } ?>
+        </div>
         <div class="description">
 
 

@@ -24,20 +24,29 @@ if (isset($_FILES) && !empty($_FILES)) {
    }
 }
 
-$req = $bdd->prepare("INSERT INTO contents( title,composer, level, category,content, price) VALUES (:title, :composer, :level, :category, :content, :price)");
+if ($_POST['category'] == 'Tutorial') {
+   $price = 15;
+} else if ($_POST['category'] == 'Performance') {
+   $price = 5;
+} else if ($_POST['category'] == 'Sheet Music') {
+   $price = 10;
+}
+
+$req = $bdd->prepare("INSERT INTO contents( title,composer, level, category,content, price, id_users) VALUES (:title, :composer, :level, :category, :content, :price, :id_users)");
 $req->execute(array(
    ':title' => $_POST['title'],
    ':composer' => $_POST['composer'],
    ':level' => $_POST['level'],
    'category' => $_POST['category'],
    ':content' => $content,
-   ':price' => $_POST['price'],
+   ':price' => $price,
+   ':id_users' => $_SESSION['users']['id'],
 ));
 
-if ($_POST['category'] == "tuto") {
-   header('location: ../../content.php?category=tuto&success=add_content');
-} else if ($_POST['category'] == "perf") {
-   header('location: ../../content.php?category=perf&success=add_content');
-} else if ($_POST['category'] == "sheet") {
-   header('location: ../../content.php?category=sheet&success=add_content');
+if ($_POST['category'] == "Tutorial") {
+   header('location: ../../content.php?category=Tutorial&success=add_content');
+} else if ($_POST['category'] == "Performance") {
+   header('location: ../../content.php?category=Performance&success=add_content');
+} else if ($_POST['category'] == "Sheet Music") {
+   header('location: ../../content.php?category=Sheet Music&success=add_content');
 }

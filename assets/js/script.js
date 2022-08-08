@@ -441,3 +441,23 @@ window.onclick = function(event) {
     search_modal.style.display = "none";
   }
 }
+
+let edit_modal = document.getElementById("edit_modal");
+
+let edit_button = document.getElementById("edit_button");
+
+let edit_close = document.getElementsByClassName("edit_close")[0];
+
+edit_button.onclick = function() {
+  edit_modal.style.display = "block";
+}
+
+edit_close.onclick = function() {
+  edit_modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == edit_modal) {
+    edit_modal.style.display = "none";
+  }
+}
