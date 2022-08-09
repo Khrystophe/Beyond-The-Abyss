@@ -2,14 +2,15 @@
 require('../require/co_bdd.php');
 
 if (isset($_FILES) && !empty($_FILES)) {
-    if (array_key_exists('media', $_FILES)) {
-        if ($_FILES['media']['error'] == 0) {
-            if (in_array($_FILES['media']['type'], ['image/png', 'image/jpeg'])) {
-                if ($_FILES['media']['size'] <= 3000000) {
-                    $media = uniqid() . '.' . pathinfo($_FILES['media']['name'], PATHINFO_EXTENSION);
-                    move_uploaded_file($_FILES['media']['tmp_name'], '../media/' . $media);
+    if (array_key_exists('content', $_FILES)) {
+        if ($_FILES['content']['error'] == 0) {
+            if (in_array($_FILES['content']['type'], ['video/mp4', 'image/png', 'image/jpeg'])) {
+                if ($_FILES['content']['size'] <= 128000000) {
+                    $content = uniqid() . '.' . pathinfo($_FILES['content']['name'], PATHINFO_EXTENSION);
+                    move_uploaded_file($_FILES['content']['tmp_name'], '../contents_img/' . $content);
                 } else {
-                    echo 'Le fichier est trop volumineux…';
+                    var_dump('Le fichier est trop volumineux…');
+                    exit;
                 }
             } else {
                 echo 'Le type mime du fichier est incorrect…';
@@ -21,13 +22,16 @@ if (isset($_FILES) && !empty($_FILES)) {
 }
 
 if ($media == null) {
-    $req = $bdd->prepare('UPDATE tutos SET titre = ?,compositeur= ?, niveau = ?, categorie = ? WHERE id = ?');
+    $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :comoser, level = :level, category = :category WHERE id = :id');
     $req->execute(array(
-        $_POST['titre'],
-        $_POST['compositeur'],
-        $_POST['niveau'],
-        $_POST['categorie'],
-        $_POST['id']
+        ':title' => $_POST['title'],
+        ':composer' => $_POST['composer'],
+        ':level' => $_POST['level'],
+        'category' => $_POST['category'],
+        ':content' => $content,
+        ':price' => $price,
+        ':id' => $_POST['id']
+
     ));
     if ($_POST['categorie'] == "tuto") {
         header('location: ../contenu.php?categorie=tuto&success=modification');

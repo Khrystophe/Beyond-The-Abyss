@@ -26,7 +26,10 @@ $contents = $req->fetch();
           <div class="modal_form_content">
 
             <span class="edit_close">&times;</span>
-            <form class="form_action" action="./assets/actions/edit_action.php" method="post">
+            <form class="form_action" action="./assets/actions/edit_content_action.php" method="post">
+
+              <label for="id"></label>
+              <input type="hidden" id="id" name="id" value="<?= $contents['id'] ?>">
 
               <label for="title"></label>
               <input type="text" class="inputbox" placeholder="Title" id="title" name="title" />
