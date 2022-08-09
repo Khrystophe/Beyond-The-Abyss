@@ -987,6 +987,7 @@ nav {
   position: relative;
   border-radius: 10px;
   opacity: 0;
+  box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
 }
 
 .hero {

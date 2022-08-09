@@ -26,20 +26,20 @@ $contents = $req->fetch();
           <div class="modal_form_content">
 
             <span class="edit_close">&times;</span>
-            <form class="form_action" action="./assets/actions/edit_content_action.php" method="post">
+            <form class="form_action" action="./assets/actions/edit_content_action.php" method="post" enctype="multipart/form-data">
 
               <label for="id"></label>
               <input type="hidden" id="id" name="id" value="<?= $contents['id'] ?>">
 
               <label for="title"></label>
-              <input type="text" class="inputbox" placeholder="Title" id="title" name="title" />
+              <input type="text" class="inputbox" value="<?= $contents['title'] ?>" placeholder="<?= $contents['title'] ?>" id="title" name="title" />
 
               <label for="composer"></label>
-              <input type="text" class="inputbox" placeholder="Composer" id="composer" name="composer" />
+              <input type="text" class="inputbox" value="<?= $contents['composer'] ?>" placeholder="<?= $contents['composer'] ?>" id="composer" name="composer" />
 
               <label for="category"></label>
               <select class="inputbox" id="category" name="category">
-                <option value="">--Category--</option>
+                <option value="<?= $contents['category'] ?>"><?= $contents['category'] ?></option>
                 <option value="Tutorial">Tutorial</option>
                 <option value="Performance">Performances</option>
                 <option value="Sheet Music">Sheet Music</option>
@@ -47,14 +47,17 @@ $contents = $req->fetch();
 
               <label for="level"></label>
               <select class="inputbox" id="level" name="level">
-                <option value="">--Level--</option>
+                <option value="<?= $contents['level'] ?>"><?= $contents['level'] ?></option>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
                 <option value="very-hard">Very Hard</option>
               </select>
 
-              <button type="submit" class="button">Search</button>
+              <label for="content"></label>
+              <input type="file" class="inputbox" id="content" name="content" />
+
+              <button type="submit" class="button">Edit</button>
             </form>
           </div>
         </div>
@@ -83,7 +86,7 @@ $contents = $req->fetch();
                 <button class="dropbtn">Edit/Delete</button>
                 <div class="dropdown-content">
                   <a id="edit_button">Edit Content</a>
-                  <a href="#">Delete Content</a>
+                  <a data-barba-prevent href="./assets/actions/delete_action.php?id=<?= $contents['id'] ?>">Delete Content</a>
                 </div>
               </div>
             <?php } else { ?>

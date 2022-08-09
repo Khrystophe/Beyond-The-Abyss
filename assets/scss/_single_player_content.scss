@@ -6,7 +6,7 @@
 	position: relative;
 	top: 7rem;
 	a {
-		text-decoration: none;
+    text-decoration: none;
 		color: #5C7FB8
 	}
 	
@@ -22,6 +22,7 @@
   position: relative;
 	border-radius: 10px;
   opacity: 0;
+  box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
 }
 
 .hero {

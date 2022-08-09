@@ -21,40 +21,38 @@ if (isset($_FILES) && !empty($_FILES)) {
     }
 }
 
-if ($media == null) {
-    $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :comoser, level = :level, category = :category WHERE id = :id');
+if ($_POST['category'] == 'Tutorial') {
+    $price = 15;
+} else if ($_POST['category'] == 'Performance') {
+    $price = 5;
+} else if ($_POST['category'] == 'Sheet Music') {
+    $price = 10;
+}
+
+if (!isset($content) && empty($content)) {
+    $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :composer, level = :level, category = :category, price= :price WHERE id = :id');
     $req->execute(array(
         ':title' => $_POST['title'],
         ':composer' => $_POST['composer'],
         ':level' => $_POST['level'],
         'category' => $_POST['category'],
-        ':content' => $content,
         ':price' => $price,
         ':id' => $_POST['id']
 
     ));
-    if ($_POST['categorie'] == "tuto") {
-        header('location: ../contenu.php?categorie=tuto&success=modification');
-    } else if ($_POST['categorie'] == "interpretation") {
-        header('location: ../contenu.php?categorie=interpretation&success=modification');
-    } else if ($_POST['categorie'] == "partition") {
-        header('location: ../contenu.php?categorie=partition&success=modification');
-    }
+
+    header('location: ../../single_player_content.php?id=' . $_POST['id']);
 } else {
-    $req = $bdd->prepare('UPDATE tutos SET titre = ?,compositeur= ?, niveau = ?, media = ?, categorie =?  WHERE id = ?');
+    $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :composer, level = :level, category = :category, price= :price, content= :content WHERE id = :id');
     $req->execute(array(
-        $_POST['titre'],
-        $_POST['compositeur'],
-        $_POST['niveau'],
-        $media,
-        $_POST['categorie'],
-        $_POST['id']
+        ':title' => $_POST['title'],
+        ':composer' => $_POST['composer'],
+        ':level' => $_POST['level'],
+        'category' => $_POST['category'],
+        ':price' => $price,
+        ':content' => $content,
+        ':id' => $_POST['id']
     ));
-    if ($_POST['categorie'] == "tuto") {
-        header('location: ../contenu.php?categorie=tuto&success=modification');
-    } else if ($_POST['categorie'] == "interpretation") {
-        header('location: ../contenu.php?categorie=interpretation&success=modification');
-    } else if ($_POST['categorie'] == "partition") {
-        header('location: ../contenu.php?categorie=partition&success=modification');
-    }
+
+    header('location: ../../single_player_content.php?id=' . $_POST['id']);
 }

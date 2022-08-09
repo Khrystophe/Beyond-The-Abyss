@@ -85,7 +85,7 @@ $results = $join->fetchAll();
                         <h2 class="card__title"><?= htmlspecialchars($content['composer']); ?></h2>
                         <h2 class="card__title"><?= htmlspecialchars($content['title']); ?></h2>
                         <p class="card__snippet">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <a href="single_player_content.php?id=<?= htmlspecialchars($content['id']); ?>" class="card__button link_page">See</a>
+                        <a href="single_player_content.php?id=<?= htmlspecialchars($content['id']); ?>" class="card__button link_page">Watch</a>
                      </figcaption>
                   </figure>
                </div>
