@@ -969,8 +969,7 @@ nav {
 
 .movie-card {
   color: #A9A8A3;
-  position: relative;
-  top: 7rem;
+  margin: 7rem 0 2rem 0;
 }
 .movie-card a {
   text-decoration: none;
@@ -1142,12 +1141,8 @@ nav {
   position: relative;
   max-width: 500px;
   width: 100%;
-  margin: 5em auto 3em;
-}
-@media (max-width: 705px) {
-  .deck {
-    margin: 4em auto;
-  }
+  margin: auto;
+  padding: 3rem;
 }
 
 .single_player_card {

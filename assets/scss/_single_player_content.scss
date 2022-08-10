@@ -3,8 +3,7 @@
 
 .movie-card {
   color: #A9A8A3;
-	position: relative;
-	top: 7rem;
+	margin: 7rem 0 2rem 0;
 	a {
     text-decoration: none;
 		color: #5C7FB8
@@ -210,11 +209,10 @@
   position: relative;
   max-width: 500px;
   width: 100%;
-  margin: 5em auto 3em;
-  @media (max-width: 705px){
-    margin: 4em auto;
+  margin: auto;
+  padding: 3rem;
 	}
-}
+
 .single_player_card{
   position: relative ;
   background-color: #161616;
