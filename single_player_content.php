@@ -10,6 +10,16 @@ $req->execute(array(
 ));
 $contents = $req->fetch();
 
+$join = $bdd->prepare('SELECT users.id, users.name, users.lastname
+FROM users
+INNER JOIN contents
+ON users.id = contents.id_users WHERE contents.id = :contents_id ');
+$join->execute(array(
+  ':contents_id' => $_GET['id']
+));
+$author = $join->fetch();
+
+
 ?>
 
 
@@ -87,17 +97,20 @@ $contents = $req->fetch();
                 <div class="dropdown-content">
                   <a id="edit_button">Edit Content</a>
                   <a data-barba-prevent href="./assets/actions/delete_action.php?id=<?= $contents['id'] ?>">Delete Content</a>
+                  <a id="comment_button">Comment</a>
                 </div>
               </div>
             <?php } else { ?>
-              <div class="dropdown">
-                <button class="dropbtn"><i class="far fa-thumbs-up"></i></button>
-              </div>
+
+              <button class="dropbtn"><i class="far fa-thumbs-up"></i></button>
+              <button class="dropbtn" id="comment_button">Comment</button>
+
             <?php }
           } else { ?>
-            <div class="dropdown">
-              <button class="dropbtn"><i class="far fa-thumbs-up"></i></button>
-            </div>
+
+            <button class="dropbtn"><i class="far fa-thumbs-up"></i></button>
+            <button class="dropbtn" id="comment_button">Comment</button>
+
           <?php } ?>
         </div>
         <div class="description">
@@ -107,6 +120,7 @@ $contents = $req->fetch();
             <div class="avatars">
               <a href="#" data-tooltip="Person 1" data-placement="top">
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png" alt="avatar1" />
+                <span><?= $author['name'] . " " . $author['lastname'] ?></span>
               </a>
             </div>
             <span class="tag">action</span>

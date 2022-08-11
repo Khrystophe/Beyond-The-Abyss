@@ -1043,9 +1043,6 @@ nav {
   display: flex;
   justify-content: space-around;
 }
-.player_bottom_bar .likes {
-  margin-left: 24px;
-}
 .player_bottom_bar .likes:before {
   position: relative;
   top: 2px;
@@ -1086,6 +1083,11 @@ nav {
 }
 .player_bottom_bar .dropdown-content a:nth-child(2):hover {
   background-color: red;
+  cursor: pointer;
+}
+.player_bottom_bar .dropdown-content a:nth-child(3):hover {
+  background-color: green;
+  cursor: pointer;
 }
 .player_bottom_bar .dropdown:hover .dropdown-content {
   display: block;

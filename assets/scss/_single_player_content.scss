@@ -89,9 +89,6 @@
   display: flex;
   justify-content: space-around;
 
-  .likes {
-    margin-left: 24px;
-  }
 
 
   .likes:before {
@@ -139,9 +136,18 @@
     cursor: pointer;
   
   };
-   &:nth-child(2):hover {background-color: red};
+   &:nth-child(2):hover {
+    background-color: red;
+    cursor: pointer;
+  };
+
+   &:nth-child(3):hover {
+    background-color: green;
+    cursor: pointer;
+  };
    
   }
+
   .dropdown:hover .dropdown-content {
     display: block;
   }
