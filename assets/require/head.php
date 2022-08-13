@@ -64,7 +64,7 @@
 
          </div>
          <div class="nav_bar">
-            <button id="search_button">Search</button>
+            <button class="dropbtn" id="search_button">Search</button>
 
 
             <?php if ($page == 'tuto_content') { ?>

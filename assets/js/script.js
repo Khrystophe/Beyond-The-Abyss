@@ -385,11 +385,11 @@ for (let i = 0 ; i < links_menu.length; i++) {
   links_menu[i].addEventListener('click', function(event){
     
     event.preventDefault();
-
+    
     if(body.classList.contains('open')) {
       
       body.classList.remove('open');
-
+      
       tl1
           .to('.sep', {
             duration: 0.75,
@@ -411,7 +411,7 @@ for (let i = 0 ; i < links_menu.length; i++) {
             opacity: 0,
             stagger: 0.25
           }, "<0.3")
-    }
+        }
     setTimeout(function(){
       window.location.href = event.target.href
     },2500)
@@ -420,7 +420,7 @@ for (let i = 0 ; i < links_menu.length; i++) {
 
 
 
-////////////////////////////////////modal/////////////////////////////////
+////////////////////////////////////modals/////////////////////////////////
 
 let search_modal = document.getElementById("search_modal");
 
@@ -442,6 +442,7 @@ window.onclick = function(event) {
   }
 }
 
+
 let edit_modal = document.getElementById("edit_modal");
 
 let edit_button = document.getElementById("edit_button");
@@ -459,5 +460,25 @@ edit_close.onclick = function() {
 window.onclick = function(event) {
   if (event.target == edit_modal) {
     edit_modal.style.display = "none";
+  }
+}
+
+let comment_modal = document.getElementById("comment_modal");
+
+let comment_button = document.getElementById("comment_button");
+
+let comment_close = document.getElementsByClassName("comment_close")[0];
+
+comment_button.onclick = function() {
+  comment_modal.style.display = "block";
+  }
+
+comment_close.onclick = function() {
+  comment_modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == comment_modal) {
+    comment_modal.style.display = "none";
   }
 }

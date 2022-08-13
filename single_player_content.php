@@ -72,8 +72,30 @@ $author = $join->fetch();
           </div>
         </div>
       </div>
-
     </div>
+
+    <div id="comment_modal" class="modal">
+
+      <div class="modal-content">
+        <div class="modal_form">
+          <div class="modal_form_content">
+
+            <span class="comment_close">&times;</span>
+            <form class="form_action" action="./assets/actions/edit_content_action.php" method="post">
+
+              <label for="id"></label>
+              <input type="hidden" id="id" name="id" value="<?= $contents['id'] ?>">
+
+              <label for="comment">Votre message :</label>
+              <textarea class="inputbox" id="comment" name="comment"></textarea>
+
+              <button type="submit" class="button">Post Comment</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="movie-card">
       <div class="single_player_container">
 
@@ -97,22 +119,13 @@ $author = $join->fetch();
                 <div class="dropdown-content">
                   <a id="edit_button">Edit Content</a>
                   <a data-barba-prevent href="./assets/actions/delete_action.php?id=<?= $contents['id'] ?>">Delete Content</a>
-                  <a id="comment_button">Comment</a>
                 </div>
               </div>
-            <?php } else { ?>
-
-              <button class="dropbtn"><i class="far fa-thumbs-up"></i></button>
-              <button class="dropbtn" id="comment_button">Comment</button>
-
-            <?php }
-          } else { ?>
-
-            <button class="dropbtn"><i class="far fa-thumbs-up"></i></button>
-            <button class="dropbtn" id="comment_button">Comment</button>
-
-          <?php } ?>
+          <?php }
+          } ?>
+          <button class="dropbtn" id="comment_button">Comment</button>
         </div>
+
         <div class="description">
 
 

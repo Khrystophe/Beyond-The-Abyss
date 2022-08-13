@@ -22,11 +22,11 @@ if (isset($_FILES) && !empty($_FILES)) {
 }
 
 if ($_POST['category'] == 'Tutorial') {
-    $price = 15;
+    $price = 30;
 } else if ($_POST['category'] == 'Performance') {
-    $price = 5;
-} else if ($_POST['category'] == 'Sheet Music') {
     $price = 10;
+} else if ($_POST['category'] == 'Sheet Music') {
+    $price = 20;
 }
 
 if (!isset($content) && empty($content)) {

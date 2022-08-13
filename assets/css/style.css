@@ -261,6 +261,19 @@ nav {
   cursor: pointer;
 }
 
+.comment_close {
+  align-self: flex-end;
+  color: #aaa;
+  font-size: 28px;
+}
+
+.comment_close:hover,
+.comment_close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .modal_form {
   box-shadow: 4px 3px 20px rgba(106, 106, 106, 0.5490196078);
 }
