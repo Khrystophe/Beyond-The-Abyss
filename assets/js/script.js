@@ -442,6 +442,25 @@ window.onclick = function(event) {
   }
 }
 
+let comment_modal = document.getElementById("comment_modal");
+
+let comment_button = document.getElementById("comment_button");
+
+let comment_close = document.getElementsByClassName("comment_close")[0];
+
+comment_button.onclick = function() {
+  comment_modal.style.display = "block";
+  }
+
+comment_close.onclick = function() {
+  comment_modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == comment_modal) {
+    comment_modal.style.display = "none";
+  }
+}
 
 let edit_modal = document.getElementById("edit_modal");
 
@@ -460,25 +479,5 @@ edit_close.onclick = function() {
 window.onclick = function(event) {
   if (event.target == edit_modal) {
     edit_modal.style.display = "none";
-  }
-}
-
-let comment_modal = document.getElementById("comment_modal");
-
-let comment_button = document.getElementById("comment_button");
-
-let comment_close = document.getElementsByClassName("comment_close")[0];
-
-comment_button.onclick = function() {
-  comment_modal.style.display = "block";
-  }
-
-comment_close.onclick = function() {
-  comment_modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == comment_modal) {
-    comment_modal.style.display = "none";
   }
 }
