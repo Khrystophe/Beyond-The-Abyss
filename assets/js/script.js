@@ -428,6 +428,8 @@ let search_button = document.getElementById("search_button");
 
 let search_close = document.getElementsByClassName("search_close")[0];
 
+
+if (search_button != undefined){
 search_button.onclick = function() {
   search_modal.style.display = "block";
 }
@@ -436,31 +438,25 @@ search_close.onclick = function() {
   search_modal.style.display = "none";
 }
 
-window.onclick = function(event) {
-  if (event.target == search_modal) {
-    search_modal.style.display = "none";
-  }
 }
-
 let comment_modal = document.getElementById("comment_modal");
 
 let comment_button = document.getElementById("comment_button");
 
 let comment_close = document.getElementsByClassName("comment_close")[0];
 
-comment_button.onclick = function() {
-  comment_modal.style.display = "block";
+
+if (comment_button != undefined){
+  comment_button.onclick = function() {
+    comment_modal.style.display = "block";
   }
-
-comment_close.onclick = function() {
-  comment_modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == comment_modal) {
+  comment_close.onclick = function() {
     comment_modal.style.display = "none";
   }
+  
 }
+
+
 
 let edit_modal = document.getElementById("edit_modal");
 
@@ -468,16 +464,26 @@ let edit_button = document.getElementById("edit_button");
 
 let edit_close = document.getElementsByClassName("edit_close")[0];
 
-edit_button.onclick = function() {
-  edit_modal.style.display = "block";
-}
-
-edit_close.onclick = function() {
-  edit_modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == edit_modal) {
+if (edit_button != undefined){
+  
+  edit_button.onclick = function() {
+    edit_modal.style.display = "block";
+  }
+  edit_close.onclick = function() {
     edit_modal.style.display = "none";
   }
+}
+
+window.onclick = function(event) { 
+
+  if (event.target == search_modal){
+  search_modal.style.display = "none";
+
+} else if (event.target == comment_modal){
+  comment_modal.style.display = "none";
+
+}else if (event.target == edit_modal) {
+  edit_modal.style.display = "none";
+
+}
 }

@@ -216,7 +216,7 @@
   max-width: 500px;
   width: 100%;
   margin: auto;
-  padding: 3rem;
+  // padding: 3rem;
 	}
 
 .single_player_card{
@@ -233,30 +233,31 @@
     transform: scale(1.05);
     box-shadow: 0 4px 25px rgba(0,0,0,.4);
 	}
-  &:first-of-type{
-    margin-left: -3em;
-    margin-right: 3em;
+  // &:first-of-type{
+  //   margin-left: -3em;
+  //   margin-right: 3em;
 
-	}
+	// }
 
-  &:nth-of-type(2){
-    margin-left: 5em;
-    margin-right: -5em;
-    margin-top: -6em;
-	}
+  // &:nth-of-type(2){
+  //   margin-left: 5em;
+  //   margin-right: -5em;
+  //   margin-top: -6em;
+	// }
 
-  &:nth-of-type(3){
-    margin-top: -2em;
-    margin-left: -1em;
-    margin-right: 1em;
-	}
+  // &:nth-of-type(3){
+  //   margin-top: -2em;
+  //   margin-left: -1em;
+  //   margin-right: 1em;
+	// }
 }
 
 .cardHeader{
   display: grid;
-  grid-template-columns: 36px auto 100px;
-  align-items: center;
-  text-transform: uppercase;
+  // grid-template-columns: 36px auto 100px;
+  // align-items: center;
+  // text-transform: uppercase;
+  justify-items: stretch;
   .cardHeader_type{
     // color: $yellow;
     margin: 10px;
@@ -273,7 +274,7 @@
     margin: 10px;
     // color: $light-blue;
     font-size: .85em;
-    font-weight: 600;
+    // font-weight: 600;
     text-align: right;
 	}
 }
@@ -281,6 +282,7 @@
 .cardBody{
   display: flex;
   margin: 0 10px 10px;
+  justify-content: space-between;
 
   .cardText{
     margin: 0 10px 0 0;
@@ -296,6 +298,7 @@
   .cardStats{
     font-size: .9em;
     text-align: right;
+    width: 20%;
 
     .cardStats_stat{
       display: inline-block;
