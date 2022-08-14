@@ -101,7 +101,7 @@ var_dump($comments);
               <label for="id"></label>
               <input type="hidden" id="id" name="id" value="<?= $content['id'] ?>">
 
-              <label for="comment">Votre message :</label>
+              <label for="comment">Your comment</label>
               <textarea class="inputbox" id="comment" name="comment"></textarea>
 
               <button type="submit" class="button">Post Comment</button>
@@ -148,7 +148,7 @@ var_dump($comments);
             <div class="avatars">
               <a href="#" data-tooltip="Person 1" data-placement="top">
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png" alt="avatar1" />
-                <span><?= $content_author['name'] . " " . $content_author['lastname'] ?></span>
+                <span><?= htmlspecialchars($content_author['name']) . " " . htmlspecialchars($content_author['lastname']) ?></span>
               </a>
             </div>
             <span class="tag">action</span>
@@ -165,12 +165,12 @@ var_dump($comments);
           <div class='deck'>
             <div class='single_player_card'>
               <div class='cardHeader'>
-                <span class='cardHeader_account'><?= $comment['name'] . " " . $comment['lastname'] ?></span>
-                <span class='cardHeader_date'><?= $comment['date'] ?></span>
+                <span class='cardHeader_account'><?= htmlspecialchars($comment['name']) . " " . htmlspecialchars($comment['lastname']) ?></span>
+                <span class='cardHeader_date'><?= htmlspecialchars($comment['date']) ?></span>
 
               </div>
               <div class='cardBody'>
-                <p class='cardText'><?= $comment['comment'] ?>
+                <p class='cardText'><?= htmlspecialchars($comment['comment']) ?>
                 </p>
                 <section class='cardStats'>
                   <span class='cardStats_stat cardStats_stat-likes'>2155 <i class='far fa-heart fa-fw'></i></span>
