@@ -33,22 +33,22 @@
                      <span class="search_close">&times;</span>
                      <form class="form_action" action="/Diplome/content.php?category=search_results" method="post">
 
-                        <label for="title"></label>
-                        <input type="text" class="inputbox" placeholder="Title" id="title" name="title" />
+                        <label for="search_title"></label>
+                        <input type="text" class="inputbox" placeholder="Title" id="search_title" name="title" />
 
-                        <label for="composer"></label>
-                        <input type="text" class="inputbox" placeholder="Composer" id="composer" name="composer" />
+                        <label for="search_composer"></label>
+                        <input type="text" class="inputbox" placeholder="Composer" id="search_composer" name="composer" />
 
-                        <label for="category"></label>
-                        <select class="inputbox" id="category" name="category">
+                        <label for="search_category"></label>
+                        <select class="inputbox" id="search_category" name="category">
                            <option value="">--Category--</option>
                            <option value="Tutorial">Tutorial</option>
                            <option value="Performance">Performances</option>
                            <option value="Sheet Music">Sheet Music</option>
                         </select>
 
-                        <label for="level"></label>
-                        <select class="inputbox" id="level" name="level">
+                        <label for="search_level"></label>
+                        <select class="inputbox" id="search_level" name="level">
                            <option value="">--Level--</option>
                            <option value="easy">Easy</option>
                            <option value="medium">Medium</option>

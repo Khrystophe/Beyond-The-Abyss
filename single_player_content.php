@@ -18,9 +18,8 @@ $req->execute(array(
   ':contents_id' => $_GET['id']
 ));
 $content_author = $req->fetch();
-var_dump($content_author);
 
-$req = $bdd->prepare('SELECT  users.name, users.lastname, comments.comment, comments.id, comments.date
+$req = $bdd->prepare('SELECT  users.name, users.lastname, comments.comment, comments.id, comments.date, comments.likes
 FROM comments
 INNER JOIN contents
 ON comments.id_contents = contents.id
@@ -32,9 +31,9 @@ $req->execute(array(
 ));
 $comments = $req->fetchAll();
 
-var_dump($comments);
-
-
+// $req = $bdd->query('SELECT id_users FROM comments');
+// $user_comments = $req->fetchAll();
+// var_dump($user_comments);
 ?>
 
 
@@ -56,22 +55,34 @@ var_dump($comments);
               <label for="id"></label>
               <input type="hidden" id="id" name="id" value="<?= $content['id'] ?>">
 
-              <label for="title"></label>
-              <input type="text" class="inputbox" value="<?= $content['title'] ?>" placeholder="<?= $content['title'] ?>" id="title" name="title" />
+              <label for="edit_title"></label>
+              <input type="text" class="inputbox" value="<?= $content['title'] ?>" placeholder="<?= $content['title'] ?>" id="edit_title" name="title" />
 
-              <label for="composer"></label>
-              <input type="text" class="inputbox" value="<?= $content['composer'] ?>" placeholder="<?= $content['composer'] ?>" id="composer" name="composer" />
+              <label for="edit_composer"></label>
+              <input type="text" class="inputbox" value="<?= $content['composer'] ?>" placeholder="<?= $content['composer'] ?>" id="edit_composer" name="composer" />
 
-              <label for="category"></label>
-              <select class="inputbox" id="category" name="category">
+              <label for="edit_description"></label>
+              <textarea class="inputbox" placeholder="Description" id="edit_description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" required></textarea>
+
+              <script>
+                function MaxLengthDescription(description, maxlength) {
+                  if (description.value.length > maxlength) {
+                    description.value = description.value.substring(0, maxlength);
+                    alert('Votre texte ne doit pas dépasser ' + maxlength + ' caractères!');
+                  }
+                }
+              </script>
+
+              <label for="edit_category"></label>
+              <select class="inputbox" id="edit_category" name="category">
                 <option value="<?= $content['category'] ?>"><?= $content['category'] ?></option>
                 <option value="Tutorial">Tutorial</option>
                 <option value="Performance">Performances</option>
                 <option value="Sheet Music">Sheet Music</option>
               </select>
 
-              <label for="level"></label>
-              <select class="inputbox" id="level" name="level">
+              <label for="edit_level"></label>
+              <select class="inputbox" id="edit_level" name="level">
                 <option value="<?= $content['level'] ?>"><?= $content['level'] ?></option>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
@@ -79,8 +90,8 @@ var_dump($comments);
                 <option value="very-hard">Very Hard</option>
               </select>
 
-              <label for="content"></label>
-              <input type="file" class="inputbox" id="content" name="content" />
+              <label for="edit_content"></label>
+              <input type="file" class="inputbox" id="edit_content" name="content" />
 
               <button type="submit" class="button">Edit</button>
             </form>
@@ -125,10 +136,22 @@ var_dump($comments);
 
         </div>
         <div class="player_bottom_bar">
-          <span class="likes"><i class="fas fa-thumbs-up"> 109</i></span>
+          <span class="likes"><i class="fas fa-thumbs-up"><?= $content['likes'] ?></i></span>
 
           <?php if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
-            if ($_SESSION['users']['id'] == $content['id_users']) { ?>
+            if ($_SESSION['users']['id'] != $content['id_users']) { ?>
+
+              <button class="dropbtn">
+                <a data-barba-prevent href="./assets/actions/like_action.php?name=content&id=<?= $content['id'] ?>">
+                  <i class="far fa-thumbs-up">
+                  </i>
+                </a>
+              </button>
+            <?php } ?>
+
+            <button class="dropbtn" id="comment_button">Comment</button>
+
+            <?php if ($_SESSION['users']['id'] == $content['id_users']) { ?>
               <div class="dropdown">
                 <button class="dropbtn">Edit/Delete</button>
                 <div class="dropdown-content">
@@ -138,7 +161,6 @@ var_dump($comments);
               </div>
           <?php }
           } ?>
-          <button class="dropbtn" id="comment_button">Comment</button>
         </div>
 
         <div class="description">
@@ -157,7 +179,7 @@ var_dump($comments);
           </div>
 
           <div class="column2">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quibusdam qui, molestiae molestias fuga, beatae enim illo fugit laboriosam fugiat eius magnam ex deserunt esse in corporis sed ipsum error! Minima facere voluptatum nesciunt harum, maiores repudiandae! Repellat nisi esse aperiam dignissimos optio et pariatur. Aperiam voluptatum tempore soluta iusto.<a href="#">read more</a></p>
+            <p><?= htmlspecialchars($content['description']) ?></p>
           </div>
         </div>
 
@@ -173,7 +195,7 @@ var_dump($comments);
                 <p class='cardText'><?= htmlspecialchars($comment['comment']) ?>
                 </p>
                 <section class='cardStats'>
-                  <span class='cardStats_stat cardStats_stat-likes'>2155 <i class='far fa-heart fa-fw'></i></span>
+                  <span class='cardStats_stat cardStats_stat-likes'><?= $comment['likes'] ?><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= $comment['id'] ?>&id=<?= $content['id'] ?>"> <i class='far fa-heart fa-fw'></i></a></span>
                   <span class='cardStats_stat cardStats_stat-comments'>87 <i class='far fa-comment fa-fw'></i></span>
                   </span>
                 </section>

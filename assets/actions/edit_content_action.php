@@ -30,13 +30,14 @@ if ($_POST['category'] == 'Tutorial') {
 }
 
 if (!isset($content) && empty($content)) {
-    $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :composer, level = :level, category = :category, price= :price WHERE id = :id');
+    $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :composer, level = :level, category = :category, price= :price, description = :description  WHERE id = :id');
     $req->execute(array(
         ':title' => $_POST['title'],
         ':composer' => $_POST['composer'],
         ':level' => $_POST['level'],
         'category' => $_POST['category'],
         ':price' => $price,
+        ':description' => $_POST['description'],
         ':id' => $_POST['id']
 
     ));

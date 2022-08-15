@@ -32,7 +32,7 @@ if ($_POST['category'] == 'Tutorial') {
    $price = 10;
 }
 
-$req = $bdd->prepare("INSERT INTO contents( title,composer, level, category,content, price, id_users) VALUES (:title, :composer, :level, :category, :content, :price, :id_users)");
+$req = $bdd->prepare("INSERT INTO contents( title,composer, level, category,content, price, description, id_users) VALUES (:title, :composer, :level, :category, :content, :price, :description, :id_users)");
 $req->execute(array(
    ':title' => $_POST['title'],
    ':composer' => $_POST['composer'],
@@ -40,6 +40,7 @@ $req->execute(array(
    'category' => $_POST['category'],
    ':content' => $content,
    ':price' => $price,
+   ':description' => $_POST['description'],
    ':id_users' => $_SESSION['users']['id'],
 ));
 

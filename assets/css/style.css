@@ -596,6 +596,9 @@ nav {
 .content_card .info_section .content_header .type {
   display: inline-block;
 }
+.content_card .info_section .content_desc .text {
+  word-break: break-all;
+}
 .content_card .info_section .content_social ul {
   list-style: none;
   padding: 0;
@@ -1138,6 +1141,7 @@ nav {
   padding-top: 30px;
   margin-left: 20px;
   width: 480px;
+  word-break: break-all;
 }
 
 .avatars {

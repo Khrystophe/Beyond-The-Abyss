@@ -90,7 +90,7 @@ $randomSheet = $req2->fetch();
                      <h2><?= htmlspecialchars($randomTuto['title']); ?></h2>
                      <h3><?= htmlspecialchars($randomTuto['composer']); ?></h3>
 
-                     <span class="see_content tuto"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomTuto['id']); ?>" class="btn">Voir</a>
+                     <span class="see_content tuto"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomTuto['id']); ?>" class="btn link_page">Watch</a>
                      </span>
 
                      <div class="type tuto">Classique</div>
@@ -105,7 +105,7 @@ $randomSheet = $req2->fetch();
 
                <div class="content_desc tuto">
                   <p class="text">
-                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur veritatis itaque illum accusantium ratione voluptatem autem culpa aut est possimus!
+                     <?= htmlspecialchars($randomTuto['description']) ?>
                   </p>
                </div>
 
@@ -134,7 +134,7 @@ $randomSheet = $req2->fetch();
                      <h2><?= htmlspecialchars($randomPerf['title']); ?></h2>
                      <h3><?= htmlspecialchars($randomPerf['composer']); ?></h3>
 
-                     <span class="see_content perf"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomPerf['id']); ?>" class="btn">Voir</a></span>
+                     <span class="see_content perf"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomPerf['id']); ?>" class="btn link_page">Watch</a></span>
 
                      <div class="type perf">Jazz</div>
                   </div>
@@ -148,7 +148,7 @@ $randomSheet = $req2->fetch();
 
                <div class="content_desc perf">
                   <p class="text">
-                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ducimus autem enim delectus veritatis ab, possimus recusandae? Sequi, eligendi consequatur.
+                     <?= htmlspecialchars($randomPerf['description']) ?>
                   </p>
                </div>
 
@@ -177,7 +177,7 @@ $randomSheet = $req2->fetch();
                      <h2><?= htmlspecialchars($randomSheet['title']); ?></h2>
                      <h3><?= htmlspecialchars($randomSheet['composer']); ?></h3>
 
-                     <span class="see_content sheet"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomSheet['id']); ?>" class="btn">Voir</a></span>
+                     <span class="see_content sheet"><a href="./single_player_content.php?id=<?= htmlspecialchars($randomSheet['id']); ?>" class="btn link_page">Watch</a></span>
 
                      <div class="type sheet">Métal</div>
                   </div>
@@ -191,7 +191,7 @@ $randomSheet = $req2->fetch();
 
                <div class="content_desc sheet">
                   <p class="text">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus non ipsa quas dolorum accusantium iure quae esse debitis id tempore!
+                     <?= htmlspecialchars($randomSheet['description']) ?>
                   </p>
                </div>
 
