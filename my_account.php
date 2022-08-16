@@ -109,7 +109,7 @@ $contents = $req2->fetchAll();
                         function MaxLengthDescription(description, maxlength) {
                            if (description.value.length > maxlength) {
                               description.value = description.value.substring(0, maxlength);
-                              alert('Votre texte ne doit pas dépasser ' + maxlength + ' caractères!');
+                              alert('Maximum ' + maxlength + 'characters!');
                            }
                         }
                      </script>
@@ -133,6 +133,9 @@ $contents = $req2->fetchAll();
 
                      <label for="content"></label>
                      <input type="file" class="inputbox" id="content" name="content" required />
+
+                     <label for="free_content">Free Content</label>
+                     <input type="checkbox" class="inputbox" id="free_content" name="free_content" />
 
                      <button type="submit" class="button">Add</button>
                   </form>

@@ -19,7 +19,7 @@ $req->execute(array(
 ));
 $content_author = $req->fetch();
 
-$req = $bdd->prepare('SELECT  users.name, users.lastname, comments.comment, comments.id, comments.date, comments.likes
+$req = $bdd->prepare('SELECT  users.name, users.lastname, comments.comment, comments.id,comments.id_users, comments.date, comments.likes
 FROM comments
 INNER JOIN contents
 ON comments.id_contents = contents.id
@@ -31,9 +31,6 @@ $req->execute(array(
 ));
 $comments = $req->fetchAll();
 
-// $req = $bdd->query('SELECT id_users FROM comments');
-// $user_comments = $req->fetchAll();
-// var_dump($user_comments);
 ?>
 
 
@@ -62,13 +59,13 @@ $comments = $req->fetchAll();
               <input type="text" class="inputbox" value="<?= $content['composer'] ?>" placeholder="<?= $content['composer'] ?>" id="edit_composer" name="composer" />
 
               <label for="edit_description"></label>
-              <textarea class="inputbox" placeholder="Description" id="edit_description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" required></textarea>
+              <textarea class="inputbox" value="<?= $content['description'] ?>" id="edit_description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);"><?= $content['description'] ?></textarea>
 
               <script>
                 function MaxLengthDescription(description, maxlength) {
                   if (description.value.length > maxlength) {
                     description.value = description.value.substring(0, maxlength);
-                    alert('Votre texte ne doit pas dépasser ' + maxlength + ' caractères!');
+                    alert('Maximum ' + maxlength + ' characters!');
                   }
                 }
               </script>
@@ -92,6 +89,9 @@ $comments = $req->fetchAll();
 
               <label for="edit_content"></label>
               <input type="file" class="inputbox" id="edit_content" name="content" />
+
+              <label for="free_content">Free Content</label>
+              <input type="checkbox" class="inputbox" id="free_content" name="free_content" />
 
               <button type="submit" class="button">Edit</button>
             </form>
@@ -183,7 +183,12 @@ $comments = $req->fetchAll();
           </div>
         </div>
 
-        <?php foreach ($comments as $comment) { ?>
+        <?php foreach ($comments as $comment) {
+
+          $req = $bdd->query('SELECT COUNT(id_users) FROM comments WHERE id_users =' . $comment['id_users']);
+          $user_comments = $req->fetch();
+
+        ?>
           <div class='deck'>
             <div class='single_player_card'>
               <div class='cardHeader'>
@@ -195,8 +200,8 @@ $comments = $req->fetchAll();
                 <p class='cardText'><?= htmlspecialchars($comment['comment']) ?>
                 </p>
                 <section class='cardStats'>
-                  <span class='cardStats_stat cardStats_stat-likes'><?= $comment['likes'] ?><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= $comment['id'] ?>&id=<?= $content['id'] ?>"> <i class='far fa-heart fa-fw'></i></a></span>
-                  <span class='cardStats_stat cardStats_stat-comments'>87 <i class='far fa-comment fa-fw'></i></span>
+                  <span class='cardStats_stat cardStats_stat-likes'><?= htmlspecialchars($comment['likes']) ?><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= htmlspecialchars($comment['id']) ?>&id=<?= htmlspecialchars($content['id']) ?>"> <i class='far fa-heart fa-fw'></i></a></span>
+                  <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($user_comments)) ?><i class='far fa-comment fa-fw'></i></span>
                   </span>
                 </section>
               </div>

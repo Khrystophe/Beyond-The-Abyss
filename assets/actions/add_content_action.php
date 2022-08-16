@@ -24,12 +24,18 @@ if (isset($_FILES) && !empty($_FILES)) {
    }
 }
 
-if ($_POST['category'] == 'Tutorial') {
-   $price = 15;
-} else if ($_POST['category'] == 'Performance') {
-   $price = 5;
-} else if ($_POST['category'] == 'Sheet Music') {
-   $price = 10;
+$free_content = $_POST['free_content'];
+
+if (!isset($free_content)) {
+   if ($_POST['category'] == 'Tutorial') {
+      $price = 15;
+   } else if ($_POST['category'] == 'Performance') {
+      $price = 5;
+   } else if ($_POST['category'] == 'Sheet Music') {
+      $price = 10;
+   }
+} else {
+   $price = 0;
 }
 
 $req = $bdd->prepare("INSERT INTO contents( title,composer, level, category,content, price, description, id_users) VALUES (:title, :composer, :level, :category, :content, :price, :description, :id_users)");
@@ -42,6 +48,28 @@ $req->execute(array(
    ':price' => $price,
    ':description' => $_POST['description'],
    ':id_users' => $_SESSION['users']['id'],
+));
+
+
+$req = $bdd->prepare('SELECT credits FROM users WHERE users.id = :users_id');
+$req->execute(array(
+   ':users_id' => $_SESSION['users']['id']
+));
+$nbrOfCredits = $req->fetch();
+$credits = implode($nbrOfCredits);
+
+if ($_POST['category'] == 'Tutorial') {
+   $credits += 30;
+} else if ($_POST['category'] == 'Performance') {
+   $credits += 10;
+} else if ($_POST['category'] == 'Sheet Music') {
+   $credits += 20;
+}
+
+$req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
+$req->execute(array(
+   ':credits' => $credits,
+   ':users_id' => $_SESSION['users']['id']
 ));
 
 if ($_POST['category'] == "Tutorial") {
