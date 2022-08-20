@@ -46,7 +46,7 @@ $req->execute(array(
    'category' => $_POST['category'],
    ':content' => $content,
    ':price' => $price,
-   ':description' => $_POST['description'],
+   ':description' => nl2br($_POST['description']),
    ':id_users' => $_SESSION['users']['id'],
 ));
 
