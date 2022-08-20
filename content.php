@@ -6,24 +6,44 @@ if ($_GET['category'] != 'search_results') {
    if ($_GET['category'] == 'Tutorial') {
 
       $page = 'tuto_content';
+      $req = $bdd->prepare('SELECT * FROM contents WHERE category = :category ');
+      $req->execute(array(
+         ':category' => $_GET['category']
+      ));
    } else if ($_GET['category'] == 'Performance') {
 
       $page = 'perf_content';
+      $req = $bdd->prepare('SELECT * FROM contents WHERE category = :category ');
+      $req->execute(array(
+         ':category' => $_GET['category']
+      ));
    } else if ($_GET['category'] == 'Sheet Music') {
 
       $page = 'sheet_content';
+      $req = $bdd->prepare('SELECT * FROM contents WHERE category = :category ');
+      $req->execute(array(
+         ':category' => $_GET['category']
+      ));
    } else if ($_GET['category'] == 'user_content') {
 
       $page = 'user_content';
+      $req = $bdd->prepare('SELECT * FROM contents WHERE id_users = :id_users ');
+      $req->execute(array(
+         ':id_users' => $_SESSION['users']['id']
+      ));
    } else if ($_GET['category'] == 'user_purchased_content') {
 
       $page = 'user_purchased_content';
+      $req = $bdd->prepare('SELECT purchased_contents.id_contents, contents.title , contents.composer, contents.category, contents.content, contents.price, contents.id, contents.description, contents.id_users
+      FROM purchased_contents 
+      INNER JOIN contents
+      ON purchased_contents.id_contents = contents.id
+      WHERE purchased_contents.id_users = :id_users ');
+      $req->execute(array(
+         ':id_users' => $_SESSION['users']['id']
+      ));
    }
 
-   $req = $bdd->prepare('SELECT * FROM contents WHERE category = :category ');
-   $req->execute(array(
-      ':category' => $_GET['category']
-   ));
    $contents = $req->fetchAll();
 } else {
    $page = 'search_results';
@@ -99,7 +119,7 @@ require('./assets/require/head.php');
 
                            $sessionUser_purchased_content = in_array($_SESSION['users']['id'], array_column($user_purchased_contents, 'id_users'), TRUE);
 
-                           if ($content['price'] == 0) { ?>
+                           if ($content['price'] == 0 || $content['id_users'] == $_SESSION['users']['id']) { ?>
 
                               <a href="single_player_content.php?id=<?= htmlspecialchars($content['id']); ?>" class="card__button link_page">Watch</a>
                               <?php } else {
