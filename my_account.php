@@ -134,8 +134,8 @@ $contents = $req2->fetchAll();
                      <label for="content"></label>
                      <input type="file" class="inputbox" id="content" name="content" required />
 
-                     <label for="free_content">Free Content</label>
-                     <input type="checkbox" class="inputbox" id="free_content" name="free_content" />
+                     <label for="my_account_free_content">Free Content</label>
+                     <input type="checkbox" class="inputbox" id="my_account_free_content" name="free_content" />
 
                      <button type="submit" class="button">Add</button>
                   </form>

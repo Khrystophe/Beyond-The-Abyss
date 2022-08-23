@@ -85,7 +85,11 @@ if (!isset($content) && empty($content)) {
         ':users_id' => $_SESSION['users']['id']
     ));
 
-    header('location: ../../single_player_content.php?id=' . $_POST['id']);
+    if ($_GET['type'] == 'admin') {
+        header('location: ../../admin/contents.php');
+    } else {
+        header('location: ../../single_player_content.php?id=' . $_POST['id']);
+    }
 } else {
 
     $requete = $bdd->prepare('SELECT * FROM contents WHERE id = :id');
@@ -121,5 +125,9 @@ if (!isset($content) && empty($content)) {
         ':users_id' => $_SESSION['users']['id']
     ));
 
-    header('location: ../../single_player_content.php?id=' . $_POST['id']);
+    if ($_GET['type'] == 'admin') {
+        header('location: ../../admin/contents.php');
+    } else {
+        header('location: ../../single_player_content.php?id=' . $_POST['id']);
+    }
 }

@@ -23,3 +23,11 @@ function getPurchased_contents()
     $purchased_contents = $req->fetchAll();
     return $purchased_contents;
 }
+
+function getComments()
+{
+    global $bdd;
+    $req = $bdd->query('SELECT * FROM comments ORDER BY id_contents');
+    $comments =  $req->fetchAll();
+    return $comments;
+}

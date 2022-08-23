@@ -2,7 +2,8 @@
 session_start();
 require('../require/co_bdd.php');
 
-
+var_dump($_FILES);
+exit;
 
 if (isset($_FILES) && !empty($_FILES)) {
    if (array_key_exists('content', $_FILES)) {
@@ -38,7 +39,7 @@ if (!isset($free_content)) {
    $price = 0;
 }
 
-$req = $bdd->prepare("INSERT INTO contents( title,composer, level, category,content, price, description, id_users) VALUES (:title, :composer, :level, :category, :content, :price, :description, :id_users)");
+$req = $bdd->prepare("INSERT INTO contents( title, composer, level, category, content, price, description, id_users) VALUES (:title, :composer, :level, :category, :content, :price, :description, :id_users)");
 $req->execute(array(
    ':title' => $_POST['title'],
    ':composer' => $_POST['composer'],
@@ -72,10 +73,15 @@ $req->execute(array(
    ':users_id' => $_SESSION['users']['id']
 ));
 
-if ($_POST['category'] == "Tutorial") {
-   header('location: ../../content.php?category=Tutorial&success=add_content');
-} else if ($_POST['category'] == "Performance") {
-   header('location: ../../content.php?category=Performance&success=add_content');
-} else if ($_POST['category'] == "Sheet Music") {
-   header('location: ../../content.php?category=Sheet Music&success=add_content');
+
+if ($_GET['type'] == 'admin') {
+   header('location: ../../admin/contents.php');
+} else {
+   if ($_POST['category'] == "Tutorial") {
+      header('location: ../../content.php?category=Tutorial&success=add_content');
+   } else if ($_POST['category'] == "Performance") {
+      header('location: ../../content.php?category=Performance&success=add_content');
+   } else if ($_POST['category'] == "Sheet Music") {
+      header('location: ../../content.php?category=Sheet Music&success=add_content');
+   }
 }

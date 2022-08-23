@@ -77,7 +77,7 @@ $purchased_contents = getPurchased_contents();
                 <th scope="col"><?= $content['id'] ?></th>
                 <td scope="col"><?= $content['id_contents'] ?></td>
                 <td scope="col"><?= $content['id_users'] ?></td>
-                <td scope="col"><a href="./assets/produits/deleteProduct.php?id=<?= $content['id'] ?>">Supprimer</a></td>
+                <td scope="col"><a href="./assets/actions/delete_purchased_contents.php?id=<?= $content['id'] ?>">Delete</a></td>
             </tr>
         <?php } ?>
     </tbody>

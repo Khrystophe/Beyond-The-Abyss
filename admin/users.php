@@ -35,7 +35,18 @@ $users = getUsers();
                 <td scope="col"><?= $user['email'] ?></td>
                 <td scope="col"><?= $user['type'] ?></td>
 
-                <td scope="col"><a href="./assets/clients/deleteClient.php?id=<?= $user['id'] ?>">Supprimer</a></td>
+                <td scope="col"><a href="./assets/actions/delete_users_action.php?id=<?= $user['id'] ?>">Delete</a></td>
+                <form action="./assets/actions/change_type_action.php?id=<?= $user['id'] ?>" method="post">
+                    <td><button type="submit">Change Type</button></td>
+                    <td scope="col">
+                        <label for="type"></label>
+                        <select class="inputbox" id="type" name="type" required>
+                            <option value="">--Type--</option>
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </td>
+                </form>
             </tr>
         <?php } ?>
     </tbody>
