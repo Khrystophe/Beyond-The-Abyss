@@ -61,10 +61,10 @@ $contents = $req2->fetchAll();
 
 
                      <label for="name"></label>
-                     <input type="text" class="inputbox" placeholder="Your current name : <?= htmlspecialchars($acc['name']);  ?> " id="name" name="name" />
+                     <input type="text" class="inputbox" placeholder="Your current name : <?= htmlspecialchars($acc['name']);  ?> " id="name" name="name" required />
 
                      <label for="lastname"></label>
-                     <input type="text" class="inputbox" placeholder="Your current last name : <?= htmlspecialchars($acc['lastname']);  ?> " id="lastname" name="lastname" />
+                     <input type="text" class="inputbox" placeholder="Your current last name : <?= htmlspecialchars($acc['lastname']);  ?> " id="lastname" name="lastname" required />
 
                      <button type="submit" class="button">Edit</button>
 

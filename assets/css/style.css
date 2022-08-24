@@ -38,15 +38,20 @@ header {
 
 .nav_bar {
   height: 3.5rem;
-  background-color: #222222;
+  background-color: #161616;
   display: flex;
   justify-content: center;
   position: fixed;
   width: 100%;
   align-items: center;
   z-index: 20;
-  border-bottom: 2px solid black;
   opacity: 0;
+}
+.nav_bar .fas, .nav_bar .dropbtn {
+  color: black;
+  background-color: #161616;
+  border: none;
+  cursor: pointer;
 }
 
 nav {
@@ -73,6 +78,37 @@ nav {
     transform: rotate(360deg);
   }
 }
+.little_logo {
+  transform: translateY(100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: -90px;
+  left: 40px;
+  z-index: 50;
+}
+.little_logo .little_main_logo {
+  margin: 0%;
+  padding: 0%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 70px;
+  animation: rotate_one 8s linear infinite;
+  z-index: -10;
+}
+.little_logo .little_main_logo_disc {
+  width: 40px;
+  height: 40px;
+  animation: rotate_two 8s linear infinite reverse;
+  border-radius: 50%;
+  background: linear-gradient(315deg, #141414, #181818);
+  box-shadow: -10px -10px 16px #090909, 10px 10px 16px #232323;
+  z-index: -20;
+  top: 10%;
+  position: absolute;
+}
+
 .toggle {
   color: var(--third-color);
   font-size: 2rem;

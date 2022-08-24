@@ -29,7 +29,7 @@ if ($user) {
             }
         } else {
 
-            header('location: ../../my_account.php.php?error=invalid_password');
+            header('location: ../../my_account.php?error=invalid_password');
         }
     }
 }

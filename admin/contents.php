@@ -28,7 +28,7 @@ $getAllContents = getAllContents();
             </div>
 
             <div class="modal-body">
-                <form method="post" action="../../Diplome/assets/actions/add_content_action.php?type=admin" enctype=" multipart/form-data">
+                <form method="post" action="../../Diplome/assets/actions/add_content_action.php?type=admin" enctype="multipart/form-data">
 
                     <div class="mb-3">
                         <label for="admin_title" class="form-label">Title</label>
@@ -96,41 +96,41 @@ $getAllContents = getAllContents();
 </div>
 
 
-<table class="table">
+<table class="table tritable">
     <thead>
         <tr>
-            <th scope="col">id</th>
-            <th scope="col">Title</th>
-            <th scope="col">Composer</th>
-            <th scope="col">Content</th>
-            <th scope="col">Category</th>
-            <th scope="col">Level</th>
-            <th scope="col">Description</th>
-            <th scope="col">Price</th>
-            <th scope="col">Likes</th>
-            <th scope="col">id_users</th>
+            <th scope="row">id</th>
+            <th scope="row">Title</th>
+            <th scope="row">Composer</th>
+            <th scope="row">Content</th>
+            <th scope="row">Category</th>
+            <th scope="row">Level</th>
+            <th scope="row">Description</th>
+            <th scope="row">Price</th>
+            <th scope="row">Likes</th>
+            <th scope="row">id_users</th>
         </tr>
     </thead>
 
     <tbody>
         <?php foreach ($getAllContents as $content) { ?>
             <tr>
-                <th scope="col"><?= $content['id'] ?></th>
-                <td scope="col"><?= $content['title'] ?></td>
-                <td scope="col"><?= $content['composer'] ?></td>
+                <td scope="col"><?= $content['id'] ?></td>
+                <td scope="col" style="word-break: break-all;"><?= $content['title'] ?></td>
+                <td scope="col" style="word-break: break-all;"><?= $content['composer'] ?></td>
                 <td scope="col"><?= $content['content'] ?></td>
                 <td scope="col"><?= $content['category'] ?></td>
                 <td scope="col"><?= $content['level'] ?></td>
-                <td scope="col" style="word-break:break-all"><?= $content['description'] ?></td>
+                <td scope="col" style="word-break: break-all;"><?= $content['description'] ?></td>
                 <td scope="col"><?= $content['price'] ?></td>
                 <td scope="col"><?= $content['likes'] ?></td>
                 <td scope="col"><?= $content['id_users'] ?></td>
                 <td scope="col"><a href="../../Diplome/assets/actions/delete_action.php?id=<?= $content['id'] ?>&type=admin">Delete</a></td>
                 <td>
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#editModal<?= $content['id'] ?>">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#content_editModal<?= $content['id'] ?>">
                         Edit
                     </button>
-                    <div class="modal fade" id="editModal<?= $content['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="content_editModal<?= $content['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -139,7 +139,7 @@ $getAllContents = getAllContents();
                                 </div>
                                 <div class="modal-body">
 
-                                    <form method="post" action="../../Diplome/assets/actions/edit_content_action.php?type=admin" enctype=" multipart/form-data">
+                                    <form method="post" action="../../Diplome/assets/actions/edit_content_action.php?type=admin" enctype="multipart/form-data">
 
                                         <div class="mb-3">
                                             <label for="admin_edit_id" class="form-label"></label>

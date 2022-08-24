@@ -11,7 +11,7 @@ function getAllContents()
 function getUsers()
 {
     global $bdd;
-    $req = $bdd->query('SELECT * FROM users');
+    $req = $bdd->query('SELECT * FROM users ORDER BY name');
     $users = $req->fetchAll();
     return $users;
 }

@@ -2,8 +2,7 @@
 session_start();
 require('../require/co_bdd.php');
 
-var_dump($_FILES);
-exit;
+
 
 if (isset($_FILES) && !empty($_FILES)) {
    if (array_key_exists('content', $_FILES)) {

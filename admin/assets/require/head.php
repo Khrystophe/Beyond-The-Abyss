@@ -10,6 +10,7 @@
     <title>Diplome Admin</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 
 
@@ -68,10 +69,13 @@
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
         }
+
+        .sticky-top {
+            position: fixed;
+            width: 100vw;
+        }
     </style>
 
-
-    <!-- Custom styles for this template -->
     <link href="./css/dashboard.css" rel="stylesheet">
 </head>
 
@@ -82,10 +86,10 @@
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
+        <div class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search"></div>
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../index.php">Home</a>
+                <a class="nav-link px-3" href="../index.php" style="width: 5rem;">Home</a>
             </div>
         </div>
     </header>
@@ -123,8 +127,4 @@
                 </div>
             </nav>
 
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard</h1>
-
-                </div> -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="margin-top: 10rem;">

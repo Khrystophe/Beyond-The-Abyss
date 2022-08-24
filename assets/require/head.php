@@ -1,3 +1,15 @@
+<?php
+
+if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
+
+   $req = $bdd->prepare('SELECT name, lastname, credits FROM users WHERE id = :id');
+   $req->execute(array(
+      ':id' => $_SESSION['users']['id']
+   ));
+   $user = $req->fetch();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -63,41 +75,28 @@
             </div>
 
          </div>
+
+         <div class="little_logo">
+            <img class="little_main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+            <div class="little_main_logo_disc"></div>
+         </div>
+
          <div class="nav_bar">
-            <button class="dropbtn" id="search_button">Search</button>
+
+            <?php
+            if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
+               echo 'Hello' . " " . htmlspecialchars($user['name']);
+            }
+            ?>
+            <button class="dropbtn" id="search_button"><i class="fas fa-search fa-2x"></i></button>
+
+            <?php
+            if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
+               echo 'Your credits :' . " " . htmlspecialchars($user['credits']);
+            }
+            ?>
 
 
-            <?php if ($page == 'tuto_content') { ?>
-               <h1>Tutorials from the depths</h1>
-
-            <?php } else if ($page == 'perf_content') { ?>
-               <h1>Performances from the depths</h1>
-
-            <?php } else if ($page == 'sheet_content') { ?>
-               <h1>Sheet music from the depths</h1>
-
-            <?php } else if ($page == 'user_content') { ?>
-               <h1>Your content from the depths</h1>
-
-            <?php } else if ($page == 'user_purchased_content') { ?>
-               <h1>Your purchased content from the depths</h1>
-
-            <?php } else if ($page == 'register') { ?>
-               <h1>Register to the depths</h1>
-
-            <?php } else if ($page == 'login') { ?>
-               <h1>Connect to the depths</h1>
-
-            <?php } else if ($page == 'my_account') { ?>
-               <h1>Your account of the depths</h1>
-
-            <?php } else if ($page == 'search_results') { ?>
-               <h1>Search results</h1>
-
-            <?php } else if ($page == 'single_player') { ?>
-               <h1>Watch the depths</h1>
-
-            <?php } ?>
 
          </div>
          <div class="toggle">
