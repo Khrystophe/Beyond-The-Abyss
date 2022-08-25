@@ -36,14 +36,6 @@ $randomSheet = getRandomSheet();
       </div>
 
 
-      <div>
-         <?php if (isset($_GET['success']) && !empty($_GET['success'])) {
-            if ($_GET['success'] == 'creation') { ?>
-               <h5>The creation of your account is a success</h5>
-         <?php }
-         } ?>
-      </div>
-
       <div class="features">
          <div class="cards one">
             <div class="titles link_page"><a href="content.php?category=Tutorial">Tutorials</a></div>

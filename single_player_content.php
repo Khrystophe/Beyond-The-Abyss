@@ -119,10 +119,15 @@ $comments = getComments();
             if ($_SESSION['users']['id'] != $content['id_users']) { ?>
 
               <button class="dropbtn">
-                <a data-barba-prevent href="./assets/actions/like_action.php?name=content&id=<?= $content['id'] ?>">
+                <a data-barba-prevent href="./assets/actions/like_action.php?name=content&id=<?= $content['id'] ?>" onclick="return likeContent()">
                   <i class="far fa-thumbs-up">
                   </i>
                 </a>
+                <script>
+                  function likeContent() {
+                    return confirm("Like <?= $content_author['name'] . " " . $content_author['lastname'] ?>'s comments ?")
+                  }
+                </script>
               </button>
             <?php } ?>
 
@@ -133,7 +138,14 @@ $comments = getComments();
                 <button class="dropbtn">Edit/Delete</button>
                 <div class="dropdown-content">
                   <a id="edit_button">Edit Content</a>
-                  <a data-barba-prevent href="./assets/actions/delete_action.php?id=<?= $content['id'] ?>">Delete Content</a>
+                  <a data-barba-prevent href="./assets/actions/delete_action.php?id=<?= $content['id'] ?>" onclick="return alert()">Delete Content</a>
+
+                  <script>
+                    function alert() {
+                      return confirm("Do you wand to delete these content ?")
+                    }
+                  </script>
+
                 </div>
               </div>
           <?php }
@@ -183,7 +195,13 @@ $comments = getComments();
 
                 <section class='cardStats'>
 
-                  <span class='cardStats_stat cardStats_stat-likes'><?= htmlspecialchars($comment['likes']) ?><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= htmlspecialchars($comment['id']) ?>&id=<?= htmlspecialchars($content['id']) ?>"> <i class='far fa-heart fa-fw'></i></a></span>
+                  <span class='cardStats_stat cardStats_stat-likes'><?= htmlspecialchars($comment['likes']) ?><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= htmlspecialchars($comment['id']) ?>&id=<?= htmlspecialchars($content['id']) ?>" onclick="return likeComment()"> <i class='far fa-heart fa-fw'></i></a></span>
+
+                  <script>
+                    function likeComment() {
+                      return confirm("Like <?= $comment['name'] . " " . $comment['lastname'] ?>'s comments ?")
+                    }
+                  </script>
 
                   <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($number_of_user_comments)) ?><i class='far fa-comment fa-fw'></i></span>
                   </span>

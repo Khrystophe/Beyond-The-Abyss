@@ -159,8 +159,14 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                <div class="menu__left__inner__item">
                   <?php
                   if (isset($_SESSION['users']) && !empty($_SESSION['users'])) { ?>
-                     <a data-barba-prevent class="link_menu" href="./assets/actions/logout_action.php">Logout</a>
+                     <a data-barba-prevent class="link_menu" href="./assets/actions/logout_action.php" onclick="return logout()">Logout</a>
                </div>
+
+               <script>
+                  function logout() {
+                     return alert("You have logout")
+                  }
+               </script>
 
 
                <div class="menu__left__inner__item">

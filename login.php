@@ -7,6 +7,20 @@ require('./assets/require/head.php');
 <main class="autoAlpha" data-barba="wrapper">
    <div data-barba="container" data-barba-namespace="login-section">
 
+      <?php if (isset($_GET['error']) && !empty($_GET['error'])) {
+         if ($_GET['error'] == 'password') { ?>
+            <script>
+               alert('Wrong password')
+            </script>
+         <?php
+         } else if ($_GET['error'] == 'nonexist') { ?>
+            <script>
+               alert('This user does not exist')
+            </script>
+      <?php
+         }
+      } ?>
+
       <div>
          <?php if (isset($_GET['error']) && !empty($_GET['error'])) {
             if ($_GET['error'] == 'password') { ?>

@@ -7,15 +7,25 @@ require('./assets/require/head.php');
 <main class="autoAlpha" data-barba="wrapper">
    <div data-barba="container" data-barba-namespace="register-section">
 
-      <div>
-         <?php if (isset($_GET['error']) && !empty($_GET['error'])) {
-            if ($_GET['error'] == 'invalid_confirm') { ?>
-               <h5>Wrong password confirmation</h5>
-            <?php  } else if ($_GET['error'] == 'email_exist') { ?>
-               <h5>Email already exist</h5>
-         <?php }
-         } ?>
-      </div>
+      <?php
+      if (isset($_GET['error']) && !empty($_GET['error'])) {
+         if ($_GET['error'] == 'confirm_false') { ?>
+            <script>
+               alert('Wrong password confirmation')
+            </script>
+         <?php
+         } else if ($_GET['error'] == 'email_exist') { ?>
+            <script>
+               alert('This email already exists ')
+            </script>
+         <?php
+         } else if ($_GET['error'] == 'contact_admin') { ?>
+            <script>
+               alert('Contact an administrator')
+            </script>
+      <?php
+         }
+      } ?>
 
       <div class="form">
          <div class="form_content">

@@ -89,7 +89,7 @@
         <div class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search"></div>
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../index.php" style="width: 5rem;">Home</a>
+                <a class="nav-link px-3" href="/Diplome/index.php" style="width: 5rem;">Home</a>
             </div>
         </div>
     </header>

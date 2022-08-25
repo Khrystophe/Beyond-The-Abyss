@@ -235,38 +235,16 @@
     transform: scale(1.05);
     box-shadow: 0 4px 25px rgba(0,0,0,.4);
 	}
-  // &:first-of-type{
-  //   margin-left: -3em;
-  //   margin-right: 3em;
 
-	// }
-
-  // &:nth-of-type(2){
-  //   margin-left: 5em;
-  //   margin-right: -5em;
-  //   margin-top: -6em;
-	// }
-
-  // &:nth-of-type(3){
-  //   margin-top: -2em;
-  //   margin-left: -1em;
-  //   margin-right: 1em;
-	// }
 }
 
 .cardHeader{
   display: grid;
-  // grid-template-columns: 36px auto 100px;
-  // align-items: center;
-  // text-transform: uppercase;
   justify-items: stretch;
-  .cardHeader_type{
-    // color: $yellow;
-    margin: 10px;
-	}
+  
 
   .cardHeader_account{
-    // color: $light-blue;
+    color: blue;
     font-size: .85em;
     font-weight: 600;
     letter-spacing: 1px;
@@ -274,9 +252,9 @@
 
   .cardHeader_date{
     margin: 10px;
-    // color: $light-blue;
+    color: blue;
     font-size: .85em;
-    // font-weight: 600;
+    font-weight: 600;
     text-align: right;
 	}
 }
@@ -289,13 +267,10 @@
   .cardText{
     margin: 0 10px 0 0;
     white-space: pre-line;
-    // color: $gray;
+    color: gray;
     font-weight: 400;
     line-height: 1.5;
     word-break: break-all;
-    // .cardText_highlight{
-		// 	color: lighten($yellow, 15%);
-		// }
 	}
 
   .cardStats{
@@ -307,21 +282,13 @@
       display: inline-block;
       white-space: nowrap;
 			
-			.cardStats_stat{
-        margin-top: 5px;
-      // &.cardStats_stat-likes{
-      //   color: $light-pink;
-			// }
-      // &.cardStats_stat-retweets{
-      //   color: $light-green;
-			// }
-      // &.cardStats_stat-shares{
-      //   color: $light-purple;
-			// }
-      // &.cardStats_stat-comments{
-      //   color: $light-orange;
-			// }
+      &.cardStats_stat-likes{
+        color: pink;
 			}
+      &.cardStats_stat-comments{
+        color: orange;
+			}
+			
 		}
 	}
 }

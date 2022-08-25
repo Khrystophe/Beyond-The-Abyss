@@ -62,6 +62,10 @@ nav {
   opacity: 1;
 }
 
+textarea {
+  resize: none;
+}
+
 @keyframes rotate_one {
   from {
     transform: rotate(0deg);
@@ -1113,17 +1117,17 @@ nav {
   display: grid;
   justify-items: stretch;
 }
-.cardHeader .cardHeader_type {
-  margin: 10px;
-}
 .cardHeader .cardHeader_account {
+  color: blue;
   font-size: 0.85em;
   font-weight: 600;
   letter-spacing: 1px;
 }
 .cardHeader .cardHeader_date {
   margin: 10px;
+  color: blue;
   font-size: 0.85em;
+  font-weight: 600;
   text-align: right;
 }
 
@@ -1135,6 +1139,7 @@ nav {
 .cardBody .cardText {
   margin: 0 10px 0 0;
   white-space: pre-line;
+  color: gray;
   font-weight: 400;
   line-height: 1.5;
   word-break: break-all;
@@ -1148,8 +1153,11 @@ nav {
   display: inline-block;
   white-space: nowrap;
 }
-.cardBody .cardStats .cardStats_stat .cardStats_stat {
-  margin-top: 5px;
+.cardBody .cardStats .cardStats_stat.cardStats_stat-likes {
+  color: pink;
+}
+.cardBody .cardStats .cardStats_stat.cardStats_stat-comments {
+  color: orange;
 }
 
 footer {

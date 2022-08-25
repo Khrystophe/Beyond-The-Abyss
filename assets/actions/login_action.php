@@ -20,7 +20,7 @@ if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password'
          $_SESSION['users']['lastname'] = $user['lastname'];
          $_SESSION['users']['type'] = $user['type'];
 
-         header('location: ../../index.php');
+         header('location: ../../my_account.php?success=connected');
       } else {
          header('location: ../../login.php?error=password');
       }

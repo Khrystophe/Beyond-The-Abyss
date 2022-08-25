@@ -11,20 +11,33 @@ $get_user_informations = getUserInformations();
 <main class="autoAlpha" data-barba="wrapper">
    <div data-barba="container" data-barba-namespace="my_account-section">
 
-
       <?php if (isset($_GET['success']) && !empty($_GET['success'])) {
          if ($_GET['success'] == 'change_ok') { ?>
-            <h5>Password changed successfully</h5>
+            <script>
+               alert('Password changed successfully')
+            </script>
+         <?php
+         } else  if ($_GET['success'] == 'creation') { ?>
+            <script>
+               alert('The creation of your account is a success')
+            </script>
+         <?php } else   if ($_GET['success'] == 'connected') { ?>
+            <script>
+               alert("Welcome <?= $_SESSION['users']['name'] . ' ' . $_SESSION['users']['lastname'] ?> !")
+            </script>
          <?php
          }
       }
       if (isset($_GET['error']) && !empty($_GET['error'])) {
          if ($_GET['error'] == 'confirm_false') { ?>
-            <h5>Wrong password confirmation</h5>
+            <script>
+               alert('Wrong password confirmation')
+            </script>
          <?php
-         }
-         if ($_GET['error'] == 'invalid_password') { ?>
-            <h5>Wrong password</h5>
+         } else if ($_GET['error'] == 'invalid_password') { ?>
+            <script>
+               alert('Wrong password')
+            </script>
       <?php
          }
       } ?>
