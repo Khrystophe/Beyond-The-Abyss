@@ -2,7 +2,7 @@
 
 require('./assets/require/head.php');
 require('./assets/require/co_bdd.php');
-require('./assets/actions/function.php');
+require('./assets/actions/functions.php');
 
 $comments = getComments();
 ?>
@@ -26,7 +26,8 @@ $comments = getComments();
     </thead>
 
     <tbody>
-        <?php foreach ($comments as $comment) { ?>
+        <?php
+        foreach ($comments as $comment) { ?>
             <tr>
                 <td scope="col"><?= $comment['id'] ?></td>
                 <td scope="col" style="word-break:break-all" ;><?= $comment['comment'] ?></td>

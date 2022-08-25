@@ -3,16 +3,11 @@ session_start();
 $page = 'index';
 require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
+require('./assets/actions/functions.php');
 
-$req = $bdd->query("SELECT * FROM contents WHERE category = 'Tutorial' ORDER BY RAND() LIMIT 1 ");
-$randomTuto = $req->fetch();
-
-$req1 = $bdd->query("SELECT * FROM contents WHERE category = 'Performance' ORDER BY RAND() LIMIT 1 ");
-$randomPerf = $req1->fetch();
-
-$req2 = $bdd->query("SELECT * FROM contents WHERE category = 'Sheet Music' ORDER BY RAND() LIMIT 1 ");
-$randomSheet = $req2->fetch();
-
+$randomTuto = getRandomTuto();
+$randomPerf = getRandomPerf();
+$randomSheet = getRandomSheet();
 ?>
 
 
@@ -209,39 +204,6 @@ $randomSheet = $req2->fetch();
 
 
       </div>
-
-
-
-      <div id="contact" class="reverse">
-         <div class="contact_presentation">
-
-            <div class="front side">
-               <div class="contact_content">
-                  <h1 class="who">Qui sommes nous ?</h1>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem ab quis praesentium. Voluptate pariatur placeat voluptatum quas consequatur esse provident fugiat, aspernatur.
-                  </p>
-               </div>
-            </div>
-
-            <div class="back side">
-               <div class="contact_content">
-                  <h1 class="who">Contact</h1>
-                  <form class="contact_form">
-                     <label for="contactName">Votre nom :</label>
-                     <input type="text" id="contactName">
-                     <label for="contactMail">Votre email :</label>
-                     <input type="text" id="contactMail">
-                     <label for="contactMessage">Votre message :</label>
-                     <textarea id="contactMessage"></textarea>
-                     <input type="submit" value="Done">
-                  </form>
-               </div>
-            </div>
-
-         </div>
-      </div>
-
-
 
    </div>
    <?php

@@ -1,9 +1,9 @@
 <?php
 require('../require/co_bdd.php');
 
-$req = $bdd->prepare('SELECT * FROM contents WHERE id = ?');
+$req = $bdd->prepare('SELECT * FROM contents WHERE id = :id');
 $req->execute(array(
-    $_GET['id'],
+    ':id' => $_GET['id'],
 ));
 $content = $req->fetch();
 

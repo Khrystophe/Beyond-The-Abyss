@@ -2,7 +2,7 @@
 
 require('./assets/require/head.php');
 require('./assets/require/co_bdd.php');
-require('./assets/actions/function.php');
+require('./assets/actions/functions.php');
 
 $purchased_contents = getPurchased_contents();
 ?>
@@ -24,7 +24,8 @@ $purchased_contents = getPurchased_contents();
     </thead>
 
     <tbody>
-        <?php foreach ($purchased_contents as $content) { ?>
+        <?php
+        foreach ($purchased_contents as $content) { ?>
             <tr>
                 <td scope="col"><?= $content['id'] ?></td>
                 <td scope="col"><?= $content['id_contents'] ?></td>

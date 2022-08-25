@@ -2,12 +2,9 @@
 
 require('./assets/require/head.php');
 require('./assets/require/co_bdd.php');
-require('./assets/actions/function.php');
-
+require('./assets/actions/functions.php');
 
 $users = getUsers();
-
-
 ?>
 
 <h1>Users</h1>
@@ -29,7 +26,8 @@ $users = getUsers();
     </thead>
 
     <tbody>
-        <?php foreach ($users as $user) { ?>
+        <?php
+        foreach ($users as $user) { ?>
             <tr>
                 <td scope="col"><?= $user['id'] ?></td>
                 <td scope="col" style="word-break: break-all;"><?= $user['name'] ?></td>

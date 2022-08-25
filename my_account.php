@@ -3,18 +3,9 @@ session_start();
 $page = 'my_account';
 require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
+require('./assets/actions/functions.php');
 
-$req = $bdd->prepare('SELECT * FROM users WHERE id= :id');
-$req->execute(array(
-   ':id' => $_SESSION['users']['id']
-));
-$account = $req->fetchAll();
-
-$req2 = $bdd->prepare('SELECT * FROM contents WHERE id_users= :id_users');
-$req2->execute(array(
-   ':id_users' => $_SESSION['users']['id']
-));
-$contents = $req2->fetchAll();
+$get_user_informations = getUserInformations();
 ?>
 
 <main class="autoAlpha" data-barba="wrapper">
@@ -49,11 +40,12 @@ $contents = $req2->fetchAll();
             <div class="rightside">
 
 
-               <?php foreach ($account as $acc) { ?>
+               <?php
+               foreach ($get_user_informations as $user_informations) { ?>
 
-                  <h2 type="text" class="form_title">Hello <?= htmlspecialchars($acc['name']) . " " . htmlspecialchars($acc['lastname']); ?> </h2>
+                  <h2 type="text" class="form_title">Hello <?= htmlspecialchars($user_informations['name']) . " " . htmlspecialchars($user_informations['lastname']); ?> </h2>
 
-                  <h2 type="text" class="form_title">Your Email : <?= htmlspecialchars($acc['email']); ?> </h2>
+                  <h2 type="text" class="form_title">Your Email : <?= htmlspecialchars($user_informations['email']); ?> </h2>
 
                   <div class="margin"></div>
 
@@ -61,10 +53,10 @@ $contents = $req2->fetchAll();
 
 
                      <label for="name"></label>
-                     <input type="text" class="inputbox" placeholder="Your current name : <?= htmlspecialchars($acc['name']);  ?> " id="name" name="name" required />
+                     <input type="text" class="inputbox" placeholder="Your current name : <?= htmlspecialchars($user_informations['name']);  ?> " id="name" name="name" required />
 
                      <label for="lastname"></label>
-                     <input type="text" class="inputbox" placeholder="Your current last name : <?= htmlspecialchars($acc['lastname']);  ?> " id="lastname" name="lastname" required />
+                     <input type="text" class="inputbox" placeholder="Your current last name : <?= htmlspecialchars($user_informations['lastname']);  ?> " id="lastname" name="lastname" required />
 
                      <button type="submit" class="button">Edit</button>
 

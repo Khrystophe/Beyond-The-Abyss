@@ -3,34 +3,11 @@ session_start();
 $page = 'single_player';
 require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
+require('./assets/actions/functions.php');
 
-$req = $bdd->prepare('SELECT * FROM contents WHERE id = :id ');
-$req->execute(array(
-  ':id' => $_GET['id']
-));
-$content = $req->fetch();
-
-$req = $bdd->prepare('SELECT  users.name, users.lastname
-FROM users
-INNER JOIN contents
-ON users.id = contents.id_users WHERE contents.id = :contents_id ');
-$req->execute(array(
-  ':contents_id' => $_GET['id']
-));
-$content_author = $req->fetch();
-
-$req = $bdd->prepare('SELECT  users.name, users.lastname, comments.comment, comments.id,comments.id_users, comments.date, comments.likes
-FROM comments
-INNER JOIN contents
-ON comments.id_contents = contents.id
-INNER JOIN users
-ON comments.id_users = users.id
-WHERE comments.id_contents  = :contents_id ');
-$req->execute(array(
-  ':contents_id' => $_GET['id']
-));
-$comments = $req->fetchAll();
-
+$content = getContent();
+$content_author = getContentAuthorInformations();
+$comments = getComments();
 ?>
 
 
@@ -186,27 +163,33 @@ $comments = $req->fetchAll();
         <?php foreach ($comments as $comment) {
 
           $req = $bdd->query('SELECT COUNT(id_users) FROM comments WHERE id_users =' . $comment['id_users']);
-          $user_comments = $req->fetch();
-
+          $number_of_user_comments = $req->fetch();
         ?>
           <div class='deck'>
-            <div class='single_player_card'>
-              <div class='cardHeader'>
-                <span class='cardHeader_account'><?= htmlspecialchars($comment['name']) . " " . htmlspecialchars($comment['lastname']) ?></span>
-                <span class='cardHeader_date'><?= htmlspecialchars($comment['date']) ?></span>
 
+            <div class='single_player_card'>
+
+              <div class='cardHeader'>
+
+                <span class='cardHeader_account'><?= htmlspecialchars($comment['name']) . " " . htmlspecialchars($comment['lastname']) ?></span>
+
+                <span class='cardHeader_date'><?= htmlspecialchars($comment['date']) ?></span>
               </div>
+
               <div class='cardBody'>
+
                 <p class='cardText'><?= htmlspecialchars($comment['comment']) ?>
                 </p>
+
                 <section class='cardStats'>
+
                   <span class='cardStats_stat cardStats_stat-likes'><?= htmlspecialchars($comment['likes']) ?><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= htmlspecialchars($comment['id']) ?>&id=<?= htmlspecialchars($content['id']) ?>"> <i class='far fa-heart fa-fw'></i></a></span>
-                  <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($user_comments)) ?><i class='far fa-comment fa-fw'></i></span>
+
+                  <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($number_of_user_comments)) ?><i class='far fa-comment fa-fw'></i></span>
                   </span>
                 </section>
               </div>
             </div>
-
           </div>
         <?php } ?>
 

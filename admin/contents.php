@@ -2,12 +2,10 @@
 
 require('./assets/require/head.php');
 require('./assets/require/co_bdd.php');
-require('./assets/actions/function.php');
+require('./assets/actions/functions.php');
 
 $getAllContents = getAllContents();
 ?>
-
-
 
 <h1>Contents</h1>
 
@@ -113,7 +111,8 @@ $getAllContents = getAllContents();
     </thead>
 
     <tbody>
-        <?php foreach ($getAllContents as $content) { ?>
+        <?php
+        foreach ($getAllContents as $content) { ?>
             <tr>
                 <td scope="col"><?= $content['id'] ?></td>
                 <td scope="col" style="word-break: break-all;"><?= $content['title'] ?></td>
