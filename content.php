@@ -77,7 +77,13 @@ require('./assets/require/head.php');
                               <?php } else {
 
                               if ($sessionUser_purchased_content == false) { ?>
-                                 <a data-barba-prevent href="./assets/actions/buy_content_action.php?id=<?= htmlspecialchars($content['id']); ?>" class="card__button link_page">Buy</a>
+                                 <a data-barba-prevent href="./assets/actions/buy_content_action.php?id=<?= htmlspecialchars($content['id']); ?>" class="card__button" onclick="return buy()">Buy</a>
+
+                                 <script>
+                                    function buy() {
+                                       return confirm("You have<?= $_SESSION['users']['credits']  ?> credits. Do you want to buy <?= $content['title'] . 'of' . $content['composer'] ?> for <?= $content['price'] ?> credits ?")
+                                    }
+                                 </script>
 
                               <?php } else if ($sessionUser_purchased_content == true) { ?>
                                  <a href="single_player_content.php?id=<?= htmlspecialchars($content['id']); ?>" class="card__button link_page">Watch</a>
@@ -85,7 +91,13 @@ require('./assets/require/head.php');
                            }
                         } else {
                            if ($content['price'] > 0) { ?>
-                              <a data-barba-prevent href="./assets/actions/buy_content_action.php?id=<?= htmlspecialchars($content['id']); ?>" class="card__button link_page">Buy</a>
+                              <a data-barba-prevent href="./assets/actions/buy_content_action.php?id=<?= htmlspecialchars($content['id']); ?>" class="card__button link_page" onclick="return login()">Buy</a>
+
+                              <script>
+                                 function login() {
+                                    return alert('You are not connected !')
+                                 }
+                              </script>
                            <?php } else {
                            ?>
                               <a href="single_player_content.php?id=<?= htmlspecialchars($content['id']); ?>" class="card__button link_page">Watch</a>

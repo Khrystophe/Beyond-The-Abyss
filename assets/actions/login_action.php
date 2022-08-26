@@ -15,10 +15,11 @@ if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password'
       if (password_verify($_POST['password'], $user['password'])) {
 
          $_SESSION['users']['id'] = $user['id'];
-         $_SESSION['users']['email'] = $user['email'];
          $_SESSION['users']['name'] = $user['name'];
          $_SESSION['users']['lastname'] = $user['lastname'];
+         $_SESSION['users']['email'] = $user['email'];
          $_SESSION['users']['type'] = $user['type'];
+         $_SESSION['users']['credits'] = $user['credits'];
 
          header('location: ../../my_account.php?success=connected');
       } else {

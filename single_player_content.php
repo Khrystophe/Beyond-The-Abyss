@@ -29,6 +29,9 @@ $comments = getComments();
               <label for="id"></label>
               <input type="hidden" id="id" name="id" value="<?= $content['id'] ?>">
 
+              <label for="id_users"></label>
+              <input type="hidden" id="id_users" name="id_users" value="<?= $content['id_users'] ?>">
+
               <label for="edit_title"></label>
               <input type="text" class="inputbox" value="<?= $content['title'] ?>" placeholder="<?= $content['title'] ?>" id="edit_title" name="title" />
 

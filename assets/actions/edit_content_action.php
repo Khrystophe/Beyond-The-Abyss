@@ -22,42 +22,51 @@ if (isset($_FILES) && !empty($_FILES)) {
     }
 }
 
-$req = $bdd->prepare('SELECT credits FROM users WHERE users.id = :users_id');
+$req = $bdd->prepare('SELECT credits FROM users WHERE id = :id');
 $req->execute(array(
-    ':users_id' => $_SESSION['users']['id']
+    ':id' => $_POST['id_users']
 ));
 $nbrOfCredits = $req->fetch();
-$credits = implode($nbrOfCredits);
+$author_credits = implode($nbrOfCredits);
 
-$req = $bdd->prepare('SELECT category FROM contents WHERE id = :id');
+$req = $bdd->prepare('SELECT price FROM contents WHERE id = :id');
 $req->execute(array(
     ':id' => $_POST['id']
 ));
-$contentCategory = $req->fetch();
-$category = implode($contentCategory);
+$content_price = $req->fetch();
+$oldPrice = implode($content_price);
 
-if ($category == 'Tutorial') {
-    $credits -= 30;
-} else if ($category == 'Performance') {
-    $credits -= 10;
-} else if ($category == 'Sheet Music') {
-    $credits -= 20;
-}
+$author_credits -= $oldPrice * 2;
 
 $free_content = $_POST['free_content'];
 
 if (!isset($free_content)) {
     if ($_POST['category'] == 'Tutorial') {
-        $price = 15;
+        $newPrice = 15;
     } else if ($_POST['category'] == 'Performance') {
-        $price = 5;
+        $newPrice = 5;
     } else if ($_POST['category'] == 'Sheet Music') {
-        $price = 10;
+        $newPrice = 10;
     }
 } else {
-    $price = 0;
+    $newPrice = 0;
 }
 
+$req = $bdd->prepare('SELECT purchased_contents.id_users, users.credits FROM purchased_contents INNER JOIN users ON purchased_contents.id_users = users.id WHERE purchased_contents.id_contents = :id_contents');
+$req->execute(array(
+    ':id_contents' => $_POST['id']
+));
+$buyersCredits = $req->fetchAll();
+
+if ($oldPrice > $newPrice) {
+    foreach ($buyersCredits as $buyer_credits) {
+        $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
+        $req->execute(array(
+            ':credits' => $buyer_credits['credits'] += ($oldPrice - $newPrice),
+            ':id' => $buyer_credits['id_users']
+        ));
+    }
+}
 
 if (!isset($content) && empty($content)) {
     $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :composer, level = :level, category = :category, price= :price, description = :description  WHERE id = :id');
@@ -66,23 +75,23 @@ if (!isset($content) && empty($content)) {
         ':composer' => $_POST['composer'],
         ':level' => $_POST['level'],
         'category' => $_POST['category'],
-        ':price' => $price,
+        ':price' => $newPrice,
         ':description' => $_POST['description'],
         ':id' => $_POST['id']
     ));
 
     if ($_POST['category'] == 'Tutorial') {
-        $credits += 30;
+        $author_credits += 30;
     } else if ($_POST['category'] == 'Performance') {
-        $credits += 10;
+        $author_credits += 10;
     } else if ($_POST['category'] == 'Sheet Music') {
-        $credits += 20;
+        $author_credits += 20;
     }
 
     $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
     $req->execute(array(
-        ':credits' => $credits,
-        ':users_id' => $_SESSION['users']['id']
+        ':credits' => $author_credits,
+        ':users_id' => $_POST['id_users']
     ));
 
     if ($_GET['type'] == 'admin') {
@@ -105,24 +114,24 @@ if (!isset($content) && empty($content)) {
         ':composer' => $_POST['composer'],
         ':level' => $_POST['level'],
         'category' => $_POST['category'],
-        ':price' => $price,
+        ':price' => $newPrice,
         ':content' => $content,
         ':id' => $_POST['id']
     ));
 
 
     if ($_POST['category'] == 'Tutorial') {
-        $credits += 30;
+        $author_credits += 30;
     } else if ($_POST['category'] == 'Performance') {
-        $credits += 10;
+        $author_credits += 10;
     } else if ($_POST['category'] == 'Sheet Music') {
-        $credits += 20;
+        $author_credits += 20;
     }
 
     $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
     $req->execute(array(
-        ':credits' => $credits,
-        ':users_id' => $_SESSION['users']['id']
+        ':credits' => $author_credits,
+        ':users_id' => $_POST['id_users']
     ));
 
     if ($_GET['type'] == 'admin') {

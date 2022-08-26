@@ -22,6 +22,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
    <link rel="stylesheet" href="./assets/css/style.css" />
 
 
+
 </head>
 
 <body>
@@ -85,7 +86,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
             <?php
             if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
-               echo 'Hello' . " " . htmlspecialchars($user['name']);
+               echo 'Hello' . " " . htmlspecialchars($user['name']) . htmlspecialchars($user['lastname']);
             }
             ?>
             <button class="dropbtn" id="search_button"><i class="fas fa-search fa-2x"></i></button>

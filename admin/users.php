@@ -59,7 +59,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                             <form method="post" action="./assets/actions/edit_user_action.php?id=<?= $user['id'] ?>" enctype="multipart/form-data">
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_id" class="form-label"></label>
+                                                    <label for="admin_edit_id_user" class="form-label">User id</label>
                                                     <input type="text" class="form-control" id="admin_edit_id_user" name="id" value="<?= $user['id'] ?>">
                                                 </div>
 
@@ -89,7 +89,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <select class="inputbox" id="type" name="type">
+                                                    <label for="admin_edit_user_type" class="form-label">Type</label>
+                                                    <select class="inputbox" id="admin_edit_user_type" name="type">
                                                         <option value="<?= $user['type'] ?>">--<?= $user['type'] ?>--</option>
                                                         <option value="user">User</option>
                                                         <option value="admin">Admin</option>

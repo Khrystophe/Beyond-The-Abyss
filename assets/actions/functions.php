@@ -141,7 +141,7 @@ function getComments()
   ON comments.id_contents = contents.id
   INNER JOIN users
   ON comments.id_users = users.id
-  WHERE comments.id_contents  = :contents_id ');
+  WHERE comments.id_contents  = :contents_id ORDER BY comments.id');
   $req->execute(array(
     ':contents_id' => $_GET['id']
   ));

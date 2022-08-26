@@ -144,8 +144,13 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                             <form method="post" action="../../Diplome/assets/actions/edit_content_action.php?type=admin" enctype="multipart/form-data">
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_id" class="form-label"></label>
+                                                    <label for="admin_edit_id" class="form-label">Content id</label>
                                                     <input type="text" class="form-control" id="admin_edit_id" name="id" value="<?= $content['id'] ?>">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="admin_edit_id_users" class="form-label">Id users</label>
+                                                    <input type="text" class="form-control" id="admin_edit_id_users" name="id_users" value="<?= $content['id_users'] ?>">
                                                 </div>
 
                                                 <div class="mb-3">
@@ -159,9 +164,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                 </div>
 
                                                 <div class="mb-3">
+                                                    <label for="admin_edit_description">Description</label>
                                                     <div class="form-floating">
-                                                        <textarea class="form-control" placeholder="Description" id="admin_edit_description" style="height: 100px" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" value="<?= $content['description'] ?>"><?= $content['description'] ?></textarea>
-                                                        <label for="admin_edit_description">Description</label>
+                                                        <textarea class="form-control" id="admin_edit_description" style="height: 100px" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" value="<?= $content['description'] ?>"><?= $content['description'] ?></textarea>
 
                                                         <script>
                                                             function MaxLengthDescription(description, maxlength) {
@@ -176,7 +181,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <select class="form-select" aria-label="Default select example" name="category">
+                                                    <label for="admin_edit_category">Category</label>
+                                                    <select class="form-select" id="admin_edit_category" aria-label="Default select example" name="category">
                                                         <option value="<?= $content['category'] ?>"><?= $content['category'] ?></option>
                                                         <option value="Tutorial">Tutorial</option>
                                                         <option value="Performance">Performances</option>
@@ -185,7 +191,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <select class="form-select" aria-label="Default select example" name="level">
+                                                    <label for="admin_edit_level">Level</label>
+                                                    <select class="form-select" id="admin_edit_level" aria-label="Default select example" name="level">
                                                         <option value="<?= $content['level'] ?>"><?= $content['level'] ?></option>
                                                         <option value="easy">Easy</option>
                                                         <option value="medium">Medium</option>
@@ -195,7 +202,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_content" class="form-label"></label>
+                                                    <label for="admin_edit_content" class="form-label">Content</label>
                                                     <input class="form-control" type="file" id="admin_edit_content" name="content">
                                                 </div>
 

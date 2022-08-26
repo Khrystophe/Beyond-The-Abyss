@@ -34,6 +34,7 @@ if (isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['lastname'])
             $_SESSION['users']['name'] = $user['name'];
             $_SESSION['users']['lastname'] = $user['lastname'];
             $_SESSION['users']['type'] = $user['type'];
+            $_SESSION['users']['credits'] = $user['credits'];
          } else {
 
             header('location: ../../register.php?error=contact_admin');
