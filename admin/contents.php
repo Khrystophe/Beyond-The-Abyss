@@ -168,15 +168,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                     <div class="form-floating">
                                                         <textarea class="form-control" id="admin_edit_description" style="height: 100px" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" value="<?= $content['description'] ?>"><?= $content['description'] ?></textarea>
 
-                                                        <script>
-                                                            function MaxLengthDescription(description, maxlength) {
-                                                                if (description.value.length > maxlength) {
-                                                                    description.value = description.value.substring(0, maxlength);
-                                                                    alert('Maximum ' + maxlength + 'characters!');
-                                                                }
-                                                            }
-                                                        </script>
-
                                                     </div>
                                                 </div>
 

@@ -110,15 +110,6 @@ $get_user_informations = getUserInformations();
                      <label for="description"></label>
                      <textarea class="inputbox" placeholder="Description" id="description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" required></textarea>
 
-                     <script>
-                        function MaxLengthDescription(description, maxlength) {
-                           if (description.value.length > maxlength) {
-                              description.value = description.value.substring(0, maxlength);
-                              alert('Maximum ' + maxlength + 'characters!');
-                           }
-                        }
-                     </script>
-
                      <label for="category"></label>
                      <select class="inputbox" id="category" name="category" required>
                         <option value="">--Category--</option>

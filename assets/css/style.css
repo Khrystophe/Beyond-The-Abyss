@@ -679,14 +679,28 @@ textarea {
   background: url("../img/sheet-music-4121936_1920.jpg");
 }
 
+.content_likes {
+  top: -50px;
+  position: absolute;
+  left: 15px;
+}
+
+.content_user {
+  top: -50px;
+  position: absolute;
+  right: 15px;
+}
+
 .content_category {
   position: absolute;
-  top: 0;
+  top: -80px;
+  right: 15px;
 }
 
 .content_price {
   position: absolute;
-  top: 25px;
+  top: -80px;
+  left: 15px;
 }
 
 .container {
@@ -735,6 +749,8 @@ textarea {
   margin: 20px 0;
 }
 .card__thumb {
+  display: flex;
+  justify-content: center;
   position: relative;
   max-height: 190px;
   overflow: hidden;
@@ -1070,7 +1086,6 @@ textarea {
 }
 
 .column2 {
-  padding-left: 41px;
   padding-top: 30px;
   margin-left: 20px;
   width: 480px;

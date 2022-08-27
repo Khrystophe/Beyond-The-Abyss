@@ -61,3 +61,10 @@ function triColonne(evt) {
     }
   }
 } 
+
+function MaxLengthDescription(description, maxlength) {
+  if (description.value.length > maxlength) {
+    description.value = description.value.substring(0, maxlength);
+    alert('Maximum ' + maxlength + ' characters!');
+  }
+}

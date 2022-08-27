@@ -20,9 +20,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
    <title>Document</title>
    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
    <link rel="stylesheet" href="./assets/css/style.css" />
-
-
-
 </head>
 
 <body>
