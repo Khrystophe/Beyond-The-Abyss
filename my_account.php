@@ -1,64 +1,72 @@
 <?php
 session_start();
-$page = 'my_account';
-require('./assets/require/co_bdd.php');
-require('./assets/require/head.php');
-require('./assets/actions/functions.php');
 
-$get_user_informations = getUserInformations();
+if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
+
+   $page = 'my_account';
+   require('./assets/require/co_bdd.php');
+   require('./assets/require/head.php');
+   require('./assets/actions/functions.php');
+
+   $get_user_informations = getUserInformations();
+   $get_user_id = htmlspecialchars($get_user_informations['id']);
+   $get_user_name = htmlspecialchars($get_user_informations['name']);
+   $get_user_lastname = htmlspecialchars($get_user_informations['lastname']);
+   $get_user_email = htmlspecialchars($get_user_informations['email']);
+   $get_user_type = htmlspecialchars($get_user_informations['type']);
+   $get_user_credits = htmlspecialchars($get_user_informations['credits']);
 ?>
 
-<main class="autoAlpha" data-barba="wrapper">
-   <div data-barba="container" data-barba-namespace="my_account-section">
+   <main class="autoAlpha" data-barba="wrapper">
+      <div data-barba="container" data-barba-namespace="my_account-section">
 
-      <?php if (isset($_GET['success']) && !empty($_GET['success'])) {
-         if ($_GET['success'] == 'change_ok') { ?>
-            <script>
-               alert('Password changed successfully')
-            </script>
-         <?php
-         } else  if ($_GET['success'] == 'creation') { ?>
-            <script>
-               alert('The creation of your account is a success')
-            </script>
-         <?php } else   if ($_GET['success'] == 'connected') { ?>
-            <script>
-               alert("Welcome <?= $_SESSION['users']['name'] . ' ' . $_SESSION['users']['lastname'] ?> !")
-            </script>
-         <?php
+         <?php if (isset($_GET['success']) && !empty($_GET['success'])) {
+            if ($_GET['success'] == 'change_ok') { ?>
+               <script>
+                  alert('Password changed successfully')
+               </script>
+            <?php
+            } else  if ($_GET['success'] == 'creation') { ?>
+               <script>
+                  alert('The creation of your account is a success')
+               </script>
+            <?php } else   if ($_GET['success'] == 'connected') { ?>
+               <script>
+                  alert("Welcome <?= $get_user_name . ' ' . $get_user_lastname ?> !")
+               </script>
+            <?php
+            }
          }
-      }
-      if (isset($_GET['error']) && !empty($_GET['error'])) {
-         if ($_GET['error'] == 'confirm_false') { ?>
-            <script>
-               alert('Wrong password confirmation')
-            </script>
+         if (isset($_GET['error']) && !empty($_GET['error'])) {
+            if ($_GET['error'] == 'confirm_false') { ?>
+               <script>
+                  alert('Wrong password confirmation')
+               </script>
+            <?php
+            } else if ($_GET['error'] == 'invalid_password') { ?>
+               <script>
+                  alert('Wrong password')
+               </script>
          <?php
-         } else if ($_GET['error'] == 'invalid_password') { ?>
-            <script>
-               alert('Wrong password')
-            </script>
-      <?php
-         }
-      } ?>
+            }
+         } ?>
 
 
-      <div class="form">
-         <div class="form_content">
+         <div class="form">
+            <div class="form_content">
 
-            <div class="leftside">
-               <img src="./assets/img/musicgrise.png" alt="" />
-            </div>
+               <div class="leftside">
+                  <img src="./assets/img/musicgrise.png" alt="" />
+               </div>
 
-            <div class="rightside">
+               <div class="rightside">
 
 
-               <?php
-               foreach ($get_user_informations as $user_informations) { ?>
 
-                  <h2 type="text" class="form_title">Hello <?= htmlspecialchars($user_informations['name']) . " " . htmlspecialchars($user_informations['lastname']); ?> </h2>
 
-                  <h2 type="text" class="form_title">Your Email : <?= htmlspecialchars($user_informations['email']); ?> </h2>
+                  <h2 type="text" class="form_title">Hello <?= $get_user_name . " " . $get_user_lastname ?> </h2>
+
+                  <h2 type="text" class="form_title">Your Email : <?= $get_user_email ?> </h2>
 
                   <div class="margin"></div>
 
@@ -66,10 +74,10 @@ $get_user_informations = getUserInformations();
 
 
                      <label for="name"></label>
-                     <input type="text" class="inputbox" placeholder="Your current name : <?= htmlspecialchars($user_informations['name']);  ?> " id="name" name="name" required />
+                     <input type="text" class="inputbox" placeholder="Your current name : <?= $get_user_name ?> " id="name" name="name" required />
 
                      <label for="lastname"></label>
-                     <input type="text" class="inputbox" placeholder="Your current last name : <?= htmlspecialchars($user_informations['lastname']);  ?> " id="lastname" name="lastname" required />
+                     <input type="text" class="inputbox" placeholder="Your current last name : <?= $get_user_lastname  ?> " id="lastname" name="lastname" required />
 
                      <button type="submit" class="button">Edit</button>
 
@@ -146,21 +154,26 @@ $get_user_informations = getUserInformations();
                      <button class="btn_content"><a class="button link_page" href="content.php?category=user_purchased_content">Your purchased content</a></button>
                   </div>
 
-               <?php } ?>
+
+               </div>
+
+
             </div>
-
-
          </div>
+
+
+
+
       </div>
-
-
-
-
-   </div>
-</main>
+   </main>
 
 <?php
-require('./assets/require/foot.php');
+   require('./assets/require/foot.php');
+} else {
+
+   header('location: index.php?error=notConnected');
+}
+
 ?>
 
 </body>

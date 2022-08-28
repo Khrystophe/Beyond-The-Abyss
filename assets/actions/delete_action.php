@@ -13,6 +13,11 @@ $req->execute(array(
 ));
 unlink('../contents_img/' . $content['content']);
 
+$req = $bdd->prepare('DELETE FROM purchased_contents WHERE id_contents = :id_contents');
+$req->execute(array(
+    ':id_contents' => $_GET['id'],
+));
+
 if ($_GET['type'] == 'admin') {
     header('location: ../../admin/contents.php');
 } else {

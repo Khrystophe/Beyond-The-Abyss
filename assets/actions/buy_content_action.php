@@ -28,10 +28,11 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
       ':users_id' => $_SESSION['users']['id']
     ));
 
-    $req = $bdd->prepare('INSERT INTO purchased_contents(id_contents, id_users) VALUES (:id_contents, :id_users)');
+    $req = $bdd->prepare('INSERT INTO purchased_contents(id_contents, id_users, original_price) VALUES (:id_contents, :id_users, :original_price)');
     $req->execute(array(
       ':id_contents' => $_GET['id'],
-      ':id_users' => $_SESSION['users']['id']
+      ':id_users' => $_SESSION['users']['id'],
+      ':original_price' => $price
     ));
 
     header('location: ../../single_player_content.php?success=contentBuy&id=' . $_GET['id']);

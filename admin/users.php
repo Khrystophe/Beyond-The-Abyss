@@ -97,9 +97,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                     </select>
                                                 </div>
 
-
-
-
                                                 <button type="submit" class="btn btn-primary">Submit</button>
                                             </form>
                                         </div>

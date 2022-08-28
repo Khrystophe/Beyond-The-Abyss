@@ -23,17 +23,22 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                     <th scope="col">id</th>
                     <th scope="col">id_contents</th>
                     <th scope="col">id_users</th>
+                    <th scope="col">original price</th>
+                    <th scope="col">buyer repayment</th>
                 </tr>
             </thead>
 
             <tbody>
                 <?php
                 foreach ($purchased_contents as $content) { ?>
+
                     <tr>
                         <td scope="col"><?= $content['id'] ?></td>
                         <td scope="col"><?= $content['id_contents'] ?></td>
                         <td scope="col"><?= $content['id_users'] ?></td>
-                        <td scope="col"><a href="./assets/actions/delete_purchased_contents.php?id=<?= $content['id'] ?>">Delete</a></td>
+                        <td scope="col"><?= $content['original_price'] ?></td>
+                        <td scope="col"><?= $content['buyer_repayment'] ?></td>
+                        <td scope="col"><a href="./assets/actions/delete_purchased_contents_action.php?id=<?= $content['id'] ?>">Delete</a></td>
                     </tr>
                 <?php } ?>
             </tbody>

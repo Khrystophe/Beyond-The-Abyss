@@ -4,24 +4,24 @@ function getRandomTuto()
 {
   global $bdd;
   $req = $bdd->query("SELECT * FROM contents WHERE category = 'Tutorial' ORDER BY RAND() LIMIT 1 ");
-  $randomTuto = $req->fetch();
-  return $randomTuto;
+  $random_tuto = $req->fetch();
+  return $random_tuto;
 }
 
 function getRandomPerf()
 {
   global $bdd;
   $req = $bdd->query("SELECT * FROM contents WHERE category = 'Performance' ORDER BY RAND() LIMIT 1 ");
-  $randomPerf = $req->fetch();
-  return $randomPerf;
+  $random_perf = $req->fetch();
+  return $random_perf;
 }
 
 function getRandomSheet()
 {
   global $bdd;
   $req = $bdd->query("SELECT * FROM contents WHERE category = 'Sheet Music' ORDER BY RAND() LIMIT 1 ");
-  $randomSheet = $req->fetch();
-  return $randomSheet;
+  $random_sheet = $req->fetch();
+  return $random_sheet;
 }
 
 function getContents()
@@ -114,7 +114,7 @@ function getUserInformations()
   $req->execute(array(
     ':id' => $_SESSION['users']['id']
   ));
-  $get_user_informations = $req->fetchAll();
+  $get_user_informations = $req->fetch();
   return $get_user_informations;
 }
 

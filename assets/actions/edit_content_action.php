@@ -9,6 +9,7 @@ $req->execute(array(
 $nbrOfCredits = $req->fetch();
 $author_credits = implode($nbrOfCredits);
 
+
 $req = $bdd->prepare('SELECT price FROM contents WHERE id = :id');
 $req->execute(array(
     ':id' => $_POST['id']
@@ -18,7 +19,9 @@ $oldPrice = implode($content_price);
 
 $author_credits -= $oldPrice * 2;
 
-$free_content = $_POST['free_content'];
+if (isset($_POST['free_content']) && !empty($_POST['free_content'])) {
+    $free_content = $_POST['free_content'];
+}
 
 if (!isset($free_content)) {
     if ($_POST['category'] == 'Tutorial') {
@@ -50,20 +53,60 @@ $req->execute(array(
     ':users_id' => $_POST['id_users']
 ));
 
-$req = $bdd->prepare('SELECT purchased_contents.id_users, users.credits FROM purchased_contents INNER JOIN users ON purchased_contents.id_users = users.id WHERE purchased_contents.id_contents = :id_contents');
+$req = $bdd->prepare('SELECT purchased_contents.id_contents, purchased_contents.id_users, purchased_contents.original_price, purchased_contents.buyer_repayment ,users.credits FROM purchased_contents INNER JOIN users ON purchased_contents.id_users = users.id WHERE purchased_contents.id_contents = :id_contents');
 $req->execute(array(
     ':id_contents' => $_POST['id']
 ));
-$buyersCredits = $req->fetchAll();
+$repayment_informations = $req->fetchAll();
 
-if ($oldPrice > $newPrice) {
-    foreach ($buyersCredits as $buyer_credits) {
+
+foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
+
+    $original_price = $repayment_informations_foreach_buyer['original_price'];
+    $buyer_repayment = $repayment_informations_foreach_buyer['buyer_repayment'];
+
+    if ($original_price > $newPrice) {
+
         $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
         $req->execute(array(
-            ':credits' => $buyer_credits['credits'] += ($oldPrice - $newPrice),
-            ':id' => $buyer_credits['id_users']
+            ':credits' => $repayment_informations_foreach_buyer['credits'] -= $buyer_repayment,
+            ':id' => $repayment_informations_foreach_buyer['id_users']
         ));
+
+        $buyer_repayment = 0;
+
+        $buyer_repayment = $original_price - $newPrice;
+
+        $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
+        $req->execute(array(
+            ':credits' => $repayment_informations_foreach_buyer['credits'] += $buyer_repayment,
+            ':id' => $repayment_informations_foreach_buyer['id_users']
+        ));
+    } else if ($original_price == $newPrice) {
+
+        $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
+        $req->execute(array(
+            ':credits' => $repayment_informations_foreach_buyer['credits'] -= $buyer_repayment,
+            ':id' => $repayment_informations_foreach_buyer['id_users']
+        ));
+
+        $buyer_repayment = 0;
     }
+
+    $req = $bdd->prepare('UPDATE purchased_contents SET buyer_repayment = :buyer_repayment WHERE id_users = :id_users AND id_contents = :id_contents');
+    $req->execute(array(
+        ':buyer_repayment' => $buyer_repayment,
+        ':id_users' => $repayment_informations_foreach_buyer['id_users'],
+        ':id_contents' => $_POST['id']
+    ));
+}
+
+
+if ($newPrice == 0) {
+    $req = $bdd->prepare('DELETE FROM purchased_contents WHERE id_contents = :id_contents');
+    $req->execute(array(
+        ':id_contents' => $_POST['id']
+    ));
 }
 
 if (isset($_FILES) && !empty($_FILES)) {

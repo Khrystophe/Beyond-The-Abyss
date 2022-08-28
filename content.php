@@ -36,10 +36,13 @@ if ($_GET['category'] != 'search_results') {
    $contents = getSearchResults();
    $users_contents_informations = getUsersContentsInformations();
 }
+
 if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
    $user_session = $_SESSION['users'];
-   $user_session_id = htmlspecialchars($_SESSION['users']['id']);
-   $user_session_credits = htmlspecialchars($_SESSION['users']['credits']);
+
+   $user_session = getUserInformations();
+   $user_session_id = htmlspecialchars($user_session['id']);
+   $user_session_credits = htmlspecialchars($user_session['credits']);
 }
 
 require('./assets/require/head.php');
@@ -65,12 +68,13 @@ require('./assets/require/head.php');
             $content_id_user = htmlspecialchars($content['id_users']);
 
             foreach ($users_contents_informations as $user_content_information) {
+
                $user_content_id = htmlspecialchars($user_content_information['id']);
                $user_content_name = htmlspecialchars($user_content_information['name']);
                $user_content_lastname = htmlspecialchars($user_content_information['lastname']);
 
                if ($content_id_user == $user_content_id) {
-                  $by_user =  "By :" . $user_content_name . " " . $user_content_lastname;
+                  $by_user =  "By " . $user_content_name . " " . $user_content_lastname;
                   break;
                }
             }
