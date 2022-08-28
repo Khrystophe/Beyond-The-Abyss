@@ -45,16 +45,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="Description" id="admin_description" style="height: 100px" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" required></textarea>
                                     <label for="admin_description">Description</label>
-
-                                    <script>
-                                        function MaxLengthDescription(description, maxlength) {
-                                            if (description.value.length > maxlength) {
-                                                description.value = description.value.substring(0, maxlength);
-                                                alert('Maximum ' + maxlength + 'characters!');
-                                            }
-                                        }
-                                    </script>
-
                                 </div>
                             </div>
 
@@ -127,7 +117,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                         <td scope="col"><?= $content['price'] ?></td>
                         <td scope="col"><?= $content['likes'] ?></td>
                         <td scope="col"><?= $content['id_users'] ?></td>
-                        <td scope="col"><a href="../../Diplome/assets/actions/delete_action.php?id=<?= $content['id'] ?>&type=admin">Delete</a></td>
+
                         <td>
                             <button type="button" data-bs-toggle="modal" data-bs-target="#content_editModal<?= $content['id'] ?>">
                                 Edit
@@ -167,7 +157,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                     <label for="admin_edit_description">Description</label>
                                                     <div class="form-floating">
                                                         <textarea class="form-control" id="admin_edit_description" style="height: 100px" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" value="<?= $content['description'] ?>"><?= $content['description'] ?></textarea>
-
                                                     </div>
                                                 </div>
 
@@ -209,6 +198,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                 </div>
                             </div>
                         </td>
+
+                        <td scope="col"><a href="../../Diplome/assets/actions/delete_content_action.php?id=<?= $content['id'] ?>&type=admin">Delete</a></td>
                     </tr>
                 <?php } ?>
             </tbody>

@@ -118,7 +118,7 @@ function getUserInformations()
   return $get_user_informations;
 }
 
-function getContentAndUserInformation()
+function getContentAndUserInformations()
 {
   global $bdd;
   $req = $bdd->prepare('SELECT users.name, users.lastname, contents.id, contents.title, contents.composer, contents.category, contents.level, contents.content, contents.price, contents.description, contents.likes, contents.id_users

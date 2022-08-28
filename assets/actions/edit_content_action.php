@@ -64,14 +64,9 @@ foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
 
     $original_price = $repayment_informations_foreach_buyer['original_price'];
     $buyer_repayment = $repayment_informations_foreach_buyer['buyer_repayment'];
+    $old_buyer_repayment = $buyer_repayment;
 
     if ($original_price > $newPrice) {
-
-        $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
-        $req->execute(array(
-            ':credits' => $repayment_informations_foreach_buyer['credits'] -= $buyer_repayment,
-            ':id' => $repayment_informations_foreach_buyer['id_users']
-        ));
 
         $buyer_repayment = 0;
 
@@ -79,7 +74,7 @@ foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
 
         $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
         $req->execute(array(
-            ':credits' => $repayment_informations_foreach_buyer['credits'] += $buyer_repayment,
+            ':credits' => $repayment_informations_foreach_buyer['credits'] += $buyer_repayment - $old_buyer_repayment,
             ':id' => $repayment_informations_foreach_buyer['id_users']
         ));
     } else if ($original_price == $newPrice) {

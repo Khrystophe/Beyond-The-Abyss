@@ -5,7 +5,7 @@ require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
 require('./assets/actions/functions.php');
 
-$content = getContentAndUserInformation();
+$content = getContentAndUserInformations();
 $content_id = htmlspecialchars($content['id']);
 $content_title = htmlspecialchars($content['title']);
 $content_composer = htmlspecialchars($content['composer']);
@@ -145,7 +145,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                 <button class="dropbtn">Edit/Delete</button>
                 <div class="dropdown-content">
                   <a id="edit_button">Edit Content</a>
-                  <a data-barba-prevent href="./assets/actions/delete_action.php?id=<?= $content_id ?>" onclick="javascript:return deleteAlert()">Delete Content</a>
+                  <a data-barba-prevent href="./assets/actions/delete_content_action.php?id=<?= $content_id ?>" onclick="javascript:return deleteAlert()">Delete Content</a>
 
 
                 </div>

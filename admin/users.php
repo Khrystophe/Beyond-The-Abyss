@@ -41,17 +41,15 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                         <td scope="col" style="word-break: break-all;"><?= $user['credits'] ?></td>
                         <td scope="col"><?= $user['type'] ?></td>
 
-                        <td scope="col"><a href="./assets/actions/delete_users_action.php?id=<?= $user['id'] ?>">Delete</a></td>
-
                         <td>
                             <button type="button" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $user['id'] ?>">
-                                Edit
+                                Edit User Informations
                             </button>
                             <div class="modal fade" id="user_editModal<?= $user['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
@@ -79,11 +77,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_user_password" class="form-label">Password</label>
-                                                    <input type="password" class="form-control" id="admin_edit_user_password" name="password" value="<?= $user['password'] ?>" placeholder="<?= $user['password'] ?>">
-                                                </div>
-
-                                                <div class="mb-3">
                                                     <label for="admin_edit_user_credits" class="form-label">Credits</label>
                                                     <input type="text" class="form-control" id="admin_edit_user_credits" name="credits" value="<?= $user['credits'] ?>" placeholder="<?= $user['credits'] ?>">
                                                 </div>
@@ -103,9 +96,38 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                     </div>
                                 </div>
                             </div>
-
                         </td>
-                        </form>
+
+                        <td>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#user_editpassword<?= $user['id'] ?>">
+                                Edit User Password
+                            </button>
+                            <div class="modal fade" id="user_editpassword<?= $user['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Edit Password</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <form method="post" action="./assets/actions/edit_password_action.php?id=<?= $user['id'] ?>" enctype="multipart/form-data">
+
+                                                <div class="mb-3">
+                                                    <label for="admin_edit_user_password" class="form-label">Password</label>
+                                                    <input type="password" class="form-control" id="admin_edit_user_password" name="password" value="<?= $user['password'] ?>" placeholder="<?= $user['password'] ?>">
+                                                </div>
+
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td scope="col"><a href="../../Diplome/assets/actions/delete_users_action.php?id=<?= $user['id'] ?>&type=admin">Delete</a></td>
+
                     </tr>
                 <?php } ?>
             </tbody>

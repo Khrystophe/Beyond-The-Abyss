@@ -154,6 +154,10 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                      <button class="btn_content"><a class="button link_page" href="content.php?category=user_purchased_content">Your purchased content</a></button>
                   </div>
 
+                  <div class="form_action">
+                     <button class="btn_content"><a data-barba-prevent class="button link_page" href="/Diplome/assets/actions/delete_users_action.php?id=<?= $get_user_id ?>">Delete my account</a></button>
+                  </div>
+
 
                </div>
 
