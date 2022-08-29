@@ -6,8 +6,8 @@ $req = $bdd->prepare('SELECT credits FROM users WHERE id = :id');
 $req->execute(array(
     ':id' => $_POST['id_users']
 ));
-$nbrOfCredits = $req->fetch();
-$author_credits = implode($nbrOfCredits);
+$number_of_credits = $req->fetch();
+$author_credits = implode($number_of_credits);
 
 
 $req = $bdd->prepare('SELECT contents.price, contents.title, contents.composer, users.name, users.lastname 
@@ -20,8 +20,8 @@ $req->execute(array(
 ));
 $content_informations = $req->fetch();
 
-$oldPrice = $content_informations['price'];
-$author_credits -= $oldPrice * 2;
+$old_price = $content_informations['price'];
+$author_credits -= $old_price * 2;
 
 
 if (isset($_POST['free_content']) && !empty($_POST['free_content'])) {
@@ -30,24 +30,24 @@ if (isset($_POST['free_content']) && !empty($_POST['free_content'])) {
 
 if (!isset($free_content)) {
     if ($_POST['category'] == 'Tutorial') {
-        $newPrice = 15;
+        $new_price = 15;
         $author_credits += 30;
     } else if ($_POST['category'] == 'Performance') {
-        $newPrice = 5;
+        $new_price = 5;
         $author_credits += 10;
     } else if ($_POST['category'] == 'Sheet Music') {
-        $newPrice = 10;
+        $new_price = 10;
         $author_credits += 20;
     }
 } else {
     if ($_POST['category'] == 'Tutorial') {
-        $newPrice = 0;
+        $new_price = 0;
         $author_credits += 30;
     } else if ($_POST['category'] == 'Performance') {
-        $newPrice = 0;
+        $new_price = 0;
         $author_credits += 10;
     } else if ($_POST['category'] == 'Sheet Music') {
-        $newPrice = 0;
+        $new_price = 0;
         $author_credits += 20;
     }
 }
@@ -75,25 +75,25 @@ foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
     $buyer_repayment = $repayment_informations_foreach_buyer['buyer_repayment'];
     $old_buyer_repayment = $buyer_repayment;
 
-    if ($original_price > $newPrice) {
+    if ($original_price > $new_price) {
 
         $buyer_repayment = 0;
-        $buyer_repayment = $original_price - $newPrice;
+        $buyer_repayment = $original_price - $new_price;
 
-        $newSoldOfCredits = $repayment_informations_foreach_buyer['credits'] += $buyer_repayment - $old_buyer_repayment;
+        $new_sold_of_credits = $repayment_informations_foreach_buyer['credits'] += $buyer_repayment - $old_buyer_repayment;
 
         $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
         $req->execute(array(
-            ':credits' => $newSoldOfCredits,
+            ':credits' => $new_sold_of_credits,
             ':id' => $repayment_informations_foreach_buyer['id_users']
         ));
-    } else if ($original_price == $newPrice) {
+    } else if ($original_price == $new_price) {
 
-        $newSoldOfCredits = $repayment_informations_foreach_buyer['credits'] -= $buyer_repayment;
+        $new_sold_of_credits = $repayment_informations_foreach_buyer['credits'] -= $buyer_repayment;
 
         $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
         $req->execute(array(
-            ':credits' => $newSoldOfCredits,
+            ':credits' => $new_sold_of_credits,
             ':id' => $repayment_informations_foreach_buyer['id_users']
         ));
 
@@ -109,11 +109,11 @@ foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
 
     $date = date('l jS \of F Y h:i:s A');
 
-    if ($newPrice == 0) {
+    if ($new_price == 0) {
 
         $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
         $req->execute(array(
-            ':notification' => 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $newSoldOfCredits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is now Free. You have been reimbursed ',
+            ':notification' => 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is now Free. You have been reimbursed ',
             ':date' => $date,
             ':id_users' => $repayment_informations_foreach_buyer['id_users']
         ));
@@ -121,14 +121,14 @@ foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
 
         $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
         $req->execute(array(
-            ':notification' => 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $newSoldOfCredits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is in a different category.',
+            ':notification' => 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is in a different category.',
             ':date' => $date,
             ':id_users' => $repayment_informations_foreach_buyer['id_users']
         ));
     }
 }
 
-if ($newPrice == 0) {
+if ($new_price == 0) {
 
     $req = $bdd->prepare('DELETE FROM purchased_contents WHERE id_contents = :id_contents');
     $req->execute(array(
@@ -164,7 +164,7 @@ if (!isset($content) && empty($content)) {
         ':composer' => $_POST['composer'],
         ':level' => $_POST['level'],
         'category' => $_POST['category'],
-        ':price' => $newPrice,
+        ':price' => $new_price,
         ':description' => $_POST['description'],
         ':id' => $_POST['id']
     ));
@@ -174,8 +174,8 @@ if (!isset($content) && empty($content)) {
     $requete->execute(array(
         ':id' => $_POST['id'],
     ));
-    $oldContent = $requete->fetch();
-    unlink('../contents_img/' . $oldContent['content']);
+    $old_content = $requete->fetch();
+    unlink('../contents_img/' . $old_content['content']);
 
     $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :composer, level = :level, category = :category, price= :price, content= :content WHERE id = :id');
     $req->execute(array(
@@ -183,7 +183,7 @@ if (!isset($content) && empty($content)) {
         ':composer' => $_POST['composer'],
         ':level' => $_POST['level'],
         'category' => $_POST['category'],
-        ':price' => $newPrice,
+        ':price' => $new_price,
         ':content' => $content,
         ':id' => $_POST['id']
     ));
