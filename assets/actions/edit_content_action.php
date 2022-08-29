@@ -58,7 +58,7 @@ $req->execute(array(
     ':users_id' => $_POST['id_users']
 ));
 
-$req = $bdd->prepare('SELECT purchased_contents.id_contents, purchased_contents.id_users, purchased_contents.original_price, purchased_contents.buyer_repayment ,users.credits 
+$req = $bdd->prepare('SELECT purchased_contents.id_contents, purchased_contents.id_users, purchased_contents.original_price, purchased_contents.buyer_repayment ,users.credits, users.name, users.lastname
 FROM purchased_contents 
 INNER JOIN users 
 ON purchased_contents.id_users = users.id 
@@ -108,18 +108,22 @@ foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
         ':id_contents' => $_POST['id']
     ));
 
+    $date = date('l jS \of F Y h:i:s A');
+
     if ($newPrice == 0) {
 
-        $req = $bdd->prepare('INSERT INTO notifications (notification, id_users) VALUES (:notification, :id_users) ');
+        $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
         $req->execute(array(
-            ':notification' => 'Hello ! Your new sold of credits is ' . $newSoldOfCredits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is now Free. You have been reimbursed ',
+            ':notification' => 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $newSoldOfCredits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is now Free. You have been reimbursed ',
+            ':date' => $date,
             ':id_users' => $repayment_informations_foreach_buyer['id_users']
         ));
     } else {
 
-        $req = $bdd->prepare('INSERT INTO notifications (notification, id_users) VALUES (:notification, :id_users) ');
+        $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
         $req->execute(array(
-            ':notification' => 'Hello ! Your new sold of credits is ' . $newSoldOfCredits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is in a different category.',
+            ':notification' => 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $newSoldOfCredits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is in a different category.',
+            ':date' => $date,
             ':id_users' => $repayment_informations_foreach_buyer['id_users']
         ));
     }

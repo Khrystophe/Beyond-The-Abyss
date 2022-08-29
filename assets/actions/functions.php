@@ -60,7 +60,7 @@ function getUserContent()
 function getUserPurchasedContent()
 {
   global $bdd;
-  $req = $bdd->prepare('SELECT purchased_contents.id_contents, contents.title , contents.composer, contents.category, contents.content, contents.price, contents.id, contents.description, contents.id_users
+  $req = $bdd->prepare('SELECT purchased_contents.id_contents, contents.title , contents.composer, contents.category, contents.content, contents.price, contents.id, contents.description, contents.id_users, contents.likes, contents.level
   FROM purchased_contents 
   INNER JOIN contents
   ON purchased_contents.id_contents = contents.id
@@ -147,4 +147,15 @@ function getComments()
   ));
   $comments = $req->fetchAll();
   return $comments;
+}
+
+function getNotifications()
+{
+  global $bdd;
+  $req = $bdd->prepare('SELECT id, notification, date FROM notifications WHERE id_users = :id ORDER BY id');
+  $req->execute(array(
+    ':id' => $_SESSION['users']['id']
+  ));
+  $notifications = $req->fetchAll();
+  return $notifications;
 }

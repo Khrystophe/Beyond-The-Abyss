@@ -15,6 +15,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
    $get_user_email = htmlspecialchars($get_user_informations['email']);
    $get_user_type = htmlspecialchars($get_user_informations['type']);
    $get_user_credits = htmlspecialchars($get_user_informations['credits']);
+
+   $notifications = getNotifications();
+
 ?>
 
    <main class="autoAlpha" data-barba="wrapper">
@@ -164,6 +167,38 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
             </div>
          </div>
+
+         <?php foreach ($notifications as $notification) {
+
+            $notification_id = htmlspecialchars($notification['id']);
+            $notification_text = htmlspecialchars($notification['notification']);
+            $notification_date = htmlspecialchars($notification['date']);
+
+         ?>
+            <div class='deck'>
+
+               <div class='single_player_card'>
+
+                  <div class='cardHeader'>
+
+
+                     <span class='cardHeader_date'><?= $notification_date ?></span>
+                  </div>
+
+                  <div class='cardBody'>
+
+                     <p class='cardText'><?= $notification_text ?>
+                     </p>
+
+                  </div>
+
+                  <div class="form_action">
+                     <button class="btn_content"><a data-barba-prevent class="button link_page" href="/Diplome/assets/actions/delete_notification_action.php?id=<?= $notification_id ?>">Delete notification</a></button>
+                  </div>
+
+               </div>
+            </div>
+         <?php } ?>
 
 
 
