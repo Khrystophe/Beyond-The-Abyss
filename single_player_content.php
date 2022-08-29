@@ -32,7 +32,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
 <main class="autoAlpha" data-barba="wrapper">
 
-  <div data-barba="container" data-barba-namespace="single_player_content-section">
+  <div class="min-height" data-barba="container" data-barba-namespace="single_player_content-section">
 
 
     <div id="edit_modal" class="modal">
@@ -146,8 +146,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                 <div class="dropdown-content">
                   <a id="edit_button">Edit Content</a>
                   <a data-barba-prevent href="./assets/actions/delete_content_action.php?id=<?= $content_id ?>" onclick="javascript:return deleteAlert()">Delete Content</a>
-
-
                 </div>
               </div>
           <?php }

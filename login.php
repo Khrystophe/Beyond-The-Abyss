@@ -5,7 +5,7 @@ require('./assets/require/head.php');
 ?>
 
 <main class="autoAlpha" data-barba="wrapper">
-   <div data-barba="container" data-barba-namespace="login-section">
+   <div class="min-height" data-barba="container" data-barba-namespace="login-section">
 
       <?php if (isset($_GET['error']) && !empty($_GET['error'])) {
          if ($_GET['error'] == 'password') { ?>

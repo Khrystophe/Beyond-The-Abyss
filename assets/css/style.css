@@ -27,6 +27,10 @@ body {
   opacity: 0;
 }
 
+.min-height {
+  min-height: 100vh;
+}
+
 header {
   position: absolute;
   top: 0;
@@ -905,7 +909,7 @@ textarea {
   border-radius: 50px;
   color: white;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.7rem;
   margin-top: 10px;
   width: 150px;
   letter-spacing: 0.11rem;
@@ -913,6 +917,9 @@ textarea {
   transition: all 0.4s;
   text-decoration: none;
   cursor: pointer;
+}
+.button.delete {
+  background: linear-gradient(135deg, #753333 0%, #962929 100%);
 }
 
 .button:hover {

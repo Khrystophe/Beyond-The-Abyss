@@ -27,14 +27,8 @@
     align-items: center;
 }
 
-// .form_title{
-//     // margin-bottom: 20px;
-//     // font-family: 'Roboto', sans-serif;
-//     // margin-left: 0;
-// }
 
 .leftside {
-	// background-color: rgba(255, 255, 255, 0.13);
 	background-color: transparent;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.1);
@@ -51,7 +45,6 @@
 }
 
 .rightside {
-    // background-color: rgba(255, 255, 255, 0.13);
     background-color: transparent;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.1);
@@ -85,7 +78,7 @@
     border-radius: 50px;
     color: white;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 0.7rem;
     margin-top: 10px;
     width:150px;
     letter-spacing: .11rem;
@@ -93,6 +86,9 @@
     transition: all 0.4s;
     text-decoration: none;
     cursor: pointer;
+    &.delete{
+        background:linear-gradient(135deg, #753333 0%, #962929 100%) ;
+    }
 }
 
 .button:hover

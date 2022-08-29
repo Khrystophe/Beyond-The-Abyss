@@ -23,11 +23,21 @@ if ($_GET['category'] != 'search_results') {
 
       $page = 'user_content';
       $contents = getUserContent();
+
+      if (empty($contents)) {
+         header('location: /Diplome/my_account.php?empty=user_content');
+      }
+
       $users_contents_informations = getUsersContentsInformations();
    } else if ($_GET['category'] == 'user_purchased_content') {
 
       $page = 'user_purchased_content';
       $contents = getUserPurchasedContent();
+
+      if (empty($contents)) {
+         header('location: /Diplome/my_account.php?empty=user_purchased_content');
+      }
+
       $users_contents_informations = getUsersContentsInformations();
    }
 } else {
@@ -50,7 +60,7 @@ require('./assets/require/head.php');
 
 
 <main class="autoAlpha" data-barba="wrapper">
-   <div data-barba="container" data-barba-namespace="content-section">
+   <div class="min-height" data-barba="container" data-barba-namespace="content-section">
 
       <div class="container">
 

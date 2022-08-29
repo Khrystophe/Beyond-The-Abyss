@@ -48,7 +48,7 @@ $random_sheet_id_users = htmlspecialchars($random_sheet['id_users']);
 
 <main class="autoAlpha" data-barba="wrapper">
 
-   <div data-barba="container" data-barba-namespace="index-section">
+   <div class="min-height" data-barba="container" data-barba-namespace="index-section">
 
       <div class="wrapp">
 

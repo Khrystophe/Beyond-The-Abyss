@@ -8,7 +8,7 @@ function login() {
 }
 
 function deleteAlert() {
-  return confirm("Do you wand to delete these content ?")
+  return confirm("Are you sure you want to delete these content ? This action is irreversible !")
 }
 
 function MaxLengthDescription(description, maxlength) {
@@ -26,3 +26,6 @@ function likeComment(comment_author_name, comment_author_lastname) {
   return confirm("Like " + comment_author_name + " " + comment_author_lastname + "'s comments ?")
 }
 
+function deleteAccountAlert() {
+  return confirm("Are you sure you want to delete your account and all your content ? This action is irreversible ! ")
+}

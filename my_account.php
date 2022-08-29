@@ -21,7 +21,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 ?>
 
    <main class="autoAlpha" data-barba="wrapper">
-      <div data-barba="container" data-barba-namespace="my_account-section">
+      <div class="min-height" data-barba="container" data-barba-namespace="my_account-section">
 
          <?php if (isset($_GET['success']) && !empty($_GET['success'])) {
             if ($_GET['success'] == 'change_ok') { ?>
@@ -144,7 +144,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                      <label for="my_account_free_content">Free Content</label>
                      <input type="checkbox" class="inputbox" id="my_account_free_content" name="free_content" />
 
-                     <button type="submit" class="button">Add</button>
+                     <button type="submit" class="button">Add Content</button>
                   </form>
 
                   <div class="margin"></div>
@@ -158,7 +158,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                   </div>
 
                   <div class="form_action">
-                     <button class="btn_content"><a data-barba-prevent class="button link_page" href="/Diplome/assets/actions/delete_users_action.php?id=<?= $get_user_id ?>">Delete my account</a></button>
+                     <button class="btn_content"><a data-barba-prevent class="button delete" href="/Diplome/assets/actions/delete_users_action.php?id=<?= $get_user_id ?>" onclick="javascript:return deleteAccountAlert()">Delete my account</a></button>
                   </div>
 
 

@@ -5,7 +5,7 @@ require('./assets/require/head.php');
 ?>
 
 <main class="autoAlpha" data-barba="wrapper">
-   <div data-barba="container" data-barba-namespace="register-section">
+   <div class="min-height" data-barba="container" data-barba-namespace="register-section">
 
       <?php
       if (isset($_GET['error']) && !empty($_GET['error'])) {
