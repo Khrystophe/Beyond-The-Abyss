@@ -56,15 +56,17 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 }
 
 require('./assets/require/head.php');
-?>
 
+?>
 
 <main class="autoAlpha" data-barba="wrapper">
    <div class="min-height" data-barba="container" data-barba-namespace="content-section">
 
       <div class="container">
 
-         <?php foreach ($contents as $content) {
+         <?php
+
+         foreach ($contents as $content) {
 
             $content_id = htmlspecialchars($content['id']);
             $content_title = htmlspecialchars($content['title']);
@@ -88,6 +90,7 @@ require('./assets/require/head.php');
                   break;
                }
             }
+
          ?>
 
             <div class="box">
@@ -101,7 +104,9 @@ require('./assets/require/head.php');
                         <h2 class="card__title"><?= $content_title ?></h2>
                         <p class="card__snippet" style="word-break: break-all ;"><?= $content_description ?></p>
 
-                        <?php if (isset($user_session) && !empty($user_session)) {
+                        <?php
+
+                        if (isset($user_session) && !empty($user_session)) {
 
                            $req = $bdd->prepare('SELECT id_users FROM purchased_contents WHERE id_contents = :contents_id');
                            $req->execute(array(
@@ -113,27 +118,41 @@ require('./assets/require/head.php');
 
                            if ($content_price == 0 || $content_id_user == $user_session_id) {
 
-                              if ($content_price == 0) { ?>
+                              if ($content_price == 0) {
+
+                        ?>
 
                                  <span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
                                  <div class="content_category"><?= $content_category ?></div>
                                  <div class="content_price">Free</div>
                                  <div class="content_user"><?= $by_user ?></div>
 
-                              <?php } else if ($content_id_user == $user_session_id) { ?>
+                              <?php
+
+                              } else if ($content_id_user == $user_session_id) {
+
+                              ?>
 
                                  <span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
                                  <div class="content_category"><?= $content_category ?></div>
                                  <div class="content_price">Your content</div>
                                  <div class="content_user"><?= $by_user ?></div>
 
-                              <?php } ?>
+                              <?php
+
+                              }
+
+                              ?>
 
                               <a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
 
-                              <?php } else {
+                              <?php
 
-                              if ($user_session_purchased_content == false) { ?>
+                           } else {
+
+                              if ($user_session_purchased_content == false) {
+
+                              ?>
 
                                  <span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
                                  <div class="content_category"><?= $content_category ?></div>
@@ -149,11 +168,15 @@ require('./assets/require/head.php');
                                  <div class="content_user"><?= $by_user ?></div>
                                  <a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
 
-                              <?php }
+                              <?php
+
+                              }
                            }
                         } else {
 
-                           if ($content_price > 0) { ?>
+                           if ($content_price > 0) {
+
+                              ?>
 
                               <span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
                               <div class="content_category"><?= $content_category ?></div>
@@ -161,7 +184,11 @@ require('./assets/require/head.php');
                               <div class="content_user"><?= $by_user ?></div>
                               <a data-barba-prevent href="./assets/actions/buy_content_action.php?id=<?= $content_id ?>" class="card__button link_page" onclick="javascript:return login()">Buy</a>
 
-                           <?php } else { ?>
+                           <?php
+
+                           } else {
+
+                           ?>
 
                               <span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
                               <div class="content_category"><?= $content_category ?></div>
@@ -169,24 +196,28 @@ require('./assets/require/head.php');
                               <div class="content_user"><?= $by_user ?></div>
                               <a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
 
-                        <?php }
-                        } ?>
+                        <?php
+
+                           }
+                        }
+
+                        ?>
 
                      </figcaption>
                   </figure>
                </div>
             </div>
-         <?php } ?>
+
+         <?php
+
+         }
+
+         ?>
+
       </div>
-
-
-
    </div>
-   <?php
-   require('./assets/require/foot.php');
-   ?>
+   <?php require('./assets/require/foot.php'); ?>
 </main>
-
 
 </body>
 

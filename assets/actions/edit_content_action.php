@@ -21,8 +21,8 @@ $req->execute(array(
 $content_informations = $req->fetch();
 
 $oldPrice = $content_informations['price'];
-
 $author_credits -= $oldPrice * 2;
+
 
 if (isset($_POST['free_content']) && !empty($_POST['free_content'])) {
     $free_content = $_POST['free_content'];
@@ -78,7 +78,6 @@ foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
     if ($original_price > $newPrice) {
 
         $buyer_repayment = 0;
-
         $buyer_repayment = $original_price - $newPrice;
 
         $newSoldOfCredits = $repayment_informations_foreach_buyer['credits'] += $buyer_repayment - $old_buyer_repayment;

@@ -26,8 +26,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
   $user_session_id = htmlspecialchars($_SESSION['users']['id']);
   $user_session_credits = htmlspecialchars($_SESSION['users']['credits']);
 }
-?>
 
+?>
 
 
 <main class="autoAlpha" data-barba="wrapper">
@@ -36,7 +36,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
 
     <div id="edit_modal" class="modal">
-
       <div class="modal-content">
         <div class="modal_form">
           <div class="modal_form_content">
@@ -90,7 +89,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
     </div>
 
     <div id="comment_modal" class="modal">
-
       <div class="modal-content">
         <div class="modal_form">
           <div class="modal_form_content">
@@ -127,8 +125,12 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         <div class="player_bottom_bar">
           <span class="likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
 
-          <?php if (isset($user_session) && !empty($user_session)) {
-            if ($user_session_id != $content_id_user) { ?>
+          <?php
+
+          if (isset($user_session) && !empty($user_session)) {
+            if ($user_session_id != $content_id_user) {
+
+          ?>
 
               <button class="dropbtn">
                 <a data-barba-prevent href="./assets/actions/like_action.php?name=content&id=<?= $content_id ?>" onclick="javascript:return likeContent('<?= $content_author_name ?>','<?= $content_author_lastname ?>')">
@@ -136,11 +138,17 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                   </i>
                 </a>
               </button>
+
             <?php } ?>
 
             <button class="dropbtn" id="comment_button">Comment</button>
 
-            <?php if ($user_session_id == $content_id_user) { ?>
+            <?php
+
+            if ($user_session_id == $content_id_user) {
+
+            ?>
+
               <div class="dropdown">
                 <button class="dropbtn">Edit/Delete</button>
                 <div class="dropdown-content">
@@ -148,23 +156,31 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                   <a data-barba-prevent href="./assets/actions/delete_content_action.php?id=<?= $content_id ?>" onclick="javascript:return deleteAlert()">Delete Content</a>
                 </div>
               </div>
-          <?php }
-          } ?>
+
+
+          <?php
+
+            }
+          }
+
+          ?>
+
         </div>
 
         <div class="description">
-
-
           <div class="column1">
+
             <div class="avatars">
               <a href="#" data-tooltip="Person 1" data-placement="top">
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png" alt="avatar1" />
                 <span><?= $content_author_name . " " . $content_author_lastname ?></span>
               </a>
             </div>
+
             <span class="tag">action</span>
             <span class="tag">fantasy</span>
             <span class="tag">adventure</span>
+
           </div>
 
           <div class="column2">
@@ -172,7 +188,10 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
           </div>
         </div>
 
-        <?php foreach ($comments as $comment) {
+        <?php
+
+        foreach ($comments as $comment) {
+
           $comment_id = htmlspecialchars($comment['id']);
           $comment_user_id = htmlspecialchars($comment['id_users']);
           $comment_user_name = htmlspecialchars($comment['name']);
@@ -183,45 +202,37 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
           $req = $bdd->query('SELECT COUNT(id_users) FROM comments WHERE id_users =' . $comment_user_id);
           $number_of_user_comments = $req->fetch();
-        ?>
-          <div class='deck'>
 
+        ?>
+
+          <div class='deck'>
             <div class='single_player_card'>
 
               <div class='cardHeader'>
-
                 <span class='cardHeader_account'><?= $comment_user_name . " " . $comment_user_lastname ?></span>
-
                 <span class='cardHeader_date'><?= $comment_date ?></span>
               </div>
 
               <div class='cardBody'>
 
-                <p class='cardText'><?= $comment_text ?>
-                </p>
+                <p class='cardText'><?= $comment_text ?></p>
 
                 <section class='cardStats'>
 
                   <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= $comment_id ?>&id=<?= $content_id ?>" onclick="javascript:return likeComment('<?= $comment_user_name ?>','<?= $comment_user_lastname ?>')"> <i class='far fa-heart fa-fw'></i></a></span>
 
                   <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($number_of_user_comments)) ?><i class='far fa-comment fa-fw'></i></span>
-                  </span>
+
                 </section>
               </div>
             </div>
           </div>
         <?php } ?>
-
-
       </div>
     </div>
-
   </div>
-  <?php
-  require('./assets/require/foot.php');
-  ?>
+  <?php require('./assets/require/foot.php'); ?>
 </main>
-
 
 </body>
 

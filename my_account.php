@@ -20,39 +20,55 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
 ?>
 
+
    <main class="autoAlpha" data-barba="wrapper">
       <div class="min-height" data-barba="container" data-barba-namespace="my_account-section">
 
-         <?php if (isset($_GET['success']) && !empty($_GET['success'])) {
+         <?php
+
+         if (isset($_GET['success']) && !empty($_GET['success'])) {
             if ($_GET['success'] == 'change_ok') { ?>
+
                <script>
                   alert('Password changed successfully')
                </script>
-            <?php
-            } else  if ($_GET['success'] == 'creation') { ?>
+
+            <?php } else  if ($_GET['success'] == 'creation') { ?>
+
                <script>
                   alert('The creation of your account is a success')
                </script>
+
             <?php } else   if ($_GET['success'] == 'connected') { ?>
+
                <script>
                   alert("Welcome <?= $get_user_name . ' ' . $get_user_lastname ?> !")
                </script>
+
             <?php
+
             }
          }
+
          if (isset($_GET['error']) && !empty($_GET['error'])) {
             if ($_GET['error'] == 'confirm_false') { ?>
+
                <script>
                   alert('Wrong password confirmation')
                </script>
-            <?php
-            } else if ($_GET['error'] == 'invalid_password') { ?>
+
+            <?php } else if ($_GET['error'] == 'invalid_password') { ?>
+
                <script>
                   alert('Wrong password')
                </script>
+
          <?php
+
             }
-         } ?>
+         }
+
+         ?>
 
 
          <div class="form">
@@ -64,9 +80,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                <div class="rightside">
 
-
-
-
                   <h2 type="text" class="form_title">Hello <?= $get_user_name . " " . $get_user_lastname ?> </h2>
 
                   <h2 type="text" class="form_title">Your Email : <?= $get_user_email ?> </h2>
@@ -74,8 +87,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                   <div class="margin"></div>
 
                   <form data-barba-prevent class="form_action" action="./assets/actions/edit_name_lastname_action.php" method="post">
-
-
                      <label for="name"></label>
                      <input type="text" class="inputbox" placeholder="Your current name : <?= $get_user_name ?> " id="name" name="name" required />
 
@@ -83,13 +94,11 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                      <input type="text" class="inputbox" placeholder="Your current last name : <?= $get_user_lastname  ?> " id="lastname" name="lastname" required />
 
                      <button type="submit" class="button">Edit</button>
-
                   </form>
 
                   <div class="margin"></div>
 
                   <form data-barba-prevent class="form_action" action="./assets/actions/edit_password_action.php" method="post">
-
                      <label for="old_password"></label>
                      <input type="password" placeholder=" Old password " class="inputbox" id="old_password" name="old_password" required />
 
@@ -99,11 +108,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                      <label for="new_password_confirm"></label>
                      <input type="password" class="inputbox" placeholder="Confirm your new password" id="new_password_confirm" name="new_password_confirm" required />
 
-
                      <button type="submit" class="button">Edit</button>
 
                      <div class="margin"></div>
-
                   </form>
 
                   <h2 type="text" class="form_title">Add Content</h2>
@@ -111,7 +118,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                   <div class="margin"></div>
 
                   <form class="form_action" action="./assets/actions/add_content_action.php" method="post" enctype="multipart/form-data">
-
                      <label for="title"></label>
                      <input type="text" class="inputbox" placeholder="Title" id="title" name="title" required />
 
@@ -160,11 +166,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                   <div class="form_action">
                      <button class="btn_content"><a data-barba-prevent class="button delete" href="/Diplome/assets/actions/delete_users_action.php?id=<?= $get_user_id ?>" onclick="javascript:return deleteAccountAlert()">Delete my account</a></button>
                   </div>
-
-
                </div>
-
-
             </div>
          </div>
 
@@ -175,44 +177,33 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
             $notification_date = htmlspecialchars($notification['date']);
 
          ?>
+
+
             <div class='deck'>
-
                <div class='single_player_card'>
-
                   <div class='cardHeader'>
-
-
                      <span class='cardHeader_date'><?= $notification_date ?></span>
                   </div>
 
                   <div class='cardBody'>
-
-                     <p class='cardText'><?= $notification_text ?>
-                     </p>
-
+                     <p class='cardText'><?= $notification_text ?></p>
                   </div>
 
                   <div class="form_action">
                      <button class="btn_content"><a data-barba-prevent class="button link_page" href="/Diplome/assets/actions/delete_notification_action.php?id=<?= $notification_id ?>">Delete notification</a></button>
                   </div>
-
                </div>
             </div>
          <?php } ?>
-
-
-
-
       </div>
+      <?php require('./assets/require/foot.php'); ?>
    </main>
-
 <?php
-   require('./assets/require/foot.php');
+
 } else {
 
    header('location: index.php?error=notConnected');
 }
-
 ?>
 
 </body>

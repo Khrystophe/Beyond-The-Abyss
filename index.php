@@ -41,9 +41,7 @@ $random_sheet_description = htmlspecialchars($random_sheet['description']);
 $random_sheet_likes = htmlspecialchars($random_sheet['likes']);
 $random_sheet_id_users = htmlspecialchars($random_sheet['id_users']);
 
-
 ?>
-
 
 
 <main class="autoAlpha" data-barba="wrapper">
@@ -101,8 +99,7 @@ $random_sheet_id_users = htmlspecialchars($random_sheet['id_users']);
 
          <div class="content_card tuto">
 
-            <div class="gradient tuto">
-            </div>
+            <div class="gradient tuto"></div>
 
             <div class="info_section tuto">
                <div class="content_header tuto">
@@ -138,12 +135,9 @@ $random_sheet_id_users = htmlspecialchars($random_sheet['id_users']);
          </div>
 
 
-
-
          <div class="content_card perf">
 
-            <div class="gradient perf">
-            </div>
+            <div class="gradient perf"></div>
 
             <div class="info_section perf">
                <div class="content_header perf">
@@ -183,8 +177,7 @@ $random_sheet_id_users = htmlspecialchars($random_sheet['id_users']);
 
          <div class="content_card sheet">
 
-            <div class="gradient sheet">
-            </div>
+            <div class="gradient sheet"></div>
 
             <div class="info_section sheet">
                <div class="content_header sheet">
@@ -218,13 +211,9 @@ $random_sheet_id_users = htmlspecialchars($random_sheet['id_users']);
             </div>
             <div class="blur_back sheet_back"></div>
          </div>
-
       </div>
-
    </div>
-   <?php
-   require('./assets/require/foot.php');
-   ?>
+   <?php require('./assets/require/foot.php'); ?>
 </main>
 
 </body>

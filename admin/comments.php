@@ -8,13 +8,11 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         require('./assets/actions/functions.php');
 
         $comments = getComments();
+
 ?>
 
+
         <h1>Comments</h1>
-
-        <br>
-
-
 
         <table class="table tritable">
             <thead>
@@ -29,8 +27,13 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
             </thead>
 
             <tbody>
+
                 <?php
-                foreach ($comments as $comment) { ?>
+
+                foreach ($comments as $comment) {
+
+                ?>
+
                     <tr>
                         <td scope="col"><?= $comment['id'] ?></td>
                         <td scope="col" style="word-break:break-all" ;><?= $comment['comment'] ?></td>
@@ -53,4 +56,5 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         header('location: /Diplome/index.php');
     }
 }
+
 ?>

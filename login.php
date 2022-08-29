@@ -2,6 +2,7 @@
 session_start();
 $page = 'login';
 require('./assets/require/head.php');
+
 ?>
 
 <main class="autoAlpha" data-barba="wrapper">
@@ -9,27 +10,23 @@ require('./assets/require/head.php');
 
       <?php if (isset($_GET['error']) && !empty($_GET['error'])) {
          if ($_GET['error'] == 'password') { ?>
+
             <script>
                alert('Wrong password')
             </script>
-         <?php
-         } else if ($_GET['error'] == 'nonexist') { ?>
+
+         <?php } else if ($_GET['error'] == 'nonexist') { ?>
+
             <script>
                alert('This user does not exist')
             </script>
-      <?php
-         }
-      } ?>
 
-      <div>
-         <?php if (isset($_GET['error']) && !empty($_GET['error'])) {
-            if ($_GET['error'] == 'password') { ?>
-               <h5>Wrong password</h5>
-            <?php } else if ($_GET['error'] == 'nonexist') { ?>
-               <h5>This user does not exist</h5>
-         <?php }
-         } ?>
-      </div>
+      <?php
+
+         }
+      }
+
+      ?>
 
       <div class="form">
          <div class="form_content">
@@ -50,16 +47,11 @@ require('./assets/require/head.php');
                   <button type="submit" class="button">Login</button>
                </form>
             </div>
-
          </div>
       </div>
-
    </div>
-   <?php
-   require('./assets/require/foot.php');
-   ?>
+   <?php require('./assets/require/foot.php'); ?>
 </main>
-
 
 </body>
 

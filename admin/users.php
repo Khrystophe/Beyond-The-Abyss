@@ -9,11 +9,10 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
         $users = getUsers();
 
-
 ?>
+
+
         <h1>Users</h1>
-
-
 
         <table class="table tritable">
             <thead>
@@ -30,8 +29,13 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
             </thead>
 
             <tbody>
+
                 <?php
-                foreach ($users as $user) { ?>
+
+                foreach ($users as $user) {
+
+                ?>
+
                     <tr>
                         <td scope="col"><?= $user['id'] ?></td>
                         <td scope="col" style="word-break: break-all;"><?= $user['name'] ?></td>

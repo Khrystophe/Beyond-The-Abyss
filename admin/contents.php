@@ -8,18 +8,17 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         require('./assets/actions/functions.php');
 
         $getAllContents = getAllContents();
+
 ?>
+
 
         <h1>Contents</h1>
 
-        <br>
-        <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Add Contents
         </button>
         <br><br>
 
-        <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -104,8 +103,14 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
             </thead>
 
             <tbody>
+
                 <?php
-                foreach ($getAllContents as $content) { ?>
+
+                foreach ($getAllContents as $content) {
+
+                ?>
+
+
                     <tr>
                         <td scope="col"><?= $content['id'] ?></td>
                         <td scope="col" style="word-break: break-all;"><?= $content['title'] ?></td>
@@ -201,7 +206,13 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                         <td scope="col"><a href="../../Diplome/assets/actions/delete_content_action.php?id=<?= $content['id'] ?>&type=admin">Delete</a></td>
                     </tr>
-                <?php } ?>
+
+                <?php
+
+                }
+
+                ?>
+
             </tbody>
         </table>
 
@@ -214,4 +225,5 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         header('location: /Diplome/index.php');
     }
 }
+
 ?>

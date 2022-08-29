@@ -8,14 +8,11 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         require('./assets/actions/functions.php');
 
         $purchased_contents = getPurchased_contents();
+
 ?>
 
+
         <h1>Purchased contents</h1>
-
-        <br>
-        <!-- Button trigger modal -->
-
-
 
         <table class="table tritable">
             <thead>
@@ -29,8 +26,12 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
             </thead>
 
             <tbody>
+
                 <?php
-                foreach ($purchased_contents as $content) { ?>
+
+                foreach ($purchased_contents as $content) {
+
+                ?>
 
                     <tr>
                         <td scope="col"><?= $content['id'] ?></td>
@@ -40,7 +41,13 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                         <td scope="col"><?= $content['buyer_repayment'] ?></td>
                         <td scope="col"><a href="./assets/actions/delete_purchased_contents_action.php?id=<?= $content['id'] ?>">Delete</a></td>
                     </tr>
-                <?php } ?>
+
+                <?php
+
+                }
+
+                ?>
+
             </tbody>
         </table>
 
@@ -53,4 +60,5 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         header('location: /Diplome/index.php');
     }
 }
+
 ?>

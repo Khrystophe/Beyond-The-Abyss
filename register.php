@@ -10,22 +10,30 @@ require('./assets/require/head.php');
       <?php
       if (isset($_GET['error']) && !empty($_GET['error'])) {
          if ($_GET['error'] == 'confirm_false') { ?>
+
             <script>
                alert('Wrong password confirmation')
             </script>
-         <?php
-         } else if ($_GET['error'] == 'email_exist') { ?>
+
+         <?php } else if ($_GET['error'] == 'email_exist') { ?>
+
             <script>
                alert('This email already exists ')
             </script>
-         <?php
-         } else if ($_GET['error'] == 'contact_admin') { ?>
+
+         <?php } else if ($_GET['error'] == 'contact_admin') { ?>
+
             <script>
                alert('Contact an administrator')
             </script>
+
       <?php
+
          }
-      } ?>
+      }
+
+      ?>
+
 
       <div class="form">
          <div class="form_content">
@@ -55,14 +63,10 @@ require('./assets/require/head.php');
                   <button type="submit" class="button">Register</button>
                </form>
             </div>
-
          </div>
       </div>
-
    </div>
-   <?php
-   require('./assets/require/foot.php');
-   ?>
+   <?php require('./assets/require/foot.php'); ?>
 </main>
 
 </body>
