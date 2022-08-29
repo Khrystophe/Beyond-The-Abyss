@@ -10,12 +10,17 @@ $nbrOfCredits = $req->fetch();
 $author_credits = implode($nbrOfCredits);
 
 
-$req = $bdd->prepare('SELECT price FROM contents WHERE id = :id');
+$req = $bdd->prepare('SELECT contents.price, contents.title, contents.composer, users.name, users.lastname 
+FROM contents
+INNER JOIN users
+ON users.id = contents.id_users 
+WHERE contents.id = :id');
 $req->execute(array(
     ':id' => $_POST['id']
 ));
-$content_price = $req->fetch();
-$oldPrice = implode($content_price);
+$content_informations = $req->fetch();
+
+$oldPrice = $content_informations['price'];
 
 $author_credits -= $oldPrice * 2;
 
@@ -53,7 +58,11 @@ $req->execute(array(
     ':users_id' => $_POST['id_users']
 ));
 
-$req = $bdd->prepare('SELECT purchased_contents.id_contents, purchased_contents.id_users, purchased_contents.original_price, purchased_contents.buyer_repayment ,users.credits FROM purchased_contents INNER JOIN users ON purchased_contents.id_users = users.id WHERE purchased_contents.id_contents = :id_contents');
+$req = $bdd->prepare('SELECT purchased_contents.id_contents, purchased_contents.id_users, purchased_contents.original_price, purchased_contents.buyer_repayment ,users.credits 
+FROM purchased_contents 
+INNER JOIN users 
+ON purchased_contents.id_users = users.id 
+WHERE purchased_contents.id_contents = :id_contents');
 $req->execute(array(
     ':id_contents' => $_POST['id']
 ));
@@ -72,16 +81,20 @@ foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
 
         $buyer_repayment = $original_price - $newPrice;
 
+        $newSoldOfCredits = $repayment_informations_foreach_buyer['credits'] += $buyer_repayment - $old_buyer_repayment;
+
         $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
         $req->execute(array(
-            ':credits' => $repayment_informations_foreach_buyer['credits'] += $buyer_repayment - $old_buyer_repayment,
+            ':credits' => $newSoldOfCredits,
             ':id' => $repayment_informations_foreach_buyer['id_users']
         ));
     } else if ($original_price == $newPrice) {
 
+        $newSoldOfCredits = $repayment_informations_foreach_buyer['credits'] -= $buyer_repayment;
+
         $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
         $req->execute(array(
-            ':credits' => $repayment_informations_foreach_buyer['credits'] -= $buyer_repayment,
+            ':credits' => $newSoldOfCredits,
             ':id' => $repayment_informations_foreach_buyer['id_users']
         ));
 
@@ -94,10 +107,26 @@ foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
         ':id_users' => $repayment_informations_foreach_buyer['id_users'],
         ':id_contents' => $_POST['id']
     ));
+
+    if ($newPrice == 0) {
+
+        $req = $bdd->prepare('INSERT INTO notifications (notification, id_users) VALUES (:notification, :id_users) ');
+        $req->execute(array(
+            ':notification' => 'Hello ! Your new sold of credits is ' . $newSoldOfCredits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is now Free. You have been reimbursed ',
+            ':id_users' => $repayment_informations_foreach_buyer['id_users']
+        ));
+    } else {
+
+        $req = $bdd->prepare('INSERT INTO notifications (notification, id_users) VALUES (:notification, :id_users) ');
+        $req->execute(array(
+            ':notification' => 'Hello ! Your new sold of credits is ' . $newSoldOfCredits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is in a different category.',
+            ':id_users' => $repayment_informations_foreach_buyer['id_users']
+        ));
+    }
 }
 
-
 if ($newPrice == 0) {
+
     $req = $bdd->prepare('DELETE FROM purchased_contents WHERE id_contents = :id_contents');
     $req->execute(array(
         ':id_contents' => $_POST['id']

@@ -35,6 +35,25 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         ':contents_id' => $_GET['id']
       ));
 
+      $req = $bdd->prepare('SELECT users.credits, users.id 
+      FROM users
+      INNER JOIN contents
+      ON users.id = contents.id_users 
+      WHERE contents.id = :id');
+      $req->execute(array(
+        ':id' => $_GET['id']
+      ));
+      $nbrOfCredits = $req->fetch();
+
+      $author_credits = $nbrOfCredits['credits'];
+      $author_credits++;
+
+      $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
+      $req->execute(array(
+        ':credits' => $author_credits,
+        ':users_id' => $nbrOfCredits['id']
+      ));
+
       header('location: ../../single_player_content.php?id=' . $_GET['id']);
     } else {
 

@@ -2,7 +2,13 @@
 session_start();
 require('../require/co_bdd.php');
 
-$req = $bdd->prepare('SELECT purchased_contents.id_users as purchased_contents_id_users, purchased_contents.original_price, users.credits, purchased_contents.buyer_repayment FROM contents INNER JOIN purchased_contents ON purchased_contents.id_contents = contents.id INNER JOIN users ON purchased_contents.id_users = users.id WHERE contents.id_users = :id');
+$req = $bdd->prepare('SELECT purchased_contents.id_users as purchased_contents_id_users, purchased_contents.original_price, users.credits, purchased_contents.buyer_repayment 
+FROM contents 
+INNER JOIN purchased_contents
+ON purchased_contents.id_contents = contents.id 
+INNER JOIN users 
+ON purchased_contents.id_users = users.id 
+WHERE contents.id_users = :id');
 $req->execute(array(
     ':id' => $_GET['id']
 ));

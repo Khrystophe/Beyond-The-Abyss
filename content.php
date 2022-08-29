@@ -98,6 +98,7 @@ require('./assets/require/head.php');
                               ':contents_id' => $content_id
                            ));
                            $user_purchased_contents = $req->fetchAll();
+
                            $user_session_purchased_content = in_array($user_session_id, array_column($user_purchased_contents, 'id_users'), TRUE);
 
                            if ($content_price == 0 || $content_id_user == $user_session_id) {

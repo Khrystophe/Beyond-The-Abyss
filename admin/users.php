@@ -113,9 +113,15 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                                             <form method="post" action="./assets/actions/edit_password_action.php?id=<?= $user['id'] ?>" enctype="multipart/form-data">
 
+
+                                                <div class="mb-3">
+                                                    <label for="admin_edit_user_password_id" class="form-label"></label>
+                                                    <input type="hidden" class="form-control" id="admin_edit_id_user_password_id" name="id" value="<?= $user['id'] ?>">
+                                                </div>
+
                                                 <div class="mb-3">
                                                     <label for="admin_edit_user_password" class="form-label">Password</label>
-                                                    <input type="password" class="form-control" id="admin_edit_user_password" name="password" value="<?= $user['password'] ?>" placeholder="<?= $user['password'] ?>">
+                                                    <input type="password" class="form-control" id="admin_edit_user_password" name="password" required>
                                                 </div>
 
                                                 <button type="submit" class="btn btn-primary">Submit</button>
