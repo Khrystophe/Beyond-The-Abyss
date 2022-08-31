@@ -1,40 +1,35 @@
 <?php
 session_start();
-require('../require/co_bdd.php');
+require('../require/check_data.php');
 
+if ($check_name === true && $check_lastname === true && $check_email !== false && $check_password === true && $check_password_confirm === true) {
 
-if (isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['lastname']) && !empty($_POST['lastname']) && isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password']) && isset($_POST['password_confirm']) && !empty($_POST['password_confirm'])) {
+   require('../require/co_bdd.php');
 
    $req = $bdd->prepare('SELECT email FROM users WHERE email = :email');
-   $req->execute(array(
-      ':email' => $_POST['email']
-   ));
-   $email = $req->fetchColumn();
+   $req->bindParam(':email', $email, PDO::PARAM_STR);
+   $req->execute();
+   $email_exist = $req->fetchColumn();
 
-   if (!$email) {
+   if (!$email_exist) {
 
       if ($_POST['password'] == $_POST['password_confirm']) {
 
-         $req = $bdd->prepare("INSERT INTO users(name,lastname,email,password) VALUES (:name, :lastname, :email, :password)");
-         $success = $req->execute(array(
-            ':name' => $_POST['name'],
-            ':lastname' => $_POST['lastname'],
-            ':email' => $_POST['email'],
-            ':password' => password_hash($_POST['password'], PASSWORD_BCRYPT),
-         ));
+         $req = $bdd->prepare("INSERT INTO users(name, lastname, email, password) VALUES (:name, :lastname, :email, :password)");
+         $req->bindParam(':name', $name, PDO::PARAM_STR);
+         $req->bindParam(':lastname', $lastname, PDO::PARAM_STR);
+         $req->bindParam(':email', $email, PDO::PARAM_STR);
+         $req->bindParam(':password', password_hash($password, PASSWORD_BCRYPT), PDO::PARAM_INT);
+         $success = $req->execute();
+
          if ($success) {
+
             $req = $bdd->prepare('SELECT * FROM users WHERE email = :email');
-            $req->execute(array(
-               ':email' => $_POST['email']
-            ));
+            $req->bindParam(':email', $email);
+            $req->execute();
             $user = $req->fetch();
 
-            $_SESSION['users']['id'] = $user['id'];
-            $_SESSION['users']['email'] = $user['email'];
-            $_SESSION['users']['name'] = $user['name'];
-            $_SESSION['users']['lastname'] = $user['lastname'];
-            $_SESSION['users']['type'] = $user['type'];
-            $_SESSION['users']['credits'] = $user['credits'];
+            $_SESSION['users']['id'] = htmlspecialchars($user['id']);
          } else {
 
             header('location: ../../register.php?error=contact_admin');
@@ -49,4 +44,8 @@ if (isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['lastname'])
 
       header('location: ../../register.php?error=email_exist');
    }
+} else {
+
+   http_response_code(400);
+   die('Error processing bad or malformed request');
 }

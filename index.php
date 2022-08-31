@@ -3,7 +3,7 @@ session_start();
 $page = 'index';
 require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
-require('./assets/actions/functions.php');
+require('./assets/require/functions.php');
 
 $random_tuto = getRandomTuto($bdd);
 $random_tuto_id = htmlspecialchars($random_tuto['id']);
@@ -213,9 +213,6 @@ $random_sheet_id_users = htmlspecialchars($random_sheet['id_users']);
          </div>
       </div>
    </div>
-   <?php require('./assets/require/foot.php'); ?>
 </main>
 
-</body>
-
-</html>
+<?php require('./assets/require/foot.php'); ?>

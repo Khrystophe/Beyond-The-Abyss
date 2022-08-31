@@ -2,65 +2,74 @@
 
 function getRandomTuto(PDO $bdd)
 {
-  $req = $bdd->query("SELECT * FROM contents WHERE category = 'Tutorial' ORDER BY RAND() LIMIT 1 ");
+  $tutorial = 'Tutorial';
+  $req = $bdd->prepare("SELECT * FROM contents WHERE category = :category ORDER BY RAND() LIMIT 1 ");
+  $req->bindParam(':category', $tutorial, PDO::PARAM_STR);
+  $req->execute();
   $random_tuto = $req->fetch();
   return $random_tuto;
 }
 
 function getRandomPerf(PDO $bdd)
 {
-  $req = $bdd->query("SELECT * FROM contents WHERE category = 'Performance' ORDER BY RAND() LIMIT 1 ");
+  $performance = 'Performance';
+  $req = $bdd->prepare("SELECT * FROM contents WHERE category = :category ORDER BY RAND() LIMIT 1 ");
+  $req->bindParam(':category', $performance, PDO::PARAM_STR);
+  $req->execute();
   $random_perf = $req->fetch();
   return $random_perf;
 }
 
 function getRandomSheet(PDO $bdd)
 {
-  $req = $bdd->query("SELECT * FROM contents WHERE category = 'Sheet Music' ORDER BY RAND() LIMIT 1 ");
+  $sheet_music = 'Sheet Music';
+  $req = $bdd->prepare("SELECT * FROM contents WHERE category = :category ORDER BY RAND() LIMIT 1 ");
+  $req->bindParam(':category', $sheet_music, PDO::PARAM_STR);
+  $req->execute();
   $random_sheet = $req->fetch();
   return $random_sheet;
 }
 
-function getContents(PDO $bdd)
+function getContents(PDO $bdd, $get_category)
 {
   $req = $bdd->prepare('SELECT * FROM contents WHERE category = :category ');
-  $req->execute(array(
-    ':category' => $_GET['category']
-  ));
+  $req->bindParam(':category', $get_category, PDO::PARAM_STR);
+  $req->execute();
   $contents = $req->fetchAll();
   return $contents;
 }
 
-function getUsersContentsInformations(PDO $bdd)
+function getUserContentInformations(PDO $bdd, $content_id_user)
 {
-  $req = $bdd->query('SELECT users.id, users.name, users.lastname
+  $req = $bdd->prepare('SELECT users.id, users.name, users.lastname
   FROM users
   INNER JOIN contents
-  ON users.id = contents.id_users');
-  $get_users_contents_informations = $req->fetchAll();
-  return $get_users_contents_informations;
+  ON users.id = contents.id_users
+  WHERE contents.id_users = :id_users');
+  $req->bindParam(':id_users', $content_id_user, PDO::PARAM_INT);
+  $req->execute();
+  $user_content_information = $req->fetch();
+  return $user_content_information;
 }
 
-function getUserContent(PDO $bdd)
+function getUserContent(PDO $bdd, $session_users_id)
 {
   $req = $bdd->prepare('SELECT * FROM contents WHERE id_users = :id_users ');
-  $req->execute(array(
-    ':id_users' => $_SESSION['users']['id']
-  ));
+  $req->bindParam(':id_users', $session_users_id, PDO::PARAM_INT);
+  $req->execute();
   $contents = $req->fetchAll();
   return $contents;
 }
 
-function getUserPurchasedContent(PDO $bdd)
+function getUserPurchasedContent(PDO $bdd, $session_users_id)
 {
   $req = $bdd->prepare('SELECT purchased_contents.id_contents, contents.title , contents.composer, contents.category, contents.content, contents.price, contents.id, contents.description, contents.id_users, contents.likes, contents.level
   FROM purchased_contents 
   INNER JOIN contents
   ON purchased_contents.id_contents = contents.id
   WHERE purchased_contents.id_users = :id_users ');
-  $req->execute(array(
-    ':id_users' => $_SESSION['users']['id']
-  ));
+  $req->bindParam(':id_users', $session_users_id, PDO::PARAM_INT);
+  $req->execute();
   $contents = $req->fetchAll();
   return $contents;
 }
@@ -101,7 +110,7 @@ function getSearchResults(PDO $bdd)
 
 function getUserInformations(PDO $bdd)
 {
-  $req = $bdd->prepare('SELECT * FROM users WHERE id= :id');
+  $req = $bdd->prepare('SELECT id, name, lastname, email, type, credits FROM users WHERE id= :id');
   $req->execute(array(
     ':id' => $_SESSION['users']['id']
   ));

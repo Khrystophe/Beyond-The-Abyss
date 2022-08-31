@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('../require/co_bdd.php');
 
 $req = $bdd->prepare('SELECT purchased_contents.id_users, purchased_contents.original_price,users.credits 

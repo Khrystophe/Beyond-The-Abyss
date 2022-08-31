@@ -2,11 +2,16 @@
 
 if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
-   $req = $bdd->prepare('SELECT name, lastname, credits FROM users WHERE id = :id');
-   $req->execute(array(
-      ':id' => $_SESSION['users']['id']
-   ));
-   $user = $req->fetch();
+   function getUserSessionInformations(PDO $bdd)
+   {
+      $req = $bdd->prepare('SELECT  name, lastname, credits FROM users WHERE id= :id');
+      $req->execute(array(
+         ':id' => $_SESSION['users']['id']
+      ));
+      $user = $req->fetch();
+      return $user;
+   }
+   $user = getUserSessionInformations($bdd);
 }
 ?>
 

@@ -6,7 +6,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
    $page = 'my_account';
    require('./assets/require/co_bdd.php');
    require('./assets/require/head.php');
-   require('./assets/actions/functions.php');
+   require('./assets/require/functions.php');
 
    $get_user_informations = getUserInformations($bdd);
    $get_user_id = htmlspecialchars($get_user_informations['id']);
@@ -196,16 +196,11 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
             </div>
          <?php } ?>
       </div>
-      <?php require('./assets/require/foot.php'); ?>
    </main>
-<?php
 
+<?php require('./assets/require/foot.php');
 } else {
 
    header('location: index.php?error=notConnected');
 }
 ?>
-
-</body>
-
-</html>

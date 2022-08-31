@@ -1,25 +1,22 @@
 <?php
 session_start();
-require('../require/co_bdd.php');
+require('../require/check_data.php');
 
-if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password']) && $_POST['password'] != NULL) {
+if ($check_email !== false && $check_password === true && $password != NULL) {
+
+   require('../require/co_bdd.php');
 
    $req = $bdd->prepare('SELECT * FROM users WHERE email = :email');
-   $req->execute(array(
-      ':email' => $_POST['email']
-   ));
+   $req->bindParam(':email', $email, PDO::PARAM_STR);
+   $req->execute();
    $user = $req->fetch();
 
    if ($user) {
 
-      if (password_verify($_POST['password'], $user['password'])) {
+      if (password_verify($password, htmlspecialchars($user['password']))) {
 
-         $_SESSION['users']['id'] = $user['id'];
-         $_SESSION['users']['name'] = $user['name'];
-         $_SESSION['users']['lastname'] = $user['lastname'];
-         $_SESSION['users']['email'] = $user['email'];
-         $_SESSION['users']['type'] = $user['type'];
-         $_SESSION['users']['credits'] = $user['credits'];
+         $_SESSION['users']['id'] = htmlspecialchars($user['id']);
+         $_SESSION['users']['type'] = htmlspecialchars($user['type']);
 
          header('location: ../../my_account.php?success=connected');
       } else {

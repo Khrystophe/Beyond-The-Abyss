@@ -3,7 +3,7 @@ session_start();
 $page = 'single_player';
 require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
-require('./assets/actions/functions.php');
+require('./assets/require/functions.php');
 
 $content = getContentAndUserInformations($bdd);
 $content_id = htmlspecialchars($content['id']);
@@ -22,9 +22,10 @@ $content_author_lastname = htmlspecialchars($content['lastname']);
 $comments = getComments($bdd);
 
 if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
-  $user_session = $_SESSION['users'];
-  $user_session_id = htmlspecialchars($_SESSION['users']['id']);
-  $user_session_credits = htmlspecialchars($_SESSION['users']['credits']);
+
+  $user_session = getUserInformations($bdd);
+  $user_session_id = htmlspecialchars($user_session['id']);
+  $user_session_credits = htmlspecialchars($user_session['credits']);
 }
 
 ?>
@@ -234,9 +235,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
       </div>
     </div>
   </div>
-  <?php require('./assets/require/foot.php'); ?>
 </main>
 
-</body>
-
-</html>
+<?php require('./assets/require/foot.php'); ?>
