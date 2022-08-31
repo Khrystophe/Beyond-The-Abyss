@@ -8,7 +8,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
    require('./assets/require/head.php');
    require('./assets/actions/functions.php');
 
-   $get_user_informations = getUserInformations();
+   $get_user_informations = getUserInformations($bdd);
    $get_user_id = htmlspecialchars($get_user_informations['id']);
    $get_user_name = htmlspecialchars($get_user_informations['name']);
    $get_user_lastname = htmlspecialchars($get_user_informations['lastname']);
@@ -16,7 +16,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
    $get_user_type = htmlspecialchars($get_user_informations['type']);
    $get_user_credits = htmlspecialchars($get_user_informations['credits']);
 
-   $notifications = getNotifications();
+   $notifications = getNotifications($bdd);
 
 ?>
 

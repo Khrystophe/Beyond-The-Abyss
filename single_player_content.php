@@ -5,7 +5,7 @@ require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
 require('./assets/actions/functions.php');
 
-$content = getContentAndUserInformations();
+$content = getContentAndUserInformations($bdd);
 $content_id = htmlspecialchars($content['id']);
 $content_title = htmlspecialchars($content['title']);
 $content_composer = htmlspecialchars($content['composer']);
@@ -19,7 +19,7 @@ $content_id_user = htmlspecialchars($content['id_users']);
 $content_author_name = htmlspecialchars($content['name']);
 $content_author_lastname = htmlspecialchars($content['lastname']);
 
-$comments = getComments();
+$comments = getComments($bdd);
 
 if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
   $user_session = $_SESSION['users'];
@@ -200,7 +200,10 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
           $comment_date = htmlspecialchars($comment['date']);
           $comment_likes = htmlspecialchars($comment['likes']);
 
-          $req = $bdd->query('SELECT COUNT(id_users) FROM comments WHERE id_users =' . $comment_user_id);
+          $req = $bdd->prepare('SELECT COUNT(id_users) FROM comments WHERE id_users = :id_users');
+          $req->execute(array(
+            ':id_users' => $comment_user_id
+          ));
           $number_of_user_comments = $req->fetch();
 
         ?>

@@ -5,7 +5,7 @@ require('./assets/require/co_bdd.php');
 require('./assets/require/head.php');
 require('./assets/actions/functions.php');
 
-$random_tuto = getRandomTuto();
+$random_tuto = getRandomTuto($bdd);
 $random_tuto_id = htmlspecialchars($random_tuto['id']);
 $random_tuto_title = htmlspecialchars($random_tuto['title']);
 $random_tuto_content = htmlspecialchars($random_tuto['content']);
@@ -17,7 +17,7 @@ $random_tuto_description = htmlspecialchars($random_tuto['description']);
 $random_tuto_likes = htmlspecialchars($random_tuto['likes']);
 $random_tuto_id_users = htmlspecialchars($random_tuto['id_users']);
 
-$random_perf = getRandomPerf();
+$random_perf = getRandomPerf($bdd);
 $random_perf_id = htmlspecialchars($random_perf['id']);
 $random_perf_title = htmlspecialchars($random_perf['title']);
 $random_perf_content = htmlspecialchars($random_perf['content']);
@@ -29,7 +29,7 @@ $random_perf_description = htmlspecialchars($random_perf['description']);
 $random_perf_likes = htmlspecialchars($random_perf['likes']);
 $random_perf_id_users = htmlspecialchars($random_perf['id_users']);
 
-$random_sheet = getRandomSheet();
+$random_sheet = getRandomSheet($bdd);
 $random_sheet_id = htmlspecialchars($random_sheet['id']);
 $random_sheet_title = htmlspecialchars($random_sheet['title']);
 $random_sheet_content = htmlspecialchars($random_sheet['content']);

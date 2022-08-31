@@ -2,7 +2,7 @@
 session_start();
 require('../require/co_bdd.php');
 
-if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password'])) {
+if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password']) && $_POST['password'] != NULL) {
 
    $req = $bdd->prepare('SELECT * FROM users WHERE email = :email');
    $req->execute(array(
@@ -28,4 +28,6 @@ if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password'
    } else {
       header('location: ../../login.php?error=nonexist');
    }
+} else {
+   header('location: ../../login.php?error=null');
 }

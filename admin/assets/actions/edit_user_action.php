@@ -10,12 +10,11 @@ $user_email = $req->fetch();
 
 if ($_POST['email'] == $user_email['email']) {
 
-    $req = $bdd->prepare('UPDATE users SET name = :name, lastname = :lastname, email = :email, password = :password, credits = :credits, type = :type WHERE id= :id');
+    $req = $bdd->prepare('UPDATE users SET name = :name, lastname = :lastname, email = :email, credits = :credits, type = :type WHERE id= :id');
     $req->execute(array(
         ':name' => $_POST['name'],
         ':lastname' => $_POST['lastname'],
         ':email' => $_POST['email'],
-        ':password' => password_hash($_POST['password'], PASSWORD_BCRYPT),
         ':credits' => $_POST['credits'],
         ':type' => $_POST['type'],
         ':id' => $_POST['id']
@@ -28,12 +27,11 @@ if ($_POST['email'] == $user_email['email']) {
 
     if (in_array($_POST['email'], array_column($email, 'email'), TRUE) == false) {
 
-        $req = $bdd->prepare('UPDATE users SET name = :name, lastname = :lastname, email = :email, password = :password, credits = :credits, type = :type WHERE id= :id');
+        $req = $bdd->prepare('UPDATE users SET name = :name, lastname = :lastname, email = :email,  credits = :credits, type = :type WHERE id= :id');
         $req->execute(array(
             ':name' => $_POST['name'],
             ':lastname' => $_POST['lastname'],
             ':email' => $_POST['email'],
-            ':password' => password_hash($_POST['password'], PASSWORD_BCRYPT),
             ':credits' => $_POST['credits'],
             ':type' => $_POST['type'],
             ':id' => $_POST['id']

@@ -1,32 +1,28 @@
 <?php
 
-function getRandomTuto()
+function getRandomTuto(PDO $bdd)
 {
-  global $bdd;
   $req = $bdd->query("SELECT * FROM contents WHERE category = 'Tutorial' ORDER BY RAND() LIMIT 1 ");
   $random_tuto = $req->fetch();
   return $random_tuto;
 }
 
-function getRandomPerf()
+function getRandomPerf(PDO $bdd)
 {
-  global $bdd;
   $req = $bdd->query("SELECT * FROM contents WHERE category = 'Performance' ORDER BY RAND() LIMIT 1 ");
   $random_perf = $req->fetch();
   return $random_perf;
 }
 
-function getRandomSheet()
+function getRandomSheet(PDO $bdd)
 {
-  global $bdd;
   $req = $bdd->query("SELECT * FROM contents WHERE category = 'Sheet Music' ORDER BY RAND() LIMIT 1 ");
   $random_sheet = $req->fetch();
   return $random_sheet;
 }
 
-function getContents()
+function getContents(PDO $bdd)
 {
-  global $bdd;
   $req = $bdd->prepare('SELECT * FROM contents WHERE category = :category ');
   $req->execute(array(
     ':category' => $_GET['category']
@@ -35,9 +31,8 @@ function getContents()
   return $contents;
 }
 
-function getUsersContentsInformations()
+function getUsersContentsInformations(PDO $bdd)
 {
-  global $bdd;
   $req = $bdd->query('SELECT users.id, users.name, users.lastname
   FROM users
   INNER JOIN contents
@@ -46,9 +41,8 @@ function getUsersContentsInformations()
   return $get_users_contents_informations;
 }
 
-function getUserContent()
+function getUserContent(PDO $bdd)
 {
-  global $bdd;
   $req = $bdd->prepare('SELECT * FROM contents WHERE id_users = :id_users ');
   $req->execute(array(
     ':id_users' => $_SESSION['users']['id']
@@ -57,9 +51,8 @@ function getUserContent()
   return $contents;
 }
 
-function getUserPurchasedContent()
+function getUserPurchasedContent(PDO $bdd)
 {
-  global $bdd;
   $req = $bdd->prepare('SELECT purchased_contents.id_contents, contents.title , contents.composer, contents.category, contents.content, contents.price, contents.id, contents.description, contents.id_users, contents.likes, contents.level
   FROM purchased_contents 
   INNER JOIN contents
@@ -72,9 +65,8 @@ function getUserPurchasedContent()
   return $contents;
 }
 
-function getSearchResults()
+function getSearchResults(PDO $bdd)
 {
-  global $bdd;
   $title = $_POST['title'];
   $titleSplit = str_split($title, 3);
   $titleImplode = implode("%' OR title LIKE '%", $titleSplit);
@@ -107,9 +99,8 @@ function getSearchResults()
   return $contents;
 }
 
-function getUserInformations()
+function getUserInformations(PDO $bdd)
 {
-  global $bdd;
   $req = $bdd->prepare('SELECT * FROM users WHERE id= :id');
   $req->execute(array(
     ':id' => $_SESSION['users']['id']
@@ -118,9 +109,8 @@ function getUserInformations()
   return $get_user_informations;
 }
 
-function getContentAndUserInformations()
+function getContentAndUserInformations(PDO $bdd)
 {
-  global $bdd;
   $req = $bdd->prepare('SELECT users.name, users.lastname, contents.id, contents.title, contents.composer, contents.category, contents.level, contents.content, contents.price, contents.description, contents.likes, contents.id_users
   FROM users
   INNER JOIN contents
@@ -132,9 +122,8 @@ function getContentAndUserInformations()
   return $content_author;
 }
 
-function getComments()
+function getComments(PDO $bdd)
 {
-  global $bdd;
   $req = $bdd->prepare('SELECT  users.name, users.lastname, comments.comment, comments.id,comments.id_users, comments.date, comments.likes
   FROM comments
   INNER JOIN contents
@@ -149,9 +138,8 @@ function getComments()
   return $comments;
 }
 
-function getNotifications()
+function getNotifications(PDO $bdd)
 {
-  global $bdd;
   $req = $bdd->prepare('SELECT id, notification, date FROM notifications WHERE id_users = :id ORDER BY id');
   $req->execute(array(
     ':id' => $_SESSION['users']['id']

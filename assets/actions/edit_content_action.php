@@ -163,7 +163,7 @@ if (!isset($content) && empty($content)) {
         ':title' => $_POST['title'],
         ':composer' => $_POST['composer'],
         ':level' => $_POST['level'],
-        'category' => $_POST['category'],
+        ':category' => $_POST['category'],
         ':price' => $new_price,
         ':description' => $_POST['description'],
         ':id' => $_POST['id']
@@ -182,7 +182,7 @@ if (!isset($content) && empty($content)) {
         ':title' => $_POST['title'],
         ':composer' => $_POST['composer'],
         ':level' => $_POST['level'],
-        'category' => $_POST['category'],
+        ':category' => $_POST['category'],
         ':price' => $new_price,
         ':content' => $content,
         ':id' => $_POST['id']

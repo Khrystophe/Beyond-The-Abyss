@@ -7,50 +7,56 @@ if ($_GET['category'] != 'search_results') {
    if ($_GET['category'] == 'Tutorial') {
 
       $page = 'tuto_content';
-      $contents = getContents();
-      $users_contents_informations = getUsersContentsInformations();
+      $contents = getContents($bdd);
+      $users_contents_informations = getUsersContentsInformations($bdd);
    } else if ($_GET['category'] == 'Performance') {
 
       $page = 'perf_content';
-      $contents = getContents();
-      $users_contents_informations = getUsersContentsInformations();
+      $contents = getContents($bdd);
+      $users_contents_informations = getUsersContentsInformations($bdd);
    } else if ($_GET['category'] == 'Sheet Music') {
 
       $page = 'sheet_content';
-      $contents = getContents();
-      $users_contents_informations = getUsersContentsInformations();
+      $contents = getContents($bdd);
+      $users_contents_informations = getUsersContentsInformations($bdd);
    } else if ($_GET['category'] == 'user_content') {
 
       $page = 'user_content';
-      $contents = getUserContent();
+      $contents = getUserContent($bdd);
 
       if (empty($contents)) {
          header('location: /Diplome/my_account.php?empty=user_content');
       }
 
-      $users_contents_informations = getUsersContentsInformations();
+      $users_contents_informations = getUsersContentsInformations($bdd);
    } else if ($_GET['category'] == 'user_purchased_content') {
 
       $page = 'user_purchased_content';
-      $contents = getUserPurchasedContent();
+      $contents = getUserPurchasedContent($bdd);
 
       if (empty($contents)) {
          header('location: /Diplome/my_account.php?empty=user_purchased_content');
       }
 
-      $users_contents_informations = getUsersContentsInformations();
+      $users_contents_informations = getUsersContentsInformations($bdd);
    }
 } else {
 
-   $page = 'search_results';
-   $contents = getSearchResults();
-   $users_contents_informations = getUsersContentsInformations();
+   if (isset($_POST) && !empty($_POST)) {
+
+      $page = 'search_results';
+      $contents = getSearchResults($bdd);
+      $users_contents_informations = getUsersContentsInformations($bdd);
+   } else {
+
+      header('location: index.php');
+   }
 }
 
 if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
    $user_session = $_SESSION['users'];
 
-   $user_session = getUserInformations();
+   $user_session = getUserInformations($bdd);
    $user_session_id = htmlspecialchars($user_session['id']);
    $user_session_credits = htmlspecialchars($user_session['credits']);
 }

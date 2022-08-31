@@ -10,6 +10,9 @@ try {
       PDO::ATTR_PERSISTENT => true,
       PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
    ]);
-} catch (Exception $e) {
-   die('Erreur : ' . $e->getMessage());
+} catch (PDOException $e) {
+
+   error_log('PDOException - ' . $e->getMessage(), 0);
+   http_response_code(500);
+   die('Error establishing connection with database');
 }
