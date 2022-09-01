@@ -2,7 +2,7 @@
 
 function getRandomTuto(PDO $bdd)
 {
-  $tutorial = 'Tutorial';
+  $tutorial = 'tutorial';
   $req = $bdd->prepare("SELECT * FROM contents WHERE category = :category ORDER BY RAND() LIMIT 1 ");
   $req->bindParam(':category', $tutorial, PDO::PARAM_STR);
   $req->execute();
@@ -12,7 +12,7 @@ function getRandomTuto(PDO $bdd)
 
 function getRandomPerf(PDO $bdd)
 {
-  $performance = 'Performance';
+  $performance = 'performance';
   $req = $bdd->prepare("SELECT * FROM contents WHERE category = :category ORDER BY RAND() LIMIT 1 ");
   $req->bindParam(':category', $performance, PDO::PARAM_STR);
   $req->execute();
@@ -22,7 +22,7 @@ function getRandomPerf(PDO $bdd)
 
 function getRandomSheet(PDO $bdd)
 {
-  $sheet_music = 'Sheet Music';
+  $sheet_music = 'sheet_music';
   $req = $bdd->prepare("SELECT * FROM contents WHERE category = :category ORDER BY RAND() LIMIT 1 ");
   $req->bindParam(':category', $sheet_music, PDO::PARAM_STR);
   $req->execute();
@@ -74,37 +74,23 @@ function getUserPurchasedContent(PDO $bdd, $session_users_id)
   return $contents;
 }
 
-function getSearchResults(PDO $bdd)
+function getSearchResults(PDO $bdd, $post_title, $post_composer, $post_category, $post_level)
 {
-  $title = $_POST['title'];
-  $titleSplit = str_split($title, 3);
-  $titleImplode = implode("%' OR title LIKE '%", $titleSplit);
+  $title =  $post_title . '%';
 
-  $composer = $_POST['composer'];
-  $composerSplit = str_split($composer, 3);
-  $composerImplode = implode("%' OR composer LIKE '%", $composerSplit);
+  $composer = $post_composer . '%';
 
-  $category = $_POST['category'];
+  $category = '%' . $post_category . '%';
 
-  $level = $_POST['level'];
+  $level = '%' . $post_level . '%';
 
-  if ((isset($level) && !empty($level)) && (isset($category) && !empty($category))) {
-
-    $req = $bdd->query("SELECT * FROM contents WHERE level = '$level' AND category = '$category' AND (composer LIKE '%" . $composerImplode . "%') AND (title LIKE '%" . $titleImplode . "%')");
-    $contents = $req->fetchAll();
-  } else if (isset($level) && !empty($level)) {
-
-    $req = $bdd->query("SELECT * FROM contents WHERE level = '$level' AND (composer LIKE '%" . $composerImplode . "%') AND (title LIKE '%" . $titleImplode . "%')");
-    $contents = $req->fetchAll();
-  } else if (isset($category) && !empty($category)) {
-
-    $req = $bdd->query("SELECT * FROM contents WHERE category = '$category' AND (composer LIKE '%" . $composerImplode . "%') AND (title LIKE '%" . $titleImplode . "%')");
-    $contents = $req->fetchAll();
-  } else {
-
-    $req = $bdd->query("SELECT * FROM contents WHERE (title LIKE '%" . $titleImplode . "%') AND (composer LIKE '%" . $composerImplode . "%')");
-    $contents = $req->fetchAll();
-  }
+  $req = $bdd->prepare("SELECT * FROM contents WHERE level LIKE :level AND category LIKE :category AND composer LIKE :composer AND title LIKE :title");
+  $req->bindParam(':level', $level);
+  $req->bindParam(':category', $category);
+  $req->bindParam(':composer',  $composer);
+  $req->bindParam(':title', $title);
+  $req->execute();
+  $contents = $req->fetchAll();
   return $contents;
 }
 

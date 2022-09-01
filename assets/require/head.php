@@ -57,9 +57,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                         <label for="search_category"></label>
                         <select class="inputbox" id="search_category" name="category">
                            <option value="">--Category--</option>
-                           <option value="Tutorial">Tutorial</option>
-                           <option value="Performance">Performances</option>
-                           <option value="Sheet Music">Sheet Music</option>
+                           <option value="tutorial">Tutorial</option>
+                           <option value="performance">Performances</option>
+                           <option value="sheet_music">Sheet Music</option>
                         </select>
 
                         <label for="search_level"></label>
@@ -121,21 +121,21 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'tuto_content') { ?>
-                        <a class="link_menu" href="content.php?category=Tutorial">Tutorials</a>
+                        <a class="link_menu" href="content.php?category=tutorial">Tutorials</a>
                      <?php } ?>
                   </div>
 
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'perf_content') { ?>
-                        <a class="link_menu" href="content.php?category=Performance">Performances</a>
+                        <a class="link_menu" href="content.php?category=performance">Performances</a>
                      <?php } ?>
                   </div>
 
 
                   <div class="menu__left__inner__item">
                      <?php if ($page != 'sheet_content') { ?>
-                        <a class="link_menu" href="content.php?category=Sheet Music">Sheet Music</a>
+                        <a class="link_menu" href="content.php?category=sheet_music">Sheet Music</a>
                      <?php } ?>
                   </div>
 

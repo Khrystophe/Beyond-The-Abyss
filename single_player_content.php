@@ -62,9 +62,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
               <label for="edit_category"></label>
               <select class="inputbox" id="edit_category" name="category">
                 <option value="<?= $content_category ?>"><?= $content_category ?></option>
-                <option value="Tutorial">Tutorial</option>
-                <option value="Performance">Performances</option>
-                <option value="Sheet Music">Sheet Music</option>
+                <option value="tutorial">Tutorial</option>
+                <option value="performance">Performances</option>
+                <option value="sheet_music">Sheet Music</option>
               </select>
 
               <label for="edit_level"></label>
@@ -110,6 +110,16 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
       </div>
     </div>
 
+    <?php
+    if ($content_category == 'tutorial') {
+      $content_category = 'Tutorial';
+    } else if ($content_category == 'performance') {
+      $content_category = 'Performance';
+    } else if ($content_category == 'sheet_music') {
+      $content_category = 'Sheet Music';
+    }
+    ?>
+
     <div class="movie-card">
       <div class="single_player_container">
 
@@ -120,6 +130,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
           <div class="details">
             <h1 class="title1"><?= $content_title ?></h1>
             <h2 class="title2"><?= $content_composer ?></h2>
+            <h2 class="title2"><?= $content_category ?></h2>
           </div>
 
         </div>

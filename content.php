@@ -3,7 +3,14 @@ session_start();
 require('./assets/require/check_data.php');
 
 
-if ($check_get_category === true && ((isset($check_session_users_id) && $check_session_users_id === true)) xor !isset($check_session_users_id)) {
+if (
+   $check_get_category === true
+   && ((isset($check_session_users_id) && $check_session_users_id === true) xor !isset($check_session_users_id))
+   && ((isset($check_post_title) && $check_post_title === true) xor !isset($check_post_title))
+   && ((isset($check_post_composer) && $check_post_composer === true) xor !isset($check_post_composer))
+   && ((isset($check_post_category) && $check_post_category === true) xor !isset($check_post_category))
+   && ((isset($check_post_level) && $check_post_level === true) xor !isset($check_post_level))
+) {
 
    require('./assets/require/co_bdd.php');
    require('./assets/require/functions.php');
@@ -45,8 +52,21 @@ if ($check_get_category === true && ((isset($check_session_users_id) && $check_s
 
       if (isset($_POST) && !empty($_POST)) {
 
+         if (!isset($post_title)) {
+            $post_title = null;
+         }
+         if (!isset($post_composer)) {
+            $post_composer = null;
+         }
+         if (!isset($post_category)) {
+            $post_category = null;
+         }
+         if (!isset($post_level)) {
+            $post_level = null;
+         }
+
          $page = 'search_results';
-         $contents = getSearchResults($bdd);
+         $contents = getSearchResults($bdd, $post_title, $post_composer, $post_category, $post_level);
       } else {
 
          header('location: index.php');
@@ -83,6 +103,14 @@ if ($check_get_category === true && ((isset($check_session_users_id) && $check_s
                $content_description = htmlspecialchars($content['description']);
                $content_likes = htmlspecialchars($content['likes']);
                $content_id_user = htmlspecialchars($content['id_users']);
+
+               if ($content_category == 'tutorial') {
+                  $content_category = 'Tutorial';
+               } else if ($content_category == 'performance') {
+                  $content_category = 'Performance';
+               } else if ($content_category == 'sheet_music') {
+                  $content_category = 'Sheet Music';
+               }
 
                $user_content_information = getUserContentInformations($bdd, $content_id_user);
 

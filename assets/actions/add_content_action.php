@@ -27,11 +27,11 @@ if (isset($_FILES) && !empty($_FILES)) {
 $free_content = $_POST['free_content'];
 
 if (!isset($free_content)) {
-   if ($_POST['category'] == 'Tutorial') {
+   if ($_POST['category'] == 'tutorial') {
       $price = 15;
-   } else if ($_POST['category'] == 'Performance') {
+   } else if ($_POST['category'] == 'performance') {
       $price = 5;
-   } else if ($_POST['category'] == 'Sheet Music') {
+   } else if ($_POST['category'] == 'sheet_music') {
       $price = 10;
    }
 } else {
@@ -58,11 +58,11 @@ $req->execute(array(
 $nbrOfCredits = $req->fetch();
 $credits = implode($nbrOfCredits);
 
-if ($_POST['category'] == 'Tutorial') {
+if ($_POST['category'] == 'tutorial') {
    $credits += 30;
-} else if ($_POST['category'] == 'Performance') {
+} else if ($_POST['category'] == 'performance') {
    $credits += 10;
-} else if ($_POST['category'] == 'Sheet Music') {
+} else if ($_POST['category'] == 'sheet_music') {
    $credits += 20;
 }
 
@@ -76,11 +76,11 @@ $req->execute(array(
 if ($_GET['type'] == 'admin') {
    header('location: ../../admin/contents.php');
 } else {
-   if ($_POST['category'] == "Tutorial") {
+   if ($_POST['category'] == "tutorial") {
       header('location: ../../content.php?category=Tutorial&success=add_content');
-   } else if ($_POST['category'] == "Performance") {
+   } else if ($_POST['category'] == "performance") {
       header('location: ../../content.php?category=Performance&success=add_content');
-   } else if ($_POST['category'] == "Sheet Music") {
+   } else if ($_POST['category'] == "sheet_music") {
       header('location: ../../content.php?category=Sheet Music&success=add_content');
    }
 }

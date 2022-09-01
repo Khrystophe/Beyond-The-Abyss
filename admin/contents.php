@@ -50,9 +50,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                             <div class="mb-3">
                                 <select class="form-select" aria-label="Default select example" name="category" required>
                                     <option value="">--Category--</option>
-                                    <option value="Tutorial">Tutorial</option>
-                                    <option value="Performance">Performances</option>
-                                    <option value="Sheet Music">Sheet Music</option>n>
+                                    <option value="tutorial">Tutorial</option>
+                                    <option value="performance">Performances</option>
+                                    <option value="sheet_music">Sheet Music</option>n>
                                 </select>
                             </div>
 
@@ -169,9 +169,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                     <label for="admin_edit_category">Category</label>
                                                     <select class="form-select" id="admin_edit_category" aria-label="Default select example" name="category">
                                                         <option value="<?= $content['category'] ?>"><?= $content['category'] ?></option>
-                                                        <option value="Tutorial">Tutorial</option>
-                                                        <option value="Performance">Performances</option>
-                                                        <option value="Sheet Music">Sheet Music</option>
+                                                        <option value="tutorial">Tutorial</option>
+                                                        <option value="performance">Performances</option>
+                                                        <option value="sheet_music">Sheet Music</option>
                                                     </select>
                                                 </div>
 

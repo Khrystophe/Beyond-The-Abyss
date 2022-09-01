@@ -70,21 +70,21 @@ $random_sheet_id_users = htmlspecialchars($random_sheet['id_users']);
 
       <div class="features">
          <div class="cards one">
-            <div class="titles link_page"><a href="content.php?category=Tutorial">Tutorials</a></div>
+            <div class="titles link_page"><a href="content.php?category=tutorial">Tutorials</a></div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>
          </div>
 
          <div class="cards two">
-            <div class="titles link_page"><a href="content.php?category=Performance">Performances</a></div>
+            <div class="titles link_page"><a href="content.php?category=performance">Performances</a></div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>
          </div>
 
          <div class="cards three">
-            <div class="titles link_page"><a href="content.php?category=Sheet Music">Sheet music</a></div>
+            <div class="titles link_page"><a href="content.php?category=sheet_music">Sheet music</a></div>
             <div class="line one"></div>
             <div class="line two"></div>
             <div class="line three"></div>

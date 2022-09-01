@@ -130,9 +130,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                      <label for="category"></label>
                      <select class="inputbox" id="category" name="category" required>
                         <option value="">--Category--</option>
-                        <option value="Tutorial">Tutorial</option>
-                        <option value="Performance">Performances</option>
-                        <option value="Sheet Music">Sheet Music</option>
+                        <option value="tutorial">Tutorial</option>
+                        <option value="performance">Performances</option>
+                        <option value="sheet_music">Sheet Music</option>
                      </select>
 
                      <label for="level"></label>

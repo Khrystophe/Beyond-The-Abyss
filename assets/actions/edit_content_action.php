@@ -29,24 +29,24 @@ if (isset($_POST['free_content']) && !empty($_POST['free_content'])) {
 }
 
 if (!isset($free_content)) {
-    if ($_POST['category'] == 'Tutorial') {
+    if ($_POST['category'] == 'tutorial') {
         $new_price = 15;
         $author_credits += 30;
-    } else if ($_POST['category'] == 'Performance') {
+    } else if ($_POST['category'] == 'performance') {
         $new_price = 5;
         $author_credits += 10;
-    } else if ($_POST['category'] == 'Sheet Music') {
+    } else if ($_POST['category'] == 'sheet_music') {
         $new_price = 10;
         $author_credits += 20;
     }
 } else {
-    if ($_POST['category'] == 'Tutorial') {
+    if ($_POST['category'] == 'tutorial') {
         $new_price = 0;
         $author_credits += 30;
-    } else if ($_POST['category'] == 'Performance') {
+    } else if ($_POST['category'] == 'performance') {
         $new_price = 0;
         $author_credits += 10;
-    } else if ($_POST['category'] == 'Sheet Music') {
+    } else if ($_POST['category'] == 'sheet_music') {
         $new_price = 0;
         $author_credits += 20;
     }
