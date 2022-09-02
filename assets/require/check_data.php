@@ -125,6 +125,25 @@ if (isset($_POST['email']) && !empty($_POST['email'])) {
 }
 
 
+if (isset($_FILES) && !empty($_FILES)) {
+  if (array_key_exists('content', $_FILES)) {
+
+    $allowed_mime_types = ["video/webm", "video/mp4", "video/ogv"];
+
+    $check_files_mime_type = mime_content_type($_FILES['content']['tmp_name']);
+
+    if (in_array($check_files_mime_type, $allowed_mime_types)) {
+
+      $files_content_name = $_FILES['content']['name'];
+      $files_content_type = $_FILES['content']['type'];
+      $files_content_tmp_name = $_FILES['content']['tmp_name'];
+      $files_content_error = $_FILES['content']['error'];
+      $files_content_size = $_FILES['content']['size'];
+    }
+  }
+}
+
+
 if (isset($_POST['password']) && !empty($_POST['password'])) {
 
   $check_post_password = is_string($_POST['password'])

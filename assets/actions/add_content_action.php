@@ -1,86 +1,113 @@
 <?php
 session_start();
-require('../require/co_bdd.php');
+require('../require/check_data.php');
 
 
+var_dump($_FILES);
+var_dump($check_files_mime_type);
 
-if (isset($_FILES) && !empty($_FILES)) {
-   if (array_key_exists('content', $_FILES)) {
-      if ($_FILES['content']['error'] == 0) {
-         if (in_array($_FILES['content']['type'], ['video/mp4', 'image/png', 'image/jpeg'])) {
-            if ($_FILES['content']['size'] <= 128000000) {
-               $content = uniqid() . '.' . pathinfo($_FILES['content']['name'], PATHINFO_EXTENSION);
-               move_uploaded_file($_FILES['content']['tmp_name'], '../contents_img/' . $content);
-            } else {
-               var_dump('Le fichier est trop volumineux…');
-               exit;
-            }
+if (
+   isset($files_content_name)
+   && isset($files_content_type)
+   && isset($files_content_tmp_name)
+   && isset($files_content_error)
+   && isset($files_content_size)
+) {
+
+   require('../require/co_bdd.php');
+
+   if ($files_content_error == 0) {
+      if (in_array($files_content_type, $allowed_mime_types)) {
+         if ($files_content_size <= 128000000) {
+            $content = uniqid() . '.' . pathinfo($files_content_name, PATHINFO_EXTENSION);
+            move_uploaded_file($files_content_tmp_name, '../contents_img/' . $content);
          } else {
-            echo 'Le type mime du fichier est incorrect…';
+            var_dump('Le fichier est trop volumineux…');
+            exit;
          }
       } else {
-         echo 'Le fichier n\'a pas pu être récupéré…';
+         echo 'Le type mime du fichier est incorrect…';
+      }
+   } else {
+      echo 'Le fichier n\'a pas pu être récupéré…';
+   }
+
+
+   if (isset($_POST['free_content']) && !empty($_POST['free_content'])) {
+      $free_content = $_POST['free_content'];
+   }
+
+
+   if (!isset($free_content)) {
+      if ($_POST['category'] == 'tutorial') {
+         $price = 15;
+      } else if ($_POST['category'] == 'performance') {
+         $price = 5;
+      } else if ($_POST['category'] == 'sheet_music') {
+         $price = 10;
+      }
+   } else {
+      $price = 0;
+   }
+
+   $req = $bdd->prepare("INSERT INTO contents( title, composer, level, category, content, price, description, id_users) VALUES (:title, :composer, :level, :category, :content, :price, :description, :id_users)");
+   $req->execute(array(
+      ':title' => $_POST['title'],
+      ':composer' => $_POST['composer'],
+      ':level' => $_POST['level'],
+      'category' => $_POST['category'],
+      ':content' => $content,
+      ':price' => $price,
+      ':description' => nl2br($_POST['description']),
+      ':id_users' => $_SESSION['users']['id'],
+   ));
+
+
+   $req = $bdd->prepare('SELECT credits FROM users WHERE users.id = :users_id');
+   $req->execute(array(
+      ':users_id' => $_SESSION['users']['id']
+   ));
+   $nbrOfCredits = $req->fetch();
+   $credits = implode($nbrOfCredits);
+
+   if ($_POST['category'] == 'tutorial') {
+      $credits += 30;
+   } else if ($_POST['category'] == 'performance') {
+      $credits += 10;
+   } else if ($_POST['category'] == 'sheet_music') {
+      $credits += 20;
+   }
+
+   $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
+   $req->execute(array(
+      ':credits' => $credits,
+      ':users_id' => $_SESSION['users']['id']
+   ));
+
+
+   if ($_GET['type'] == 'admin') {
+
+      header('location: ../../admin/contents.php');
+      die();
+   } else {
+      if ($_POST['category'] == "tutorial") {
+
+         header('location: ../../content.php?category=tutorial&success=add_content');
+         die();
+      } else if ($_POST['category'] == "performance") {
+
+         header('location: ../../content.php?category=performance&success=add_content');
+         die();
+      } else if ($_POST['category'] == "sheet_music") {
+
+         header('location: ../../content.php?category=sheet_music&success=add_content');
+         die();
       }
    }
-}
-
-$free_content = $_POST['free_content'];
-
-if (!isset($free_content)) {
-   if ($_POST['category'] == 'tutorial') {
-      $price = 15;
-   } else if ($_POST['category'] == 'performance') {
-      $price = 5;
-   } else if ($_POST['category'] == 'sheet_music') {
-      $price = 10;
-   }
 } else {
-   $price = 0;
-}
 
-$req = $bdd->prepare("INSERT INTO contents( title, composer, level, category, content, price, description, id_users) VALUES (:title, :composer, :level, :category, :content, :price, :description, :id_users)");
-$req->execute(array(
-   ':title' => $_POST['title'],
-   ':composer' => $_POST['composer'],
-   ':level' => $_POST['level'],
-   'category' => $_POST['category'],
-   ':content' => $content,
-   ':price' => $price,
-   ':description' => nl2br($_POST['description']),
-   ':id_users' => $_SESSION['users']['id'],
-));
-
-
-$req = $bdd->prepare('SELECT credits FROM users WHERE users.id = :users_id');
-$req->execute(array(
-   ':users_id' => $_SESSION['users']['id']
-));
-$nbrOfCredits = $req->fetch();
-$credits = implode($nbrOfCredits);
-
-if ($_POST['category'] == 'tutorial') {
-   $credits += 30;
-} else if ($_POST['category'] == 'performance') {
-   $credits += 10;
-} else if ($_POST['category'] == 'sheet_music') {
-   $credits += 20;
-}
-
-$req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
-$req->execute(array(
-   ':credits' => $credits,
-   ':users_id' => $_SESSION['users']['id']
-));
-
-
-if ($_GET['type'] == 'admin') {
-   header('location: ../../admin/contents.php');
-} else {
-   if ($_POST['category'] == "tutorial") {
-      header('location: ../../content.php?category=Tutorial&success=add_content');
-   } else if ($_POST['category'] == "performance") {
-      header('location: ../../content.php?category=Performance&success=add_content');
-   } else if ($_POST['category'] == "sheet_music") {
-      header('location: ../../content.php?category=Sheet Music&success=add_content');
-   }
+   $bdd = null;
+   http_response_code(400);
+   header('location: ../../register.php?error=processing_bad_or_malformed_request');
+   die();
 }

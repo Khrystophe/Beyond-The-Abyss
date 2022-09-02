@@ -65,7 +65,7 @@ if (
               <div class="modal_form_content">
 
                 <span class="edit_close">&times;</span>
-                <form class="form_action" action="./assets/actions/edit_content_action.php" method="post" enctype="multipart/form-data">
+                <form class="form_action" action="./assets/actions/edit_content_action.php?type=user" method="post" enctype="multipart/form-data">
 
                   <label for="id"></label>
                   <input type="hidden" id="id" name="id" value="<?= $content_id ?>">
