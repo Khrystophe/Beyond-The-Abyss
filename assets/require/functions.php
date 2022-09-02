@@ -1,5 +1,14 @@
 <?php
 
+function getUserSessionInformations(PDO $bdd, $session_users_id)
+{
+  $req = $bdd->prepare('SELECT  name, lastname, credits FROM users WHERE id= :id');
+  $req->bindParam(':id', $session_users_id, PDO::PARAM_INT);
+  $req->execute();
+  $user = $req->fetch();
+  return $user;
+}
+
 function getRandomTuto(PDO $bdd)
 {
   $tutorial = 'tutorial';
@@ -74,45 +83,49 @@ function getUserPurchasedContent(PDO $bdd, $session_users_id)
   return $contents;
 }
 
+function getIdUserFromPurchasedContent(PDO $bdd, $content_id)
+{
+  $req = $bdd->prepare('SELECT id_users FROM purchased_contents WHERE id_contents = :contents_id');
+  $req->bindParam(':contents_id', $content_id, PDO::PARAM_INT);
+  $req->execute();
+  $user_purchased_contents = $req->fetchAll();
+  return $user_purchased_contents;
+}
+
 function getSearchResults(PDO $bdd, $post_title, $post_composer, $post_category, $post_level)
 {
   $title =  $post_title . '%';
-
   $composer = $post_composer . '%';
-
   $category = '%' . $post_category . '%';
-
   $level = '%' . $post_level . '%';
 
   $req = $bdd->prepare("SELECT * FROM contents WHERE level LIKE :level AND category LIKE :category AND composer LIKE :composer AND title LIKE :title");
-  $req->bindParam(':level', $level);
-  $req->bindParam(':category', $category);
-  $req->bindParam(':composer',  $composer);
-  $req->bindParam(':title', $title);
+  $req->bindParam(':level', $level, PDO::PARAM_STR);
+  $req->bindParam(':category', $category, PDO::PARAM_STR);
+  $req->bindParam(':composer',  $composer, PDO::PARAM_STR);
+  $req->bindParam(':title', $title, PDO::PARAM_STR);
   $req->execute();
   $contents = $req->fetchAll();
   return $contents;
 }
 
-function getUserInformations(PDO $bdd)
+function getUserInformations(PDO $bdd, $session_users_id)
 {
   $req = $bdd->prepare('SELECT id, name, lastname, email, type, credits FROM users WHERE id= :id');
-  $req->execute(array(
-    ':id' => $_SESSION['users']['id']
-  ));
+  $req->bindParam(':id', $session_users_id, PDO::PARAM_INT);
+  $req->execute();
   $get_user_informations = $req->fetch();
   return $get_user_informations;
 }
 
-function getContentAndUserInformations(PDO $bdd)
+function getContentAndUserInformations(PDO $bdd, $get_id)
 {
   $req = $bdd->prepare('SELECT users.name, users.lastname, contents.id, contents.title, contents.composer, contents.category, contents.level, contents.content, contents.price, contents.description, contents.likes, contents.id_users
   FROM users
   INNER JOIN contents
   ON users.id = contents.id_users WHERE contents.id = :contents_id ');
-  $req->execute(array(
-    ':contents_id' => $_GET['id']
-  ));
+  $req->bindParam(':contents_id', $get_id, PDO::PARAM_INT);
+  $req->execute();
   $content_author = $req->fetch();
   return $content_author;
 }

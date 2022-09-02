@@ -1,5 +1,7 @@
 <?php
 session_start();
+require('./assets/require/check_data.php');
+
 if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
 
    $page = "register";
@@ -11,7 +13,7 @@ if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
       <div class="min-height" data-barba="container" data-barba-namespace="register-section">
 
          <?php
-         if (isset($_GET['error']) && !empty($_GET['error'])) {
+         if (isset($get_error) && !empty($get_error)) {
             if ($_GET['error'] == 'confirm_false') { ?>
 
                <script>
@@ -55,7 +57,7 @@ if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
                      <input type="text" class="inputbox" placeholder="Lastname ('min/maj/space/-' max 20 chars)" id="register_lastname" name="lastname" required pattern="^[A-Za-z '-]+$" maxlength="20" />
 
                      <label for=" register_email"></label>
-                     <input type="text" class="inputbox" placeholder="Email (valid email)" id="register_email" name="email" required pattern="^[A-Za-z]+@{1}[A-Za-z]+\.{1}[A-Za-z]{2,}$" />
+                     <input type="text" class="inputbox" placeholder="Email (valid email)" id="register_email" name="email" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" />
 
                      <label for="register_password"></label>
                      <input type="password" class="inputbox" placeholder="Password ('0-9' min 1 chars )" id="register_password" name="password" required pattern="^[0-9]+$" minlength="1" />
@@ -74,6 +76,7 @@ if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
 <?php require('./assets/require/foot.php');
 } else {
 
-   header('location: index.php');
+   header('location: index.php?error=already_connected');
+   die();
 }
 ?>

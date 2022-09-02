@@ -1,17 +1,8 @@
 <?php
 
-if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
+if (isset($session_users_id)) {
 
-   function getUserSessionInformations(PDO $bdd)
-   {
-      $req = $bdd->prepare('SELECT  name, lastname, credits FROM users WHERE id= :id');
-      $req->execute(array(
-         ':id' => $_SESSION['users']['id']
-      ));
-      $user = $req->fetch();
-      return $user;
-   }
-   $user = getUserSessionInformations($bdd);
+   $user = getUserSessionInformations($bdd, $session_users_id);
 }
 ?>
 
@@ -88,7 +79,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
             <?php
             if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
-               echo 'Hello' . " " . htmlspecialchars($user['name']) . htmlspecialchars($user['lastname']);
+               echo 'Hello' . " " . htmlspecialchars($user['name']) . " " . htmlspecialchars($user['lastname']);
             }
             ?>
             <button class="dropbtn" id="search_button"><i class="fas fa-search fa-2x"></i></button>

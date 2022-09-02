@@ -17,7 +17,7 @@ if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
                   alert('Wrong password')
                </script>
 
-            <?php } else if ($_GET['error'] == 'nonexist') { ?>
+            <?php } else if ($_GET['error'] == 'none_exist') { ?>
 
                <script>
                   alert('This user does not exist')
@@ -57,6 +57,7 @@ if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
 <?php require('./assets/require/foot.php');
 } else {
 
-   header('location: index.php');
+   header('location: index.php?error=already_connected');
+   die();
 }
 ?>

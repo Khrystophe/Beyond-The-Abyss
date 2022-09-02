@@ -1,14 +1,16 @@
 <?php
 session_start();
+require('./assets/require/check_data.php');
 
-if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
+if (isset($session_users_id)) {
 
    $page = 'my_account';
    require('./assets/require/co_bdd.php');
-   require('./assets/require/head.php');
    require('./assets/require/functions.php');
+   require('./assets/require/head.php');
 
-   $get_user_informations = getUserInformations($bdd);
+   $get_user_informations = getUserInformations($bdd, $session_users_id);
+
    $get_user_id = htmlspecialchars($get_user_informations['id']);
    $get_user_name = htmlspecialchars($get_user_informations['name']);
    $get_user_lastname = htmlspecialchars($get_user_informations['lastname']);
@@ -201,6 +203,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 <?php require('./assets/require/foot.php');
 } else {
 
-   header('location: index.php?error=notConnected');
+   http_response_code(400);
+   header('location: index.php?error=processing_bad_or_malformed_request_or_not_connected');
+   die();
 }
 ?>

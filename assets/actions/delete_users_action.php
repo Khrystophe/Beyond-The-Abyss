@@ -43,7 +43,8 @@ $req->execute(array(
 if ($_GET['type'] == 'admin') {
     header('location: ../../admin/users.php');
 } else {
+
     unset($_SESSION['users']);
     session_destroy();
-    header('location: ./../../index.php?success=users_deleted');
+    header('location: ./../../index.php?success=user_deleted');
 }

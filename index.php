@@ -1,9 +1,10 @@
 <?php
 session_start();
 $page = 'index';
+require('./assets/require/check_data.php');
 require('./assets/require/co_bdd.php');
-require('./assets/require/head.php');
 require('./assets/require/functions.php');
+require('./assets/require/head.php');
 
 $random_tuto = getRandomTuto($bdd);
 $random_tuto_id = htmlspecialchars($random_tuto['id']);

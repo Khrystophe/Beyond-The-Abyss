@@ -57,7 +57,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
       header('location: ../../single_player_content.php?id=' . $_GET['id']);
     } else {
 
-      header('location: ../../single_player_content.php?error=alreadyLiked&id=' . $_GET['id']);
+      header('location: ../../single_player_content.php?error=already_liked&id=' . $_GET['id']);
     }
   } else if ($_GET['name'] == 'comment') {
 
@@ -94,9 +94,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
       header('location: ../../single_player_content.php?id=' . $_GET['id']);
     } else {
 
-      header('location: ../../single_player_content.php?error=alreadyLiked&id=' . $_GET['id']);
+      header('location: ../../single_player_content.php?error=already_liked&id=' . $_GET['id']);
     }
   }
 } else {
-  header('location: ../../single_player_content?error=notConnected&id=' . $_GET['id']);
+  header('location: ../../single_player_content?error=not_connected&id=' . $_GET['id']);
 }

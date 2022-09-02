@@ -4,27 +4,27 @@ require('./assets/require/check_data.php');
 
 
 if (
-   $check_get_category === true
-   && ((isset($check_session_users_id) && $check_session_users_id === true) xor !isset($check_session_users_id))
-   && ((isset($check_post_title) && $check_post_title === true) xor !isset($check_post_title))
-   && ((isset($check_post_composer) && $check_post_composer === true) xor !isset($check_post_composer))
-   && ((isset($check_post_category) && $check_post_category === true) xor !isset($check_post_category))
-   && ((isset($check_post_level) && $check_post_level === true) xor !isset($check_post_level))
+   isset($get_category)
+   && (isset($session_users_id) xor !isset($session_users_id))
+   && (isset($post_title) xor !isset($post_title))
+   && (isset($post_composer) xor !isset($post_composer))
+   && (isset($post_category) xor !isset($post_category))
+   && (isset($post_level) xor !isset($post_level))
 ) {
 
    require('./assets/require/co_bdd.php');
    require('./assets/require/functions.php');
 
    if ($get_category != 'search_results') {
-      if ($get_category == 'Tutorial') {
+      if ($get_category == 'tutorial') {
 
          $page = 'tuto_content';
          $contents = getContents($bdd, $get_category);
-      } else if ($get_category == 'Performance') {
+      } else if ($get_category == 'performance') {
 
          $page = 'perf_content';
          $contents = getContents($bdd, $get_category);
-      } else if ($get_category == 'Sheet Music') {
+      } else if ($get_category == 'sheet_music') {
 
          $page = 'sheet_content';
          $contents = getContents($bdd, $get_category);
@@ -34,7 +34,7 @@ if (
          $contents = getUserContent($bdd, $session_users_id);
 
          if (empty($contents)) {
-            header('location: /Diplome/my_account.php?empty=user_content');
+            header('location: /Diplome/my_account.php?error=empty_user_content');
          }
       } else if ($get_category == 'user_purchased_content') {
 
@@ -42,11 +42,12 @@ if (
          $contents = getUserPurchasedContent($bdd, $session_users_id);
 
          if (empty($contents)) {
-            header('location: /Diplome/my_account.php?empty=user_purchased_content');
+            header('location: /Diplome/my_account.php?error=empty_user_purchased_content');
          }
       } else {
 
-         header('location: index.php');
+         header('location: index.php?error=category_not_found');
+         die();
       }
    } else {
 
@@ -69,13 +70,15 @@ if (
          $contents = getSearchResults($bdd, $post_title, $post_composer, $post_category, $post_level);
       } else {
 
-         header('location: index.php');
+         header('location: index.php.php?error=forbidden_reload');
+         die();
       }
    }
 
    if (isset($session_users_id) && !empty($session_users_id)) {
 
-      $user_session = getUserInformations($bdd);
+      $user_session = getUserInformations($bdd, $session_users_id);
+
       $user_session_id = htmlspecialchars($user_session['id']);
       $user_session_credits = htmlspecialchars($user_session['credits']);
    }
@@ -137,11 +140,7 @@ if (
 
                            if (isset($user_session) && !empty($user_session)) {
 
-                              $req = $bdd->prepare('SELECT id_users FROM purchased_contents WHERE id_contents = :contents_id');
-                              $req->execute(array(
-                                 ':contents_id' => $content_id
-                              ));
-                              $user_purchased_contents = $req->fetchAll();
+                              $user_purchased_contents = getIdUserFromPurchasedContent($bdd, $content_id);
 
                               $user_session_purchased_content = in_array($user_session_id, array_column($user_purchased_contents, 'id_users'), TRUE);
 
@@ -251,7 +250,8 @@ if (
 } else {
 
    http_response_code(400);
-   die('Error processing bad or malformed request');
+   header('location: index.php?error=processing_bad_or_malformed_request');
+   die();
 }
 
 ?>
