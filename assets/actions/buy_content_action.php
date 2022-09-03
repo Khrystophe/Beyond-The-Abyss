@@ -35,12 +35,12 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
       ':original_price' => $price
     ));
 
-    header('location: ../../single_player_content.php?success=contentBuy&id=' . $_GET['id']);
+    header('location: ../../single_player_content.php?success=content_buy&id=' . $_GET['id']);
   } else {
 
-    header('location: ../../index.php?error=insuffisantCredits');
+    header('location: ../../my_account.php?error=insuffisant_credits');
   }
 } else {
 
-  header('location: ../../index.php?error=notConnected');
+  header('location: ../../login.php?error=notConnected');
 }

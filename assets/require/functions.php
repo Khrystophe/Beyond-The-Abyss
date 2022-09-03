@@ -15,8 +15,8 @@ function getRandomTuto(PDO $bdd)
   $req = $bdd->prepare("SELECT * FROM contents WHERE category = :category ORDER BY RAND() LIMIT 1 ");
   $req->bindParam(':category', $tutorial, PDO::PARAM_STR);
   $req->execute();
-  $random_tuto = $req->fetch();
-  return $random_tuto;
+  $content = $req->fetch();
+  return $content;
 }
 
 function getRandomPerf(PDO $bdd)
@@ -25,8 +25,8 @@ function getRandomPerf(PDO $bdd)
   $req = $bdd->prepare("SELECT * FROM contents WHERE category = :category ORDER BY RAND() LIMIT 1 ");
   $req->bindParam(':category', $performance, PDO::PARAM_STR);
   $req->execute();
-  $random_perf = $req->fetch();
-  return $random_perf;
+  $content = $req->fetch();
+  return $content;
 }
 
 function getRandomSheet(PDO $bdd)
@@ -35,8 +35,8 @@ function getRandomSheet(PDO $bdd)
   $req = $bdd->prepare("SELECT * FROM contents WHERE category = :category ORDER BY RAND() LIMIT 1 ");
   $req->bindParam(':category', $sheet_music, PDO::PARAM_STR);
   $req->execute();
-  $random_sheet = $req->fetch();
-  return $random_sheet;
+  $content = $req->fetch();
+  return $content;
 }
 
 function getContents(PDO $bdd, $get_category)
@@ -57,8 +57,8 @@ function getUserContentInformations(PDO $bdd, $content_id_user)
   WHERE contents.id_users = :id_users');
   $req->bindParam(':id_users', $content_id_user, PDO::PARAM_INT);
   $req->execute();
-  $user_content_information = $req->fetch();
-  return $user_content_information;
+  $user = $req->fetch();
+  return $user;
 }
 
 function getUserContent(PDO $bdd, $session_users_id)
@@ -88,8 +88,8 @@ function getIdUserFromPurchasedContent(PDO $bdd, $content_id)
   $req = $bdd->prepare('SELECT id_users FROM purchased_contents WHERE id_contents = :contents_id');
   $req->bindParam(':contents_id', $content_id, PDO::PARAM_INT);
   $req->execute();
-  $user_purchased_contents = $req->fetchAll();
-  return $user_purchased_contents;
+  $users = $req->fetchAll();
+  return $users;
 }
 
 function getSearchResults(PDO $bdd, $post_title, $post_composer, $post_category, $post_level)
@@ -114,8 +114,8 @@ function getUserInformations(PDO $bdd, $session_users_id)
   $req = $bdd->prepare('SELECT id, name, lastname, email, type, credits FROM users WHERE id= :id');
   $req->bindParam(':id', $session_users_id, PDO::PARAM_INT);
   $req->execute();
-  $get_user_informations = $req->fetch();
-  return $get_user_informations;
+  $user = $req->fetch();
+  return $user;
 }
 
 function getContentAndUserInformations(PDO $bdd, $get_id)
@@ -126,8 +126,8 @@ function getContentAndUserInformations(PDO $bdd, $get_id)
   ON users.id = contents.id_users WHERE contents.id = :contents_id ');
   $req->bindParam(':contents_id', $get_id, PDO::PARAM_INT);
   $req->execute();
-  $content_author = $req->fetch();
-  return $content_author;
+  $content = $req->fetch();
+  return $content;
 }
 
 function getComments(PDO $bdd)

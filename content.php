@@ -121,7 +121,6 @@ if (
                $user_content_name = htmlspecialchars($user_content_information['name']);
                $user_content_lastname = htmlspecialchars($user_content_information['lastname']);
 
-               $by_user =  "By " . $user_content_name . " " . $user_content_lastname;
 
             ?>
 
@@ -153,7 +152,8 @@ if (
                                     <span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
                                     <div class="content_category"><?= $content_category ?></div>
                                     <div class="content_price">Free</div>
-                                    <div class="content_user"><?= $by_user ?></div>
+                                    <div class="content_user name">By <?= $user_content_name ?></div>
+                                    <div class="content_user lastname"><?= $user_content_lastname ?></div>
 
                                  <?php
 
@@ -164,7 +164,8 @@ if (
                                     <span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
                                     <div class="content_category"><?= $content_category ?></div>
                                     <div class="content_price">Your content</div>
-                                    <div class="content_user"><?= $by_user ?></div>
+                                    <div class="content_user name">By <?= $user_content_name ?></div>
+                                    <div class="content_user lastname"><?= $user_content_lastname ?></div>
 
                                  <?php
 
@@ -185,7 +186,8 @@ if (
                                     <span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
                                     <div class="content_category"><?= $content_category ?></div>
                                     <div class="content_price"><?= $content_price ?> Credits</div>
-                                    <div class="content_user"><?= $by_user ?></div>
+                                    <div class="content_user name">By <?= $user_content_name ?></div>
+                                    <div class="content_user lastname"><?= $user_content_lastname ?></div>
                                     <a data-barba-prevent href="./assets/actions/buy_content_action.php?id=<?= $content_id ?>" class="card__button" onclick="javascript:return buy('<?= $user_session_credits ?>','<?= $content_title ?>','<?= $content_composer ?>','<?= $content_price ?>')">Buy</a>
 
                                  <?php } else if ($user_session_purchased_content == true) { ?>
@@ -193,7 +195,8 @@ if (
                                     <span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
                                     <div class="content_category"><?= $content_category ?></div>
                                     <div class="content_price">Purchased</div>
-                                    <div class="content_user"><?= $by_user ?></div>
+                                    <div class="content_user name">By <?= $user_content_name ?></div>
+                                    <div class="content_user lastname"><?= $user_content_lastname ?></div>
                                     <a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
 
                                  <?php
@@ -209,7 +212,8 @@ if (
                                  <span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
                                  <div class="content_category"><?= $content_category ?></div>
                                  <div class="content_price"><?= $content_price ?> Credits</div>
-                                 <div class="content_user"><?= $by_user ?></div>
+                                 <div class="content_user name">By <?= $user_content_name ?></div>
+                                 <div class="content_user lastname"><?= $user_content_lastname ?></div>
                                  <a data-barba-prevent href="./assets/actions/buy_content_action.php?id=<?= $content_id ?>" class="card__button link_page" onclick="javascript:return login()">Buy</a>
 
                               <?php
@@ -221,7 +225,8 @@ if (
                                  <span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
                                  <div class="content_category"><?= $content_category ?></div>
                                  <div class="content_price">Free</div>
-                                 <div class="content_user"><?= $by_user ?></div>
+                                 <div class="content_user name">By <?= $user_content_name ?></div>
+                                 <div class="content_user lastname"><?= $user_content_lastname ?></div>
                                  <a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
 
                            <?php

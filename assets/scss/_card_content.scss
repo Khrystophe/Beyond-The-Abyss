@@ -9,15 +9,20 @@ $desktop: 280px;
 }
 
 .content_likes{
-	top: -50px;
+	top: -55px;
 	position: absolute;
 	left: 15px;
 }
 
 .content_user{
-	top: -50px;
 	position: absolute;
 	right: 15px;
+	&.name{
+		top: -60px;
+	}
+	&.lastname{
+		top:-45px;
+	}
 }
 
 .content_category{

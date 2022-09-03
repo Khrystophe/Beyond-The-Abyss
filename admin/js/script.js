@@ -1,3 +1,55 @@
+
+function MaxLengthDescription(description, maxlength) {
+  if (description.value.length > maxlength) {
+    description.value = description.value.substring(0, maxlength);
+    alert('Maximum ' + maxlength + ' characters!');
+  }
+}
+
+function validContent(id){
+
+  let name = document.getElementById('admin_content'+id).files[0].name;
+  let type = document.getElementById('admin_content'+id).files[0].type;
+  let size = document.getElementById('admin_content'+id).files[0].size;
+ 
+  let split_files_name = name.split(".");
+
+  if( split_files_name.length == 2 ){
+
+    let allowed_extensions = ["webm", "mp4", "ogv"];
+    let allowed_mime_types = ["video/webm", "video/mp4", "video/ogv"];
+    let check_files_name = ((typeof split_files_name[0] === 'string' || split_files_name[0] instanceof String) );
+    let check_files_extension = allowed_extensions.includes(split_files_name[1].toLowerCase());
+    let check_files_mime_type = allowed_mime_types.includes(type.toLowerCase());
+    
+    if( 
+      split_files_name[0].match(/^[A-Za-z0-9 ]+$/)
+      &&check_files_name === true 
+      && check_files_extension === true
+      && check_files_mime_type === true
+      && size <= 128000000 ){
+        
+        return true;
+        
+      } else{
+
+        document.getElementById('admin_content'+id).value = '';
+        return alert('Respect files format : "(A-Za-z0-9space)(.)(webm/mp4/ogv)"');
+        
+      }
+  } else {
+
+    document.getElementById('admin_content'+id).value= '';
+    return alert ('Respect files format : "(A-Za-z0-9space)(.)(webm/mp4/ogv)"')
+
+  }
+}
+
+
+
+
+
+
 /*VERSION FACTORISEE*/
 const compare = (ids, asc) => (row1, row2) => {
   const tdValue = (row, ids) => row.children[ids].textContent;
@@ -61,51 +113,3 @@ function triColonne(evt) {
     }
   }
 } 
-
-function MaxLengthDescription(description, maxlength) {
-  if (description.value.length > maxlength) {
-    description.value = description.value.substring(0, maxlength);
-    alert('Maximum ' + maxlength + ' characters!');
-  }
-}
-
-function validContent(id){
-
-  console.log(id);
-
-  let name = document.getElementById('admin_content'+id).files[0].name;
-  let type = document.getElementById('admin_content'+id).files[0].type;
-  let size = document.getElementById('admin_content'+id).files[0].size;
- 
-  let split_files_name = name.split(".");
-
-  if( split_files_name.length == 2 ){
-
-    let allowed_extensions = ["webm", "mp4", "ogv"];
-    let allowed_mime_types = ["video/webm", "video/mp4", "video/ogv"];
-    let check_files_name = ((typeof split_files_name[0] === 'string' ||split_files_name[0] instanceof String) );
-    let check_files_extension = allowed_extensions.includes(split_files_name[1].toLowerCase());
-    let check_files_mime_type = allowed_mime_types.includes(type.toLowerCase());
-
-    if( 
-      split_files_name[0].match(/^[A-Za-z0-9 ]+$/)
-      &&check_files_name === true 
-      && check_files_extension === true
-      && check_files_mime_type === true
-      && size <= 128000000 ){
-        
-        return true;
-
-      } else{
-
-        document.getElementById('admin_content'+id).value = '';
-        return alert('Respect files format : "(A-Za-z0-9space)(.)(webm/mp4/ogv)"');
-
-      }
-  } else {
-
-    document.getElementById('admin_content'+id).value= '';
-    return alert ('Respect files format : "(A-Za-z0-9space)(.)(webm/mp4/ogv)"')
-
-  }
-}
