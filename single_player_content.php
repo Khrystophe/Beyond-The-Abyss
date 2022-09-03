@@ -100,7 +100,7 @@ if (
                   </select>
 
                   <label for="edit_content"></label>
-                  <input type="file" class="inputbox" id="edit_content" name="content" />
+                  <input type="file" class="inputbox" id="edit_content" name="content" onchange="javascript: return validEditContent()" />
 
                   <label for="free_content">Free Content</label>
                   <input type="checkbox" class="inputbox" id="free_content" name="free_content" />

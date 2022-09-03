@@ -153,7 +153,7 @@ if (isset($session_users_id)) {
                         </select>
 
                         <label for="content"></label>
-                        <input type="file" class="inputbox" id="content" name="content" required />
+                        <input type="file" class="inputbox" id="content" name="content" onchange="javascript: return validContent()" required />
 
                         <label for="my_account_free_content">Free Content</label>
                         <input type="checkbox" class="inputbox" id="my_account_free_content" name="free_content" />

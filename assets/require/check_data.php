@@ -128,17 +128,36 @@ if (isset($_POST['email']) && !empty($_POST['email'])) {
 if (isset($_FILES) && !empty($_FILES)) {
   if (array_key_exists('content', $_FILES)) {
 
-    $allowed_mime_types = ["video/webm", "video/mp4", "video/ogv"];
+    $explode_files_name = explode('.', $_FILES['content']['name']);
+    $explode_files_tmp_name = explode('.', $_FILES['content']['tmp_name']);
 
-    $check_files_mime_type = mime_content_type($_FILES['content']['tmp_name']);
+    if (
+      count($explode_files_name) == 2
+      && count($explode_files_tmp_name) == 2
+    ) {
 
-    if (in_array($check_files_mime_type, $allowed_mime_types)) {
+      $allowed_extensions = ["webm", "mp4", "ogv"];
+      $allowed_mime_types = ["video/webm", "video/mp4", "video/ogv"];
 
-      $files_content_name = $_FILES['content']['name'];
-      $files_content_type = $_FILES['content']['type'];
-      $files_content_tmp_name = $_FILES['content']['tmp_name'];
-      $files_content_error = $_FILES['content']['error'];
-      $files_content_size = $_FILES['content']['size'];
+      $check_files_name = is_string($explode_files_name['0'])
+        && preg_match("/^[A-Za-z0-9 ]+$/", $explode_files_name['0']);
+
+      $check_files_extension = in_array(strtolower(end($explode_files_name)), $allowed_extensions);
+
+      $check_files_mime_type = in_array((strtolower(finfo_file(finfo_open(FILEINFO_MIME_TYPE), $_FILES['content']['tmp_name']))), $allowed_mime_types);
+
+      if (
+        $check_files_name === true
+        && $check_files_extension === true
+        && $check_files_mime_type === true
+      ) {
+
+        $files_content_name = $_FILES['content']['name'];
+        $files_content_type = $_FILES['content']['type'];
+        $files_content_tmp_name = $_FILES['content']['tmp_name'];
+        $files_content_error = $_FILES['content']['error'];
+        $files_content_size = $_FILES['content']['size'];
+      }
     }
   }
 }

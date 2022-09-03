@@ -779,6 +779,7 @@ textarea {
   width: 350px;
 }
 .card__caption {
+  width: 100%;
   position: absolute;
   top: 50%;
   z-index: 1;

@@ -3,30 +3,19 @@ session_start();
 require('../require/check_data.php');
 
 
-var_dump($_FILES);
-var_dump($check_files_mime_type);
-
 if (
    isset($files_content_name)
-   && isset($files_content_type)
-   && isset($files_content_tmp_name)
-   && isset($files_content_error)
-   && isset($files_content_size)
 ) {
 
    require('../require/co_bdd.php');
 
    if ($files_content_error == 0) {
-      if (in_array($files_content_type, $allowed_mime_types)) {
-         if ($files_content_size <= 128000000) {
-            $content = uniqid() . '.' . pathinfo($files_content_name, PATHINFO_EXTENSION);
-            move_uploaded_file($files_content_tmp_name, '../contents_img/' . $content);
-         } else {
-            var_dump('Le fichier est trop volumineux…');
-            exit;
-         }
+      if ($files_content_size <= 128000000) {
+         $content = uniqid() . '.' . pathinfo($files_content_name, PATHINFO_EXTENSION);
+         move_uploaded_file($files_content_tmp_name, '../contents_img/' . $content);
       } else {
-         echo 'Le type mime du fichier est incorrect…';
+         var_dump('Le fichier est trop volumineux…');
+         exit;
       }
    } else {
       echo 'Le fichier n\'a pas pu être récupéré…';
@@ -108,6 +97,6 @@ if (
 
    $bdd = null;
    http_response_code(400);
-   header('location: ../../register.php?error=processing_bad_or_malformed_request');
+   header('location: ../../my_account.php?error=processing_bad_or_malformed_request');
    die();
 }

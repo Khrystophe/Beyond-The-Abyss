@@ -70,7 +70,7 @@ if (
          $contents = getSearchResults($bdd, $post_title, $post_composer, $post_category, $post_level);
       } else {
 
-         header('location: index.php.php?error=forbidden_reload');
+         header('location: index.php?error=forbidden_reload');
          die();
       }
    }
