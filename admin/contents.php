@@ -67,8 +67,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                             </div>
 
                             <div class="mb-3">
-                                <label for="admin_content" class="form-label"></label>
-                                <input class="form-control" type="file" id="admin_content" name="content" onchange="javascript: return validAdminContent()" required>
+                                <label for="admin_content_add" class="form-label"></label>
+                                <input class="form-control" type="file" id="admin_content_add" name="content" onchange="javascript: return validContent('_add')" required>
                             </div>
 
                             <div class="mb-3">
@@ -189,8 +189,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                 <?php $content_id_valid =  $content['id']  ?>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_content<?= $content['id'] ?>" class="form-label">Content</label>
-                                                    <input class="form-control" type="file" id="admin_edit_content<?= $content['id'] ?>" name="content" onchange="javascript: return validAdminEditContent(<?= $content['id'] ?>)">
+                                                    <label for="admin_content<?= $content['id'] ?>" class="form-label">Content</label>
+                                                    <input class="form-control" type="file" id="admin_content<?= $content['id'] ?>" name="content" onchange="javascript: return validContent(<?= $content['id'] ?>)">
                                                 </div>
 
                                                 <div class="mb-3">

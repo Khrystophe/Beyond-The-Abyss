@@ -99,8 +99,8 @@ if (
                     <option value="very-hard">Very Hard</option>
                   </select>
 
-                  <label for="edit_content"></label>
-                  <input type="file" class="inputbox" id="edit_content" name="content" onchange="javascript: return validEditContent()" />
+                  <label for="single_player_edit_content"></label>
+                  <input type="file" class="inputbox" id="single_player_edit_content" name="content" onchange="javascript: return validContent('single_player_edit')" />
 
                   <label for="free_content">Free Content</label>
                   <input type="checkbox" class="inputbox" id="free_content" name="free_content" />
@@ -120,8 +120,8 @@ if (
                 <span class="comment_close">&times;</span>
                 <form class="form_action" action="./assets/actions/post_comment_action.php" method="post">
 
-                  <label for="id"></label>
-                  <input type="hidden" id="id" name="id" value="<?= $content_id ?>">
+                  <label for="id_comment"></label>
+                  <input type="hidden" id="id" name="id_comment" value="<?= $content_id ?>">
 
                   <label for="comment">Your comment</label>
                   <textarea class="inputbox" id="comment" name="comment"></textarea>
