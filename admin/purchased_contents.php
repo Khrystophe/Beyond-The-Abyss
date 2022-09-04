@@ -5,7 +5,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
         require('./assets/require/head.php');
         require('./assets/require/co_bdd.php');
-        require('./assets/actions/functions.php');
+        require('./assets/require/functions.php');
 
         $purchased_contents = getPurchased_contents();
 
@@ -20,8 +20,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                     <th scope="col">id</th>
                     <th scope="col">id_contents</th>
                     <th scope="col">id_users</th>
-                    <th scope="col">original price</th>
-                    <th scope="col">buyer repayment</th>
+                    <th scope="col">Original price</th>
+                    <th scope="col">Buyer repayment</th>
                 </tr>
             </thead>
 

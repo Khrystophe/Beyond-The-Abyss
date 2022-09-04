@@ -31,3 +31,19 @@ function getComments()
     $comments =  $req->fetchAll();
     return $comments;
 }
+
+function getLikes()
+{
+    global $bdd;
+    $req = $bdd->query('SELECT * FROM likes ORDER BY id_contents');
+    $likes =  $req->fetchAll();
+    return $likes;
+}
+
+function getNotifications()
+{
+    global $bdd;
+    $req = $bdd->query('SELECT * FROM notifications ORDER BY date');
+    $notifications =  $req->fetchAll();
+    return $notifications;
+}

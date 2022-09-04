@@ -7,4 +7,4 @@ $req = $bdd->prepare('DELETE FROM comments WHERE id= :id');
 $req->execute(array(
     ':id' => $_GET['id'],
 ));
-header('location: ../../users.php');
+header('location: ../../comments.php');

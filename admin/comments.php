@@ -5,7 +5,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
         require('./assets/require/head.php');
         require('./assets/require/co_bdd.php');
-        require('./assets/actions/functions.php');
+        require('./assets/require/functions.php');
 
         $comments = getComments();
 
@@ -18,9 +18,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
             <thead>
                 <tr>
                     <th scope="col">id</th>
-                    <th scope="col">Comments</th>
+                    <th scope="col">Comment</th>
                     <th scope="col">Date</th>
-                    <th scope="col">Like</th>
+                    <th scope="col">Likes</th>
                     <th scope="col">id_contents</th>
                     <th scope="col">id_users</th>
                 </tr>

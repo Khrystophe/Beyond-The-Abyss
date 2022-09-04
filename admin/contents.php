@@ -5,7 +5,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
         require('./assets/require/head.php');
         require('./assets/require/co_bdd.php');
-        require('./assets/actions/functions.php');
+        require('./assets/require/functions.php');
 
         $getAllContents = getAllContents();
 
