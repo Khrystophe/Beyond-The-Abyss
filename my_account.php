@@ -156,7 +156,7 @@ if (isset($session_users_id)) {
                         <input type="file" class="inputbox" id="my_account_content" name="content" onchange="javascript: return validContent('my_account')" required />
 
                         <label for="my_account_price">Price</label>
-                        <input type="text" class="inputbox" id="my_account_price" name="price" />
+                        <input type="text" class="inputbox" id="my_account_price" name="price" required />
 
                         <button type="submit" class="button">Add Content</button>
                      </form>

@@ -22,12 +22,15 @@ $repayment_informations = $req->fetchAll();
 
 foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
 
-    $req = $bdd->prepare('SELECT SUM(original_price) FROM purchased_contents WHERE id_users = :id_users');
+    $req = $bdd->prepare('SELECT SUM(original_price), SUM(buyer_repayment) FROM purchased_contents WHERE id_users = :id_users');
     $req->bindParam(':id_users', $repayment_informations_foreach_buyer['purchased_contents_id_users']);
     $req->execute();
     $total_of_original_price = $req->fetchAll();
-    $total_price = implode($total_of_original_price[0]);
-
+    $total_price = implode($total_of_original_price[0][0]);
+    $total_repayment = implode($total_of_original_price[0][1]);
+    var_dump($total_price);
+    var_dump($total_repayment);
+    exit;
     $req = $bdd->prepare('SELECT SUM(buyer_repayment) FROM purchased_contents WHERE id_users = :id_users');
     $req->bindParam(':id_users', $repayment_informations_foreach_buyer['purchased_contents_id_users']);
     $req->execute();
@@ -41,16 +44,17 @@ foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
         ':credits' => $new_sold_of_credits,
         ':id' => $repayment_informations_foreach_buyer['purchased_contents_id_users']
     ));
+
+    $date = date('l jS \of F Y h:i:s A');
+
+    $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
+    $req->execute(array(
+        ':notification' => 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $new_sold_of_credits . ' because ' .  $user['name'] . ' ' . $user['lastname'] . ' have deleted his account. You have been reimbursed of all your purchased content.',
+        ':date' => $date,
+        ':id_users' => $repayment_informations_foreach_buyer['purchased_contents_id_users']
+    ));
 }
 
-$date = date('l jS \of F Y h:i:s A');
-
-$req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
-$req->execute(array(
-    ':notification' => 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $new_sold_of_credits . ' because ' .  $user['name'] . ' ' . $user['lastname'] . ' have deleted his account. You have been reimbursed of all your purchased content.',
-    ':date' => $date,
-    ':id_users' => $repayment_informations_foreach_buyer['purchased_contents_id_users']
-));
 
 
 $req = $bdd->prepare('SELECT * FROM contents WHERE id_users = :id');

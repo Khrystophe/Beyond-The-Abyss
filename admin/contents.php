@@ -75,7 +75,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                             <div class="mb-3">
                                 <label for="admin_price" class="form-label">Price</label>
-                                <input type="text" id="admin_price" name="price">
+                                <input type="text" id="admin_price" name="price" required>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -188,8 +188,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                     </select>
                                                 </div>
 
-                                                <?php $content_id_valid =  $content['id']  ?>
-
                                                 <div class="mb-3">
                                                     <label for="admin_content<?= $content['id'] ?>" class="form-label">Content</label>
                                                     <input class="form-control" type="file" id="admin_content<?= $content['id'] ?>" name="content" onchange="javascript: return validContent(<?= $content['id'] ?>)">
@@ -197,7 +195,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                                                 <div class="mb-3">
                                                     <label for="admin_edit_price<?= $content['id'] ?>" class="form-label">Price</label>
-                                                    <input type="text" id="admin_edit_price<?= $content['id'] ?>" name="price">
+                                                    <input type="text" id="admin_edit_price<?= $content['id'] ?>" name="price" value="<?= $content['price'] ?>" placeholder="<?= $content['price'] ?>">
                                                 </div>
 
                                                 <button type="submit" class="btn btn-primary">Submit</button>

@@ -109,7 +109,7 @@ if (
                     <input type="file" class="inputbox" id="single_player_edit_content" name="content" onchange="javascript: return validContent('single_player_edit')" />
 
                     <label for="single_player_edit_price">Price</label>
-                    <input type="text" class="inputbox" id="single_player_edit_price" name="price" />
+                    <input type="text" class="inputbox" value="<?= $content_price ?>" placeholder="<?= $content_price ?>" id="single_player_edit_price" name="price" />
 
                     <button type="submit" class="button">Edit</button>
                   </form>
