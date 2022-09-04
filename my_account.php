@@ -95,11 +95,11 @@ if (isset($session_users_id)) {
                      <div class="margin"></div>
 
                      <form data-barba-prevent class="form_action" action="./assets/actions/edit_name_lastname_action.php" method="post">
-                        <label for="name"></label>
-                        <input type="text" class="inputbox" placeholder="Your current name : <?= $get_user_name ?> " id="name" name="name" required />
+                        <label for="my_account_name"></label>
+                        <input type="text" class="inputbox" placeholder="Your current name : <?= $get_user_name ?> " id="my_account_name" name="name" required />
 
-                        <label for="lastname"></label>
-                        <input type="text" class="inputbox" placeholder="Your current last name : <?= $get_user_lastname  ?> " id="lastname" name="lastname" required />
+                        <label for="my_account_lastname"></label>
+                        <input type="text" class="inputbox" placeholder="Your current last name : <?= $get_user_lastname  ?> " id="my_account_lastname" name="lastname" required />
 
                         <button type="submit" class="button">Edit</button>
                      </form>
@@ -107,14 +107,14 @@ if (isset($session_users_id)) {
                      <div class="margin"></div>
 
                      <form data-barba-prevent class="form_action" action="./assets/actions/edit_password_action.php" method="post">
-                        <label for="old_password"></label>
-                        <input type="password" placeholder=" Old password " class="inputbox" id="old_password" name="old_password" required />
+                        <label for="my_account_old_password"></label>
+                        <input type="password" placeholder=" Old password " class="inputbox" id="my_account_old_password" name="old_password" required />
 
-                        <label for="new_password"></label>
-                        <input type="password" placeholder=" New password " class="inputbox" id="new_password" name="new_password" required />
+                        <label for="my_account_new_password"></label>
+                        <input type="password" placeholder=" New password " class="inputbox" id="my_account_new_password" name="new_password" required />
 
-                        <label for="new_password_confirm"></label>
-                        <input type="password" class="inputbox" placeholder="Confirm your new password" id="new_password_confirm" name="new_password_confirm" required />
+                        <label for="my_account_new_password_confirm"></label>
+                        <input type="password" class="inputbox" placeholder="Confirm your new password" id="my_account_new_password_confirm" name="new_password_confirm" required />
 
                         <button type="submit" class="button">Edit</button>
 
@@ -126,25 +126,25 @@ if (isset($session_users_id)) {
                      <div class="margin"></div>
 
                      <form class="form_action" action="./assets/actions/add_content_action.php?type=user" method="post" enctype="multipart/form-data">
-                        <label for="title"></label>
-                        <input type="text" class="inputbox" placeholder="Title" id="title" name="title" required />
+                        <label for="my_account_title"></label>
+                        <input type="text" class="inputbox" placeholder="Title" id="my_account_title" name="title" required />
 
-                        <label for="composer"></label>
-                        <input type="text" class="inputbox" placeholder="Composer" id="composer" name="composer" required />
+                        <label for="my_account_composer"></label>
+                        <input type="text" class="inputbox" placeholder="Composer" id="my_account_composer" name="composer" required />
 
-                        <label for="description"></label>
-                        <textarea class="inputbox" placeholder="Description" id="description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" required></textarea>
+                        <label for="my_account_description"></label>
+                        <textarea class="inputbox" placeholder="Description" id="my_account_description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" required></textarea>
 
-                        <label for="category"></label>
-                        <select class="inputbox" id="category" name="category" required>
+                        <label for="my_account_category"></label>
+                        <select class="inputbox" id="my_account_category" name="category" required>
                            <option value="">--Category--</option>
                            <option value="tutorial">Tutorial</option>
                            <option value="performance">Performances</option>
                            <option value="sheet_music">Sheet Music</option>
                         </select>
 
-                        <label for="level"></label>
-                        <select class="inputbox" id="level" name="level" required>
+                        <label for="my_account_level"></label>
+                        <select class="inputbox" id="my_account_level" name="level" required>
                            <option value="">--Level--</option>
                            <option value="easy">Easy</option>
                            <option value="medium">Medium</option>
@@ -155,8 +155,8 @@ if (isset($session_users_id)) {
                         <label for="my_account_content"></label>
                         <input type="file" class="inputbox" id="my_account_content" name="content" onchange="javascript: return validContent('my_account')" required />
 
-                        <label for="my_account_free_content">Free Content</label>
-                        <input type="checkbox" class="inputbox" id="my_account_free_content" name="free_content" />
+                        <label for="my_account_price">Price</label>
+                        <input type="text" class="inputbox" id="my_account_price" name="price" />
 
                         <button type="submit" class="button">Add Content</button>
                      </form>

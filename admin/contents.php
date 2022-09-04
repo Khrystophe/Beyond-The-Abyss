@@ -42,13 +42,14 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                             <div class="mb-3">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Description" id="admin_description" style="height: 100px" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" required></textarea>
                                     <label for="admin_description">Description</label>
+                                    <textarea class="form-control" placeholder="Description" id="admin_description" style="height: 100px" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" required></textarea>
                                 </div>
                             </div>
 
                             <div class="mb-3">
-                                <select class="form-select" aria-label="Default select example" name="category" required>
+                                <label for="admin_category">Level</label>
+                                <select class="form-select" aria-label="Default select example" id="admin_category" name="category" required>
                                     <option value="">--Category--</option>
                                     <option value="tutorial">Tutorial</option>
                                     <option value="performance">Performances</option>
@@ -57,7 +58,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                             </div>
 
                             <div class="mb-3">
-                                <select class="form-select" aria-label="Default select example" name="level" required>
+                                <label for="admin_level">Level</label>
+                                <select class="form-select" aria-label="Default select example" id="admin_level" name="level" required>
                                     <option value="">--Level--</option>
                                     <option value="easy">Easy</option>
                                     <option value="medium">Medium</option>
@@ -72,8 +74,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                             </div>
 
                             <div class="mb-3">
-                                <label for="admin_free_content" class="form-label">Free Content</label>
-                                <input type="checkbox" id="admin_free_content" name="free_content">
+                                <label for="admin_price" class="form-label">Price</label>
+                                <input type="text" id="admin_price" name="price">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -194,8 +196,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_free_content<?= $content['id'] ?>" class="form-label">Free Content</label>
-                                                    <input type="checkbox" id="admin_edit_free_content<?= $content['id'] ?>" name="free_content">
+                                                    <label for="admin_edit_price<?= $content['id'] ?>" class="form-label">Price</label>
+                                                    <input type="text" id="admin_edit_price<?= $content['id'] ?>" name="price">
                                                 </div>
 
                                                 <button type="submit" class="btn btn-primary">Submit</button>

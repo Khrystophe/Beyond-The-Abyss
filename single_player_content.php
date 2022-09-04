@@ -73,31 +73,31 @@ if (
                   <span class="edit_close">&times;</span>
                   <form class="form_action" action="./assets/actions/edit_content_action.php?type=user" method="post" enctype="multipart/form-data">
 
-                    <label for="id"></label>
-                    <input type="hidden" id="id" name="id" value="<?= $content_id ?>">
+                    <label for="single_player_id"></label>
+                    <input type="hidden" id="single_player_id" name="id" value="<?= $content_id ?>">
 
-                    <label for="id_users"></label>
-                    <input type="hidden" id="id_users" name="id_users" value="<?= $content_id_user ?>">
+                    <label for="single_player_id_users"></label>
+                    <input type="hidden" id="single_player_id_users" name="id_users" value="<?= $content_id_user ?>">
 
-                    <label for="edit_title"></label>
-                    <input type="text" class="inputbox" value="<?= $content_title ?>" placeholder="<?= $content_title ?>" id="edit_title" name="title" />
+                    <label for="single_player_edit_title"></label>
+                    <input type="text" class="inputbox" value="<?= $content_title ?>" placeholder="<?= $content_title ?>" id="single_player_edit_title" name="title" />
 
-                    <label for="edit_composer"></label>
-                    <input type="text" class="inputbox" value="<?= $content_composer ?>" placeholder="<?= $content_composer ?>" id="edit_composer" name="composer" />
+                    <label for="single_player_edit_composer"></label>
+                    <input type="text" class="inputbox" value="<?= $content_composer ?>" placeholder="<?= $content_composer ?>" id="single_player_edit_composer" name="composer" />
 
-                    <label for="edit_description"></label>
-                    <textarea class="inputbox" value="<?= $content_description ?>" id="edit_description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);"><?= $content_description ?></textarea>
+                    <label for="single_player_edit_description"></label>
+                    <textarea class="inputbox" value="<?= $content_description ?>" id="single_player_edit_description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);"><?= $content_description ?></textarea>
 
-                    <label for="edit_category"></label>
-                    <select class="inputbox" id="edit_category" name="category">
+                    <label for="single_player_edit_category"></label>
+                    <select class="inputbox" id="single_player_edit_category" name="category">
                       <option value="<?= $content_category ?>"><?= $content_category ?></option>
                       <option value="tutorial">Tutorial</option>
                       <option value="performance">Performances</option>
                       <option value="sheet_music">Sheet Music</option>
                     </select>
 
-                    <label for="edit_level"></label>
-                    <select class="inputbox" id="edit_level" name="level">
+                    <label for="single_player_edit_level"></label>
+                    <select class="inputbox" id="single_player_edit_level" name="level">
                       <option value="<?= $content_level ?>"><?= $content_level ?></option>
                       <option value="easy">Easy</option>
                       <option value="medium">Medium</option>
@@ -108,8 +108,8 @@ if (
                     <label for="single_player_edit_content"></label>
                     <input type="file" class="inputbox" id="single_player_edit_content" name="content" onchange="javascript: return validContent('single_player_edit')" />
 
-                    <label for="free_content">Free Content</label>
-                    <input type="checkbox" class="inputbox" id="free_content" name="free_content" />
+                    <label for="single_player_edit_price">Price</label>
+                    <input type="text" class="inputbox" id="single_player_edit_price" name="price" />
 
                     <button type="submit" class="button">Edit</button>
                   </form>
@@ -126,11 +126,11 @@ if (
                   <span class="comment_close">&times;</span>
                   <form class="form_action" action="./assets/actions/post_comment_action.php" method="post">
 
-                    <label for="id_comment"></label>
-                    <input type="hidden" id="id" name="id_comment" value="<?= $content_id ?>">
+                    <label for="single_player_id_comment"></label>
+                    <input type="hidden" id="single_player_id" name="id_comment" value="<?= $content_id ?>">
 
-                    <label for="comment">Your comment</label>
-                    <textarea class="inputbox" id="comment" name="comment"></textarea>
+                    <label for="single_player_comment">Your comment</label>
+                    <textarea class="inputbox" id="single_player_comment" name="comment"></textarea>
 
                     <button type="submit" class="button">Post Comment</button>
                   </form>

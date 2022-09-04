@@ -73,7 +73,6 @@ table_heads.forEach(clicked_table_head =>
     table_body.appendChild(sorted_row));
     
   }));
-  
 
 document.addEventListener("readystatechange", function()
 {
@@ -94,7 +93,6 @@ document.addEventListener("readystatechange", function()
     }
   }
 });
-  
 
 function changeTableHeadsColor(click) {
 

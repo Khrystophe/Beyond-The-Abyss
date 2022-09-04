@@ -22,23 +22,6 @@ if (
    }
 
 
-   if (isset($_POST['free_content']) && !empty($_POST['free_content'])) {
-      $free_content = $_POST['free_content'];
-   }
-
-
-   if (!isset($free_content)) {
-      if ($_POST['category'] == 'tutorial') {
-         $price = 15;
-      } else if ($_POST['category'] == 'performance') {
-         $price = 5;
-      } else if ($_POST['category'] == 'sheet_music') {
-         $price = 10;
-      }
-   } else {
-      $price = 0;
-   }
-
    $req = $bdd->prepare("INSERT INTO contents( title, composer, level, category, content, price, description, id_users) VALUES (:title, :composer, :level, :category, :content, :price, :description, :id_users)");
    $req->execute(array(
       ':title' => $_POST['title'],
@@ -46,7 +29,7 @@ if (
       ':level' => $_POST['level'],
       'category' => $_POST['category'],
       ':content' => $content,
-      ':price' => $price,
+      ':price' => $_POST['price'],
       ':description' => nl2br($_POST['description']),
       ':id_users' => $_SESSION['users']['id'],
    ));
