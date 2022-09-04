@@ -45,71 +45,74 @@ function validContent(id){
   }
 }
 
+const compare = (clicked_table_head, sort_order) => (line_to_sort1, line_to_sort2) => {
+  
+  const cellValue = (row_of_clicked_table_head, clicked_table_head) => 
 
+  row_of_clicked_table_head.children[clicked_table_head].textContent;
 
+  const sorting = (cellValue1, cellValue2) =>
 
+  cellValue1 !== '' && cellValue2 !== '' && !isNaN(cellValue1) && !isNaN(cellValue2) ? 
+  cellValue1 - cellValue2 : 
+  cellValue1.toString().localeCompare(cellValue2);
 
-
-/*VERSION FACTORISEE*/
-const compare = (ids, asc) => (row1, row2) => {
-  const tdValue = (row, ids) => row.children[ids].textContent;
-  const tri = (v1, v2) => v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2);
-  return tri(tdValue(asc ? row1 : row2, ids), tdValue(asc ? row2 : row1, ids));
+  return sorting(cellValue(sort_order ? line_to_sort1 : line_to_sort2, clicked_table_head), cellValue(sort_order ? line_to_sort2 : line_to_sort1, clicked_table_head));
 };
 
-const tbody = document.querySelector('tbody');
-const thx = document.querySelectorAll('th');
-const trxb = tbody.querySelectorAll('tr');
-thx.forEach(th => th.addEventListener('click', () => {
-  let classe = Array.from(trxb).sort(compare(Array.from(thx).indexOf(th), this.asc = !this.asc));
-  classe.forEach(tr => tbody.appendChild(tr));
-}));
+const table_body = document.querySelector('tbody');
+const table_heads = document.querySelectorAll('th');
+const table_rows = table_body.querySelectorAll('tr');
 
+table_heads.forEach(clicked_table_head => 
+  clicked_table_head.addEventListener('click', () => {
 
-document.addEventListener("readystatechange", function() {
-  if (document.readyState=="interactive") {
-    /* Trouver et parcourir tous les tableaux de classe tritable */
-    var elts=document.querySelectorAll("table.tritable");
-    for (var i=0; i<elts.length; i++) {
-      elts[i].dataset.tritable=true;
-      /* Rechercher toutes les en-têtes de l'élément i */
-      var ths=elts[i].querySelectorAll("th");
-      for (var j=0; j<ths.length; j++) {
-        /* Ajout de l'icone indiquant la possibilité de tri */  
-        ths[j].innerHTML+=" <i class=\"fas fa-sort light\"></i>";
-        ths[j].dataset.sens="";
-        /* Ajout de l'event click */  
-        ths[j].addEventListener("click", triColonne, false);
+  let line_to_sort = Array.from(table_rows).sort(compare(Array.from(table_heads).indexOf(clicked_table_head), this.sort_order = !this.sort_order));
+  
+  line_to_sort.forEach(sorted_row => 
+    table_body.appendChild(sorted_row));
+    
+  }));
+  
+
+document.addEventListener("readystatechange", function()
+{
+  if (document.readyState == "interactive") {
+  
+    let tables = document.querySelectorAll("table.sortable");
+
+    for (let i=0; i<tables.length; i++) {
+     
+      let table_heads = tables[i].querySelectorAll("th");
+
+      for (let j=0; j<table_heads.length; j++) {
+      
+        table_heads[j].style.backgroundColor = "#c9c9c9";
+      
+        table_heads[j].addEventListener("click", changeTableHeadsColor, false);
       }
     }
   }
 });
   
-  
-/* Fonction appelée sur le clic du titre de colonne */  
-function triColonne(evt) {
-  var elt=evt.currentTarget;
-  var table=elt.parentElement.parentElement.parentElement;
-  /* Mise à jour des icones du sens de tri sur tous les TH */
-  var ths=table.querySelectorAll("th");
-  for (var j=0; j<ths.length; j++) {
-    var icon=ths[j].querySelector("i.fas");
-    if (ths[j]===elt) {
-      /* On est sur la colonne cliquée */
-      /* Détermination du sens de tri en fonction du sens actuel */
-      if (ths[j].dataset.sens=="up") { 
-          var sens="down";
-      } else {
-          var sens="up";
-      }
-      icon.className="fas fa-sort-"+sens+" active";        
-      /* Lancement du tri du tableau table sur la colonne j dans le bon sens */
-      ths[j].dataset.sens=sens;
-      triTable(table, j, sens);
+
+function changeTableHeadsColor(click) {
+
+  let clicked_table_head = click.currentTarget;
+  let table = clicked_table_head.parentElement.parentElement.parentElement;
+  let table_heads = table.querySelectorAll("th");
+
+  for (let j=0; j<table_heads.length; j++) {
+
+    if(table_heads[j] === clicked_table_head){
+
+    table_heads[j].style.backgroundColor = "gray";
+
     } else {
-      /* On repasse à l'icone non trié pour les autres colonnes */  
-      ths[j].dataset.sens="";
-      icon.className="fas fa-sort light";
+
+    table_heads[j].style.backgroundColor = "#c9c9c9";
+
     }
   }
+
 } 

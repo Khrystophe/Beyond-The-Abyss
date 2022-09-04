@@ -14,7 +14,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
         <h1>Purchased contents</h1>
 
-        <table class="table tritable">
+        <table class="table sortable">
             <thead>
                 <tr>
                     <th scope="col">id</th>

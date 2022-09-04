@@ -35,6 +35,7 @@ if (
 
          if (empty($contents)) {
             header('location: /Diplome/my_account.php?error=empty_user_content');
+            die();
          }
       } else if ($get_category == 'user_purchased_content') {
 
@@ -43,6 +44,7 @@ if (
 
          if (empty($contents)) {
             header('location: /Diplome/my_account.php?error=empty_user_purchased_content');
+            die();
          }
       } else {
 

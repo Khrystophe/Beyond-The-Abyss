@@ -86,7 +86,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         </div>
 
 
-        <table class="table tritable">
+        <table class="table sortable">
             <thead>
                 <tr>
                     <th scope="row">id</th>

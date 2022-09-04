@@ -14,7 +14,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
         <h1>Users</h1>
 
-        <table class="table tritable">
+        <table class="table sortable">
             <thead>
                 <tr>
                     <th scope="col">Id</th>
@@ -61,33 +61,33 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                             <form method="post" action="./assets/actions/edit_user_action.php?id=<?= $user['id'] ?>" enctype="multipart/form-data">
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_id_user" class="form-label">User id</label>
-                                                    <input type="text" class="form-control" id="admin_edit_id_user" name="id" value="<?= $user['id'] ?>">
+                                                    <label for="admin_edit_id_user<?= $user['id'] ?>" class="form-label">User id</label>
+                                                    <input type="text" class="form-control" id="admin_edit_id_user<?= $user['id'] ?>" name="id" value="<?= $user['id'] ?>">
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_user_name" class="form-label">Name</label>
-                                                    <input type="text" class="form-control" id="admin_edit_user_name" name="name" value="<?= $user['name'] ?>" placeholder="<?= $user['name'] ?>">
+                                                    <label for="admin_edit_user_name<?= $user['id'] ?>" class="form-label">Name</label>
+                                                    <input type="text" class="form-control" id="admin_edit_user_name<?= $user['id'] ?>" name="name" value="<?= $user['name'] ?>" placeholder="<?= $user['name'] ?>">
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_user_lastname" class="form-label">Lastname</label>
-                                                    <input type="text" class="form-control" id="admin_edit_user_lastname" name="lastname" value="<?= $user['lastname'] ?>" placeholder="<?= $user['lastname'] ?>">
+                                                    <label for="admin_edit_user_lastname<?= $user['id'] ?>" class="form-label">Lastname</label>
+                                                    <input type="text" class="form-control" id="admin_edit_user_lastname<?= $user['id'] ?>" name="lastname" value="<?= $user['lastname'] ?>" placeholder="<?= $user['lastname'] ?>">
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_user_email" class="form-label">Email</label>
-                                                    <input type="email" class="form-control" id="admin_edit_user_email" name="email" value="<?= $user['email'] ?>" placeholder="<?= $user['email'] ?>">
+                                                    <label for="admin_edit_user_email<?= $user['id'] ?>" class="form-label">Email</label>
+                                                    <input type="email" class="form-control" id="admin_edit_user_email<?= $user['id'] ?>" name="email" value="<?= $user['email'] ?>" placeholder="<?= $user['email'] ?>">
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_user_credits" class="form-label">Credits</label>
-                                                    <input type="text" class="form-control" id="admin_edit_user_credits" name="credits" value="<?= $user['credits'] ?>" placeholder="<?= $user['credits'] ?>">
+                                                    <label for="admin_edit_user_credits<?= $user['id'] ?>" class="form-label">Credits</label>
+                                                    <input type="text" class="form-control" id="admin_edit_user_credits<?= $user['id'] ?>" name="credits" value="<?= $user['credits'] ?>" placeholder="<?= $user['credits'] ?>">
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_user_type" class="form-label">Type</label>
-                                                    <select class="inputbox" id="admin_edit_user_type" name="type">
+                                                    <label for="admin_edit_user_type<?= $user['id'] ?>" class="form-label">Type</label>
+                                                    <select class="inputbox" id="admin_edit_user_type<?= $user['id'] ?>" name="type">
                                                         <option value="<?= $user['type'] ?>">--<?= $user['type'] ?>--</option>
                                                         <option value="user">User</option>
                                                         <option value="admin">Admin</option>
@@ -119,13 +119,13 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_user_password_id" class="form-label"></label>
-                                                    <input type="hidden" class="form-control" id="admin_edit_id_user_password_id" name="id" value="<?= $user['id'] ?>">
+                                                    <label for="admin_edit_user_password_id<?= $user['id'] ?>" class="form-label"></label>
+                                                    <input type="hidden" class="form-control" id="admin_edit_id_user_password_id<?= $user['id'] ?>" name="id" value="<?= $user['id'] ?>">
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_user_password" class="form-label">Password</label>
-                                                    <input type="password" class="form-control" id="admin_edit_user_password" name="password" required>
+                                                    <label for="admin_edit_user_password<?= $user['id'] ?>" class="form-label">Password</label>
+                                                    <input type="password" class="form-control" id="admin_edit_user_password<?= $user['id'] ?>" name="password" required>
                                                 </div>
 
                                                 <button type="submit" class="btn btn-primary">Submit</button>
