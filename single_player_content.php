@@ -34,7 +34,7 @@ if (
       $content_author_name = htmlspecialchars($content['name']);
       $content_author_lastname = htmlspecialchars($content['lastname']);
 
-      $comments = getComments($bdd);
+      $comments = getComments($bdd, $get_id);
 
       if (isset($session_users_id) && !empty($session_users_id)) {
 

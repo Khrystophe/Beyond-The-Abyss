@@ -66,6 +66,10 @@
             -webkit-overflow-scrolling: touch;
         }
 
+        .pt-3 {
+            padding-top: 5rem !important;
+        }
+
         .sticky-top {
             position: fixed;
             width: 100vw;

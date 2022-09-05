@@ -1,102 +1,109 @@
 <?php
 session_start();
-require('../require/co_bdd.php');
+require('../require/check_data.php');
 
-if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
-  if ($_GET['name'] == 'content') {
+if (
+  isset($get_id)
+  && isset($get_name)
+  && isset($get_id_comment)
+  && isset($session_users_id)
+) {
+
+  require('../require/co_bdd.php');
+
+
+  if ($get_name == 'content') {
 
     $req = $bdd->prepare('SELECT id_users FROM likes WHERE id_contents = :contents_id');
-    $req->execute(array(
-      ':contents_id' => $_GET['id']
-    ));
+    $req->bindParam(':contents_id', $get_id, PDO::PARAM_INT);
+    $req->execute();
     $user_like = $req->fetchAll();
 
-    if (in_array($_SESSION['users']['id'], array_column($user_like, 'id_users'), TRUE) == false) {
+    if (in_array($session_users_id, array_column($user_like, 'id_users'), TRUE) == false) {
 
       $req = $bdd->prepare('INSERT INTO likes (id_users, id_contents) VALUES (:users_id, :contents_id) ');
-      $req->execute(array(
-        ':users_id' => $_SESSION['users']['id'],
-        ':contents_id' => $_GET['id']
-      ));
+      $req->bindParam(':users_id', $session_users_id, PDO::PARAM_INT);
+      $req->bindParam(':contents_id', $get_id, PDO::PARAM_INT);
+      $req->execute();
 
       $req = $bdd->prepare('SELECT likes FROM contents WHERE contents.id = :contents_id');
-      $req->execute(array(
-        ':contents_id' => $_GET['id']
-      ));
-      $nbrOfLikes = $req->fetch();
+      $req->bindParam(':contents_id', $get_id, PDO::PARAM_INT);
+      $req->execute();
+      $number_of_likes = $req->fetch();
 
-      $likes = implode($nbrOfLikes);
+      $likes = implode($number_of_likes);
       $likes++;
 
       $req = $bdd->prepare('UPDATE contents SET likes = :likes WHERE contents.id = :contents_id');
-      $req->execute(array(
-        ':likes' => $likes,
-        ':contents_id' => $_GET['id']
-      ));
+      $req->bindParam(':likes', $likes, PDO::PARAM_INT);
+      $req->bindParam(':contents_id', $get_id, PDO::PARAM_INT);
+      $req->execute();
 
       $req = $bdd->prepare('SELECT users.credits, users.id 
       FROM users
       INNER JOIN contents
       ON users.id = contents.id_users 
       WHERE contents.id = :id');
-      $req->execute(array(
-        ':id' => $_GET['id']
-      ));
-      $nbrOfCredits = $req->fetch();
+      $req->bindParam(':id', $get_id, PDO::PARAM_INT);
+      $req->execute();
+      $number_of_credits = $req->fetch();
 
-      $author_credits = $nbrOfCredits['credits'];
+      $author_credits = $number_of_credits['credits'];
       $author_credits++;
 
       $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
-      $req->execute(array(
-        ':credits' => $author_credits,
-        ':users_id' => $nbrOfCredits['id']
-      ));
+      $req->bindParam(':credits', $author_credits, PDO::PARAM_INT);
+      $req->bindParam(':users_id', $number_of_credits['id'], PDO::PARAM_INT);
+      $req->execute();
 
-      header('location: ../../single_player_content.php?id=' . $_GET['id']);
+      header('location: ../../single_player_content.php?id=' . $get_id);
     } else {
 
-      header('location: ../../single_player_content.php?error=already_liked&id=' . $_GET['id']);
+      header('location: ../../single_player_content.php?error=already_liked&id=' . $get_id);
     }
-  } else if ($_GET['name'] == 'comment') {
+  } else if ($get_name == 'comment') {
 
     $req = $bdd->prepare('SELECT id_users FROM likes WHERE id_comments = :comments_id');
-    $req->execute(array(
-      ':comments_id' => $_GET['id_comment']
-    ));
+    $req->bindParam(':comments_id', $get_id_comment, PDO::PARAM_INT);
+    $req->execute();
     $user_like = $req->fetchAll();
 
 
     if (in_array($_SESSION['users']['id'], array_column($user_like, 'id_users'), TRUE) == false) {
 
       $req = $bdd->prepare('INSERT INTO likes (id_users, id_comments) VALUES (:users_id, :comments_id) ');
-      $req->execute(array(
-        ':users_id' => $_SESSION['users']['id'],
-        ':comments_id' => $_GET['id_comment']
-      ));
+      $req->bindParam(':users_id', $session_users_id, PDO::PARAM_INT);
+      $req->bindParam(':comments_id', $get_id_comment, PDO::PARAM_INT);
+      $req->execute();
 
       $req = $bdd->prepare('SELECT likes FROM comments WHERE comments.id = :comments_id');
-      $req->execute(array(
-        ':comments_id' => $_GET['id_comment']
-      ));
-      $nbrOfLikes = $req->fetch();
+      $req->bindParam(':comments_id', $get_id_comment, PDO::PARAM_INT);
+      $req->execute();
+      $number_of_likes = $req->fetch();
 
-      $likes = implode($nbrOfLikes);
+      $likes = implode($number_of_likes);
       $likes++;
 
       $req = $bdd->prepare('UPDATE comments SET likes = :likes WHERE comments.id = :comments_id');
-      $req->execute(array(
-        ':likes' => $likes,
-        ':comments_id' => $_GET['id_comment']
-      ));
+      $req->bindParam(':likes', $likes, PDO::PARAM_INT);
+      $req->bindParam(':comments_id', $get_id_comment, PDO::PARAM_INT);
+      $req->execute();
 
+      $bdd = null;
       header('location: ../../single_player_content.php?id=' . $_GET['id']);
+      die();
     } else {
 
+      $bdd = null;
       header('location: ../../single_player_content.php?error=already_liked&id=' . $_GET['id']);
+      die();
     }
   }
 } else {
-  header('location: ../../single_player_content?error=not_connected&id=' . $_GET['id']);
+
+  $bdd = null;
+  http_response_code(400);
+  header('location: ../../my_account.php?error=processing_bad_or_malformed_request');
+  die();
 }

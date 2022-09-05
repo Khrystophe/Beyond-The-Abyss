@@ -1,174 +1,187 @@
 <?php
 session_start();
-require('../require/co_bdd.php');
-
-$req = $bdd->prepare('SELECT credits FROM users WHERE id = :id');
-$req->execute(array(
-    ':id' => $_POST['id_users']
-));
-$number_of_credits = $req->fetch();
-$author_credits = implode($number_of_credits);
+require('../require/check_data.php');
 
 
-$req = $bdd->prepare('SELECT contents.category, contents.title, contents.composer, users.name, users.lastname 
-FROM contents
-INNER JOIN users
-ON users.id = contents.id_users 
-WHERE contents.id = :id');
-$req->execute(array(
-    ':id' => $_POST['id']
-));
-$content_informations = $req->fetch();
+if (
+    isset($files_content_name)
+    && isset($post_id)
+    && isset($post_id_users)
+    && isset($post_title)
+    && isset($post_composer)
+    && isset($post_category)
+    && isset($post_level)
+    && isset($post_price)
+    && isset($post_description)
+    && isset($session_users_id)
+    && isset($get_type)
+) {
 
-if ($content_informations['category'] == 'tutorial') {
-    $author_credits -= 30;
-} else if ($content_informations['category'] == 'performance') {
-    $author_credits -= 10;
-} else if ($content_informations['category'] == 'sheet_music') {
-    $author_credits -= 20;
-}
+    require('../require/co_bdd.php');
 
-if ($_POST['category'] == 'tutorial') {
-    $author_credits += 30;
-} else if ($_POST['category'] == 'performance') {
-    $author_credits += 10;
-} else if ($_POST['category'] == 'sheet_music') {
-    $author_credits += 20;
-}
+    $req = $bdd->prepare('SELECT credits FROM users WHERE id = :id_users');
+    $req->bindParam(':id_users', $post_id_users, PDO::PARAM_INT);
+    $req->execute();
+    $number_of_credits = $req->fetch();
+    $author_credits = implode($number_of_credits);
 
-$req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
-$req->execute(array(
-    ':credits' => $author_credits,
-    ':users_id' => $_POST['id_users']
-));
 
-$req = $bdd->prepare('SELECT purchased_contents.id_contents, purchased_contents.id_users, purchased_contents.original_price, purchased_contents.buyer_repayment ,users.credits, users.name, users.lastname
-FROM purchased_contents 
-INNER JOIN users 
-ON purchased_contents.id_users = users.id 
-WHERE purchased_contents.id_contents = :id_contents');
-$req->execute(array(
-    ':id_contents' => $_POST['id']
-));
-$repayment_informations = $req->fetchAll();
+    $req = $bdd->prepare('SELECT contents.category, contents.title, contents.composer, users.name, users.lastname 
+    FROM contents
+    INNER JOIN users
+    ON users.id = contents.id_users 
+    WHERE contents.id = :id');
+    $req->bindParam(':id', $post_id, PDO::PARAM_INT);
+    $req->execute();
+    $content_informations = $req->fetch();
 
-$new_price = $_POST['price'];
-
-foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
-
-    $original_price = $repayment_informations_foreach_buyer['original_price'];
-    $buyer_repayment = $repayment_informations_foreach_buyer['buyer_repayment'];
-    $old_buyer_repayment = $buyer_repayment;
-
-    if ($original_price > $new_price) {
-
-        $buyer_repayment = 0;
-        $buyer_repayment = $original_price - $new_price;
-
-        $new_sold_of_credits = $repayment_informations_foreach_buyer['credits'] += $buyer_repayment - $old_buyer_repayment;
-
-        $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
-        $req->execute(array(
-            ':credits' => $new_sold_of_credits,
-            ':id' => $repayment_informations_foreach_buyer['id_users']
-        ));
-    } else if ($original_price == $new_price) {
-
-        $new_sold_of_credits = $repayment_informations_foreach_buyer['credits'] -= $buyer_repayment;
-
-        $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
-        $req->execute(array(
-            ':credits' => $new_sold_of_credits,
-            ':id' => $repayment_informations_foreach_buyer['id_users']
-        ));
-
-        $buyer_repayment = 0;
+    if ($content_informations['category'] == 'tutorial') {
+        $author_credits -= 30;
+    } else if ($content_informations['category'] == 'performance') {
+        $author_credits -= 10;
+    } else if ($content_informations['category'] == 'sheet_music') {
+        $author_credits -= 20;
     }
 
-    $req = $bdd->prepare('UPDATE purchased_contents SET buyer_repayment = :buyer_repayment WHERE id_users = :id_users AND id_contents = :id_contents');
-    $req->execute(array(
-        ':buyer_repayment' => $buyer_repayment,
-        ':id_users' => $repayment_informations_foreach_buyer['id_users'],
-        ':id_contents' => $_POST['id']
-    ));
-
-    $date = date('l jS \of F Y h:i:s A');
-
-    if ($new_price == 0) {
-
-        $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
-        $req->execute(array(
-            ':notification' => 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is now Free. You have been reimbursed ',
-            ':date' => $date,
-            ':id_users' => $repayment_informations_foreach_buyer['id_users']
-        ));
-    } else {
-
-        $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
-        $req->execute(array(
-            ':notification' => 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is in a different category.',
-            ':date' => $date,
-            ':id_users' => $repayment_informations_foreach_buyer['id_users']
-        ));
+    if ($post_category == 'tutorial') {
+        $author_credits += 30;
+    } else if ($post_category == 'performance') {
+        $author_credits += 10;
+    } else if ($post_category == 'sheet_music') {
+        $author_credits += 20;
     }
-}
 
+    $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
+    $req->bindParam(':credits', $author_credits, PDO::PARAM_INT);
+    $req->bindParam(':users_id', $post_id_users, PDO::PARAM_INT);
+    $req->execute();
 
-if (isset($_FILES) && !empty($_FILES)) {
-    if (array_key_exists('content', $_FILES)) {
-        if ($_FILES['content']['error'] == 0) {
-            if (in_array($_FILES['content']['type'], ['video/mp4', 'image/png', 'image/jpeg'])) {
-                if ($_FILES['content']['size'] <= 128000000) {
-                    $content = uniqid() . '.' . pathinfo($_FILES['content']['name'], PATHINFO_EXTENSION);
-                    move_uploaded_file($_FILES['content']['tmp_name'], '../contents_img/' . $content);
-                } else {
-                    var_dump('Le fichier est trop volumineux…');
-                    exit;
-                }
-            } else {
-                echo 'Le type mime du fichier est incorrect…';
-            }
+    $req = $bdd->prepare('SELECT purchased_contents.id_contents, purchased_contents.id_users, purchased_contents.original_price, purchased_contents.buyer_repayment ,users.credits, users.name, users.lastname
+    FROM purchased_contents 
+    INNER JOIN users 
+    ON purchased_contents.id_users = users.id 
+    WHERE purchased_contents.id_contents = :id_contents');
+    $req->bindParam(':id_contents', $post_id, PDO::PARAM_INT);
+    $req->execute();
+    $repayment_informations = $req->fetchAll();
+
+    $new_price = $post_price;
+
+    foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
+
+        $original_price = $repayment_informations_foreach_buyer['original_price'];
+        $buyer_repayment = $repayment_informations_foreach_buyer['buyer_repayment'];
+        $old_buyer_repayment = $buyer_repayment;
+
+        if ($original_price > $new_price) {
+
+            $buyer_repayment = 0;
+            $buyer_repayment = $original_price - $new_price;
+
+            $new_sold_of_credits = $repayment_informations_foreach_buyer['credits'] += $buyer_repayment - $old_buyer_repayment;
+
+            $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
+            $req->bindParam(':credits', $new_sold_of_credits, PDO::PARAM_INT);
+            $req->bindParam(':id', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
+            $req->execute();
+        } else if ($original_price == $new_price) {
+
+            $new_sold_of_credits = $repayment_informations_foreach_buyer['credits'] -= $buyer_repayment;
+
+            $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
+            $req->bindParam(':credits', $new_sold_of_credits, PDO::PARAM_INT);
+            $req->bindParam(':id', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
+            $req->execute();
+
+            $buyer_repayment = 0;
+        }
+
+        $req = $bdd->prepare('UPDATE purchased_contents SET buyer_repayment = :buyer_repayment WHERE id_users = :id_users AND id_contents = :id_contents');
+        $req->bindParam(':buyer_repayment', $buyer_repayment, PDO::PARAM_INT);
+        $req->bindParam(':id_users', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
+        $req->bindParam(':id_contents', $post_id, PDO::PARAM_INT);
+        $req->execute();
+
+        $date = date('l jS \of F Y h:i:s A');
+
+        if ($new_price == 0) {
+
+            $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
+            $req->bindParam(':notification', 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is now Free. You have been reimbursed ', PDO::PARAM_STR);
+            $req->bindParam(':date', $date, PDO::PARAM_STR);
+            $req->bindParam(':id_users', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
+            $req->execute();
         } else {
-            echo 'Le fichier n\'a pas pu être récupéré…';
+
+            $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
+            $req->bindParam(':notification', 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is in a different category.', PDO::PARAM_STR);
+            $req->bindParam(':date', $date, PDO::PARAM_STR);
+            $req->bindParam(':id_users', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
+            $req->execute();
         }
     }
-}
 
-if (!isset($content) && empty($content)) {
 
-    $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :composer, level = :level, category = :category, price= :price, description = :description  WHERE id = :id');
-    $req->execute(array(
-        ':title' => $_POST['title'],
-        ':composer' => $_POST['composer'],
-        ':level' => $_POST['level'],
-        ':category' => $_POST['category'],
-        ':price' => $new_price,
-        ':description' => $_POST['description'],
-        ':id' => $_POST['id']
-    ));
+    if ($files_content_error == 0) {
+        if ($files_content_size <= 128000000) {
+            $content = uniqid() . '.' . pathinfo($files_content_name, PATHINFO_EXTENSION);
+            move_uploaded_file($files_content_tmp_name, '../contents_img/' . $content);
+        } else {
+
+            echo 'Le fichier est trop volumineux…';
+        }
+    } else {
+
+        echo 'Le fichier n\'a pas pu être récupéré…';
+    }
+
+    if (!isset($content) && empty($content)) {
+
+        $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :composer, level = :level, category = :category, price = :price, description = :description  WHERE id = :id');
+        $req->bindParam(':title', $post_title, PDO::PARAM_STR);
+        $req->bindParam(':composer', $post_composer, PDO::PARAM_STR);
+        $req->bindParam(':category', $post_category, PDO::PARAM_STR);
+        $req->bindParam(':level', $post_level, PDO::PARAM_STR);
+        $req->bindParam(':price', $post_price, PDO::PARAM_INT);
+        $req->bindParam(':description', $post_description, PDO::PARAM_STR);
+        $req->bindParam(':id', $post_id, PDO::PARAM_INT);
+        $req->execute();
+    } else {
+
+        $requete = $bdd->prepare('SELECT * FROM contents WHERE id = :id');
+        $req->bindParam(':id', $post_id, PDO::PARAM_INT);
+        $req->execute();
+        $old_content = $requete->fetch();
+
+        unlink('../contents_img/' . $old_content['content']);
+
+        $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :composer, level = :level, category = :category, price = :price, description = :description, content= :content WHERE id = :id');
+        $req->bindParam(':title', $post_title, PDO::PARAM_STR);
+        $req->bindParam(':composer', $post_composer, PDO::PARAM_STR);
+        $req->bindParam(':category', $post_category, PDO::PARAM_STR);
+        $req->bindParam(':level', $post_level, PDO::PARAM_STR);
+        $req->bindParam(':price', $post_price, PDO::PARAM_INT);
+        $req->bindParam(':description', $post_description, PDO::PARAM_STR);
+        $req->bindParam(':content', $content);
+        $req->bindParam(':id', $post_id, PDO::PARAM_INT);
+        $req->execute();
+    }
+
+    if ($get_type == 'admin') {
+
+        $bdd = null;
+        header('location: ../../admin/contents.php');
+        die();
+    } else {
+
+        $bdd = null;
+        header('location: ../../single_player_content.php?id=' . $post_id);
+        die();
+    }
 } else {
 
-    $requete = $bdd->prepare('SELECT * FROM contents WHERE id = :id');
-    $requete->execute(array(
-        ':id' => $_POST['id'],
-    ));
-    $old_content = $requete->fetch();
-    unlink('../contents_img/' . $old_content['content']);
-
-    $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :composer, level = :level, category = :category, price= :price, content= :content WHERE id = :id');
-    $req->execute(array(
-        ':title' => $_POST['title'],
-        ':composer' => $_POST['composer'],
-        ':level' => $_POST['level'],
-        ':category' => $_POST['category'],
-        ':price' => $new_price,
-        ':content' => $content,
-        ':id' => $_POST['id']
-    ));
-}
-
-if ($_GET['type'] == 'admin') {
-    header('location: ../../admin/contents.php');
-} else {
-    header('location: ../../single_player_content.php?id=' . $_POST['id']);
+    $bdd = null;
+    http_response_code(400);
+    header('location: ../../single_player_content.php?error=processing_bad_or_malformed_request');
+    die();
 }

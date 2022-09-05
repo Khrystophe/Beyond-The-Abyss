@@ -1,35 +1,54 @@
 <?php
 session_start();
-require('../require/co_bdd.php');
+require('../require/check_data.php');
 
 
-$req = $bdd->prepare('SELECT password FROM users WHERE id = :id');
-$req->execute(array(
-    ':id' => $_SESSION['users']['id']
-));
-$user = $req->fetch();
+if (
+    isset($post_old_password)
+    && isset($post_new_password)
+    && isset($post_new_password_confirm)
+    && isset($session_users_id)
+) {
 
-if ($user) {
+    require('../require/co_bdd.php');
 
-    if (isset($_POST['old_password']) && !empty($_POST['old_password']) && isset($_POST['new_password']) && !empty($_POST['new_password']) && isset($_POST['new_password_confirm']) && !empty($_POST['new_password_confirm'])) {
 
-        if (password_verify($_POST['old_password'], $user['password'])) {
+    $req = $bdd->prepare('SELECT password FROM users WHERE id = :id');
+    $req->bindParam(':id', $session_users_id, PDO::PARAM_INT);
+    $req->execute();
+    $user = $req->fetch();
 
-            if ($_POST['new_password'] == $_POST['new_password_confirm']) {
+    if ($user) {
 
-                $req = $bdd->prepare("UPDATE users SET password = :password WHERE id =" . $_SESSION['users']['id']);
-                $req->execute(array(
-                    ':password' => password_hash($_POST['new_password'], PASSWORD_BCRYPT),
-                ));
+        if (password_verify($post_old_password, $user['password'])) {
 
+            if ($post_new_password == $post_new_password_confirm) {
+
+                $req = $bdd->prepare('UPDATE users SET password = :password WHERE id = :id ');
+                $req->bindParam(':password', password_hash($post_new_password, PASSWORD_BCRYPT), PDO::PARAM_STR);
+                $req->bindParam(':id', $session_users_id, PDO::PARAM_INT);
+                $req->execute();
+
+                $bdd = null;
                 header('location:../../my_account.php?success=change_ok');
+                die();
             } else {
 
+                $bdd = null;
                 header('location: ../../my_account.php?error=confirm_false');
+                die();
             }
         } else {
 
+            $bdd = null;
             header('location: ../../my_account.php?error=invalid_password');
+            die();
         }
     }
+} else {
+
+    $bdd = null;
+    http_response_code(400);
+    header('location: ../../my_account.php?error=processing_bad_or_malformed_request');
+    die();
 }

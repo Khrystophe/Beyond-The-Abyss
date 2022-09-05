@@ -24,7 +24,7 @@ if (isset($session_users_id)) {
       $get_user_type = htmlspecialchars($get_user_informations['type']);
       $get_user_credits = htmlspecialchars($get_user_informations['credits']);
 
-      $notifications = getNotifications($bdd);
+      $notifications = getNotifications($bdd, $session_users_id);
 
 ?>
 

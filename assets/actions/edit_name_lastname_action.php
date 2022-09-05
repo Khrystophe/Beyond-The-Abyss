@@ -1,12 +1,29 @@
 <?php
 session_start();
-require('../require/co_bdd.php');
+require('../require/check_data.php');
 
 
-$req = $bdd->prepare('UPDATE users SET name = :name, lastname = :lastname WHERE id=' . $_SESSION['users']['id']);
-$req->execute(array(
-  ':name' => $_POST['name'],
-  ':lastname' => $_POST['lastname'],
-));
+if (
+  isset($post_name)
+  && isset($post_lastname)
+  && isset($session_users_id)
+) {
 
-header('location: ../../my_account.php');
+  require('../require/co_bdd.php');
+
+
+  $req = $bdd->prepare('UPDATE users SET name = :name, lastname = :lastname WHERE id=' . $_SESSION['users']['id']);
+  $req->bindParam(':name', $post_name, PDO::PARAM_STR);
+  $req->bindParam(':lastname', $post_lastname, PDO::PARAM_STR);
+  $req->execute();
+
+  $bdd = null;
+  header('location: ../../my_account.php');
+  die();
+} else {
+
+  $bdd = null;
+  http_response_code(400);
+  header('location: ../../my_account.php?error=processing_bad_or_malformed_request');
+  die();
+}
