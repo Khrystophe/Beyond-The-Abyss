@@ -8,4 +8,4 @@ $req->execute(array(
     ':id' => $_POST['id']
 ));
 
-header('location: ../../users.php');
+header('location: ../../users.php?success=password_changed');

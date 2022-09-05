@@ -19,6 +19,9 @@ if (
         $req->execute();
         $user = $req->fetch();
 
+        var_dump('stop');
+        exit;
+
         $req = $bdd->prepare('SELECT purchased_contents.id_users as purchased_contents_id_users, purchased_contents.original_price, users.credits, users.name, users.lastname, purchased_contents.buyer_repayment 
         FROM contents 
         INNER JOIN purchased_contents
