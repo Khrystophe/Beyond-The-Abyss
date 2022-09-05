@@ -13,6 +13,18 @@ if (isset($_SESSION['users']['id']) && !empty($_SESSION['users']['id'])) {
 }
 
 
+if (isset($_SESSION['users']['type']) && !empty($_SESSION['users']['type'])) {
+
+  $check_session_users_type = is_string($_SESSION['users']['type'])
+    && preg_match("/^[a-z]+$/", $_SESSION['users']['type']);
+
+  if ($check_session_users_type === true) {
+
+    $session_users_type = $_SESSION['users']['type'];
+  }
+}
+
+
 if (isset($_GET['category']) && !empty($_GET['category'])) {
 
   $check_get_category = is_string($_GET['category'])
@@ -162,7 +174,7 @@ if (isset($_POST['password']) && !empty($_POST['password'])) {
 
   $check_post_password = is_string($_POST['password'])
     && strlen($_POST['password']) >= 1
-    && preg_match("/^[0-9]+$/", $_POST['password']);
+    && preg_match("/^([1-9][0-9])+$/", $_POST['password']);
 
   if ($check_post_password === true) {
 
@@ -175,7 +187,7 @@ if (isset($_POST['password_confirm']) && !empty($_POST['password_confirm'])) {
 
   $check_post_password_confirm = is_string($_POST['password_confirm'])
     && strlen($_POST['password_confirm']) >= 1
-    && preg_match("/^[0-9]+$/", $_POST['password_confirm']);
+    && preg_match("/^([1-9][0-9])+$/", $_POST['password_confirm']);
 
   if ($check_post_password_confirm === true) {
 
@@ -188,7 +200,7 @@ if (isset($_POST['old_password']) && !empty($_POST['old_password'])) {
 
   $check_post_old_password = is_string($_POST['old_password'])
     && strlen($_POST['old_password']) >= 1
-    && preg_match("/^[0-9]+$/", $_POST['old_password']);
+    && preg_match("/^([1-9][0-9])+$/", $_POST['old_password']);
 
   if ($check_post_old_password === true) {
 
@@ -201,7 +213,7 @@ if (isset($_POST['new_password']) && !empty($_POST['new_password'])) {
 
   $check_post_new_password = is_string($_POST['new_password'])
     && strlen($_POST['new_password']) >= 1
-    && preg_match("/^[0-9]+$/", $_POST['new_password']);
+    && preg_match("/^([1-9][0-9])+$/", $_POST['new_password']);
 
   if ($check_post_new_password === true) {
 
@@ -214,7 +226,7 @@ if (isset($_POST['new_password_confirm']) && !empty($_POST['new_password_confirm
 
   $check_post_new_password_confirm = is_string($_POST['new_password_confirm'])
     && strlen($_POST['new_password_confirm']) >= 1
-    && preg_match("/^[0-9]+$/", $_POST['new_password_confirm']);
+    && preg_match("/^([1-9][0-9])+$/", $_POST['new_password_confirm']);
 
   if ($check_post_new_password_confirm === true) {
 
@@ -275,9 +287,9 @@ if (isset($_POST['level']) && !empty($_POST['level'])) {
 
 if (isset($_POST['price']) && !empty($_POST['price'])) {
 
-  $check_post_price = is_numeric($_POST['price'])
+  $check_post_price = is_string($_POST['price'])
     && strlen($_POST['price']) >= 1
-    && preg_match("/^[0-9]+$/", $_POST['price']);
+    && preg_match("/^([1-9]|[1-4][0-9]|50|Free)$/", $_POST['price']);
 
   if ($check_post_price === true) {
 

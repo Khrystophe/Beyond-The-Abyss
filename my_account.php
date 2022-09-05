@@ -108,13 +108,13 @@ if (isset($session_users_id)) {
 
                      <form data-barba-prevent class="form_action" action="./assets/actions/edit_password_action.php" method="post">
                         <label for="my_account_old_password"></label>
-                        <input type="password" placeholder=" Old password " class="inputbox" id="my_account_old_password" name="old_password" required />
+                        <input type="password" placeholder=" Old password " class="inputbox" id="my_account_old_password" name="old_password" required pattern="^([1-9][0-9])+$" minlength="2" />
 
                         <label for="my_account_new_password"></label>
-                        <input type="password" placeholder=" New password " class="inputbox" id="my_account_new_password" name="new_password" required />
+                        <input type="password" placeholder=" New password " class="inputbox" id="my_account_new_password" name="new_password" required pattern="^([1-9][0-9])+$" minlength="2" />
 
                         <label for="my_account_new_password_confirm"></label>
-                        <input type="password" class="inputbox" placeholder="Confirm your new password" id="my_account_new_password_confirm" name="new_password_confirm" required />
+                        <input type="password" class="inputbox" placeholder="Confirm your new password" id="my_account_new_password_confirm" name="new_password_confirm" required pattern="^([1-9][0-9])+$" minlength="2" />
 
                         <button type="submit" class="button">Edit</button>
 
@@ -155,8 +155,8 @@ if (isset($session_users_id)) {
                         <label for="my_account_content"></label>
                         <input type="file" class="inputbox" id="my_account_content" name="content" onchange="javascript: return validContent('my_account')" required />
 
-                        <label for="my_account_price">Price</label>
-                        <input type="text" class="inputbox" id="my_account_price" name="price" required />
+                        <label for="my_account_price">Price : from 1 to 50 or free (type 'Free')</label>
+                        <input type="text" class="inputbox" id="my_account_price" name="price" placeholder="Price" pattern="^([1-9]|[1-4][0-9]|50|Free)$" required />
 
                         <button type="submit" class="button">Add Content</button>
                      </form>

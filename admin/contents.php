@@ -41,8 +41,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                             </div>
 
                             <div class="mb-3">
+                                <label for="admin_description">Description</label>
                                 <div class="form-floating">
-                                    <label for="admin_description">Description</label>
                                     <textarea class="form-control" placeholder="Description" id="admin_description" style="height: 100px" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" required></textarea>
                                 </div>
                             </div>
@@ -74,8 +74,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                             </div>
 
                             <div class="mb-3">
-                                <label for="admin_price" class="form-label">Price</label>
-                                <input type="text" id="admin_price" name="price" required>
+                                <label for="admin_price" class="form-label">Price : from 1 to 50 or free (type 'Free')</label>
+                                <input type="text" id="admin_price" pattern="^([1-9]|[1-4][0-9]|50|Free)$" name="price" required>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -194,8 +194,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_edit_price<?= $content['id'] ?>" class="form-label">Price</label>
-                                                    <input type="text" id="admin_edit_price<?= $content['id'] ?>" name="price" value="<?= $content['price'] ?>" placeholder="<?= $content['price'] ?>">
+                                                    <label for="admin_edit_price<?= $content['id'] ?>" class="form-label">Price : from 1 to 50 or free (type 'Free')</label>
+                                                    <input type="text" id="admin_edit_price<?= $content['id'] ?>" pattern="^([1-9]|[1-4][0-9]|50|Free)$" name="price" value="<?= $content['price'] ?>" placeholder="<?= $content['price'] ?>">
                                                 </div>
 
                                                 <button type="submit" class="btn btn-primary">Submit</button>

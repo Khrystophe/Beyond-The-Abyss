@@ -125,7 +125,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                                                 <div class="mb-3">
                                                     <label for="admin_edit_user_password<?= $user['id'] ?>" class="form-label">Password</label>
-                                                    <input type="password" class="form-control" id="admin_edit_user_password<?= $user['id'] ?>" name="password" required>
+                                                    <input type="password" class="form-control" id="admin_edit_user_password<?= $user['id'] ?>" name="password" required pattern="^([1-9][0-9])+$" minlength="2">
                                                 </div>
 
                                                 <button type="submit" class="btn btn-primary">Submit</button>

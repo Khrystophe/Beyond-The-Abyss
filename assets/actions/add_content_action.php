@@ -30,6 +30,10 @@ if (
       echo 'Le fichier n\'a pas pu être récupéré…';
    }
 
+   if ($post_price == 'Free') {
+      $post_price = 0;
+   }
+
    $req = $bdd->prepare("INSERT INTO contents( title, composer, level, category, content, price, description, id_users) VALUES (:title, :composer, :level, :category, :content, :price, :description, :id_users)");
    $req->bindParam(':title', $post_title, PDO::PARAM_STR);
    $req->bindParam(':composer', $post_composer, PDO::PARAM_STR);

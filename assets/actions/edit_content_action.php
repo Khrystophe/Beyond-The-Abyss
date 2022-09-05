@@ -67,6 +67,10 @@ if (
 
     $new_price = $post_price;
 
+    if ($post_price == 'Free') {
+        $new_price = 0;
+    }
+
     foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
 
         $original_price = $repayment_informations_foreach_buyer['original_price'];
@@ -147,7 +151,7 @@ if (
         $req->bindParam(':composer', $post_composer, PDO::PARAM_STR);
         $req->bindParam(':level', $post_level, PDO::PARAM_STR);
         $req->bindParam(':category', $post_category, PDO::PARAM_STR);
-        $req->bindParam(':price', $post_price, PDO::PARAM_INT);
+        $req->bindParam(':price', $new_price, PDO::PARAM_INT);
         $req->bindParam(':description', $post_description, PDO::PARAM_STR);
         $req->bindParam(':id', $post_id, PDO::PARAM_INT);
         $req->execute();
@@ -166,7 +170,7 @@ if (
         $req->bindParam(':composer', $post_composer, PDO::PARAM_STR);
         $req->bindParam(':level', $post_level, PDO::PARAM_STR);
         $req->bindParam(':category', $post_category, PDO::PARAM_STR);
-        $req->bindParam(':price', $post_price, PDO::PARAM_INT);
+        $req->bindParam(':price', $new_price, PDO::PARAM_INT);
         $req->bindParam(':description', $post_description, PDO::PARAM_STR);
         $req->bindParam(':content', $content);
         $req->bindParam(':id', $post_id, PDO::PARAM_INT);
