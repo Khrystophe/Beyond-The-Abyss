@@ -172,7 +172,7 @@ if (isset($session_users_id)) {
                      </div>
 
                      <div class="form_action">
-                        <button class="btn_content"><a data-barba-prevent class="button delete" href="/Diplome/assets/actions/delete_users_action.php?id=<?= $get_user_id ?>" onclick="javascript:return deleteAccountAlert()">Delete my account</a></button>
+                        <button class="btn_content"><a data-barba-prevent class="button delete" href="/Diplome/assets/actions/delete_users_action.php?id=<?= $get_user_id ?>&type=user" onclick="javascript:return deleteAccountAlert()">Delete my account</a></button>
                      </div>
                   </div>
                </div>

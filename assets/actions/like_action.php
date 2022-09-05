@@ -6,7 +6,7 @@ require('../require/check_data.php');
 if (
   isset($get_id)
   && isset($get_name)
-  && isset($get_id_comment)
+  && (isset($get_id_comment) xor !isset($check_get_id_comment))
   && isset($session_users_id)
 ) {
 

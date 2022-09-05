@@ -4,7 +4,7 @@ require('../require/check_data.php');
 
 
 if (
-    isset($files_content_name)
+    (isset($files_content_name) xor !isset($check_files_name))
     && isset($post_id)
     && isset($post_id_users)
     && isset($post_title)
@@ -106,60 +106,66 @@ if (
 
         if ($new_price == 0) {
 
+            $notification = 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is now Free. You have been reimbursed ';
+
             $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
-            $req->bindParam(':notification', 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is now Free. You have been reimbursed ', PDO::PARAM_STR);
+            $req->bindParam(':notification', $notification, PDO::PARAM_STR);
             $req->bindParam(':date', $date, PDO::PARAM_STR);
             $req->bindParam(':id_users', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
             $req->execute();
         } else {
 
+            $notification = 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is in a different category.';
+
             $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
-            $req->bindParam(':notification', 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is in a different category.', PDO::PARAM_STR);
+            $req->bindParam(':notification', $notification, PDO::PARAM_STR);
             $req->bindParam(':date', $date, PDO::PARAM_STR);
             $req->bindParam(':id_users', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
             $req->execute();
         }
     }
 
+    if (isset($files_content_name)) {
+        if ($files_content_error == 0) {
+            if ($files_content_size <= 128000000) {
+                $content = uniqid() . '.' . pathinfo($files_content_name, PATHINFO_EXTENSION);
+                move_uploaded_file($files_content_tmp_name, '../contents_img/' . $content);
+            } else {
 
-    if ($files_content_error == 0) {
-        if ($files_content_size <= 128000000) {
-            $content = uniqid() . '.' . pathinfo($files_content_name, PATHINFO_EXTENSION);
-            move_uploaded_file($files_content_tmp_name, '../contents_img/' . $content);
+                echo 'Le fichier est trop volumineux…';
+            }
         } else {
 
-            echo 'Le fichier est trop volumineux…';
+            echo 'Le fichier n\'a pas pu être récupéré…';
         }
-    } else {
-
-        echo 'Le fichier n\'a pas pu être récupéré…';
     }
 
     if (!isset($content) && empty($content)) {
 
-        $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :composer, level = :level, category = :category, price = :price, description = :description  WHERE id = :id');
+        $req = $bdd->prepare('UPDATE contents SET title = :title ,composer = :composer, level = :level, category = :category, price = :price, description = :description  WHERE id = :id');
         $req->bindParam(':title', $post_title, PDO::PARAM_STR);
         $req->bindParam(':composer', $post_composer, PDO::PARAM_STR);
-        $req->bindParam(':category', $post_category, PDO::PARAM_STR);
         $req->bindParam(':level', $post_level, PDO::PARAM_STR);
+        $req->bindParam(':category', $post_category, PDO::PARAM_STR);
         $req->bindParam(':price', $post_price, PDO::PARAM_INT);
         $req->bindParam(':description', $post_description, PDO::PARAM_STR);
         $req->bindParam(':id', $post_id, PDO::PARAM_INT);
         $req->execute();
     } else {
 
-        $requete = $bdd->prepare('SELECT * FROM contents WHERE id = :id');
+        $req = $bdd->prepare('SELECT * FROM contents WHERE id = :id');
         $req->bindParam(':id', $post_id, PDO::PARAM_INT);
+        var_dump($req);
         $req->execute();
-        $old_content = $requete->fetch();
+        $old_content = $req->fetch();
 
         unlink('../contents_img/' . $old_content['content']);
 
-        $req = $bdd->prepare('UPDATE contents SET title = :title ,composer= :composer, level = :level, category = :category, price = :price, description = :description, content= :content WHERE id = :id');
+        $req = $bdd->prepare('UPDATE contents SET title = :title ,composer = :composer, level = :level, category = :category, price = :price, description = :description, content = :content WHERE id = :id');
         $req->bindParam(':title', $post_title, PDO::PARAM_STR);
         $req->bindParam(':composer', $post_composer, PDO::PARAM_STR);
-        $req->bindParam(':category', $post_category, PDO::PARAM_STR);
         $req->bindParam(':level', $post_level, PDO::PARAM_STR);
+        $req->bindParam(':category', $post_category, PDO::PARAM_STR);
         $req->bindParam(':price', $post_price, PDO::PARAM_INT);
         $req->bindParam(':description', $post_description, PDO::PARAM_STR);
         $req->bindParam(':content', $content);

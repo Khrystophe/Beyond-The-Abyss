@@ -127,7 +127,7 @@ if (
                   <form class="form_action" action="./assets/actions/post_comment_action.php" method="post">
 
                     <label for="single_player_id_comment"></label>
-                    <input type="hidden" id="single_player_id" name="id_comment" value="<?= $content_id ?>">
+                    <input type="hidden" id="single_player_id_comment" name="id" value="<?= $content_id ?>">
 
                     <label for="single_player_comment">Your comment</label>
                     <textarea class="inputbox" id="single_player_comment" name="comment"></textarea>
@@ -194,7 +194,7 @@ if (
                       <button class="dropbtn">Edit/Delete</button>
                       <div class="dropdown-content">
                         <a id="edit_button">Edit Content</a>
-                        <a data-barba-prevent href="./assets/actions/delete_content_action.php?id=<?= $content_id ?>" onclick="javascript:return deleteAlert()">Delete Content</a>
+                        <a data-barba-prevent href="./assets/actions/delete_content_action.php?id=<?= $content_id ?>&type=user" onclick="javascript:return deleteAlert()">Delete Content</a>
                       </div>
                     </div>
 
