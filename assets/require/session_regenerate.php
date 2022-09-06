@@ -12,9 +12,9 @@ if (isset($session_users_id)) {
 
   $time = intval(implode($time));
 
-  var_dump($time + 30 - time());
+  var_dump($time + 300 - time());
 
-  if ($time + 30 - time() <= 0) {
+  if ($time + 300 - time() <= 0) {
 
     $time = time();
 

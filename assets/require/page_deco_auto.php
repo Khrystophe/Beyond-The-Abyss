@@ -9,9 +9,9 @@ if (isset($session_users_id)) {
 
   $time = intval(implode($time));
 
-  var_dump($time + 60 - time());
+  var_dump($time + 1500 - time());
 
-  if ($time + 60 - time() <= 0) {
+  if ($time + 1500 - time() <= 0) {
 
     unset($_SESSION['users']);
     session_destroy();
