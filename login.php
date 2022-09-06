@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (empty($_COOKIE["accept_cookie"])) {
+   setcookie('accept_cookie', 'ok', (time() + 3600));
+}
 require('./assets/require/check_data.php');
 
 if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
@@ -67,7 +70,7 @@ if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
    }
 } else {
 
-   header('location: index.php?error=already_connected');
+   header('location: my_account.php');
    die();
 }
 ?>
