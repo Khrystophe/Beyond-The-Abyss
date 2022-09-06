@@ -9,6 +9,7 @@ if (
 ) {
 
   require('../require/co_bdd.php');
+  require('../require/action_deco_auto.php');
 
   if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 

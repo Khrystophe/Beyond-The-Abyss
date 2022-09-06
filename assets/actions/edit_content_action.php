@@ -18,6 +18,7 @@ if (
 ) {
 
     require('../require/co_bdd.php');
+    require('../require/action_deco_auto.php');
 
     $req = $bdd->prepare('SELECT credits FROM users WHERE id = :id_users');
     $req->bindParam(':id_users', $post_id_users, PDO::PARAM_INT);

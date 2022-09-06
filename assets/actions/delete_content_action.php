@@ -10,6 +10,7 @@ if (
 ) {
 
     require('../require/co_bdd.php');
+    require('../require/action_deco_auto.php');
 
     $req = $bdd->prepare('SELECT contents.category, contents.title, contents.composer, users.name, users.lastname 
     FROM contents

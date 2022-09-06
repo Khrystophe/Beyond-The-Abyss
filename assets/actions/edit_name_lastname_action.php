@@ -10,6 +10,7 @@ if (
 ) {
 
   require('../require/co_bdd.php');
+  require('../require/action_deco_auto.php');
 
 
   $req = $bdd->prepare('UPDATE users SET name = :name, lastname = :lastname WHERE id=' . $_SESSION['users']['id']);

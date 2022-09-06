@@ -16,6 +16,7 @@ if (
 ) {
 
    require('../require/co_bdd.php');
+   require('../require/action_deco_auto.php');
 
    if ($files_content_error == 0) {
       if ($files_content_size <= 128000000) {

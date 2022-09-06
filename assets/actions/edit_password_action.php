@@ -11,6 +11,7 @@ if (
 ) {
 
     require('../require/co_bdd.php');
+    require('../require/action_deco_auto.php');
 
 
     $req = $bdd->prepare('SELECT password FROM users WHERE id = :id');
@@ -24,8 +25,10 @@ if (
 
             if ($post_new_password == $post_new_password_confirm) {
 
+                $password = password_hash($post_new_password, PASSWORD_BCRYPT);
+
                 $req = $bdd->prepare('UPDATE users SET password = :password WHERE id = :id ');
-                $req->bindParam(':password', password_hash($post_new_password, PASSWORD_BCRYPT), PDO::PARAM_STR);
+                $req->bindParam(':password', $password, PDO::PARAM_STR);
                 $req->bindParam(':id', $session_users_id, PDO::PARAM_INT);
                 $req->execute();
 

@@ -13,6 +13,7 @@ if (
     if (($session_users_id == $get_id && $session_users_type == 'user') xor ($session_users_id != $get_id && $session_users_type == 'admin')) {
 
         require('../require/co_bdd.php');
+        require('../require/action_deco_auto.php');
 
         $req = $bdd->prepare('SELECT name, lastname FROM users WHERE id= :id');
         $req->bindParam(':id', $get_id, PDO::PARAM_INT);

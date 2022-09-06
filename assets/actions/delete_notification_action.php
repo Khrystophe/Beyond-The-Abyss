@@ -9,6 +9,7 @@ if (
 ) {
 
   require('../require/co_bdd.php');
+  require('../require/action_deco_auto.php');
 
   $req = $bdd->prepare('DELETE FROM notifications WHERE id = :id');
   $req->bindParam(':id', $get_id, PDO::PARAM_INT);

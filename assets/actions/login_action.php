@@ -22,8 +22,16 @@ if (
          $_SESSION['users']['id'] = htmlspecialchars($user['id']);
          $_SESSION['users']['type'] = htmlspecialchars($user['type']);
 
+         $time = time();
+
+         $req = $bdd->prepare('UPDATE time SET time = :time WHERE id_users= :session_users_id');
+         $req->bindParam(':time', $time);
+         $req->bindParam(':session_users_id', $_SESSION['users']['id']);
+         $req->execute();
+
          $bdd = null;
          header('location: ../../my_account.php?success=connected');
+         die();
       } else {
 
          $bdd = null;

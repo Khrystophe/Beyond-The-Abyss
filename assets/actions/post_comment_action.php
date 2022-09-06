@@ -10,6 +10,7 @@ if (
 ) {
 
   require('../require/co_bdd.php');
+  require('../require/action_deco_auto.php');
 
   $date = date('l jS \of F Y h:i:s A');
 

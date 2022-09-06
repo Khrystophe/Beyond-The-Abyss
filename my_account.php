@@ -1,5 +1,5 @@
 <?php
-require('./assets/require/session_regenerate.php');
+session_start();
 require('./assets/require/check_data.php');
 
 if (isset($session_users_id)) {
@@ -12,6 +12,8 @@ if (isset($session_users_id)) {
 
       $page = 'my_account';
       require('./assets/require/co_bdd.php');
+      require('./assets/require/page_deco_auto.php');
+      require('./assets/require/session_regenerate.php');
       require('./assets/require/functions.php');
       require('./assets/require/head.php');
 
