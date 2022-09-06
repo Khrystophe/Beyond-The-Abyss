@@ -142,7 +142,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                                                 <div class="mb-3">
                                                     <label for="admin_edit_id<?= $content['id'] ?>" class="form-label">Content id</label>
-                                                    <input type="text" class="form-control" id="admin_edit_id<?= $content['id'] ?>" name="id" value="<?= $content['id'] ?>">
+                                                    <input type="hidden" class="form-control" id="admin_edit_id<?= $content['id'] ?>" name="id" value="<?= $content['id'] ?>">
+                                                    <div style="width:15%; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;"><?= $content['id'] ?></div>
                                                 </div>
 
                                                 <div class="mb-3">

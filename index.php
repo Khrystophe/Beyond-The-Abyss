@@ -1,5 +1,5 @@
 <?php
-session_start();
+require('./assets/require/session_regenerate.php');
 $page = 'index';
 require('./assets/require/check_data.php');
 require('./assets/require/co_bdd.php');

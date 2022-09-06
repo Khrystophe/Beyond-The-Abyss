@@ -1,6 +1,8 @@
 <?php
 
 
+
+
 if (isset($_SESSION['users']['id']) && !empty($_SESSION['users']['id'])) {
 
   $check_session_users_id = is_numeric($_SESSION['users']['id'])
@@ -137,7 +139,7 @@ if (isset($_POST['name']) && !empty($_POST['name'])) {
 
   $check_post_name = is_string($_POST['name'])
     && strlen($_POST['name']) <= 20
-    && preg_match("/^[A-Za-z '-]+$/", $_POST['name']);
+    && preg_match("/^[0-9a-zA-Zéèêàçù -]+$/", $_POST['name']);
 
   if ($check_post_name === true) {
 
@@ -150,7 +152,7 @@ if (isset($_POST['lastname']) && !empty($_POST['lastname'])) {
 
   $check_post_lastname = is_string($_POST['lastname'])
     && strlen($_POST['lastname']) <= 20
-    && preg_match("/^[A-Za-z '-]+$/", $_POST['lastname']);
+    && preg_match("/^[0-9a-zA-Zéèêàçù -]+$/", $_POST['lastname']);
 
   if ($check_post_lastname === true) {
 
@@ -239,7 +241,7 @@ if (isset($_POST['title']) && !empty($_POST['title'])) {
 
   $check_post_title = strlen($_POST['title']) <= 20
     && is_string($_POST['title'])
-    && preg_match("/^[A-Za-z '-]+$/", $_POST['title']);
+    && preg_match("/^[0-9a-zA-Zéèêàçù '\"!?°-]+$/", $_POST['title']);
 
   if ($check_post_title === true) {
 
@@ -252,7 +254,7 @@ if (isset($_POST['composer']) && !empty($_POST['composer'])) {
 
   $check_post_composer = strlen($_POST['composer']) <= 20
     && is_string($_POST['composer'])
-    && preg_match("/^[A-Za-z '-]+$/", $_POST['composer']);
+    && preg_match("/^[0-9a-zA-Zéèêàçù -]+$/", $_POST['composer']);
 
   if ($check_post_composer === true) {
 
@@ -301,7 +303,7 @@ if (isset($_POST['price']) && !empty($_POST['price'])) {
 if (isset($_POST['description']) && !empty($_POST['description'])) {
 
   $check_post_description =  is_string($_POST['description'])
-    && preg_match("/^[0-9a-zA-Zéèêàçù ()'\".!?,;:-]+$/", $_POST['description']);
+    && preg_match("/^[0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['description']);
 
   if ($check_post_description === true) {
 
@@ -313,7 +315,7 @@ if (isset($_POST['description']) && !empty($_POST['description'])) {
 if (isset($_POST['comment']) && !empty($_POST['comment'])) {
 
   $check_post_comment =  is_string($_POST['comment'])
-    && preg_match("/^[0-9a-zA-Zéèêàçù ()'\".!?,;:-]+$/", $_POST['comment']);
+    && preg_match("/^[0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['comment']);
 
   if ($check_post_comment === true) {
 
@@ -337,7 +339,7 @@ if (isset($_FILES) && !empty($_FILES)) {
       $allowed_mime_types = ["video/webm", "video/mp4", "video/ogv"];
 
       $check_files_name = is_string($explode_files_name['0'])
-        && preg_match("/^[A-Za-z0-9 ]+$/", $explode_files_name['0']);
+        && preg_match("/^[0-9a-zA-Zéèêàçù# ()'!,;°-]+$/", $explode_files_name['0']);
 
       $check_files_extension = in_array(strtolower(end($explode_files_name)), $allowed_extensions);
 

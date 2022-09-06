@@ -48,7 +48,7 @@ function validContent(page){
     let check_files_mime_type = allowed_mime_types.includes(type.toLowerCase());
 
     if( 
-      split_files_name[0].match(/^[A-Za-z0-9 ]+$/)
+      split_files_name[0].match(/^[0-9a-zA-Zéèêàçù# ()'!,;°-]+$/)
       &&check_files_name === true 
       && check_files_extension === true
       && check_files_mime_type === true
@@ -59,13 +59,13 @@ function validContent(page){
       } else{
 
         document.getElementById(page+'_content').value = '';
-        return alert('Respect files format : "(A-Za-z0-9space)(.)(webm/mp4/ogv)"');
+        return alert('Respect files format : "(0-9a-zA-Zéèêàçù# ()\'!,;°-)(.)(webm/mp4/ogv)" and 128 Mo max.');
 
       }
   } else {
 
     document.getElementById(page+'_content').value= '';
-    return alert ('Respect files format : "(A-Za-z0-9space)(.)(webm/mp4/ogv)"')
+    return alert ('Respect files format : "(0-9a-zA-Zéèêàçù# ()\'!,;°-)(.)(webm/mp4/ogv)"')
 
   }
 }

@@ -45,7 +45,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                         <td scope="col" style="word-break: break-all;"><?= $user['credits'] ?></td>
                         <td scope="col"><?= $user['type'] ?></td>
 
-                        <td>
+                        <td scope="col">
                             <button type="button" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $user['id'] ?>">
                                 Edit User Informations
                             </button>
@@ -62,7 +62,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                                                 <div class="mb-3">
                                                     <label for="admin_edit_id_user<?= $user['id'] ?>" class="form-label">User id</label>
-                                                    <input type="text" class="form-control" id="admin_edit_id_user<?= $user['id'] ?>" name="id" value="<?= $user['id'] ?>">
+                                                    <input type="hidden" class="form-control" id="admin_edit_id_user<?= $user['id'] ?>" name="id" value="<?= $user['id'] ?>">
+                                                    <div style="width:10%; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;"><?= $user['id'] ?></div>
                                                 </div>
 
                                                 <div class="mb-3">
@@ -102,7 +103,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                             </div>
                         </td>
 
-                        <td>
+                        <td scope="col">
                             <button type="button" data-bs-toggle="modal" data-bs-target="#user_editpassword<?= $user['id'] ?>">
                                 Edit User Password
                             </button>

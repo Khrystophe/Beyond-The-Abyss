@@ -1,5 +1,5 @@
 <?php
-session_start();
+require('./assets/require/session_regenerate.php');
 require('./assets/require/check_data.php');
 
 if (isset($session_users_id)) {
