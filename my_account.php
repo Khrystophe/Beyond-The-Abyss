@@ -3,7 +3,7 @@ session_start();
 if (empty($_COOKIE["accept_cookie"])) {
    unset($_SESSION['users']);
    session_destroy();
-   header('Location: index.php?error=cookie_disabled_accept_cookie_and_login');
+   header('Location: index.php?error=cookies_disabled');
    die();
 }
 require('./assets/require/check_data.php');

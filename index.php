@@ -49,6 +49,21 @@ $random_sheet_id_users = htmlspecialchars($random_sheet['id_users']);
 
    <div class="min-height" data-barba="container" data-barba-namespace="index-section">
 
+      <?php if (isset($_GET['error']) && !empty($_GET['error'])) {
+
+         if ($_GET['error'] == 'cookies_disabled') { ?>
+
+            <script>
+               alert('The use of cookies is necessary for the proper functioning of this site. Please enable the use of cookies in your browser.\n If you have just created your account, it is active. All you have to do is connect, having previously activated the use of cookies in your browser.')
+            </script>
+
+      <?php
+
+         }
+      }
+
+      ?>
+
       <div class="wrapp">
 
          <div class="abyss">
