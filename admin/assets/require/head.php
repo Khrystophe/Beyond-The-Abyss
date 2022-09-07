@@ -124,12 +124,6 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="likes.php">
-                                <span data-feather="layers" class="align-text-bottom"></span>
-                                Likes
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="notifications.php">
                                 <span data-feather="layers" class="align-text-bottom"></span>
                                 Notifications

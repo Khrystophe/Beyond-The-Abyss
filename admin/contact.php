@@ -59,13 +59,26 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                     <div style="width:10%; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;"><?= $contact['id_users'] ?></div>
                                                 </div>
 
+                                                <div class="mb-3">
+                                                    <div class="form-label">Date</div>
+                                                    <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $contact['date'] ?></div>
+                                                </div>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_contact_message<?= $contact['id'] ?>">Message</label>
+                                                    <div class="form-label">Message</div>
+                                                    <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: flex-start;word-break: break-all;"><?= nl2br($contact['message']) ?></div>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="admin_contact_message<?= $contact['id'] ?>"></label>
                                                     <div class="form-floating">
-                                                        <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $contact['date'] ?></div>
                                                         <input type="hidden" class="form-control" id="admin_contact_message<?= $contact['id'] ?>" name="message" value="<?= $contact['message'] ?>">
-                                                        <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= nl2br($contact['message']) ?></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="admin_contact_notification<?= $contact['id'] ?>">Reply</label>
+                                                    <div class="form-floating">
                                                         <textarea class="form-control" id="admin_contact_notification<?= $contact['id'] ?>" style="height: 100px" name="notification"></textarea>
                                                     </div>
                                                 </div>
