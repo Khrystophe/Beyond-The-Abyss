@@ -2,7 +2,7 @@
 
 if (isset($session_users_id)) {
 
-  $req = $bdd->prepare('SELECT time FROM time WHERE id_users= :session_users_id');
+  $req = $bdd->prepare('SELECT time FROM users WHERE id= :session_users_id');
   $req->bindParam(':session_users_id', $session_users_id);
   $req->execute();
   $time = $req->fetch();

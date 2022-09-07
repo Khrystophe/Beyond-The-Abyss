@@ -22,12 +22,14 @@ if (
       if ($post_password == $post_password_confirm) {
 
          $password = password_hash($post_password, PASSWORD_BCRYPT);
+         $time = time();
 
-         $req = $bdd->prepare("INSERT INTO users(name, lastname, email, password) VALUES (:name, :lastname, :email, :password)");
+         $req = $bdd->prepare("INSERT INTO users(name, lastname, email, password, time) VALUES (:name, :lastname, :email, :password, :time)");
          $req->bindParam(':name', $post_name, PDO::PARAM_STR);
          $req->bindParam(':lastname', $post_lastname, PDO::PARAM_STR);
          $req->bindParam(':email', $post_email, PDO::PARAM_STR);
          $req->bindParam(':password', $password, PDO::PARAM_STR);
+         $req->bindParam(':time', $time);
          $success = $req->execute();
 
          if ($success) {
@@ -39,13 +41,6 @@ if (
 
             $_SESSION['users']['id'] = htmlspecialchars($user['id']);
             $_SESSION['users']['type'] = htmlspecialchars($user['type']);
-
-            $time = time();
-
-            $req = $bdd->prepare('INSERT INTO time (time, id_users) VALUES (:time, :id_users)');
-            $req->bindParam(':time', $time);
-            $req->bindParam(':id_users', $_SESSION['users']['id']);
-            $req->execute();
 
             $bdd = null;
             header('location: ../../my_account.php?success=creation');

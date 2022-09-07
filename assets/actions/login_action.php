@@ -24,7 +24,7 @@ if (
 
          $time = time();
 
-         $req = $bdd->prepare('UPDATE time SET time = :time WHERE id_users= :session_users_id');
+         $req = $bdd->prepare('UPDATE users SET time = :time WHERE id= :session_users_id');
          $req->bindParam(':time', $time);
          $req->bindParam(':session_users_id', $_SESSION['users']['id']);
          $req->execute();
