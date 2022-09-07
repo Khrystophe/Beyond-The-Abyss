@@ -72,7 +72,7 @@ if (
               <div class="modal_form">
                 <div class="modal_form_content">
 
-                  <span class="edit_close">&times;</span>
+                  <span id="edit_close">&times;</span>
                   <form class="form_action" action="./assets/actions/edit_content_action.php?type=user" method="post" enctype="multipart/form-data">
 
                     <label for="single_player_id"></label>
@@ -120,19 +120,20 @@ if (
             </div>
           </div>
 
+
           <div id="comment_modal" class="modal">
             <div class="modal-content">
               <div class="modal_form">
                 <div class="modal_form_content">
 
-                  <span class="comment_close">&times;</span>
+                  <span id="comment_close">&times;</span>
                   <form class="form_action" action="./assets/actions/post_comment_action.php" method="post">
 
                     <label for="single_player_id_comment"></label>
                     <input type="hidden" id="single_player_id_comment" name="id" value="<?= $content_id ?>">
 
                     <label for="single_player_comment">Your comment</label>
-                    <textarea class="inputbox" id="single_player_comment" name="comment"></textarea>
+                    <textarea class="inputbox text" id="single_player_comment" name="comment"></textarea>
 
                     <button type="submit" class="button">Post Comment</button>
                   </form>
@@ -140,6 +141,8 @@ if (
               </div>
             </div>
           </div>
+
+
 
           <?php
           if ($content_category == 'tutorial') {
@@ -250,6 +253,26 @@ if (
                 $number_of_user_comments = $req->fetch();
 
               ?>
+                <div id="edit_comment_modal<?= $comment_id ?>" class="modal">
+                  <div class="modal-content">
+                    <div class="modal_form">
+                      <div class="modal_form_content">
+
+                        <span class="edit_comment_close" id="edit_comment_close<?= $comment_id ?>">&times;</span>
+                        <form class="form_action" action="./assets/actions/edit_comment_action.php?id=<?= $content_id ?>" method="post">
+
+                          <label for="single_player_id_edit_comment<?= $comment_id ?>"></label>
+                          <input type="hidden" id="single_player_id_edit_comment<?= $comment_id ?>" name="id" value="<?= $comment_id ?>">
+
+                          <label for="single_player_edit_comment<?= $comment_id ?>">Your comment</label>
+                          <textarea class="inputbox text" id="single_player_edit_comment<?= $comment_id ?>" name="comment" value="<?= $comment_text ?>"><?= $comment_text ?></textarea>
+
+                          <button type="submit" class="button">Edit Comment</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div class='deck'>
                   <div class='single_player_card'>
@@ -268,6 +291,8 @@ if (
                         <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= $comment_id ?>&id=<?= $content_id ?>" onclick="javascript:return likeComment('<?= $comment_user_name ?>','<?= $comment_user_lastname ?>')"> <i class='far fa-heart fa-fw'></i></a></span>
 
                         <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($number_of_user_comments)) ?><i class='far fa-comment fa-fw'></i></span>
+
+                        <button class="dropbtn" id="edit_comment_button<?= $comment_id ?>" onclick="javascript: editComment('<?= $comment_id ?>')">Edit</button>
 
                       </section>
                     </div>

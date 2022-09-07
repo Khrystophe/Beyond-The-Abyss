@@ -69,6 +69,10 @@
     font-size: 1rem;
     font-weight: 500;
     outline:none;
+
+    &.text{
+        height: 10rem;
+    }
 }
 
 .button{

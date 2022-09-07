@@ -36,7 +36,7 @@ if (isset($session_users_id)) {
                <div class="modal_form">
                   <div class="modal_form_content">
 
-                     <span class="search_close">&times;</span>
+                     <span id="search_close">&times;</span>
                      <form class="form_action" action="/Diplome/content.php?category=search_results" method="post">
 
                         <label for="search_title"></label>

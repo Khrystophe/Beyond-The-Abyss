@@ -303,7 +303,7 @@ if (isset($_POST['price']) && !empty($_POST['price'])) {
 if (isset($_POST['description']) && !empty($_POST['description'])) {
 
   $check_post_description =  is_string($_POST['description'])
-    && preg_match("/^[0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['description']);
+    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['description']);
 
   if ($check_post_description === true) {
 
@@ -315,7 +315,7 @@ if (isset($_POST['description']) && !empty($_POST['description'])) {
 if (isset($_POST['comment']) && !empty($_POST['comment'])) {
 
   $check_post_comment =  is_string($_POST['comment'])
-    && preg_match("/^[0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['comment']);
+    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['comment']);
 
   if ($check_post_comment === true) {
 
