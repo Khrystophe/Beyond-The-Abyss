@@ -47,3 +47,12 @@ function getNotifications()
     $notifications =  $req->fetchAll();
     return $notifications;
 }
+
+
+function getContact()
+{
+    global $bdd;
+    $req = $bdd->query('SELECT * FROM contact ORDER BY date');
+    $contact =  $req->fetchAll();
+    return $contact;
+}

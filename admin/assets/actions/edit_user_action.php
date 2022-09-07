@@ -46,9 +46,13 @@ if (
                     ':type' => $_POST['type'],
                     ':id' => $_POST['id']
                 ));
-                header('location: ../../users.php');
+                $bdd = null;
+                header('location: ../../users.php?success=edit_ok');
+                die();
             }
+            $bdd = null;
             header('location: ../../users.php?error=emailexist');
+            die();
         }
     } else {
 

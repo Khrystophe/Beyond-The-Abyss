@@ -135,6 +135,12 @@
                                 Notifications
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.php">
+                                <span data-feather="layers" class="align-text-bottom"></span>
+                                Contact
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>

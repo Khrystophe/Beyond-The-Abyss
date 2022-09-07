@@ -34,8 +34,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
           <tr>
             <td scope="col"><?= $notification['id'] ?></td>
-            <td scope="col"><?= $notification['notification'] ?></td>
-            <td scope="col"><?= $notification['date'] ?></td>
+            <td scope="col" style="word-break: break-all;"><?= nl2br($notification['notification']) ?></td>
+            <td scope="col" style="word-break: break-all;"><?= $notification['date'] ?></td>
             <td scope="col"><?= $notification['id_users'] ?></td>
             <td scope="col"><a href="./assets/actions/delete_notifications_action.php?id=<?= $notification['id'] ?>">Delete</a></td>
           </tr>
