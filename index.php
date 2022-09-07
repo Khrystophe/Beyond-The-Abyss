@@ -3,6 +3,8 @@ session_start();
 $page = 'index';
 require('./assets/require/check_data.php');
 require('./assets/require/co_bdd.php');
+require('./assets/require/page_deco_auto.php');
+require('./assets/require/session_regenerate.php');
 require('./assets/require/functions.php');
 require('./assets/require/head.php');
 
