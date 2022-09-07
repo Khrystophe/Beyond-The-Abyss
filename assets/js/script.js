@@ -464,6 +464,20 @@ if (edit_button != undefined){
   }
 }
 
+
+let contact_modal = document.getElementById("contact_modal");
+let contact_button = document.getElementById("contact_button");
+let contact_close = document.getElementById("contact_close");
+
+if (contact_button != undefined){
+    contact_button.onclick = function() {
+    contact_modal.style.display = "block";
+  }
+    contact_close.onclick = function() {
+    contact_modal.style.display = "none";
+  }
+}
+
 function editComment(comment_id){
 
 let edit_comment_modal = document.getElementById("edit_comment_modal"+comment_id);
@@ -491,6 +505,9 @@ window.onclick = function(event) {
 
   }else if (event.target == edit_modal) {
     edit_modal.style.display = "none";
+
+  }else if (event.target == contact_modal) {
+    contact_modal.style.display = "none";
   }
  
 }

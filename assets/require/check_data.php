@@ -78,7 +78,7 @@ if (isset($_GET['success']) && !empty($_GET['success'])) {
 if (isset($_GET['name']) && !empty($_GET['name'])) {
 
   $check_get_name = is_string($_GET['name'])
-    && preg_match("/^[a-z_]+$/", $_GET['name']);
+    && preg_match("/^[a-z]+$/", $_GET['name']);
 
   if ($check_get_name === true) {
 
@@ -320,6 +320,18 @@ if (isset($_POST['comment']) && !empty($_POST['comment'])) {
   if ($check_post_comment === true) {
 
     $post_comment = $_POST['comment'];
+  }
+}
+
+
+if (isset($_POST['message']) && !empty($_POST['message'])) {
+
+  $check_post_message =  is_string($_POST['message'])
+    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['message']);
+
+  if ($check_post_message === true) {
+
+    $post_message = $_POST['message'];
   }
 }
 

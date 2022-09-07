@@ -1,8 +1,5 @@
 <?php
 session_start();
-if (empty($_COOKIE["accept_cookie"])) {
-   setcookie('accept_cookie', 'ok', (time() + 3600));
-}
 require('./assets/require/check_data.php');
 
 if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {

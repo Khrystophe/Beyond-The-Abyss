@@ -218,7 +218,7 @@ if (
                                  <div class="content_price"><?= $content_price ?> Credits</div>
                                  <div class="content_user name">By <?= $user_content_name ?></div>
                                  <div class="content_user lastname"><?= $user_content_lastname ?></div>
-                                 <a data-barba-prevent href="./assets/actions/buy_content_action.php?id=<?= $content_id ?>" class="card__button link_page" onclick="javascript:return login()">Buy</a>
+                                 <a class="card__button link_page" onclick="javascript:return login()">Buy</a>
 
                               <?php
 

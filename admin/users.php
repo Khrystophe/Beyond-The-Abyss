@@ -42,7 +42,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                         <td scope="col" style="word-break: break-all;"><?= $user['lastname'] ?></td>
                         <td scope="col" style="word-break: break-all;"><?= $user['email'] ?></td>
                         <td scope="col" style="word-break: break-all;"><?= $user['password'] ?></td>
-                        <td scope="col" style="word-break: break-all;"><?= $user['credits'] ?></td>
+                        <td scope="col"><?= $user['credits'] ?></td>
                         <td scope="col"><?= $user['type'] ?></td>
 
                         <td scope="col">

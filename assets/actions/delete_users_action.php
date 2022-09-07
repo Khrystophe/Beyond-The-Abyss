@@ -58,8 +58,14 @@ if (
 
             $date = date('l jS \of F Y h:i:s A');
 
+            $notification = 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! 
+            
+            Your new sold of credits is ' . $new_sold_of_credits . ' because ' .  $user['name'] . ' ' . $user['lastname'] . ' have deleted his account. 
+            
+            You have been reimbursed of all your purchased content.';
+
             $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
-            $req->bindParam(':notification', 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! Your new sold of credits is ' . $new_sold_of_credits . ' because ' .  $user['name'] . ' ' . $user['lastname'] . ' have deleted his account. You have been reimbursed of all your purchased content.', PDO::PARAM_STR);
+            $req->bindParam(':notification', $notification, PDO::PARAM_STR);
             $req->bindParam(':date', $date, PDO::PARAM_STR);
             $req->bindParam(':id_users', $repayment_informations_foreach_buyer['purchased_contents_id_users'], PDO::PARAM_INT);
             $req->execute();

@@ -30,8 +30,8 @@ if (isset($session_users_id)) {
    <header>
 
       <nav>
-         <div id="search_modal" class="modal">
 
+         <div id="search_modal" class="modal">
             <div class="modal-content">
                <div class="modal_form">
                   <div class="modal_form_content">
@@ -67,7 +67,36 @@ if (isset($session_users_id)) {
                   </div>
                </div>
             </div>
+         </div>
 
+
+         <div id="contact_modal" class="modal">
+            <div class="modal-content">
+               <div class="modal_form">
+                  <div class="modal_form_content">
+
+                     <span id="contact_close">&times;</span>
+                     <form class="form_action" action="./assets/actions/contact_action.php" method="post">
+                        <?php
+                        if (isset($session_users_id)) { ?>
+
+                           <label for="contact_id"></label>
+                           <input type="hidden" id="contact_id" name="id" value="<?= $session_users_id ?>">
+
+                           <label for=" contact_message">Contact an administrator</label>
+                           <textarea class="inputbox text" id="contact_message" name="message"></textarea>
+
+                           <button type="submit" class="button">Post</button>
+
+                        <?php } else { ?>
+
+                           <div>You are not logged in</div>
+
+                        <?php } ?>
+                     </form>
+                  </div>
+               </div>
+            </div>
          </div>
 
          <div class="little_logo">
@@ -187,7 +216,7 @@ if (isset($session_users_id)) {
                   </div>
                   <ul>
                      <li>
-                        <a class="link_menu" href="index.php">contact@website.com</a>
+                        <a id="contact_button">contact</a>
                      </li>
                   </ul>
                </div>

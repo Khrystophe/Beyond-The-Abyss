@@ -55,6 +55,19 @@
   cursor: pointer;
 }
 
+#contact_close {
+  align-self: flex-end;
+  color: #aaa;
+  font-size: 28px;
+}
+
+#contact_close:hover,
+#contact_close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .edit_comment_close {
   align-self: flex-end;
   color: #aaa;
