@@ -45,10 +45,9 @@ if (
         $user_session_id = htmlspecialchars($user_session['id']);
         $user_session_credits = htmlspecialchars($user_session['credits']);
 
-
         $user_purchased_contents = getIdUserFromPurchasedContent($bdd, $content_id);
 
-        $user_session_purchased_content = in_array($user_session_id, array_column($user_purchased_contents, 'id_users'), TRUE);
+        $user_session_purchased_content = in_array($user_session_id, array_column($user_purchased_contents, 'id_users'));
       }
     } else {
 
@@ -143,6 +142,28 @@ if (
           </div>
 
 
+          <div id="report_modal" class="modal">
+            <div class="modal-content">
+              <div class="modal_form">
+                <div class="modal_form_content">
+
+                  <span id="report_close">&times;</span>
+                  <form class="form_action" action="./assets/actions/reporting_action.php" method="post">
+
+                    <label for="single_player_id_report"></label>
+                    <input type="hidden" id="single_player_id_report" name="id" value="<?= $content_id ?>">
+
+                    <label for="single_player_report">Want to report this content? Any improper reporting will result in consequences.</label>
+                    <textarea class="inputbox text" id="single_player_report" name="message"></textarea>
+
+                    <button type="submit" class="button">Report</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
 
           <?php
           if ($content_category == 'tutorial') {
@@ -185,15 +206,20 @@ if (
                       </a>
                     </button>
 
-                  <?php } ?>
-
-                  <button class="dropbtn" id="comment_button">Comment</button>
+                    <div class="dropdown">
+                      <button class="dropbtn">Comment/Report</button>
+                      <div class="dropdown-content">
+                        <a id="comment_button">Comment</a>
+                        <a id="report_button">Report this Content</a>
+                      </div>
+                    </div>
 
                   <?php
 
-                  if ($user_session_id == $content_id_user) {
+                  } else {
 
                   ?>
+                    <button class="dropbtn" id="comment_button">Comment</button>
 
                     <div class="dropdown">
                       <button class="dropbtn">Edit/Delete</button>
@@ -312,7 +338,7 @@ if (
     }
   } else {
     http_response_code(400);
-    header('location: index.php?error=processing_bad_or_malformed_request');
+    header('location: index.php?error=processing_bad_or_malformed_requestttttt');
     die();
   }
 } else {

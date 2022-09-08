@@ -22,8 +22,8 @@ if (
     $req = $bdd->prepare('SELECT credits FROM users WHERE id = :id');
     $req->bindParam(':id', $session_users_id, PDO::PARAM_INT);
     $req->execute();
-    $number_of_credits = $req->fetch();
-    $credits = implode($number_of_credits);
+    $credits = $req->fetch();
+    $credits = implode($credits);
 
     if ($credits >= $price) {
 
@@ -47,14 +47,14 @@ if (
       WHERE contents.id = :id');
       $req->bindParam(':id', $get_id, PDO::PARAM_INT);
       $req->execute();
-      $number_of_credits = $req->fetch();
+      $user = $req->fetch();
 
-      $author_credits = $number_of_credits['credits'];
+      $author_credits = $user['credits'];
       $author_credits += 3;
 
       $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
       $req->bindParam(':credits', $author_credits, PDO::PARAM_INT);
-      $req->bindParam(':users_id', $number_of_credits['id'], PDO::PARAM_INT);
+      $req->bindParam(':users_id', $user['id'], PDO::PARAM_INT);
       $req->execute();
 
       $bdd = null;

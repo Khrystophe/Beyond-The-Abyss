@@ -22,7 +22,7 @@ if (
   $req->execute();
 
   $bdd = null;
-  header('location: ../../single_player_content.php?id=' . $post_id);
+  header('location: ../../single_player_content.php?id=' . $post_id . '&success=comment_posted');
   die();
 } else {
 

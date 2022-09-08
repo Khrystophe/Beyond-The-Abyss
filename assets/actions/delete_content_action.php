@@ -13,7 +13,7 @@ if (
     require('../require/action_deco_auto.php');
 
 
-    $req = $bdd->prepare('SELECT contents.category, contents.title, contents.composer,contents.id_users, users.name, users.lastname 
+    $req = $bdd->prepare('SELECT contents.category, contents.title, contents.composer,contents.id_users, contents.reporting, users.name, users.lastname 
     FROM contents
     INNER JOIN users
     ON users.id = contents.id_users 
@@ -22,11 +22,28 @@ if (
     $req->execute();
     $content_informations = $req->fetch();
 
+    if (($content_informations['reporting'] != 0 && $get_type != 'admin') ||
+        ($content_informations['reporting'] != 0 && $get_type == 'admin' && $content_informations['id_users'] == $session_users_id)
+    ) {
+
+        if ($get_type == 'admin') {
+
+            $bdd = null;
+            header('location: ../../admin/contents.php?id=error=content_reported');
+            die();
+        } else {
+
+            $bdd = null;
+            header('location: ../../single_player_content.php?id=' . $get_id . '&error=content_reported');
+            die();
+        }
+    }
+
     $req = $bdd->prepare('SELECT credits FROM users WHERE id = :id_users');
     $req->bindParam(':id_users', $content_informations['id_users'], PDO::PARAM_INT);
     $req->execute();
-    $number_of_credits = $req->fetch();
-    $author_credits = implode($number_of_credits);
+    $author_credits = $req->fetch();
+    $author_credits = implode($author_credits);
 
     if ($content_informations['category'] == 'tutorial') {
         $author_credits -= 30;

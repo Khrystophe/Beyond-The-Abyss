@@ -21,7 +21,7 @@ if (
     $req->execute();
     $user_like = $req->fetchAll();
 
-    if (in_array($session_users_id, array_column($user_like, 'id_users'), TRUE) == false) {
+    if (in_array($session_users_id, array_column($user_like, 'id_users')) == false) {
 
       $req = $bdd->prepare('INSERT INTO likes (id_users, id_contents) VALUES (:users_id, :contents_id) ');
       $req->bindParam(':users_id', $session_users_id, PDO::PARAM_INT);
@@ -31,9 +31,8 @@ if (
       $req = $bdd->prepare('SELECT likes FROM contents WHERE contents.id = :contents_id');
       $req->bindParam(':contents_id', $get_id, PDO::PARAM_INT);
       $req->execute();
-      $number_of_likes = $req->fetch();
-
-      $likes = implode($number_of_likes);
+      $likes = $req->fetch();
+      $likes = implode($likes);
       $likes++;
 
       $req = $bdd->prepare('UPDATE contents SET likes = :likes WHERE contents.id = :contents_id');
@@ -48,14 +47,14 @@ if (
       WHERE contents.id = :id');
       $req->bindParam(':id', $get_id, PDO::PARAM_INT);
       $req->execute();
-      $number_of_credits = $req->fetch();
+      $user = $req->fetch();
 
-      $author_credits = $number_of_credits['credits'];
+      $author_credits = $user['credits'];
       $author_credits++;
 
       $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
       $req->bindParam(':credits', $author_credits, PDO::PARAM_INT);
-      $req->bindParam(':users_id', $number_of_credits['id'], PDO::PARAM_INT);
+      $req->bindParam(':users_id', $user['id'], PDO::PARAM_INT);
       $req->execute();
 
       header('location: ../../single_player_content.php?id=' . $get_id);
@@ -71,7 +70,7 @@ if (
     $user_like = $req->fetchAll();
 
 
-    if (in_array($_SESSION['users']['id'], array_column($user_like, 'id_users'), TRUE) == false) {
+    if (in_array($_SESSION['users']['id'], array_column($user_like, 'id_users')) == false) {
 
       $req = $bdd->prepare('INSERT INTO likes (id_users, id_comments) VALUES (:users_id, :comments_id) ');
       $req->bindParam(':users_id', $session_users_id, PDO::PARAM_INT);
@@ -81,9 +80,8 @@ if (
       $req = $bdd->prepare('SELECT likes FROM comments WHERE comments.id = :comments_id');
       $req->bindParam(':comments_id', $get_id_comment, PDO::PARAM_INT);
       $req->execute();
-      $number_of_likes = $req->fetch();
-
-      $likes = implode($number_of_likes);
+      $likes = $req->fetch();
+      $likes = implode($likes);
       $likes++;
 
       $req = $bdd->prepare('UPDATE comments SET likes = :likes WHERE comments.id = :comments_id');

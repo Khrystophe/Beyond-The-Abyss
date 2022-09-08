@@ -478,6 +478,20 @@ if (contact_button != undefined){
   }
 }
 
+
+let report_modal = document.getElementById("report_modal");
+let report_button = document.getElementById("report_button");
+let report_close = document.getElementById("report_close");
+
+if (report_button != undefined){
+    report_button.onclick = function() {
+    report_modal.style.display = "block";
+  }
+    report_close.onclick = function() {
+    report_modal.style.display = "none";
+  }
+}
+
 function editComment(comment_id){
 
 let edit_comment_modal = document.getElementById("edit_comment_modal"+comment_id);
@@ -508,6 +522,9 @@ window.onclick = function(event) {
 
   }else if (event.target == contact_modal) {
     contact_modal.style.display = "none";
+
+  }else if (event.target == report_modal) {
+    report_modal.style.display = "none";
   }
  
 }

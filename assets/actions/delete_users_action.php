@@ -40,14 +40,14 @@ if (
             $req = $bdd->prepare('SELECT SUM(original_price) FROM purchased_contents WHERE id_users = :id_users');
             $req->bindParam(':id_users', $repayment_informations_foreach_buyer['purchased_contents_id_users'], PDO::PARAM_INT);
             $req->execute();
-            $total_of_original_price = $req->fetchAll();
-            $total_price = implode($total_of_original_price[0]);
+            $total_price = $req->fetchAll();
+            $total_price = implode($total_price[0]);
 
             $req = $bdd->prepare('SELECT SUM(buyer_repayment) FROM purchased_contents WHERE id_users = :id_users');
             $req->bindParam(':id_users', $repayment_informations_foreach_buyer['purchased_contents_id_users'], PDO::PARAM_INT);
             $req->execute();
-            $total_of_buyer_repayment = $req->fetchAll();
-            $total_repayment = implode($total_of_buyer_repayment[0]);
+            $total_repayment = $req->fetchAll();
+            $total_repayment = implode($total_repayment[0]);
 
             $new_sold_of_credits = $repayment_informations_foreach_buyer['credits'] += $total_price - $total_repayment;
 

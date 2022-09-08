@@ -49,8 +49,8 @@ if (
    $req = $bdd->prepare('SELECT credits FROM users WHERE users.id = :users_id');
    $req->bindParam(':users_id', $session_users_id, PDO::PARAM_INT);
    $req->execute();
-   $nbrOfCredits = $req->fetch();
-   $credits = implode($nbrOfCredits);
+   $credits = $req->fetch();
+   $credits = implode($credits);
 
    if ($post_category == 'tutorial') {
       $credits += 30;

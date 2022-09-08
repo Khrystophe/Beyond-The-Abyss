@@ -145,7 +145,7 @@ if (
 
                               $user_purchased_contents = getIdUserFromPurchasedContent($bdd, $content_id);
 
-                              $user_session_purchased_content = in_array($user_session_id, array_column($user_purchased_contents, 'id_users'), TRUE);
+                              $user_session_purchased_content = in_array($user_session_id, array_column($user_purchased_contents, 'id_users'));
 
                               if ($content_price == 0 || $content_id_user == $user_session_id) {
 

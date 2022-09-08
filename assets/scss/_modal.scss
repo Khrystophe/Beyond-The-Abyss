@@ -68,6 +68,19 @@
   cursor: pointer;
 }
 
+#report_close {
+  align-self: flex-end;
+  color: #aaa;
+  font-size: 28px;
+}
+
+#report_close:hover,
+#report_close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .edit_comment_close {
   align-self: flex-end;
   color: #aaa;
