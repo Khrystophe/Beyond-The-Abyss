@@ -7,7 +7,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         require('./assets/require/co_bdd.php');
         require('./assets/require/functions.php');
 
-        $purchased_contents = getPurchased_contents();
+        $purchased_contents = getPurchased_contents($bdd);
 
 ?>
 
@@ -31,15 +31,21 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                 foreach ($purchased_contents as $content) {
 
+                    $content_id = htmlspecialchars($content['id']);
+                    $content_id_contents = htmlspecialchars($content['id_contents']);
+                    $content_id_users = htmlspecialchars($content['id_users']);
+                    $content_original_price = htmlspecialchars($content['original_price']);
+                    $content_buyer_repayment = htmlspecialchars($content['buyer_repayment']);
+
                 ?>
 
                     <tr>
-                        <td scope="col"><?= $content['id'] ?></td>
-                        <td scope="col"><?= $content['id_contents'] ?></td>
-                        <td scope="col"><?= $content['id_users'] ?></td>
-                        <td scope="col"><?= $content['original_price'] ?></td>
-                        <td scope="col"><?= $content['buyer_repayment'] ?></td>
-                        <td scope="col"><a href="./assets/actions/delete_purchased_contents_action.php?id=<?= $content['id'] ?>">Delete</a></td>
+                        <td scope="col"><?= $content_id ?></td>
+                        <td scope="col"><?= $content_id_contents ?></td>
+                        <td scope="col"><?= $content_id_users ?></td>
+                        <td scope="col"><?= $content_original_price ?></td>
+                        <td scope="col"><?= $content_buyer_repayment ?></td>
+                        <td scope="col"><a href="./assets/actions/delete_purchased_contents_action.php?id=<?= $content_id ?>">Delete</a></td>
                     </tr>
 
                 <?php

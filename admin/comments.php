@@ -7,7 +7,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         require('./assets/require/co_bdd.php');
         require('./assets/require/functions.php');
 
-        $comments = getComments();
+        $comments = getComments($bdd);
 
 ?>
 
@@ -32,16 +32,23 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                 foreach ($comments as $comment) {
 
+                    $comment_id = htmlspecialchars($comment['id']);
+                    $comment_text = nl2br(htmlspecialchars($comment['comment']));
+                    $comment_date = htmlspecialchars($comment['date']);
+                    $comment_likes = htmlspecialchars($comment['likes']);
+                    $comment_id_contents = htmlspecialchars($comment['id_contents']);
+                    $comment_id_users = htmlspecialchars($comment['id_users']);
+
                 ?>
 
                     <tr>
-                        <td scope="col"><?= $comment['id'] ?></td>
-                        <td scope="col" style="word-break:break-all" ;><?= $comment['comment'] ?></td>
-                        <td scope="col" style="word-break: break-all;"><?= $comment['date'] ?></td>
-                        <td scope="col"><?= $comment['likes'] ?></td>
-                        <td scope="col"><?= $comment['id_contents'] ?></td>
-                        <td scope="col"><?= $comment['id_users'] ?></td>
-                        <td scope="col"><a href="./assets/actions/delete_comments_action.php?id=<?= $comment['id'] ?>">Delete</a></td>
+                        <td scope="col"><?= $comment_id ?></td>
+                        <td scope="col" style="word-break:break-all" ;><?= $comment_text ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $comment_date ?></td>
+                        <td scope="col"><?= $comment_likes ?></td>
+                        <td scope="col"><?= $comment_id_contents ?></td>
+                        <td scope="col"><?= $comment_id_users ?></td>
+                        <td scope="col"><a href="./assets/actions/delete_comments_action.php?id=<?= $comment_id ?>">Delete</a></td>
                     </tr>
                 <?php } ?>
             </tbody>

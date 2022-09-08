@@ -7,7 +7,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         require('./assets/require/co_bdd.php');
         require('./assets/require/functions.php');
 
-        $contacts = getContact();
+        $contacts = getContact($bdd);
 
 ?>
 
@@ -30,19 +30,25 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                 foreach ($contacts as $contact) {
 
+                    $contact_id = htmlspecialchars($contact['id']);
+                    $contact_message = nl2br(htmlspecialchars($contact['message']));
+                    $contact_date = htmlspecialchars($contact['date']);
+                    $contact_id_users = htmlspecialchars($contact['id_users']);
+
+
                 ?>
 
                     <tr>
-                        <td scope="col"><?= $contact['id'] ?></td>
-                        <td scope="col" style="word-break:break-all" ;><?= $contact['message'] ?></td>
-                        <td scope="col" style="word-break: break-all;"><?= $contact['date'] ?></td>
-                        <td scope="col"><?= $contact['id_users'] ?></td>
+                        <td scope="col"><?= $contact_id ?></td>
+                        <td scope="col" style="word-break:break-all" ;><?= $contact_message  ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $contact_date ?></td>
+                        <td scope="col"><?= $contact_id_users ?></td>
 
                         <td scope="col">
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $contact['id'] ?>">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $contact_id ?>">
                                 Reply
                             </button>
-                            <div class="modal fade" id="user_editModal<?= $contact['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="user_editModal<?= $contact_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -51,35 +57,35 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                         </div>
                                         <div class="modal-body">
 
-                                            <form method="post" action="./assets/actions/reply_action.php?id=<?= $contact['id'] ?>" enctype="multipart/form-data">
+                                            <form method="post" action="./assets/actions/reply_action.php?id=<?= $contact_id ?>" enctype="multipart/form-data">
 
                                                 <div class="mb-3">
-                                                    <label for="admin_contact_id_user<?= $contact['id'] ?>" class="form-label">User id</label>
-                                                    <input type="hidden" class="form-control" id="admin_contact_id_user<?= $contact['id'] ?>" name="id" value="<?= $contact['id_users'] ?>">
-                                                    <div style="width:10%; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;"><?= $contact['id_users'] ?></div>
+                                                    <label for="admin_contact_id_user<?= $contact_id ?>" class="form-label">User id</label>
+                                                    <input type="hidden" class="form-control" id="admin_contact_id_user<?= $contact_id ?>" name="id" value="<?= $contact_id_users ?>">
+                                                    <div style="width:10%; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;"><?= $contact_id_users ?></div>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <div class="form-label">Date</div>
-                                                    <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $contact['date'] ?></div>
+                                                    <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $contact_date ?></div>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <div class="form-label">Message</div>
-                                                    <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: flex-start;word-break: break-all;"><?= nl2br($contact['message']) ?></div>
+                                                    <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: flex-start;word-break: break-all;"><?= $contact_message ?></div>
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_contact_message<?= $contact['id'] ?>"></label>
+                                                    <label for="admin_contact_message<?= $contact_id ?>"></label>
                                                     <div class="form-floating">
-                                                        <input type="hidden" class="form-control" id="admin_contact_message<?= $contact['id'] ?>" name="message" value="<?= $contact['message'] ?>">
+                                                        <input type="hidden" class="form-control" id="admin_contact_message<?= $contact_id ?>" name="message" value="<?= $contact_message  ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="admin_contact_notification<?= $contact['id'] ?>">Reply</label>
+                                                    <label for="admin_contact_notification<?= $contact_id ?>">Reply</label>
                                                     <div class="form-floating">
-                                                        <textarea class="form-control" id="admin_contact_notification<?= $contact['id'] ?>" style="height: 100px" name="notification"></textarea>
+                                                        <textarea class="form-control" id="admin_contact_notification<?= $contact_id ?>" style="height: 100px" name="notification"></textarea>
                                                     </div>
                                                 </div>
 
@@ -91,7 +97,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                             </div>
                         </td>
 
-                        <td scope="col"><a href="./assets/actions/delete_contact_messages.php?id=<?= $contact['id'] ?>">Delete</a></td>
+                        <td scope="col"><a href="./assets/actions/delete_contact_messages.php?id=<?= $contact_id ?>">Delete</a></td>
 
                     </tr>
                 <?php } ?>

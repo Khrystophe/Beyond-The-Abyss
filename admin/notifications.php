@@ -7,7 +7,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
     require('./assets/require/co_bdd.php');
     require('./assets/require/functions.php');
 
-    $notifications = getNotifications();
+    $notifications = getNotifications($bdd);
 
 ?>
 
@@ -30,14 +30,19 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
         foreach ($notifications as $notification) {
 
+          $notification_id = htmlspecialchars($notification['id']);
+          $notification_text = nl2br(htmlspecialchars($notification['notification']));
+          $notification_date = htmlspecialchars($notification['date']);
+          $notification_id_users = htmlspecialchars($notification['id_users']);
+
         ?>
 
           <tr>
-            <td scope="col"><?= $notification['id'] ?></td>
-            <td scope="col" style="word-break: break-all;"><?= nl2br($notification['notification']) ?></td>
-            <td scope="col" style="word-break: break-all;"><?= $notification['date'] ?></td>
-            <td scope="col"><?= $notification['id_users'] ?></td>
-            <td scope="col"><a href="./assets/actions/delete_notifications_action.php?id=<?= $notification['id'] ?>">Delete</a></td>
+            <td scope="col"><?= $notification_id ?></td>
+            <td scope="col" style="word-break: break-all;"><?= $notification_text ?></td>
+            <td scope="col" style="word-break: break-all;"><?= $notification_date ?></td>
+            <td scope="col"><?= $notification_id_users ?></td>
+            <td scope="col"><a href="./assets/actions/delete_notifications_action.php?id=<?= $notification_id ?>">Delete</a></td>
           </tr>
         <?php } ?>
       </tbody>
