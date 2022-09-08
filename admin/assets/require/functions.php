@@ -2,7 +2,6 @@
 
 function getAllContents(PDO $bdd)
 {
-    global $bdd;
     $req = $bdd->prepare("SELECT * FROM contents ORDER BY category");
     $req->execute();
     $getAllContents = $req->fetchAll();
@@ -11,16 +10,23 @@ function getAllContents(PDO $bdd)
 
 function getUsers(PDO $bdd)
 {
-    global $bdd;
     $req = $bdd->prepare('SELECT * FROM users ORDER BY name');
     $req->execute();
     $users = $req->fetchAll();
     return $users;
 }
 
+function getUserInformations(PDO $bdd, $id_users)
+{
+    $req = $bdd->prepare('SELECT name, lastname, email FROM users WHERE id = :id_users');
+    $req->bindParam(':id_users', $id_users, PDO::PARAM_INT);
+    $req->execute();
+    $user = $req->fetch();
+    return $user;
+}
+
 function getPurchased_contents(PDO $bdd)
 {
-    global $bdd;
     $req = $bdd->prepare('SELECT * FROM purchased_contents ORDER BY id_users');
     $req->execute();
     $purchased_contents = $req->fetchAll();
@@ -29,7 +35,6 @@ function getPurchased_contents(PDO $bdd)
 
 function getComments(PDO $bdd)
 {
-    global $bdd;
     $req = $bdd->prepare('SELECT * FROM comments ORDER BY id_contents');
     $req->execute();
     $comments =  $req->fetchAll();
@@ -39,7 +44,6 @@ function getComments(PDO $bdd)
 
 function getNotifications(PDO $bdd)
 {
-    global $bdd;
     $req = $bdd->prepare('SELECT * FROM notifications ORDER BY date');
     $req->execute();
     $notifications =  $req->fetchAll();
@@ -49,7 +53,6 @@ function getNotifications(PDO $bdd)
 
 function getContact(PDO $bdd)
 {
-    global $bdd;
     $req = $bdd->prepare('SELECT * FROM contact ORDER BY date');
     $req->execute();
     $contact =  $req->fetchAll();

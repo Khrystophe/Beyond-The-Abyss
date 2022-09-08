@@ -7,6 +7,8 @@ if (
   && isset($post_id)
   && isset($_POST['message'])
   && isset($_POST['notification'])
+  && isset($_POST['name'])
+  && isset($_POST['lastname'])
 ) {
 
   var_dump($post_id);
@@ -20,6 +22,8 @@ if (
     " ' . $_POST['message'] . ' "  
     
     Here is our answer as promised :
+
+    Hello ' . $_POST['name'] . " " . $_POST['lastname'] . ' ! 
     
     ' . $_POST['notification'] . '
     
