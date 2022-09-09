@@ -57,9 +57,11 @@ if (isset($get_error) || isset($get_success)) {
     44 => 'Message deleted. ',
     45 => 'Comment deleted. ',
     46 => 'You have been logged out automatically because you have been inactive for too long. ',
-    47 => '',
+    47 => 'This content is not free. 
+    Log in or register. 
+    You will get 50 credits. ',
     48 => 'Account deleted. ',
-    49 => '',
+    49 => 'Your search result is empty.',
     50 => 'An error has occured. ',
     51 => 'This content has been flagged. 
     You can no longer edit or delete it until an administrator has reviewed it.  ',

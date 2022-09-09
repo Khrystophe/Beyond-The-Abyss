@@ -17,10 +17,10 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
     <table class="table sortable">
       <thead>
         <tr>
-          <th scope="col">id</th>
-          <th scope="col">Notification</th>
-          <th scope="col">Date</th>
-          <th scope="col">id_users</th>
+          <th scope="col" style="word-break: break-all;">id</th>
+          <th scope="col" style="word-break: break-all;">Notification</th>
+          <th scope="col" style="word-break: break-all;">Date</th>
+          <th scope="col" style="word-break: break-all;">id_users</th>
         </tr>
       </thead>
 
@@ -38,11 +38,11 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         ?>
 
           <tr>
-            <td scope="col"><?= $notification_id ?></td>
+            <td scope="col" style="word-break: break-all;"><?= $notification_id ?></td>
             <td scope="col" style="word-break: break-all;"><?= $notification_text ?></td>
             <td scope="col" style="word-break: break-all;"><?= $notification_date ?></td>
-            <td scope="col"><?= $notification_id_users ?></td>
-            <td scope="col"><a href="./assets/actions/delete_notifications_action.php?id=<?= $notification_id ?>">Delete</a></td>
+            <td scope="col" style="word-break: break-all;"><?= $notification_id_users ?></td>
+            <td scope="col" style="word-break: break-all;"><a href="./assets/actions/delete_notifications_action.php?id=<?= $notification_id ?>"><button class="btn btn-danger">Delete</button></a></td>
           </tr>
         <?php } ?>
       </tbody>

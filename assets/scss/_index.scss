@@ -104,17 +104,17 @@
       
       &.one{
       width: 100%;
-      transition: width 1s;
+      // transition: width 1s;
       }
 
       &.two{
         width: 50%;
-        transition: width 1s;
+        // transition: width 1s;
       }
       
       &.three{
         width: 25%;
-        transition: width 1s;
+        // transition: width 1s;
       }
     }
   }
@@ -134,17 +134,17 @@
       -3px 3px 3px #232323;
       &.one{
         width: 100%;
-        transition: width 1s;
+        // transition: width 1s;
       }
       
       &.two{
         width: 50%;
-        transition: width 1s;
+        // transition: width 1s;
       }
       
       &.three{
         width: 25%;
-        transition: width 1s;
+        // transition: width 1s;
       }
     }
   }
@@ -165,54 +165,54 @@
       
       &.one{
         width: 100%;
-        transition: width 1s;
+        // transition: width 1s;
       }
       
       &.two{
         width: 50%;
-        transition: width 1s;
+        // transition: width 1s;
       }
       
       &.three{
         width: 25%;
-        transition: width 1s;
+        // transition: width 1s;
       }
     }
   }
 }
 
-.cards:hover{
-  &.one{
-    .line{
-      &.one{
-        width: 25%;
-      }
-      &.three{
-        width:100%;
-      }
-    }
-  }
-  &.two{
-    .line{
-      &.one{
-        width: 25%;
-      }
-      &.three{
-        width:100%;
-      }
-    }
-  }
-  &.three{
-    .line{
-      &.one{
-        width: 25%;
-      }
-      &.three{
-        width:100%;
-      }
-    }
-  }
-}
+// .cards:hover{
+//   &.one{
+//     .line{
+//       &.one{
+//         width: 25%;
+//       }
+//       &.three{
+//         width:100%;
+//       }
+//     }
+//   }
+//   &.two{
+//     .line{
+//       &.one{
+//         width: 25%;
+//       }
+//       &.three{
+//         width:100%;
+//       }
+//     }
+//   }
+//   &.three{
+//     .line{
+//       &.one{
+//         width: 25%;
+//       }
+//       &.three{
+//         width:100%;
+//       }
+//     }
+//   }
+// }
 
 
 

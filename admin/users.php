@@ -17,12 +17,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         <table class="table sortable">
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Lastname</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Credits</th>
-                    <th scope="col">Type</th>
+                    <th scope="col" style="word-break: break-all;">Id</th>
+                    <th scope="col" style="word-break: break-all;">Credits</th>
+                    <th scope="col" style="word-break: break-all;">Type</th>
 
                 </tr>
             </thead>
@@ -44,15 +41,12 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                 ?>
 
                     <tr>
-                        <td scope="col"><?= $user_id ?></td>
-                        <td scope="col" style="word-break: break-all;"><?= $user_name ?></td>
-                        <td scope="col" style="word-break: break-all;"><?= $user_last_name ?></td>
-                        <td scope="col" style="word-break: break-all;"><?= $user_email ?></td>
-                        <td scope="col"><?= $user_credits ?></td>
-                        <td scope="col"><?= $user_type ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $user_id ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $user_credits ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $user_type ?></td>
 
-                        <td scope="col">
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $user_id ?>">
+                        <td scope="col" style="word-break: break-all;">
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $user_id ?>">
                                 Edit User Informations
                             </button>
                             <div class="modal fade" id="user_editModal<?= $user_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -109,8 +103,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                             </div>
                         </td>
 
-                        <td scope="col">
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#user_editpassword<?= $user_id ?>">
+                        <td scope="col" style="word-break: break-all;">
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#user_editpassword<?= $user_id ?>">
                                 Edit User Password
                             </button>
                             <div class="modal fade" id="user_editpassword<?= $user_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -143,7 +137,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                             </div>
                         </td>
 
-                        <td scope="col"><a href="../../Diplome/assets/actions/delete_users_action.php?id=<?= $user_id ?>&type=admin">Delete</a></td>
+                        <td scope="col" style="word-break: break-all;"><a href="../../Diplome/assets/actions/delete_users_action.php?id=<?= $user_id ?>&type=admin"><button class="btn btn-danger">Delete</button></a></td>
 
                     </tr>
                 <?php } ?>

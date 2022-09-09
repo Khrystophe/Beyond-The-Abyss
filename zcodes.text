@@ -1,6 +1,7 @@
 001 index
 002 content           11   error    empty_user_content
                       12   error    empty_user_purchased_content
+                      149  error    empty_search_content
                       13   error    category_not_found
                       14   error    forbidden_reload_search_form_empty
                       15   error    processing_bad_or_malformed_request
@@ -17,6 +18,7 @@
 
 006 single_player     19   error    content_none_exist
                       110  error    content_not_buy
+                      147  error    This_content_is_not_free_login_or_register
                       15   error    processing_bad_or_malformed_request
                       150  error    processing_bad_or_malformed_request
 

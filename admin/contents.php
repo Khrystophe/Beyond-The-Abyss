@@ -91,16 +91,10 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         <table class="table sortable">
             <thead>
                 <tr>
-                    <th scope="row">id</th>
-                    <th scope="row">Title</th>
-                    <th scope="row">Composer</th>
-                    <th scope="row">Content</th>
-                    <th scope="row">Category</th>
-                    <th scope="row">Level</th>
-                    <th scope="row">Description</th>
-                    <th scope="row">Price</th>
-                    <th scope="row">Likes</th>
-                    <th scope="row">id_users</th>
+                    <th scope="row" style="word-break: break-all;">id</th>
+                    <th scope="row" style="word-break: break-all;">Likes</th>
+                    <th scope="row" style="word-break: break-all;">Reporting</th>
+                    <th scope="row" style="word-break: break-all;">id_users</th>
                 </tr>
             </thead>
 
@@ -119,32 +113,27 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                     $content_description = nl2br(htmlspecialchars($content['description']));
                     $content_price = htmlspecialchars($content['price']);
                     $content_likes = htmlspecialchars($content['likes']);
+                    $content_reporting = htmlspecialchars($content['reporting']);
                     $content_id_users = htmlspecialchars($content['id_users']);
 
                 ?>
 
 
                     <tr>
-                        <td scope="col"><?= $content_id ?></td>
-                        <td scope="col" style="word-break: break-all;"><?= $content_title ?></td>
-                        <td scope="col" style="word-break: break-all;"><?= $content_composer ?></td>
-                        <td scope="col"><video style="width: 125px ;" class="card_video" src="../../Diplome/assets/videos/<?= $content_video ?>" type="video/mp4" controls></td>
-                        <td scope="col"><?= $content_category ?></td>
-                        <td scope="col"><?= $content_level ?></td>
-                        <td scope="col" style="word-break: break-all;"><?= $content_description  ?></td>
-                        <td scope="col"><?= $content_price ?></td>
-                        <td scope="col"><?= $content_likes ?></td>
-                        <td scope="col"><?= $content_id_users ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $content_id ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $content_likes ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $content_reporting ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $content_id_users ?></td>
 
-                        <td>
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#content_editModal<?= $content_id ?>">
-                                Edit
+                        <td scope="col" style="word-break: break-all;">
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#content_editModal<?= $content_id ?>">
+                                Edit/Watch
                             </button>
                             <div class="modal fade" id="content_editModal<?= $content_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Edit/Watch</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
@@ -160,6 +149,11 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                 <div class="mb-3">
                                                     <label for="admin_edit_id_users<?= $content_id ?>" class="form-label">Id users</label>
                                                     <input type="text" class="form-control" id="admin_edit_id_users<?= $content_id ?>" name="id_users" value="<?= $content_id_users ?>">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="admin_edit_id_users<?= $content_id ?>" class="form-label">Reporting</label>
+                                                    <input type="text" class="form-control" id="admin_edit_id_users<?= $content_id ?>" name="id_users" value="<?= $content_reporting ?>">
                                                 </div>
 
                                                 <div class="mb-3">
@@ -201,6 +195,11 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                 </div>
 
                                                 <div class="mb-3">
+                                                    <div class="form-label">Content</div>
+                                                    <video style="width: 225px ;" class="card_video" src="../../Diplome/assets/videos/<?= $content_video ?>" type="video/mp4" controls>
+                                                </div>
+
+                                                <div class="mb-3">
                                                     <label for="admin_content<?= $content_id ?>" class="form-label">Content</label>
                                                     <input class="form-control" type="file" id="admin_content<?= $content_id ?>" name="content" onchange="javascript: return validContent(<?= $content_id ?>)">
                                                 </div>
@@ -211,14 +210,18 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                 </div>
 
                                                 <button type="submit" class="btn btn-primary">Submit</button>
+
                                             </form>
+
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </td>
 
-                        <td scope="col"><a href="../../Diplome/assets/actions/delete_content_action.php?id=<?= $content_id ?>&type=admin">Delete</a></td>
+                        <td scope="col" style="word-break: break-all;"> <a href="../../Diplome/assets/actions/delete_content_action.php?id=<?= $content_id ?>&type=admin"><button class="btn btn-danger">Delete</button></a></td>
+
                     </tr>
 
                 <?php

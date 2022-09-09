@@ -34,6 +34,8 @@ if (
          $contents = getUserContent($bdd, $session_users_id);
 
          if (empty($contents)) {
+
+            $bdd = null;
             header('location: /Diplome/my_account.php?error=00211');
             die();
          }
@@ -43,11 +45,14 @@ if (
          $contents = getUserPurchasedContent($bdd, $session_users_id);
 
          if (empty($contents)) {
+
+            $bdd = null;
             header('location: /Diplome/my_account.php?error=00212');
             die();
          }
       } else {
 
+         $bdd = null;
          header('location: index.php?error=00213');
          die();
       }
@@ -70,8 +75,16 @@ if (
 
          $page = 'search_results';
          $contents = getSearchResults($bdd, $post_title, $post_composer, $post_category, $post_level);
+
+         if (empty($contents)) {
+
+            $bdd = null;
+            header('location: /Diplome/index.php?error=002149');
+            die();
+         }
       } else {
 
+         $bdd = null;
          header('location: index.php?error=00214');
          die();
       }
@@ -147,7 +160,7 @@ if (
 
                               if ($content_price == 0 || $content_id_user == $user_session_id) {
 
-                                 if ($content_price == 0) {
+                                 if ($content_price == 0 && $content_id_user != $user_session_id) {
 
                            ?>
 
@@ -256,6 +269,7 @@ if (
 <?php require('./assets/require/foot.php');
 } else {
 
+   $bdd = null;
    http_response_code(400);
    header('location: index.php?error=00215');
    die();

@@ -17,10 +17,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         <table class="table sortable">
             <thead>
                 <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Messages</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">id_users</th>
+                    <th scope="col" style="word-break: break-all;">id</th>
+                    <th scope="col" style="word-break: break-all;">Date</th>
+                    <th scope="col" style="word-break: break-all;">id_users</th>
                 </tr>
             </thead>
 
@@ -37,21 +36,20 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                     $user = getUserInformations($bdd, $contact_id_users);
 
-                    $user_name = $user['name'];
-                    $user_lastname = $user['lastname'];
-                    $user_email = $user['email'];
+                    $user_name = htmlspecialchars($user['name']);
+                    $user_lastname = htmlspecialchars($user['lastname']);
+                    $user_email = htmlspecialchars($user['email']);
 
 
                 ?>
 
                     <tr>
-                        <td scope="col"><?= $contact_id ?></td>
-                        <td scope="col" style="word-break:break-all" ;><?= $contact_message  ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $contact_id ?></td>
                         <td scope="col" style="word-break: break-all;"><?= $contact_date ?></td>
-                        <td scope="col"><?= $contact_id_users ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $contact_id_users ?></td>
 
-                        <td scope="col">
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $contact_id ?>">
+                        <td scope="col" style="word-break: break-all;">
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $contact_id ?>">
                                 Reply
                             </button>
                             <div class="modal fade" id="user_editModal<?= $contact_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -115,7 +113,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                             </div>
                         </td>
 
-                        <td scope="col"><a href="./assets/actions/delete_contact_messages.php?id=<?= $contact_id ?>">Delete</a></td>
+                        <td scope="col" style="word-break: break-all;"><a href="./assets/actions/delete_contact_messages.php?id=<?= $contact_id ?>"><button class="btn btn-danger">Delete</button></a></td>
 
                     </tr>
                 <?php } ?>

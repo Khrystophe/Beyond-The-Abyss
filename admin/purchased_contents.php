@@ -17,11 +17,11 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         <table class="table sortable">
             <thead>
                 <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">id_contents</th>
-                    <th scope="col">id_users</th>
-                    <th scope="col">Original price</th>
-                    <th scope="col">Buyer repayment</th>
+                    <th scope="col" style="word-break: break-all;">id</th>
+                    <th scope="col" style="word-break: break-all;">id_contents</th>
+                    <th scope="col" style="word-break: break-all;">id_users</th>
+                    <th scope="col" style="word-break: break-all;">Original price</th>
+                    <th scope="col" style="word-break: break-all;">Buyer repayment</th>
                 </tr>
             </thead>
 
@@ -40,12 +40,12 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                 ?>
 
                     <tr>
-                        <td scope="col"><?= $content_id ?></td>
-                        <td scope="col"><?= $content_id_contents ?></td>
-                        <td scope="col"><?= $content_id_users ?></td>
-                        <td scope="col"><?= $content_original_price ?></td>
-                        <td scope="col"><?= $content_buyer_repayment ?></td>
-                        <td scope="col"><a href="./assets/actions/delete_purchased_contents_action.php?id=<?= $content_id ?>">Delete</a></td>
+                        <td scope="col" style="word-break: break-all;"><?= $content_id ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $content_id_contents ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $content_id_users ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $content_original_price ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $content_buyer_repayment ?></td>
+                        <td scope="col" style="word-break: break-all;"><a href="./assets/actions/delete_purchased_contents_action.php?id=<?= $content_id ?>"><button class="btn btn-danger">Delete</button></a></td>
                     </tr>
 
                 <?php

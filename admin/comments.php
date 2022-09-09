@@ -17,12 +17,12 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
         <table class="table sortable">
             <thead>
                 <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Comment</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Likes</th>
-                    <th scope="col">id_contents</th>
-                    <th scope="col">id_users</th>
+                    <th scope="col" style="word-break: break-all;">id</th>
+                    <th scope="col" style="word-break: break-all;">Comment</th>
+                    <th scope="col" style="word-break: break-all;">Date</th>
+                    <th scope="col" style="word-break: break-all;">Likes</th>
+                    <th scope="col" style="word-break: break-all;">id_contents</th>
+                    <th scope="col" style="word-break: break-all;">id_users</th>
                 </tr>
             </thead>
 
@@ -42,13 +42,13 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                 ?>
 
                     <tr>
-                        <td scope="col"><?= $comment_id ?></td>
-                        <td scope="col" style="word-break:break-all" ;><?= $comment_text ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $comment_id ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $comment_text ?></td>
                         <td scope="col" style="word-break: break-all;"><?= $comment_date ?></td>
-                        <td scope="col"><?= $comment_likes ?></td>
-                        <td scope="col"><?= $comment_id_contents ?></td>
-                        <td scope="col"><?= $comment_id_users ?></td>
-                        <td scope="col"><a href="./assets/actions/delete_comments_action.php?id=<?= $comment_id ?>">Delete</a></td>
+                        <td scope="col" style="word-break: break-all;"><?= $comment_likes ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $comment_id_contents ?></td>
+                        <td scope="col" style="word-break: break-all;"><?= $comment_id_users ?></td>
+                        <td scope="col" style="word-break: break-all;"><a href="./assets/actions/delete_comments_action.php?id=<?= $comment_id ?>"><button class="btn btn-danger">Delete</button></a></td>
                     </tr>
                 <?php } ?>
             </tbody>

@@ -91,7 +91,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: -90px;
   left: 40px;
   z-index: 50;
@@ -524,15 +524,12 @@ textarea {
 }
 .cards.one .line.one {
   width: 100%;
-  transition: width 1s;
 }
 .cards.one .line.two {
   width: 50%;
-  transition: width 1s;
 }
 .cards.one .line.three {
   width: 25%;
-  transition: width 1s;
 }
 .cards.two {
   display: flex;
@@ -550,15 +547,12 @@ textarea {
 }
 .cards.two .line.one {
   width: 100%;
-  transition: width 1s;
 }
 .cards.two .line.two {
   width: 50%;
-  transition: width 1s;
 }
 .cards.two .line.three {
   width: 25%;
-  transition: width 1s;
 }
 .cards.three {
   display: flex;
@@ -576,34 +570,12 @@ textarea {
 }
 .cards.three .line.one {
   width: 100%;
-  transition: width 1s;
 }
 .cards.three .line.two {
   width: 50%;
-  transition: width 1s;
 }
 .cards.three .line.three {
   width: 25%;
-  transition: width 1s;
-}
-
-.cards:hover.one .line.one {
-  width: 25%;
-}
-.cards:hover.one .line.three {
-  width: 100%;
-}
-.cards:hover.two .line.one {
-  width: 25%;
-}
-.cards:hover.two .line.three {
-  width: 100%;
-}
-.cards:hover.three .line.one {
-  width: 25%;
-}
-.cards:hover.three .line.three {
-  width: 100%;
 }
 
 .random_content {
@@ -895,7 +867,6 @@ textarea {
   flex-direction: column;
   margin-bottom: 2rem;
   margin-top: 5rem;
-  height: 100%;
   min-height: 100vh;
 }
 
