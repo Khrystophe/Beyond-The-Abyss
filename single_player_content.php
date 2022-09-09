@@ -52,8 +52,7 @@ if (
 
         if ((isset($user_session_purchased_content) && $user_session_purchased_content == true) || $content_price == 0 || $content_id_user == $user_session_id) {
 
-          require('./assets/require/head.php');
-?>
+          require('./assets/require/head.php'); ?>
 
 
           <main class="autoAlpha" data-barba="wrapper">
@@ -106,6 +105,7 @@ if (
                         <input type="text" class="inputbox" value="<?= $content_price ?>" placeholder="<?= $content_price ?>" id="single_player_edit_price" pattern="^([1-9]|[1-4][0-9]|50|Free)$" name="price" />
 
                         <button type="submit" class="button">Edit</button>
+
                       </form>
                     </div>
                   </div>
@@ -128,6 +128,7 @@ if (
 
                         <button type="submit" class="button">Post Comment</button>
                         <div class="button" id="comment_close">Close</div>
+
                       </form>
                     </div>
                   </div>
@@ -150,6 +151,7 @@ if (
 
                         <button type="submit" class="button red">Report</button>
                         <div class="button" id="report_close">Close</div>
+
                       </form>
                     </div>
                   </div>
@@ -157,16 +159,14 @@ if (
               </div>
 
 
-
-              <?php
-              if ($content_category == 'tutorial') {
+              <?php if ($content_category == 'tutorial') {
                 $content_category = 'Tutorial';
               } else if ($content_category == 'performance') {
                 $content_category = 'Performance';
               } else if ($content_category == 'sheet_music') {
                 $content_category = 'Sheet Music';
-              }
-              ?>
+              } ?>
+
 
               <div class="movie-card">
                 <div class="single_player_container">
@@ -185,12 +185,10 @@ if (
                   <div class="player_bottom_bar">
                     <span class="likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
 
-                    <?php
 
-                    if (isset($user_session) && !empty($user_session)) {
-                      if ($user_session_id != $content_id_user) {
+                    <?php if (isset($user_session) && !empty($user_session)) {
+                      if ($user_session_id != $content_id_user) { ?>
 
-                    ?>
 
                         <button class="dropbtn">
                           <a data-barba-prevent href="./assets/actions/like_action.php?name=content&id=<?= $content_id ?>" onclick="javascript:return likeContent('<?= $content_author_name ?>','<?= $content_author_lastname ?>')">
@@ -207,11 +205,10 @@ if (
                           </div>
                         </div>
 
-                      <?php
 
-                      } else {
+                      <?php } else { ?>
 
-                      ?>
+
                         <button class="dropbtn" id="comment_button">Comment</button>
 
                         <div class="dropdown">
@@ -223,12 +220,9 @@ if (
                         </div>
 
 
-                    <?php
+                    <?php }
+                    } ?>
 
-                      }
-                    }
-
-                    ?>
 
                   </div>
 
@@ -253,9 +247,8 @@ if (
                     </div>
                   </div>
 
-                  <?php
 
-                  foreach ($comments as $comment) {
+                  <?php foreach ($comments as $comment) {
 
                     $comment_id = htmlspecialchars($comment['id']);
                     $comment_user_id = htmlspecialchars($comment['id_users']);
@@ -265,9 +258,8 @@ if (
                     $comment_date = htmlspecialchars($comment['date']);
                     $comment_likes = htmlspecialchars($comment['likes']);
 
-                    $number_of_user_comments = getNumbersOfcomments($bdd, $comment_user_id);
+                    $number_of_user_comments = getNumbersOfcomments($bdd, $comment_user_id); ?>
 
-                  ?>
 
                     <div id="edit_comment_modal<?= $comment_id ?>" class="modal messages">
                       <div class="modal-content">
@@ -284,6 +276,7 @@ if (
 
                               <button type="submit" class="button">Edit Comment</button>
                               <div class="button" id="edit_comment_close<?= $comment_id ?>">Close</div>
+
                             </form>
                           </div>
                         </div>
@@ -304,19 +297,17 @@ if (
 
                           <section class='cardStats'>
 
-                            <?php
 
-                            if (isset($session_users_id) && ($session_users_id != $comment_user_id)) { ?>
+                            <?php if (isset($session_users_id) && ($session_users_id != $comment_user_id)) { ?>
+
 
                               <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($number_of_user_comments)) ?> <i class='far fa-comment fa-fw'></i></span>
 
                               <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= $comment_id ?>&id=<?= $content_id ?>" onclick="javascript:return likeComment('<?= $comment_user_name ?>','<?= $comment_user_lastname ?>')"> <i class='far fa-heart fa-fw'></i></a></span>
 
-                            <?php
 
-                            } else if (isset($session_users_id) && ($session_users_id == $comment_user_id)) {
+                            <?php } else if (isset($session_users_id) && ($session_users_id == $comment_user_id)) { ?>
 
-                            ?>
 
                               <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($number_of_user_comments)) ?> <i class='far fa-comment fa-fw'></i></span>
 
@@ -327,17 +318,24 @@ if (
 
                             <?php } else { ?>
 
+
                               <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($number_of_user_comments)) ?> <i class='far fa-comment fa-fw'></i></span>
 
                               <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?><i class='far fa-heart fa-fw'></i></span>
 
+
                             <?php } ?>
+
 
                           </section>
                         </div>
                       </div>
                     </div>
+
+
                   <?php } ?>
+
+
                 </div>
               </div>
             </div>
@@ -375,6 +373,4 @@ if (
   http_response_code(400);
   header('location: index.php?error=006150');
   die();
-}
-
-?>
+} ?>

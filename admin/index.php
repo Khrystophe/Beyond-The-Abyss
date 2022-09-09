@@ -5,12 +5,6 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
     require('./assets/require/head.php');
 
-
-
-
-
-
-
     require('./assets/require/foot.php');
   } else {
 

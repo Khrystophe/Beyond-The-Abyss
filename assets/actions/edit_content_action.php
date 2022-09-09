@@ -20,13 +20,11 @@ if (
     require('../require/co_bdd.php');
     require('../require/action_deco_auto.php');
 
-
     $req = $bdd->prepare('SELECT credits FROM users WHERE id = :id_users');
     $req->bindParam(':id_users', $post_id_users, PDO::PARAM_INT);
     $req->execute();
     $author_credits = $req->fetch();
     $author_credits = implode($author_credits);
-
 
     $req = $bdd->prepare('SELECT contents.category, contents.title, contents.composer,contents.id_users, contents.reporting, users.name, users.lastname 
     FROM contents
@@ -189,13 +187,14 @@ if (
 
     if (!isset($content) && empty($content)) {
 
-        $req = $bdd->prepare('UPDATE contents SET title = :title ,composer = :composer, level = :level, category = :category, price = :price, description = :description  WHERE id = :id');
+        $req = $bdd->prepare('UPDATE contents SET title = :title ,composer = :composer, level = :level, category = :category, price = :price, description = :description, reporting = :reporting  WHERE id = :id');
         $req->bindParam(':title', $post_title, PDO::PARAM_STR);
         $req->bindParam(':composer', $post_composer, PDO::PARAM_STR);
         $req->bindParam(':level', $post_level, PDO::PARAM_STR);
         $req->bindParam(':category', $post_category, PDO::PARAM_STR);
         $req->bindParam(':price', $new_price, PDO::PARAM_INT);
         $req->bindParam(':description', $post_description, PDO::PARAM_STR);
+        $req->bindParam(':reporting', $_POST['reporting'], PDO::PARAM_INT);
         $req->bindParam(':id', $post_id, PDO::PARAM_INT);
         $req->execute();
     } else {
@@ -208,13 +207,14 @@ if (
 
         unlink('../videos/' . $old_content['content']);
 
-        $req = $bdd->prepare('UPDATE contents SET title = :title ,composer = :composer, level = :level, category = :category, price = :price, description = :description, content = :content WHERE id = :id');
+        $req = $bdd->prepare('UPDATE contents SET title = :title ,composer = :composer, level = :level, category = :category, price = :price, description = :description, reporting = :reporting, content = :content WHERE id = :id');
         $req->bindParam(':title', $post_title, PDO::PARAM_STR);
         $req->bindParam(':composer', $post_composer, PDO::PARAM_STR);
         $req->bindParam(':level', $post_level, PDO::PARAM_STR);
         $req->bindParam(':category', $post_category, PDO::PARAM_STR);
         $req->bindParam(':price', $new_price, PDO::PARAM_INT);
         $req->bindParam(':description', $post_description, PDO::PARAM_STR);
+        $req->bindParam(':reporting', $_POST['reporting'], PDO::PARAM_INT);
         $req->bindParam(':content', $content);
         $req->bindParam(':id', $post_id, PDO::PARAM_INT);
         $req->execute();

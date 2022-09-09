@@ -26,9 +26,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
       <tbody>
 
-        <?php
-
-        foreach ($notifications as $notification) {
+        <?php foreach ($notifications as $notification) {
 
           $notification_id = htmlspecialchars($notification['id']);
           $notification_text = nl2br(htmlspecialchars($notification['notification']));
@@ -44,10 +42,11 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
             <td scope="col" style="word-break: break-all;"><?= $notification_id_users ?></td>
             <td scope="col" style="word-break: break-all;"><a href="./assets/actions/delete_notifications_action.php?id=<?= $notification_id ?>"><button class="btn btn-danger">Delete</button></a></td>
           </tr>
+
         <?php } ?>
+
       </tbody>
     </table>
-
 
 <?php
 
