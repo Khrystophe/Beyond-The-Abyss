@@ -135,7 +135,7 @@ $random_sheet_id_users = htmlspecialchars($random_sheet['id_users']);
                </div>
 
                <div>
-                  <video class="content tuto" src="./assets/contents_img/<?= $random_tuto_content ?>" type="video/mp4"></video>
+                  <video class="content tuto" src="./assets/videos/<?= $random_tuto_content ?>" type="video/mp4"></video>
                </div>
 
                <div class="content_desc tuto">
@@ -172,7 +172,7 @@ $random_sheet_id_users = htmlspecialchars($random_sheet['id_users']);
                </div>
 
                <div>
-                  <video class="content perf" src="./assets/contents_img/<?= $random_perf_content ?>" type="video/mp4">
+                  <video class="content perf" src="./assets/videos/<?= $random_perf_content ?>" type="video/mp4">
                   </video>
                </div>
 
@@ -212,7 +212,7 @@ $random_sheet_id_users = htmlspecialchars($random_sheet['id_users']);
                </div>
 
                <div>
-                  <video class="content sheet" src="./assets/contents_img/<?= $random_sheet_content ?>" type="video/mp4">
+                  <video class="content sheet" src="./assets/videos/<?= $random_sheet_content ?>" type="video/mp4">
                   </video>
                </div>
 

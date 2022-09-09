@@ -180,7 +180,7 @@ if (
 
               <div class="hero">
 
-                <video src="./assets/contents_img/<?= $content_video ?>" controls></video>
+                <video src="./assets/videos/<?= $content_video ?>" controls></video>
 
                 <div class="details">
                   <h1 class="title1"><?= $content_title ?></h1>

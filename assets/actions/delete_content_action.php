@@ -111,7 +111,7 @@ if (
     $req->bindParam(':id', $get_id, PDO::PARAM_INT);
     $req->execute();
 
-    unlink('../contents_img/' . $content['content']);
+    unlink('../videos/' . $content['content']);
 
     if ($get_type == 'admin') {
 

@@ -78,7 +78,7 @@ if (
 
         foreach ($contents as $content) {
 
-            unlink('../contents_img/' . $content['content']);
+            unlink('../videos/' . $content['content']);
         }
 
         $req = $bdd->prepare('DELETE FROM users WHERE id= :id');

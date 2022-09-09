@@ -128,7 +128,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                         <td scope="col"><?= $content_id ?></td>
                         <td scope="col" style="word-break: break-all;"><?= $content_title ?></td>
                         <td scope="col" style="word-break: break-all;"><?= $content_composer ?></td>
-                        <td scope="col"><video style="width: 125px ;" class="card_video" src="../../Diplome/assets/contents_img/<?= $content_video ?>" type="video/mp4" controls></td>
+                        <td scope="col"><video style="width: 125px ;" class="card_video" src="../../Diplome/assets/videos/<?= $content_video ?>" type="video/mp4" controls></td>
                         <td scope="col"><?= $content_category ?></td>
                         <td scope="col"><?= $content_level ?></td>
                         <td scope="col" style="word-break: break-all;"><?= $content_description  ?></td>

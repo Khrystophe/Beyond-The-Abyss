@@ -131,7 +131,7 @@ if (
                <div class="box">
                   <div class="card">
                      <figure class="card__thumb">
-                        <video class="card_video" src="./assets/contents_img/<?= $content_video ?>" type="video/mp4">
+                        <video class="card_video" src="./assets/videos/<?= $content_video ?>" type="video/mp4">
                         </video>
 
                         <figcaption class="card__caption">

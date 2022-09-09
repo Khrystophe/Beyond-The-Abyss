@@ -158,7 +158,7 @@ if (
         if ($files_content_error == 0) {
             if ($files_content_size <= 128000000) {
                 $content = uniqid() . '.' . pathinfo($files_content_name, PATHINFO_EXTENSION);
-                move_uploaded_file($files_content_tmp_name, '../contents_img/' . $content);
+                move_uploaded_file($files_content_tmp_name, '../videos/' . $content);
             } else {
 
                 echo 'Le fichier est trop volumineux…';
@@ -188,7 +188,7 @@ if (
         $req->execute();
         $old_content = $req->fetch();
 
-        unlink('../contents_img/' . $old_content['content']);
+        unlink('../videos/' . $old_content['content']);
 
         $req = $bdd->prepare('UPDATE contents SET title = :title ,composer = :composer, level = :level, category = :category, price = :price, description = :description, content = :content WHERE id = :id');
         $req->bindParam(':title', $post_title, PDO::PARAM_STR);
