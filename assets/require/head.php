@@ -73,12 +73,11 @@ if (isset($session_users_id)) {
          </div>
 
 
-         <div id="contact_modal" class="modal">
+         <div id="contact_modal" class="modal messages">
             <div class="modal-content">
                <div class="modal_form">
                   <div class="modal_form_content">
 
-                     <span id="contact_close">&times;</span>
                      <form class="form_action" action="./assets/actions/contact_action.php" method="post">
                         <?php
                         if (isset($session_users_id)) { ?>
@@ -90,10 +89,12 @@ if (isset($session_users_id)) {
                            <textarea class="inputbox text" id="contact_message" name="message"></textarea>
 
                            <button type="submit" class="button">Post</button>
+                           <div class="button" id="contact_close">Close</div>
 
                         <?php } else { ?>
 
                            <div>You are not logged in</div>
+                           <div class="button" id="contact_close">Close</div>
 
                         <?php } ?>
                      </form>

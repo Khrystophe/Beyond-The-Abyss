@@ -91,7 +91,7 @@
     transition: all 0.4s;
     text-decoration: none;
     cursor: pointer;
-    &.delete{
+    &.red{
         background:linear-gradient(135deg, #753333 0%, #962929 100%) ;
     }
 }

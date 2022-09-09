@@ -139,6 +139,43 @@ if (
 
             ?>
 
+               <div id="buy_modal<?= $content_id ?>" class="modal messages">
+                  <div class="modal-content">
+                     <div class="modal_form">
+                        <div class="modal_form_content">
+
+                           <form class="form_action" action="./assets/actions/buy_content_action.php?id=<?= $content_id ?>" method="post">
+
+                              <div class="messages_logo">
+                                 <img src="./assets/img/musicgrise.png" alt="" />
+                              </div>
+
+                              <?php if (isset($session_users_id)) {
+
+                                 $message = 'You have ' . $user_session_credits . ' credits. 
+                                 Do you want to buy' . $content_title . ' of ' . $content_composer . ' for ' . $content_price . ' credits ?';
+                              ?>
+
+                                 <div><?= nl2br($message) ?></div>
+
+                                 <button type="submit" class="button red">Buy</button>
+
+                                 <div class="button" id="buy_close<?= $content_id ?>">Close</div>
+
+                              <?php } else { ?>
+
+                                 <div>You are not connected.<br>Log in or register.<br>You will get 50 credits.</div>
+
+                                 <div class="button" id="buy_close<?= $content_id ?>">Close</div>
+
+                              <?php } ?>
+
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
                <div class="box">
                   <div class="card">
                      <figure class="card__thumb">
@@ -203,7 +240,7 @@ if (
                                     <div class="content_price"><?= $content_price ?> Credits</div>
                                     <div class="content_user name">By <?= $user_content_name ?></div>
                                     <div class="content_user lastname"><?= $user_content_lastname ?></div>
-                                    <a data-barba-prevent href="./assets/actions/buy_content_action.php?id=<?= $content_id ?>" class="card__button" onclick="javascript:return buy('<?= $user_session_credits ?>','<?= $content_title ?>','<?= $content_composer ?>','<?= $content_price ?>')">Buy</a>
+                                    <div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
 
                                  <?php } else if ($user_session_purchased_content == true) { ?>
 
@@ -229,7 +266,7 @@ if (
                                  <div class="content_price"><?= $content_price ?> Credits</div>
                                  <div class="content_user name">By <?= $user_content_name ?></div>
                                  <div class="content_user lastname"><?= $user_content_lastname ?></div>
-                                 <a class="card__button link_page" onclick="javascript:return login()">Buy</a>
+                                 <div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
 
                               <?php
 

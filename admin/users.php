@@ -45,15 +45,61 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                         <td scope="col" style="word-break: break-all;"><?= $user_credits ?></td>
                         <td scope="col" style="word-break: break-all;"><?= $user_type ?></td>
 
+
                         <td scope="col" style="word-break: break-all;">
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $user_id ?>">
-                                Edit User Informations
-                            </button>
+
+                            <?php
+
+                            if ($_SESSION['users']['id'] != $user_id) {
+
+                            ?>
+
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $user_id ?>">
+                                    Edit User Informations
+                                </button>
+
+                            <?php
+
+                            } else {
+
+                            ?>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $user_id ?>">
+                                    Your Informations
+                                </button>
+
+
+                            <?php
+
+                            }
+
+                            ?>
                             <div class="modal fade" id="user_editModal<?= $user_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+
+                                            <?php
+
+                                            if ($_SESSION['users']['id'] != $user_id) {
+
+                                            ?>
+
+                                                <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+
+
+                                            <?php
+
+                                            } else {
+
+                                            ?>
+
+                                                <h5 class="modal-title" id="exampleModalLabel">Your informations</h5>
+
+                                            <?php
+
+                                            }
+
+                                            ?>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
@@ -96,6 +142,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                                                 </div>
 
                                                 <button type="submit" class="btn btn-primary">Submit</button>
+
                                             </form>
                                         </div>
                                     </div>
@@ -104,15 +151,44 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                         </td>
 
                         <td scope="col" style="word-break: break-all;">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#user_editpassword<?= $user_id ?>">
-                                Edit User Password
-                            </button>
+                            <?php
+
+                            if ($_SESSION['users']['id'] != $user_id) {
+
+                            ?>
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#user_editpassword<?= $user_id ?>">
+                                    Edit User Password
+                                </button>
+
+                            <?php
+
+                            } else {
+
+                            ?>
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#user_editpassword<?= $user_id ?>">
+                                    Your Password
+                                </button>
+
+                            <?php
+
+                            }
+
+                            ?>
+
+
                             <div class="modal fade" id="user_editpassword<?= $user_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Edit Password</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                                            <?php
+
+                                            if ($_SESSION['users']['id'] != $user_id) {
+
+                                            ?>
+
+                                                <h5 class="modal-title" id="exampleModalLabel">Edit Password</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
 
@@ -131,13 +207,39 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                                                 <button type="submit" class="btn btn-primary">Submit</button>
                                             </form>
+
+                                        <?php
+
+                                            } else {
+
+                                        ?>
+
+                                            <h5 style="word-break:normal ;" class="modal-title" id="exampleModalLabel">If you want to change your password, go to your account, it's safer. Because it requires confirmation.</h5>
+
+                                        <?php
+
+                                            }
+
+                                        ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </td>
 
-                        <td scope="col" style="word-break: break-all;"><a href="../../Diplome/assets/actions/delete_users_action.php?id=<?= $user_id ?>&type=admin"><button class="btn btn-danger">Delete</button></a></td>
+                        <?php
+
+                        if ($_SESSION['users']['id'] != $user_id) {
+
+                        ?>
+
+                            <td scope="col" style="word-break: break-all;"><a href="../../Diplome/assets/actions/delete_users_action.php?id=<?= $user_id ?>&type=admin"><button class="btn btn-danger">Delete</button></a></td>
+
+                        <?php
+
+                        }
+
+                        ?>
 
                     </tr>
                 <?php } ?>

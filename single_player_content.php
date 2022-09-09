@@ -113,12 +113,11 @@ if (
               </div>
 
 
-              <div id="comment_modal" class="modal">
+              <div id="comment_modal" class="modal messages">
                 <div class="modal-content">
                   <div class="modal_form">
                     <div class="modal_form_content">
 
-                      <span id="comment_close">&times;</span>
                       <form class="form_action" action="./assets/actions/post_comment_action.php" method="post">
 
                         <label for="single_player_id_comment"></label>
@@ -128,6 +127,7 @@ if (
                         <textarea class="inputbox text" id="single_player_comment" name="comment"></textarea>
 
                         <button type="submit" class="button">Post Comment</button>
+                        <div class="button" id="comment_close">Close</div>
                       </form>
                     </div>
                   </div>
@@ -135,12 +135,11 @@ if (
               </div>
 
 
-              <div id="report_modal" class="modal">
+              <div id="report_modal" class="modal messages">
                 <div class="modal-content">
                   <div class="modal_form">
                     <div class="modal_form_content">
 
-                      <span id="report_close">&times;</span>
                       <form class="form_action" action="./assets/actions/reporting_action.php" method="post">
 
                         <label for="single_player_id_report"></label>
@@ -149,7 +148,8 @@ if (
                         <label for="single_player_report">Want to report this content? Any improper reporting will result in consequences.</label>
                         <textarea class="inputbox text" id="single_player_report" name="message"></textarea>
 
-                        <button type="submit" class="button">Report</button>
+                        <button type="submit" class="button red">Report</button>
+                        <div class="button" id="report_close">Close</div>
                       </form>
                     </div>
                   </div>
@@ -269,12 +269,11 @@ if (
 
                   ?>
 
-                    <div id="edit_comment_modal<?= $comment_id ?>" class="modal">
+                    <div id="edit_comment_modal<?= $comment_id ?>" class="modal messages">
                       <div class="modal-content">
                         <div class="modal_form">
                           <div class="modal_form_content">
 
-                            <span class="edit_comment_close" id="edit_comment_close<?= $comment_id ?>">&times;</span>
                             <form class="form_action" action="./assets/actions/edit_comment_action.php?id=<?= $content_id ?>" method="post">
 
                               <label for="single_player_id_edit_comment<?= $comment_id ?>"></label>
@@ -284,6 +283,7 @@ if (
                               <textarea class="inputbox text" id="single_player_edit_comment<?= $comment_id ?>" name="comment" value="<?= $comment_text ?>"><?= $comment_text ?></textarea>
 
                               <button type="submit" class="button">Edit Comment</button>
+                              <div class="button" id="edit_comment_close<?= $comment_id ?>">Close</div>
                             </form>
                           </div>
                         </div>

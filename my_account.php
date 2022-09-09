@@ -126,7 +126,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
                         </div>
 
                         <div class="form_action">
-                           <button class="btn_content"><a data-barba-prevent class="button delete" href="/Diplome/assets/actions/delete_users_action.php?id=<?= $get_user_id ?>&type=user" onclick="javascript:return deleteAccountAlert()">Delete my account</a></button>
+                           <button class="btn_content"><a data-barba-prevent class="button red" href="/Diplome/assets/actions/delete_users_action.php?id=<?= $get_user_id ?>&type=user" onclick="javascript:return deleteAccountAlert()">Delete my account</a></button>
                         </div>
                      </div>
                   </div>

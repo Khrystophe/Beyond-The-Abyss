@@ -41,7 +41,8 @@ if (isset($get_error) || isset($get_success)) {
     31 => 'Your content has been edited successfully . ',
     32 => 'Your comment has been edited successfully . ',
     33 => 'Your account has been deleted successfully . ',
-    34 => 'You have no right to do this. 
+    34 => 'As an administrator, you cannot modify some informations about yourself. 
+    Please access your account to change what you are allowed to change. 
     If you want to delete your account, contact another administrator.  ',
     35 => 'The notification has been deleted. ',
     36 => 'The content has been deleted. ',

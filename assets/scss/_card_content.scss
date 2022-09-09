@@ -170,6 +170,9 @@ $desktop: 280px;
 		text-transform: uppercase;
 		text-decoration: none;
 		transition: .3s;
+		&.pointer{
+			cursor: pointer;
+		}
 
 		&:hover {
 			color: black;
