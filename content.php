@@ -13,8 +13,6 @@ if (
 ) {
 
    require('./assets/require/co_bdd.php');
-   // require('./assets/require/page_deco_auto.php');
-   // require('./assets/require/session_regenerate.php');
    require('./assets/require/functions.php');
 
    if ($get_category != 'search_results') {

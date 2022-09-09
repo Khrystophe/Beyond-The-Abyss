@@ -3,11 +3,9 @@ session_start();
 $page = 'index';
 require('./assets/require/check_data.php');
 require('./assets/require/co_bdd.php');
-// require('./assets/require/page_deco_auto.php');
-// require('./assets/require/session_regenerate.php');
 require('./assets/require/functions.php');
 require('./assets/require/head.php');
-// require('./assets/require/messages_modal.php');
+
 
 $random_tuto = getRandomTuto($bdd);
 $random_tuto_id = htmlspecialchars($random_tuto['id']);
@@ -51,21 +49,6 @@ $random_sheet_id_users = htmlspecialchars($random_sheet['id_users']);
 <main class="autoAlpha" data-barba="wrapper">
 
    <div class="min-height" data-barba="container" data-barba-namespace="index-section">
-
-      <?php if (isset($_GET['error']) && !empty($_GET['error'])) {
-
-         if ($_GET['error'] == 'cookies_disabled') { ?>
-
-            <script>
-               alert('The use of cookies is necessary for the proper functioning of this site. Please enable the use of cookies in your browser.\n If you have just created your account, it is active. All you have to do is connect, having previously activated the use of cookies in your browser.')
-            </script>
-
-      <?php
-
-         }
-      }
-
-      ?>
 
       <div class="wrapp">
 

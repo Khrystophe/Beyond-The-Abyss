@@ -2,7 +2,7 @@
 session_start();
 require('./assets/require/check_data.php');
 
-if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
+if (!isset($session_users_id)) {
 
    if (isset($get_error) xor !isset($check_get_error)) {
 
@@ -13,32 +13,6 @@ if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
 
       <main class="autoAlpha" data-barba="wrapper">
          <div class="min-height" data-barba="container" data-barba-namespace="register-section">
-
-            <?php
-            if (isset($get_error)) {
-               if ($get_error == 'confirm_false') { ?>
-
-                  <script>
-                     alert('Wrong password confirmation')
-                  </script>
-
-               <?php } else if ($get_error == 'email_exist') { ?>
-
-                  <script>
-                     alert('This email already exists ')
-                  </script>
-
-               <?php } else if ($get_error == 'contact_admin') { ?>
-
-                  <script>
-                     alert('Contact an administrator')
-                  </script>
-
-            <?php }
-            }
-
-            ?>
-
 
             <div class="form">
                <div class="form_content">

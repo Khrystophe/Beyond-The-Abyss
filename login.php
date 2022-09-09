@@ -2,7 +2,7 @@
 session_start();
 require('./assets/require/check_data.php');
 
-if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
+if (!isset($session_users_id)) {
 
    if (isset($get_error) xor !isset($check_get_error)) {
 
@@ -13,26 +13,6 @@ if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
 
       <main class="autoAlpha" data-barba="wrapper">
          <div class="min-height" data-barba="container" data-barba-namespace="login-section">
-
-            <?php if (isset($_GET['error']) && !empty($_GET['error'])) {
-               if ($_GET['error'] == 'password') { ?>
-
-                  <script>
-                     alert('Wrong password')
-                  </script>
-
-               <?php } else if ($_GET['error'] == 'none_exist') { ?>
-
-                  <script>
-                     alert('This user does not exist')
-                  </script>
-
-            <?php
-
-               }
-            }
-
-            ?>
 
             <div class="form">
                <div class="form_content">
