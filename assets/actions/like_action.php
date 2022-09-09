@@ -90,12 +90,12 @@ if (
       $req->execute();
 
       $bdd = null;
-      header('location: ../../single_player_content.php?id=' . $_GET['id']);
+      header('location: ../../single_player_content.php?id=' . $get_id);
       die();
     } else {
 
       $bdd = null;
-      header('location: ../../single_player_content.php?error=already_liked&id=' . $_GET['id']);
+      header('location: ../../single_player_content.php?error=already_liked&id=' . $get_id);
       die();
     }
   }
@@ -103,6 +103,6 @@ if (
 
   $bdd = null;
   http_response_code(400);
-  header('location: ../../my_account.php?error=processing_bad_or_malformed_request');
+  header('location: ../../single_player_content.php?error=processing_bad_or_malformed_request');
   die();
 }

@@ -1,0 +1,136 @@
+001 index
+002 content           11   error    empty_user_content
+                      12   error    empty_user_purchased_content
+                      13   error    category_not_found
+                      14   error    forbidden_reload_search_form_empty
+                      15   error    processing_bad_or_malformed_request
+
+003 login             15   error    processing_bad_or_malformed_request
+                      16   error    already_connected
+
+004 Register          15   error    processing_bad_or_malformed_request
+                      16   error    already_connected
+
+005 my_account        17   error    cookies_disabled
+                      15   error    processing_bad_or_malformed_request
+                      18   error    processing_bad_or_malformed_request_or_not_connected
+
+006 single_player     19   error    content_none_exist
+                      110  error    content_not_buy
+                      15   error    processing_bad_or_malformed_request
+
+007 page_deco_auto    246   success  deco_auto
+
+008 action_deco_auto  247   success  deco_auto  
+
+009 reporting_action  211  success  reporting_sent
+                      15   error    processing_bad_or_malformed_request
+
+010 register_action   212  success  account_created
+                      113  error    contact_admin
+                      114  error    wrong_password_confirmation
+                      115  error    email_already_used
+                      15   error    processing_bad_or_malformed_request  
+
+011 post_comment      216  success  comment_posted
+                      15   error    processing_bad_or_malformed_request
+
+012 logout_action     217  success  deconnected
+
+013 login_action      218  success  connected 
+                      119  error    wrong_password
+                      120  error    user_none_exist
+                      15   error    processing_bad_or_malformed_request
+
+014 like_action       221  success  content_liked
+                      122  error    content_already_liked
+                      223  success  comment_liked
+                      124  error    comment_already_liked
+                      15   error    processing_bad_or_malformed_request
+
+015 edit_password     225  success  password_changed_succeffully
+                      114  error    wrong_password_confirmation
+                      126  error    invalid_password    
+                      15   error    processing_bad_or_malformed_request
+
+016 edit_namelast     227  success  name_lastname_changed_succeffully
+                      15   error    processing_bad_or_malformed_request    
+
+017 edit_content      128  error    content_reported
+                      129  error    file_too_large
+                      130  error    the_file_could_not_be_recovered   
+                      231  success  content_edited
+                      15   error    processing_bad_or_malformed_request
+
+018 edit_comment      232  success  comment_edited
+                      15   error    processing_bad_or_malformed_request             
+
+019 delete_user       233  success  user_deleted
+                      248  success  user_deleted
+                      134  error    forbidden_action
+                      15   error    processing_bad_or_malformed_request
+
+020 delete_notif      235  success  notification_deleted  
+                      15   error    processing_bad_or_malformed_request
+
+021 delete_content    128  error    content_reported
+                      149  error    content_reported
+                      236  success  content_deleted
+                      15   error    processing_bad_or_malformed_request       
+
+022 contact           237  success  message_sent
+                      15   error    processing_bad_or_malformed_request
+
+023 buy_content       238  success  content_buy 
+                      139  error    insuffisants_credits
+                      15   error    processing_bad_or_malformed_request
+
+024 add_content       129 error     file_too_large
+                      130 error     the_file_could_not_be_recovered
+                      15  error     processing_bad_or_malformed_request
+
+025 ad/users          140 error     you_are_not_an_administrator                
+
+026 ad/purchased      140 error     you_are_not_an_administrator                
+
+027 ad/notif          140 error     you_are_not_an_administrator                
+
+028 ad/index          140 error     you_are_not_an_administrator                
+
+029 ad/contents       140 error     you_are_not_an_administrator                
+
+030 ad/contact        140 error     you_are_not_an_administrator                
+
+031 ad/comments       140 error     you_are_not_an_administrator   
+
+032 ad/reply          241 success   reply_sent
+                      15  error     processing_bad_or_malformed_request
+
+033 ad/edit_user      242 success   user_edited     
+                      115 error     email_already_used
+                      134 error     forbidden_action 
+                      15  error     processing_bad_or_malformed_request
+
+034 ad/edit_password  225 success   password_changed_succeffully
+                      15  error     processing_bad_or_malformed_request
+
+035 ad/delete_purch   243 success   purchased_content_deleted
+                      15  error     processing_bad_or_malformed_request
+
+036 ad/delete_notif   235 success   notification_deleted
+                      15  error     processing_bad_or_malformed_request
+
+038 ad/delete_cont    244 success   messages_deleted                      
+                      15  error     processing_bad_or_malformed_request
+
+039 ad/delete_com     245 success   comment_deleted                      
+                      15  error     processing_bad_or_malformed_request
+                                               
+                                                                                  
+
+
+
+
+
+
+

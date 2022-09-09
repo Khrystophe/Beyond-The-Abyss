@@ -29,7 +29,7 @@ if (
                 ':type' => $_POST['type'],
                 ':id' => $_POST['id']
             ));
-            header('location: ../../users.php');
+            header('location: ../../users.php?success=edit_ok');
         } else {
 
             $req = $bdd->query('SELECT email FROM users');
@@ -49,10 +49,12 @@ if (
                 $bdd = null;
                 header('location: ../../users.php?success=edit_ok');
                 die();
+            } else {
+
+                $bdd = null;
+                header('location: ../../users.php?error=emailexist');
+                die();
             }
-            $bdd = null;
-            header('location: ../../users.php?error=emailexist');
-            die();
         }
     } else {
 

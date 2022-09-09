@@ -122,6 +122,8 @@ if (isset($session_users_id)) {
 
 
          </div>
+
+
          <div class="toggle">
             <div class="ouvrir"></div>
             <div class="fermer"></div>

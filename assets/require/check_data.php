@@ -54,7 +54,7 @@ if (isset($_GET['type']) && !empty($_GET['type'])) {
 if (isset($_GET['error']) && !empty($_GET['error'])) {
 
   $check_get_error = is_string($_GET['error'])
-    && preg_match("/^[a-z_]+$/", $_GET['error']);
+    && preg_match("/^[a-z_0-9]+$/", $_GET['error']);
 
   if ($check_get_error === true) {
 
@@ -66,7 +66,7 @@ if (isset($_GET['error']) && !empty($_GET['error'])) {
 if (isset($_GET['success']) && !empty($_GET['success'])) {
 
   $check_get_success = is_string($_GET['success'])
-    && preg_match("/^[a-z_]+$/", $_GET['success']);
+    && preg_match("/^[a-z_0-9]+$/", $_GET['success']);
 
   if ($check_get_success === true) {
 

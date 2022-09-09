@@ -7,6 +7,7 @@ require('./assets/require/page_deco_auto.php');
 require('./assets/require/session_regenerate.php');
 require('./assets/require/functions.php');
 require('./assets/require/head.php');
+require('./assets/require/messages_modal.php');
 
 $random_tuto = getRandomTuto($bdd);
 $random_tuto_id = htmlspecialchars($random_tuto['id']);

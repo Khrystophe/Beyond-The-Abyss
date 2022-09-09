@@ -71,22 +71,11 @@ if (
       header('location: ../../admin/contents.php');
       die();
    } else {
-      if ($post_category == "tutorial") {
 
-         $bdd = null;
-         header('location: ../../content.php?category=tutorial&success=add_content');
-         die();
-      } else if ($post_category == "performance") {
 
-         $bdd = null;
-         header('location: ../../content.php?category=performance&success=add_content');
-         die();
-      } else if ($post_category == "sheet_music") {
-
-         $bdd = null;
-         header('location: ../../content.php?category=sheet_music&success=add_content');
-         die();
-      }
+      $bdd = null;
+      header('location: ../../content.php?category=user_content&success=add_content');
+      die();
    }
 } else {
 

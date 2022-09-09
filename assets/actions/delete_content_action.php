@@ -121,13 +121,22 @@ if (
     } else {
 
         $bdd = null;
-        header('location: ./../../index.php?success=content_deleted');
+        header('location: ./../../my_account.php?success=content_deleted');
         die();
     }
 } else {
 
-    $bdd = null;
-    http_response_code(400);
-    header('location: ../../my_account.php?error=processing_bad_or_malformed_request');
-    die();
+    if ($get_type == 'admin') {
+
+        $bdd = null;
+        http_response_code(400);
+        header('location: ../../admin/contents.php?error=processing_bad_or_malformed_request');
+        die();
+    } else {
+
+        $bdd = null;
+        http_response_code(400);
+        header('location: ../../single_player_content.php?error=processing_bad_or_malformed_request');
+        die();
+    }
 }

@@ -62,6 +62,6 @@ if (
 
   $bdd = null;
   http_response_code(400);
-  header('location: ../../my_account.php?error=processing_bad_or_malformed_request');
+  header('location: ../../single_player_content.php?error=processing_bad_or_malformed_request');
   die();
 }
