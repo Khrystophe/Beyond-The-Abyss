@@ -33,18 +33,18 @@ if (
                 $req->execute();
 
                 $bdd = null;
-                header('location:../../my_account.php?success=change_ok');
+                header('location:../../my_account.php?success=015225');
                 die();
             } else {
 
                 $bdd = null;
-                header('location: ../../my_account.php?error=confirm_false');
+                header('location: ../../my_account.php?error=015114');
                 die();
             }
         } else {
 
             $bdd = null;
-            header('location: ../../my_account.php?error=invalid_password');
+            header('location: ../../my_account.php?error=05126');
             die();
         }
     }
@@ -52,6 +52,6 @@ if (
 
     $bdd = null;
     http_response_code(400);
-    header('location: ../../my_account.php?error=processing_bad_or_malformed_request');
+    header('location: ../../my_account.php?error=01515');
     die();
 }

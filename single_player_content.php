@@ -15,9 +15,10 @@ if (
 
     $page = 'single_player';
     require('./assets/require/co_bdd.php');
-    require('./assets/require/page_deco_auto.php');
-    require('./assets/require/session_regenerate.php');
+    // require('./assets/require/page_deco_auto.php');
+    // require('./assets/require/session_regenerate.php');
     require('./assets/require/functions.php');
+    require('./assets/require/head.php');
 
     $content = getContentAndUserInformations($bdd, $get_id);
 
@@ -51,13 +52,13 @@ if (
       }
     } else {
 
-      header('location: index.php?error=content_none_exist');
+      $bdd = null;
+      header('location: index.php?error=00619');
       die();
     }
 
     if ((isset($user_session_purchased_content) && $user_session_purchased_content == true) || $content_price == 0 || $content_id_user == $user_session_id) {
 
-      require('./assets/require/head.php');
 ?>
 
 
@@ -272,13 +273,10 @@ if (
                 $comment_date = htmlspecialchars($comment['date']);
                 $comment_likes = htmlspecialchars($comment['likes']);
 
-                $req = $bdd->prepare('SELECT COUNT(id_users) FROM comments WHERE id_users = :id_users');
-                $req->execute(array(
-                  ':id_users' => $comment_user_id
-                ));
-                $number_of_user_comments = $req->fetch();
+                $number_of_user_comments = getNumbersOfcomments($bdd, $comment_user_id);
 
               ?>
+
                 <div id="edit_comment_modal<?= $comment_id ?>" class="modal">
                   <div class="modal-content">
                     <div class="modal_form">
@@ -314,11 +312,28 @@ if (
 
                       <section class='cardStats'>
 
-                        <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= $comment_id ?>&id=<?= $content_id ?>" onclick="javascript:return likeComment('<?= $comment_user_name ?>','<?= $comment_user_lastname ?>')"> <i class='far fa-heart fa-fw'></i></a></span>
+                        <?php
 
-                        <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($number_of_user_comments)) ?><i class='far fa-comment fa-fw'></i></span>
+                        if ($session_users_id != $comment_user_id) { ?>
 
-                        <button class="dropbtn" id="edit_comment_button<?= $comment_id ?>" onclick="javascript: editComment('<?= $comment_id ?>')">Edit</button>
+                          <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($number_of_user_comments)) ?> <i class='far fa-comment fa-fw'></i></span>
+
+                          <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= $comment_id ?>&id=<?= $content_id ?>" onclick="javascript:return likeComment('<?= $comment_user_name ?>','<?= $comment_user_lastname ?>')"> <i class='far fa-heart fa-fw'></i></a></span>
+
+                        <?php
+
+                        } else {
+
+                        ?>
+
+                          <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($number_of_user_comments)) ?> <i class='far fa-comment fa-fw'></i></span>
+
+                          <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?><i class='far fa-heart fa-fw'></i></span>
+
+                          <button class="dropbtn" id="edit_comment_button<?= $comment_id ?>" onclick="javascript: editComment('<?= $comment_id ?>')">Edit</button>
+
+
+                        <?php } ?>
 
                       </section>
                     </div>
@@ -333,18 +348,22 @@ if (
 <?php require('./assets/require/foot.php');
     } else {
 
-      header('location: index.php?error=content_not_buy');
+      $bdd = null;
+      header('location: index.php?error=006110');
       die();
     }
   } else {
+
+    $bdd = null;
     http_response_code(400);
-    header('location: index.php?error=processing_bad_or_malformed_requestttttt');
+    header('location: index.php?error=00615');
     die();
   }
 } else {
 
+  $bdd = null;
   http_response_code(400);
-  header('location: index.php?error=processing_bad_or_malformed_request');
+  header('location: index.php?error=006150');
   die();
 }
 

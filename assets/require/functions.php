@@ -153,3 +153,13 @@ function getNotifications(PDO $bdd, $session_users_id)
   $notifications = $req->fetchAll();
   return $notifications;
 }
+
+function getNumbersOfcomments(PDO $bdd, $comment_user_id)
+{
+
+  $req = $bdd->prepare('SELECT COUNT(id_users) FROM comments WHERE id_users = :id_users');
+  $req->bindParam(':id_users', $comment_user_id, PDO::PARAM_INT);
+  $req->execute();
+  $comments = $req->fetch();
+  return $comments;
+}

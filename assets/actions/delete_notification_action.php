@@ -16,11 +16,12 @@ if (
   $req->execute();
 
   $bdd = null;
-  header('location: ../../my_account.php?success=notification_deleted');
+  header('location: ../../my_account.php?success=020235');
+  die();
 } else {
 
   $bdd = null;
   http_response_code(400);
-  header('location: ../../my_account.php?error=processing_bad_or_malformed_request');
+  header('location: ../../my_account.php?error=02015');
   die();
 }

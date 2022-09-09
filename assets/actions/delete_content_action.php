@@ -29,12 +29,12 @@ if (
         if ($get_type == 'admin') {
 
             $bdd = null;
-            header('location: ../../admin/contents.php?id=error=content_reported');
+            header('location: ../../admin/contents.php?error=021128');
             die();
         } else {
 
             $bdd = null;
-            header('location: ../../single_player_content.php?id=' . $get_id . '&error=content_reported');
+            header('location: ../../single_player_content.php?id=' . $get_id . '&error=021151');
             die();
         }
     }
@@ -116,12 +116,12 @@ if (
     if ($get_type == 'admin') {
 
         $bdd = null;
-        header('location: ../../admin/contents.php');
+        header('location: ../../admin/contents.php?success=021236');
         die();
     } else {
 
         $bdd = null;
-        header('location: ./../../my_account.php?success=content_deleted');
+        header('location: ./../../my_account.php?success=021256');
         die();
     }
 } else {
@@ -130,13 +130,13 @@ if (
 
         $bdd = null;
         http_response_code(400);
-        header('location: ../../admin/contents.php?error=processing_bad_or_malformed_request');
+        header('location: ../../admin/contents.php?error=02115');
         die();
     } else {
 
         $bdd = null;
         http_response_code(400);
-        header('location: ../../single_player_content.php?error=processing_bad_or_malformed_request');
+        header('location: ../../single_player_content.php?error=021153');
         die();
     }
 }

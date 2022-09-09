@@ -30,24 +30,24 @@ if (
          $req->execute();
 
          $bdd = null;
-         header('location: ../../my_account.php?success=connected');
+         header('location: ../../my_account.php?success=013218');
          die();
       } else {
 
          $bdd = null;
-         header('location: ../../login.php?error=password');
+         header('location: ../../login.php?error=013119');
          die();
       }
    } else {
 
       $bdd = null;
-      header('location: ../../login.php?error=none_exist');
+      header('location: ../../login.php?error=013120');
       die();
    }
 } else {
 
    $bdd = null;
    http_response_code(400);
-   header('location: ../../login.php?error=null_password_or_processing_bad_or_malformed_request');
+   header('location: ../../login.php?error=01315');
    die();
 }

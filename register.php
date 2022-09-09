@@ -77,12 +77,12 @@ if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
    } else {
 
       http_response_code(400);
-      header('location: index.php?error=processing_bad_or_malformed_request');
+      header('location: index.php?error=00415');
       die();
    }
 } else {
 
-   header('location: my_account.php');
+   header('location: my_account.php?error=00416');
    die();
 }
 ?>

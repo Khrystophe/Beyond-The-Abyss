@@ -44,12 +44,12 @@ if (
         if ($get_type == 'admin') {
 
             $bdd = null;
-            header('location: ../../admin/contents.php?id=error=content_reported');
+            header('location: ../../admin/contents.php?error=017128');
             die();
         } else {
 
             $bdd = null;
-            header('location: ../../single_player_content.php?id=' . $post_id . '&error=content_reported');
+            header('location: ../../single_player_content.php?id=' . $post_id . '&error=017151');
             die();
         }
     }
@@ -160,12 +160,30 @@ if (
                 $content = uniqid() . '.' . pathinfo($files_content_name, PATHINFO_EXTENSION);
                 move_uploaded_file($files_content_tmp_name, '../videos/' . $content);
             } else {
+                if ($get_type == 'admin') {
 
-                echo 'Le fichier est trop volumineux…';
+                    $bdd = null;
+                    header('location: ../../admin/contents.php?error=017129');
+                    die();
+                } else {
+
+                    $bdd = null;
+                    header('location: ../../single_player_content.php?id=' . $post_id . '&error=017154');
+                    die();
+                }
             }
         } else {
+            if ($get_type == 'admin') {
 
-            echo 'Le fichier n\'a pas pu être récupéré…';
+                $bdd = null;
+                header('location: ../../admin/contents.php?error=017130');
+                die();
+            } else {
+
+                $bdd = null;
+                header('location: ../../single_player_content.php?id=' . $post_id . '&error=017155');
+                die();
+            }
         }
     }
 
@@ -205,12 +223,12 @@ if (
     if ($get_type == 'admin') {
 
         $bdd = null;
-        header('location: ../../admin/contents.php');
+        header('location: ../../admin/contents.php?success=017231');
         die();
     } else {
 
         $bdd = null;
-        header('location: ../../single_player_content.php?id=' . $post_id);
+        header('location: ../../single_player_content.php?id=' . $post_id . '&success=017252');
         die();
     }
 } else {
@@ -219,13 +237,13 @@ if (
 
         $bdd = null;
         http_response_code(400);
-        header('location: ../../admin/contents.php?error=processing_bad_or_malformed_request');
+        header('location: ../../admin/contents.php?error=01715');
         die();
     } else {
 
         $bdd = null;
         http_response_code(400);
-        header('location: ../../single_player_content.php?error=processing_bad_or_malformed_request');
+        header('location: ../../single_player_content.php?error=017153');
         die();
     }
 }

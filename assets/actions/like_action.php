@@ -57,10 +57,14 @@ if (
       $req->bindParam(':users_id', $user['id'], PDO::PARAM_INT);
       $req->execute();
 
-      header('location: ../../single_player_content.php?id=' . $get_id);
+      $bdd = null;
+      header('location: ../../single_player_content.php?id=' . $get_id . '&success=014221');
+      die();
     } else {
 
-      header('location: ../../single_player_content.php?error=already_liked&id=' . $get_id);
+      $bdd = null;
+      header('location: ../../single_player_content.php?id=' . $get_id . '&error=014122');
+      die();
     }
   } else if ($get_name == 'comment') {
 
@@ -70,7 +74,7 @@ if (
     $user_like = $req->fetchAll();
 
 
-    if (in_array($_SESSION['users']['id'], array_column($user_like, 'id_users')) == false) {
+    if (in_array($session_users_id, array_column($user_like, 'id_users')) == false) {
 
       $req = $bdd->prepare('INSERT INTO likes (id_users, id_comments) VALUES (:users_id, :comments_id) ');
       $req->bindParam(':users_id', $session_users_id, PDO::PARAM_INT);
@@ -90,12 +94,12 @@ if (
       $req->execute();
 
       $bdd = null;
-      header('location: ../../single_player_content.php?id=' . $get_id);
+      header('location: ../../single_player_content.php?id=' . $get_id . '&success=014223');
       die();
     } else {
 
       $bdd = null;
-      header('location: ../../single_player_content.php?error=already_liked&id=' . $get_id);
+      header('location: ../../single_player_content.php?id=' . $get_id . '&error=014124');
       die();
     }
   }
@@ -103,6 +107,6 @@ if (
 
   $bdd = null;
   http_response_code(400);
-  header('location: ../../single_player_content.php?error=processing_bad_or_malformed_request');
+  header('location: ../../single_player_content.php?error=01415');
   die();
 }

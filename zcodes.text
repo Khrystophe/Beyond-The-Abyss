@@ -18,6 +18,7 @@
 006 single_player     19   error    content_none_exist
                       110  error    content_not_buy
                       15   error    processing_bad_or_malformed_request
+                      150  error    processing_bad_or_malformed_request
 
 007 page_deco_auto    246   success  deco_auto
 
@@ -57,10 +58,15 @@
                       15   error    processing_bad_or_malformed_request    
 
 017 edit_content      128  error    content_reported
+                      151  error    content_reported
                       129  error    file_too_large
+                      154  error    file_too_large
                       130  error    the_file_could_not_be_recovered   
+                      155  error    the_file_could_not_be_recovered   
                       231  success  content_edited
+                      252  success  content_edited
                       15   error    processing_bad_or_malformed_request
+                      153  error    processing_bad_or_malformed_request
 
 018 edit_comment      232  success  comment_edited
                       15   error    processing_bad_or_malformed_request             
@@ -69,14 +75,17 @@
                       248  success  user_deleted
                       134  error    forbidden_action
                       15   error    processing_bad_or_malformed_request
+                      153  error    processing_bad_or_malformed_request
 
 020 delete_notif      235  success  notification_deleted  
                       15   error    processing_bad_or_malformed_request
 
 021 delete_content    128  error    content_reported
-                      149  error    content_reported
+                      151  error    content_reported
                       236  success  content_deleted
+                      256  success  content_deleted
                       15   error    processing_bad_or_malformed_request       
+                      153  error    processing_bad_or_malformed_request       
 
 022 contact           237  success  message_sent
                       15   error    processing_bad_or_malformed_request
@@ -86,8 +95,13 @@
                       15   error    processing_bad_or_malformed_request
 
 024 add_content       129 error     file_too_large
+                      154 error     file_too_large
                       130 error     the_file_could_not_be_recovered
+                      155 error     the_file_could_not_be_recovered
+                      257 success   content_add
+                      258 success   content_add
                       15  error     processing_bad_or_malformed_request
+                      153 error     processing_bad_or_malformed_request
 
 025 ad/users          140 error     you_are_not_an_administrator                
 

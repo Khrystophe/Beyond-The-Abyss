@@ -13,8 +13,8 @@ if (
 ) {
 
    require('./assets/require/co_bdd.php');
-   require('./assets/require/page_deco_auto.php');
-   require('./assets/require/session_regenerate.php');
+   // require('./assets/require/page_deco_auto.php');
+   // require('./assets/require/session_regenerate.php');
    require('./assets/require/functions.php');
 
    if ($get_category != 'search_results') {
@@ -36,7 +36,7 @@ if (
          $contents = getUserContent($bdd, $session_users_id);
 
          if (empty($contents)) {
-            header('location: /Diplome/my_account.php?error=empty_user_content');
+            header('location: /Diplome/my_account.php?error=00211');
             die();
          }
       } else if ($get_category == 'user_purchased_content') {
@@ -45,12 +45,12 @@ if (
          $contents = getUserPurchasedContent($bdd, $session_users_id);
 
          if (empty($contents)) {
-            header('location: /Diplome/my_account.php?error=empty_user_purchased_content');
+            header('location: /Diplome/my_account.php?error=00212');
             die();
          }
       } else {
 
-         header('location: index.php?error=category_not_found');
+         header('location: index.php?error=00213');
          die();
       }
    } else {
@@ -74,7 +74,7 @@ if (
          $contents = getSearchResults($bdd, $post_title, $post_composer, $post_category, $post_level);
       } else {
 
-         header('location: index.php?error=forbidden_reload');
+         header('location: index.php?error=00214');
          die();
       }
    }
@@ -259,7 +259,7 @@ if (
 } else {
 
    http_response_code(400);
-   header('location: index.php?error=processing_bad_or_malformed_request');
+   header('location: index.php?error=00215');
    die();
 }
 

@@ -3,7 +3,7 @@ session_start();
 if (empty($_COOKIE["PHPSESSID"])) {
    unset($_SESSION['users']);
    session_destroy();
-   header('Location: index.php?error=cookies_disabled');
+   header('Location: index.php?error=00517');
    die();
 }
 require('./assets/require/check_data.php');
@@ -18,8 +18,8 @@ if (isset($session_users_id)) {
 
       $page = 'my_account';
       require('./assets/require/co_bdd.php');
-      require('./assets/require/page_deco_auto.php');
-      require('./assets/require/session_regenerate.php');
+      // require('./assets/require/page_deco_auto.php');
+      // require('./assets/require/session_regenerate.php');
       require('./assets/require/functions.php');
       require('./assets/require/head.php');
 
@@ -218,13 +218,13 @@ if (isset($session_users_id)) {
    } else {
 
       http_response_code(400);
-      header('location: index.php?error=processing_bad_or_malformed_request');
+      header('location: index.php?error=00515');
       die();
    }
 } else {
 
    http_response_code(400);
-   header('location: index.php?error=processing_bad_or_malformed_request_or_not_connected');
+   header('location: index.php?error=00518');
    die();
 }
 ?>

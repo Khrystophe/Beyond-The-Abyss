@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 if (isset($_SESSION['users']['id']) && !empty($_SESSION['users']['id'])) {
 
   $check_session_users_id = is_numeric($_SESSION['users']['id'])

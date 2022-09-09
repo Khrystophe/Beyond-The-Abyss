@@ -1,4 +1,7 @@
 <?php
+require('page_deco_auto.php');
+require('session_regenerate.php');
+require('messages_modal.php');
 
 if (isset($session_users_id)) {
 

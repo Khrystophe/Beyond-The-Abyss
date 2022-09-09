@@ -43,30 +43,30 @@ if (
             $_SESSION['users']['type'] = htmlspecialchars($user['type']);
 
             $bdd = null;
-            header('location: ../../my_account.php?success=creation');
+            header('location: ../../my_account.php?success=010212');
             die();
          } else {
 
             $bdd = null;
-            header('location: ../../register.php?error=contact_admin');
+            header('location: ../../register.php?error=010113');
             die();
          }
       } else {
 
          $bdd = null;
-         header('location: ../../register.php?error=confirm_false');
+         header('location: ../../register.php?error=010114');
          die();
       }
    } else {
 
       $bdd = null;
-      header('location: ../../register.php?error=email_exist');
+      header('location: ../../register.php?error=010115');
       die();
    }
 } else {
 
    $bdd = null;
    http_response_code(400);
-   header('location: ../../register.php?error=processing_bad_or_malformed_request');
+   header('location: ../../register.php?error=01015');
    die();
 }

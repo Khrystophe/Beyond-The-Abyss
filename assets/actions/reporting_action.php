@@ -56,12 +56,12 @@ if (
   $req->execute();
 
   $bdd = null;
-  header('location: ../../single_player_content.php?id=' . $post_id . '&success=reporting_sent');
+  header('location: ../../single_player_content.php?id=' . $post_id . '&success=009211');
   die();
 } else {
 
   $bdd = null;
   http_response_code(400);
-  header('location: ../../single_player_content.php?error=processing_bad_or_malformed_request');
+  header('location: ../../single_player_content.php?error=00915');
   die();
 }

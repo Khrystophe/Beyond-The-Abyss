@@ -1,7 +1,7 @@
 <?php
 if (isset($session_users_id)) {
 
-  // var_dump(session_id());
+  var_dump(session_id());
   $old_session = session_id();
 
   $req = $bdd->prepare('SELECT time FROM users WHERE id= :session_users_id');
@@ -11,7 +11,7 @@ if (isset($session_users_id)) {
 
   $time = intval(implode($time));
 
-  // var_dump($time + 300 - time());
+  var_dump($time + 300 - time());
 
   if ($time + 300 - time() <= 0) {
 
@@ -36,5 +36,5 @@ if (isset($session_users_id)) {
     }
   }
 
-  // var_dump(session_id());
+  var_dump(session_id());
 }

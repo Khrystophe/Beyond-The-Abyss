@@ -44,7 +44,7 @@ if (isset($get_error) || isset($get_success)) {
     34 => 'You have no right to do this. 
     If you want to delete your account, contact another administrator.  ',
     35 => 'The notification has been deleted. ',
-    36 => 'Your content has been deleted. ',
+    36 => 'The content has been deleted. ',
     37 => 'Your message has been sent.
     An administrator will answer you as soon as possible ',
     38 => 'Your purchase has been taken into account. ',
@@ -57,12 +57,28 @@ if (isset($get_error) || isset($get_success)) {
     44 => 'Message deleted. ',
     45 => 'Comment deleted. ',
     46 => 'You have been logged out automatically because you have been inactive for too long. ',
-    47 => 'You have been logged out automatically because you have been inactive for too long. ',
+    47 => '',
     48 => 'Account deleted. ',
-    49 => 'Content reported. ',
+    49 => '',
+    50 => 'An error has occured. ',
+    51 => 'This content has been flagged. 
+    You can no longer edit or delete it until an administrator has reviewed it.  ',
+    52 => 'Your content has been edited successfully . ',
+    53 => 'An error has occurred.',
+    54 => 'The file you tried to post is too big. Respect the 128 MB maximum. ',
+    55 => 'The file could not be recovered . ',
+    56 => 'Your content has been deleted. ',
+    57 => 'Content add with success. ',
+    58 => 'Content add with success. ',
   ];
 
-  $message = $messages[substr($get_error, 4)];
+  if (isset($get_error)) {
+
+    $message = $messages[substr($get_error, 4)];
+  } else if (isset($get_success)) {
+
+    $message = $messages[substr($get_success, 4)];
+  }
 
 ?>
 

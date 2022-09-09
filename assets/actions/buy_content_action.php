@@ -56,18 +56,18 @@ if (
     $req->execute();
 
     $bdd = null;
-    header('location: ../../single_player_content.php?success=content_buy&id=' . $get_id);
+    header('location: ../../single_player_content.php?id=' . $get_id . '&success=023238');
     die();
   } else {
 
     $bdd = null;
-    header('location: ../../my_account.php?error=insuffisant_credits');
+    header('location: ../../my_account.php?error=023139');
     die();
   }
 } else {
 
   $bdd = null;
   http_response_code(400);
-  header('location: ../../index.php?error=processing_bad_or_malformed_request');
+  header('location: ../../index.php?error=02315');
   die();
 }

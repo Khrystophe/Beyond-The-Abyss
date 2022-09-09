@@ -88,20 +88,20 @@ if (
         if ($get_type == 'admin') {
 
             $bdd = null;
-            header('location: ../../admin/users.php?success=user_deleted');
+            header('location: ../../admin/users.php?success=019233');
             die();
         } else {
 
             $bdd = null;
             unset($_SESSION['users']);
             session_destroy();
-            header('location: ./../../index.php?success=user_deleted');
+            header('location: ./../../index.php?success=019248');
             die();
         }
     } else {
 
         $bdd = null;
-        header('location: ../../admin/users.php?error=forbidden_action');
+        header('location: ../../admin/users.php?error=019134');
         die();
     }
 } else {
@@ -110,13 +110,13 @@ if (
 
         $bdd = null;
         http_response_code(400);
-        header('location: ../../admin/users.php?error=processing_bad_or_malformed_request');
+        header('location: ../../admin/users.php?error=01915');
         die();
     } else {
 
         $bdd = null;
         http_response_code(400);
-        header('location: ../../my_account.php?error=processing_bad_or_malformed_request');
+        header('location: ../../my_account.php?error=019153');
         die();
     }
 }

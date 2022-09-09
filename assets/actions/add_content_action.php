@@ -18,17 +18,39 @@ if (
    require('../require/co_bdd.php');
    require('../require/action_deco_auto.php');
 
-   if ($files_content_error == 0) {
-      if ($files_content_size <= 128000000) {
-         $content = uniqid() . '.' . pathinfo($files_content_name, PATHINFO_EXTENSION);
-         move_uploaded_file($files_content_tmp_name, '../videos/' . $content);
+   if (isset($files_content_name)) {
+      if ($files_content_error == 0) {
+         if ($files_content_size <= 128000000) {
+            $content = uniqid() . '.' . pathinfo($files_content_name, PATHINFO_EXTENSION);
+            move_uploaded_file($files_content_tmp_name, '../videos/' . $content);
+         } else {
+
+            if ($get_type == 'admin') {
+
+               $bdd = null;
+               header('location: ../../admin/contents.php?error=024129');
+               die();
+            } else {
+
+               $bdd = null;
+               header('location: ../../my_account.php?id=' . $post_id . '&error=024154');
+               die();
+            }
+         }
       } else {
 
-         echo 'Le fichier est trop volumineux…';
-      }
-   } else {
+         if ($get_type == 'admin') {
 
-      echo 'Le fichier n\'a pas pu être récupéré…';
+            $bdd = null;
+            header('location: ../../admin/contents.php?error=024130');
+            die();
+         } else {
+
+            $bdd = null;
+            header('location: ../../my_account.php?id=' . $post_id . '&error=024155');
+            die();
+         }
+      }
    }
 
    if ($post_price == 'Free') {
@@ -68,19 +90,28 @@ if (
    if ($get_type == 'admin') {
 
       $bdd = null;
-      header('location: ../../admin/contents.php');
+      header('location: ../../admin/contents.php?success=024257');
       die();
    } else {
 
 
       $bdd = null;
-      header('location: ../../content.php?category=user_content&success=add_content');
+      header('location: ../../content.php?category=user_content&success=024258');
       die();
    }
 } else {
 
-   $bdd = null;
-   http_response_code(400);
-   header('location: ../../my_account.php?error=processing_bad_or_malformed_request');
-   die();
+   if ($get_type == 'admin') {
+
+      $bdd = null;
+      http_response_code(400);
+      header('location: ../../admin/contents.php?error=02415');
+      die();
+   } else {
+
+      $bdd = null;
+      http_response_code(400);
+      header('location: ../../my_account.php?error=024153');
+      die();
+   }
 }
