@@ -135,52 +135,12 @@ if (
 					$user_content_lastname = htmlspecialchars($user_content_information['lastname']); ?>
 
 
-					<div id="buy_modal<?= $content_id ?>" class="modal messages">
-						<div class="modal-content">
-							<div class="modal_form">
-								<div class="modal_form_content">
-
-									<form class="form_action" action="./assets/actions/buy_content_action.php?id=<?= $content_id ?>" method="post">
-
-										<div class="messages_logo">
-											<img src="./assets/img/musicgrise.png" alt="" />
-										</div>
-
-
-										<?php if (isset($session_users_id)) {
-
-
-											$message = 'You have ' . $user_session_credits . ' credits.
-											Do you want to buy' . $content_title . ' of ' . $content_composer . ' for ' . $content_price . ' credits ?'; ?>
-
-
-											<div><?= nl2br($message) ?></div>
-											<button type="submit" class="button red">Buy</button>
-											<div class="button" id="buy_close<?= $content_id ?>">Close</div>
-
-
-										<?php } else { ?>
-
-
-											<div>You are not connected.<br>Log in or register.<br>You will get 50 credits.</div>
-											<div class="button" id="buy_close<?= $content_id ?>">Close</div>
-
-
-										<?php } ?>
-
-
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-
 
 					<div class="box">
 						<div class="card">
 							<figure class="card__thumb">
-								<video class="card_video" src="./assets/videos/<?= $content_video ?>" type="video/mp4">
-								</video>
+								<video class="card_video" src="./assets/videos/<?= $content_video ?>" type="video/mp4"></video>
+
 
 								<figcaption class="card__caption">
 									<h2 class="card__title"><?= $content_composer ?></h2>
@@ -284,6 +244,45 @@ if (
 						</div>
 					</div>
 
+					<div id="buy_modal<?= $content_id ?>" class="modal messages">
+						<div class="modal-content">
+							<div class="modal_form">
+								<div class="modal_form_content">
+
+									<form class="form_action" action="./assets/actions/buy_content_action.php?id=<?= $content_id ?>" method="post">
+
+										<div class="messages_logo">
+											<img src="./assets/img/musicgrise.png" alt="" />
+										</div>
+
+
+										<?php if (isset($session_users_id)) {
+
+
+											$message = 'You have ' . $user_session_credits . ' credits.
+											Do you want to buy ' . $content_title . ' of ' . $content_composer . ' for ' . $content_price . ' credits ?'; ?>
+
+
+											<div><?= nl2br($message) ?></div>
+											<button type="submit" class="button red">Buy</button>
+											<div class="button" id="buy_close<?= $content_id ?>">Close</div>
+
+
+										<?php } else { ?>
+
+
+											<div>You are not connected.<br>Log in or register.<br>You will get 50 credits.</div>
+											<div class="button" id="buy_close<?= $content_id ?>">Close</div>
+
+
+										<?php } ?>
+
+
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
 
 				<?php } ?>
 

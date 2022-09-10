@@ -44,7 +44,7 @@ if (
         } else {
 
             $bdd = null;
-            header('location: ../../my_account.php?error=05126');
+            header('location: ../../my_account.php?error=015126');
             die();
         }
     }
