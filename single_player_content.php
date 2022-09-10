@@ -28,7 +28,7 @@ if (
       $content_level = htmlspecialchars($content['level']);
       $content_video = htmlspecialchars($content['content']);
       $content_price = htmlspecialchars($content['price']);
-      $content_description = htmlspecialchars($content['description']);
+      $content_description = nl2br(htmlspecialchars($content['description']));
       $content_likes = htmlspecialchars($content['likes']);
       $content_id_user = htmlspecialchars($content['id_users']);
       $content_author_name = htmlspecialchars($content['name']);
@@ -48,7 +48,9 @@ if (
         $user_session_purchased_content = in_array($user_session_id, array_column($user_purchased_contents, 'id_users'));
       }
 
+
       if (($content_price > 0 && isset($session_users_id)) || $content_price == 0) {
+
 
         if ((isset($user_session_purchased_content) && $user_session_purchased_content == true) || $content_price == 0 || $content_id_user == $user_session_id) {
 
@@ -87,6 +89,8 @@ if (
 
 
                     <?php if (isset($user_session) && !empty($user_session)) {
+
+
                       if ($user_session_id != $content_id_user) { ?>
 
 
@@ -120,8 +124,10 @@ if (
                         </div>
 
 
-                    <?php }
-                    } ?>
+                      <?php } ?>
+
+
+                    <?php } ?>
 
 
                   </div>
@@ -154,34 +160,17 @@ if (
                     $comment_user_id = htmlspecialchars($comment['id_users']);
                     $comment_user_name = htmlspecialchars($comment['name']);
                     $comment_user_lastname = htmlspecialchars($comment['lastname']);
-                    $comment_text = htmlspecialchars($comment['comment']);
+                    $comment_text = nl2br(htmlspecialchars($comment['comment']));
                     $comment_date = htmlspecialchars($comment['date']);
                     $comment_likes = htmlspecialchars($comment['likes']);
 
-                    $number_of_user_comments = getNumbersOfcomments($bdd, $comment_user_id); ?>
+                    $number_of_user_comments = getNumbersOfcomments($bdd, $comment_user_id);
+
+                    $number_of_user_comments = htmlspecialchars(implode($number_of_user_comments));
 
 
-                    <div id="edit_comment_modal<?= $comment_id ?>" class="modal messages">
-                      <div class="modal-content">
-                        <div class="modal_form">
-                          <div class="modal_form_content">
+                    require('./assets/require/modals_foreach.php'); ?>
 
-                            <form class="form_action" action="./assets/actions/edit_comment_action.php?id=<?= $content_id ?>" method="post">
-
-                              <label for="single_player_id_edit_comment<?= $comment_id ?>"></label>
-                              <input type="hidden" id="single_player_id_edit_comment<?= $comment_id ?>" name="id" value="<?= $comment_id ?>">
-
-                              <label for="single_player_edit_comment<?= $comment_id ?>">Your comment</label>
-                              <textarea class="inputbox text" id="single_player_edit_comment<?= $comment_id ?>" name="comment" value="<?= $comment_text ?>"><?= $comment_text ?></textarea>
-
-                              <button type="submit" class="button">Edit Comment</button>
-                              <div class="button" id="edit_comment_close<?= $comment_id ?>">Close</div>
-
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
 
                     <div class='deck'>
                       <div class='single_player_card'>
@@ -201,7 +190,7 @@ if (
                             <?php if (isset($session_users_id) && ($session_users_id != $comment_user_id)) { ?>
 
 
-                              <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($number_of_user_comments)) ?> <i class='far fa-comment fa-fw'></i></span>
+                              <span class='cardStats_stat cardStats_stat-comments'><?= $number_of_user_comments ?> <i class='far fa-comment fa-fw'></i></span>
 
                               <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= $comment_id ?>&id=<?= $content_id ?>" onclick="javascript:return likeComment('<?= $comment_user_name ?>','<?= $comment_user_lastname ?>')"> <i class='far fa-heart fa-fw'></i></a></span>
 
@@ -209,7 +198,7 @@ if (
                             <?php } else if (isset($session_users_id) && ($session_users_id == $comment_user_id)) { ?>
 
 
-                              <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($number_of_user_comments)) ?> <i class='far fa-comment fa-fw'></i></span>
+                              <span class='cardStats_stat cardStats_stat-comments'><?= $number_of_user_comments ?> <i class='far fa-comment fa-fw'></i></span>
 
                               <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?><i class='far fa-heart fa-fw'></i></span>
 
@@ -219,7 +208,7 @@ if (
                             <?php } else { ?>
 
 
-                              <span class='cardStats_stat cardStats_stat-comments'><?= htmlspecialchars(implode($number_of_user_comments)) ?> <i class='far fa-comment fa-fw'></i></span>
+                              <span class='cardStats_stat cardStats_stat-comments'><?= $number_of_user_comments ?> <i class='far fa-comment fa-fw'></i></span>
 
                               <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?><i class='far fa-heart fa-fw'></i></span>
 
@@ -241,33 +230,43 @@ if (
             </div>
           </main>
 
-<?php require('./assets/require/foot.php');
-        } else {
+          <?php require('./assets/require/foot.php'); ?>
+
+
+        <?php } else {
 
           $bdd = null;
           header('location: index.php?error=006110');
           die();
-        }
-      } else {
+        } ?>
+
+
+      <?php  } else {
 
         $bdd = null;
         header('location: index.php?error=006147');
         die();
-      }
-    } else {
+      } ?>
+
+
+    <?php } else {
 
       $bdd = null;
       header('location: index.php?error=00619');
       die();
-    }
-  } else {
+    } ?>
+
+
+  <?php } else {
 
     $bdd = null;
     http_response_code(400);
     header('location: index.php?error=00615');
     die();
-  }
-} else {
+  } ?>
+
+
+<?php } else {
 
   $bdd = null;
   http_response_code(400);

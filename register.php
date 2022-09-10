@@ -4,12 +4,12 @@ require('./assets/require/check_data.php');
 
 if (!isset($session_users_id)) {
 
+
 	if (isset($get_error) xor !isset($check_get_error)) {
 
 		$page = "register";
-		require('./assets/require/head.php');
+		require('./assets/require/head.php'); ?>
 
-?>
 
 		<main class="autoAlpha" data-barba="wrapper">
 			<div class="min-height" data-barba="container" data-barba-namespace="register-section">
@@ -47,14 +47,16 @@ if (!isset($session_users_id)) {
 			</div>
 		</main>
 
-<?php require('./assets/require/foot.php');
-	} else {
+		<?php require('./assets/require/foot.php'); ?>
+
+	<?php	} else {
 
 		http_response_code(400);
 		header('location: index.php?error=00415');
 		die();
-	}
-} else {
+	} ?>
+
+<?php } else {
 
 	header('location: my_account.php?error=00416');
 	die();

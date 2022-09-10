@@ -37,16 +37,20 @@ if (!isset($session_users_id)) {
 			</div>
 		</main>
 
-<?php require('./assets/require/foot.php');
-	} else {
+
+		<?php require('./assets/require/foot.php'); ?>
+
+
+	<?php } else {
 
 		http_response_code(400);
 		header('location: index.php?error=00315');
 		die();
-	}
-} else {
+	} ?>
+
+
+<?php } else {
 
 	header('location: my_account.php?error=00316');
 	die();
-}
-?>
+} ?>

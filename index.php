@@ -6,41 +6,11 @@ require('./assets/require/co_bdd.php');
 require('./assets/require/functions.php');
 require('./assets/require/head.php');
 
-$random_tuto = getRandomTuto($bdd);
-$random_tuto_id = htmlspecialchars($random_tuto['id']);
-$random_tuto_title = htmlspecialchars($random_tuto['title']);
-$random_tuto_content = htmlspecialchars($random_tuto['content']);
-$random_tuto_price = htmlspecialchars($random_tuto['price']);
-$random_tuto_composer = htmlspecialchars($random_tuto['composer']);
-$random_tuto_category = htmlspecialchars($random_tuto['category']);
-$random_tuto_level = htmlspecialchars($random_tuto['level']);
-$random_tuto_description = htmlspecialchars($random_tuto['description']);
-$random_tuto_likes = htmlspecialchars($random_tuto['likes']);
-$random_tuto_id_users = htmlspecialchars($random_tuto['id_users']);
+$getRandomTuto = getRandomTuto($bdd);
+$getRandomPerf = getRandomPerf($bdd);
+$getRandomSheet = getRandomSheet($bdd);
 
-$random_perf = getRandomPerf($bdd);
-$random_perf_id = htmlspecialchars($random_perf['id']);
-$random_perf_title = htmlspecialchars($random_perf['title']);
-$random_perf_content = htmlspecialchars($random_perf['content']);
-$random_perf_price = htmlspecialchars($random_perf['price']);
-$random_perf_composer = htmlspecialchars($random_perf['composer']);
-$random_perf_category = htmlspecialchars($random_perf['category']);
-$random_perf_level = htmlspecialchars($random_perf['level']);
-$random_perf_description = htmlspecialchars($random_perf['description']);
-$random_perf_likes = htmlspecialchars($random_perf['likes']);
-$random_perf_id_users = htmlspecialchars($random_perf['id_users']);
-
-$random_sheet = getRandomSheet($bdd);
-$random_sheet_id = htmlspecialchars($random_sheet['id']);
-$random_sheet_title = htmlspecialchars($random_sheet['title']);
-$random_sheet_content = htmlspecialchars($random_sheet['content']);
-$random_sheet_price = htmlspecialchars($random_sheet['price']);
-$random_sheet_composer = htmlspecialchars($random_sheet['composer']);
-$random_sheet_category = htmlspecialchars($random_sheet['category']);
-$random_sheet_level = htmlspecialchars($random_sheet['level']);
-$random_sheet_description = htmlspecialchars($random_sheet['description']);
-$random_sheet_likes = htmlspecialchars($random_sheet['likes']);
-$random_sheet_id_users = htmlspecialchars($random_sheet['id_users']); ?>
+require('./assets/require/variables.php'); ?>
 
 
 <main class="autoAlpha" data-barba="wrapper">

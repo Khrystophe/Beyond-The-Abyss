@@ -5,6 +5,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 	if (isset($session_users_id)) {
 
+
 		if (
 			(isset($get_error) xor !isset($check_get_error))
 			&&
@@ -16,16 +17,11 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 			require('./assets/require/functions.php');
 			require('./assets/require/head.php');
 
-			$get_user_informations = getUserInformations($bdd, $session_users_id);
+			$getUserInformations = getUserInformations($bdd, $session_users_id);
 
-			$get_user_id = htmlspecialchars($get_user_informations['id']);
-			$get_user_name = htmlspecialchars($get_user_informations['name']);
-			$get_user_lastname = htmlspecialchars($get_user_informations['lastname']);
-			$get_user_email = htmlspecialchars($get_user_informations['email']);
-			$get_user_type = htmlspecialchars($get_user_informations['type']);
-			$get_user_credits = htmlspecialchars($get_user_informations['credits']);
+			require('./assets/require/variables.php');
 
-			$notifications = getNotifications($bdd, $session_users_id); ?>
+			$getNotifications = getNotifications($bdd, $session_users_id); ?>
 
 
 			<main class="autoAlpha" data-barba="wrapper">
@@ -147,11 +143,10 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 					</div>
 
 
-					<?php foreach ($notifications as $notification) {
+					<?php foreach ($getNotifications as $getNotification) {
 
-						$notification_id = htmlspecialchars($notification['id']);
-						$notification_text = htmlspecialchars($notification['notification']);
-						$notification_date = htmlspecialchars($notification['date']); ?>
+
+						require('./assets/require/variables.php'); ?>
 
 
 						<div class='deck'>
@@ -177,24 +172,29 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 				</div>
 			</main>
 
-<?php require('./assets/require/foot.php');
-		} else {
+			<?php require('./assets/require/foot.php'); ?>
+
+
+		<?php } else {
 
 			http_response_code(400);
 			header('location: index.php?error=00515');
 			die();
-		}
-	} else {
+		} ?>
+
+
+	<?php } else {
 
 		http_response_code(400);
 		header('location: index.php?error=00518');
 		die();
-	}
-} else {
+	} ?>
+
+
+<?php } else {
 
 	unset($_SESSION['users']);
 	session_destroy();
 	header('Location: index.php?error=00517');
 	die();
-}
-?>
+} ?>
