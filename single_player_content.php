@@ -17,40 +17,27 @@ if (
     require('./assets/require/co_bdd.php');
     require('./assets/require/functions.php');
 
-    $content = getContentAndUserInformations($bdd, $get_id);
+    $getContentAndUserInformations = getContentAndUserInformations($bdd, $get_id);
 
-    if ($content) {
+    if ($getContentAndUserInformations) {
 
-      $content_id = htmlspecialchars($content['id']);
-      $content_title = htmlspecialchars($content['title']);
-      $content_composer = htmlspecialchars($content['composer']);
-      $content_category = htmlspecialchars($content['category']);
-      $content_level = htmlspecialchars($content['level']);
-      $content_video = htmlspecialchars($content['content']);
-      $content_price = htmlspecialchars($content['price']);
-      $content_description = nl2br(htmlspecialchars($content['description']));
-      $content_likes = htmlspecialchars($content['likes']);
-      $content_id_user = htmlspecialchars($content['id_users']);
-      $content_author_name = htmlspecialchars($content['name']);
-      $content_author_lastname = htmlspecialchars($content['lastname']);
+      require('./assets/require/variables.php');
 
-      $comments = getComments($bdd, $get_id);
+      $getComments = getComments($bdd, $get_id);
 
       if (isset($session_users_id) && !empty($session_users_id)) {
 
-        $user_session = getUserInformations($bdd, $session_users_id);
+        $getUserInformations = getUserInformations($bdd, $session_users_id);
 
-        $user_session_id = htmlspecialchars($user_session['id']);
-        $user_session_credits = htmlspecialchars($user_session['credits']);
+        require('./assets/require/variables.php');
 
-        $user_purchased_contents = getIdUserFromPurchasedContent($bdd, $content_id);
+        $getIdUserFromPurchasedContent = getIdUserFromPurchasedContent($bdd, $content_id);
 
-        $user_session_purchased_content = in_array($user_session_id, array_column($user_purchased_contents, 'id_users'));
+        $user_session_purchased_content = in_array($user_session_id, array_column($getIdUserFromPurchasedContent, 'id_users'));
       }
 
 
       if (($content_price > 0 && isset($session_users_id)) || $content_price == 0) {
-
 
         if ((isset($user_session_purchased_content) && $user_session_purchased_content == true) || $content_price == 0 || $content_id_user == $user_session_id) {
 
@@ -59,16 +46,6 @@ if (
 
           <main class="autoAlpha" data-barba="wrapper">
             <div class="min-height" data-barba="container" data-barba-namespace="single_player_content-section">
-
-
-              <?php if ($content_category == 'tutorial') {
-                $content_category = 'Tutorial';
-              } else if ($content_category == 'performance') {
-                $content_category = 'Performance';
-              } else if ($content_category == 'sheet_music') {
-                $content_category = 'Sheet Music';
-              } ?>
-
 
               <div class="movie-card">
                 <div class="single_player_container">
@@ -88,7 +65,7 @@ if (
                     <span class="likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
 
 
-                    <?php if (isset($user_session) && !empty($user_session)) {
+                    <?php if (isset($user_session_id) && !empty($user_session_id)) {
 
 
                       if ($user_session_id != $content_id_user) { ?>
@@ -154,20 +131,13 @@ if (
                   </div>
 
 
-                  <?php foreach ($comments as $comment) {
+                  <?php foreach ($getComments as $getComment) {
 
-                    $comment_id = htmlspecialchars($comment['id']);
-                    $comment_user_id = htmlspecialchars($comment['id_users']);
-                    $comment_user_name = htmlspecialchars($comment['name']);
-                    $comment_user_lastname = htmlspecialchars($comment['lastname']);
-                    $comment_text = nl2br(htmlspecialchars($comment['comment']));
-                    $comment_date = htmlspecialchars($comment['date']);
-                    $comment_likes = htmlspecialchars($comment['likes']);
+                    require('./assets/require/variables.php');
 
-                    $number_of_user_comments = getNumbersOfcomments($bdd, $comment_user_id);
+                    $getNumbersOfcomments = getNumbersOfcomments($bdd, $comment_user_id);
 
-                    $number_of_user_comments = htmlspecialchars(implode($number_of_user_comments));
-
+                    require('./assets/require/variables.php');
 
                     require('./assets/require/modals_foreach.php'); ?>
 

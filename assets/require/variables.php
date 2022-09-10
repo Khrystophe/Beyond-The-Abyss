@@ -93,3 +93,44 @@ if (isset($getNotification) && !empty($getNotification)) {
   $notification_text = nl2br(htmlspecialchars($getNotification['notification']));
   $notification_date = htmlspecialchars($getNotification['date']);
 }
+
+if (isset($getContentAndUserInformations) && !empty($getContentAndUserInformations)) {
+
+  $content_id = htmlspecialchars($getContentAndUserInformations['id']);
+  $content_title = htmlspecialchars($getContentAndUserInformations['title']);
+  $content_composer = htmlspecialchars($getContentAndUserInformations['composer']);
+  $content_category = htmlspecialchars($getContentAndUserInformations['category']);
+  $content_level = htmlspecialchars($getContentAndUserInformations['level']);
+  $content_video = htmlspecialchars($getContentAndUserInformations['content']);
+  $content_price = htmlspecialchars($getContentAndUserInformations['price']);
+  $content_description = nl2br(htmlspecialchars($getContentAndUserInformations['description']));
+  $content_likes = htmlspecialchars($getContentAndUserInformations['likes']);
+  $content_id_user = htmlspecialchars($getContentAndUserInformations['id_users']);
+  $content_author_name = htmlspecialchars($getContentAndUserInformations['name']);
+  $content_author_lastname = htmlspecialchars($getContentAndUserInformations['lastname']);
+
+  if ($content_category == 'tutorial') {
+    $content_category = 'Tutorial';
+  } else if ($content_category == 'performance') {
+    $content_category = 'Performance';
+  } else if ($content_category == 'sheet_music') {
+    $content_category = 'Sheet Music';
+  }
+}
+
+
+if (isset($getComment) && !empty($getComment)) {
+
+  $comment_id = htmlspecialchars($getComment['id']);
+  $comment_user_id = htmlspecialchars($getComment['id_users']);
+  $comment_user_name = htmlspecialchars($getComment['name']);
+  $comment_user_lastname = htmlspecialchars($getComment['lastname']);
+  $comment_text = nl2br(htmlspecialchars($getComment['comment']));
+  $comment_date = htmlspecialchars($getComment['date']);
+  $comment_likes = htmlspecialchars($getComment['likes']);
+}
+
+if (isset($getNumbersOfcomments) && !empty($getNumbersOfcomments)) {
+
+  $number_of_user_comments = htmlspecialchars(implode($getNumbersOfcomments));
+}

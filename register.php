@@ -47,7 +47,9 @@ if (!isset($session_users_id)) {
 			</div>
 		</main>
 
+
 		<?php require('./assets/require/foot.php'); ?>
+
 
 	<?php	} else {
 
@@ -55,6 +57,7 @@ if (!isset($session_users_id)) {
 		header('location: index.php?error=00415');
 		die();
 	} ?>
+
 
 <?php } else {
 
