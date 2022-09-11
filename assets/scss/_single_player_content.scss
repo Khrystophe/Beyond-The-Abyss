@@ -159,11 +159,13 @@
 }
 .description {
   display: flex;
+  flex-direction: column;
   line-height: 26px;
 }
 
 .column1 {
-  text-align: center;
+  padding-top: 30px;
+  margin-left: 4rem;
 }
 
 .tag {
@@ -182,9 +184,7 @@
 
 .column2 {
   padding-top: 30px;
-  margin-left: 20px;
-  width: 480px;
-  word-break: break-all;
+  margin-left: 4rem;
 }
 
 .avatars {
@@ -202,21 +202,12 @@
     text-decoration: none;
   }
 }
-///////////////////////////////////////////////
-
-
-
-
-
-///////////////////////////////////////////////////////////
-
 
 .deck{
   position: relative;
   max-width: 500px;
   width: 100%;
   margin: auto;
-  // padding: 3rem;
 }
 
 .single_player_card{
@@ -279,6 +270,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    height: 100px;
     
     .dropbtn {
       background-color: #2c2626;

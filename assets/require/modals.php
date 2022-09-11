@@ -161,6 +161,7 @@ if (isset($get_error) || isset($get_success)) {
           </select>
 
           <button type="submit" class="button">Search</button>
+
         </form>
       </div>
     </div>

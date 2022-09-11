@@ -113,18 +113,7 @@ if (
 
                   <div class="description">
                     <div class="column1">
-
-                      <div class="avatars">
-                        <a href="#" data-tooltip="Person 1" data-placement="top">
-                          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png" alt="avatar1" />
-                          <span><?= $content_author_name . " " . $content_author_lastname ?></span>
-                        </a>
-                      </div>
-
-                      <span class="tag">action</span>
-                      <span class="tag">fantasy</span>
-                      <span class="tag">adventure</span>
-
+                      <p><?= $content_author_name . " " . $content_author_lastname ?></p>
                     </div>
 
                     <div class="column2">
