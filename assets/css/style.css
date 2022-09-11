@@ -177,6 +177,10 @@ textarea {
   align-items: center;
 }
 
+.menu_left_responsive {
+  display: none;
+}
+
 .menu__left {
   transform: translateX(-100%);
   overflow: hidden;
@@ -268,7 +272,7 @@ textarea {
   animation: rotate_one 8s linear infinite;
 }
 
-#contact_button {
+.contact_button {
   cursor: pointer;
 }
 
@@ -1193,7 +1197,7 @@ footer {
   margin-top: 1rem;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only all and (max-width: 1000px) {
   .form_content {
     flex-direction: column;
     width: 63%;
@@ -1212,7 +1216,7 @@ footer {
     padding: 1rem 2rem 1rem 2rem;
   }
 }
-@media screen and (min-width: 800px) {
+@media all and (min-width: 800px) {
   .features {
     display: flex;
     justify-content: space-around;
@@ -1288,7 +1292,7 @@ footer {
     left: 0;
   }
 }
-@media screen and (max-width: 799px) {
+@media all and (max-width: 799px) {
   .toggle {
     top: 0.8rem;
   }
@@ -1366,6 +1370,59 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+@media all and (max-width: 799px) {
+  .menu__left__inner__item {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .menu__right__inner__item__title {
+    font-size: 1.25rem;
+  }
+  .menu__right__inner__item ul li a {
+    font-size: 1rem;
+  }
+}
+@media all and (max-height: 540px) {
+  .menu__left__inner__item {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .menu__right__inner__item__title {
+    font-size: 1.25rem;
+  }
+  .menu__right__inner__item ul li a {
+    font-size: 1rem;
+  }
+}
+@media all and (max-width: 540px) {
+  .menu__right, .sep__icon {
+    display: none;
+  }
+  .menu__left {
+    width: 100%;
+  }
+  .sep {
+    width: 1rem;
+    left: 0;
+  }
+  .menu_left_responsive {
+    display: block;
+  }
+  .menu_left_responsive .menu__left__inner__item ul li a {
+    color: var(--fourth-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 1s;
+    list-style: none;
+  }
+  .menu_left_responsive .menu__left__inner__item ul {
+    list-style: none;
+  }
+  .menu__left__inner__item {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
   }
 }
 

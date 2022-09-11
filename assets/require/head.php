@@ -35,32 +35,30 @@ if (isset($session_users_id)) {
 
 	<header>
 
+		<div class="little_logo">
+			<img class="little_main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+			<div class="little_main_logo_disc"></div>
+		</div>
+
+		<div class="nav_bar">
+
+			<?php if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
+
+				echo 'Hello' . " " . htmlspecialchars($user['name']) . " " . htmlspecialchars($user['lastname']);
+			} ?>
+
+
+			<button class="dropbtn" id="search_button"><i class="fas fa-search fa-2x"></i></button>
+
+
+			<?php if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
+				echo 'Your credits :' . " " . htmlspecialchars($user['credits']);
+			} ?>
+
+
+
+		</div>
 		<nav>
-
-			<div class="little_logo">
-				<img class="little_main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-				<div class="little_main_logo_disc"></div>
-			</div>
-
-			<div class="nav_bar">
-
-				<?php if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
-
-					echo 'Hello' . " " . htmlspecialchars($user['name']) . " " . htmlspecialchars($user['lastname']);
-				} ?>
-
-
-				<button class="dropbtn" id="search_button"><i class="fas fa-search fa-2x"></i></button>
-
-
-				<?php if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
-					echo 'Your credits :' . " " . htmlspecialchars($user['credits']);
-				} ?>
-
-
-
-			</div>
-
 
 			<div class="toggle">
 				<div class="ouvrir"></div>
@@ -72,10 +70,13 @@ if (isset($session_users_id)) {
 				<div class="menu__left">
 					<div class="menu__left__inner">
 
+
 						<div class="menu__left__inner__item">
 
 							<?php if ($page != 'index') { ?>
+
 								<a class="link_menu" href="index.php">Home</a>
+
 							<?php } ?>
 
 						</div>
@@ -84,7 +85,9 @@ if (isset($session_users_id)) {
 						<div class="menu__left__inner__item">
 
 							<?php if ($page != 'tuto_content') { ?>
+
 								<a class="link_menu" href="content.php?category=tutorial">Tutorials</a>
+
 							<?php } ?>
 
 						</div>
@@ -93,7 +96,9 @@ if (isset($session_users_id)) {
 						<div class="menu__left__inner__item">
 
 							<?php if ($page != 'perf_content') { ?>
+
 								<a class="link_menu" href="content.php?category=performance">Performances</a>
+
 							<?php } ?>
 
 						</div>
@@ -102,117 +107,151 @@ if (isset($session_users_id)) {
 						<div class="menu__left__inner__item">
 
 							<?php if ($page != 'sheet_content') { ?>
+
 								<a class="link_menu" href="content.php?category=sheet_music">Sheet Music</a>
+
 							<?php } ?>
 
 						</div>
 
 
-						<div class="menu__left__inner__item">
+						<?php if (!isset($_SESSION['users']) && empty($_SESSION['users'])) { ?>
 
-							<?php if (!isset($_SESSION['users']) && empty($_SESSION['users'])) {
 
-								if ($page != 'login') { ?>
+							<div class="menu__left__inner__item">
+
+								<?php if ($page != 'login') { ?>
+
 									<a class="link_menu" href="login.php">Login</a>
+
 								<?php } ?>
 
-						</div>
+							</div>
 
 
-						<div class="menu__left__inner__item">
+							<div class="menu__left__inner__item">
 
-							<?php if ($page != 'register') { ?>
-								<a class="link_menu" href="register.php">Register</a>
-							<?php } ?>
+								<?php if ($page != 'register') { ?>
+									<a class="link_menu" href="register.php">Register</a>
+								<?php } ?>
 
-						</div>
-
-
-					<?php } ?>
+							</div>
 
 
-					<div class="menu__left__inner__item">
-
-						<?php if (isset($_SESSION['users']) && !empty($_SESSION['users'])) { ?>
-
-							<a data-barba-prevent class="link_menu" href="./assets/actions/logout_action.php" onclick="return logout()">Logout</a>
-
-					</div>
-
-					<script>
-						function logout() {
-							return alert("You have logout")
-						}
-					</script>
+						<?php } else { ?>
 
 
-					<div class="menu__left__inner__item">
+							<div class="menu__left__inner__item">
 
-						<?php if ($page != 'my_account') { ?>
-							<a class="link_menu" href="my_account.php">My Account</a>
+								<a data-barba-prevent class="link_menu" href="./assets/actions/logout_action.php">Logout</a>
+
+							</div>
+
+
+							<div class="menu__left__inner__item">
+
+								<?php if ($page != 'my_account') { ?>
+
+									<a class="link_menu" href="my_account.php">My Account</a>
+
+								<?php } ?>
+
+							</div>
+
+
 						<?php } ?>
 
-					</div>
+						<div class="menu_left_responsive">
+
+							<div class="menu__left__inner__item">
+								<div class="menu__left__inner__item__title">Contact</div>
+
+								<ul>
+									<li>
+										<a class="contact_button">Contact</a>
+									</li>
+								</ul>
+
+							</div>
+
+							<div class="menu__left__inner__item">
+								<div class="menu__left__inner__item__title">Socials</div>
+
+								<ul>
+
+									<li>
+										<a class="link_menu" href="#">Facebook</a>
+									</li>
+
+									<li>
+										<a class="link_menu" href="#">Instagram</a>
+									</li>
+
+									<li>
+										<a class="link_menu" href="#">Youtube</a>
+									</li>
+
+									<li>
+										<a class="link_menu" href="#">Twitter</a>
+									</li>
+
+								</ul>
+
+							</div>
 
 
-				<?php } ?>
-
-
-					</div>
-
-				</div>
-
-			</div>
-
-
-			<div class="menu__right">
-				<div class="menu__right__inner">
-
-					<div class="menu__right__inner__item">
-
-						<div class="menu__right__inner__item__title">Contact</div>
-
-						<ul>
-							<li>
-								<a id="contact_button">contact</a>
-							</li>
-						</ul>
-
-					</div>
-
-
-					<div class="menu__right__inner__item">
-
-						<div class="menu__right__inner__item__title">Socials</div>
-
-						<ul>
-
-							<li>
-								<a class="link_menu" href="#">Facebook</a>
-							</li>
-
-							<li>
-								<a class="link_menu" href="#">Instagram</a>
-							</li>
-
-							<li>
-								<a class="link_menu" href="#">Youtube</a>
-							</li>
-
-							<li>
-								<a class="link_menu" href="#">Twitter</a>
-							</li>
-
-						</ul>
+						</div>
 
 					</div>
 				</div>
+
+
+				<div class="menu__right">
+					<div class="menu__right__inner">
+
+						<div class="menu__right__inner__item">
+							<div class="menu__right__inner__item__title">Contact</div>
+
+							<ul>
+								<li>
+									<a class="contact_button">Contact</a>
+								</li>
+							</ul>
+
+						</div>
+
+
+						<div class="menu__right__inner__item">
+							<div class="menu__right__inner__item__title">Socials</div>
+
+							<ul>
+
+								<li>
+									<a class="link_menu" href="#">Facebook</a>
+								</li>
+
+								<li>
+									<a class="link_menu" href="#">Instagram</a>
+								</li>
+
+								<li>
+									<a class="link_menu" href="#">Youtube</a>
+								</li>
+
+								<li>
+									<a class="link_menu" href="#">Twitter</a>
+								</li>
+
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+
+				<div class="sep"></div>
+				<div class="sep__icon"><img class="logo" src="./assets/img/music-g8090509f0_1920.png" alt=""></div>
+
 			</div>
-
-
-			<div class="sep"></div>
-			<div class="sep__icon"><img class="logo" src="./assets/img/music-g8090509f0_1920.png" alt=""></div>
-
-
 		</nav>
 	</header>

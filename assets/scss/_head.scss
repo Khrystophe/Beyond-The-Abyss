@@ -54,6 +54,10 @@
   align-items: center;
 }
 
+.menu_left_responsive{
+  display: none;
+}
+
 
 .menu__left {
   transform: translateX(-100%);
@@ -150,7 +154,7 @@
   }
 }
 
-#contact_button{
+.contact_button{
   cursor: pointer;
 }
 

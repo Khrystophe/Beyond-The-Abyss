@@ -19,11 +19,13 @@ if (
 
     $getContentAndUserInformations = getContentAndUserInformations($bdd, $get_id);
 
+
     if ($getContentAndUserInformations) {
 
       require('./assets/require/variables.php');
 
       $getComments = getComments($bdd, $get_id);
+
 
       if (isset($session_users_id) && !empty($session_users_id)) {
 

@@ -118,7 +118,6 @@ if (isset($getContentAndUserInformations) && !empty($getContentAndUserInformatio
   }
 }
 
-
 if (isset($getComment) && !empty($getComment)) {
 
   $comment_id = htmlspecialchars($getComment['id']);

@@ -22,6 +22,7 @@ if (
     $req->execute();
     $content_informations = $req->fetch();
 
+
     if (($content_informations['reporting'] != 0 && $get_type != 'admin') ||
         ($content_informations['reporting'] != 0 && $get_type == 'admin' && $content_informations['id_users'] == $session_users_id)
     ) {
@@ -39,6 +40,7 @@ if (
         }
     }
 
+
     $req = $bdd->prepare('SELECT credits FROM users WHERE id = :id_users');
     $req->bindParam(':id_users', $content_informations['id_users'], PDO::PARAM_INT);
     $req->execute();
@@ -53,10 +55,12 @@ if (
         $author_credits -= 20;
     }
 
+
     $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
     $req->bindParam(':credits', $author_credits, PDO::PARAM_INT);
     $req->bindParam(':users_id', $content_informations['id_users'], PDO::PARAM_INT);
     $req->execute();
+
 
     $date = date('l jS \of F Y h:i:s A');
 
@@ -64,11 +68,13 @@ if (
     
     Your new sold of credits is ' . $author_credits . ' because you have deleted ' . $content_informations['title'] . " of " . $content_informations['composer'] . '.   ';
 
+
     $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
     $req->bindParam(':notification', $notification, PDO::PARAM_STR);
     $req->bindParam(':date', $date, PDO::PARAM_STR);
     $req->bindParam(':id_users', $content_informations['id_users'], PDO::PARAM_INT);
     $req->execute();
+
 
     $req = $bdd->prepare('SELECT purchased_contents.id_contents, purchased_contents.id_users, purchased_contents.original_price, purchased_contents.buyer_repayment ,users.credits, users.name, users.lastname
     FROM purchased_contents 
@@ -79,6 +85,7 @@ if (
     $req->execute();
     $repayment_informations = $req->fetchAll();
 
+
     foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
 
         $new_sold_of_credits = $repayment_informations_foreach_buyer['credits'] += $repayment_informations_foreach_buyer['original_price'] - $repayment_informations_foreach_buyer['buyer_repayment'];
@@ -88,11 +95,13 @@ if (
         $req->bindParam(':id', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
         $req->execute();
 
+
         $notification = 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! 
         
         Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' has been deleted. 
         
         You have been reimbursed. ';
+
 
         $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
         $req->bindParam(':notification', $notification, PDO::PARAM_STR);

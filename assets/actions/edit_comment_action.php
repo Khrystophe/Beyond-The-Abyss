@@ -19,6 +19,7 @@ if (
   $req->bindParam(':id', $post_id, PDO::PARAM_INT);
   $req->execute();
 
+  $bdd = null;
   header('location: ../../single_player_content.php?id=' . $get_id . '&success=018232');
 } else {
 

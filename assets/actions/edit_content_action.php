@@ -35,6 +35,7 @@ if (
     $req->execute();
     $content_informations = $req->fetch();
 
+
     if (($content_informations['reporting'] != 0 && $get_type != 'admin') ||
         ($content_informations['reporting'] != 0 && $get_type == 'admin' && $content_informations['id_users'] == $session_users_id)
     ) {
@@ -51,6 +52,7 @@ if (
             die();
         }
     }
+
 
     if ($content_informations['category'] == 'tutorial') {
         $author_credits -= 30;
@@ -73,6 +75,7 @@ if (
     $req->bindParam(':users_id', $post_id_users, PDO::PARAM_INT);
     $req->execute();
 
+
     $req = $bdd->prepare('SELECT purchased_contents.id_contents, purchased_contents.id_users, purchased_contents.original_price, purchased_contents.buyer_repayment ,users.credits, users.name, users.lastname
     FROM purchased_contents 
     INNER JOIN users 
@@ -82,17 +85,20 @@ if (
     $req->execute();
     $repayment_informations = $req->fetchAll();
 
+
     $new_price = $post_price;
 
     if ($post_price == 'Free') {
         $new_price = 0;
     }
 
+
     foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
 
         $original_price = $repayment_informations_foreach_buyer['original_price'];
         $buyer_repayment = $repayment_informations_foreach_buyer['buyer_repayment'];
         $old_buyer_repayment = $buyer_repayment;
+
 
         if ($original_price > $new_price) {
 
@@ -117,11 +123,13 @@ if (
             $buyer_repayment = 0;
         }
 
+
         $req = $bdd->prepare('UPDATE purchased_contents SET buyer_repayment = :buyer_repayment WHERE id_users = :id_users AND id_contents = :id_contents');
         $req->bindParam(':buyer_repayment', $buyer_repayment, PDO::PARAM_INT);
         $req->bindParam(':id_users', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
         $req->bindParam(':id_contents', $post_id, PDO::PARAM_INT);
         $req->execute();
+
 
         $date = date('l jS \of F Y h:i:s A');
 
@@ -153,11 +161,15 @@ if (
     }
 
     if (isset($files_content_name)) {
+
         if ($files_content_error == 0) {
+
             if ($files_content_size <= 128000000) {
+
                 $content = uniqid() . '.' . pathinfo($files_content_name, PATHINFO_EXTENSION);
                 move_uploaded_file($files_content_tmp_name, '../videos/' . $content);
             } else {
+
                 if ($get_type == 'admin') {
 
                     $bdd = null;
@@ -171,6 +183,7 @@ if (
                 }
             }
         } else {
+
             if ($get_type == 'admin') {
 
                 $bdd = null;
@@ -184,6 +197,7 @@ if (
             }
         }
     }
+
 
     if (!isset($content) && empty($content)) {
 
@@ -219,6 +233,7 @@ if (
         $req->bindParam(':id', $post_id, PDO::PARAM_INT);
         $req->execute();
     }
+
 
     if ($get_type == 'admin') {
 

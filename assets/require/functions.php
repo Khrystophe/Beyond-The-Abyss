@@ -1,6 +1,6 @@
 <?php
 
-function getUserSessionInformations(PDO $bdd, $session_users_id)
+function getUserSessionInformations($bdd, $session_users_id)
 {
   $req = $bdd->prepare('SELECT  name, lastname, credits FROM users WHERE id= :id');
   $req->bindParam(':id', $session_users_id, PDO::PARAM_INT);

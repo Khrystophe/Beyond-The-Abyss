@@ -19,8 +19,11 @@ if (
    require('../require/action_deco_auto.php');
 
    if (isset($files_content_name)) {
+
       if ($files_content_error == 0) {
+
          if ($files_content_size <= 128000000) {
+
             $content = uniqid() . '.' . pathinfo($files_content_name, PATHINFO_EXTENSION);
             move_uploaded_file($files_content_tmp_name, '../videos/' . $content);
          } else {
