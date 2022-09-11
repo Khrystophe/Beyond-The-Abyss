@@ -56,7 +56,7 @@ header {
 }
 .nav_bar{
   height: 3.5rem;
-  background-color: #161616;
+  background: linear-gradient(to bottom, #383838 4%, #161616 97.46%);
   display: flex;
   justify-content: center;
   position: fixed;
@@ -66,7 +66,7 @@ header {
   opacity: 0;
   .fas, .dropbtn{
     color: black;
-    background-color: #161616;
+    background-color: transparent;
     border: none;
     cursor: pointer;
   }

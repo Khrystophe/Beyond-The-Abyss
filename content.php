@@ -93,8 +93,12 @@ if (
 				$post_level = null;
 			}
 
+			if (!isset($post_price)) {
+				$post_price = null;
+			}
+
 			$page = 'search_results';
-			$getContents = getSearchResults($bdd, $post_title, $post_composer, $post_category, $post_level);
+			$getContents = getSearchResults($bdd, $post_title, $post_composer, $post_category, $post_level, $post_price);
 
 
 			if (empty($getContents)) {

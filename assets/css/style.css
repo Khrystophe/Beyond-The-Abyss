@@ -42,7 +42,7 @@ header {
 
 .nav_bar {
   height: 3.5rem;
-  background-color: #161616;
+  background: linear-gradient(to bottom, #383838 4%, #161616 97.46%);
   display: flex;
   justify-content: center;
   position: fixed;
@@ -53,7 +53,7 @@ header {
 }
 .nav_bar .fas, .nav_bar .dropbtn {
   color: black;
-  background-color: #161616;
+  background-color: transparent;
   border: none;
   cursor: pointer;
 }
@@ -793,7 +793,7 @@ textarea {
 @media all and (max-width: 799px) {
   .wrapp {
     height: 12rem;
-    margin-top: 3.5rem;
+    margin-top: 4.3rem;
   }
   .wrapp .abyss h1 {
     font-size: 1.5rem;
@@ -1084,9 +1084,13 @@ textarea {
   width: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   margin-bottom: 2rem;
   margin-top: 5rem;
-  min-height: 100vh;
+}
+.form.connect {
+  margin-bottom: 0rem;
+  margin-top: 0rem;
 }
 
 .form_content {
@@ -1121,7 +1125,7 @@ textarea {
   border-bottom-left-radius: 1.5rem;
 }
 .leftside img {
-  width: 250px;
+  width: 245px;
   animation: rotate_one 8s linear infinite;
 }
 
@@ -1474,7 +1478,7 @@ footer {
   display: flex;
   justify-content: space-between;
   opacity: 0;
-  background: linear-gradient(90.73deg, #383838 4%, #000000 97.46%);
+  background: linear-gradient(to top, #383838 4%, #161616 97.46%);
   padding: 2em 1em;
   color: #1A1A1A;
   font-weight: bold;

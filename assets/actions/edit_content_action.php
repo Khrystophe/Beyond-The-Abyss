@@ -258,7 +258,7 @@ if (
 
         $bdd = null;
         http_response_code(400);
-        header('location: ../../single_player_content.php?error=017153');
+        header('location: ../../single_player_content.php?id=' . $post_id . '&error=017153');
         die();
     }
 }

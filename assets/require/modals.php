@@ -160,8 +160,10 @@ if (isset($get_error) || isset($get_success)) {
             <option value="very-hard">Very Hard</option>
           </select>
 
-          <button type="submit" class="button">Search</button>
+          <label for="search_price">Free Content</label>
+          <input type="checkbox" class="inputbox" id="search_price" value="Free" name="price">
 
+          <button type="submit" class="button">Search</button>
         </form>
       </div>
     </div>
@@ -222,6 +224,14 @@ if (isset($get_error) || isset($get_success)) {
 
           <label for="single_player_edit_description"></label>
           <textarea class="inputbox" value="<?= $content_description ?>" id="single_player_edit_description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);"><?= $content_description ?></textarea>
+
+          <?php if ($content_category == 'Tutorial') {
+            $content_category = 'tutorial';
+          } else if ($content_category == 'Performance') {
+            $content_category = 'performance';
+          } else if ($content_category == 'Sheet Music') {
+            $content_category = 'sheet_music';
+          } ?>
 
           <label for="single_player_edit_category"></label>
           <select class="inputbox" id="single_player_edit_category" name="category">

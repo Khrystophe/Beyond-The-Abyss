@@ -92,21 +92,36 @@ function getIdUserFromPurchasedContent(PDO $bdd, $content_id)
   return $users;
 }
 
-function getSearchResults(PDO $bdd, $post_title, $post_composer, $post_category, $post_level)
+function getSearchResults(PDO $bdd, $post_title, $post_composer, $post_category, $post_level, $post_price)
 {
   $title =  $post_title . '%';
   $composer = $post_composer . '%';
   $category = '%' . $post_category . '%';
   $level = '%' . $post_level . '%';
 
-  $req = $bdd->prepare("SELECT * FROM contents WHERE level LIKE :level AND category LIKE :category AND composer LIKE :composer AND title LIKE :title");
-  $req->bindParam(':level', $level, PDO::PARAM_STR);
-  $req->bindParam(':category', $category, PDO::PARAM_STR);
-  $req->bindParam(':composer',  $composer, PDO::PARAM_STR);
-  $req->bindParam(':title', $title, PDO::PARAM_STR);
-  $req->execute();
-  $contents = $req->fetchAll();
-  return $contents;
+  if ($post_price == 'Free') {
+    $post_price = 0;
+
+    $req = $bdd->prepare("SELECT * FROM contents WHERE level LIKE :level AND category LIKE :category AND composer LIKE :composer AND title LIKE :title AND price LIKE :price ");
+    $req->bindParam(':level', $level, PDO::PARAM_STR);
+    $req->bindParam(':category', $category, PDO::PARAM_STR);
+    $req->bindParam(':composer',  $composer, PDO::PARAM_STR);
+    $req->bindParam(':title', $title, PDO::PARAM_STR);
+    $req->bindParam(':price', $post_price, PDO::PARAM_INT);
+    $req->execute();
+    $contents = $req->fetchAll();
+    return $contents;
+  } else {
+
+    $req = $bdd->prepare("SELECT * FROM contents WHERE level LIKE :level AND category LIKE :category AND composer LIKE :composer AND title LIKE :title");
+    $req->bindParam(':level', $level, PDO::PARAM_STR);
+    $req->bindParam(':category', $category, PDO::PARAM_STR);
+    $req->bindParam(':composer',  $composer, PDO::PARAM_STR);
+    $req->bindParam(':title', $title, PDO::PARAM_STR);
+    $req->execute();
+    $contents = $req->fetchAll();
+    return $contents;
+  }
 }
 
 function getUserInformations(PDO $bdd, $session_users_id)

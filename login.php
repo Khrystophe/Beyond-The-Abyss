@@ -13,7 +13,7 @@ if (!isset($session_users_id)) {
 		<main class="autoAlpha" data-barba="wrapper">
 			<div class="min-height" data-barba="container" data-barba-namespace="login-section">
 
-				<div class="form">
+				<div class="form connect">
 					<div class="form_content">
 
 						<div class="leftside">
