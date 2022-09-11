@@ -173,6 +173,133 @@
 }
 
 
+.random_content{
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0;
+  margin: 0 10px 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content_card{
+  position: relative;
+  display: block;
+  width: 800px;
+  // height: 440px;
+  margin: 100px 10px 50px 10px; 
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.4s;
+  &:hover{
+    transform: scale(1.02);
+    transition: all 0.4s;
+  }
+
+  &.tuto{
+    border-radius: 60px;
+    box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
+    &:hover{
+      border-radius: 10px;
+      box-shadow: 0px 0px 120px -55px rgba(199,147,75, 0.7);
+    
+    }
+  }
+
+  &.perf{
+    border-radius: 60px;
+    box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
+    &:hover{
+      border-radius: 10px;
+      box-shadow: 0px 0px 120px -55px rgba(199,147,75, 0.7);
+    }
+  }
+  
+  &.sheet{
+    border-radius: 60px;
+    box-shadow: -7px -7px 10px #090909, 6px 2px 1px #232323;
+    &:hover{
+      border-radius: 10px;
+      box-shadow: 0px 0px 120px -55px rgba(199,147,75, 0.7);
+    }
+  }
+  
+  .info_section{
+    position: relative;
+    width: 100%;
+    height: 100%;
+	  background-blend-mode: multiply;
+    z-index: 2;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    
+    
+    .content {
+      height: 120px;
+      box-shadow: 0 0 20px -10px rgba(0,0,0,0.5);
+    }
+
+    .content_header{
+     line-height: 2.5rem;
+     margin-top: 15px;
+     margin-bottom: 15px;
+
+      h2{
+        font-weight: 400;
+        font-size: 2rem;
+      }
+
+      h3{
+        font-weight: 400;
+      }
+
+      .see_content{
+        margin-top: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid rgba(255,255,255,0.13);
+        position: relative;
+
+        a{
+        text-decoration: none;
+        color: var(--fourth-color);
+        }
+      }
+    }
+
+    .content_desc{
+      .text{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .blur_back{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: 100%; right: 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 11px;
+  }
+}
+
+.tuto_back{
+  background: url("../img/piano-1846719_1920.jpg");
+}
+
+.perf_back{
+  background: url("../img/stage-curtain-660078_1920.jpg");
+}
+
+.sheet_back{
+    background: url("../img/sheet-music-4121936_1920.jpg");
+}
+
+
 @media all and (min-width: 800px) {
   .features {
     display: flex;
@@ -184,7 +311,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      padding-left: 20px;
+      padding-left: 2rem;
     }
     &.perf{
       display: flex;
@@ -195,7 +322,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      padding-right: 20px;
+      padding-right: 2rem;
     }
   }
   .content_header{
@@ -241,19 +368,16 @@
     &.tuto{
     background: linear-gradient(to right, black 33%, transparent 100%);
     border-radius: 10px;
-    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
     }
 
     &.perf{
       background: linear-gradient(to left, rgba(255,255,255,0) 0%, black 26%,black 74%, rgba(255,255,255,0) 100%);
       border-radius: 10px;
-    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
     }
 
     &.sheet{
       background: linear-gradient(to left, black 33%, transparent 100%);
       border-radius: 10px;
-    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
     }
   }
   
@@ -312,7 +436,6 @@
   .content_card{
     width: 95%;
     margin: 70px auto; 
-    min-height: 350px;
     height: auto;
   }
   
@@ -331,14 +454,15 @@
   
   .content_desc{
     max-width: 400px;
-
+    .text{
+    margin: 1rem;
+    }
+    
     &.tuto, &.perf, &.sheet{
       text-align: center;
     }
-
-  
   }
-  
+
   .info_section{
     background: linear-gradient(to top, black 50%, transparent 100%);
     display: inline-grid;
@@ -349,7 +473,69 @@
       align-items: center;
     }
   }
+  .content_card{
+    .info_section{
+      .content_header{
+        line-height: 2.1rem;
+        h2{
+          font-weight: 400;
+          font-size: 1.25rem;
+        }
+        }
+      }
+    }
 }
 
+@media all and (max-height: 580px){
+  .wrapp{
+    height: 12rem;
+    margin-top: 3.5rem;
+    .abyss{
+          h1{
+            font-size: 1.5rem;
+          }
+          h2{
+            font-size: 1.2rem;
+          }
+          .main_logo{
+            width: 250px;
+          }
+          .main_logo_disc{
+            width: 146px;
+            height: 146px;
+          }
+        }
+  }
+  .separators{
+    height: 3.4rem;
+    .separator{
+      height: 6px;
+      border-radius: 6px;
+    }
+  }
+  .features{
+    .cards{
+      height: 4.8rem;
+      .line{
+        height: 4.2px;
+      }
+    }
+  }
+  .cards .titles{
+    font-size: 1.2rem;
+  }
+
+  .content_card{
+    .info_section{
+      .content_header{
+        line-height: 2.1rem;
+        h2{
+          font-weight: 400;
+          font-size: 1.25rem;
+        }
+        }
+      }
+    }
+}
 
 

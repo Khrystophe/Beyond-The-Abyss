@@ -60,7 +60,7 @@ if (isset($get_error) || isset($get_success)) {
     46 => 'You have been logged out automatically because you have been inactive for too long. ',
     47 => 'This content is not free. 
     Log in or register. 
-    You will get 50 credits. ',
+    For any new registration you will get 50 credits. ',
     48 => 'Account deleted. ',
     49 => 'Your search result is empty.',
     50 => 'An error has occured. ',

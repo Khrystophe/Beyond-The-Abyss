@@ -76,10 +76,8 @@ require('./assets/require/variables.php'); ?>
 							<h2><?= $random_tuto_title ?></h2>
 							<h3><?= $random_tuto_composer ?></h3>
 
-							<span class="see_content tuto"><a href="./single_player_content.php?id=<?= $random_tuto_id ?>" class="btn link_page">Watch</a>
-							</span>
+							<span class="see_content tuto"><a href="./single_player_content.php?id=<?= $random_tuto_id ?>" class="btn link_page">Watch</a></span>
 
-							<div class="type tuto">Classique</div>
 						</div>
 					</div>
 
@@ -93,11 +91,6 @@ require('./assets/require/variables.php'); ?>
 						</p>
 					</div>
 
-					<div class="content_social tuto">
-						<ul>
-							<li><i class="material-icons">User</i></li>
-						</ul>
-					</div>
 				</div>
 				<div class="blur_back tuto_back"></div>
 			</div>
@@ -116,7 +109,6 @@ require('./assets/require/variables.php'); ?>
 
 							<span class="see_content perf"><a href="./single_player_content.php?id=<?= $random_perf_id ?>" class="btn link_page">Watch</a></span>
 
-							<div class="type perf">Jazz</div>
 						</div>
 					</div>
 
@@ -131,11 +123,6 @@ require('./assets/require/variables.php'); ?>
 						</p>
 					</div>
 
-					<div class="content_social perf">
-						<ul>
-							<li><i class="material-icons">User</i></li>
-						</ul>
-					</div>
 				</div>
 				<div class="blur_back perf_back"></div>
 			</div>
@@ -154,7 +141,6 @@ require('./assets/require/variables.php'); ?>
 
 							<span class="see_content sheet"><a href="./single_player_content.php?id=<?= $random_sheet_id ?>" class="btn link_page">Watch</a></span>
 
-							<div class="type sheet">Métal</div>
 						</div>
 					</div>
 
@@ -169,11 +155,6 @@ require('./assets/require/variables.php'); ?>
 						</p>
 					</div>
 
-					<div class="content_social sheet">
-						<ul>
-							<li><i class="material-icons">User</i></li>
-						</ul>
-					</div>
 				</div>
 				<div class="blur_back sheet_back"></div>
 			</div>

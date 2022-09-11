@@ -169,7 +169,10 @@ if (isset($session_users_id)) {
 
 								<ul>
 									<li>
-										<a class="contact_button">Contact</a>
+										<a class="contact_button">Administrator</a>
+									</li>
+									<li>
+										<a class="lost_password_button">Lost Password</a>
 									</li>
 								</ul>
 
@@ -215,7 +218,10 @@ if (isset($session_users_id)) {
 
 							<ul>
 								<li>
-									<a class="contact_button">Contact</a>
+									<a class="contact_button">Administrator</a>
+								</li>
+								<li>
+									<a class="lost_password_button">Lost Password</a>
 								</li>
 							</ul>
 
