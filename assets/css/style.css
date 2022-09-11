@@ -276,6 +276,77 @@ textarea {
   cursor: pointer;
 }
 
+@media all and (max-width: 799px) {
+  .toggle {
+    top: 0.8rem;
+  }
+  .ouvrir {
+    width: 30px;
+    height: 30px;
+  }
+  .open .fermer {
+    width: 30px;
+    height: 30px;
+  }
+  .menu__left__inner__item {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .menu__right__inner__item__title {
+    font-size: 1.25rem;
+  }
+  .menu__right__inner__item ul li a {
+    font-size: 1rem;
+  }
+}
+@media all and (max-height: 540px) {
+  .toggle {
+    top: 0.8rem;
+  }
+  .ouvrir {
+    width: 30px;
+    height: 30px;
+  }
+  .open .fermer {
+    width: 30px;
+    height: 30px;
+  }
+  .menu__left__inner__item {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .menu__right__inner__item__title {
+    font-size: 1.25rem;
+  }
+  .menu__right__inner__item ul li a {
+    font-size: 1rem;
+  }
+}
+@media all and (max-width: 540px) {
+  .menu__right, .sep__icon {
+    display: none;
+  }
+  .menu__left {
+    width: 100%;
+  }
+  .sep {
+    width: 1rem;
+    left: 0;
+  }
+  .menu_left_responsive {
+    display: block;
+  }
+  .menu_left_responsive .menu__left__inner__item ul li a {
+    color: var(--fourth-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 1s;
+    list-style: none;
+  }
+  .menu_left_responsive .menu__left__inner__item ul {
+    list-style: none;
+  }
+}
 .modal {
   display: none;
   position: fixed;
@@ -530,6 +601,154 @@ textarea {
   width: 25%;
 }
 
+@media all and (min-width: 800px) {
+  .features {
+    display: flex;
+    justify-content: space-around;
+  }
+  .info_section.tuto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+  .info_section.perf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .info_section.sheet {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+  }
+  .content_header {
+    width: 60%;
+  }
+  .content_header.tuto {
+    text-align: start;
+  }
+  .content_header.perf {
+    text-align: center;
+  }
+  .content_header.sheet {
+    text-align: end;
+  }
+  .content_desc {
+    width: 50%;
+  }
+  .content_desc.tuto {
+    text-align: start;
+  }
+  .content_desc.perf {
+    text-align: center;
+  }
+  .content_desc.sheet {
+    text-align: end;
+  }
+  .gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-blend-mode: multiply;
+    z-index: 2;
+    border-radius: 10px;
+  }
+  .gradient.tuto {
+    background: linear-gradient(to right, black 33%, transparent 100%);
+    border-radius: 10px;
+    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
+  }
+  .gradient.perf {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, black 26%, black 74%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 10px;
+    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
+  }
+  .gradient.sheet {
+    background: linear-gradient(to left, black 33%, transparent 100%);
+    border-radius: 10px;
+    box-shadow: inset 10px 10px 10px #090909, inset -10px -10px 10px #232323;
+  }
+  .blur_back {
+    width: 80%;
+  }
+  .blur_back.perf_back {
+    width: 100%;
+  }
+  .blur_back.sheet_back {
+    left: 0;
+  }
+}
+@media all and (max-width: 799px) {
+  .wrapp {
+    height: 12rem;
+    margin-top: 3.5rem;
+  }
+  .wrapp .abyss h1 {
+    font-size: 1.5rem;
+  }
+  .wrapp .abyss h2 {
+    font-size: 1.2rem;
+  }
+  .wrapp .abyss .main_logo {
+    width: 250px;
+  }
+  .wrapp .abyss .main_logo_disc {
+    width: 146px;
+    height: 146px;
+  }
+  .separators {
+    height: 3.4rem;
+  }
+  .separators .separator {
+    height: 6px;
+    border-radius: 6px;
+  }
+  .features {
+    height: 19rem;
+  }
+  .features .cards {
+    height: 4.8rem;
+  }
+  .features .cards .line {
+    height: 4.2px;
+  }
+  .cards .titles {
+    font-size: 1.2rem;
+  }
+  .content_card {
+    width: 95%;
+    margin: 70px auto;
+    min-height: 350px;
+    height: auto;
+  }
+  .blur_back {
+    width: 100%;
+    height: 0;
+  }
+  .content_header {
+    width: 100%;
+  }
+  .content_header.tuto, .content_header.perf, .content_header.sheet {
+    text-align: center;
+  }
+  .content_desc {
+    max-width: 400px;
+  }
+  .content_desc.tuto, .content_desc.perf, .content_desc.sheet {
+    text-align: center;
+  }
+  .info_section {
+    background: linear-gradient(to top, black 50%, transparent 100%);
+    display: inline-grid;
+  }
+  .info_section.tuto, .info_section.sheet, .info_section.perf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .random_content {
   font-size: 14px;
   font-weight: 400;
@@ -927,6 +1146,25 @@ textarea {
   border: 0px;
 }
 
+@media only all and (max-width: 1000px) {
+  .form_content {
+    flex-direction: column;
+    width: 63%;
+    min-width: 250px;
+  }
+  .leftside {
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 1.5rem;
+  }
+  .rightside {
+    width: auto;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 1.5rem;
+    padding: 1rem 2rem 1rem 2rem;
+  }
+}
 .movie-card {
   color: #A9A8A3;
   margin: 7rem 0 2rem 0;
@@ -1187,242 +1425,40 @@ textarea {
 }
 
 footer {
+  display: flex;
+  justify-content: space-between;
   opacity: 0;
-  background: linear-gradient(90.73deg, #ddd8da 4%, #130121 97.46%);
+  background: linear-gradient(90.73deg, #383838 4%, #000000 97.46%);
   padding: 2em 1em;
   color: #1A1A1A;
   font-weight: bold;
   position: relative;
   z-index: 60;
   margin-top: 1rem;
+  font-size: 1rem;
+}
+footer a {
+  text-decoration: none;
+  color: var(--fourth-color);
+}
+footer .social {
+  display: flex;
+  width: 35%;
+  justify-content: space-evenly;
 }
 
-@media only all and (max-width: 1000px) {
-  .form_content {
+@media all and (max-width: 799px) {
+  .copyright {
+    display: flex;
     flex-direction: column;
-    width: 63%;
-    min-width: 250px;
-  }
-  .leftside {
-    width: 100%;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 1.5rem;
-  }
-  .rightside {
-    width: auto;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 1.5rem;
-    padding: 1rem 2rem 1rem 2rem;
   }
 }
-@media all and (min-width: 800px) {
-  .features {
-    display: flex;
-    justify-content: space-around;
-  }
-  .info_section.tuto {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 20px;
-  }
-  .info_section.perf {
+@media all and (max-width: 450px) {
+  footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  .info_section.sheet {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding-right: 20px;
-  }
-  .content_header {
-    width: 60%;
-  }
-  .content_header.tuto {
-    text-align: start;
-  }
-  .content_header.perf {
-    text-align: center;
-  }
-  .content_header.sheet {
-    text-align: end;
-  }
-  .content_desc {
-    width: 50%;
-  }
-  .content_desc.tuto {
-    text-align: start;
-  }
-  .content_desc.perf {
-    text-align: center;
-  }
-  .content_desc.sheet {
-    text-align: end;
-  }
-  .gradient {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-blend-mode: multiply;
-    z-index: 2;
-    border-radius: 10px;
-  }
-  .gradient.tuto {
-    background: linear-gradient(to right, black 33%, transparent 100%);
-    border-radius: 10px;
-  }
-  .gradient.perf {
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, black 26%, black 74%, rgba(255, 255, 255, 0) 100%);
-    border-radius: 10px;
-  }
-  .gradient.sheet {
-    background: linear-gradient(to left, black 33%, transparent 100%);
-    border-radius: 10px;
-  }
-  .blur_back {
-    width: 80%;
-  }
-  .blur_back.perf_back {
-    width: 100%;
-  }
-  .blur_back.sheet_back {
-    left: 0;
-  }
-}
-@media all and (max-width: 799px) {
-  .toggle {
-    top: 0.8rem;
-  }
-  .ouvrir {
-    width: 30px;
-    height: 30px;
-  }
-  .open .fermer {
-    width: 30px;
-    height: 30px;
-  }
-  .wrapp {
-    height: 12rem;
-    margin-top: 3.5rem;
-  }
-  .wrapp .abyss h1 {
-    font-size: 1.5rem;
-  }
-  .wrapp .abyss h2 {
-    font-size: 1.2rem;
-  }
-  .wrapp .abyss .main_logo {
-    width: 250px;
-  }
-  .wrapp .abyss .main_logo_disc {
-    width: 146px;
-    height: 146px;
-  }
-  .separators {
-    height: 3.4rem;
-  }
-  .separators .separator {
-    height: 6px;
-    border-radius: 6px;
-  }
-  .features {
-    height: 19rem;
-  }
-  .features .cards {
-    height: 4.8rem;
-  }
-  .features .cards .line {
-    height: 4.2px;
-  }
-  .cards .titles {
-    font-size: 1.2rem;
-  }
-  .content_card {
-    width: 95%;
-    margin: 70px auto;
-    min-height: 350px;
-    height: auto;
-  }
-  .blur_back {
-    width: 100%;
-    height: 0;
-  }
-  .content_header {
-    width: 100%;
-  }
-  .content_header.tuto, .content_header.perf, .content_header.sheet {
-    text-align: center;
-  }
-  .content_desc {
-    max-width: 400px;
-  }
-  .content_desc.tuto, .content_desc.perf, .content_desc.sheet {
-    text-align: center;
-  }
-  .info_section {
-    background: linear-gradient(to top, black 50%, transparent 100%);
-    display: inline-grid;
-  }
-  .info_section.tuto, .info_section.sheet, .info_section.perf {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-@media all and (max-width: 799px) {
-  .menu__left__inner__item {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-  }
-  .menu__right__inner__item__title {
-    font-size: 1.25rem;
-  }
-  .menu__right__inner__item ul li a {
-    font-size: 1rem;
-  }
-}
-@media all and (max-height: 540px) {
-  .menu__left__inner__item {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-  }
-  .menu__right__inner__item__title {
-    font-size: 1.25rem;
-  }
-  .menu__right__inner__item ul li a {
-    font-size: 1rem;
-  }
-}
-@media all and (max-width: 540px) {
-  .menu__right, .sep__icon {
-    display: none;
-  }
-  .menu__left {
-    width: 100%;
-  }
-  .sep {
-    width: 1rem;
-    left: 0;
-  }
-  .menu_left_responsive {
-    display: block;
-  }
-  .menu_left_responsive .menu__left__inner__item ul li a {
-    color: var(--fourth-color);
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 1s;
-    list-style: none;
-  }
-  .menu_left_responsive .menu__left__inner__item ul {
-    list-style: none;
-  }
-  .menu__left__inner__item {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
+    font-size: 0.9rem;
   }
 }
 

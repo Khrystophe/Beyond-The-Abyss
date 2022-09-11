@@ -113,3 +113,28 @@
     background-color: transparent;
     border: 0px;
 }
+
+@media only all and (max-width: 1000px) {
+    .form_content{
+        flex-direction: column;
+        width: 63%;
+        min-width: 250px;
+      
+    }
+  
+    .leftside{
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius:1.5rem;
+     
+    }
+  
+    .rightside{
+        width:auto;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 1.5rem;
+        padding:1rem 2rem 1rem 2rem;
+    
+    }
+  }

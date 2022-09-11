@@ -1,9 +1,15 @@
 <footer>
-   <p class="float-end"><a href="#">Revenir à l'accueil</a></p>
-   <p>
-      &copy; 2022 Meckler Christophe, Inc. &middot;
-      <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
-   </p>
+   <div class="copyright">
+      <span>
+         &copy; 2022 Meckler Christophe, Inc. &middot;
+      </span>
+      <span> <a href="#">Privacy Policy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">About</a></span>
+   </div>
+   <span class="social"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+   </span>
 </footer>
 
 
