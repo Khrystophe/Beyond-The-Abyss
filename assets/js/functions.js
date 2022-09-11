@@ -120,19 +120,6 @@ for(let i=0; i < contact_button.length; i++){
   }
 }
 
-// let contact_responsive_modal = document.getElementById("contact_responsive_modal");
-// let contact_responsive_button = document.getElementById("contact_responsive_button");
-// let contact_responsive_close = document.getElementById("contact_responsive_close");
-
-// if (contact_responsive_button != undefined){
-//     contact_responsive_button.onclick = function() {
-//     contact_responsive_modal.style.display = "flex";
-//   }
-//     contact_responsive_close.onclick = function() {
-//     contact_responsive_modal.style.display = "none";
-//   }
-// }
-
 
 let report_modal = document.getElementById("report_modal");
 let report_button = document.getElementById("report_button");

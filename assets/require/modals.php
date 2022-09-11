@@ -187,37 +187,6 @@ if (isset($get_error) || isset($get_success)) {
 </div>
 
 
-<div id="contact_responsive_modal" class="modal messages">
-  <div class="modal-content">
-    <div class="modal_form">
-      <div class="modal_form_content">
-
-        <form class="form_action" action="/Diplome/assets/actions/contact_action.php" method="post">
-          <?php
-          if (isset($session_users_id)) { ?>
-
-            <label for="contact_responsive_id"></label>
-            <input type="hidden" id="contact_responsive_id" name="id" value="<?= $session_users_id ?>">
-
-            <label for=" contact_responsive_message">Contact an administrator</label>
-            <textarea class="inputbox text" id="contact_responsive_message" name="message"></textarea>
-
-            <button type="submit" class="button">Post</button>
-            <div class="button" id="contact_responsive_close">Close</div>
-
-          <?php } else { ?>
-
-            <div>You are not logged in</div>
-            <div class="button" id="contact_responsive_close">Close</div>
-
-          <?php } ?>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 <div id="edit_modal" class="modal">
   <div class="modal-content">
     <div class="modal_form">
