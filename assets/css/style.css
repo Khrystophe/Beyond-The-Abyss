@@ -118,7 +118,7 @@ textarea {
 }
 
 .messages_logo img {
-  width: 200px;
+  width: 150px;
   animation: rotate_one 8s linear infinite;
 }
 
@@ -365,6 +365,7 @@ textarea {
 .modal-content {
   margin: 5% auto;
   width: 60%;
+  overflow: auto;
 }
 
 #search_close {
@@ -656,6 +657,8 @@ textarea {
   z-index: 2;
   border-radius: 10px;
   padding-bottom: 20px;
+  max-height: 450px;
+  overflow: auto;
 }
 .content_card .info_section .content {
   height: 120px;
@@ -911,11 +914,13 @@ textarea {
   top: -55px;
   position: absolute;
   left: 15px;
+  text-shadow: 0px 1px 5px black;
 }
 
 .content_user {
   position: absolute;
   right: 15px;
+  text-shadow: 0px 1px 5px black;
 }
 .content_user.name {
   top: -60px;
@@ -928,12 +933,14 @@ textarea {
   position: absolute;
   top: -80px;
   right: 15px;
+  text-shadow: 0px 1px 5px black;
 }
 
 .content_price {
   position: absolute;
   top: -80px;
   left: 15px;
+  text-shadow: 0px 1px 5px black;
 }
 
 .container {
@@ -984,6 +991,7 @@ textarea {
 .card__thumb {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   position: relative;
   max-height: 190px;
   overflow: hidden;
@@ -1028,7 +1036,15 @@ textarea {
   max-height: 85px;
   overflow: hidden;
   font-size: 23px;
-  line-height: 28px;
+  line-height: 40px;
+  text-shadow: 0px 1px 5px black;
+  text-overflow: ellipsis;
+}
+.card__composer {
+  max-height: 85px;
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 30px;
   text-shadow: 0px 1px 5px black;
   text-overflow: ellipsis;
 }

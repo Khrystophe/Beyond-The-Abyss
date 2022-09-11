@@ -150,9 +150,9 @@ if (
 
 
 								<figcaption class="card__caption">
-									<h2 class="card__title"><?= $content_composer ?></h2>
 									<h2 class="card__title"><?= $content_title ?></h2>
-									<p class="card__snippet" style="word-break: break-all ;"><?= $content_description ?></p>
+									<h2 class="card__composer"><?= $content_composer ?></h2>
+									<p class="card__snippet"></p>
 
 
 									<?php if (isset($user_session_id) && !empty($user_session_id)) {

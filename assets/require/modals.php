@@ -11,6 +11,7 @@ if (isset($get_error) || isset($get_success)) {
     6 => 'You are already connected',
     7 => 'The use of cookies is necessary for the proper functioning of this site. 
     Please enable the use of cookies in your browser.
+    
     If you have just created your account, it is active. All you have to do is connect, having previously activated the use of cookies in your browser.',
     8 => 'An error has occurred or you are not connected.',
     9 => 'This content does not exist.',
@@ -23,8 +24,7 @@ if (isset($get_error) || isset($get_success)) {
     15 => 'This email is already in use. ',
     16 => 'Your comment is posted. ',
     17 => 'You have been disconnected. ',
-    18 => 'Welcome !
-    You are logged into your account ',
+    18 => 'You are logged into your account ',
     19 => 'Your password is wrong. ',
     20 => 'This user does not exist. ',
     21 => 'Your like has been taken into account. ',
@@ -94,6 +94,18 @@ if (isset($get_error) || isset($get_success)) {
             <div class="messages_logo">
               <img src="./assets/img/musicgrise.png" alt="" />
             </div>
+
+            <?php if (isset($get_error)) { ?>
+
+              <h2 class="modal_title">Warning</h2>
+              <br>
+
+            <?php } else { ?>
+
+              <h2 class="modal_title">Congratulations</h2>
+              <br>
+
+            <?php } ?>
 
             <div><?= nl2br($message) ?></div>
 

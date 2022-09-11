@@ -299,12 +299,16 @@ if (isset($_POST['price']) && !empty($_POST['price'])) {
 
 if (isset($_POST['description']) && !empty($_POST['description'])) {
 
+
   $check_post_description =  is_string($_POST['description'])
     && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['description']);
 
   if ($check_post_description === true) {
 
-    $post_description = $_POST['description'];
+    $regex = '/(\r\n|\n|\t|\r){3,}/';
+    $replacement = "\r\n\r\n";
+
+    $post_description = preg_replace($regex, $replacement, $_POST['description']);
   }
 }
 

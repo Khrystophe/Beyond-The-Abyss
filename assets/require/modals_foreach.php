@@ -12,15 +12,23 @@
               <img src="./assets/img/musicgrise.png" alt="" />
             </div>
 
+            <h2 class="modal_title">Content Description</h2>
+            <br>
+
+            <div><?= $content_description ?></div>
+            <br>
+
+            <h2 class="buy_alert">This content is not free !</h2>
+            <br>
 
             <?php if (isset($session_users_id)) {
 
 
               $message = 'You have ' . $user_session_credits . ' credits.
-											Do you want to buy ' . $content_title . ' of ' . $content_composer . ' for ' . $content_price . ' credits ?'; ?>
+              Do you want to buy ' . $content_title . ' of ' . $content_composer . ' for ' . $content_price . ' credits ?'; ?>
 
-
-              <div><?= nl2br($message) ?></div>
+              <div class="modal_message"><?= nl2br($message) ?></div>
+              <br>
               <button type="submit" class="button red">Buy</button>
               <div class="button" id="buy_close<?= $content_id ?>">Close</div>
 
@@ -29,6 +37,7 @@
 
 
               <div>You are not connected.<br>Log in or register.<br>You will get 50 credits.</div>
+              <br>
               <div class="button" id="buy_close<?= $content_id ?>">Close</div>
 
 
