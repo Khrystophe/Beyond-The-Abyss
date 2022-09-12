@@ -48,13 +48,15 @@ if (isset($session_users_id)) {
 					<div class="little_main_logo_disc"></div>
 				</div>
 
-				<button class="dropbtn" id="search_button"><i class="fas fa-search fa-2x"></i></button>
+				<button class="nav_search" id="search_button">Search</button>
 
 
 				<?php if (isset($session_users_id)) { ?>
 
-					<div class="credits_nav"><?= $credits_nav ?></div>
-					<div class="name_nav"><?= $name_nav ?></div>
+					<div class="user_nav">
+						<div class="name_nav"><?= $name_nav ?></div>
+						<div class="credits_nav"><?= $credits_nav ?></div>
+					</div>
 
 				<?php } ?>
 

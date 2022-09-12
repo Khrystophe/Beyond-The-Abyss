@@ -10,6 +10,9 @@
         margin-top: 0rem;
 
     }
+    h2{
+        font-size: 1rem;
+    }
 }
 
 .form_content {
@@ -50,9 +53,9 @@
 // }
 
 .rightside {
-    background-color: transparent;
+    background-color: #00000080;
     // backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 1.5px solid rgb(64, 64, 64);
 	width: 35rem;
 	// border-bottom-right-radius: 1.5rem;
     // border-top-right-radius: 1.5rem;
@@ -60,14 +63,14 @@
     padding: 1rem 2rem 1rem 2rem;
 }
 
-.inputbox
-{
+.inputbox {
     color:#030303;
     background-color: rgba(255, 255, 255, 0.07);
 	width: 100%;
     padding: 0.5rem;
     border: none;
-    border-bottom: 1.5px solid #ccc;
+    border-top: 1.5px solid rgb(0, 0, 0);
+    border-bottom: 1.5px solid rgb(64, 64, 64);
     margin-bottom: 0.4rem;
     border-radius: 0.3rem;
     font-family: 'Roboto', sans-serif;
@@ -92,6 +95,8 @@
     background: linear-gradient(135deg, #242424 0%, #363636 100%);
     padding: 11px;
     border: none;
+    border-top: 1.5px solid rgb(64, 64, 64);
+    border-bottom: 1.5px solid rgb(0, 0, 0);
     border-radius: 50px;
     color: rgb(129, 129, 129);
     font-family: var(--primary-font);
@@ -113,7 +118,7 @@
 {
 	transform: scale(1.05) translateY(-3px);
     transition: all 0.4s;
-    box-shadow: 3px 3px 6px #ffffff85;
+    box-shadow: 3px 3px 6px #8d8d8d85;
 }
 
 .margin{

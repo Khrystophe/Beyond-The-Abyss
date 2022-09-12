@@ -126,7 +126,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 								</div>
 
 								<div class="form_action">
-									<button class="btn_content"><a class="button link_page" href="content.php?category=user_purchased_content">Your purchased content</a></button>
+									<button class="btn_content"><a class="button link_page" href="content.php?category=user_purchased_content">Purchased content</a></button>
 								</div>
 
 								<div class="form_action">
@@ -144,7 +144,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 
 						<div class='deck'>
-							<div class='single_player_card'>
+							<div class='account_card'>
 								<div class='cardHeader'>
 									<span class='cardHeader_date'><?= $notification_date ?></span>
 								</div>
