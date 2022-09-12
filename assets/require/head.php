@@ -5,6 +5,9 @@ require('session_regenerate.php');
 if (isset($session_users_id)) {
 
 	$user = getUserSessionInformations($bdd, $session_users_id);
+
+	$name_nav =  htmlspecialchars($user['name']) . " " . htmlspecialchars($user['lastname']);
+	$credits_nav = 'Credits :' . " " . htmlspecialchars($user['credits']);
 }
 ?>
 
@@ -36,35 +39,32 @@ if (isset($session_users_id)) {
 
 	<header>
 
-		<div class="little_logo">
-			<img class="little_main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-			<div class="little_main_logo_disc"></div>
-		</div>
-
-		<div class="nav_bar">
-
-			<?php if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
-
-				echo 'Hello' . " " . htmlspecialchars($user['name']) . " " . htmlspecialchars($user['lastname']);
-			} ?>
-
-
-			<button class="dropbtn" id="search_button"><i class="fas fa-search fa-2x"></i></button>
-
-
-			<?php if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
-				echo 'Your credits :' . " " . htmlspecialchars($user['credits']);
-			} ?>
-
-
-
-		</div>
 		<nav>
+
+			<div class="nav_bar">
+
+				<div class="little_logo">
+					<img class="little_main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+					<div class="little_main_logo_disc"></div>
+				</div>
+
+				<button class="dropbtn" id="search_button"><i class="fas fa-search fa-2x"></i></button>
+
+
+				<?php if (isset($session_users_id)) { ?>
+
+					<div class="credits_nav"><?= $credits_nav ?></div>
+					<div class="name_nav"><?= $name_nav ?></div>
+
+				<?php } ?>
+
+			</div>
 
 			<div class="toggle">
 				<div class="ouvrir"></div>
 				<div class="fermer"></div>
 			</div>
+
 
 			<div class="menu">
 
@@ -85,9 +85,9 @@ if (isset($session_users_id)) {
 
 						<div class="menu__left__inner__item">
 
-							<?php if ($page != 'tuto_content') { ?>
+							<?php if ($page != 'perf_content') { ?>
 
-								<a class="link_menu" href="content.php?category=tutorial">Tutorials</a>
+								<a class="link_menu" href="content.php?category=performance">Performances</a>
 
 							<?php } ?>
 
@@ -96,9 +96,9 @@ if (isset($session_users_id)) {
 
 						<div class="menu__left__inner__item">
 
-							<?php if ($page != 'perf_content') { ?>
+							<?php if ($page != 'tuto_content') { ?>
 
-								<a class="link_menu" href="content.php?category=performance">Performances</a>
+								<a class="link_menu" href="content.php?category=tutorial">Tutorials</a>
 
 							<?php } ?>
 

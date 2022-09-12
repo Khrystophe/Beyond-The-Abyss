@@ -4,7 +4,7 @@
     flex-direction: column;
     min-height: 100vh;
     margin-bottom: 2rem;
-    margin-top: 5rem;
+    margin-top: 7rem;
     &.connect{
         margin-bottom: 0rem;
         margin-top: 0rem;
@@ -14,48 +14,49 @@
 
 .form_content {
     opacity: 0.7;
-	width: 40rem;
+	// width: 40rem;
     margin: auto;
     position:center;
     align-self: center;
-    top: 50rem;
+    // top: 50rem;
     border-radius: 1.5rem;
     box-shadow: 4px 3px 20px #6a6a6a8c;
-    display:flex;
-    flex-direction: row;
+    // display:flex;
+    // flex-direction: row;
 }
 
 .form_action{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
     text-align: center;
 }
 
 
-.leftside {
-	background-color: transparent;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-	width: 25rem;
-	display: inline-flex;
-    align-items: center;
-    justify-content: center;
-	border-top-left-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
-    img{
-        width: 245px;
-        animation: rotate_one 8s linear infinite;
-    }
-}
+// .leftside {
+// 	background-color: transparent;
+//     backdrop-filter: blur(10px);
+//     border: 2px solid rgba(255, 255, 255, 0.1);
+// 	width: 25rem;
+// 	display: inline-flex;
+//     align-items: center;
+//     justify-content: center;
+// 	border-top-left-radius: 1.5rem;
+//     border-bottom-left-radius: 1.5rem;
+//     img{
+//         width: 245px;
+//         animation: rotate_one 8s linear infinite;
+//     }
+// }
 
 .rightside {
     background-color: transparent;
-    backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.1);
 	width: 35rem;
-	border-bottom-right-radius: 1.5rem;
-    border-top-right-radius: 1.5rem;
+	// border-bottom-right-radius: 1.5rem;
+    // border-top-right-radius: 1.5rem;
+    border-radius: 1.5rem;
     padding: 1rem 2rem 1rem 2rem;
 }
 
@@ -67,11 +68,11 @@
     padding: 0.5rem;
     border: none;
     border-bottom: 1.5px solid #ccc;
-    margin-bottom: 1rem;
+    margin-bottom: 0.4rem;
     border-radius: 0.3rem;
     font-family: 'Roboto', sans-serif;
     color: #939393;
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: 500;
     outline:none;
 
@@ -80,23 +81,31 @@
     }
 }
 
+.btn_content{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border: 0px;
+}
+
 .button{
-    background: linear-gradient(135deg, #753370 0%, #298096 100%);
+    background: linear-gradient(135deg, #242424 0%, #363636 100%);
     padding: 11px;
     border: none;
     border-radius: 50px;
-    color: white;
+    color: rgb(129, 129, 129);
+    font-family: var(--primary-font);
     font-weight: 400;
     font-size: 0.7rem;
     margin-top: 10px;
-    width:150px;
+    min-width: 75px;
     letter-spacing: .11rem;
     outline:none;
     transition: all 0.4s;
     text-decoration: none;
     cursor: pointer;
     &.red{
-        background:linear-gradient(135deg, #753333 0%, #962929 100%) ;
+        background:linear-gradient(135deg, #750000 0%, #ff0000 100%) ;
     }
 }
 
@@ -111,12 +120,6 @@
     height: 1rem;
 }
 
-.btn_content{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: transparent;
-    border: 0px;
-}
 
 @media only all and (max-width: 1000px) {
     .form_content{
@@ -126,18 +129,19 @@
       
     }
   
-    .leftside{
-        width: 100%;
-        border-top-right-radius: 0;
-        border-bottom-left-radius: 0;
-        border-top-right-radius:1.5rem;
+    // .leftside{
+    //     width: 100%;
+    //     border-top-right-radius: 0;
+    //     border-bottom-left-radius: 0;
+    //     border-top-right-radius:1.5rem;
      
-    }
+    // }
   
     .rightside{
         width:auto;
-        border-top-right-radius: 0;
-        border-bottom-left-radius: 1.5rem;
+        // border-top-right-radius: 0;
+        // border-bottom-left-radius: 1.5rem;
+        border-radius: 1.5rem;
         padding:1rem 2rem 1rem 2rem;
     
     }

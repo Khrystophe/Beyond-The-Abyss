@@ -64,7 +64,7 @@ if (
 
                   </div>
                   <div class="player_bottom_bar">
-                    <span class="likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
+                    <span class="likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
 
 
                     <?php if (isset($user_session_id) && !empty($user_session_id)) {
@@ -75,8 +75,7 @@ if (
 
                         <button class="dropbtn">
                           <a data-barba-prevent href="./assets/actions/like_action.php?name=content&id=<?= $content_id ?>" onclick="javascript:return likeContent('<?= $content_author_name ?>','<?= $content_author_lastname ?>')">
-                            <i class="far fa-thumbs-up">
-                            </i>
+                            Like
                           </a>
                         </button>
 
@@ -153,15 +152,16 @@ if (
 
                               <span class='cardStats_stat cardStats_stat-comments'><?= $number_of_user_comments ?> <i class='far fa-comment fa-fw'></i></span>
 
-                              <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= $comment_id ?>&id=<?= $content_id ?>" onclick="javascript:return likeComment('<?= $comment_user_name ?>','<?= $comment_user_lastname ?>')"> <i class='far fa-heart fa-fw'></i></a></span>
+                              <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?> <i class="far fa-thumbs-up"></i></span>
 
+                              <button class="dropbtn"><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= $comment_id ?>&id=<?= $content_id ?>" onclick="javascript:return likeComment('<?= $comment_user_name ?>','<?= $comment_user_lastname ?>')">Like</a></button>
 
                             <?php } else if (isset($session_users_id) && ($session_users_id == $comment_user_id)) { ?>
 
 
                               <span class='cardStats_stat cardStats_stat-comments'><?= $number_of_user_comments ?> <i class='far fa-comment fa-fw'></i></span>
 
-                              <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?><i class='far fa-heart fa-fw'></i></span>
+                              <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?> <i class="far fa-thumbs-up"></i></span>
 
                               <button class="dropbtn" id="edit_comment_button<?= $comment_id ?>" onclick="javascript: editComment('<?= $comment_id ?>')">Edit</button>
 
@@ -171,7 +171,7 @@ if (
 
                               <span class='cardStats_stat cardStats_stat-comments'><?= $number_of_user_comments ?> <i class='far fa-comment fa-fw'></i></span>
 
-                              <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?><i class='far fa-heart fa-fw'></i></span>
+                              <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?> <i class="far fa-thumbs-up"></i></span>
 
 
                             <?php } ?>

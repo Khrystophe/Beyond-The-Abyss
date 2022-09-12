@@ -174,7 +174,7 @@ if (
 											if ($content_price == 0 && $content_id_user != $user_session_id) { ?>
 
 
-												<span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
+												<span class="content_likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
 												<div class="content_category"><?= $content_category ?></div>
 												<div class="content_price">Free</div>
 												<div class="content_user name">By <?= $user_content_name ?></div>
@@ -184,7 +184,7 @@ if (
 											<?php } else if ($content_id_user == $user_session_id) { ?>
 
 
-												<span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
+												<span class="content_likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
 												<div class="content_category"><?= $content_category ?></div>
 												<div class="content_price">Your content</div>
 												<div class="content_user name">By <?= $user_content_name ?></div>
@@ -203,7 +203,7 @@ if (
 											<?php if ($user_session_purchased_content == false) { ?>
 
 
-												<span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
+												<span class="content_likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
 												<div class="content_category"><?= $content_category ?></div>
 												<div class="content_price"><?= $content_price ?> Credits</div>
 												<div class="content_user name">By <?= $user_content_name ?></div>
@@ -214,7 +214,7 @@ if (
 											<?php } else if ($user_session_purchased_content == true) { ?>
 
 
-												<span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
+												<span class="content_likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
 												<div class="content_category"><?= $content_category ?></div>
 												<div class="content_price">Purchased</div>
 												<div class="content_user name">By <?= $user_content_name ?></div>
@@ -234,7 +234,7 @@ if (
 										<?php if ($content_price > 0) { ?>
 
 
-											<span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
+											<span class="content_likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
 											<div class="content_category"><?= $content_category ?></div>
 											<div class="content_price"><?= $content_price ?> Credits</div>
 											<div class="content_user name">By <?= $user_content_name ?></div>
@@ -245,7 +245,7 @@ if (
 										<?php } else { ?>
 
 
-											<span class="content_likes"><i class="fas fa-thumbs-up"> <?= $content_likes ?></i></span>
+											<span class="content_likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
 											<div class="content_category"><?= $content_category ?></div>
 											<div class="content_price">Free</div>
 											<div class="content_user name">By <?= $user_content_name ?></div>

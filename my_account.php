@@ -30,15 +30,9 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 					<div class="form">
 						<div class="form_content">
 
-							<div class="leftside">
-								<img src="./assets/img/musicgrise.png" alt="" />
-							</div>
-
-
 							<div class="rightside">
 
-								<h2 type="text" class="form_title">Hello <?= $get_user_name . " " . $get_user_lastname ?> </h2>
-								<h2 type="text" class="form_title">Your Email : <?= $get_user_email ?> </h2>
+								<h2 type="text" class="form_title"><?= $get_user_email ?></h2>
 
 
 								<div class="margin"></div>
@@ -47,10 +41,10 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 								<form data-barba-prevent class="form_action" action="./assets/actions/edit_name_lastname_action.php" method="post">
 
 									<label for="my_account_name"></label>
-									<input type="text" class="inputbox" placeholder="Your current name : <?= $get_user_name ?> " id="my_account_name" name="name" required />
+									<input type="text" class="inputbox" placeholder="<?= $get_user_name ?>" id="my_account_name" value="<?= $get_user_name ?>" name="name" />
 
 									<label for="my_account_lastname"></label>
-									<input type="text" class="inputbox" placeholder="Your current last name : <?= $get_user_lastname  ?> " id="my_account_lastname" name="lastname" required />
+									<input type="text" class="inputbox" placeholder="<?= $get_user_lastname ?> " id="my_account_lastname" value="<?= $get_user_lastname ?>" name="lastname" />
 
 									<button type="submit" class="button">Edit</button>
 

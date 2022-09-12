@@ -11,9 +11,27 @@ footer {
   z-index: 60;
   margin-top: 1rem;
   font-size: 1rem;
+  .creator, span{
+    color: #000000;
+  }
   a {
     text-decoration: none;
     color: var(--fourth-color);
+    transition: color 1s;
+    text-shadow:	 
+       0 1px 0 rgb(57, 57, 57),
+       0 2px 0 rgb(52, 52, 52),
+       0 3px 0 rgb(44, 44, 44),
+       0 4px 0 rgb(19, 19, 19),
+       0 5px 0 rgb(12, 12, 12),
+       0 6px 0 rgb(0, 0, 0),
+       6px 7px  5px  rgba(0, 0, 0, .40),
+       6px 12px 10px rgba(0, 0, 0, .30), 
+       6px 17px 20px rgba(0, 0, 0, .20),
+       6px 22px 30px rgba(0, 0, 0, .10);
+       &:hover{
+        color: var(--secondary-color);
+       }
   }
   .social{
     display: flex;

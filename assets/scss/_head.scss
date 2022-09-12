@@ -1,3 +1,81 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.nav_bar{
+  height: 5rem;
+  background: linear-gradient(to bottom, #383838 4%, #161616 97.46%);
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  flex-direction: column-reverse;
+  z-index: 20;
+  opacity: 0;
+  .fas, .dropbtn{
+    color: black;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .credits_nav, .name_nav{
+    color: var(--fourth-color);
+    font-size: 14px;
+    text-shadow:	 
+       0 1px 0 rgb(57, 57, 57),
+       0 2px 0 rgb(52, 52, 52),
+       0 3px 0 rgb(44, 44, 44),
+       0 4px 0 rgb(19, 19, 19),
+       0 5px 0 rgb(12, 12, 12),
+       0 6px 0 rgb(0, 0, 0),
+       6px 7px  5px  rgba(0, 0, 0, .40),
+       6px 12px 10px rgba(0, 0, 0, .30), 
+       6px 17px 20px rgba(0, 0, 0, .20),
+       6px 22px 30px rgba(0, 0, 0, .10);
+  }
+}
+nav {
+  height: 100%;
+}
+
+.little_logo{
+  transform: translateY(100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: -90px;
+  left: 2rem;
+  z-index: 50;
+  
+
+  .little_main_logo {
+    margin: 0%;
+    padding: 0%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 70px;
+    animation: rotate_one 8s linear infinite;
+    z-index: -10;
+  }
+  
+  .little_main_logo_disc{
+    width: 40px;
+    height: 40px;
+    animation: rotate_two 8s linear infinite reverse;
+    border-radius: 50%;
+    background: linear-gradient(315deg, #141414, #181818);
+    box-shadow: -10px -10px 16px #090909, 10px 10px 16px #232323;
+    z-index: -20;
+    top: 10%;
+    position: absolute;
+  }
+}
 
 .toggle {
   color: var(--third-color);
@@ -89,15 +167,37 @@
   color: rgb(36, 36, 36);
   text-decoration: none;
   transition: color 1s;
+  text-shadow:
+  0 1px 0 rgb(57, 57, 57),
+  0 2px 0 rgb(52, 52, 52),
+  0 3px 0 rgb(44, 44, 44),
+  0 4px 0 rgb(19, 19, 19),
+  0 5px 0 rgb(12, 12, 12),
+  0 6px 0 rgb(0, 0, 0),
+  6px 7px  5px  rgba(0, 0, 0, .40),
+  6px 12px 10px rgba(0, 0, 0, .30), 
+  6px 17px 20px rgba(0, 0, 0, .20),
+  6px 22px 30px rgba(0, 0, 0, .10);
 }
 
 .menu__left__inner__item a:hover {
-  color: var(--secondary-color);
+  color: var(--fourth-color);
 }
 
 .menu__right__inner__item__title {
   font-size: 3rem;
   color: rgb(36, 36, 36);
+  text-shadow:
+  0 1px 0 rgb(57, 57, 57),
+  0 2px 0 rgb(52, 52, 52),
+  0 3px 0 rgb(44, 44, 44),
+  0 4px 0 rgb(19, 19, 19),
+  0 5px 0 rgb(12, 12, 12),
+  0 6px 0 rgb(0, 0, 0),
+  6px 7px  5px  rgba(0, 0, 0, .40),
+  6px 12px 10px rgba(0, 0, 0, .30), 
+  6px 17px 20px rgba(0, 0, 0, .20),
+  6px 22px 30px rgba(0, 0, 0, .10);
 }
 
 .menu__right__inner__item ul {
@@ -113,10 +213,21 @@
   text-decoration: none;
   font-size: 1.25rem;
   transition: color 1s;
+  text-shadow:
+  0 1px 0 rgb(57, 57, 57),
+  0 2px 0 rgb(52, 52, 52),
+  0 3px 0 rgb(44, 44, 44),
+  0 4px 0 rgb(19, 19, 19),
+  0 5px 0 rgb(12, 12, 12),
+  0 6px 0 rgb(0, 0, 0),
+  6px 7px  5px  rgba(0, 0, 0, .40),
+  6px 12px 10px rgba(0, 0, 0, .30), 
+  6px 17px 20px rgba(0, 0, 0, .20),
+  6px 22px 30px rgba(0, 0, 0, .10);
 }
 
 .menu__right__inner__item ul li a:hover {
-  color: var(--secondary-color);
+  color: rgb(36, 36, 36);
 }
 
 .menu__right__inner__item:first-child {
@@ -128,14 +239,16 @@
   left: 50%;
   transform: translateX(-50%);
   width: 5px;
-  background: var(--secondary-color);
+  // background: var(--secondary-color);
+  background: #383838;
 }
 
 .sep__icon {
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
-  background: var(--secondary-color);
+  // background: var(--secondary-color);
+  background: #383838;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -143,9 +256,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--third-color);
-  font-family: var(--secondary-font);
-  font-size: 1.5rem;
+  // color: var(--third-color);
+  // font-family: var(--secondary-font);
+  // font-size: 1.5rem;
   opacity: 0;
 
   .logo{
@@ -155,6 +268,10 @@
 }
 
 .contact_button{
+  cursor: pointer;
+}
+
+.lost_password_button{
   cursor: pointer;
 }
 
@@ -182,7 +299,7 @@
   }
 }
 
-@media all and (max-height: 540px) {
+@media all and (max-height: 580px) {
   .toggle{
     top: 0.8rem;
   }
@@ -221,12 +338,29 @@
   }
   .menu_left_responsive{
     display: block;
+    .menu__left__inner__item__title{
+      color: rgb(36, 36, 36);
+      text-shadow:
+      0 1px 0 rgb(57, 57, 57),
+      0 2px 0 rgb(52, 52, 52),
+      0 3px 0 rgb(44, 44, 44),
+      0 4px 0 rgb(19, 19, 19),
+      0 5px 0 rgb(12, 12, 12),
+      0 6px 0 rgb(0, 0, 0),
+      6px 7px  5px  rgba(0, 0, 0, .40),
+      6px 12px 10px rgba(0, 0, 0, .30), 
+      6px 17px 20px rgba(0, 0, 0, .20),
+      6px 22px 30px rgba(0, 0, 0, .10);
+    }
     .menu__left__inner__item ul li a {
       color: var(--fourth-color);
       text-decoration: none;
       font-size: 1rem;
       transition: color 1s;
       list-style: none;
+    }
+    .menu__left__inner__item ul li a:hover {
+      color: rgb(36, 36, 36);
     }
     .menu__left__inner__item ul {
       list-style: none;

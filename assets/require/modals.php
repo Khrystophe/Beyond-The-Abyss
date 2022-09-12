@@ -95,17 +95,7 @@ if (isset($get_error) || isset($get_success)) {
               <img src="./assets/img/musicgrise.png" alt="" />
             </div>
 
-            <?php if (isset($get_error)) { ?>
-
-              <h2 class="modal_title">Warning</h2>
-              <br>
-
-            <?php } else { ?>
-
-              <h2 class="modal_title">Congratulations</h2>
-              <br>
-
-            <?php } ?>
+            <br>
 
             <div><?= nl2br($message) ?></div>
 

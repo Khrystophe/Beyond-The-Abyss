@@ -1,6 +1,6 @@
 <footer>
    <div class="copyright">
-      <span>
+      <span class="creator">
          &copy; 2022 Meckler Christophe, Inc. &middot;
       </span>
       <span> <a href="#">Privacy Policy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">About</a></span>

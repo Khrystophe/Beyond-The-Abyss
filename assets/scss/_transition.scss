@@ -1,25 +1,25 @@
 
-.logo_transition{
-    z-index: 10;
-    width: 350px;
-    animation: rotate_one 8s linear infinite;
-  }
-
+  .logo_transition{
+      z-index: 10;
+      width: 350px;
+      animation: rotate_one 8s linear infinite;
+    }
+  
   .transition_circle{
-    width: 350px;
-    height: 350px;
-    animation: rotateLogo 8s linear infinite reverse;
-    position: absolute;
-    border-radius: 50%;
-    background: linear-gradient(315deg, #141414, #181818);
-    box-shadow: -10px -10px 16px #090909, 10px 10px 16px #232323;
+      width: 200px;
+      height: 200px;
+      animation: rotateLogo 8s linear infinite reverse;
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(315deg, #141414, #181818);
+      box-shadow: -10px -10px 16px #090909, 10px 10px 16px #232323;
   }
   .loading-screen {
       position: relative;
       padding-left: 0;
       padding-right: 0;
       padding-top: 0;
-    background-color: #161616;
+      background-color: #161616;
       width: 0%;
       height: 100%;
       display: flex;
@@ -38,4 +38,24 @@
       overflow: hidden;
       z-index: 10;
       pointer-events: none;
+  }
+
+  @media all and (max-width: 799px){
+      .logo_transition{
+        width: 250px;
+      }
+      .transition_circle{
+        width: 146px;
+        height: 146px;
+      }
+  }
+
+  @media all and (max-height: 580px){
+      .logo_transition{
+        width: 250px;
+      }
+      .transition_circle{
+        width: 146px;
+        height: 146px;
+      }
   }

@@ -3,7 +3,7 @@
   height: 15rem;
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
+  margin-top: 7rem;
     
     .abyss {
       opacity: 0;
@@ -16,9 +16,32 @@
         color: #000000;
         font-size: 2.5rem;
         margin-top: 2rem;
+        text-shadow:
+           0 1px 0 rgb(57, 57, 57),
+           0 2px 0 rgb(52, 52, 52),
+           0 3px 0 rgb(44, 44, 44),
+           0 4px 0 rgb(19, 19, 19),
+           0 5px 0 rgb(12, 12, 12),
+           0 6px 0 rgb(0, 0, 0),
+           6px 7px  5px  rgba(0, 0, 0, .40),
+           6px 12px 10px rgba(0, 0, 0, .30), 
+           6px 17px 20px rgba(0, 0, 0, .20),
+           6px 22px 30px rgba(0, 0, 0, .10);
       }
       h2{
         font-size: 2rem;
+        color: #111111;
+        text-shadow:
+           0 1px 0 rgb(57, 57, 57),
+           0 2px 0 rgb(52, 52, 52),
+           0 3px 0 rgb(44, 44, 44),
+           0 4px 0 rgb(19, 19, 19),
+           0 5px 0 rgb(12, 12, 12),
+           0 6px 0 rgb(0, 0, 0),
+           6px 7px  5px  rgba(0, 0, 0, .40),
+           6px 12px 10px rgba(0, 0, 0, .30), 
+           6px 17px 20px rgba(0, 0, 0, .20),
+           6px 22px 30px rgba(0, 0, 0, .10);
       }
       .main_logo {
         margin: 0%;
@@ -81,6 +104,17 @@
       text-decoration: none;
       color: rgb(36, 36, 36);
       transition: color 1s;
+      text-shadow:
+         0 1px 0 rgb(57, 57, 57),
+         0 2px 0 rgb(52, 52, 52),
+         0 3px 0 rgb(44, 44, 44),
+         0 4px 0 rgb(19, 19, 19),
+         0 5px 0 rgb(12, 12, 12),
+         0 6px 0 rgb(0, 0, 0),
+         6px 7px  5px  rgba(0, 0, 0, .40),
+         6px 12px 10px rgba(0, 0, 0, .30), 
+         6px 17px 20px rgba(0, 0, 0, .20),
+         6px 22px 30px rgba(0, 0, 0, .10);
       &:hover{
         color: rgb(67, 67, 67);
       }
@@ -399,7 +433,7 @@
 @media all and (max-width: 799px) {
   .wrapp{
     height: 12rem;
-    margin-top: 4.3rem;
+    margin-top: 7rem;
     .abyss{
           h1{
             font-size: 1.5rem;
@@ -491,7 +525,7 @@
 @media all and (max-height: 580px){
   .wrapp{
     height: 12rem;
-    margin-top: 3.5rem;
+    margin-top: 7rem;
     .abyss{
           h1{
             font-size: 1.5rem;

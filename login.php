@@ -16,9 +16,9 @@ if (!isset($session_users_id)) {
 				<div class="form connect">
 					<div class="form_content">
 
-						<div class="leftside">
+						<!-- <div class="leftside">
 							<img src="./assets/img/musicgrise.png" alt="" />
-						</div>
+						</div> -->
 
 						<div class="rightside">
 							<form class="form_action" action="./assets/actions/login_action.php" method="post">
@@ -33,12 +33,12 @@ if (!isset($session_users_id)) {
 							</form>
 						</div>
 					</div>
+					<?php require('./assets/require/foot.php'); ?>
 				</div>
 			</div>
 		</main>
 
 
-		<?php require('./assets/require/foot.php'); ?>
 
 
 	<?php } else {
