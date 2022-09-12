@@ -88,11 +88,13 @@ nav {
   background: linear-gradient(135deg, #242424 0%, #363636 100%);
   padding: 6px;
   border: none;
+  width: 60px;
   border-top: 1.5px solid rgb(64, 64, 64);
   border-bottom: 1.5px solid rgb(0, 0, 0);
   border-radius: 10px;
   color: rgb(129, 129, 129);
   font-family: var(--primary-font);
+  font-size: 0.7rem;
   cursor: pointer;
 }
 .nav_bar .user_nav {
@@ -109,7 +111,7 @@ nav {
   flex-direction: column;
   align-items: center;
   position: fixed;
-  top: -90px;
+  top: -85px;
   left: 2rem;
   z-index: 50;
 }
@@ -138,7 +140,7 @@ nav {
   color: var(--third-color);
   font-size: 2rem;
   position: absolute;
-  top: 0.5rem;
+  top: 1rem;
   right: 1rem;
   z-index: 20;
   cursor: pointer;
@@ -151,7 +153,7 @@ nav {
   display: block;
   border-radius: 131px;
   background: #161616;
-  box-shadow: inset -5px 5px 5px #090909, inset 5px -5px 5px #232323;
+  box-shadow: inset 5px -5px 5px #090909, inset -5px 5px 5px #232323;
 }
 
 .fermer {
@@ -168,7 +170,7 @@ nav {
   display: block;
   border-radius: 131px;
   background: linear-gradient(45deg, #141414, #181818);
-  box-shadow: -5px 5px 5px #090909, 5px -5px 5px #232323;
+  box-shadow: 5px -5px 5px #090909, -5px 5px 5px #232323;
 }
 
 .menu {
@@ -294,7 +296,7 @@ nav {
 
 @media all and (max-width: 799px) {
   .toggle {
-    top: 0.8rem;
+    top: 1.5rem;
   }
   .ouvrir {
     width: 30px;
@@ -317,7 +319,7 @@ nav {
 }
 @media all and (max-height: 580px) {
   .toggle {
-    top: 0.8rem;
+    top: 1.5rem;
   }
   .ouvrir {
     width: 30px;

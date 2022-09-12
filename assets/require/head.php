@@ -48,7 +48,7 @@ if (isset($session_users_id)) {
 					<div class="little_main_logo_disc"></div>
 				</div>
 
-				<button class="nav_search" id="search_button">Search</button>
+				<button class="nav_search" id="search_button"><i class="far fa-search"></i></button>
 
 
 				<?php if (isset($session_users_id)) { ?>
