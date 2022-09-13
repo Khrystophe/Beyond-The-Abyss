@@ -12,6 +12,10 @@
     }
     h2{
         font-size: 1rem;
+        color: #6c6c6c;
+    }
+    .email{
+        color: rgb(66,66,66);
     }
 }
 
@@ -22,6 +26,9 @@
     align-self: center;
     border-radius: 1.5rem;
     box-shadow: 4px 3px 20px #6a6a6a8c;
+    width: 90%;
+    min-width: 250px;
+    max-width: 610px;
 }
 
 .form_action{
@@ -32,7 +39,7 @@
 .rightside {
     background-color: #00000080;
     border: 1.5px solid rgb(64, 64, 64);
-	width: 35rem;
+	width:auto;
     border-radius: 1.5rem;
     padding: 1rem 2rem 1rem 2rem;
 }
@@ -99,18 +106,18 @@
     height: 1rem;
 }
 
-@media only all and (max-width: 1000px) {
-    .form_content{
-        flex-direction: column;
-        width: 63%;
-        min-width: 250px;
+// @media only all and (max-width: 1000px) {
+//     .form_content{
+//         flex-direction: column;
+//         width: 63%;
+//         min-width: 250px;
       
-    }
+//     }
   
-    .rightside{
-        width:auto;
-        border-radius: 1.5rem;
-        padding:1rem 2rem 1rem 2rem;
+//     .rightside{
+//         width:auto;
+//         border-radius: 1.5rem;
+//         padding:1rem 2rem 1rem 2rem;
     
-    }
-  }
+//     }
+//   }

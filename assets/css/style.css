@@ -335,7 +335,7 @@ nav {
     font-size: 1rem;
   }
 }
-@media all and (max-width: 540px) {
+@media all and (max-width: 499px) {
   .nav_bar {
     flex-direction: column-reverse;
     justify-content: space-around;
@@ -369,107 +369,6 @@ nav {
   }
   .menu_left_responsive .menu__left__inner__item ul {
     list-style: none;
-  }
-}
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 70;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-.modal.messages {
-  flex-direction: column;
-  justify-content: center;
-}
-
-.modal-content {
-  margin: 5% auto;
-  width: 60%;
-  overflow: auto;
-}
-
-.modal_form {
-  box-shadow: 4px 3px 20px rgba(106, 106, 106, 0.5490196078);
-}
-
-.modal_form_content {
-  background-color: black;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem 2rem 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.modal_description {
-  overflow: hidden;
-  text-align: justify;
-  white-space: pre-line;
-  display: flex;
-  justify-content: center;
-}
-
-.logo_transition {
-  z-index: 10;
-  width: 350px;
-  animation: rotate_one 8s linear infinite;
-}
-
-.transition_circle {
-  width: 200px;
-  height: 200px;
-  animation: rotateLogo 8s linear infinite reverse;
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(315deg, #141414, #181818);
-  box-shadow: -10px -10px 16px #090909, 10px 10px 16px #232323;
-}
-
-.loading-screen {
-  position: relative;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  background-color: #161616;
-  width: 0%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  z-index: 10;
-}
-
-.loading-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  z-index: 10;
-  pointer-events: none;
-}
-
-@media all and (max-width: 799px) {
-  .logo_transition {
-    width: 250px;
-  }
-  .transition_circle {
-    width: 146px;
-    height: 146px;
-  }
-}
-@media all and (max-height: 580px) {
-  .logo_transition {
-    width: 250px;
-  }
-  .transition_circle {
-    width: 146px;
-    height: 146px;
   }
 }
 .wrapp {
@@ -957,7 +856,7 @@ nav {
   top: -60px;
 }
 .content_user.lastname {
-  top: -45px;
+  top: -40px;
 }
 
 .content_category {
@@ -1111,114 +1010,44 @@ nav {
   background-color: white;
 }
 
-.form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin-bottom: 2rem;
-  margin-top: 7rem;
-}
-.form.connect {
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-.form h2 {
-  font-size: 1rem;
-}
-
-.form_content {
-  opacity: 0.7;
-  margin: auto;
-  position: center;
-  align-self: center;
-  border-radius: 1.5rem;
-  box-shadow: 4px 3px 20px rgba(106, 106, 106, 0.5490196078);
-}
-
-.form_action {
-  text-align: center;
-  color: rgb(66, 66, 66);
-}
-
-.rightside {
-  background-color: rgba(0, 0, 0, 0.5019607843);
-  border: 1.5px solid rgb(64, 64, 64);
-  width: 35rem;
-  border-radius: 1.5rem;
-  padding: 1rem 2rem 1rem 2rem;
-}
-
-.inputbox {
-  color: #030303;
-  background-color: rgba(255, 255, 255, 0.07);
-  width: 100%;
-  padding: 0.5rem;
-  border: none;
-  border-top: 1.5px solid rgb(0, 0, 0);
-  border-bottom: 1.5px solid rgb(64, 64, 64);
-  margin-bottom: 0.4rem;
-  border-radius: 0.3rem;
-  font-family: "Roboto", sans-serif;
-  color: #939393;
-  font-size: 0.7rem;
-  font-weight: 500;
-  outline: none;
-}
-.inputbox.text {
-  height: 10rem;
-}
-
-.btn_content {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  background-color: transparent;
-  border: 0px;
-}
-
-.button {
-  background: linear-gradient(135deg, #242424 0%, #363636 100%);
-  padding: 11px;
-  border: none;
-  border-top: 1.5px solid rgb(64, 64, 64);
-  border-bottom: 1.5px solid rgb(0, 0, 0);
-  border-radius: 50px;
-  color: rgb(129, 129, 129);
-  font-family: var(--primary-font);
-  font-weight: 400;
-  font-size: 0.7rem;
-  margin-top: 10px;
-  min-width: 75px;
-  letter-spacing: 0.11rem;
-  outline: none;
-  transition: all 0.4s;
-  text-decoration: none;
-  cursor: pointer;
-}
-.button.red {
-  background: linear-gradient(135deg, #750000 0%, #ff0000 100%);
-}
-
-.button:hover {
-  transform: scale(1.05) translateY(-3px);
-  transition: all 0.4s;
-  box-shadow: 3px 3px 6px rgba(141, 141, 141, 0.5215686275);
-}
-
-.margin {
-  height: 1rem;
-}
-
-@media only all and (max-width: 1000px) {
-  .form_content {
-    flex-direction: column;
-    width: 63%;
-    min-width: 250px;
+@media all and (max-width: 700px) {
+  .card {
+    width: 250px;
   }
-  .rightside {
-    width: auto;
-    border-radius: 1.5rem;
-    padding: 1rem 2rem 1rem 2rem;
+  .card__title {
+    font-size: 16.3px;
+    line-height: 28.4px;
+  }
+  .card__composer {
+    font-size: 12.8px;
+    line-height: 21.3px;
+  }
+  .card__button {
+    font-size: 8.5px;
+  }
+  .content_likes {
+    top: -5px;
+    font-size: 11.3px;
+  }
+  .content_user.name {
+    top: 50px;
+    right: 93px;
+    font-size: 11.3px;
+  }
+  .content_user.lastname {
+    top: 65px;
+    right: 93px;
+    font-size: 11.3px;
+  }
+  .content_category {
+    top: -25px;
+    right: 15px;
+    font-size: 11.3px;
+  }
+  .content_price {
+    top: -25px;
+    left: 15px;
+    font-size: 11.3px;
   }
 }
 .movie-card {
@@ -1369,13 +1198,16 @@ nav {
 .column1 {
   margin-top: 30px;
   margin-left: 4rem;
-  color: rgb(0, 0, 0);
-  background-color: #2e2e2e;
+  color: rgb(66, 66, 66);
+  background: linear-gradient(135deg, #1c1c1c 0%, #000000 100%);
   width: max-content;
   padding: 0.3rem;
   border-radius: 5px;
   line-height: 15px;
   font-size: 14px;
+  border: none;
+  border-bottom: 1.5px solid rgb(40, 40, 40);
+  border-top: 1.5px solid rgb(64, 64, 64);
 }
 
 .tag {
@@ -1393,7 +1225,6 @@ nav {
 }
 
 .column2 {
-  padding-top: 30px;
   margin-left: 4rem;
   margin-right: 4rem;
   color: rgb(66, 66, 66);
@@ -1402,23 +1233,160 @@ nav {
   white-space: pre-line;
 }
 
-.avatars {
-  margin-top: 23px;
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-bottom: 2rem;
+  margin-top: 7rem;
 }
-.avatars img {
+.form.connect {
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+.form h2 {
+  font-size: 1rem;
+  color: #6c6c6c;
+}
+.form .email {
+  color: rgb(66, 66, 66);
+}
+
+.form_content {
+  opacity: 0.7;
+  margin: auto;
+  position: center;
+  align-self: center;
+  border-radius: 1.5rem;
+  box-shadow: 4px 3px 20px rgba(106, 106, 106, 0.5490196078);
+  width: 90%;
+  min-width: 250px;
+  max-width: 610px;
+}
+
+.form_action {
+  text-align: center;
+  color: rgb(66, 66, 66);
+}
+
+.rightside {
+  background-color: rgba(0, 0, 0, 0.5019607843);
+  border: 1.5px solid rgb(64, 64, 64);
+  width: auto;
+  border-radius: 1.5rem;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.inputbox {
+  color: #030303;
+  background-color: rgba(255, 255, 255, 0.07);
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-top: 1.5px solid rgb(0, 0, 0);
+  border-bottom: 1.5px solid rgb(64, 64, 64);
+  margin-bottom: 0.4rem;
+  border-radius: 0.3rem;
+  font-family: "Roboto", sans-serif;
+  color: #939393;
+  font-size: 0.7rem;
+  font-weight: 500;
+  outline: none;
+}
+.inputbox.text {
+  height: 10rem;
+}
+
+.btn_content {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border: 0px;
+}
+
+.button {
+  background: linear-gradient(135deg, #242424 0%, #363636 100%);
+  padding: 11px;
+  border: none;
+  border-top: 1.5px solid rgb(64, 64, 64);
+  border-bottom: 1.5px solid rgb(0, 0, 0);
+  border-radius: 50px;
+  color: rgb(129, 129, 129);
+  font-family: var(--primary-font);
+  font-weight: 400;
+  font-size: 0.7rem;
+  margin-top: 10px;
+  min-width: 75px;
+  letter-spacing: 0.11rem;
+  outline: none;
+  transition: all 0.4s;
+  text-decoration: none;
   cursor: pointer;
 }
-.avatars img:hover {
-  opacity: 0.6;
+.button.red {
+  background: linear-gradient(135deg, #750000 0%, #ff0000 100%);
 }
-.avatars a:hover {
-  text-decoration: none;
+
+.button:hover {
+  transform: scale(1.05) translateY(-3px);
+  transition: all 0.4s;
+  box-shadow: 3px 3px 6px rgba(141, 141, 141, 0.5215686275);
+}
+
+.margin {
+  height: 1rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 70;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modal.messages {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-content {
+  margin: 5% auto;
+  width: 60%;
+  overflow: auto;
+}
+
+.modal_form_content {
+  background-color: black;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal_description {
+  overflow: hidden;
+  text-align: justify;
+  white-space: pre-line;
+  display: flex;
+  justify-content: center;
 }
 
 .deck {
   position: relative;
   max-width: 500px;
   width: 100%;
+  margin: auto;
+}
+
+.deck_account {
+  position: relative;
+  min-width: 250px;
+  max-width: 610px;
+  width: 90%;
   margin: auto;
 }
 
@@ -1461,6 +1429,8 @@ nav {
 .cardHeader {
   display: grid;
   justify-items: stretch;
+  border-bottom: 1px solid #303030;
+  margin-bottom: 1rem;
 }
 .cardHeader .cardHeader_account {
   font-size: 1em;
@@ -1535,6 +1505,66 @@ nav {
   color: #8b8b8b;
 }
 
+.logo_transition {
+  z-index: 10;
+  width: 350px;
+  animation: rotate_one 8s linear infinite;
+}
+
+.transition_circle {
+  width: 200px;
+  height: 200px;
+  animation: rotateLogo 8s linear infinite reverse;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(315deg, #141414, #181818);
+  box-shadow: -10px -10px 16px #090909, 10px 10px 16px #232323;
+}
+
+.loading-screen {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  background-color: #161616;
+  width: 0%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+}
+
+@media all and (max-width: 799px) {
+  .logo_transition {
+    width: 250px;
+  }
+  .transition_circle {
+    width: 146px;
+    height: 146px;
+  }
+}
+@media all and (max-height: 580px) {
+  .logo_transition {
+    width: 250px;
+  }
+  .transition_circle {
+    width: 146px;
+    height: 146px;
+  }
+}
 footer {
   display: flex;
   justify-content: space-between;

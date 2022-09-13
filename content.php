@@ -177,8 +177,10 @@ if (
 												<span class="content_likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
 												<div class="content_category"><?= $content_category ?></div>
 												<div class="content_price">Free</div>
-												<div class="content_user name">By <?= $user_content_name ?></div>
-												<div class="content_user lastname"><?= $user_content_lastname ?></div>
+												<div class='center_name_lastname'>
+													<div class="content_user name">By <?= $user_content_name ?></div>
+													<div class="content_user lastname"><?= $user_content_lastname ?></div>
+												</div>
 
 
 											<?php } else if ($content_id_user == $user_session_id) { ?>

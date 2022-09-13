@@ -32,8 +32,12 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 							<div class="rightside">
 
-								<h2 type="text" class="form_title"><?= $get_user_email ?></h2>
+								<h2>Email : <span class="email"><?= $get_user_email ?></span></h2>
 
+
+								<div class="margin"></div>
+
+								<h2>Edit your Name/Lastname</h2>
 
 								<div class="margin"></div>
 
@@ -50,6 +54,10 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 								</form>
 
+
+								<div class="margin"></div>
+
+								<h2>Edit your Password</h2>
 
 								<div class="margin"></div>
 
@@ -72,9 +80,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 								<div class="margin"></div>
 
-
-								<h2 type="text" class="form_title">Add Content</h2>
-
+								<h2>Add Content</h2>
 
 								<div class="margin"></div>
 
@@ -143,7 +149,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 						require('./assets/require/variables.php'); ?>
 
 
-						<div class='deck'>
+						<div class='deck_account'>
 							<div class='account_card'>
 								<div class='cardHeader'>
 									<span class='cardHeader_date'><?= $notification_date ?></span>
