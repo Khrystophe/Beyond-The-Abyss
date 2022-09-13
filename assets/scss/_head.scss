@@ -31,19 +31,14 @@ nav {
     border-bottom: 1.5px solid rgb(0, 0, 0);
     border-radius: 10px;
     color: rgb(129, 129, 129);
-    font-family: var(--primary-font);
-    font-size: 0.7rem;
     cursor: pointer;
   }
   .user_nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--fourth-color);
+    color: #8f8f8f;
     font-size: 14px;
-    // background: linear-gradient(to top, #1c1c1c 0%, #3a3a3a 100%);
-    // padding: 0px 10px 0px 10px;
-    // border-radius: 14px;
   }
 }
 
@@ -82,8 +77,8 @@ nav {
 }
 
 .toggle {
-  color: var(--third-color);
-  font-size: 2rem;
+  // color: #fff;
+  // font-size: 2rem;
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -129,7 +124,7 @@ nav {
 .menu__left, .menu__right {
   width: 50%;
   height: 100%;
-  background: var(--primary-color);
+  background: #16161632;
   transition: transform 2.5s;
   display: flex;
   justify-content: center;
@@ -185,7 +180,7 @@ nav {
 }
 
 .menu__left__inner__item a:hover {
-  color: var(--fourth-color);
+  color: #8f8f8f;
 }
 
 .menu__right__inner__item__title {
@@ -213,7 +208,7 @@ nav {
 }
 
 .menu__right__inner__item ul li a {
-  color: var(--fourth-color);
+  color: #8f8f8f;
   text-decoration: none;
   font-size: 1.25rem;
   transition: color 1s;
@@ -243,7 +238,6 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   width: 5px;
-  // background: var(--secondary-color);
   background: #383838;
 }
 
@@ -251,7 +245,6 @@ nav {
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
-  // background: var(--secondary-color);
   background: #383838;
   position: absolute;
   top: 50%;
@@ -260,9 +253,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  // color: var(--third-color);
-  // font-family: var(--secondary-font);
-  // font-size: 1.5rem;
   opacity: 0;
 
   .logo{
@@ -361,7 +351,7 @@ nav {
       6px 22px 30px rgba(0, 0, 0, .10);
     }
     .menu__left__inner__item ul li a {
-      color: var(--fourth-color);
+      color: #8f8f8f;
       text-decoration: none;
       font-size: 1rem;
       transition: color 1s;

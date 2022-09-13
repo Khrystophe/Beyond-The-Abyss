@@ -20,32 +20,6 @@
   overflow: auto;
 }
 
-#search_close {
-  align-self: flex-end;
-  color: #aaa;
-  font-size: 28px;
-}
-
-#search_close:hover,
-#search_close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#edit_close {
-  align-self: flex-end;
-  color: #aaa;
-  font-size: 28px;
-}
-
-#edit_close:hover,
-#edit_close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .modal_form {
   box-shadow: 4px 3px 20px #6a6a6a8c;
 }
@@ -56,6 +30,14 @@
   padding: 1rem 2rem 1rem 2rem;
   display: flex;
   flex-direction: column;
+}
+
+.modal_description{
+  overflow: hidden;
+  text-align: justify;
+  white-space: pre-line;
+  display: flex;
+  justify-content: center;
 }
 
 

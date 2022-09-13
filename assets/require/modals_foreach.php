@@ -12,13 +12,13 @@
               <img src="./assets/img/musicgrise.png" alt="" />
             </div>
 
-            <h2 class="modal_title">Content Description</h2>
+            <h2>Content Description</h2>
             <br>
 
-            <div><?= $content_description ?></div>
+            <div class="modal_description"><?= $content_description ?></div>
             <br>
 
-            <h2 class="buy_alert">This content is not free !</h2>
+            <h2>This content is not free !</h2>
             <br>
 
             <?php if (isset($session_users_id)) {

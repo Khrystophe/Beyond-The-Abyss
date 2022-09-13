@@ -17,10 +17,6 @@ if (!isset($session_users_id)) {
 				<div class="form connect">
 					<div class="form_content">
 
-						<!-- <div class="leftside">
-							<img src="./assets/img/musicgrise.png" alt="" />
-						</div> -->
-
 						<div class="rightside">
 							<form class="form_action" action="./assets/actions/register_action.php" method="post" enctype="multipart/form-data">
 

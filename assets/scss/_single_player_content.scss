@@ -1,17 +1,6 @@
 
-
-
 .movie-card {
-  color: #8b8b8b;
 	margin: 7rem 0 2rem 0;
-	a {
-    text-decoration: none;
-		color: #535353
-	}
-	
-	a:hover {
-		text-decoration: underline;
-	}
 }
 
 .single_player_container {
@@ -64,7 +53,6 @@
     font-size: 44px;
     margin-bottom: 13px;
     text-shadow: 0px 1px 5px black;
-    // position: relative;
     
     span {
       position: absolute;
@@ -93,11 +81,8 @@
   justify-content: space-around;
   margin-top: 1rem;
 
-
-  .likes:before {
-    position: relative;
-    top: 2px;
-    padding-right: 7px;
+  .likes{
+    color: #8b8b8b;
   }
 
   .dropbtn {
@@ -116,6 +101,7 @@
     align-items: center;
     a{
       text-decoration: none;
+      color: #535353;
     }
     &:hover{
 	transform: scale(1.05) translateY(-3px);
@@ -178,8 +164,14 @@
 }
 
 .column1 {
-  padding-top: 30px;
+  margin-top: 30px;
   margin-left: 4rem;
+  color: rgb(0 0 0);
+  background-color: #2e2e2e;
+  width: max-content;
+  padding: 0.3rem;border-radius: 5px;
+  line-height: 15px;
+  font-size: 14px;
 }
 
 .tag {
@@ -199,6 +191,11 @@
 .column2 {
   padding-top: 30px;
   margin-left: 4rem;
+  margin-right: 4rem;
+  color: rgb(66,66,66);
+  overflow: hidden;
+  text-align: justify;
+  white-space: pre-line;
 }
 
 .avatars {
@@ -233,7 +230,6 @@
   padding: 1em;
   z-index: 5;
   border-radius: 10px;
-  // box-shadow: 4px 4px 20px rgba(93, 93, 93, 0.3);
   transition: 200ms ease-in-out;
   margin-top: 1em;
   &:hover{
@@ -253,7 +249,6 @@
   padding: 1em;
   z-index: 5;
   border-radius: 10px;
-  // box-shadow: 4px 4px 20px rgba(93, 93, 93, 0.3);
   transition: 200ms ease-in-out;
   margin-top: 1em;
   &:hover{
@@ -271,12 +266,14 @@
   
   .cardHeader_account{
     font-size: 1em;
-    letter-spacing: 1px;
+    // letter-spacing: 1px;
     color: #000000;
     font-weight: bolder;
+    margin-left: 10px;
 	}
   
   .cardHeader_date{
+    color: #8b8b8b;
     margin: 10px;
     font-size: .85em;
     text-align: right;
@@ -293,6 +290,8 @@
     white-space: pre-line;
     color: #535353; 
     line-height: 1.5;
+    overflow: hidden;
+    text-align: justify;
 	}
   
   .cardStats{
@@ -321,6 +320,7 @@
       align-items: center;
       a{
         text-decoration: none;
+        color: #535353;
       }
       &:hover{
 	transform: scale(1.05) translateY(-3px);
@@ -335,9 +335,11 @@
 			
       &.cardStats_stat-likes{
         font-weight: lighter;
+        color: #8b8b8b;
 			}
       &.cardStats_stat-comments{
         font-weight: lighter;
+        color: #8b8b8b;
 			}
 			
 		}

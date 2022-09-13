@@ -119,12 +119,11 @@ if (isset($get_error) || isset($get_success)) {
 
 
 
-<div id="search_modal" class="modal">
+<div id="search_modal" class="modal messages">
   <div class="modal-content">
     <div class="modal_form">
       <div class="modal_form_content">
 
-        <span id="search_close">&times;</span>
         <form class="form_action" action="/Diplome/content.php?category=search_results" method="post">
 
           <label for="search_title"></label>
@@ -154,6 +153,7 @@ if (isset($get_error) || isset($get_success)) {
           <input type="checkbox" class="inputbox" id="search_price" value="Free" name="price">
 
           <button type="submit" class="button">Search</button>
+          <div class="button" id="search_close">Close</div>
         </form>
       </div>
     </div>
@@ -192,12 +192,11 @@ if (isset($get_error) || isset($get_success)) {
 </div>
 
 
-<div id="edit_modal" class="modal">
+<div id="edit_modal" class="modal messages">
   <div class="modal-content">
     <div class="modal_form">
       <div class="modal_form_content">
 
-        <span id="edit_close">&times;</span>
         <form class="form_action" action="/Diplome/assets/actions/edit_content_action.php?type=user" method="post" enctype="multipart/form-data">
 
           <label for="single_player_id"></label>
@@ -213,7 +212,7 @@ if (isset($get_error) || isset($get_success)) {
           <input type="text" class="inputbox" value="<?= $content_composer ?>" placeholder="<?= $content_composer ?>" id="single_player_edit_composer" name="composer" />
 
           <label for="single_player_edit_description"></label>
-          <textarea class="inputbox" value="<?= $content_description ?>" id="single_player_edit_description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);"><?= $content_description ?></textarea>
+          <textarea class="inputbox text" value="<?= $content_description ?>" id="single_player_edit_description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);"><?= $content_description ?></textarea>
 
           <?php if ($content_category == 'Tutorial') {
             $content_category = 'tutorial';
@@ -247,6 +246,7 @@ if (isset($get_error) || isset($get_success)) {
           <input type="text" class="inputbox" value="<?= $content_price ?>" placeholder="<?= $content_price ?>" id="single_player_edit_price" pattern="^([1-9]|[1-4][0-9]|50|Free)$" name="price" />
 
           <button type="submit" class="button">Edit</button>
+          <div class="button" id="edit_close">Close</div>
 
         </form>
       </div>

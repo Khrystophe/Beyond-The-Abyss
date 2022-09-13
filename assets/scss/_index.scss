@@ -284,22 +284,24 @@
       h2{
         font-weight: 400;
         font-size: 2rem;
+        color: rgb(66,66,66);
       }
-
+      
       h3{
         font-weight: 400;
+        color: rgb(66,66,66);
       }
-
+      
       .see_content{
         margin-top: 10px;
         padding: 5px;
         border-radius: 5px;
         border: 1px solid rgba(255,255,255,0.13);
         position: relative;
-
+        
         a{
-        text-decoration: none;
-        color: var(--fourth-color);
+          text-decoration: none;
+          color:#8f8f8f;
         }
       }
     }
@@ -308,6 +310,7 @@
       .text{
         margin-top: 1rem;
         margin-bottom: 1rem;
+        color: rgb(66,66,66);
       }
     }
   }

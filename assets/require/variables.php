@@ -9,7 +9,7 @@ if (isset($getRandomTuto) && !empty($getRandomTuto)) {
   $random_tuto_composer = htmlspecialchars($getRandomTuto['composer']);
   $random_tuto_category = htmlspecialchars($getRandomTuto['category']);
   $random_tuto_level = htmlspecialchars($getRandomTuto['level']);
-  $random_tuto_description = nl2br(htmlspecialchars($getRandomTuto['description']));
+  $random_tuto_description = str_replace('<br />', '', nl2br(htmlspecialchars($getRandomTuto['description'])));
   $random_tuto_likes = htmlspecialchars($getRandomTuto['likes']);
   $random_tuto_id_users = htmlspecialchars($getRandomTuto['id_users']);
 }
@@ -23,7 +23,7 @@ if (isset($getRandomPerf) && !empty($getRandomPerf)) {
   $random_perf_composer = htmlspecialchars($getRandomPerf['composer']);
   $random_perf_category = htmlspecialchars($getRandomPerf['category']);
   $random_perf_level = htmlspecialchars($getRandomPerf['level']);
-  $random_perf_description = nl2br(htmlspecialchars($getRandomPerf['description']));
+  $random_perf_description = str_replace('<br />', '', nl2br(htmlspecialchars($getRandomPerf['description'])));
   $random_perf_likes = htmlspecialchars($getRandomPerf['likes']);
   $random_perf_id_users = htmlspecialchars($getRandomPerf['id_users']);
 }
@@ -37,7 +37,7 @@ if (isset($getRandomSheet) && !empty($getRandomSheet)) {
   $random_sheet_composer = htmlspecialchars($getRandomSheet['composer']);
   $random_sheet_category = htmlspecialchars($getRandomSheet['category']);
   $random_sheet_level = htmlspecialchars($getRandomSheet['level']);
-  $random_sheet_description = nl2br(htmlspecialchars($getRandomSheet['description']));
+  $random_sheet_description = str_replace('<br />', '', nl2br(htmlspecialchars($getRandomSheet['description'])));
   $random_sheet_likes = htmlspecialchars($getRandomSheet['likes']);
   $random_sheet_id_users = htmlspecialchars($getRandomSheet['id_users']);
 }
@@ -57,7 +57,7 @@ if (isset($getContentOfPageContent) && !empty($getContentOfPageContent)) {
   $content_level = htmlspecialchars($getContentOfPageContent['level']);
   $content_video = htmlspecialchars($getContentOfPageContent['content']);
   $content_price = htmlspecialchars($getContentOfPageContent['price']);
-  $content_description = nl2br(htmlspecialchars($getContentOfPageContent['description']));
+  $content_description = str_replace('<br />', '', nl2br(htmlspecialchars($getContentOfPageContent['description'])));
   $content_likes = htmlspecialchars($getContentOfPageContent['likes']);
   $content_id_user = htmlspecialchars($getContentOfPageContent['id_users']);
 
@@ -90,7 +90,7 @@ if (isset($getUserInformations) && !empty($getUserInformations)) {
 if (isset($getNotification) && !empty($getNotification)) {
 
   $notification_id = htmlspecialchars($getNotification['id']);
-  $notification_text = nl2br(htmlspecialchars($getNotification['notification']));
+  $notification_text = str_replace('<br />', '', nl2br(htmlspecialchars($getNotification['notification'])));
   $notification_date = htmlspecialchars($getNotification['date']);
 }
 
@@ -103,7 +103,7 @@ if (isset($getContentAndUserInformations) && !empty($getContentAndUserInformatio
   $content_level = htmlspecialchars($getContentAndUserInformations['level']);
   $content_video = htmlspecialchars($getContentAndUserInformations['content']);
   $content_price = htmlspecialchars($getContentAndUserInformations['price']);
-  $content_description = nl2br(htmlspecialchars($getContentAndUserInformations['description']));
+  $content_description = str_replace('<br />', '', nl2br(htmlspecialchars($getContentAndUserInformations['description'])));
   $content_likes = htmlspecialchars($getContentAndUserInformations['likes']);
   $content_id_user = htmlspecialchars($getContentAndUserInformations['id_users']);
   $content_author_name = htmlspecialchars($getContentAndUserInformations['name']);
@@ -124,7 +124,7 @@ if (isset($getComment) && !empty($getComment)) {
   $comment_user_id = htmlspecialchars($getComment['id_users']);
   $comment_user_name = htmlspecialchars($getComment['name']);
   $comment_user_lastname = htmlspecialchars($getComment['lastname']);
-  $comment_text = nl2br(htmlspecialchars($getComment['comment']));
+  $comment_text = str_replace('<br />', '', nl2br(htmlspecialchars($getComment['comment'])));
   $comment_date = htmlspecialchars($getComment['date']);
   $comment_likes = htmlspecialchars($getComment['likes']);
 }

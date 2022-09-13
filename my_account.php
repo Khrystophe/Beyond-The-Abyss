@@ -46,7 +46,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 									<label for="my_account_lastname"></label>
 									<input type="text" class="inputbox" placeholder="<?= $get_user_lastname ?> " id="my_account_lastname" value="<?= $get_user_lastname ?>" name="lastname" />
 
-									<button type="submit" class="button">EDIT</button>
+									<button type="submit" class="button">Edit</button>
 
 								</form>
 
@@ -65,7 +65,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 									<label for="my_account_new_password_confirm"></label>
 									<input type="password" class="inputbox" placeholder="Confirm your new password" id="my_account_new_password_confirm" name="new_password_confirm" required pattern="^([1-9][0-9])+$" minlength="2" />
 
-									<button type="submit" class="button">EDIT</button>
+									<button type="submit" class="button">Edit</button>
 
 								</form>
 
@@ -88,7 +88,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 									<input type="text" class="inputbox" placeholder="Composer" id="my_account_composer" name="composer" required />
 
 									<label for="my_account_description"></label>
-									<textarea class="inputbox" placeholder="Description" id="my_account_description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" required></textarea>
+									<textarea class="inputbox text" placeholder="Description" id="my_account_description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" required></textarea>
 
 									<label for="my_account_category"></label>
 									<select class="inputbox" id="my_account_category" name="category" required>
@@ -113,7 +113,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 									<label for="my_account_price">Price : from 1 to 50 or free (type 'Free')</label>
 									<input type="text" class="inputbox" id="my_account_price" name="price" placeholder="Price" pattern="^([1-9]|[1-4][0-9]|50|Free)$" required />
 
-									<button type="submit" class="button">ADD CONTENT</button>
+									<button type="submit" class="button">Add content</button>
 
 								</form>
 
@@ -122,15 +122,15 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 
 								<div class="form_action">
-									<button class="btn_content"><a class="button link_page" href="content.php?category=user_content">YOUR CONTENT</a></button>
+									<button class="btn_content"><a class="button link_page" href="content.php?category=user_content">Your Content</a></button>
 								</div>
 
 								<div class="form_action">
-									<button class="btn_content"><a class="button link_page" href="content.php?category=user_purchased_content">PURCHASED CONTENT</a></button>
+									<button class="btn_content"><a class="button link_page" href="content.php?category=user_purchased_content">Purchased Content</a></button>
 								</div>
 
 								<div class="form_action">
-									<button class="btn_content"><a data-barba-prevent class="button red" href="/Diplome/assets/actions/delete_users_action.php?id=<?= $get_user_id ?>&type=user" onclick="javascript:return deleteAccountAlert()">DELETE MY ACCOUNT</a></button>
+									<button class="btn_content"><a data-barba-prevent class="button red" href="/Diplome/assets/actions/delete_users_action.php?id=<?= $get_user_id ?>&type=user" onclick="javascript:return deleteAccountAlert()">Delete my account</a></button>
 								</div>
 							</div>
 						</div>
@@ -154,7 +154,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 								</div>
 
 								<div class="form_action">
-									<button class="btn_content"><a data-barba-prevent class="button link_page" href="/Diplome/assets/actions/delete_notification_action.php?id=<?= $notification_id ?>">DELETE</a></button>
+									<button class="btn_content"><a data-barba-prevent class="button link_page" href="/Diplome/assets/actions/delete_notification_action.php?id=<?= $notification_id ?>">Delete</a></button>
 								</div>
 							</div>
 						</div>

@@ -25,6 +25,6 @@ if (
 
   $bdd = null;
   http_response_code(400);
-  header('location: ../../single_player_content.php?error=01815');
+  header('location: ../../single_player_content.php?id=' . $get_id . '&error=01815');
   die();
 }

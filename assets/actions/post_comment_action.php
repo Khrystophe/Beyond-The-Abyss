@@ -28,6 +28,6 @@ if (
 
   $bdd = null;
   http_response_code(400);
-  header('location: ../../single_player_content.php?error=01115');
+  header('location: ../../single_player_content.php?id=' . $post_id . '&error=01115');
   die();
 }

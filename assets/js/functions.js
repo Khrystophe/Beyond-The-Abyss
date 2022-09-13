@@ -68,7 +68,7 @@ let search_close = document.getElementById("search_close");
 
 if (search_button != undefined){
     search_button.onclick = function() {
-    search_modal.style.display = "block";
+    search_modal.style.display = "flex";
   }
     search_close.onclick = function() {
     search_modal.style.display = "none";
@@ -82,7 +82,7 @@ let edit_close = document.getElementById("edit_close");
 
 if (edit_button != undefined){
     edit_button.onclick = function() {
-    edit_modal.style.display = "block";
+    edit_modal.style.display = "flex";
   }
     edit_close.onclick = function() {
     edit_modal.style.display = "none";

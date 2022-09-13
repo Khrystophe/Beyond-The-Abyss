@@ -16,7 +16,7 @@ footer {
   }
   a {
     text-decoration: none;
-    color: var(--fourth-color);
+    color: #8f8f8f;
     transition: color 1s;
     text-shadow:	 
        0 1px 0 rgb(57, 57, 57),
@@ -30,7 +30,7 @@ footer {
        6px 17px 20px rgba(0, 0, 0, .20),
        6px 22px 30px rgba(0, 0, 0, .10);
        &:hover{
-        color: var(--secondary-color);
+        color: #4c4c4c;
        }
   }
   .social{
