@@ -867,6 +867,10 @@ nav {
   border-radius: 10px;
   overflow: hidden;
 }
+.card .content_button_flex {
+  display: flex;
+  justify-content: space-evenly;
+}
 .card:hover {
   box-shadow: 0px 0px 120px -55px rgba(156, 156, 156, 0.7);
   transform: scale(1.02);
@@ -894,20 +898,6 @@ nav {
   overflow: hidden;
   margin: 0;
 }
-.card__thumb::after {
-  position: absolute;
-  top: 0;
-  display: block;
-  content: "";
-  width: 100%;
-  height: 100%;
-  transition: 0.3s;
-}
-@media (min-width: 280px) {
-  .card__thumb::after {
-    top: calc(100% - 140px);
-  }
-}
 .card__image {
   transition: 0.5s ease-in-out;
   width: 350px;
@@ -915,19 +905,13 @@ nav {
 .card__caption {
   width: 100%;
   position: absolute;
-  top: 50%;
+  top: 75%;
   z-index: 1;
   padding: 0 20px;
   color: white;
   transform: translateY(-50%);
   text-align: center;
   transition: 0.3s;
-}
-@media (min-width: 280px) {
-  .card__caption {
-    top: calc(100% - 110px);
-    transform: unset;
-  }
 }
 .card__title {
   max-height: 85px;
@@ -948,27 +932,16 @@ nav {
 .card__likes {
   max-height: 85px;
   overflow: hidden;
-  top: -55px;
+  top: -40px;
   position: absolute;
-  left: 15px;
+  right: 15px;
   line-height: 26.4px;
-  text-shadow: 0px 1px 5px black;
-  text-overflow: ellipsis;
-}
-.card__name {
-  max-height: 85px;
-  overflow: hidden;
-  font-size: 12px;
-  line-height: 19.8px;
   text-shadow: 0px 1px 5px black;
   text-overflow: ellipsis;
 }
 .card__category {
   max-height: 85px;
   overflow: hidden;
-  position: absolute;
-  top: -80px;
-  right: 15px;
   line-height: 26.4px;
   text-shadow: 0px 1px 5px black;
   text-overflow: ellipsis;
@@ -977,7 +950,7 @@ nav {
   max-height: 85px;
   overflow: hidden;
   position: absolute;
-  top: -80px;
+  top: -40px;
   left: 15px;
   line-height: 26.4px;
   text-shadow: 0px 1px 5px black;
@@ -985,25 +958,19 @@ nav {
 }
 .card__snippet {
   max-height: 150px;
-  margin: 20px 0;
+  margin: 35px 0;
   overflow: hidden;
   font-size: 16px;
   line-height: 20px;
   text-overflow: ellipsis;
-  transition: 0.5s ease-in-out;
-}
-@media (min-width: 280px) {
-  .card__snippet {
-    margin: 60px 0;
-  }
+  transition: 0.5s cubic-bezier(0.6, -0.28, 0.74, 0.05);
 }
 .card__button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 5px 10px;
   color: white;
   border: 1px solid white;
   font-size: 12px;
-  text-transform: uppercase;
   text-decoration: none;
   transition: 0.3s;
 }
@@ -1028,7 +995,7 @@ nav {
     line-height: 21.3px;
   }
   .card__likes {
-    top: -19px;
+    top: -25px;
     font-size: 11.3px;
     line-height: 18.7px;
   }
@@ -1037,18 +1004,20 @@ nav {
     line-height: 14px;
   }
   .card__category {
-    top: -31px;
     font-size: 11.3px;
     line-height: 18.7px;
   }
   .card__price {
-    top: -31px;
+    top: -25px;
     font-size: 11.3px;
     line-height: 18.7px;
   }
+  .card__snippet {
+    margin: 30px 0;
+  }
   .card__button {
     font-size: 8.5px;
-    padding: 5px 10px;
+    padding: 2.5px 5px;
   }
 }
 .movie-card {
@@ -1199,7 +1168,6 @@ nav {
 .column1 {
   margin-top: 30px;
   margin-left: 4rem;
-  color: rgb(66, 66, 66);
   background: linear-gradient(135deg, #1c1c1c 0%, #000000 100%);
   width: max-content;
   padding: 0.3rem;
@@ -1209,6 +1177,15 @@ nav {
   border: none;
   border-bottom: 1.5px solid rgb(40, 40, 40);
   border-top: 1.5px solid rgb(64, 64, 64);
+}
+.column1 a {
+  color: rgb(66, 66, 66);
+  text-decoration: none;
+}
+.column1:hover {
+  transform: scale(1.05) translateY(-3px);
+  transition: all 0.4s;
+  box-shadow: 3px 3px 6px rgba(141, 141, 141, 0.5215686275);
 }
 
 .tag {

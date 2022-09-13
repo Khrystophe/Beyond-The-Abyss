@@ -128,7 +128,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 
 								<div class="form_action">
-									<button class="btn_content"><a class="button link_page" href="content.php?category=user_content">Your Content</a></button>
+									<button class="btn_content"><a class="button link_page" href="content.php?id=<?= $session_users_id ?>&category=user_content">Your Content</a></button>
 								</div>
 
 								<div class="form_action">

@@ -112,7 +112,7 @@ if (
 
                   <div class="description">
                     <div class="column1">
-                      <p><?= $content_author_name . " " . $content_author_lastname ?></p>
+                      <a class="link_page" href="content.php?id=<?= $content_id_user ?>&category=user_content"><?= $content_author_name . " " . $content_author_lastname ?></a>
                     </div>
 
                     <div class="column2">

@@ -61,10 +61,10 @@ function getUserContentInformations(PDO $bdd, $content_id_user)
   return $user;
 }
 
-function getUserContent(PDO $bdd, $session_users_id)
+function getUserContent(PDO $bdd, $get_id)
 {
   $req = $bdd->prepare('SELECT * FROM contents WHERE id_users = :id_users ');
-  $req->bindParam(':id_users', $session_users_id, PDO::PARAM_INT);
+  $req->bindParam(':id_users', $get_id, PDO::PARAM_INT);
   $req->execute();
   $contents = $req->fetchAll();
   return $contents;

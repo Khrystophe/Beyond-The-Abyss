@@ -39,7 +39,7 @@ if (
 		<?php } else if ($get_category == 'user_content') {
 
 			$page = 'user_content';
-			$getContents = getUserContent($bdd, $session_users_id);
+			$getContents = getUserContent($bdd, $get_id);
 
 
 			if (empty($getContents)) {
@@ -157,7 +157,6 @@ if (
 
 									<h2 class="card__title"><?= $content_title ?></h2>
 									<h2 class="card__composer"><?= $content_composer ?></h2>
-									<div class="card__name">By <?= $user_content_name ?> <?= $user_content_lastname ?></div>
 									<div class="card__likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></div>
 									<div class="card__category"><?= $content_category ?></div>
 									<p class="card__snippet"></p>
@@ -189,8 +188,10 @@ if (
 
 											<?php } ?>
 
-
-											<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
+											<div class="content_button_flex">
+												<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
+												<a href="content.php?id=<?= $content_id_user ?>&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
+											</div>
 
 
 										<?php } else { ?>
@@ -200,15 +201,21 @@ if (
 
 
 												<div class="card__price"><?= $content_price ?> Credits</div>
-												<div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
 
+												<div class="content_button_flex">
+													<div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
+													<a href="content.php?id=<?= $content_id_user ?>&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
+												</div>
 
 											<?php } else if ($user_session_purchased_content == true) { ?>
 
 
 												<div class="card__price">Purchased</div>
-												<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
 
+												<div class="content_button_flex">
+													<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
+													<a href="content.php?id=<?= $content_id_user ?>&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
+												</div>
 
 											<?php } ?>
 
@@ -223,15 +230,21 @@ if (
 
 
 											<div class="card__price"><?= $content_price ?> Credits</div>
-											<div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
 
+											<div class="content_button_flex">
+												<div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
+												<a href="content.php?id=<?= $content_id_user ?>&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
+											</div>
 
 										<?php } else { ?>
 
 
 											<div class="card__price">Free</div>
-											<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
 
+											<div class="content_button_flex">
+												<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
+												<a href="content.php?id=<?= $content_id_user ?>&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
+											</div>
 
 										<?php } ?>
 

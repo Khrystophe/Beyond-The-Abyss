@@ -36,7 +36,7 @@ if (
             } else {
 
                $bdd = null;
-               header('location: ../../my_account.php?id=' . $post_id . '&error=024154');
+               header('location: ../../my_account.php?error=024154');
                die();
             }
          }
@@ -50,7 +50,7 @@ if (
          } else {
 
             $bdd = null;
-            header('location: ../../my_account.php?id=' . $post_id . '&error=024155');
+            header('location: ../../my_account.php?error=024155');
             die();
          }
       }
@@ -99,7 +99,7 @@ if (
 
 
       $bdd = null;
-      header('location: ../../content.php?category=user_content&success=024258');
+      header('location: ../../content.php?id=' . $session_users_id . '&category=user_content&success=024258');
       die();
    }
 } else {
