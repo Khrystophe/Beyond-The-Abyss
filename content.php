@@ -154,8 +154,12 @@ if (
 
 
 								<figcaption class="card__caption">
+
 									<h2 class="card__title"><?= $content_title ?></h2>
 									<h2 class="card__composer"><?= $content_composer ?></h2>
+									<div class="card__name">By <?= $user_content_name ?> <?= $user_content_lastname ?></div>
+									<div class="card__likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></div>
+									<div class="card__category"><?= $content_category ?></div>
 									<p class="card__snippet"></p>
 
 
@@ -174,23 +178,13 @@ if (
 											if ($content_price == 0 && $content_id_user != $user_session_id) { ?>
 
 
-												<span class="content_likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
-												<div class="content_category"><?= $content_category ?></div>
-												<div class="content_price">Free</div>
-												<div class='center_name_lastname'>
-													<div class="content_user name">By <?= $user_content_name ?></div>
-													<div class="content_user lastname"><?= $user_content_lastname ?></div>
-												</div>
+												<div class="card__price">Free</div>
 
 
 											<?php } else if ($content_id_user == $user_session_id) { ?>
 
 
-												<span class="content_likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
-												<div class="content_category"><?= $content_category ?></div>
-												<div class="content_price">Your content</div>
-												<div class="content_user name">By <?= $user_content_name ?></div>
-												<div class="content_user lastname"><?= $user_content_lastname ?></div>
+												<div class="card__price">Your content</div>
 
 
 											<?php } ?>
@@ -205,22 +199,14 @@ if (
 											<?php if ($user_session_purchased_content == false) { ?>
 
 
-												<span class="content_likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
-												<div class="content_category"><?= $content_category ?></div>
-												<div class="content_price"><?= $content_price ?> Credits</div>
-												<div class="content_user name">By <?= $user_content_name ?></div>
-												<div class="content_user lastname"><?= $user_content_lastname ?></div>
+												<div class="card__price"><?= $content_price ?> Credits</div>
 												<div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
 
 
 											<?php } else if ($user_session_purchased_content == true) { ?>
 
 
-												<span class="content_likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
-												<div class="content_category"><?= $content_category ?></div>
-												<div class="content_price">Purchased</div>
-												<div class="content_user name">By <?= $user_content_name ?></div>
-												<div class="content_user lastname"><?= $user_content_lastname ?></div>
+												<div class="card__price">Purchased</div>
 												<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
 
 
@@ -236,22 +222,14 @@ if (
 										<?php if ($content_price > 0) { ?>
 
 
-											<span class="content_likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
-											<div class="content_category"><?= $content_category ?></div>
-											<div class="content_price"><?= $content_price ?> Credits</div>
-											<div class="content_user name">By <?= $user_content_name ?></div>
-											<div class="content_user lastname"><?= $user_content_lastname ?></div>
+											<div class="card__price"><?= $content_price ?> Credits</div>
 											<div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
 
 
 										<?php } else { ?>
 
 
-											<span class="content_likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
-											<div class="content_category"><?= $content_category ?></div>
-											<div class="content_price">Free</div>
-											<div class="content_user name">By <?= $user_content_name ?></div>
-											<div class="content_user lastname"><?= $user_content_lastname ?></div>
+											<div class="card__price">Free</div>
 											<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
 
 
