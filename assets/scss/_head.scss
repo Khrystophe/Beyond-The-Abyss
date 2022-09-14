@@ -365,4 +365,15 @@ nav {
     }
 }
 }
-
+@media all and (max-width: 499px) and (max-height: 499px){
+  .menu{
+    height: initial;
+    position: absolute;
+  }
+  header{
+    position: initial;
+  }
+  .sep{
+    display: none;
+  }
+}

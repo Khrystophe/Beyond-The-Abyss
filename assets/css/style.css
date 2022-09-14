@@ -371,6 +371,18 @@ nav {
     list-style: none;
   }
 }
+@media all and (max-width: 499px) and (max-height: 499px) {
+  .menu {
+    height: initial;
+    position: absolute;
+  }
+  header {
+    position: initial;
+  }
+  .sep {
+    display: none;
+  }
+}
 .wrapp {
   height: 15rem;
   display: flex;
@@ -584,8 +596,6 @@ nav {
   z-index: 2;
   border-radius: 10px;
   padding-bottom: 20px;
-  max-height: 450px;
-  overflow: auto;
 }
 .content_card .info_section .content {
   height: 120px;
@@ -739,11 +749,11 @@ nav {
     font-size: 1.2rem;
   }
   .wrapp .abyss .main_logo {
-    width: 250px;
+    width: 230px;
   }
   .wrapp .abyss .main_logo_disc {
-    width: 146px;
-    height: 146px;
+    width: 136px;
+    height: 136px;
   }
   .separators {
     height: 3.4rem;
@@ -817,11 +827,11 @@ nav {
     font-size: 1.2rem;
   }
   .wrapp .abyss .main_logo {
-    width: 250px;
+    width: 230px;
   }
   .wrapp .abyss .main_logo_disc {
-    width: 146px;
-    height: 146px;
+    width: 134px;
+    height: 134px;
   }
   .separators {
     height: 3.4rem;
@@ -1537,20 +1547,20 @@ nav {
 
 @media all and (max-width: 799px) {
   .logo_transition {
-    width: 250px;
+    width: 230px;
   }
   .transition_circle {
-    width: 146px;
-    height: 146px;
+    width: 134px;
+    height: 134px;
   }
 }
 @media all and (max-height: 580px) {
   .logo_transition {
-    width: 250px;
+    width: 230px;
   }
   .transition_circle {
-    width: 146px;
-    height: 146px;
+    width: 134px;
+    height: 134px;
   }
 }
 footer {
