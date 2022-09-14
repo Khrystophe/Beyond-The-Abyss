@@ -320,7 +320,10 @@ if (isset($_POST['comment']) && !empty($_POST['comment'])) {
 
   if ($check_post_comment === true) {
 
-    $post_comment = $_POST['comment'];
+    $regex = '/(\r\n|\n|\t|\r){3,}/';
+    $replacement = "\r\n\r\n";
+
+    $post_comment = preg_replace($regex, $replacement, $_POST['comment']);
   }
 }
 
@@ -332,7 +335,10 @@ if (isset($_POST['message']) && !empty($_POST['message'])) {
 
   if ($check_post_message === true) {
 
-    $post_message = $_POST['message'];
+    $regex = '/(\r\n|\n|\t|\r){3,}/';
+    $replacement = "\r\n\r\n";
+
+    $post_message = preg_replace($regex, $replacement, $_POST['message']);
   }
 }
 
