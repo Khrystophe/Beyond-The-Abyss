@@ -6,7 +6,7 @@ if (isset($get_error) || isset($get_success)) {
     2 => 'You haven\'t purchased any content yet.',
     3 => 'This category does not exist.',
     4 => 'Please don\'t reload the page. 
-    Use the menus to navigate the site.',
+    Use the menu to navigate the site.',
     5 => 'An error has occurred.',
     6 => 'You are already connected',
     7 => 'The use of cookies is necessary for the proper functioning of this site. 
@@ -59,8 +59,11 @@ if (isset($get_error) || isset($get_success)) {
     45 => 'Comment deleted. ',
     46 => 'You have been logged out automatically because you have been inactive for too long. ',
     47 => 'This content is not free. 
+    
     Log in or register. 
-    For any new registration you will get 50 credits. ',
+    For any new registration you will get 50 credits.
+    
+    Otherwise you can use the search function to see free content.',
     48 => 'Account deleted. ',
     49 => 'Your search result is empty.',
     50 => 'An error has occured. ',

@@ -15,6 +15,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -541,7 +542,7 @@ nav {
 }
 
 .random_content {
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 400;
   opacity: 0;
   margin: 0 10px 0 10px;
@@ -594,7 +595,8 @@ nav {
   background-blend-mode: multiply;
   z-index: 2;
   border-radius: 10px;
-  padding-bottom: 20px;
+  max-height: 700px;
+  overflow: hidden;
 }
 .content_card .info_section .content {
   height: 120px;
@@ -608,23 +610,24 @@ nav {
 }
 .content_card .info_section .content_header h2 {
   font-weight: 400;
-  font-size: 2rem;
-  color: rgb(100, 100, 100);
+  font-size: 2.5rem;
+  color: rgb(66, 66, 66);
+  text-shadow: 2px 2px 2px rgb(0, 0, 0), 2px 2px 2px rgb(66, 66, 66);
+  line-height: 4rem;
 }
 .content_card .info_section .content_header h3 {
   font-weight: 400;
+  font-size: 2rem;
   color: rgb(66, 66, 66);
-}
-.content_card .info_section .content_header .see_content {
-  margin-top: 10px;
-  border-radius: 5px;
-  position: relative;
+  text-shadow: 2px 2px 2px rgb(0, 0, 0), 2px 2px 2px rgb(66, 66, 66);
+  line-height: 4rem;
 }
 .content_card .info_section .content_header .see_content a {
   padding: 5px 10px;
-  border: 1px solid rgb(66, 66, 66);
+  border: 2px solid rgb(66, 66, 66);
   text-decoration: none;
   color: rgb(66, 66, 66);
+  text-shadow: 1px 1px 1px rgb(0, 0, 0), 1px 1px 1px rgb(66, 66, 66);
 }
 .content_card .info_section .content_header .see_content a:hover {
   color: rgb(0, 0, 0);
@@ -633,6 +636,7 @@ nav {
 .content_card .info_section .content_desc .text {
   color: rgb(66, 66, 66);
   white-space: pre-line;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0), 1px 1px 1px rgb(66, 66, 66);
 }
 .content_card .blur_back {
   position: absolute;
@@ -643,6 +647,7 @@ nav {
   background-size: cover;
   background-position: center;
   border-radius: 11px;
+  width: 100%;
 }
 
 .tuto_back {
@@ -669,7 +674,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 2rem;
+    padding-left: 3rem;
   }
   .info_section.perf {
     display: flex;
@@ -680,10 +685,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding-right: 2rem;
-  }
-  .content_header {
-    width: 60%;
+    padding-right: 3rem;
   }
   .content_header.tuto {
     text-align: start;
@@ -700,11 +702,20 @@ nav {
   .content_desc.tuto {
     text-align: start;
   }
+  .content_desc.tuto .text {
+    padding: 0rem 1rem 2rem 0rem;
+  }
   .content_desc.perf {
     text-align: center;
   }
+  .content_desc.perf .text {
+    padding-bottom: 2rem;
+  }
   .content_desc.sheet {
     text-align: end;
+  }
+  .content_desc.sheet .text {
+    padding: 0rem 0rem 2rem 1rem;
   }
   .gradient {
     position: absolute;
@@ -719,21 +730,12 @@ nav {
     border-radius: 10px;
   }
   .gradient.perf {
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, black 26%, black 74%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, black 35%, black 65%, rgba(255, 255, 255, 0) 100%);
     border-radius: 10px;
   }
   .gradient.sheet {
     background: linear-gradient(to left, black 33%, transparent 100%);
     border-radius: 10px;
-  }
-  .blur_back {
-    width: 80%;
-  }
-  .blur_back.perf_back {
-    width: 100%;
-  }
-  .blur_back.sheet_back {
-    left: 0;
   }
 }
 @media all and (max-width: 799px) {
@@ -778,40 +780,41 @@ nav {
     margin: 70px auto;
     height: auto;
   }
-  .blur_back {
-    width: 100%;
-    height: 0;
-  }
-  .content_header {
-    width: 100%;
-  }
-  .content_header.tuto, .content_header.perf, .content_header.sheet {
-    text-align: center;
-  }
-  .content_desc {
-    max-width: 400px;
-  }
-  .content_desc .text {
-    margin: 1rem;
-  }
-  .content_desc.tuto, .content_desc.perf, .content_desc.sheet {
-    text-align: center;
-  }
-  .info_section {
-    background: linear-gradient(to top, black 50%, transparent 100%);
+  .content_card .info_section {
+    background: linear-gradient(to top, black 33%, transparent 100%);
     display: inline-grid;
   }
-  .info_section.tuto, .info_section.sheet, .info_section.perf {
+  .content_card .info_section.tuto, .content_card .info_section.sheet, .content_card .info_section.perf {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .content_card .info_section .content_header {
+    width: 100%;
+    padding: 1rem;
     line-height: 2.1rem;
   }
-  .content_card .info_section .content_header h2 {
+  .content_card .info_section .content_header.perf, .content_card .info_section .content_header.tuto, .content_card .info_section .content_header.sheet {
+    text-align: center;
+  }
+  .content_card .info_section .content_header.perf h2, .content_card .info_section .content_header.tuto h2, .content_card .info_section .content_header.sheet h2 {
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0), 1px 1px 1px rgb(66, 66, 66);
+  }
+  .content_card .info_section .content_header.perf h3, .content_card .info_section .content_header.tuto h3, .content_card .info_section .content_header.sheet h3 {
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0), 1px 1px 1px rgb(66, 66, 66);
+  }
+  .content_card .info_section .content_desc {
+    max-width: 100%;
+  }
+  .content_card .info_section .content_desc .text {
+    margin: 1rem;
+  }
+  .content_card .info_section .content_desc.tuto, .content_card .info_section .content_desc.perf, .content_card .info_section .content_desc.sheet {
+    text-align: center;
   }
 }
 @media all and (max-height: 580px) {
@@ -853,7 +856,11 @@ nav {
   }
   .content_card .info_section .content_header h2 {
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+  }
+  .content_card .info_section .content_header h3 {
+    font-weight: 400;
+    font-size: 1.2rem;
   }
 }
 .container {
@@ -935,7 +942,7 @@ nav {
   overflow: hidden;
   font-size: 23px;
   line-height: 40px;
-  text-shadow: 0px 1px 5px black;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0), 1px 1px 1px white;
   text-overflow: ellipsis;
 }
 .card__composer {
@@ -943,7 +950,7 @@ nav {
   overflow: hidden;
   font-size: 18px;
   line-height: 30px;
-  text-shadow: 0px 1px 5px black;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0), 1px 1px 1px white;
   text-overflow: ellipsis;
 }
 .card__likes {
@@ -953,14 +960,14 @@ nav {
   position: absolute;
   right: 15px;
   line-height: 26.4px;
-  text-shadow: 0px 1px 5px black;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0), 1px 1px 1px white;
   text-overflow: ellipsis;
 }
 .card__category {
   max-height: 85px;
   overflow: hidden;
   line-height: 26.4px;
-  text-shadow: 0px 1px 5px black;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0), 1px 1px 1px white;
   text-overflow: ellipsis;
 }
 .card__price {
@@ -970,7 +977,7 @@ nav {
   top: -40px;
   left: 15px;
   line-height: 26.4px;
-  text-shadow: 0px 1px 5px black;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0), 1px 1px 1px white;
   text-overflow: ellipsis;
 }
 .card__snippet {
@@ -989,6 +996,7 @@ nav {
   border: 1px solid white;
   font-size: 12px;
   text-decoration: none;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0), 1px 1px 1px white;
   transition: 0.3s;
 }
 .card__button.pointer {
