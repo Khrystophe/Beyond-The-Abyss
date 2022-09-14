@@ -221,7 +221,6 @@
   position: relative;
   display: block;
   width: 800px;
-  // height: 440px;
   margin: 100px 10px 50px 10px; 
   overflow: hidden;
   border-radius: 10px;
@@ -274,6 +273,7 @@
     .content {
       height: 120px;
       box-shadow: 0 0 20px -10px rgba(0,0,0,0.5);
+      filter: grayscale(1);
     }
 
     .content_header{
@@ -284,7 +284,7 @@
       h2{
         font-weight: 400;
         font-size: 2rem;
-        color: rgb(66,66,66);
+        color: rgb(100, 100, 100);
       }
       
       h3{
@@ -294,23 +294,25 @@
       
       .see_content{
         margin-top: 10px;
-        padding: 5px;
         border-radius: 5px;
-        border: 1px solid rgba(255,255,255,0.13);
         position: relative;
-        
         a{
+          padding: 5px 10px;
+          border: 1px solid rgb(66,66,66);
           text-decoration: none;
-          color:#8f8f8f;
+          color:rgb(66,66,66);
+          &:hover {
+            color: rgb(0, 0, 0);
+            background-color: rgb(66,66,66);
+          }
         }
       }
     }
 
     .content_desc{
       .text{
-        margin-top: 1rem;
-        margin-bottom: 1rem;
         color: rgb(66,66,66);
+        white-space: pre-line;
       }
     }
   }
@@ -328,14 +330,17 @@
 
 .tuto_back{
   background: url("../img/piano-1846719_1920.jpg");
+  filter: grayscale(1);
 }
 
 .perf_back{
   background: url("../img/stage-curtain-660078_1920.jpg");
+  filter: grayscale(1);
 }
 
 .sheet_back{
-    background: url("../img/sheet-music-4121936_1920.jpg");
+  background: url("../img/sheet-music-4121936_1920.jpg");
+  filter: grayscale(1);
 }
 
 

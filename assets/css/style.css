@@ -590,6 +590,7 @@ nav {
 .content_card .info_section .content {
   height: 120px;
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+  filter: grayscale(1);
 }
 .content_card .info_section .content_header {
   line-height: 2.5rem;
@@ -599,7 +600,7 @@ nav {
 .content_card .info_section .content_header h2 {
   font-weight: 400;
   font-size: 2rem;
-  color: rgb(66, 66, 66);
+  color: rgb(100, 100, 100);
 }
 .content_card .info_section .content_header h3 {
   font-weight: 400;
@@ -607,19 +608,22 @@ nav {
 }
 .content_card .info_section .content_header .see_content {
   margin-top: 10px;
-  padding: 5px;
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.13);
   position: relative;
 }
 .content_card .info_section .content_header .see_content a {
+  padding: 5px 10px;
+  border: 1px solid rgb(66, 66, 66);
   text-decoration: none;
-  color: #8f8f8f;
+  color: rgb(66, 66, 66);
+}
+.content_card .info_section .content_header .see_content a:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(66, 66, 66);
 }
 .content_card .info_section .content_desc .text {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   color: rgb(66, 66, 66);
+  white-space: pre-line;
 }
 .content_card .blur_back {
   position: absolute;
@@ -634,14 +638,17 @@ nav {
 
 .tuto_back {
   background: url("../img/piano-1846719_1920.jpg");
+  filter: grayscale(1);
 }
 
 .perf_back {
   background: url("../img/stage-curtain-660078_1920.jpg");
+  filter: grayscale(1);
 }
 
 .sheet_back {
   background: url("../img/sheet-music-4121936_1920.jpg");
+  filter: grayscale(1);
 }
 
 @media all and (min-width: 800px) {
@@ -851,6 +858,7 @@ nav {
 
 .card_video {
   width: 100%;
+  filter: grayscale(1);
 }
 
 .box {
@@ -963,7 +971,7 @@ nav {
   font-size: 16px;
   line-height: 20px;
   text-overflow: ellipsis;
-  transition: 0.5s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+  transition: 0.5s cubic-bezier(0.55, 0.09, 0.68, 0.53);
 }
 .card__button {
   display: inline-block;
@@ -1054,6 +1062,7 @@ nav {
   z-index: -10;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  filter: grayscale(1);
 }
 
 .cover {
@@ -1274,6 +1283,7 @@ nav {
 }
 .inputbox.text {
   height: 10rem;
+  white-space: pre-line;
 }
 
 .btn_content {

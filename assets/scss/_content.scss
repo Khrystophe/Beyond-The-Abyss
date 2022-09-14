@@ -10,6 +10,7 @@
 }
 .card_video{
 	width: 100%;
+	filter: grayscale(1);
 }
 .box{
 	border-radius: 10px;
@@ -132,7 +133,7 @@
 		font-size: 16px;
 		line-height: 20px;
 		text-overflow: ellipsis;
-		transition: .5s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+		transition: .5s cubic-bezier(0.55, 0.09, 0.68, 0.53);
 	}
 
 	&__button {
@@ -146,7 +147,6 @@
 		&.pointer{
 			cursor: pointer;
 		}
-
 		&:hover {
 			color: black;
 			background-color: white;
