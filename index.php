@@ -22,8 +22,8 @@ require('./assets/require/variables.php'); ?>
 			<div class="abyss">
 				<h1><span>Beyond the abyss</span>
 				</h1>
-				<h2>Music from the </h2>
-				<h2>depths</h2>
+				<h2>Learning</h2>
+				<h2>Music Videos</h2>
 				<img class="main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
 				<div class="main_logo_disc"></div>
 			</div>

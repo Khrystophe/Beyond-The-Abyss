@@ -22,7 +22,6 @@ body {
   background-color: #161616;
   margin: 0;
   overflow-x: hidden;
-  opacity: 0;
 }
 
 .min-height {
@@ -1260,6 +1259,12 @@ nav {
   width: 90%;
   min-width: 250px;
   max-width: 610px;
+}
+.form_content.register {
+  margin-top: 7rem;
+}
+.form_content.login {
+  margin-top: 11rem;
 }
 
 .form_action {

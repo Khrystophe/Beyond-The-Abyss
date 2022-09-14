@@ -31,22 +31,32 @@ if (isset($session_users_id)) {
 
 
 	<div class="loading-container">
+
+		<div class="little_logo">
+			<img class="little_main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+			<div class="little_main_logo_disc"></div>
+		</div>
+
 		<div class="loading-screen">
 			<img class="logo_transition" src="./assets/img/musicgrise.png" alt="">
 			<div class="transition_circle"></div>
 		</div>
+
 	</div>
 
 	<header>
 
 		<nav>
 
-			<div class="nav_bar">
-
+			<a href="#">
 				<div class="little_logo">
 					<img class="little_main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
 					<div class="little_main_logo_disc"></div>
 				</div>
+			</a>
+
+			<div class="nav_bar">
+
 
 				<button class="nav_search" id="search_button"><i class="far fa-search"></i></button>
 
@@ -69,6 +79,13 @@ if (isset($session_users_id)) {
 
 
 			<div class="menu">
+
+				<a href="#">
+					<div class="little_logo">
+						<img class="little_main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
+						<div class="little_main_logo_disc"></div>
+					</div>
+				</a>
 
 				<div class="menu__left">
 					<div class="menu__left__inner">

@@ -29,6 +29,12 @@
     width: 90%;
     min-width: 250px;
     max-width: 610px;
+    &.register{
+        margin-top: 7rem;
+    }
+    &.login{
+        margin-top: 11rem;
+    }
 }
 
 .form_action{
@@ -107,18 +113,3 @@
     height: 1rem;
 }
 
-// @media only all and (max-width: 1000px) {
-//     .form_content{
-//         flex-direction: column;
-//         width: 63%;
-//         min-width: 250px;
-      
-//     }
-  
-//     .rightside{
-//         width:auto;
-//         border-radius: 1.5rem;
-//         padding:1rem 2rem 1rem 2rem;
-    
-//     }
-//   }

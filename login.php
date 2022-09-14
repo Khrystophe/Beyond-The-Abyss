@@ -14,7 +14,7 @@ if (!isset($session_users_id)) {
 			<div class="min-height" data-barba="container" data-barba-namespace="login-section">
 
 				<div class="form connect">
-					<div class="form_content">
+					<div class="form_content login">
 
 						<div class="rightside">
 							<form class="form_action" action="./assets/actions/login_action.php" method="post">

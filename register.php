@@ -15,7 +15,7 @@ if (!isset($session_users_id)) {
 			<div class="min-height" data-barba="container" data-barba-namespace="register-section">
 
 				<div class="form connect">
-					<div class="form_content">
+					<div class="form_content register">
 
 						<div class="rightside">
 							<form class="form_action" action="./assets/actions/register_action.php" method="post" enctype="multipart/form-data">
