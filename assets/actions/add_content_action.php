@@ -99,7 +99,7 @@ if (
 
 
       $bdd = null;
-      header('location: ../../content.php?id=' . $session_users_id . '&category=user_content&success=024258');
+      header('location: ../../content.php?name=user&category=user_content&success=024258');
       die();
    }
 } else {

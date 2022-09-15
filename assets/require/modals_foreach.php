@@ -8,10 +8,6 @@
 
           <form class="form_action" action="./assets/actions/buy_content_action.php?id=<?= $content_id ?>" method="post">
 
-            <div class="messages_logo">
-              <img src="./assets/img/musicgrise.png" alt="" />
-            </div>
-
             <h2>Content Description</h2>
             <br>
 
@@ -66,8 +62,11 @@
             <label for="single_player_id_edit_comment<?= $comment_id ?>"></label>
             <input type="hidden" id="single_player_id_edit_comment<?= $comment_id ?>" name="id" value="<?= $comment_id ?>">
 
-            <label for="single_player_edit_comment<?= $comment_id ?>">Your comment</label>
-            <textarea class="inputbox text" id="single_player_edit_comment<?= $comment_id ?>" name="comment" value="<?= $comment_text ?>"><?= $comment_text ?></textarea>
+            <h2>Your comment</h2>
+            <br>
+
+            <label for="single_player_edit_comment<?= $comment_id ?>">Comment : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-|</label>
+            <textarea class="inputbox text" id="single_player_edit_comment<?= $comment_id ?>" name="comment" pattern="^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$" value="<?= $comment_text ?>"><?= $comment_text ?></textarea>
 
             <button type="submit" class="button">Edit Comment</button>
             <div class="button" id="edit_comment_close<?= $comment_id ?>">Close</div>

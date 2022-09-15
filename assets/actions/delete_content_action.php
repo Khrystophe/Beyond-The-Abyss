@@ -48,11 +48,11 @@ if (
     $author_credits = implode($author_credits);
 
     if ($content_informations['category'] == 'tutorial') {
-        $author_credits -= 30;
+        $author_credits -= 300;
     } else if ($content_informations['category'] == 'performance') {
-        $author_credits -= 10;
+        $author_credits -= 100;
     } else if ($content_informations['category'] == 'sheet_music') {
-        $author_credits -= 20;
+        $author_credits -= 200;
     }
 
 

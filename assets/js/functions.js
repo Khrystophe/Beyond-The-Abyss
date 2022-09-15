@@ -51,7 +51,7 @@ function validContent(page){
       } else{
 
         document.getElementById(page+'_content').value = '';
-        return alert('Respect files format : "(0-9a-zA-Zéèêàçù# ()\'!,;°-)(.)(webm/mp4/ogv)" and 128 Mo max.');
+        return alert('Respect files format : "|0-9a-zA-Zéèêàçù# ()\'!,;°-| |.| |webm/mp4/ogv|" and 128 Mo max.');
 
       }
   } else {

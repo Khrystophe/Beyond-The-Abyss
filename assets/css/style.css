@@ -1244,6 +1244,9 @@ nav {
   margin-bottom: 2rem;
   margin-top: 7rem;
 }
+.form label {
+  font-size: 12px;
+}
 .form.connect {
   margin-bottom: 0rem;
   margin-top: 0rem;
@@ -1361,6 +1364,13 @@ nav {
 .modal.messages {
   flex-direction: column;
   justify-content: center;
+}
+
+.modal_form h2 {
+  font-size: 18px;
+}
+.modal_form label {
+  font-size: 12px;
 }
 
 .modal-content {

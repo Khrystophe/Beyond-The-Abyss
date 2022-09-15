@@ -137,12 +137,15 @@ if (isset($_POST['id_users']) && !empty($_POST['id_users'])) {
 if (isset($_POST['name']) && !empty($_POST['name'])) {
 
   $check_post_name = is_string($_POST['name'])
-    && strlen($_POST['name']) <= 20
-    && preg_match("/^[0-9a-zA-Zéèêàçù -]+$/", $_POST['name']);
+    && strlen($_POST['name']) <= 10
+    && preg_match("/^[a-zA-Zéèêàçù '-]+$/", $_POST['name']);
 
   if ($check_post_name === true) {
 
-    $post_name = $_POST['name'];
+    $sanitize_one = preg_replace('/ +/', " ", $_POST['name']);
+    $sanitize_two = preg_replace('/^ /', "", $sanitize_one);
+
+    $post_name = preg_replace('/ $/', "", $sanitize_two);
   }
 }
 
@@ -150,12 +153,15 @@ if (isset($_POST['name']) && !empty($_POST['name'])) {
 if (isset($_POST['lastname']) && !empty($_POST['lastname'])) {
 
   $check_post_lastname = is_string($_POST['lastname'])
-    && strlen($_POST['lastname']) <= 20
-    && preg_match("/^[0-9a-zA-Zéèêàçù -]+$/", $_POST['lastname']);
+    && strlen($_POST['lastname']) <= 10
+    && preg_match("/^[a-zA-Zéèêàçù '-]+$/", $_POST['lastname']);
 
   if ($check_post_lastname === true) {
 
-    $post_lastname = $_POST['lastname'];
+    $sanitize_one = preg_replace('/ +/', " ", $_POST['lastname']);
+    $sanitize_two = preg_replace('/^ /', "", $sanitize_one);
+
+    $post_lastname = preg_replace('/ $/', "", $sanitize_two);
   }
 }
 
@@ -174,7 +180,7 @@ if (isset($_POST['email']) && !empty($_POST['email'])) {
 if (isset($_POST['password']) && !empty($_POST['password'])) {
 
   $check_post_password = is_string($_POST['password'])
-    && strlen($_POST['password']) == 2
+    && strlen($_POST['password']) >= 2
     && preg_match("/^([1-9][0-9])+$/", $_POST['password']);
 
   if ($check_post_password === true) {
@@ -187,7 +193,7 @@ if (isset($_POST['password']) && !empty($_POST['password'])) {
 if (isset($_POST['password_confirm']) && !empty($_POST['password_confirm'])) {
 
   $check_post_password_confirm = is_string($_POST['password_confirm'])
-    && strlen($_POST['password_confirm']) == 2
+    && strlen($_POST['password_confirm']) >= 2
     && preg_match("/^([1-9][0-9])+$/", $_POST['password_confirm']);
 
   if ($check_post_password_confirm === true) {
@@ -200,7 +206,7 @@ if (isset($_POST['password_confirm']) && !empty($_POST['password_confirm'])) {
 if (isset($_POST['old_password']) && !empty($_POST['old_password'])) {
 
   $check_post_old_password = is_string($_POST['old_password'])
-    && strlen($_POST['old_password']) == 2
+    && strlen($_POST['old_password']) >= 2
     && preg_match("/^([1-9][0-9])+$/", $_POST['old_password']);
 
   if ($check_post_old_password === true) {
@@ -213,7 +219,7 @@ if (isset($_POST['old_password']) && !empty($_POST['old_password'])) {
 if (isset($_POST['new_password']) && !empty($_POST['new_password'])) {
 
   $check_post_new_password = is_string($_POST['new_password'])
-    && strlen($_POST['new_password']) == 2
+    && strlen($_POST['new_password']) >= 2
     && preg_match("/^([1-9][0-9])+$/", $_POST['new_password']);
 
   if ($check_post_new_password === true) {
@@ -226,7 +232,7 @@ if (isset($_POST['new_password']) && !empty($_POST['new_password'])) {
 if (isset($_POST['new_password_confirm']) && !empty($_POST['new_password_confirm'])) {
 
   $check_post_new_password_confirm = is_string($_POST['new_password_confirm'])
-    && strlen($_POST['new_password_confirm']) == 2
+    && strlen($_POST['new_password_confirm']) >= 2
     && preg_match("/^([1-9][0-9])+$/", $_POST['new_password_confirm']);
 
   if ($check_post_new_password_confirm === true) {
@@ -238,26 +244,32 @@ if (isset($_POST['new_password_confirm']) && !empty($_POST['new_password_confirm
 
 if (isset($_POST['title']) && !empty($_POST['title'])) {
 
-  $check_post_title = strlen($_POST['title']) <= 20
+  $check_post_title = strlen($_POST['title']) <= 25
     && is_string($_POST['title'])
-    && preg_match("/^[0-9a-zA-Zéèêàçù '\"!?°-]+$/", $_POST['title']);
+    && preg_match("/^[0-9a-zA-Zéèêàçù '!?°-]+$/", $_POST['title']);
 
   if ($check_post_title === true) {
 
-    $post_title = $_POST['title'];
+    $sanitize_one = preg_replace('/ +/', " ", $_POST['title']);
+    $sanitize_two = preg_replace('/^ /', "", $sanitize_one);
+
+    $post_title = preg_replace('/ $/', "", $sanitize_two);
   }
 }
 
 
 if (isset($_POST['composer']) && !empty($_POST['composer'])) {
 
-  $check_post_composer = strlen($_POST['composer']) <= 20
+  $check_post_composer = strlen($_POST['composer']) <= 25
     && is_string($_POST['composer'])
     && preg_match("/^[0-9a-zA-Zéèêàçù -]+$/", $_POST['composer']);
 
   if ($check_post_composer === true) {
 
-    $post_composer = $_POST['composer'];
+    $sanitize_one = preg_replace('/ +/', " ", $_POST['composer']);
+    $sanitize_two = preg_replace('/^ /', "", $sanitize_one);
+
+    $post_composer = preg_replace('/ $/', "", $sanitize_two);
   }
 }
 
@@ -301,16 +313,20 @@ if (isset($_POST['price']) && !empty($_POST['price'])) {
 
 if (isset($_POST['description']) && !empty($_POST['description'])) {
 
-
   $check_post_description =  is_string($_POST['description'])
-    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['description']);
+    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$/", $_POST['description'])
+    && strlen($_POST['description']) <= 250;
 
   if ($check_post_description === true) {
 
-    $regex = '/(\r\n|\n|\t|\r){3,}/';
+    $sanitize_one = preg_replace('/ +/', " ", $_POST['description']);
+    $sanitize_two = preg_replace('/^ /', "", $sanitize_one);
+    $sanitize_three = preg_replace('/ $/', "", $sanitize_two);
+
+    $regex = '/(\r\n|\n|\t|\r){2,}/';
     $replacement = "\r\n\r\n";
 
-    $post_description = preg_replace($regex, $replacement, $_POST['description']);
+    $post_description = preg_replace($regex, $replacement, $sanitize_three);
   }
 }
 
@@ -318,14 +334,18 @@ if (isset($_POST['description']) && !empty($_POST['description'])) {
 if (isset($_POST['comment']) && !empty($_POST['comment'])) {
 
   $check_post_comment =  is_string($_POST['comment'])
-    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['comment']);
+    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$/", $_POST['comment']);
 
   if ($check_post_comment === true) {
 
-    $regex = '/(\r\n|\n|\t|\r){3,}/';
+    $sanitize_one = preg_replace('/ +/', " ", $_POST['comment']);
+    $sanitize_two = preg_replace('/^ /', "", $sanitize_one);
+    $sanitize_three = preg_replace('/ $/', "", $sanitize_two);
+
+    $regex = '/(\r\n|\n|\t|\r){2,}/';
     $replacement = "\r\n\r\n";
 
-    $post_comment = preg_replace($regex, $replacement, $_POST['comment']);
+    $post_comment = preg_replace($regex, $replacement, $sanitize_three);
   }
 }
 
@@ -333,14 +353,18 @@ if (isset($_POST['comment']) && !empty($_POST['comment'])) {
 if (isset($_POST['message']) && !empty($_POST['message'])) {
 
   $check_post_message =  is_string($_POST['message'])
-    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['message']);
+    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$/", $_POST['message']);
 
   if ($check_post_message === true) {
 
-    $regex = '/(\r\n|\n|\t|\r){3,}/';
+    $sanitize_one = preg_replace('/ +/', " ", $_POST['message']);
+    $sanitize_two = preg_replace('/^ /', "", $sanitize_one);
+    $sanitize_three = preg_replace('/ $/', "", $sanitize_two);
+
+    $regex = '/(\r\n|\n|\t|\r){2,}/';
     $replacement = "\r\n\r\n";
 
-    $post_message = preg_replace($regex, $replacement, $_POST['message']);
+    $post_message = preg_replace($regex, $replacement, $sanitize_three);
   }
 }
 

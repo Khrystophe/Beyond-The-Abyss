@@ -24,17 +24,17 @@ if (!isset($session_users_id)) {
 						<div class="rightside">
 							<form class="form_action" action="./assets/actions/register_action.php" method="post" enctype="multipart/form-data">
 
-								<label for="register_name"></label>
-								<input type="text" class="inputbox" placeholder="Name ('min/maj/space/-' max 20 chars)" id="register_name" name="name" required pattern="^[A-Za-z '-]+$" maxlength="20" />
+								<label for="register_name">Name : (|a-zA-Zéèêàçù '-| max 10 chars)</label>
+								<input type="text" class="inputbox" placeholder="Name" id="register_name" name="name" required pattern="^[a-zA-Zéèêàçù '-]+$" maxlength="10" />
 
-								<label for="register_lastname"></label>
-								<input type="text" class="inputbox" placeholder="Lastname ('min/maj/space/-' max 20 chars)" id="register_lastname" name="lastname" required pattern="^[A-Za-z '-]+$" maxlength="20" />
+								<label for="register_lastname">Lastname : (|a-zA-Zéèêàçù '-| max 10 chars)</label>
+								<input type="text" class="inputbox" placeholder="Lastname" id="register_lastname" name="lastname" required pattern="^[a-zA-Zéèêàçù '-]+$" maxlength="10" />
 
-								<label for=" register_email"></label>
-								<input type="text" class="inputbox" placeholder="Email (valid email)" id="register_email" name="email" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" />
+								<label for=" register_email">Email (Valid email)</label>
+								<input type="text" class="inputbox" placeholder="Email" id="register_email" name="email" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" />
 
-								<label for="register_password"></label>
-								<input type="password" class="inputbox" placeholder="Password ('0-9' min 1 chars )" id="register_password" name="password" required pattern="^([1-9][0-9])+$" minlength="2" />
+								<label for="register_password">Password : ('0-9' min 2 chars )</label>
+								<input type="password" class="inputbox" placeholder="Password" id="register_password" name="password" required pattern="^([1-9][0-9])+$" minlength="2" />
 
 								<label for="register_password_confirm"></label>
 								<input type="password" class="inputbox" placeholder="Confirm your password" id="register_password_confirm" name="password_confirm" required pattern="^([1-9][0-9])+$" minlength="2" />

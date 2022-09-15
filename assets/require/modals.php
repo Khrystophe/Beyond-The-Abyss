@@ -5,6 +5,9 @@
 
         <form class="form_action" action="/Diplome/content.php?category=search_results" method="post">
 
+          <h2>Search</h2>
+          <br>
+
           <label for="search_title"></label>
           <input type="text" class="inputbox" placeholder="Title" id="search_title" name="title" />
 
@@ -52,8 +55,11 @@
             <label for="contact_id"></label>
             <input type="hidden" id="contact_id" name="id" value="<?= $session_users_id ?>">
 
-            <label for=" contact_message">Contact an administrator</label>
-            <textarea class="inputbox text" id="contact_message" name="message"></textarea>
+            <h2>Contact an administrator</h2>
+            <br>
+
+            <label for=" contact_message">Message : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-|)</label>
+            <textarea class="inputbox text" id="contact_message" name="message" pattern="^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$" required></textarea>
 
             <button type="submit" class="button">Post</button>
             <div class="button" id="contact_close">Close</div>
@@ -84,14 +90,17 @@
           <label for="single_player_id_users"></label>
           <input type="hidden" id="single_player_id_users" name="id_users" value="<?= $content_id_user ?>">
 
-          <label for="single_player_edit_title"></label>
-          <input type="text" class="inputbox" value="<?= $content_title ?>" placeholder="<?= $content_title ?>" id="single_player_edit_title" name="title" />
+          <h2>Edit Content</h2>
+          <br>
 
-          <label for="single_player_edit_composer"></label>
-          <input type="text" class="inputbox" value="<?= $content_composer ?>" placeholder="<?= $content_composer ?>" id="single_player_edit_composer" name="composer" />
+          <label for="single_player_edit_title">Title : (|0-9a-zA-Zéèêàçù '!?°-| max 25 chars )</label>
+          <input type="text" class="inputbox" value="<?= $content_title ?>" placeholder="<?= $content_title ?>" id="single_player_edit_title" name="title" pattern="^[0-9a-zA-Zéèêàçù '!?°-]+$" maxlength="25" />
 
-          <label for="single_player_edit_description"></label>
-          <textarea class="inputbox text" value="<?= $content_description ?>" id="single_player_edit_description" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);"><?= $content_description ?></textarea>
+          <label for="single_player_edit_composer">Composer : (|0-9a-zA-Zéèêàçù -| max 25 chars )</label>
+          <input type="text" class="inputbox" value="<?= $content_composer ?>" placeholder="<?= $content_composer ?>" id="single_player_edit_composer" name="composer" pattern="^[0-9a-zA-Zéèêàçù -]+$" maxlength="25" />
+
+          <label for="single_player_edit_description">Description : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-| max 250 chars )</label>
+          <textarea class="inputbox text" value="<?= $content_description ?>" id="single_player_edit_description" name="description" pattern="^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$" onkeyup="javascript:MaxLengthDescription(this, 250);"><?= $content_description ?></textarea>
 
           <?php if ($content_category == 'Tutorial') {
             $content_category = 'tutorial';
@@ -118,10 +127,10 @@
             <option value="very-hard">Very Hard</option>
           </select>
 
-          <label for="single_player_edit_content"></label>
+          <label for="single_player_edit_content">Files format : (|0-9a-zA-Zéèêàçù# ()'!,;°-| |.| |webm/mp4/ogv|) and 128 Mo max.</label>
           <input type="file" class="inputbox" id="single_player_edit_content" name="content" onchange="javascript: return validContent('single_player_edit')" />
 
-          <label for="single_player_edit_price">Price : from 1 to 500 or free (type 'Free')</label>
+          <label for="single_player_edit_price">Price : (from 1 to 500 or free (type 'Free'))</label>
           <input type="text" class="inputbox" value="<?= $content_price ?>" placeholder="<?= $content_price ?>" id="single_player_edit_price" pattern="^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500|Free)$" name="price" />
 
           <button type="submit" class="button">Edit</button>
@@ -144,8 +153,11 @@
           <label for="single_player_id_comment"></label>
           <input type="hidden" id="single_player_id_comment" name="id" value="<?= $content_id ?>">
 
-          <label for="single_player_comment">Your comment</label>
-          <textarea class="inputbox text" id="single_player_comment" name="comment"></textarea>
+          <h2>Your comment</h2>
+          <br>
+
+          <label for="single_player_comment">Comment : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-|)</label>
+          <textarea class="inputbox text" id="single_player_comment" name="comment" pattern="^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$" required></textarea>
 
           <button type="submit" class="button">Post Comment</button>
           <div class="button" id="comment_close">Close</div>
@@ -167,8 +179,11 @@
           <label for="single_player_id_report"></label>
           <input type="hidden" id="single_player_id_report" name="id" value="<?= $content_id ?>">
 
-          <label for="single_player_report">Want to report this content? Any improper reporting will result in consequences.</label>
-          <textarea class="inputbox text" id="single_player_report" name="message"></textarea>
+          <h2>Want to report this content? Any improper reporting will result in consequences.</h2>
+          <br>
+
+          <label for="single_player_report">Message : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-|)</label>
+          <textarea class="inputbox text" id="single_player_report" name="message" pattern="^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$" required></textarea>
 
           <button type="submit" class="button red">Report</button>
           <div class="button" id="report_close">Close</div>
