@@ -4,7 +4,11 @@ require('./assets/require/check_data.php');
 
 if (!isset($session_users_id)) {
 
-	if (isset($get_error) xor !isset($check_get_error)) {
+	if (
+		(isset($get_error) xor !isset($check_get_error))
+		&&
+		(isset($get_success) xor !isset($check_get_success))
+	) {
 
 		$page = 'login';
 		require('./assets/require/head.php'); ?>
@@ -35,12 +39,10 @@ if (!isset($session_users_id)) {
 		</main>
 
 
-
-
 	<?php } else {
 
 		http_response_code(400);
-		header('location: index.php?error=00315');
+		header('location: login.php?error=00315');
 		die();
 	} ?>
 

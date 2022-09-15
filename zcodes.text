@@ -1,10 +1,13 @@
-001 index
+001 index             15   error    processing_bad_or_malformed_request
+
+
 002 content           11   error    empty_user_content
                       12   error    empty_user_purchased_content
                       149  error    empty_search_content
                       13   error    category_not_found
                       14   error    forbidden_reload_search_form_empty
                       15   error    processing_bad_or_malformed_request
+                      150  error    processing_bad_or_malformed_request
 
 003 login             15   error    processing_bad_or_malformed_request
                       16   error    already_connected

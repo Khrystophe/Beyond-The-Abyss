@@ -49,10 +49,10 @@ function contentAnimation() {
     display:"none"
   },0)
 
-  // .to('body', {
-  //   opacity: 1,
-  //   duration: 0.1,
-  // })
+  .to('body', {
+    opacity: 1,
+    duration: 0,
+  })
 
   .to('.abyss', {
     opacity: 1,

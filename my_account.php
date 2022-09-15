@@ -178,7 +178,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 		<?php } else {
 
 			http_response_code(400);
-			header('location: index.php?error=00515');
+			header('location: my_account.php?error=00515');
 			die();
 		} ?>
 

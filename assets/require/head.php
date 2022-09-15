@@ -27,7 +27,9 @@ if (isset($session_users_id)) {
 <body>
 
 
-	<?php require('modals.php'); ?>
+	<?php
+	require('errors_success_modal.php');
+	require('modals.php'); ?>
 
 
 	<div class="loading-container">
