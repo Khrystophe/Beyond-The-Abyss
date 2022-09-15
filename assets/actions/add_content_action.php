@@ -78,11 +78,11 @@ if (
    $credits = implode($credits);
 
    if ($post_category == 'tutorial') {
-      $credits += 30;
+      $credits += 300;
    } else if ($post_category == 'performance') {
-      $credits += 10;
+      $credits += 100;
    } else if ($post_category == 'sheet_music') {
-      $credits += 20;
+      $credits += 200;
    }
 
    $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');

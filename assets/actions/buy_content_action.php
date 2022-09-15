@@ -48,7 +48,7 @@ if (
     $user = $req->fetch();
 
     $author_credits = $user['credits'];
-    $author_credits += 3;
+    $author_credits += ceil($price / 25);
 
     $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
     $req->bindParam(':credits', $author_credits, PDO::PARAM_INT);

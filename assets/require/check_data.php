@@ -290,7 +290,7 @@ if (isset($_POST['price']) && !empty($_POST['price'])) {
 
   $check_post_price = is_string($_POST['price'])
     && strlen($_POST['price']) >= 1
-    && preg_match("/^([1-9]|[1-4][0-9]|50|Free)$/", $_POST['price']);
+    && preg_match("/^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500|Free)$/", $_POST['price']);
 
   if ($check_post_price === true) {
 

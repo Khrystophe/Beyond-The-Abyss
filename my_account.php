@@ -116,8 +116,8 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 									<label for="my_account_content"></label>
 									<input type="file" class="inputbox" id="my_account_content" name="content" onchange="javascript: return validContent('my_account')" required />
 
-									<label for="my_account_price">Price : from 1 to 50 or free (type 'Free')</label>
-									<input type="text" class="inputbox" id="my_account_price" name="price" placeholder="Price" pattern="^([1-9]|[1-4][0-9]|50|Free)$" required />
+									<label for="my_account_price">Price : from 1 to 500 or free (type 'Free')</label>
+									<input type="text" class="inputbox" id="my_account_price" name="price" placeholder="Price" pattern="^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500|Free)$" required />
 
 									<button type="submit" class="button">Add content</button>
 

@@ -74,8 +74,8 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 							</div>
 
 							<div class="mb-3">
-								<label for="admin_price" class="form-label">Price : from 1 to 50 or free (type 'Free')</label>
-								<input type="text" id="admin_price" pattern="^([1-9]|[1-4][0-9]|50|Free)$" name="price" required>
+								<label for="admin_price" class="form-label">Price : from 1 to 500 or free (type 'Free')</label>
+								<input type="text" id="admin_price" pattern="^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500|Free)$" name="price" required>
 							</div>
 
 							<button type="submit" class="btn btn-primary">Submit</button>

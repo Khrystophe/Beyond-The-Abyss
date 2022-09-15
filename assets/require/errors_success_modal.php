@@ -61,7 +61,7 @@ if (isset($get_error) || isset($get_success)) {
     47 => 'This content is not free. 
     
     Log in or register. 
-    For any new registration you will get 50 credits.
+    For any new registration you will get 500 credits.
     
     Otherwise you can use the search function to see free content.',
     48 => 'Account deleted. ',

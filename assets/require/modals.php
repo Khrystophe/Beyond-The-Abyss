@@ -121,8 +121,8 @@
           <label for="single_player_edit_content"></label>
           <input type="file" class="inputbox" id="single_player_edit_content" name="content" onchange="javascript: return validContent('single_player_edit')" />
 
-          <label for="single_player_edit_price">Price : from 1 to 50 or free (type 'Free')</label>
-          <input type="text" class="inputbox" value="<?= $content_price ?>" placeholder="<?= $content_price ?>" id="single_player_edit_price" pattern="^([1-9]|[1-4][0-9]|50|Free)$" name="price" />
+          <label for="single_player_edit_price">Price : from 1 to 500 or free (type 'Free')</label>
+          <input type="text" class="inputbox" value="<?= $content_price ?>" placeholder="<?= $content_price ?>" id="single_player_edit_price" pattern="^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500|Free)$" name="price" />
 
           <button type="submit" class="button">Edit</button>
           <div class="button" id="edit_close">Close</div>

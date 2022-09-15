@@ -55,19 +55,19 @@ if (
 
 
     if ($content_informations['category'] == 'tutorial') {
-        $author_credits -= 30;
+        $author_credits -= 300;
     } else if ($content_informations['category'] == 'performance') {
-        $author_credits -= 10;
+        $author_credits -= 100;
     } else if ($content_informations['category'] == 'sheet_music') {
-        $author_credits -= 20;
+        $author_credits -= 200;
     }
 
     if ($post_category == 'tutorial') {
-        $author_credits += 30;
+        $author_credits += 300;
     } else if ($post_category == 'performance') {
-        $author_credits += 10;
+        $author_credits += 100;
     } else if ($post_category == 'sheet_music') {
-        $author_credits += 20;
+        $author_credits += 200;
     }
 
     $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE users.id = :users_id');
