@@ -23,87 +23,71 @@ if (
 		require('./assets/require/co_bdd.php');
 		require('./assets/require/functions.php');
 
-		if ($get_category != 'search_results') {
+
+		$page = $get_category;
 
 
-			if ($get_category == 'tutorial') {
-
-				$page = 'tuto_content';
-				$getContents = getContents($bdd, $get_category); ?>
+		if ($page == 'tutorial' || $page == 'performance' || $page == 'sheet_music') {
 
 
-			<?php } else if ($get_category == 'performance') {
-
-				$page = 'perf_content';
-				$getContents = getContents($bdd, $get_category); ?>
+			$getContents = getContents($bdd, $get_category); ?>
 
 
-			<?php } else if ($get_category == 'sheet_music') {
-
-				$page = 'sheet_content';
-				$getContents = getContents($bdd, $get_category); ?>
+			<?php } else if ($page == 'user_content') {
 
 
-			<?php } else if ($get_category == 'user_content') {
-
-				$page = 'user_content';
-
-				if ($get_name == 'visitor') {
-
-					$getIdUserFromContent = getIdUserFromContent($bdd, $get_id);
-
-					require('./assets/require/variables.php');
-				} else {
-
-					$author_id = $session_users_id;
-				}
+			if ($get_name == 'visitor') {
 
 
-				$getContents = getUserContent($bdd, $author_id);
+				$getIdUserFromContent = getIdUserFromContent($bdd, $get_id);
+
+				require('./assets/require/variables.php');
 
 
-				if (empty($getContents)) {
-
-					if ($session_users_id == $author_id) {
-
-						$bdd = null;
-						header('location: /Diplome/my_account.php?error=00211');
-						die();
-					} else {
-
-						$bdd = null;
-						header('location: /Diplome/index.php?error=002159');
-						die();
-					}
-				} ?>
-
-
-			<?php	} else if ($get_category == 'user_purchased_content') {
-
-				$page = 'user_purchased_content';
-				$getContents = getUserPurchasedContent($bdd, $session_users_id);
-
-
-				if (empty($getContents)) {
+				if (empty($getIdUserFromContent)) {
 
 					$bdd = null;
-					header('location: /Diplome/my_account.php?error=00212');
+					header('location: /Diplome/index.php?error=002159');
 					die();
 				} ?>
 
 
-			<?php	} else {
+			<?php } else {
+
+
+				$author_id = $session_users_id;
+			}
+
+
+			$getContents = getUserContent($bdd, $author_id);
+
+
+			if (empty($getContents)) {
 
 				$bdd = null;
-				header('location: index.php?error=00213');
+				header('location: /Diplome/my_account.php?error=00211');
 				die();
 			} ?>
 
 
-		<?php	} else { ?>
+		<?php	} else if ($page == 'user_purchased_content') {
 
 
-			<?php if (isset($_POST) && !empty($_POST)) {
+			$getContents = getUserPurchasedContent($bdd, $session_users_id);
+
+
+			if (empty($getContents)) {
+
+				$bdd = null;
+				header('location: /Diplome/my_account.php?error=00212');
+				die();
+			} ?>
+
+
+			<?php } else if ($page == 'search_results') {
+
+
+			if (isset($_POST) && !empty($_POST)) {
 
 				if (!isset($post_title)) {
 					$post_title = null;
@@ -125,7 +109,6 @@ if (
 					$post_price = null;
 				}
 
-				$page = 'search_results';
 				$getContents = getSearchResults($bdd, $post_title, $post_composer, $post_category, $post_level, $post_price);
 
 
@@ -144,7 +127,13 @@ if (
 				die();
 			} ?>
 
-		<?php } ?>
+
+		<?php	} else {
+
+			$bdd = null;
+			header('location: index.php?error=00213');
+			die();
+		} ?>
 
 
 		<?php if (isset($session_users_id) && !empty($session_users_id)) {

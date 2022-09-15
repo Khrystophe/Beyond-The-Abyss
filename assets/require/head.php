@@ -106,7 +106,7 @@ if (isset($session_users_id)) {
 
 						<div class="menu__left__inner__item">
 
-							<?php if ($page != 'perf_content') { ?>
+							<?php if ($page != 'performance') { ?>
 
 								<a class="link_menu" href="content.php?category=performance">Performances</a>
 
@@ -117,7 +117,7 @@ if (isset($session_users_id)) {
 
 						<div class="menu__left__inner__item">
 
-							<?php if ($page != 'tuto_content') { ?>
+							<?php if ($page != 'tutorial') { ?>
 
 								<a class="link_menu" href="content.php?category=tutorial">Tutorials</a>
 
@@ -128,7 +128,7 @@ if (isset($session_users_id)) {
 
 						<div class="menu__left__inner__item">
 
-							<?php if ($page != 'sheet_content') { ?>
+							<?php if ($page != 'sheet_music') { ?>
 
 								<a class="link_menu" href="content.php?category=sheet_music">Sheet Music</a>
 
