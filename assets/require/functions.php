@@ -61,10 +61,10 @@ function getUserContentInformations(PDO $bdd, $content_id_user)
   return $user;
 }
 
-function getUserContent(PDO $bdd, $get_id)
+function getUserContent(PDO $bdd, $author_id)
 {
   $req = $bdd->prepare('SELECT * FROM contents WHERE id_users = :id_users ');
-  $req->bindParam(':id_users', $get_id, PDO::PARAM_INT);
+  $req->bindParam(':id_users', $author_id, PDO::PARAM_INT);
   $req->execute();
   $contents = $req->fetchAll();
   return $contents;
@@ -171,10 +171,18 @@ function getNotifications(PDO $bdd, $session_users_id)
 
 function getNumbersOfcomments(PDO $bdd, $comment_user_id)
 {
-
   $req = $bdd->prepare('SELECT COUNT(id_users) FROM comments WHERE id_users = :id_users');
   $req->bindParam(':id_users', $comment_user_id, PDO::PARAM_INT);
   $req->execute();
   $comments = $req->fetch();
   return $comments;
+}
+
+function getIdUserFromContent(PDO $bdd, $get_id)
+{
+  $req = $bdd->prepare('SELECT id_users FROM contents WHERE contents.id = :get_id');
+  $req->bindParam(':get_id', $get_id, PDO::PARAM_INT);
+  $req->execute();
+  $author_id = $req->fetch();
+  return $author_id;
 }

@@ -8,6 +8,7 @@
                       14   error    forbidden_reload_search_form_empty
                       15   error    processing_bad_or_malformed_request
                       150  error    processing_bad_or_malformed_request
+                      159  error    user none exist
 
 003 login             15   error    processing_bad_or_malformed_request
                       16   error    already_connected

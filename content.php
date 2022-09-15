@@ -5,11 +5,13 @@ require('./assets/require/check_data.php');
 
 if (
 	isset($get_category)
-	&& (isset($session_users_id) xor !isset($session_users_id))
-	&& (isset($post_title) xor !isset($post_title))
-	&& (isset($post_composer) xor !isset($post_composer))
-	&& (isset($post_category) xor !isset($post_category))
-	&& (isset($post_level) xor !isset($post_level))
+	&& (isset($get_id) xor !isset($check_get_id))
+	&& (isset($get_name) xor !isset($check_get_name))
+	&& (isset($session_users_id) xor !isset($check_session_users_id))
+	&& (isset($post_title) xor !isset($check_post_title))
+	&& (isset($post_composer) xor !isset($check_post_composer))
+	&& (isset($post_category) xor !isset($check_post_category))
+	&& (isset($post_level) xor !isset($check_post_level))
 ) {
 
 	if (
@@ -45,14 +47,34 @@ if (
 			<?php } else if ($get_category == 'user_content') {
 
 				$page = 'user_content';
-				$getContents = getUserContent($bdd, $get_id);
+
+				if ($get_name == 'visitor') {
+
+					$getIdUserFromContent = getIdUserFromContent($bdd, $get_id);
+
+					require('./assets/require/variables.php');
+				} else {
+
+					$author_id = $session_users_id;
+				}
+
+
+				$getContents = getUserContent($bdd, $author_id);
 
 
 				if (empty($getContents)) {
 
-					$bdd = null;
-					header('location: /Diplome/my_account.php?error=00211');
-					die();
+					if ($session_users_id == $author_id) {
+
+						$bdd = null;
+						header('location: /Diplome/my_account.php?error=00211');
+						die();
+					} else {
+
+						$bdd = null;
+						header('location: /Diplome/index.php?error=002159');
+						die();
+					}
 				} ?>
 
 
@@ -196,7 +218,7 @@ if (
 
 												<div class="content_button_flex">
 													<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
-													<a href="content.php?id=<?= $content_id_user ?>&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
+													<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
 												</div>
 
 
@@ -210,7 +232,7 @@ if (
 
 													<div class="content_button_flex">
 														<div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
-														<a href="content.php?id=<?= $content_id_user ?>&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
+														<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
 													</div>
 
 												<?php } else if ($user_session_purchased_content == true) { ?>
@@ -220,7 +242,7 @@ if (
 
 													<div class="content_button_flex">
 														<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
-														<a href="content.php?id=<?= $content_id_user ?>&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
+														<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
 													</div>
 
 												<?php } ?>
@@ -239,7 +261,7 @@ if (
 
 												<div class="content_button_flex">
 													<div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
-													<a href="content.php?id=<?= $content_id_user ?>&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
+													<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
 												</div>
 
 											<?php } else { ?>
@@ -249,7 +271,7 @@ if (
 
 												<div class="content_button_flex">
 													<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
-													<a href="content.php?id=<?= $content_id_user ?>&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
+													<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
 												</div>
 
 											<?php } ?>

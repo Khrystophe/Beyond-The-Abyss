@@ -76,6 +76,7 @@ if (isset($get_error) || isset($get_success)) {
     56 => 'Your content has been deleted. ',
     57 => 'Content add with success. ',
     58 => 'Content add with success. ',
+    59 => 'User none exist. Use the menu to navigate the site ',
   ];
 
   if (isset($get_error)) {

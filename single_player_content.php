@@ -4,7 +4,7 @@ require('./assets/require/check_data.php');
 
 if (
   isset($get_id)
-  && (isset($session_users_id) xor !isset($session_users_id))
+  && (isset($session_users_id) xor !isset($check_session_users_id))
 ) {
 
   if (
@@ -112,7 +112,7 @@ if (
 
                   <div class="description">
                     <div class="column1">
-                      <a class="link_page" href="content.php?id=<?= $content_id_user ?>&category=user_content"><?= $content_author_name . " " . $content_author_lastname ?></a>
+                      <a class="link_page" href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content"><?= $content_author_name . " " . $content_author_lastname ?></a>
                     </div>
 
                     <div class="column2">

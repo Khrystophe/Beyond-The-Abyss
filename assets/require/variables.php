@@ -133,3 +133,8 @@ if (isset($getNumbersOfcomments) && !empty($getNumbersOfcomments)) {
 
   $number_of_user_comments = htmlspecialchars(implode($getNumbersOfcomments));
 }
+
+if (isset($getIdUserFromContent)  && !empty($getIdUserFromContent)) {
+
+  $author_id = htmlspecialchars($getIdUserFromContent['id_users']);
+}
