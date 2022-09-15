@@ -66,7 +66,7 @@ if (isset($get_error) || isset($get_success)) {
     Otherwise you can use the search function to see free content.',
     48 => 'Account deleted. ',
     49 => 'Your search result is empty.',
-    50 => 'An error has occured. ',
+    50 => '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!EMPTY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',
     51 => 'This content has been flagged. 
     You can no longer edit or delete it until an administrator has reviewed it.  ',
     52 => 'Your content has been edited successfully . ',

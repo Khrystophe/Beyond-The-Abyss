@@ -12,238 +12,207 @@ if (
 	&& (isset($post_composer) xor !isset($check_post_composer))
 	&& (isset($post_category) xor !isset($check_post_category))
 	&& (isset($post_level) xor !isset($check_post_level))
+	&& (isset($get_error) xor !isset($check_get_error))
+	&& (isset($get_success) xor !isset($check_get_success))
 ) {
 
-	if (
-		(isset($get_error) xor !isset($check_get_error))
-		&&
-		(isset($get_success) xor !isset($check_get_success))
-	) {
-
-		require('./assets/require/co_bdd.php');
-		require('./assets/require/functions.php');
 
 
-		$page = $get_category;
+	require('./assets/require/co_bdd.php');
+	require('./assets/require/functions.php');
 
 
-		if ($page == 'tutorial' || $page == 'performance' || $page == 'sheet_music') {
+	$page = $get_category;
 
 
-			$getContents = getContents($bdd, $get_category); ?>
+	if ($page == 'tutorial' || $page == 'performance' || $page == 'sheet_music') {
 
 
-			<?php } else if ($page == 'user_content') {
+		$getContents = getContents($bdd, $get_category); ?>
 
 
-			if ($get_name == 'visitor') {
+		<?php } else if ($page == 'user_content') {
 
 
-				$getIdUserFromContent = getIdUserFromContent($bdd, $get_id);
-
-				require('./assets/require/variables.php');
+		if ($get_name == 'visitor') {
 
 
-				if (empty($getIdUserFromContent)) {
+			$getIdUserFromContent = getIdUserFromContent($bdd, $get_id);
 
-					$bdd = null;
-					header('location: /Diplome/index.php?error=002159');
-					die();
-				} ?>
+			require('./assets/require/variables.php');
 
 
-			<?php } else {
-
-
-				$author_id = $session_users_id;
-			}
-
-
-			$getContents = getUserContent($bdd, $author_id);
-
-
-			if (empty($getContents)) {
+			if (empty($getIdUserFromContent)) {
 
 				$bdd = null;
-				header('location: /Diplome/my_account.php?error=00211');
+				header('location: /Diplome/index.php?error=002159');
 				die();
 			} ?>
 
 
-		<?php	} else if ($page == 'user_purchased_content') {
+		<?php } else {
 
 
-			$getContents = getUserPurchasedContent($bdd, $session_users_id);
+			$author_id = $session_users_id;
+		}
 
 
-			if (empty($getContents)) {
-
-				$bdd = null;
-				header('location: /Diplome/my_account.php?error=00212');
-				die();
-			} ?>
+		$getContents = getUserContent($bdd, $author_id);
 
 
-			<?php } else if ($page == 'search_results') {
-
-
-			if (isset($_POST) && !empty($_POST)) {
-
-				if (!isset($post_title)) {
-					$post_title = null;
-				}
-
-				if (!isset($post_composer)) {
-					$post_composer = null;
-				}
-
-				if (!isset($post_category)) {
-					$post_category = null;
-				}
-
-				if (!isset($post_level)) {
-					$post_level = null;
-				}
-
-				if (!isset($post_price)) {
-					$post_price = null;
-				}
-
-				$getContents = getSearchResults($bdd, $post_title, $post_composer, $post_category, $post_level, $post_price);
-
-
-				if (empty($getContents)) {
-
-					$bdd = null;
-					header('location: /Diplome/index.php?error=002149');
-					die();
-				} ?>
-
-
-			<?php } else {
-
-				$bdd = null;
-				header('location: index.php?error=00214');
-				die();
-			} ?>
-
-
-		<?php	} else {
+		if (empty($getContents)) {
 
 			$bdd = null;
-			header('location: index.php?error=00213');
+			header('location: /Diplome/my_account.php?error=00211');
 			die();
 		} ?>
 
 
-		<?php if (isset($session_users_id) && !empty($session_users_id)) {
-
-			$getUserInformations = getUserInformations($bdd, $session_users_id);
-
-			require('./assets/require/variables.php');
-		}
+	<?php	} else if ($page == 'user_purchased_content') {
 
 
-		require('./assets/require/head.php'); ?>
+		$getContents = getUserPurchasedContent($bdd, $session_users_id);
 
 
-		<main class="autoAlpha" data-barba="wrapper">
-			<div class="min-height" data-barba="container" data-barba-namespace="content-section">
+		if (empty($getContents)) {
 
-				<div class="container">
-
-
-					<?php foreach ($getContents as $getContentOfPageContent) {
-
-						require('./assets/require/variables.php');
-
-						$getUserContentInformations = getUserContentInformations($bdd, $content_id_user);
-
-						require('./assets/require/variables.php');
-
-						require('./assets/require/modals_foreach.php'); ?>
+			$bdd = null;
+			header('location: /Diplome/my_account.php?error=00212');
+			die();
+		} ?>
 
 
-						<div class="box">
-							<div class="card">
-								<figure class="card__thumb">
-									<video class="card_video" src="./assets/videos/<?= $content_video ?>" type="video/mp4"></video>
+		<?php } else if ($page == 'search_results') {
 
 
-									<figcaption class="card__caption">
+		if (isset($_POST) && !empty($_POST)) {
 
-										<h2 class="card__title"><?= $content_title ?></h2>
-										<h2 class="card__composer"><?= $content_composer ?></h2>
-										<div class="card__likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></div>
-										<div class="card__category"><?= $content_category ?></div>
-										<p class="card__snippet"></p>
+			if (!isset($post_title)) {
+				$post_title = null;
+			}
 
+			if (!isset($post_composer)) {
+				$post_composer = null;
+			}
 
-										<?php if (isset($user_session_id) && !empty($user_session_id)) {
+			if (!isset($post_category)) {
+				$post_category = null;
+			}
 
+			if (!isset($post_level)) {
+				$post_level = null;
+			}
 
-											$getIdUserFromPurchasedContent = getIdUserFromPurchasedContent($bdd, $content_id);
+			if (!isset($post_price)) {
+				$post_price = null;
+			}
 
-											$user_session_purchased_content = in_array($user_session_id, array_column($getIdUserFromPurchasedContent, 'id_users'));
-
-
-
-											if ($content_price == 0 || $content_id_user == $user_session_id) {
-
-
-												if ($content_price == 0 && $content_id_user != $user_session_id) { ?>
-
-
-													<div class="card__price">Free</div>
+			$getContents = getSearchResults($bdd, $post_title, $post_composer, $post_category, $post_level, $post_price);
 
 
-												<?php } else if ($content_id_user == $user_session_id) { ?>
+			if (empty($getContents)) {
+
+				$bdd = null;
+				header('location: /Diplome/index.php?error=002149');
+				die();
+			} ?>
 
 
-													<div class="card__price">Your content</div>
+		<?php } else {
+
+			$bdd = null;
+			header('location: index.php?error=00214');
+			die();
+		} ?>
 
 
-												<?php } ?>
+	<?php	} else {
 
-												<div class="content_button_flex">
-													<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
-													<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
-												</div>
-
-
-											<?php } else { ?>
+		$bdd = null;
+		header('location: index.php?error=00213');
+		die();
+	} ?>
 
 
-												<?php if ($user_session_purchased_content == false) { ?>
+	<?php if (isset($session_users_id) && !empty($session_users_id)) {
+
+		$getUserInformations = getUserInformations($bdd, $session_users_id);
+
+		require('./assets/require/variables.php');
+	}
 
 
-													<div class="card__price"><?= $content_price ?> Credits</div>
-
-													<div class="content_button_flex">
-														<div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
-														<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
-													</div>
-
-												<?php } else if ($user_session_purchased_content == true) { ?>
+	require('./assets/require/head.php'); ?>
 
 
-													<div class="card__price">Purchased</div>
+	<main class="autoAlpha" data-barba="wrapper">
+		<div class="min-height" data-barba="container" data-barba-namespace="content-section">
 
-													<div class="content_button_flex">
-														<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
-														<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
-													</div>
+			<div class="container">
 
-												<?php } ?>
+
+				<?php foreach ($getContents as $getContentOfPageContent) {
+
+					require('./assets/require/variables.php');
+
+					$getUserContentInformations = getUserContentInformations($bdd, $content_id_user);
+
+					require('./assets/require/variables.php');
+
+					require('./assets/require/modals_foreach.php'); ?>
+
+
+					<div class="box">
+						<div class="card">
+							<figure class="card__thumb">
+								<video class="card_video" src="./assets/videos/<?= $content_video ?>" type="video/mp4"></video>
+
+
+								<figcaption class="card__caption">
+
+									<h2 class="card__title"><?= $content_title ?></h2>
+									<h2 class="card__composer"><?= $content_composer ?></h2>
+									<div class="card__likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></div>
+									<div class="card__category"><?= $content_category ?></div>
+									<p class="card__snippet"></p>
+
+
+									<?php if (isset($user_session_id) && !empty($user_session_id)) {
+
+
+										$getIdUserFromPurchasedContent = getIdUserFromPurchasedContent($bdd, $content_id);
+
+										$user_session_purchased_content = in_array($user_session_id, array_column($getIdUserFromPurchasedContent, 'id_users'));
+
+
+
+										if ($content_price == 0 || $content_id_user == $user_session_id) {
+
+
+											if ($content_price == 0 && $content_id_user != $user_session_id) { ?>
+
+
+												<div class="card__price">Free</div>
+
+
+											<?php } else if ($content_id_user == $user_session_id) { ?>
+
+
+												<div class="card__price">Your content</div>
 
 
 											<?php } ?>
 
+											<div class="content_button_flex">
+												<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
+												<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
+											</div>
 
-										<?php	} else { ?>
+
+										<?php } else { ?>
 
 
-											<?php if ($content_price > 0) { ?>
+											<?php if ($user_session_purchased_content == false) { ?>
 
 
 												<div class="card__price"><?= $content_price ?> Credits</div>
@@ -253,10 +222,10 @@ if (
 													<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
 												</div>
 
-											<?php } else { ?>
+											<?php } else if ($user_session_purchased_content == true) { ?>
 
 
-												<div class="card__price">Free</div>
+												<div class="card__price">Purchased</div>
 
 												<div class="content_button_flex">
 													<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
@@ -269,36 +238,56 @@ if (
 										<?php } ?>
 
 
-									</figcaption>
-								</figure>
-							</div>
+									<?php	} else { ?>
+
+
+										<?php if ($content_price > 0) { ?>
+
+
+											<div class="card__price"><?= $content_price ?> Credits</div>
+
+											<div class="content_button_flex">
+												<div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
+												<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
+											</div>
+
+										<?php } else { ?>
+
+
+											<div class="card__price">Free</div>
+
+											<div class="content_button_flex">
+												<a href="single_player_content.php?id=<?= $content_id ?>" class="card__button link_page">Watch</a>
+												<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
+											</div>
+
+										<?php } ?>
+
+
+									<?php } ?>
+
+
+								</figcaption>
+							</figure>
 						</div>
+					</div>
 
 
-					<?php } ?>
+				<?php } ?>
 
 
-				</div>
 			</div>
-		</main>
+		</div>
+	</main>
 
 
-		<?php require('./assets/require/foot.php'); ?>
-
-
-	<?php } else {
-
-		$bdd = null;
-		http_response_code(400);
-		header('location: index.php?error=00215');
-		die();
-	} ?>
+	<?php require('./assets/require/foot.php'); ?>
 
 
 <?php } else {
 
 	$bdd = null;
 	http_response_code(400);
-	header('location: index.php?error=002150');
+	header('location: index.php?error=00215');
 	die();
 } ?>
