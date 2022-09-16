@@ -70,11 +70,7 @@ if (
                     if ($user_session_id != $content_id_user) { ?>
 
 
-                      <button class="dropbtn">
-                        <a data-barba-prevent href="./assets/actions/like_action.php?name=content&id=<?= $content_id ?>" onclick="javascript:return likeContent('<?= $content_author_name ?>','<?= $content_author_lastname ?>')">
-                          Like
-                        </a>
-                      </button>
+                      <button class="dropbtn" id="like_content_button">Like</button>
 
                       <div class="dropdown">
                         <button class="dropbtn">Comment/Report</button>
@@ -94,7 +90,7 @@ if (
                         <button class="dropbtn">Edit/Delete</button>
                         <div class="dropdown-content">
                           <a id="edit_button">Edit Content</a>
-                          <a data-barba-prevent href="./assets/actions/delete_content_action.php?id=<?= $content_id ?>&type=user" onclick="javascript:return deleteAlert()">Delete Content</a>
+                          <a id="delete_content_button">Delete Content</a>
                         </div>
                       </div>
 
@@ -151,7 +147,7 @@ if (
 
                             <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?> <i class="far fa-thumbs-up"></i></span>
 
-                            <button class="dropbtn"><a data-barba-prevent href="./assets/actions/like_action.php?name=comment&id_comment=<?= $comment_id ?>&id=<?= $content_id ?>" onclick="javascript:return likeComment('<?= $comment_user_name ?>','<?= $comment_user_lastname ?>')">Like</a></button>
+                            <button class="dropbtn" id="like_comment_button<?= $comment_id ?>" onclick="javascript: likeComment('<?= $comment_id ?>')">Like</button>
 
                           <?php } else if (isset($session_users_id) && ($session_users_id == $comment_user_id)) { ?>
 

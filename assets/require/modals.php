@@ -5,8 +5,10 @@
 
         <form class="form_action" action="/Diplome/content.php?category=search_results" method="post">
 
-          <h2>Search</h2>
+          <h2>Search for content</h2>
           <br>
+
+          <div>To see all content do not fill in anything. Just click on the search button</div>
 
           <label for="search_title"></label>
           <input type="text" class="inputbox" placeholder="Title" id="search_title" name="title" />
@@ -187,6 +189,83 @@
 
           <button type="submit" class="button red">Report</button>
           <div class="button" id="report_close">Close</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="delete_content_modal" class="modal messages">
+  <div class="modal-content">
+    <div class="modal_form">
+      <div class="modal_form_content">
+
+        <form data-barba-prevent class="form_action" action="/Diplome/assets/actions/delete_content_action.php?id=<?= $content_id ?>&type=user" method="post">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <h2>Are you sure you want to delete these content ? This action is irreversible !</h2>
+          <br>
+
+          <button type="submit" class="button red">Delete</button>
+          <div class="button" id="delete_content_close">Close</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="delete_users_modal" class="modal messages">
+  <div class="modal-content">
+    <div class="modal_form">
+      <div class="modal_form_content">
+
+        <form data-barba-prevent class="form_action" action="/Diplome/assets/actions/delete_users_action.php?id=<?= $session_users_id ?>&type=user" method="post">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <h2>Are you sure you want to delete your account and all your content ? This action is irreversible !</h2>
+          <br>
+
+          <button type="submit" class="button red">Delete</button>
+          <div class="button" id="delete_users_close">Close</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="like_content_modal" class="modal messages">
+  <div class="modal-content">
+    <div class="modal_form">
+      <div class="modal_form_content">
+
+        <form class="form_action" action="./assets/actions/like_action.php?name=content&id=<?= $content_id ?>" method="post">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <br>
+
+          <?php
+          $message = "Like " . $content_author_name . " " . $content_author_lastname . "'s content ?";
+          ?>
+
+          <div><?= nl2br($message) ?></div>
+
+          <button type="submit" class="button">Like</button>
+          <div class="button" id="like_content_close">Close</div>
 
         </form>
       </div>

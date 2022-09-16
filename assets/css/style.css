@@ -1307,7 +1307,7 @@ nav {
   outline: none;
 }
 .inputbox.text {
-  height: 10rem;
+  height: 7rem;
   white-space: pre-line;
 }
 
@@ -1389,7 +1389,6 @@ nav {
 
 .modal_description {
   overflow: hidden;
-  text-align: justify;
   white-space: pre-line;
   display: flex;
   justify-content: center;

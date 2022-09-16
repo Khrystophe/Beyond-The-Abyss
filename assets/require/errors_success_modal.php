@@ -132,3 +132,87 @@ if (isset($get_error) || isset($get_success)) {
   </script>
 
 <?php } ?>
+
+
+<div id="valid_content_modal" class="modal messages">
+  <div class="modal-content">
+    <div class="modal_form">
+      <div class="modal_form_content">
+        <form class="form_action">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <br>
+
+          <div>Respect files format : "|0-9a-zA-Zéèêàçù# ()\'!,;°-| |.| |webm/mp4/ogv|" and 128 Mo max.</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="max_length_modal" class="modal messages">
+  <div class="modal-content">
+    <div class="modal_form">
+      <div class="modal_form_content">
+        <form class="form_action">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <br>
+
+          <div>Maximum 250 characters !</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="input_name_lastname_modal" class="modal messages">
+  <div class="modal-content">
+    <div class="modal_form">
+      <div class="modal_form_content">
+        <form class="form_action">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <br>
+
+          <div>Respect format : (|a-zA-Zéèêàçù '-| min 1 max 10 chars)</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="input_password_modal" class="modal messages">
+  <div class="modal-content">
+    <div class="modal_form">
+      <div class="modal_form_content">
+        <form class="form_action">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <br>
+
+          <div>Respect format : (|0-9a-zA-Z|) min 2 max 40 chars</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

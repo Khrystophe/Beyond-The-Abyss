@@ -136,7 +136,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 								</div>
 
 								<div class="form_action">
-									<button class="btn_content"><a data-barba-prevent class="button red" href="/Diplome/assets/actions/delete_users_action.php?id=<?= $get_user_id ?>&type=user" onclick="javascript:return deleteAccountAlert()">Delete my account</a></button>
+									<button class="btn_content"><a class="button red" id="delete_users_button">Delete my account</a></button>
 								</div>
 							</div>
 						</div>
@@ -146,7 +146,9 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 					<?php foreach ($getNotifications as $getNotification) {
 
 
-						require('./assets/require/variables.php'); ?>
+						require('./assets/require/variables.php');
+
+						require('./assets/require/modals_foreach.php'); ?>
 
 
 						<div class='deck_account'>
@@ -160,7 +162,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 								</div>
 
 								<div class="form_action">
-									<button class="btn_content"><a data-barba-prevent class="button link_page" href="/Diplome/assets/actions/delete_notification_action.php?id=<?= $notification_id ?>">Delete</a></button>
+									<button class="btn_content"><a class="button" id="delete_notification_button<?= $notification_id ?>" onclick="javascript: deleteNotification('<?= $notification_id ?>')">Delete</a></button>
 								</div>
 							</div>
 						</div>

@@ -32,7 +32,7 @@
             <?php } else { ?>
 
 
-              <div>You are not connected.<br>Log in or register.<br>You will get 50 credits.</div>
+              <div>You are not connected.<br>Log in or register.<br>You will get 500 credits.</div>
               <br>
               <div class="button" id="buy_close<?= $content_id ?>">Close</div>
 
@@ -77,5 +77,62 @@
     </div>
   </div>
 
+
+  <div id="like_comment_modal<?= $comment_id ?>" class="modal messages">
+    <div class="modal-content">
+      <div class="modal_form">
+        <div class="modal_form_content">
+
+          <form class="form_action" action="./assets/actions/like_action.php?name=comment&id_comment=<?= $comment_id ?>&id=<?= $content_id ?>" method="post">
+
+            <div class="messages_logo">
+              <img src="./assets/img/musicgrise.png" alt="" />
+            </div>
+
+            <br>
+
+            <?php
+            $message = "Like " . $comment_user_name . " " . $comment_user_lastname . "'s comments ?";
+            ?>
+
+            <div><?= nl2br($message) ?></div>
+
+            <button type="submit" class="button">Like</button>
+            <div class="button" id="like_comment_close<?= $comment_id ?>">Close</div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<?php } ?>
+
+
+<?php if (isset($notification_id)) { ?>
+
+  <div id="delete_notification_modal<?= $notification_id ?>" class="modal messages">
+    <div class="modal-content">
+      <div class="modal_form">
+        <div class="modal_form_content">
+
+          <form data-barba-prevent class="form_action" action="/Diplome/assets/actions/delete_notification_action.php?id=<?= $notification_id ?>" method="post">
+
+            <div class="messages_logo">
+              <img src="./assets/img/musicgrise.png" alt="" />
+            </div>
+
+            <h2>Are you sure you want to delete these notification ? This action is irreversible !</h2>
+            <br>
+
+            <button type="submit" class="button red">Delete</button>
+            <div class="button" id="delete_notification_close<?= $notification_id ?>">Close</div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <?php } ?>

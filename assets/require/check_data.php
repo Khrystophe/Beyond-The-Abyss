@@ -181,7 +181,7 @@ if (isset($_POST['password']) && !empty($_POST['password'])) {
 
   $check_post_password = is_string($_POST['password'])
     && strlen($_POST['password']) >= 2
-    && preg_match("/^([1-9][0-9])+$/", $_POST['password']);
+    && preg_match("/^[0-9a-zA-Z]+$/", $_POST['password']);
 
   if ($check_post_password === true) {
 
@@ -194,7 +194,7 @@ if (isset($_POST['password_confirm']) && !empty($_POST['password_confirm'])) {
 
   $check_post_password_confirm = is_string($_POST['password_confirm'])
     && strlen($_POST['password_confirm']) >= 2
-    && preg_match("/^([1-9][0-9])+$/", $_POST['password_confirm']);
+    && preg_match("/^[0-9a-zA-Z]+$/", $_POST['password_confirm']);
 
   if ($check_post_password_confirm === true) {
 
@@ -207,7 +207,7 @@ if (isset($_POST['old_password']) && !empty($_POST['old_password'])) {
 
   $check_post_old_password = is_string($_POST['old_password'])
     && strlen($_POST['old_password']) >= 2
-    && preg_match("/^([1-9][0-9])+$/", $_POST['old_password']);
+    && preg_match("/^[0-9a-zA-Z]+$/", $_POST['old_password']);
 
   if ($check_post_old_password === true) {
 
@@ -220,7 +220,7 @@ if (isset($_POST['new_password']) && !empty($_POST['new_password'])) {
 
   $check_post_new_password = is_string($_POST['new_password'])
     && strlen($_POST['new_password']) >= 2
-    && preg_match("/^([1-9][0-9])+$/", $_POST['new_password']);
+    && preg_match("/^[0-9a-zA-Z]+$/", $_POST['new_password']);
 
   if ($check_post_new_password === true) {
 
@@ -233,7 +233,7 @@ if (isset($_POST['new_password_confirm']) && !empty($_POST['new_password_confirm
 
   $check_post_new_password_confirm = is_string($_POST['new_password_confirm'])
     && strlen($_POST['new_password_confirm']) >= 2
-    && preg_match("/^([1-9][0-9])+$/", $_POST['new_password_confirm']);
+    && preg_match("/^[0-9a-zA-Z]+$/", $_POST['new_password_confirm']);
 
   if ($check_post_new_password_confirm === true) {
 

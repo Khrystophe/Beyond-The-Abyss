@@ -24,30 +24,30 @@ if (!isset($session_users_id)) {
 						<div class="rightside">
 							<form class="form_action" action="./assets/actions/register_action.php" method="post" enctype="multipart/form-data">
 
-								<label for="register_name">Name : (|a-zA-Zéèêàçù '-| max 10 chars)</label>
-								<input type="text" class="inputbox" placeholder="Name" id="register_name" name="name" required pattern="^[a-zA-Zéèêàçù '-]+$" maxlength="10" />
+								<label for="register_name">Name : (max 10 chars)</label>
+								<input type="text" class="inputbox" placeholder="Name" id="register_name" name="name" required onkeyup="javascript:input(this,'register_name',11,'input_name_lastname');" />
 
-								<label for="register_lastname">Lastname : (|a-zA-Zéèêàçù '-| max 10 chars)</label>
-								<input type="text" class="inputbox" placeholder="Lastname" id="register_lastname" name="lastname" required pattern="^[a-zA-Zéèêàçù '-]+$" maxlength="10" />
+								<label for="register_lastname">Lastname : (max 10 chars)</label>
+								<input type="text" class="inputbox" placeholder="Lastname" id="register_lastname" name="lastname" required onkeyup="javascript:input(this,'register_lastname',11, 'input_name_lastname');" />
 
 								<label for=" register_email">Email (Valid email)</label>
 								<input type="text" class="inputbox" placeholder="Email" id="register_email" name="email" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" />
 
 								<label for="register_password">Password : ('0-9' min 2 chars )</label>
-								<input type="password" class="inputbox" placeholder="Password" id="register_password" name="password" required pattern="^([1-9][0-9])+$" minlength="2" />
+								<input type="password" class="inputbox" placeholder="Password" id="register_password" name="password" required onkeyup="javascript:input(this,'register_password',40, 'input_password');" minlength="2" />
 
 								<label for="register_password_confirm"></label>
-								<input type="password" class="inputbox" placeholder="Confirm your password" id="register_password_confirm" name="password_confirm" required pattern="^([1-9][0-9])+$" minlength="2" />
+								<input type="password" class="inputbox" placeholder="Confirm your password" id="register_password_confirm" name="password_confirm" required onkeyup="javascript:input(this,'register_password_confirm',40, 'input_password');" minlength="2" />
 
 								<button type="submit" class="button">Register</button>
 							</form>
 						</div>
 					</div>
-					<?php require('./assets/require/foot.php'); ?>
 				</div>
 			</div>
 		</main>
 
+		<?php require('./assets/require/foot.php'); ?>
 
 	<?php	} else {
 
