@@ -88,10 +88,10 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 								<form class="form_action" action="./assets/actions/add_content_action.php?type=user" method="post" enctype="multipart/form-data">
 
 									<label for="my_account_title"></label>
-									<input type="text" class="inputbox" placeholder="Title (max 25 chars)" id="my_account_title" name="title" onkeyup="javascript:input(this,'my_account_title',26, 'input_title');" required />
+									<input type="text" class="inputbox" placeholder="Title (max 20 chars)" id="my_account_title" name="title" onkeyup="javascript:input(this,'my_account_title',21, 'input_title');" required />
 
 									<label for="my_account_composer"></label>
-									<input type="text" class="inputbox" placeholder="Composer (max 25 chars)" id="my_account_composer" name="composer" onkeyup="javascript:input(this,'my_account_composer',26, 'input_composer');" maxlength="25" required />
+									<input type="text" class="inputbox" placeholder="Composer (max 20 chars)" id="my_account_composer" name="composer" onkeyup="javascript:input(this,'my_account_composer',21, 'input_composer');" required />
 
 									<label for="my_account_description"></label>
 									<textarea class="inputbox text" placeholder="Description (max 250 chars)" id="my_account_description" name="description" onkeyup="javascript:input(this,'my_account_description',251, 'input_description');" required></textarea>

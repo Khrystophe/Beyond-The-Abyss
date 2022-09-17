@@ -1,39 +1,19 @@
 
-function MaxLengthDescription(description, maxlength) {
-
-  if (description.value.length > maxlength) {
-    description.value = description.value.substring(0, maxlength);
-
-    let max_length_modal = document.getElementById("max_length_modal");
-
-    max_length_modal.style.display = "flex"
-
-    document.onclick = function() {
-      max_length_modal.style.display = "none";
-    }
-  }
-}
-
-
 function input(string, id, maxLength, index) {
-
-
-  // window.addEventListener("keyup", function (event) {
-    
-console.log(event.key);
 
     let array_regex ={
       'input_name_lastname' : /^(?!\s*$)[a-zA-Zéèêàçù \'-]+$/,
       'input_password' : /^[0-9a-zA-Z]+$/,
       'input_title' : /^[0-9a-zA-Zéèêàçù '!?°-]+$/,
       'input_composer' : /^[0-9a-zA-Zéèêàçù -]+$/,
-      'input_description' : /^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$/,
+      'input_description' : /^[\\s\r\n0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$/,
+      'input_contact' : /^[\\s\r\n0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$/,
       'input_price' : /^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500|[Free]+)$/,
   }
   
   let regex = array_regex[index];
   
-  if (((string.value.match(regex)) && string.value.length < maxLength) || event.key === 'Tab' || event.key === 'Backspace') {
+  if (((string.value.match(regex)) && string.value.length < maxLength) || event.key === 'Tab' || event.key === 'Backspace' || event.key === 'Enter') {
     
     return true
     
@@ -54,7 +34,6 @@ console.log(event.key);
       input_modal.style.display = "none";
     }
   }
-// });
 }
 
 

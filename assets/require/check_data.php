@@ -244,7 +244,7 @@ if (isset($_POST['new_password_confirm']) && !empty($_POST['new_password_confirm
 
 if (isset($_POST['title']) && !empty($_POST['title'])) {
 
-  $check_post_title = strlen($_POST['title']) <= 25
+  $check_post_title = strlen($_POST['title']) <= 20
     && is_string($_POST['title'])
     && preg_match("/^[0-9a-zA-Zéèêàçù '!?°-]+$/", $_POST['title']);
 
@@ -260,7 +260,7 @@ if (isset($_POST['title']) && !empty($_POST['title'])) {
 
 if (isset($_POST['composer']) && !empty($_POST['composer'])) {
 
-  $check_post_composer = strlen($_POST['composer']) <= 25
+  $check_post_composer = strlen($_POST['composer']) <= 20
     && is_string($_POST['composer'])
     && preg_match("/^[0-9a-zA-Zéèêàçù -]+$/", $_POST['composer']);
 

@@ -101,7 +101,7 @@ if (isset($get_error) || isset($get_success)) {
 
 ?>
 
-  <div id="messages_modal" class="modal messages">
+  <div id="messages_modal" class="modal_messages">
     <div class="modal-content">
       <div class="modal_form">
         <div class="modal_form_content">
@@ -134,7 +134,7 @@ if (isset($get_error) || isset($get_success)) {
 <?php } ?>
 
 
-<div id="valid_content_modal" class="modal messages">
+<div id="valid_content_modal" class="modal_messages">
   <div class="modal-content">
     <div class="modal_form">
       <div class="modal_form_content">
@@ -155,7 +155,7 @@ if (isset($get_error) || isset($get_success)) {
 </div>
 
 
-<div id="max_length_modal" class="modal messages">
+<div id="max_length_modal" class="modal_messages">
   <div class="modal-content">
     <div class="modal_form">
       <div class="modal_form_content">
@@ -176,7 +176,7 @@ if (isset($get_error) || isset($get_success)) {
 </div>
 
 
-<div id="input_name_lastname_modal" class="modal messages">
+<div id="input_name_lastname_modal" class="modal_messages">
   <div class="modal-content">
     <div class="modal_form">
       <div class="modal_form_content">
@@ -197,7 +197,7 @@ if (isset($get_error) || isset($get_success)) {
 </div>
 
 
-<div id="input_password_modal" class="modal messages">
+<div id="input_password_modal" class="modal_messages">
   <div class="modal-content">
     <div class="modal_form">
       <div class="modal_form_content">
@@ -217,7 +217,7 @@ if (isset($get_error) || isset($get_success)) {
   </div>
 </div>
 
-<div id="input_title_modal" class="modal messages">
+<div id="input_title_modal" class="modal_messages">
   <div class="modal-content">
     <div class="modal_form">
       <div class="modal_form_content">
@@ -229,7 +229,7 @@ if (isset($get_error) || isset($get_success)) {
 
           <br>
 
-          <div>Respect format : (|0-9a-zA-Zéèêàçù '!?°-| max 25 chars )</div>
+          <div>Respect format : (|0-9a-zA-Zéèêàçù '!?°-| max 20 chars )</div>
 
         </form>
       </div>
@@ -237,7 +237,7 @@ if (isset($get_error) || isset($get_success)) {
   </div>
 </div>
 
-<div id="input_composer_modal" class="modal messages">
+<div id="input_composer_modal" class="modal_messages">
   <div class="modal-content">
     <div class="modal_form">
       <div class="modal_form_content">
@@ -249,7 +249,7 @@ if (isset($get_error) || isset($get_success)) {
 
           <br>
 
-          <div>Respect format : (|0-9a-zA-Zéèêàçù -| max 25 chars )</div>
+          <div>Respect format : (|0-9a-zA-Zéèêàçù -| max 20 chars )</div>
 
         </form>
       </div>
@@ -257,7 +257,7 @@ if (isset($get_error) || isset($get_success)) {
   </div>
 </div>
 
-<div id="input_description_modal" class="modal messages">
+<div id="input_description_modal" class="modal_messages">
   <div class="modal-content">
     <div class="modal_form">
       <div class="modal_form_content">
@@ -277,7 +277,29 @@ if (isset($get_error) || isset($get_success)) {
   </div>
 </div>
 
-<div id="input_price_modal" class="modal messages">
+
+<div id="input_contact_modal" class="modal_messages">
+  <div class="modal-content">
+    <div class="modal_form">
+      <div class="modal_form_content">
+        <form class="form_action">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <br>
+
+          <div>Respect format : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-| max 10000 chars )</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="input_price_modal" class="modal_messages">
   <div class="modal-content">
     <div class="modal_form">
       <div class="modal_form_content">

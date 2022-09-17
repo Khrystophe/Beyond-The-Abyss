@@ -60,8 +60,8 @@
             <h2>Contact an administrator</h2>
             <br>
 
-            <label for=" contact_message">Message : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-|)</label>
-            <textarea class="inputbox text" id="contact_message" name="message" pattern="^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$" required></textarea>
+            <label for=" contact_message"></label>
+            <textarea class="inputbox text" placeholder="Your message (max 10000 chars)" id="contact_message" name="message" onkeyup="javascript:input(this,'contact_message',10000, 'input_contact');" required></textarea>
 
             <button type="submit" class="button">Post</button>
             <div class="button" id="contact_close">Close</div>
@@ -96,13 +96,13 @@
           <br>
 
           <label for="single_player_edit_title"></label>
-          <input type="text" class="inputbox" value="<?= $content_title ?>" placeholder="<?= $content_title ?>" id="single_player_edit_title" name="title" onkeyup="javascript:input(this,'single_player_edit_title',26, 'input_title');" />
+          <input type="text" class="inputbox" value="<?= $content_title ?>" placeholder="<?= $content_title ?>" id="single_player_edit_title" name="title" onkeyup="javascript:input(this,'single_player_edit_title',21, 'input_title');" />
 
           <label for="single_player_edit_composer"></label>
-          <input type="text" class="inputbox" value="<?= $content_composer ?>" placeholder="<?= $content_composer ?>" id="single_player_edit_composer" name="composer" onkeyup="javascript:input(this,'single_player_edit_composer',26, 'input_composer');" />
+          <input type="text" class="inputbox" value="<?= $content_composer ?>" placeholder="<?= $content_composer ?>" id="single_player_edit_composer" name="composer" onkeyup="javascript:input(this,'single_player_edit_composer',21, 'input_composer');" />
 
           <label for="single_player_edit_description"></label>
-          <textarea class="inputbox text" value="<?= $content_description ?>" placeholder="<?= $content_description ?>" id="single_player_edit_description" name="description" onkeyup="javascript:input(this,'single_player_edit_description',251, 'input_description');"></textarea>
+          <textarea class="inputbox text" value="<?= $content_description ?>" placeholder="<?= $content_description ?>" id="single_player_edit_description" name="description" onkeyup="javascript:input(this,'single_player_edit_description',251, 'input_description');"><?= $content_description ?></textarea>
 
           <?php if ($content_category == 'Tutorial') {
             $content_category = 'tutorial';
@@ -159,7 +159,7 @@
           <br>
 
           <label for="single_player_comment">Comment : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-|)</label>
-          <textarea class="inputbox text" id="single_player_comment" name="comment" pattern="^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$" required></textarea>
+          <textarea class="inputbox text" id="single_player_comment" name="comment" onkeyup="javascript:input(this,'single_player_comment',10000, 'input_contact');" required></textarea>
 
           <button type="submit" class="button">Post Comment</button>
           <div class="button" id="comment_close">Close</div>
@@ -185,7 +185,7 @@
           <br>
 
           <label for="single_player_report">Message : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-|)</label>
-          <textarea class="inputbox text" id="single_player_report" name="message" pattern="^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$" required></textarea>
+          <textarea class="inputbox text" id="single_player_report" name="message" onkeyup="javascript:input(this,'single_player_report',10000, 'input_contact');" required></textarea>
 
           <button type="submit" class="button red">Report</button>
           <div class="button" id="report_close">Close</div>

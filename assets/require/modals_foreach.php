@@ -65,8 +65,8 @@
             <h2>Your comment</h2>
             <br>
 
-            <label for="single_player_edit_comment<?= $comment_id ?>">Comment : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-|</label>
-            <textarea class="inputbox text" id="single_player_edit_comment<?= $comment_id ?>" name="comment" pattern="^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$" value="<?= $comment_text ?>"><?= $comment_text ?></textarea>
+            <label for="single_player_edit_comment<?= $comment_id ?>"></label>
+            <textarea class="inputbox text" id="single_player_edit_comment<?= $comment_id ?>" name="comment" onkeyup="javascript:input(this,'single_player_edit_comment<?= $comment_id ?>',10000, 'input_contact');" value="<?= $comment_text ?>"><?= $comment_text ?></textarea>
 
             <button type="submit" class="button">Edit Comment</button>
             <div class="button" id="edit_comment_close<?= $comment_id ?>">Close</div>
