@@ -36,8 +36,8 @@
           <label for="search_price">Free Content</label>
           <input type="checkbox" class="inputbox" id="search_price" value="Free" name="price">
 
-          <button type="submit" class="button">Search</button>
-          <div class="button" id="search_close">Close</div>
+          <button type="submit" class="button green">Search</button>
+          <div class="button green" id="search_close">Close</div>
         </form>
       </div>
     </div>
@@ -63,13 +63,13 @@
             <label for=" contact_message"></label>
             <textarea class="inputbox text" placeholder="Your message (max 10000 chars)" id="contact_message" name="message" onkeyup="javascript:input(this,'contact_message',10000, 'input_contact');" required></textarea>
 
-            <button type="submit" class="button">Post</button>
-            <div class="button" id="contact_close">Close</div>
+            <button type="submit" class="button orange">Post</button>
+            <div class="button green" id="contact_close">Close</div>
 
           <?php } else { ?>
 
             <div>You are not logged in</div>
-            <div class="button" id="contact_close">Close</div>
+            <div class="button green" id="contact_close">Close</div>
 
           <?php } ?>
         </form>
@@ -135,8 +135,8 @@
           <label for="single_player_edit_price">Price : (from 1 to 500 or free (type 'Free'))</label>
           <input type="text" class="inputbox" value="<?= $content_price ?>" placeholder="<?= $content_price ?>" id="single_player_edit_price" name="price" onkeyup="javascript:input(this,'single_player_edit_price',5, 'input_price');" />
 
-          <button type="submit" class="button">Edit</button>
-          <div class="button" id="edit_close">Close</div>
+          <button type="submit" class="button orange">Edit</button>
+          <div class="button green" id="edit_close">Close</div>
 
         </form>
       </div>
@@ -161,8 +161,8 @@
           <label for="single_player_comment">Comment : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-|)</label>
           <textarea class="inputbox text" id="single_player_comment" name="comment" onkeyup="javascript:input(this,'single_player_comment',10000, 'input_contact');" required></textarea>
 
-          <button type="submit" class="button">Post Comment</button>
-          <div class="button" id="comment_close">Close</div>
+          <button type="submit" class="button green">Post Comment</button>
+          <div class="button green" id="comment_close">Close</div>
 
         </form>
       </div>
@@ -188,7 +188,7 @@
           <textarea class="inputbox text" id="single_player_report" name="message" onkeyup="javascript:input(this,'single_player_report',10000, 'input_contact');" required></textarea>
 
           <button type="submit" class="button red">Report</button>
-          <div class="button" id="report_close">Close</div>
+          <div class="button green" id="report_close">Close</div>
 
         </form>
       </div>
@@ -212,7 +212,7 @@
           <br>
 
           <button type="submit" class="button red">Delete</button>
-          <div class="button" id="delete_content_close">Close</div>
+          <div class="button green" id="delete_content_close">Close</div>
 
         </form>
       </div>
@@ -236,7 +236,7 @@
           <br>
 
           <button type="submit" class="button red">Delete</button>
-          <div class="button" id="delete_users_close">Close</div>
+          <div class="button green" id="delete_users_close">Close</div>
 
         </form>
       </div>
@@ -264,8 +264,8 @@
 
           <div><?= nl2br($message) ?></div>
 
-          <button type="submit" class="button">Like</button>
-          <div class="button" id="like_content_close">Close</div>
+          <button type="submit" class="button green">Like</button>
+          <div class="button green" id="like_content_close">Close</div>
 
         </form>
       </div>

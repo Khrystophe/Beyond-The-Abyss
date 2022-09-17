@@ -26,7 +26,7 @@
               <div class="modal_message"><?= nl2br($message) ?></div>
               <br>
               <button type="submit" class="button red">Buy</button>
-              <div class="button" id="buy_close<?= $content_id ?>">Close</div>
+              <div class="button green" id="buy_close<?= $content_id ?>">Close</div>
 
 
             <?php } else { ?>
@@ -34,7 +34,7 @@
 
               <div>You are not connected.<br>Log in or register.<br>You will get 500 credits.</div>
               <br>
-              <div class="button" id="buy_close<?= $content_id ?>">Close</div>
+              <div class="button green" id="buy_close<?= $content_id ?>">Close</div>
 
 
             <?php } ?>
@@ -68,8 +68,8 @@
             <label for="single_player_edit_comment<?= $comment_id ?>"></label>
             <textarea class="inputbox text" id="single_player_edit_comment<?= $comment_id ?>" name="comment" onkeyup="javascript:input(this,'single_player_edit_comment<?= $comment_id ?>',10000, 'input_contact');" value="<?= $comment_text ?>"><?= $comment_text ?></textarea>
 
-            <button type="submit" class="button">Edit Comment</button>
-            <div class="button" id="edit_comment_close<?= $comment_id ?>">Close</div>
+            <button type="submit" class="button orange">Edit Comment</button>
+            <div class="button green" id="edit_comment_close<?= $comment_id ?>">Close</div>
 
           </form>
         </div>
@@ -97,8 +97,8 @@
 
             <div><?= nl2br($message) ?></div>
 
-            <button type="submit" class="button">Like</button>
-            <div class="button" id="like_comment_close<?= $comment_id ?>">Close</div>
+            <button type="submit" class="button green">Like</button>
+            <div class="button green" id="like_comment_close<?= $comment_id ?>">Close</div>
 
           </form>
         </div>
@@ -127,7 +127,7 @@
             <br>
 
             <button type="submit" class="button red">Delete</button>
-            <div class="button" id="delete_notification_close<?= $notification_id ?>">Close</div>
+            <div class="button green" id="delete_notification_close<?= $notification_id ?>">Close</div>
 
           </form>
         </div>

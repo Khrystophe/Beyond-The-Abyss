@@ -100,10 +100,23 @@
     height: 15px;
     display: flex;
     align-items: center;
-    &:hover{
-	  transform: scale(1.05) translateY(-3px);
-    transition: all 0.4s;
-    box-shadow: 3px 3px 6px #8d8d8d85;
+    &.green{
+      &:hover{
+          background:linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+          color: #000000; 
+      }
+    }
+    &.orange{
+        &:hover{
+            background:linear-gradient(135deg, #757100 0%, #f6ff00 100%);
+            color: #000000; 
+        }
+    }
+    &.red{
+        &:hover{
+            background:linear-gradient(135deg, #510000 0%, #ff0000 100%);
+            color: #000000;
+        }
     }
   } 
 
@@ -190,12 +203,15 @@
   a{
     color: rgb(66 66 66);
     text-decoration: none;
-  }
-  &:hover{
-	  transform: scale(1.05) translateY(-3px);
-    transition: all 0.4s;
-    box-shadow: 3px 3px 6px #8d8d8d85;
+    &:hover{
+      color: #000000; 
     }
+  }
+  &.green{
+    &:hover{
+        background:linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+    }
+}
 }
 
 .tag {

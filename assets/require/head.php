@@ -60,7 +60,7 @@ if (isset($session_users_id)) {
 			<div class="nav_bar">
 
 
-				<button class="nav_search" id="search_button" onfocus="javascript:modal('search')"><i class="far fa-search"></i></button>
+				<button class="nav_search green" id="search_button" onfocus="javascript:modal('search')"><i class="far fa-search"></i></button>
 
 
 				<?php if (isset($session_users_id)) { ?>

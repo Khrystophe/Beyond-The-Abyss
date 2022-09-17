@@ -100,9 +100,23 @@
     transition: all 0.4s;
     text-decoration: none;
     cursor: pointer;
+    &.green{
+        &:hover{
+            background:linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+            color: #000000; 
+        }
+    }
+    &.orange{
+        &:hover{
+            background:linear-gradient(135deg, #757100 0%, #f6ff00 100%);
+            color: #000000; 
+        }
+    }
     &.red{
-        background:linear-gradient(135deg, #750000 0%, #ff0000 100%) ;
-        color: #000000; 
+        &:hover{
+            background:linear-gradient(135deg, #510000 0%, #ff0000 100%);
+            color: #000000;
+        }
     }
 }
 
@@ -143,12 +157,12 @@
     }
 }
 
-.button:hover
-{
-	transform: scale(1.05) translateY(-3px);
-    transition: all 0.4s;
-    box-shadow: 3px 3px 6px #8d8d8d85;
-}
+// .button:hover
+// {
+// 	transform: scale(1.05) translateY(-3px);
+//     transition: all 0.4s;
+//     box-shadow: 3px 3px 6px #8d8d8d85;
+// }
 
 .margin{
     height: 1rem;

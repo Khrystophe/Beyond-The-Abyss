@@ -70,7 +70,7 @@ if (
                     if ($user_session_id != $content_id_user) { ?>
 
 
-                      <button class="dropbtn" id="like_content_button" onfocus="javascript:modal('like_content')">Like</button>
+                      <button class="dropbtn green" id="like_content_button" onfocus="javascript:modal('like_content')">Like</button>
 
                       <div class="dropdown">
                         <button class="drop">Comment/Report</button>
@@ -84,7 +84,7 @@ if (
                     <?php } else { ?>
 
 
-                      <button class="dropbtn" id="comment_button" onfocus="javascript:modal('comment')">Comment</button>
+                      <button class="dropbtn green" id="comment_button" onfocus="javascript:modal('comment')">Comment</button>
 
                       <div class="dropdown">
                         <button class="drop">Edit/Delete</button>
@@ -104,7 +104,7 @@ if (
                 </div>
 
                 <div class="description">
-                  <div class="column1">
+                  <div class="column1 green">
                     <a class="link_page" href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content"><?= $content_author_name . " " . $content_author_lastname ?></a>
                   </div>
 
@@ -147,7 +147,7 @@ if (
 
                             <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?> <i class="far fa-thumbs-up"></i></span>
 
-                            <button class="dropbtn" id="like_comment_button<?= $comment_id ?>" onfocus="javascript: modalForeach('like_comment','<?= $comment_id ?>')">Like</button>
+                            <button class="dropbtn green" id="like_comment_button<?= $comment_id ?>" onfocus="javascript: modalForeach('like_comment','<?= $comment_id ?>')">Like</button>
 
                           <?php } else if (isset($session_users_id) && ($session_users_id == $comment_user_id)) { ?>
 
@@ -156,7 +156,7 @@ if (
 
                             <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?> <i class="far fa-thumbs-up"></i></span>
 
-                            <button class="dropbtn" id="edit_comment_button<?= $comment_id ?>" onfocus="javascript: modalForeach('edit_comment', '<?= $comment_id ?>')">Edit</button>
+                            <button class="dropbtn orange" id="edit_comment_button<?= $comment_id ?>" onfocus="javascript: modalForeach('edit_comment', '<?= $comment_id ?>')">Edit</button>
 
 
                           <?php } else { ?>

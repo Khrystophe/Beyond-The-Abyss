@@ -25,6 +25,10 @@
   background-color: rgb(0,0,0,0.7);
   flex-direction: column;
   justify-content: center;
+  .modal-content{
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .modal_form{
@@ -57,7 +61,7 @@
   justify-content: center;
 }
 
-#input_price, #input_contact, #input_description, #input_composer,#input_title,#input_password,#input_namelastname{
+#input_price, #input_contact, #input_description, #input_composer,#input_title,#input_password,#input_namelastname, #input_content{
   display: none;
 }
 

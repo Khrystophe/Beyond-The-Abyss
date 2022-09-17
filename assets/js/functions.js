@@ -71,26 +71,32 @@ function validContent(page){
 
         document.getElementById(page+'_content').value = '';
 
-        let valid_content_modal = document.getElementById("valid_content_modal");
-
-        valid_content_modal.style.display = "flex"
-
+        let input_modal = document.getElementById("input_modal");
+        let message_regex = document.getElementById("input_content");
+        
+        input_modal.style.display = "flex"
+        message_regex.style.display = "flex"
+        
         document.onclick = function() {
-          valid_content_modal.style.display = "none";
+          input_modal.style.display = "none";
+          message_regex.style.display = "none"
         }
         
       }
-  } else {
-
-    document.getElementById(page+'_content').value= '';
-    
-    
-    let valid_content_modal = document.getElementById("valid_content_modal");
-
-    valid_content_modal.style.display = "flex"
-
-    document.onclick = function() {
-      valid_content_modal.style.display = "none";
+    } else {
+      
+      document.getElementById(page+'_content').value= '';
+      
+      
+      let valid_content_modal = document.getElementById("input_modal");
+      let message_regex = document.getElementById("input_content");
+      
+      valid_content_modal.style.display = "flex"
+      message_regex.style.display = "flex"
+      
+      document.onclick = function() {
+        valid_content_modal.style.display = "none";
+        message_regex.style.display = "none"
     }
 
   }

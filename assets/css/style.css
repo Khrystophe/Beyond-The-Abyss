@@ -93,6 +93,10 @@ nav {
   color: rgb(129, 129, 129);
   cursor: pointer;
 }
+.nav_bar .nav_search.green:hover {
+  background: linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+  color: #000000;
+}
 .nav_bar .user_nav {
   display: flex;
   flex-direction: column;
@@ -1140,10 +1144,17 @@ nav {
   display: flex;
   align-items: center;
 }
-.player_bottom_bar .dropbtn:hover {
-  transform: scale(1.05) translateY(-3px);
-  transition: all 0.4s;
-  box-shadow: 3px 3px 6px rgba(141, 141, 141, 0.5215686275);
+.player_bottom_bar .dropbtn.green:hover {
+  background: linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+  color: #000000;
+}
+.player_bottom_bar .dropbtn.orange:hover {
+  background: linear-gradient(135deg, #757100 0%, #f6ff00 100%);
+  color: #000000;
+}
+.player_bottom_bar .dropbtn.red:hover {
+  background: linear-gradient(135deg, #510000 0%, #ff0000 100%);
+  color: #000000;
 }
 .player_bottom_bar .drop {
   background: linear-gradient(135deg, #161616 0%, #272727 100%);
@@ -1201,10 +1212,11 @@ nav {
   color: rgb(66, 66, 66);
   text-decoration: none;
 }
-.column1:hover {
-  transform: scale(1.05) translateY(-3px);
-  transition: all 0.4s;
-  box-shadow: 3px 3px 6px rgba(141, 141, 141, 0.5215686275);
+.column1 a:hover {
+  color: #000000;
+}
+.column1.green:hover {
+  background: linear-gradient(135deg, #00750c 0%, #00ff37 100%);
 }
 
 .tag {
@@ -1331,8 +1343,16 @@ nav {
   text-decoration: none;
   cursor: pointer;
 }
-.button.red {
-  background: linear-gradient(135deg, #750000 0%, #ff0000 100%);
+.button.green:hover {
+  background: linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+  color: #000000;
+}
+.button.orange:hover {
+  background: linear-gradient(135deg, #757100 0%, #f6ff00 100%);
+  color: #000000;
+}
+.button.red:hover {
+  background: linear-gradient(135deg, #510000 0%, #ff0000 100%);
   color: #000000;
 }
 
@@ -1367,12 +1387,6 @@ nav {
   color: #000000;
 }
 
-.button:hover {
-  transform: scale(1.05) translateY(-3px);
-  transition: all 0.4s;
-  box-shadow: 3px 3px 6px rgba(141, 141, 141, 0.5215686275);
-}
-
 .margin {
   height: 1rem;
 }
@@ -1404,6 +1418,10 @@ nav {
   flex-direction: column;
   justify-content: center;
 }
+.modal_messages .modal-content {
+  display: flex;
+  justify-content: center;
+}
 
 .modal_form h2 {
   font-size: 18px;
@@ -1433,7 +1451,7 @@ nav {
   justify-content: center;
 }
 
-#input_price, #input_contact, #input_description, #input_composer, #input_title, #input_password, #input_namelastname {
+#input_price, #input_contact, #input_description, #input_composer, #input_title, #input_password, #input_namelastname, #input_content {
   display: none;
 }
 
@@ -1545,14 +1563,13 @@ nav {
   display: flex;
   align-items: center;
 }
-.cardBody .cardStats .dropbtn a {
-  text-decoration: none;
-  color: #535353;
+.cardBody .cardStats .dropbtn.green:hover {
+  background: linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+  color: #000000;
 }
-.cardBody .cardStats .dropbtn:hover {
-  transform: scale(1.05) translateY(-3px);
-  transition: all 0.4s;
-  box-shadow: 3px 3px 6px rgba(141, 141, 141, 0.5215686275);
+.cardBody .cardStats .dropbtn.orange:hover {
+  background: linear-gradient(135deg, #757100 0%, #f6ff00 100%);
+  color: #000000;
 }
 .cardBody .cardStats .cardStats_stat {
   display: inline-block;
