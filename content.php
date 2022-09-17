@@ -218,7 +218,7 @@ if (
 												<div class="card__price"><?= $content_price ?> Credits</div>
 
 												<div class="content_button_flex">
-													<div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
+													<button class="card__button pointer" id="buy_button<?= $content_id ?>" onfocus="javascript: modalForeach('buy','<?= $content_id ?>')">Buy</button>
 													<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
 												</div>
 
@@ -247,7 +247,7 @@ if (
 											<div class="card__price"><?= $content_price ?> Credits</div>
 
 											<div class="content_button_flex">
-												<div class="card__button pointer" id="buy_button<?= $content_id ?>" onclick="javascript: buy('<?= $content_id ?>')">Buy</div>
+												<button class="card__button pointer" id="buy_button<?= $content_id ?>" onfocus="javascript: modalForeach('buy','<?= $content_id ?>')">Buy</button>
 												<a href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $user_content_name ?> <?= $user_content_lastname ?></a>
 											</div>
 

@@ -70,13 +70,13 @@ if (
                     if ($user_session_id != $content_id_user) { ?>
 
 
-                      <button class="dropbtn" id="like_content_button">Like</button>
+                      <button class="dropbtn" id="like_content_button" onfocus="javascript:modal('like_content')">Like</button>
 
                       <div class="dropdown">
-                        <button class="dropbtn">Comment/Report</button>
+                        <button class="drop">Comment/Report</button>
                         <div class="dropdown-content">
-                          <a id="comment_button">Comment</a>
-                          <a id="report_button">Report this Content</a>
+                          <button class="button_drop green" id="comment_button" onfocus="javascript:modal('comment')">Comment</button>
+                          <button class="button_drop red" id="report_button" onfocus="javascript:modal('report')">Report this Content</button>
                         </div>
                       </div>
 
@@ -84,13 +84,13 @@ if (
                     <?php } else { ?>
 
 
-                      <button class="dropbtn" id="comment_button">Comment</button>
+                      <button class="dropbtn" id="comment_button" onfocus="javascript:modal('comment')">Comment</button>
 
                       <div class="dropdown">
-                        <button class="dropbtn">Edit/Delete</button>
+                        <button class="drop">Edit/Delete</button>
                         <div class="dropdown-content">
-                          <a id="edit_button">Edit Content</a>
-                          <a id="delete_content_button">Delete Content</a>
+                          <button class="button_drop orange" id="edit_button" onfocus="javascript:modal('edit')">Edit Content</button>
+                          <button class="button_drop red" id="delete_content_button" onfocus="javascript:modal('delete_content')">Delete Content</button>
                         </div>
                       </div>
 
@@ -147,7 +147,7 @@ if (
 
                             <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?> <i class="far fa-thumbs-up"></i></span>
 
-                            <button class="dropbtn" id="like_comment_button<?= $comment_id ?>" onclick="javascript: likeComment('<?= $comment_id ?>')">Like</button>
+                            <button class="dropbtn" id="like_comment_button<?= $comment_id ?>" onfocus="javascript: modalForeach('like_comment','<?= $comment_id ?>')">Like</button>
 
                           <?php } else if (isset($session_users_id) && ($session_users_id == $comment_user_id)) { ?>
 
@@ -156,7 +156,7 @@ if (
 
                             <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?> <i class="far fa-thumbs-up"></i></span>
 
-                            <button class="dropbtn" id="edit_comment_button<?= $comment_id ?>" onclick="javascript: editComment('<?= $comment_id ?>')">Edit</button>
+                            <button class="dropbtn" id="edit_comment_button<?= $comment_id ?>" onfocus="javascript: modalForeach('edit_comment', '<?= $comment_id ?>')">Edit</button>
 
 
                           <?php } else { ?>

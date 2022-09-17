@@ -145,6 +145,8 @@
 		text-decoration: none;
 		text-shadow: 2.5px 2.5px 2.5px black, 2.5px 2.5px 2.5px white;
 		transition: .3s;
+		font-family: var(--primary-font);
+		background-color: transparent;
 		&.pointer{
 			cursor: pointer;
 		}

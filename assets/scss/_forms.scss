@@ -102,6 +102,44 @@
     cursor: pointer;
     &.red{
         background:linear-gradient(135deg, #750000 0%, #ff0000 100%) ;
+        color: #000000; 
+    }
+}
+
+.button_drop{
+    background: linear-gradient(135deg, #242424 0%, #363636 100%);
+    padding: 11px;
+    border: none;
+    border-top: 1.5px solid rgb(64, 64, 64);
+    border-bottom: 1.5px solid rgb(0, 0, 0);
+    color: rgb(129, 129, 129);
+    font-family: var(--primary-font);
+    font-weight: 400;
+    font-size: 0.7rem;
+    min-width: 75px;
+    letter-spacing: .11rem;
+    outline:none;
+    transition: all 0.4s;
+    text-decoration: none;
+    width: 100%;
+    cursor: pointer;
+    &.green{
+        &:hover{
+            background:linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+            color: #000000; 
+        }
+    }
+    &.orange{
+        &:hover{
+            background:linear-gradient(135deg, #757100 0%, #f6ff00 100%);
+            color: #000000; 
+        }
+    }
+    &.red{
+        &:hover{
+            background:linear-gradient(135deg, #510000 0%, #ff0000 100%);
+            color: #000000;
+        }
     }
 }
 

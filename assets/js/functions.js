@@ -22,16 +22,20 @@ function input(string, id, maxLength, index) {
     string = document.getElementById(id).value;
     document.getElementById(id).value = string.substring(0, string.length - 1);
     
-    let input_modal = document.getElementById(index+"_modal");
+    let input_modal = document.getElementById("input_modal");
+    let message_regex = document.getElementById(index);
     
     input_modal.style.display = "flex"
+    message_regex.style.display = "flex"
     
     document.onclick = function() {
       input_modal.style.display = "none";
+      message_regex.style.display = "none"
     }
-
+    
     document.onkeydown= function() {
       input_modal.style.display = "none";
+      message_regex.style.display = "none"
     }
   }
 }
@@ -92,44 +96,20 @@ function validContent(page){
   }
 }
 
-let search_modal = document.getElementById("search_modal");
-let search_button = document.getElementById("search_button");
-let search_close = document.getElementById("search_close");
 
-if (search_button != undefined){
-    search_button.onclick = function() {
-    search_modal.style.display = "flex";
-  }
-    search_close.onclick = function() {
-    search_modal.style.display = "none";
-  }
-}
-
-
-let edit_modal = document.getElementById("edit_modal");
-let edit_button = document.getElementById("edit_button");
-let edit_close = document.getElementById("edit_close");
-
-if (edit_button != undefined){
-    edit_button.onclick = function() {
-    edit_modal.style.display = "flex";
-  }
-    edit_close.onclick = function() {
-    edit_modal.style.display = "none";
-  }
-}
-
-
-let comment_modal = document.getElementById("comment_modal");
-let comment_button = document.getElementById("comment_button");
-let comment_close = document.getElementById("comment_close");
-
-if (comment_button != undefined){
-    comment_button.onclick = function(){
-    comment_modal.style.display = "flex";
-  }
-    comment_close.onclick = function() {
-    comment_modal.style.display = "none";
+function modal(id){
+  
+  let modal = document.getElementById(id+"_modal");
+  let button = document.getElementById(id+"_button");
+  let close = document.getElementById(id+"_close");
+  
+  if (button != undefined){
+      button.onclick = function() {
+      modal.style.display = "flex";
+    }
+      close.onclick = function() {
+      modal.style.display = "none";
+    }
   }
 }
 
@@ -149,63 +129,6 @@ for(let i=0; i < contact_button.length; i++){
     }
   }
 }
-
-
-let report_modal = document.getElementById("report_modal");
-let report_button = document.getElementById("report_button");
-let report_close = document.getElementById("report_close");
-
-if (report_button != undefined){
-    report_button.onclick = function() {
-      report_modal.style.display = "flex";
-  }
-  report_close.onclick = function() {
-    report_modal.style.display = "none";
-  }
-}
-
-
-let delete_content_modal = document.getElementById("delete_content_modal");
-let delete_content_button = document.getElementById("delete_content_button");
-let delete_content_close = document.getElementById("delete_content_close");
-
-if (delete_content_button != undefined){
-    delete_content_button.onclick = function() {
-      delete_content_modal.style.display = "flex";
-  }
-  delete_content_close.onclick = function() {
-    delete_content_modal.style.display = "none";
-  }
-}
-
-
-let delete_users_modal = document.getElementById("delete_users_modal");
-let delete_users_button = document.getElementById("delete_users_button");
-let delete_users_close = document.getElementById("delete_users_close");
-
-if (delete_users_button != undefined){
-    delete_users_button.onclick = function() {
-      delete_users_modal.style.display = "flex";
-  }
-  delete_users_close.onclick = function() {
-    delete_users_modal.style.display = "none";
-  }
-}
-
-
-let like_content_modal = document.getElementById("like_content_modal");
-let like_content_button = document.getElementById("like_content_button");
-let like_content_close = document.getElementById("like_content_close");
-
-  if (like_content_button != undefined){
-      like_content_button.onclick = function() {
-      like_content_modal.style.display = "flex";
-    }
-      like_content_close.onclick = function() {
-      like_content_modal.style.display = "none";
-    }
-  }
-
 
 window.onclick = function(event) { 
 
@@ -236,66 +159,18 @@ window.onclick = function(event) {
  
 }
 
-function buy(content_id){
+function modalForeach(name, id){
 
-let buy_modal = document.getElementById("buy_modal"+content_id);
-let buy_button = document.getElementById("buy_button"+content_id);
-let buy_close = document.getElementById("buy_close"+content_id);
+let modal = document.getElementById(name+"_modal"+id);
+let button = document.getElementById(name+"_button"+id);
+let close = document.getElementById(name+"_close"+id);
 
-  if (buy_button != undefined){
-      buy_button.onclick = function() {
-      buy_modal.style.display = "flex";
+  if (button != undefined){
+      button.onclick = function() {
+      modal.style.display = "flex";
     }
-      buy_close.onclick = function() {
-      buy_modal.style.display = "none";
-    }
-  }
-}
-
-function editComment(comment_id){
-
-let edit_comment_modal = document.getElementById("edit_comment_modal"+comment_id);
-let edit_comment_button = document.getElementById("edit_comment_button"+comment_id);
-let edit_comment_close = document.getElementById("edit_comment_close"+comment_id);
-
-  if (edit_comment_button != undefined){
-      edit_comment_button.onclick = function() {
-      edit_comment_modal.style.display = "flex";
-    }
-      edit_comment_close.onclick = function() {
-      edit_comment_modal.style.display = "none";
-    }
-  }
-}
-
-function likeComment(comment_id){
-
-let like_comment_modal = document.getElementById("like_comment_modal"+comment_id);
-let like_comment_button = document.getElementById("like_comment_button"+comment_id);
-let like_comment_close = document.getElementById("like_comment_close"+comment_id);
-
-  if (like_comment_button != undefined){
-      like_comment_button.onclick = function() {
-      like_comment_modal.style.display = "flex";
-    }
-      like_comment_close.onclick = function() {
-      like_comment_modal.style.display = "none";
-    }
-  }
-}
-
-function deleteNotification(notification_id){
-
-let delete_notification_modal = document.getElementById("delete_notification_modal"+notification_id);
-let delete_notification_button = document.getElementById("delete_notification_button"+notification_id);
-let delete_notification_close = document.getElementById("delete_notification_close"+notification_id);
-
-  if (delete_notification_button != undefined){
-      delete_notification_button.onclick = function() {
-      delete_notification_modal.style.display = "flex";
-    }
-      delete_notification_close.onclick = function() {
-      delete_notification_modal.style.display = "none";
+      close.onclick = function() {
+      modal.style.display = "none";
     }
   }
 }

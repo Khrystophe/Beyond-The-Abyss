@@ -52,10 +52,13 @@
 
 .modal_description{
   overflow: hidden;
-  // text-align: justify;
   white-space: pre-line;
   display: flex;
   justify-content: center;
+}
+
+#input_price, #input_contact, #input_description, #input_composer,#input_title,#input_password,#input_namelastname{
+  display: none;
 }
 
 
