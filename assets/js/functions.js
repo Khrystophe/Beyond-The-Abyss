@@ -15,20 +15,20 @@ function MaxLengthDescription(description, maxlength) {
 }
 
 
-// function focus(input) {
-//   document.getElementById(input).focus();
-// }
-
 function input(string, id, maxLength, index) {
 
 
-  window.addEventListener("keyup", function (event) {
+  // window.addEventListener("keyup", function (event) {
     
 console.log(event.key);
 
     let array_regex ={
       'input_name_lastname' : /^(?!\s*$)[a-zA-Zéèêàçù \'-]+$/,
-    'input_password' : /^[0-9a-zA-Z]+$/,
+      'input_password' : /^[0-9a-zA-Z]+$/,
+      'input_title' : /^[0-9a-zA-Zéèêàçù '!?°-]+$/,
+      'input_composer' : /^[0-9a-zA-Zéèêàçù -]+$/,
+      'input_description' : /^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$/,
+      'input_price' : /^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500|[Free]+)$/,
   }
   
   let regex = array_regex[index];
@@ -49,11 +49,13 @@ console.log(event.key);
     document.onclick = function() {
       input_modal.style.display = "none";
     }
+
+    document.onkeydown= function() {
+      input_modal.style.display = "none";
+    }
   }
-});
+// });
 }
-
-
 
 
 function validContent(page){

@@ -216,3 +216,83 @@ if (isset($get_error) || isset($get_success)) {
     </div>
   </div>
 </div>
+
+<div id="input_title_modal" class="modal messages">
+  <div class="modal-content">
+    <div class="modal_form">
+      <div class="modal_form_content">
+        <form class="form_action">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <br>
+
+          <div>Respect format : (|0-9a-zA-Zéèêàçù '!?°-| max 25 chars )</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="input_composer_modal" class="modal messages">
+  <div class="modal-content">
+    <div class="modal_form">
+      <div class="modal_form_content">
+        <form class="form_action">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <br>
+
+          <div>Respect format : (|0-9a-zA-Zéèêàçù -| max 25 chars )</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="input_description_modal" class="modal messages">
+  <div class="modal-content">
+    <div class="modal_form">
+      <div class="modal_form_content">
+        <form class="form_action">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <br>
+
+          <div>Respect format : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-| max 250 chars )</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="input_price_modal" class="modal messages">
+  <div class="modal-content">
+    <div class="modal_form">
+      <div class="modal_form_content">
+        <form class="form_action">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <br>
+
+          <div>Price : (from 1 to 500 or free (type 'Free'))</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

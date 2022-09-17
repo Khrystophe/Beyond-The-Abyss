@@ -24,10 +24,10 @@ if (!isset($session_users_id)) {
 							<form class="form_action" action="./assets/actions/login_action.php" method="post">
 
 								<label for="login_email"></label>
-								<input type="text" placeholder="Email" class="inputbox" id="login_email" name="email" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" />
+								<input type="text" placeholder="Email" class="inputbox" id="login_email" name="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required />
 
 								<label for="login_password"></label>
-								<input type="password" placeholder="password" class="inputbox" id="login_password" name="password" required pattern="^([1-9][0-9])+$" minlength="2" />
+								<input type="password" placeholder="password" class="inputbox" id="login_password" name="password" onkeyup="javascript:input(this,'login_password',41, 'input_password');" minlength="2" required />
 
 								<button type="submit" class="button">Login</button>
 							</form>

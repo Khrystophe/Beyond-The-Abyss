@@ -11,10 +11,10 @@
           <div>To see all content do not fill in anything. Just click on the search button</div>
 
           <label for="search_title"></label>
-          <input type="text" class="inputbox" placeholder="Title" id="search_title" name="title" />
+          <input type="text" class="inputbox" placeholder="Title" id="search_title" name="title" onkeyup="javascript:input(this,'search_title',26, 'input_title');" />
 
           <label for="search_composer"></label>
-          <input type="text" class="inputbox" placeholder="Composer" id="search_composer" name="composer" />
+          <input type="text" class="inputbox" placeholder="Composer" id="search_composer" name="composer" onkeyup="javascript:input(this,'search_composer',26, 'input_composer');" />
 
           <label for="search_category"></label>
           <select class="inputbox" id="search_category" name="category">
@@ -95,14 +95,14 @@
           <h2>Edit Content</h2>
           <br>
 
-          <label for="single_player_edit_title">Title : (|0-9a-zA-Zéèêàçù '!?°-| max 25 chars )</label>
-          <input type="text" class="inputbox" value="<?= $content_title ?>" placeholder="<?= $content_title ?>" id="single_player_edit_title" name="title" pattern="^[0-9a-zA-Zéèêàçù '!?°-]+$" maxlength="25" />
+          <label for="single_player_edit_title"></label>
+          <input type="text" class="inputbox" value="<?= $content_title ?>" placeholder="<?= $content_title ?>" id="single_player_edit_title" name="title" onkeyup="javascript:input(this,'single_player_edit_title',26, 'input_title');" />
 
-          <label for="single_player_edit_composer">Composer : (|0-9a-zA-Zéèêàçù -| max 25 chars )</label>
-          <input type="text" class="inputbox" value="<?= $content_composer ?>" placeholder="<?= $content_composer ?>" id="single_player_edit_composer" name="composer" pattern="^[0-9a-zA-Zéèêàçù -]+$" maxlength="25" />
+          <label for="single_player_edit_composer"></label>
+          <input type="text" class="inputbox" value="<?= $content_composer ?>" placeholder="<?= $content_composer ?>" id="single_player_edit_composer" name="composer" onkeyup="javascript:input(this,'single_player_edit_composer',26, 'input_composer');" />
 
-          <label for="single_player_edit_description">Description : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-| max 250 chars )</label>
-          <textarea class="inputbox text" value="<?= $content_description ?>" id="single_player_edit_description" name="description" pattern="^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$" onkeyup="javascript:MaxLengthDescription(this, 250);"><?= $content_description ?></textarea>
+          <label for="single_player_edit_description"></label>
+          <textarea class="inputbox text" value="<?= $content_description ?>" placeholder="<?= $content_description ?>" id="single_player_edit_description" name="description" onkeyup="javascript:input(this,'single_player_edit_description',251, 'input_description');"></textarea>
 
           <?php if ($content_category == 'Tutorial') {
             $content_category = 'tutorial';
@@ -129,11 +129,11 @@
             <option value="very-hard">Very Hard</option>
           </select>
 
-          <label for="single_player_edit_content">Files format : (|0-9a-zA-Zéèêàçù# ()'!,;°-| |.| |webm/mp4/ogv|) and 128 Mo max.</label>
-          <input type="file" class="inputbox" id="single_player_edit_content" name="content" onchange="javascript: return validContent('single_player_edit')" />
+          <label for="single_player_edit_content">Files format : webm/mp4/ogv 128 Mo max.</label>
+          <input type="file" class="inputbox" id="single_player_edit_content" name="content" onchange="javascript:validContent('single_player_edit')" />
 
           <label for="single_player_edit_price">Price : (from 1 to 500 or free (type 'Free'))</label>
-          <input type="text" class="inputbox" value="<?= $content_price ?>" placeholder="<?= $content_price ?>" id="single_player_edit_price" pattern="^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500|Free)$" name="price" />
+          <input type="text" class="inputbox" value="<?= $content_price ?>" placeholder="<?= $content_price ?>" id="single_player_edit_price" name="price" onkeyup="javascript:input(this,'single_player_edit_price',5, 'input_price');" />
 
           <button type="submit" class="button">Edit</button>
           <div class="button" id="edit_close">Close</div>
