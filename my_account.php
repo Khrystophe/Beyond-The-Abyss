@@ -119,7 +119,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 									<label for="my_account_price">Price : (from 1 to 500 or free (type 'Free'))</label>
 									<input type="text" class="inputbox" id="my_account_price" name="price" placeholder="Price" onkeyup="javascript:input(this,'my_account_price',5, 'input_price');" required />
 
-									<button type="submit" class="button green">Add content</button>
+									<button type="submit" class="button green">Add Content</button>
 
 								</form>
 

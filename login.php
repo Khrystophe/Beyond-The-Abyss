@@ -29,7 +29,7 @@ if (!isset($session_users_id)) {
 								<label for="login_password"></label>
 								<input type="password" placeholder="password" class="inputbox" id="login_password" name="password" onkeyup="javascript:input(this,'login_password',41, 'input_password');" minlength="2" required />
 
-								<button type="submit" class="button">Login</button>
+								<button type="submit" class="button green">Login</button>
 							</form>
 						</div>
 					</div>

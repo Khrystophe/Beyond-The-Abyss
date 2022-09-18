@@ -83,7 +83,7 @@ nav {
   opacity: 0;
 }
 .nav_bar .nav_search {
-  background: linear-gradient(135deg, #242424 0%, #363636 100%);
+  background: linear-gradient(135deg, #535353 0%, #000000 100%);
   padding: 6px;
   border: none;
   width: 60px;
@@ -91,10 +91,11 @@ nav {
   border-bottom: 1.5px solid rgb(0, 0, 0);
   border-radius: 10px;
   color: rgb(129, 129, 129);
+  transition: color 1s;
   cursor: pointer;
 }
 .nav_bar .nav_search.green:hover {
-  background: linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+  background: linear-gradient(135deg, #000000 0%, #00ff33 100%);
   color: #000000;
 }
 .nav_bar .user_nav {
@@ -1130,7 +1131,7 @@ nav {
   color: #8b8b8b;
 }
 .player_bottom_bar .dropbtn {
-  background: linear-gradient(135deg, #161616 0%, #272727 100%);
+  background: linear-gradient(135deg, #272727 0%, #000000 100%);
   color: rgb(91, 91, 91);
   font-family: var(--primary-font);
   padding: 16px;
@@ -1143,21 +1144,22 @@ nav {
   height: 15px;
   display: flex;
   align-items: center;
+  transition: color 1s;
 }
 .player_bottom_bar .dropbtn.green:hover {
-  background: linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+  background: linear-gradient(135deg, #000000 0%, #00ff33 100%);
   color: #000000;
 }
 .player_bottom_bar .dropbtn.orange:hover {
-  background: linear-gradient(135deg, #757100 0%, #f6ff00 100%);
+  background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
   color: #000000;
 }
 .player_bottom_bar .dropbtn.red:hover {
-  background: linear-gradient(135deg, #510000 0%, #ff0000 100%);
+  background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
   color: #000000;
 }
 .player_bottom_bar .drop {
-  background: linear-gradient(135deg, #161616 0%, #272727 100%);
+  background: linear-gradient(135deg, #272727 0%, #000000 100%);
   color: rgb(91, 91, 91);
   font-family: var(--primary-font);
   padding: 16px;
@@ -1211,12 +1213,13 @@ nav {
 .column1 a {
   color: rgb(66, 66, 66);
   text-decoration: none;
+  transition: color 1s;
 }
 .column1 a:hover {
   color: #000000;
 }
 .column1.green:hover {
-  background: linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+  background: linear-gradient(135deg, #000000 0%, #00ff33 100%);
 }
 
 .tag {
@@ -1325,7 +1328,7 @@ nav {
 }
 
 .button {
-  background: linear-gradient(135deg, #242424 0%, #363636 100%);
+  background: linear-gradient(135deg, #363636 0%, #000000 100%);
   padding: 11px;
   border: none;
   border-top: 1.5px solid rgb(64, 64, 64);
@@ -1339,25 +1342,25 @@ nav {
   min-width: 75px;
   letter-spacing: 0.11rem;
   outline: none;
-  transition: all 0.4s;
+  transition: color 1s;
   text-decoration: none;
   cursor: pointer;
 }
 .button.green:hover {
-  background: linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+  background: linear-gradient(135deg, #000000 0%, #00ff33 100%);
   color: #000000;
 }
 .button.orange:hover {
-  background: linear-gradient(135deg, #757100 0%, #f6ff00 100%);
+  background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
   color: #000000;
 }
 .button.red:hover {
-  background: linear-gradient(135deg, #510000 0%, #ff0000 100%);
+  background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
   color: #000000;
 }
 
 .button_drop {
-  background: linear-gradient(135deg, #242424 0%, #363636 100%);
+  background: linear-gradient(135deg, #363636 0%, #000000 100%);
   padding: 11px;
   border: none;
   border-top: 1.5px solid rgb(64, 64, 64);
@@ -1369,21 +1372,21 @@ nav {
   min-width: 75px;
   letter-spacing: 0.11rem;
   outline: none;
-  transition: all 0.4s;
+  transition: color 1s;
   text-decoration: none;
   width: 100%;
   cursor: pointer;
 }
 .button_drop.green:hover {
-  background: linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+  background: linear-gradient(135deg, #000000 0%, #00ff33 100%);
   color: #000000;
 }
 .button_drop.orange:hover {
-  background: linear-gradient(135deg, #757100 0%, #f6ff00 100%);
+  background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
   color: #000000;
 }
 .button_drop.red:hover {
-  background: linear-gradient(135deg, #510000 0%, #ff0000 100%);
+  background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
   color: #000000;
 }
 
@@ -1549,7 +1552,7 @@ nav {
   height: 100px;
 }
 .cardBody .cardStats .dropbtn {
-  background: linear-gradient(135deg, #000000 0%, #1d1d1d 100%);
+  background: linear-gradient(135deg, #343434 0%, #000000 100%);
   color: rgb(91, 91, 91);
   font-family: var(--primary-font);
   padding: 16px;
@@ -1562,13 +1565,14 @@ nav {
   height: 15px;
   display: flex;
   align-items: center;
+  transition: color 1s;
 }
 .cardBody .cardStats .dropbtn.green:hover {
-  background: linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+  background: linear-gradient(135deg, #000000 0%, #00ff33 100%);
   color: #000000;
 }
 .cardBody .cardStats .dropbtn.orange:hover {
-  background: linear-gradient(135deg, #757100 0%, #f6ff00 100%);
+  background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
   color: #000000;
 }
 .cardBody .cardStats .cardStats_stat {

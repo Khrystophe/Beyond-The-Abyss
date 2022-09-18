@@ -23,7 +23,7 @@ nav {
   z-index: 20;
   opacity: 0;
    .nav_search{
-    background: linear-gradient(135deg, #242424 0%, #363636 100%);
+    background: linear-gradient(135deg, #535353 0%, #000000 100%);
     padding: 6px;
     border: none;
     width: 60px;
@@ -31,10 +31,11 @@ nav {
     border-bottom: 1.5px solid rgb(0, 0, 0);
     border-radius: 10px;
     color: rgb(129, 129, 129);
+    transition: color 1s;
     cursor: pointer;
     &.green{
       &:hover{
-          background:linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+          background:linear-gradient(135deg, #000000 0%, #00ff33 100%);
           color: #000000; 
       }
     }

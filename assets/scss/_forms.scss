@@ -83,7 +83,7 @@
 }
 
 .button{
-    background: linear-gradient(135deg, #242424 0%, #363636 100%);
+    background: linear-gradient(135deg, #363636 0%, #000000 100%);
     padding: 11px;
     border: none;
     border-top: 1.5px solid rgb(64, 64, 64);
@@ -97,31 +97,31 @@
     min-width: 75px;
     letter-spacing: .11rem;
     outline:none;
-    transition: all 0.4s;
+    transition: color 1s;
     text-decoration: none;
     cursor: pointer;
     &.green{
         &:hover{
-            background:linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+            background:linear-gradient(135deg, #000000 0%, #00ff33 100%);
             color: #000000; 
         }
     }
     &.orange{
         &:hover{
-            background:linear-gradient(135deg, #757100 0%, #f6ff00 100%);
+            background:linear-gradient(135deg, #000000 0%, #ffd800 100%);
             color: #000000; 
         }
     }
     &.red{
         &:hover{
-            background:linear-gradient(135deg, #510000 0%, #ff0000 100%);
+            background:linear-gradient(135deg, #000000 0%, #ff0000 100%);
             color: #000000;
         }
     }
 }
 
 .button_drop{
-    background: linear-gradient(135deg, #242424 0%, #363636 100%);
+    background: linear-gradient(135deg, #363636 0%, #000000 100%);
     padding: 11px;
     border: none;
     border-top: 1.5px solid rgb(64, 64, 64);
@@ -133,25 +133,25 @@
     min-width: 75px;
     letter-spacing: .11rem;
     outline:none;
-    transition: all 0.4s;
+    transition: color 1s;
     text-decoration: none;
     width: 100%;
     cursor: pointer;
     &.green{
         &:hover{
-            background:linear-gradient(135deg, #00750c 0%, #00ff37 100%);
+            background:linear-gradient(135deg, #000000 0%, #00ff33 100%);
             color: #000000; 
         }
     }
     &.orange{
         &:hover{
-            background:linear-gradient(135deg, #757100 0%, #f6ff00 100%);
+            background:linear-gradient(135deg, #000000 0%, #ffd800 100%);
             color: #000000; 
         }
     }
     &.red{
         &:hover{
-            background:linear-gradient(135deg, #510000 0%, #ff0000 100%);
+            background:linear-gradient(135deg, #000000 0%, #ff0000 100%);
             color: #000000;
         }
     }

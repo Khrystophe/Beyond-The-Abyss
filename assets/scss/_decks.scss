@@ -98,7 +98,7 @@
     height: 100px;
     
     .dropbtn {
-      background: linear-gradient(135deg, #000000 0%, #1d1d1d 100%);
+      background: linear-gradient(135deg, #343434 0%, #000000 100%);
       color: rgb(91, 91, 91);
       font-family: var(--primary-font);
       padding: 16px;
@@ -111,17 +111,18 @@
       height: 15px;
       display: flex;
       align-items: center;
+      transition: color 1s;
       &.green{
         &:hover{
-            background:linear-gradient(135deg, #00750c 0%, #00ff37 100%);
-            color: #000000; 
+          background:linear-gradient(135deg, #000000 0%, #00ff33 100%);
+          color: #000000; 
         }
       }
       &.orange{
-          &:hover{
-              background:linear-gradient(135deg, #757100 0%, #f6ff00 100%); 
-              color: #000000;
-          }
+        &:hover{
+          background:linear-gradient(135deg, #000000 0%, #ffd800 100%);
+          color: #000000; 
+        }
       }
     }
     
