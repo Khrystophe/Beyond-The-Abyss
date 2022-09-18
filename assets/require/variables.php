@@ -105,6 +105,7 @@ if (isset($getContentAndUserInformations) && !empty($getContentAndUserInformatio
   $content_price = htmlspecialchars($getContentAndUserInformations['price']);
   $content_description = str_replace('<br />', '', nl2br(htmlspecialchars($getContentAndUserInformations['description'])));
   $content_likes = htmlspecialchars($getContentAndUserInformations['likes']);
+  $content_reporting = htmlspecialchars($getContentAndUserInformations['reporting']);
   $content_id_user = htmlspecialchars($getContentAndUserInformations['id_users']);
   $content_author_name = htmlspecialchars($getContentAndUserInformations['name']);
   $content_author_lastname = htmlspecialchars($getContentAndUserInformations['lastname']);

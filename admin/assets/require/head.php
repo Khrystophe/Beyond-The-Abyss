@@ -130,9 +130,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.php">
+                            <a class="nav-link" href="contacts.php">
                                 <span data-feather="layers" class="align-text-bottom"></span>
-                                Contact
+                                Contacts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reportings.php">
+                                <span data-feather="layers" class="align-text-bottom"></span>
+                                Reportings
                             </a>
                         </li>
                     </ul>

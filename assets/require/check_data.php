@@ -134,6 +134,13 @@ if (isset($_POST['id_users']) && !empty($_POST['id_users'])) {
 }
 
 
+if (isset($_POST['reporting']) && !empty($_POST['reporting'])) {
+
+  $check_post_reporting = is_numeric($_POST['reporting'])
+    && preg_match("/^[0-9]+$/", $_POST['reporting']);
+}
+
+
 if (isset($_POST['name']) && !empty($_POST['name'])) {
 
   $check_post_name = is_string($_POST['name'])

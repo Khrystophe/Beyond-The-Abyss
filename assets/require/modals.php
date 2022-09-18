@@ -92,6 +92,9 @@
           <label for="single_player_id_users"></label>
           <input type="hidden" id="single_player_id_users" name="id_users" value="<?= $content_id_user ?>">
 
+          <label for="single_player_reporting"></label>
+          <input type="hidden" id="single_player_reporting" name="reporting" value="<?= $content_reporting ?>">
+
           <h2>Edit Content</h2>
           <br>
 

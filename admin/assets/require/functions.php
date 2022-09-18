@@ -8,6 +8,15 @@ function getAllContents(PDO $bdd)
     return $getAllContents;
 }
 
+function getContentInformations(PDO $bdd, $id_contents)
+{
+    $req = $bdd->prepare('SELECT title, composer FROM contents WHERE id = :id_contents');
+    $req->bindParam(':id_contents', $id_contents, PDO::PARAM_INT);
+    $req->execute();
+    $user = $req->fetch();
+    return $user;
+}
+
 function getUsers(PDO $bdd)
 {
     $req = $bdd->prepare('SELECT * FROM users ORDER BY name');
@@ -57,4 +66,13 @@ function getContact(PDO $bdd)
     $req->execute();
     $contact =  $req->fetchAll();
     return $contact;
+}
+
+
+function getReporting(PDO $bdd)
+{
+    $req = $bdd->prepare('SELECT * FROM reporting ORDER BY date');
+    $req->execute();
+    $reporting =  $req->fetchAll();
+    return $reporting;
 }

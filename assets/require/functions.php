@@ -135,7 +135,7 @@ function getUserInformations(PDO $bdd, $session_users_id)
 
 function getContentAndUserInformations(PDO $bdd, $get_id)
 {
-  $req = $bdd->prepare('SELECT users.name, users.lastname, contents.id, contents.title, contents.composer, contents.category, contents.level, contents.content, contents.price, contents.description, contents.likes, contents.id_users
+  $req = $bdd->prepare('SELECT users.name, users.lastname, contents.id, contents.title, contents.composer, contents.category, contents.level, contents.content, contents.price, contents.description, contents.likes,contents.reporting, contents.id_users
   FROM users
   INNER JOIN contents
   ON users.id = contents.id_users WHERE contents.id = :contents_id ');

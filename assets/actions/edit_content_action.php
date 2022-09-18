@@ -2,7 +2,6 @@
 session_start();
 require('../require/check_data.php');
 
-
 if (
     (isset($files_content_name) xor !isset($check_files_name))
     && isset($post_id)
@@ -15,6 +14,7 @@ if (
     && isset($post_description)
     && isset($session_users_id)
     && isset($get_type)
+    && ($check_post_reporting === true xor $check_post_reporting === null)
 ) {
 
     require('../require/co_bdd.php');
