@@ -82,21 +82,21 @@ if (
 						<div class="content_header tuto">
 
 							<div>
-								<h2><?= $random_tuto_title ?></h2>
-								<h3><?= $random_tuto_composer ?></h3>
+								<h2><?= $getRandomTuto_title ?></h2>
+								<h3><?= $getRandomTuto_composer ?></h3>
 
-								<span class="see_content tuto"><a href="./single_player_content.php?id=<?= $random_tuto_id ?>" class="btn link_page">Watch</a></span>
+								<span class="see_content tuto"><a href="./single_player_content.php?id=<?= $getRandomTuto_id ?>" class="btn link_page">Watch</a></span>
 
 							</div>
 						</div>
 
 						<div>
-							<video class="content tuto" src="./assets/videos/<?= $random_tuto_content ?>" type="video/mp4"></video>
+							<video class="content tuto" src="./assets/videos/<?= $getRandomTuto_content ?>" type="video/mp4"></video>
 						</div>
 
 						<div class="content_desc tuto">
 							<p class="text">
-								<?= $random_tuto_description ?>
+								<?= $getRandomTuto_description ?>
 							</p>
 						</div>
 
@@ -113,22 +113,22 @@ if (
 						<div class="content_header perf">
 
 							<div>
-								<h2><?= $random_perf_title ?></h2>
-								<h3><?= $random_perf_composer ?></h3>
+								<h2><?= $getRandomPerf_title ?></h2>
+								<h3><?= $getRandomPerf_composer ?></h3>
 
-								<span class="see_content perf"><a href="./single_player_content.php?id=<?= $random_perf_id ?>" class="btn link_page">Watch</a></span>
+								<span class="see_content perf"><a href="./single_player_content.php?id=<?= $getRandomPerf_id ?>" class="btn link_page">Watch</a></span>
 
 							</div>
 						</div>
 
 						<div>
-							<video class="content perf" src="./assets/videos/<?= $random_perf_content ?>" type="video/mp4">
+							<video class="content perf" src="./assets/videos/<?= $getRandomPerf_content ?>" type="video/mp4">
 							</video>
 						</div>
 
 						<div class="content_desc perf">
 							<p class="text">
-								<?= $random_perf_description ?>
+								<?= $getRandomPerf_description ?>
 							</p>
 						</div>
 
@@ -145,22 +145,22 @@ if (
 						<div class="content_header sheet">
 
 							<div>
-								<h2><?= $random_sheet_title ?></h2>
-								<h3><?= $random_sheet_composer ?></h3>
+								<h2><?= $getRandomSheet_title ?></h2>
+								<h3><?= $getRandomSheet_composer ?></h3>
 
-								<span class="see_content sheet"><a href="./single_player_content.php?id=<?= $random_sheet_id ?>" class="btn link_page">Watch</a></span>
+								<span class="see_content sheet"><a href="./single_player_content.php?id=<?= $getRandomSheet_id ?>" class="btn link_page">Watch</a></span>
 
 							</div>
 						</div>
 
 						<div>
-							<video class="content sheet" src="./assets/videos/<?= $random_sheet_content ?>" type="video/mp4">
+							<video class="content sheet" src="./assets/videos/<?= $getRandomSheet_content ?>" type="video/mp4">
 							</video>
 						</div>
 
 						<div class="content_desc sheet">
 							<p class="text">
-								<?= $random_sheet_description ?>
+								<?= $getRandomSheet_description ?>
 							</p>
 						</div>
 

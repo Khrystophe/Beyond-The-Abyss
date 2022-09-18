@@ -2,139 +2,139 @@
 
 if (isset($getRandomTuto) && !empty($getRandomTuto)) {
 
-  $random_tuto_id = htmlspecialchars($getRandomTuto['id']);
-  $random_tuto_title = htmlspecialchars($getRandomTuto['title']);
-  $random_tuto_content = htmlspecialchars($getRandomTuto['content']);
-  $random_tuto_price = htmlspecialchars($getRandomTuto['price']);
-  $random_tuto_composer = htmlspecialchars($getRandomTuto['composer']);
-  $random_tuto_category = htmlspecialchars($getRandomTuto['category']);
-  $random_tuto_level = htmlspecialchars($getRandomTuto['level']);
-  $random_tuto_description = str_replace('<br />', '', nl2br(htmlspecialchars($getRandomTuto['description'])));
-  $random_tuto_likes = htmlspecialchars($getRandomTuto['likes']);
-  $random_tuto_id_users = htmlspecialchars($getRandomTuto['id_users']);
+  $getRandomTuto_id = htmlspecialchars($getRandomTuto['id']);
+  $getRandomTuto_title = htmlspecialchars($getRandomTuto['title']);
+  $getRandomTuto_content = htmlspecialchars($getRandomTuto['content']);
+  $getRandomTuto_price = htmlspecialchars($getRandomTuto['price']);
+  $getRandomTuto_composer = htmlspecialchars($getRandomTuto['composer']);
+  $getRandomTuto_category = htmlspecialchars($getRandomTuto['category']);
+  $getRandomTuto_level = htmlspecialchars($getRandomTuto['level']);
+  $getRandomTuto_description = str_replace('<br />', '', nl2br(htmlspecialchars($getRandomTuto['description'])));
+  $getRandomTuto_likes = htmlspecialchars($getRandomTuto['likes']);
+  $getRandomTuto_id_users = htmlspecialchars($getRandomTuto['id_users']);
 }
 
 if (isset($getRandomPerf) && !empty($getRandomPerf)) {
 
-  $random_perf_id = htmlspecialchars($getRandomPerf['id']);
-  $random_perf_title = htmlspecialchars($getRandomPerf['title']);
-  $random_perf_content = htmlspecialchars($getRandomPerf['content']);
-  $random_perf_price = htmlspecialchars($getRandomPerf['price']);
-  $random_perf_composer = htmlspecialchars($getRandomPerf['composer']);
-  $random_perf_category = htmlspecialchars($getRandomPerf['category']);
-  $random_perf_level = htmlspecialchars($getRandomPerf['level']);
-  $random_perf_description = str_replace('<br />', '', nl2br(htmlspecialchars($getRandomPerf['description'])));
-  $random_perf_likes = htmlspecialchars($getRandomPerf['likes']);
-  $random_perf_id_users = htmlspecialchars($getRandomPerf['id_users']);
+  $getRandomPerf_id = htmlspecialchars($getRandomPerf['id']);
+  $getRandomPerf_title = htmlspecialchars($getRandomPerf['title']);
+  $getRandomPerf_content = htmlspecialchars($getRandomPerf['content']);
+  $getRandomPerf_price = htmlspecialchars($getRandomPerf['price']);
+  $getRandomPerf_composer = htmlspecialchars($getRandomPerf['composer']);
+  $getRandomPerf_category = htmlspecialchars($getRandomPerf['category']);
+  $getRandomPerf_level = htmlspecialchars($getRandomPerf['level']);
+  $getRandomPerf_description = str_replace('<br />', '', nl2br(htmlspecialchars($getRandomPerf['description'])));
+  $getRandomPerf_likes = htmlspecialchars($getRandomPerf['likes']);
+  $getRandomPerf_id_users = htmlspecialchars($getRandomPerf['id_users']);
 }
 
 if (isset($getRandomSheet) && !empty($getRandomSheet)) {
 
-  $random_sheet_id = htmlspecialchars($getRandomSheet['id']);
-  $random_sheet_title = htmlspecialchars($getRandomSheet['title']);
-  $random_sheet_content = htmlspecialchars($getRandomSheet['content']);
-  $random_sheet_price = htmlspecialchars($getRandomSheet['price']);
-  $random_sheet_composer = htmlspecialchars($getRandomSheet['composer']);
-  $random_sheet_category = htmlspecialchars($getRandomSheet['category']);
-  $random_sheet_level = htmlspecialchars($getRandomSheet['level']);
-  $random_sheet_description = str_replace('<br />', '', nl2br(htmlspecialchars($getRandomSheet['description'])));
-  $random_sheet_likes = htmlspecialchars($getRandomSheet['likes']);
-  $random_sheet_id_users = htmlspecialchars($getRandomSheet['id_users']);
+  $getRandomSheet_id = htmlspecialchars($getRandomSheet['id']);
+  $getRandomSheet_title = htmlspecialchars($getRandomSheet['title']);
+  $getRandomSheet_content = htmlspecialchars($getRandomSheet['content']);
+  $getRandomSheet_price = htmlspecialchars($getRandomSheet['price']);
+  $getRandomSheet_composer = htmlspecialchars($getRandomSheet['composer']);
+  $getRandomSheet_category = htmlspecialchars($getRandomSheet['category']);
+  $getRandomSheet_level = htmlspecialchars($getRandomSheet['level']);
+  $getRandomSheet_description = str_replace('<br />', '', nl2br(htmlspecialchars($getRandomSheet['description'])));
+  $getRandomSheet_likes = htmlspecialchars($getRandomSheet['likes']);
+  $getRandomSheet_id_users = htmlspecialchars($getRandomSheet['id_users']);
 }
 
-if (isset($getUserInformations) && !empty($getUserInformations)) {
+// if (isset($getUserInformations) && !empty($getUserInformations)) {
 
-  $user_session_id = htmlspecialchars($getUserInformations['id']);
-  $user_session_credits = htmlspecialchars($getUserInformations['credits']);
-}
+//   $getUserInformations_id = htmlspecialchars($getUserInformations['id']);
+//   $getUserInformations_credits = htmlspecialchars($getUserInformations['credits']);
+// }
 
-if (isset($getContentOfPageContent) && !empty($getContentOfPageContent)) {
+if (isset($getContent) && !empty($getContent)) {
 
-  $content_id = htmlspecialchars($getContentOfPageContent['id']);
-  $content_title = htmlspecialchars($getContentOfPageContent['title']);
-  $content_composer = htmlspecialchars($getContentOfPageContent['composer']);
-  $content_category = htmlspecialchars($getContentOfPageContent['category']);
-  $content_level = htmlspecialchars($getContentOfPageContent['level']);
-  $content_video = htmlspecialchars($getContentOfPageContent['content']);
-  $content_price = htmlspecialchars($getContentOfPageContent['price']);
-  $content_description = str_replace('<br />', '', nl2br(htmlspecialchars($getContentOfPageContent['description'])));
-  $content_likes = htmlspecialchars($getContentOfPageContent['likes']);
-  $content_id_user = htmlspecialchars($getContentOfPageContent['id_users']);
+  $getContent_id = htmlspecialchars($getContent['id']);
+  $getContent_title = htmlspecialchars($getContent['title']);
+  $getContent_composer = htmlspecialchars($getContent['composer']);
+  $getContent_category = htmlspecialchars($getContent['category']);
+  $getContent_level = htmlspecialchars($getContent['level']);
+  $getContent_video = htmlspecialchars($getContent['content']);
+  $getContent_price = htmlspecialchars($getContent['price']);
+  $getContent_description = str_replace('<br />', '', nl2br(htmlspecialchars($getContent['description'])));
+  $getContent_likes = htmlspecialchars($getContent['likes']);
+  $getContent_id_user = htmlspecialchars($getContent['id_users']);
 
-  if ($content_category == 'tutorial') {
-    $content_category = 'Tutorial';
-  } else if ($content_category == 'performance') {
-    $content_category = 'Performance';
-  } else if ($content_category == 'sheet_music') {
-    $content_category = 'Sheet Music';
+  if ($getContent_category == 'tutorial') {
+    $getContent_category = 'Tutorial';
+  } else if ($getContent_category == 'performance') {
+    $getContent_category = 'Performance';
+  } else if ($getContent_category == 'sheet_music') {
+    $getContent_category = 'Sheet Music';
   }
 }
 
 if (isset($getUserContentInformations) && !empty($getUserContentInformations)) {
 
-  $user_content_id = htmlspecialchars($getUserContentInformations['id']);
-  $user_content_name = htmlspecialchars($getUserContentInformations['name']);
-  $user_content_lastname = htmlspecialchars($getUserContentInformations['lastname']);
+  // $getUserContentInformations_id = htmlspecialchars($getUserContentInformations['id']);
+  $getUserContentInformations_name = htmlspecialchars($getUserContentInformations['name']);
+  $getUserContentInformations_lastname = htmlspecialchars($getUserContentInformations['lastname']);
 }
 
 if (isset($getUserInformations) && !empty($getUserInformations)) {
 
-  $get_user_id = htmlspecialchars($getUserInformations['id']);
-  $get_user_name = htmlspecialchars($getUserInformations['name']);
-  $get_user_lastname = htmlspecialchars($getUserInformations['lastname']);
-  $get_user_email = htmlspecialchars($getUserInformations['email']);
-  $get_user_type = htmlspecialchars($getUserInformations['type']);
-  $get_user_credits = htmlspecialchars($getUserInformations['credits']);
+  $getUserInformations_id = htmlspecialchars($getUserInformations['id']);
+  $getUserInformations_name = htmlspecialchars($getUserInformations['name']);
+  $getUserInformations_lastname = htmlspecialchars($getUserInformations['lastname']);
+  $getUserInformations_email = htmlspecialchars($getUserInformations['email']);
+  $getUserInformations_type = htmlspecialchars($getUserInformations['type']);
+  $getUserInformations_credits = htmlspecialchars($getUserInformations['credits']);
 }
 
 if (isset($getNotification) && !empty($getNotification)) {
 
-  $notification_id = htmlspecialchars($getNotification['id']);
-  $notification_text = str_replace('<br />', '', nl2br(htmlspecialchars($getNotification['notification'])));
-  $notification_date = htmlspecialchars($getNotification['date']);
+  $getNotification_id = htmlspecialchars($getNotification['id']);
+  $getNotification_text = str_replace('<br />', '', nl2br(htmlspecialchars($getNotification['notification'])));
+  $getNotification_date = htmlspecialchars($getNotification['date']);
 }
 
 if (isset($getContentAndUserInformations) && !empty($getContentAndUserInformations)) {
 
-  $content_id = htmlspecialchars($getContentAndUserInformations['id']);
-  $content_title = htmlspecialchars($getContentAndUserInformations['title']);
-  $content_composer = htmlspecialchars($getContentAndUserInformations['composer']);
-  $content_category = htmlspecialchars($getContentAndUserInformations['category']);
-  $content_level = htmlspecialchars($getContentAndUserInformations['level']);
-  $content_video = htmlspecialchars($getContentAndUserInformations['content']);
-  $content_price = htmlspecialchars($getContentAndUserInformations['price']);
-  $content_description = str_replace('<br />', '', nl2br(htmlspecialchars($getContentAndUserInformations['description'])));
-  $content_likes = htmlspecialchars($getContentAndUserInformations['likes']);
-  $content_id_user = htmlspecialchars($getContentAndUserInformations['id_users']);
-  $content_author_name = htmlspecialchars($getContentAndUserInformations['name']);
-  $content_author_lastname = htmlspecialchars($getContentAndUserInformations['lastname']);
+  $getContentAndUserInformations_id = htmlspecialchars($getContentAndUserInformations['id']);
+  $getContentAndUserInformations_title = htmlspecialchars($getContentAndUserInformations['title']);
+  $getContentAndUserInformations_composer = htmlspecialchars($getContentAndUserInformations['composer']);
+  $getContentAndUserInformations_category = htmlspecialchars($getContentAndUserInformations['category']);
+  $getContentAndUserInformations_level = htmlspecialchars($getContentAndUserInformations['level']);
+  $getContentAndUserInformations_video = htmlspecialchars($getContentAndUserInformations['content']);
+  $getContentAndUserInformations_price = htmlspecialchars($getContentAndUserInformations['price']);
+  $getContentAndUserInformations_description = str_replace('<br />', '', nl2br(htmlspecialchars($getContentAndUserInformations['description'])));
+  $getContentAndUserInformations_likes = htmlspecialchars($getContentAndUserInformations['likes']);
+  $getContentAndUserInformations_id_user = htmlspecialchars($getContentAndUserInformations['id_users']);
+  $getContentAndUserInformations_author_name = htmlspecialchars($getContentAndUserInformations['name']);
+  $getContentAndUserInformations_author_lastname = htmlspecialchars($getContentAndUserInformations['lastname']);
 
-  if ($content_category == 'tutorial') {
-    $content_category = 'Tutorial';
-  } else if ($content_category == 'performance') {
-    $content_category = 'Performance';
-  } else if ($content_category == 'sheet_music') {
-    $content_category = 'Sheet Music';
+  if ($getContentAndUserInformations_category == 'tutorial') {
+    $getContentAndUserInformations_category = 'Tutorial';
+  } else if ($getContentAndUserInformations_category == 'performance') {
+    $getContentAndUserInformations_category = 'Performance';
+  } else if ($getContentAndUserInformations_category == 'sheet_music') {
+    $getContentAndUserInformations_category = 'Sheet Music';
   }
 }
 
 if (isset($getComment) && !empty($getComment)) {
 
-  $comment_id = htmlspecialchars($getComment['id']);
-  $comment_user_id = htmlspecialchars($getComment['id_users']);
-  $comment_user_name = htmlspecialchars($getComment['name']);
-  $comment_user_lastname = htmlspecialchars($getComment['lastname']);
-  $comment_text = str_replace('<br />', '', nl2br(htmlspecialchars($getComment['comment'])));
-  $comment_date = htmlspecialchars($getComment['date']);
-  $comment_likes = htmlspecialchars($getComment['likes']);
+  $getComment_id = htmlspecialchars($getComment['id']);
+  $getComment_user_id = htmlspecialchars($getComment['id_users']);
+  $getComment_user_name = htmlspecialchars($getComment['name']);
+  $getComment_user_lastname = htmlspecialchars($getComment['lastname']);
+  $getComment_text = str_replace('<br />', '', nl2br(htmlspecialchars($getComment['comment'])));
+  $getComment_date = htmlspecialchars($getComment['date']);
+  $getComment_likes = htmlspecialchars($getComment['likes']);
 }
 
 if (isset($getNumbersOfcomments) && !empty($getNumbersOfcomments)) {
 
-  $number_of_user_comments = htmlspecialchars(implode($getNumbersOfcomments));
+  $getNumbersOfcomments_from_user = htmlspecialchars(implode($getNumbersOfcomments));
 }
 
 if (isset($getIdUserFromContent)  && !empty($getIdUserFromContent)) {
 
-  $author_id = htmlspecialchars($getIdUserFromContent['id_users']);
+  $getIdUserFromContent_author_id = htmlspecialchars($getIdUserFromContent['id_users']);
 }

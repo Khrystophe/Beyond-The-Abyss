@@ -50,7 +50,7 @@ function getContents(PDO $bdd, $get_category)
 
 function getUserContentInformations(PDO $bdd, $content_id_user)
 {
-  $req = $bdd->prepare('SELECT users.id, users.name, users.lastname
+  $req = $bdd->prepare('SELECT users.name, users.lastname
   FROM users
   INNER JOIN contents
   ON users.id = contents.id_users

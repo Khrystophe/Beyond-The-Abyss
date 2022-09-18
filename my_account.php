@@ -32,7 +32,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 							<div class="rightside">
 
-								<h2>Email : <span class="email"><?= $get_user_email ?></span></h2>
+								<h2>Email : <span class="email"><?= $getUserInformations_email ?></span></h2>
 
 
 								<div class="margin"></div>
@@ -45,10 +45,10 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 								<form data-barba-prevent class="form_action" action="./assets/actions/edit_name_lastname_action.php" method="post">
 
 									<label for="my_account_name"></label>
-									<input type="text" class="inputbox" placeholder="<?= $get_user_name ?>" id="my_account_name" value="<?= $get_user_name ?>" name="name" onkeyup="javascript:input(this,'my_account_name',11,'input_name_lastname');" />
+									<input type="text" class="inputbox" placeholder="<?= $getUserInformations_name ?>" id="my_account_name" value="<?= $getUserInformations_name ?>" name="name" onkeyup="javascript:input(this,'my_account_name',11,'input_name_lastname');" />
 
 									<label for="my_account_lastname"></label>
-									<input type="text" class="inputbox" placeholder="<?= $get_user_lastname ?> " id="my_account_lastname" value="<?= $get_user_lastname ?>" name="lastname" onkeyup="javascript:input(this,'my_account_lastname',11,'input_name_lastname');" />
+									<input type="text" class="inputbox" placeholder="<?= $getUserInformations_lastname ?> " id="my_account_lastname" value="<?= $getUserInformations_lastname ?>" name="lastname" onkeyup="javascript:input(this,'my_account_lastname',11,'input_name_lastname');" />
 
 									<button type="submit" class="button orange">Edit</button>
 
@@ -154,15 +154,15 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 						<div class='deck_account'>
 							<div class='account_card'>
 								<div class='cardHeader'>
-									<span class='cardHeader_date'><?= $notification_date ?></span>
+									<span class='cardHeader_date'><?= $getNotification_date ?></span>
 								</div>
 
 								<div class='cardBody'>
-									<p class='cardText'><?= $notification_text ?></p>
+									<p class='cardText'><?= $getNotification_text ?></p>
 								</div>
 
 								<div class="form_action">
-									<button class="btn_content button red" id="delete_notification_button<?= $notification_id ?>" onfocus="javascript:modalForeach('delete_notification','<?= $notification_id ?>')">Delete</button>
+									<button class="btn_content button red" id="delete_notification_button<?= $getNotification_id ?>" onfocus="javascript:modalForeach('delete_notification','<?= $getNotification_id ?>')">Delete</button>
 								</div>
 							</div>
 						</div>

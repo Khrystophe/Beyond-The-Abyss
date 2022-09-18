@@ -30,15 +30,15 @@ if (
 
       require('./assets/require/variables.php');
 
-      $getIdUserFromPurchasedContent = getIdUserFromPurchasedContent($bdd, $content_id);
+      $getIdUserFromPurchasedContent = getIdUserFromPurchasedContent($bdd, $getContentAndUserInformations_id);
 
-      $user_session_purchased_content = in_array($user_session_id, array_column($getIdUserFromPurchasedContent, 'id_users'));
+      $user_session_purchased_content = in_array($getUserInformations_id, array_column($getIdUserFromPurchasedContent, 'id_users'));
     }
 
 
-    if (($content_price > 0 && isset($session_users_id)) || $content_price == 0) {
+    if (($getContentAndUserInformations_price > 0 && isset($session_users_id)) || $getContentAndUserInformations_price == 0) {
 
-      if ((isset($user_session_purchased_content) && $user_session_purchased_content == true) || $content_price == 0 || $content_id_user == $user_session_id) {
+      if ((isset($user_session_purchased_content) && $user_session_purchased_content == true) || $getContentAndUserInformations_price == 0 || $getContentAndUserInformations_id_user == $getUserInformations_id) {
 
         require('./assets/require/head.php'); ?>
 
@@ -51,23 +51,23 @@ if (
 
                 <div class="hero">
 
-                  <video src="./assets/videos/<?= $content_video ?>" controls></video>
+                  <video src="./assets/videos/<?= $getContentAndUserInformations_video ?>" controls></video>
 
                   <div class="details">
-                    <h1 class="title1"><?= $content_title ?></h1>
-                    <h2 class="title2"><?= $content_composer ?></h2>
-                    <h2 class="title2"><?= $content_category ?></h2>
+                    <h1 class="title1"><?= $getContentAndUserInformations_title ?></h1>
+                    <h2 class="title2"><?= $getContentAndUserInformations_composer ?></h2>
+                    <h2 class="title2"><?= $getContentAndUserInformations_category ?></h2>
                   </div>
 
                 </div>
                 <div class="player_bottom_bar">
-                  <span class="likes"><i class="far fa-thumbs-up"> <?= $content_likes ?></i></span>
+                  <span class="likes"><i class="far fa-thumbs-up"> <?= $getContentAndUserInformations_likes ?></i></span>
 
 
-                  <?php if (isset($user_session_id) && !empty($user_session_id)) {
+                  <?php if (isset($getUserInformations_id) && !empty($getUserInformations_id)) {
 
 
-                    if ($user_session_id != $content_id_user) { ?>
+                    if ($getUserInformations_id != $getContentAndUserInformations_id_user) { ?>
 
 
                       <button class="dropbtn green" id="like_content_button" onfocus="javascript:modal('like_content')">Like</button>
@@ -105,11 +105,11 @@ if (
 
                 <div class="description">
                   <div class="column1 green">
-                    <a class="link_page" href="content.php?id=<?= $content_id ?>&name=visitor&category=user_content"><?= $content_author_name . " " . $content_author_lastname ?></a>
+                    <a class="link_page" href="content.php?id=<?= $getContentAndUserInformations_id ?>&name=visitor&category=user_content"><?= $getContentAndUserInformations_author_name . " " . $getContentAndUserInformations_author_lastname ?></a>
                   </div>
 
                   <div class="column2">
-                    <p><?= $content_description ?></p>
+                    <p><?= $getContentAndUserInformations_description ?></p>
                   </div>
                 </div>
 
@@ -118,7 +118,7 @@ if (
 
                   require('./assets/require/variables.php');
 
-                  $getNumbersOfcomments = getNumbersOfcomments($bdd, $comment_user_id);
+                  $getNumbersOfcomments = getNumbersOfcomments($bdd, $getComment_user_id);
 
                   require('./assets/require/variables.php');
 
@@ -129,42 +129,42 @@ if (
                     <div class='single_player_card'>
 
                       <div class='cardHeader'>
-                        <span class='cardHeader_account'><?= $comment_user_name . " " . $comment_user_lastname ?></span>
-                        <span class='cardHeader_date'><?= $comment_date ?></span>
+                        <span class='cardHeader_account'><?= $getComment_user_name . " " . $getComment_user_lastname ?></span>
+                        <span class='cardHeader_date'><?= $getComment_date ?></span>
                       </div>
 
                       <div class='cardBody'>
 
-                        <p class='cardText'><?= $comment_text ?></p>
+                        <p class='cardText'><?= $getComment_text ?></p>
 
                         <section class='cardStats'>
 
 
-                          <?php if (isset($session_users_id) && ($session_users_id != $comment_user_id)) { ?>
+                          <?php if (isset($session_users_id) && ($session_users_id != $getComment_user_id)) { ?>
 
 
-                            <span class='cardStats_stat cardStats_stat-comments'><?= $number_of_user_comments ?> <i class='far fa-comment fa-fw'></i></span>
+                            <span class='cardStats_stat cardStats_stat-comments'><?= $getNumbersOfcomments_from_user ?> <i class='far fa-comment fa-fw'></i></span>
 
-                            <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?> <i class="far fa-thumbs-up"></i></span>
+                            <span class='cardStats_stat cardStats_stat-likes'><?= $getComment_likes ?> <i class="far fa-thumbs-up"></i></span>
 
-                            <button class="dropbtn green" id="like_comment_button<?= $comment_id ?>" onfocus="javascript: modalForeach('like_comment','<?= $comment_id ?>')">Like</button>
+                            <button class="dropbtn green" id="like_comment_button<?= $getComment_id ?>" onfocus="javascript: modalForeach('like_comment','<?= $getComment_id ?>')">Like</button>
 
-                          <?php } else if (isset($session_users_id) && ($session_users_id == $comment_user_id)) { ?>
+                          <?php } else if (isset($session_users_id) && ($session_users_id == $getComment_user_id)) { ?>
 
 
-                            <span class='cardStats_stat cardStats_stat-comments'><?= $number_of_user_comments ?> <i class='far fa-comment fa-fw'></i></span>
+                            <span class='cardStats_stat cardStats_stat-comments'><?= $getNumbersOfcomments_from_user ?> <i class='far fa-comment fa-fw'></i></span>
 
-                            <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?> <i class="far fa-thumbs-up"></i></span>
+                            <span class='cardStats_stat cardStats_stat-likes'><?= $getComment_likes ?> <i class="far fa-thumbs-up"></i></span>
 
-                            <button class="dropbtn orange" id="edit_comment_button<?= $comment_id ?>" onfocus="javascript: modalForeach('edit_comment', '<?= $comment_id ?>')">Edit</button>
+                            <button class="dropbtn orange" id="edit_comment_button<?= $getComment_id ?>" onfocus="javascript: modalForeach('edit_comment', '<?= $getComment_id ?>')">Edit</button>
 
 
                           <?php } else { ?>
 
 
-                            <span class='cardStats_stat cardStats_stat-comments'><?= $number_of_user_comments ?> <i class='far fa-comment fa-fw'></i></span>
+                            <span class='cardStats_stat cardStats_stat-comments'><?= $getNumbersOfcomments_from_user ?> <i class='far fa-comment fa-fw'></i></span>
 
-                            <span class='cardStats_stat cardStats_stat-likes'><?= $comment_likes ?> <i class="far fa-thumbs-up"></i></span>
+                            <span class='cardStats_stat cardStats_stat-likes'><?= $getComment_likes ?> <i class="far fa-thumbs-up"></i></span>
 
 
                           <?php } ?>

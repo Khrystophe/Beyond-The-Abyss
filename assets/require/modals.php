@@ -87,10 +87,10 @@
         <form class="form_action" action="/Diplome/assets/actions/edit_content_action.php?type=user" method="post" enctype="multipart/form-data">
 
           <label for="single_player_id"></label>
-          <input type="hidden" id="single_player_id" name="id" value="<?= $content_id ?>">
+          <input type="hidden" id="single_player_id" name="id" value="<?= $getContentAndUserInformations_id ?>">
 
           <label for="single_player_id_users"></label>
-          <input type="hidden" id="single_player_id_users" name="id_users" value="<?= $content_id_user ?>">
+          <input type="hidden" id="single_player_id_users" name="id_users" value="<?= $getContentAndUserInformations_id_user ?>">
 
           <label for="single_player_reporting"></label>
           <input type="hidden" id="single_player_reporting" name="reporting" value="<?= htmlspecialchars($getContentAndUserInformations['reporting']) ?>">
@@ -99,25 +99,25 @@
           <br>
 
           <label for="single_player_edit_title"></label>
-          <input type="text" class="inputbox" value="<?= $content_title ?>" placeholder="<?= $content_title ?>" id="single_player_edit_title" name="title" onkeyup="javascript:input(this,'single_player_edit_title',21, 'input_title');" />
+          <input type="text" class="inputbox" value="<?= $getContentAndUserInformations_title ?>" placeholder="<?= $getContentAndUserInformations_title ?>" id="single_player_edit_title" name="title" onkeyup="javascript:input(this,'single_player_edit_title',21, 'input_title');" />
 
           <label for="single_player_edit_composer"></label>
-          <input type="text" class="inputbox" value="<?= $content_composer ?>" placeholder="<?= $content_composer ?>" id="single_player_edit_composer" name="composer" onkeyup="javascript:input(this,'single_player_edit_composer',21, 'input_composer');" />
+          <input type="text" class="inputbox" value="<?= $getContentAndUserInformations_composer ?>" placeholder="<?= $getContentAndUserInformations_composer ?>" id="single_player_edit_composer" name="composer" onkeyup="javascript:input(this,'single_player_edit_composer',21, 'input_composer');" />
 
           <label for="single_player_edit_description"></label>
-          <textarea class="inputbox text" value="<?= $content_description ?>" placeholder="<?= $content_description ?>" id="single_player_edit_description" name="description" onkeyup="javascript:input(this,'single_player_edit_description',251, 'input_description');"><?= $content_description ?></textarea>
+          <textarea class="inputbox text" value="<?= $getContentAndUserInformations_description ?>" placeholder="<?= $getContentAndUserInformations_description ?>" id="single_player_edit_description" name="description" onkeyup="javascript:input(this,'single_player_edit_description',251, 'input_description');"><?= $getContentAndUserInformations_description ?></textarea>
 
-          <?php if ($content_category == 'Tutorial') {
-            $content_category = 'tutorial';
-          } else if ($content_category == 'Performance') {
-            $content_category = 'performance';
-          } else if ($content_category == 'Sheet Music') {
-            $content_category = 'sheet_music';
+          <?php if ($getContentAndUserInformations_category == 'Tutorial') {
+            $getContentAndUserInformations_category = 'tutorial';
+          } else if ($getContentAndUserInformations_category == 'Performance') {
+            $getContentAndUserInformations_category = 'performance';
+          } else if ($getContentAndUserInformations_category == 'Sheet Music') {
+            $getContentAndUserInformations_category = 'sheet_music';
           } ?>
 
           <label for="single_player_edit_category"></label>
           <select class="inputbox" id="single_player_edit_category" name="category">
-            <option value="<?= $content_category ?>"><?= $content_category ?></option>
+            <option value="<?= $getContentAndUserInformations_category ?>"><?= $getContentAndUserInformations_category ?></option>
             <option value="tutorial">Tutorial</option>
             <option value="performance">Performances</option>
             <option value="sheet_music">Sheet Music</option>
@@ -125,7 +125,7 @@
 
           <label for="single_player_edit_level"></label>
           <select class="inputbox" id="single_player_edit_level" name="level">
-            <option value="<?= $content_level ?>"><?= $content_level ?></option>
+            <option value="<?= $getContentAndUserInformations_level ?>"><?= $getContentAndUserInformations_level ?></option>
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
@@ -136,7 +136,7 @@
           <input type="file" class="inputbox" id="single_player_edit_content" name="content" onchange="javascript:validContent('single_player_edit')" />
 
           <label for="single_player_edit_price">Price : (from 1 to 500 or free (type 'Free'))</label>
-          <input type="text" class="inputbox" value="<?= $content_price ?>" placeholder="<?= $content_price ?>" id="single_player_edit_price" name="price" onkeyup="javascript:input(this,'single_player_edit_price',5, 'input_price');" />
+          <input type="text" class="inputbox" value="<?= $getContentAndUserInformations_price ?>" placeholder="<?= $getContentAndUserInformations_price ?>" id="single_player_edit_price" name="price" onkeyup="javascript:input(this,'single_player_edit_price',5, 'input_price');" />
 
           <button type="submit" class="button orange">Edit</button>
           <div class="button green" id="edit_close">Close</div>
@@ -156,7 +156,7 @@
         <form class="form_action" action="/Diplome/assets/actions/post_comment_action.php" method="post">
 
           <label for="single_player_id_comment"></label>
-          <input type="hidden" id="single_player_id_comment" name="id" value="<?= $content_id ?>">
+          <input type="hidden" id="single_player_id_comment" name="id" value="<?= $getContentAndUserInformations_id ?>">
 
           <h2>Your comment</h2>
           <br>
@@ -182,7 +182,7 @@
         <form class="form_action" action="/Diplome/assets/actions/reporting_action.php" method="post">
 
           <label for="single_player_id_report"></label>
-          <input type="hidden" id="single_player_id_report" name="id" value="<?= $content_id ?>">
+          <input type="hidden" id="single_player_id_report" name="id" value="<?= $getContentAndUserInformations_id ?>">
 
           <h2>Want to report this content? Any improper reporting will result in consequences.</h2>
           <br>
@@ -205,7 +205,7 @@
     <div class="modal_form">
       <div class="modal_form_content">
 
-        <form data-barba-prevent class="form_action" action="/Diplome/assets/actions/delete_content_action.php?id=<?= $content_id ?>&type=user" method="post">
+        <form data-barba-prevent class="form_action" action="/Diplome/assets/actions/delete_content_action.php?id=<?= $getContentAndUserInformations_id ?>&type=user" method="post">
 
           <div class="messages_logo">
             <img src="./assets/img/musicgrise.png" alt="" />
@@ -253,7 +253,7 @@
     <div class="modal_form">
       <div class="modal_form_content">
 
-        <form class="form_action" action="./assets/actions/like_action.php?name=content&id=<?= $content_id ?>" method="post">
+        <form class="form_action" action="./assets/actions/like_action.php?name=content&id=<?= $getContentAndUserInformations_id ?>" method="post">
 
           <div class="messages_logo">
             <img src="./assets/img/musicgrise.png" alt="" />
@@ -262,7 +262,7 @@
           <br>
 
           <?php
-          $message = "Like " . $content_author_name . " " . $content_author_lastname . "'s content ?";
+          $message = "Like " . $getContentAndUserInformations_author_name . " " . $getContentAndUserInformations_author_lastname . "'s content ?";
           ?>
 
           <div><?= nl2br($message) ?></div>
