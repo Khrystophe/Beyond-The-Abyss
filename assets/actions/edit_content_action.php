@@ -14,7 +14,7 @@ if (
     && isset($post_description)
     && isset($session_users_id)
     && isset($get_type)
-    && ($check_post_reporting === true xor $check_post_reporting === null)
+    && ((isset($check_post_reporting) && ($check_post_reporting === true)) xor $check_post_reporting === null)
 ) {
 
     require('../require/co_bdd.php');

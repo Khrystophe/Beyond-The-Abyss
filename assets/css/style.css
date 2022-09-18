@@ -1454,7 +1454,7 @@ nav {
   justify-content: center;
 }
 
-#input_price, #input_contact, #input_description, #input_composer, #input_title, #input_password, #input_namelastname, #input_content {
+#input_price, #input_contact, #input_description, #input_composer, #input_title, #input_password, #input_name_lastname, #input_content {
   display: none;
 }
 
