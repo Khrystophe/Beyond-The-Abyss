@@ -1,5 +1,7 @@
 <?php
 session_start();
+require('./assets/require/check_data.php');
+
 if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 	if ($_SESSION['users']['type'] == 'admin') {
 
