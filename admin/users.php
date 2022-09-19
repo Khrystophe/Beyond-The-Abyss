@@ -94,22 +94,22 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                         <div class="mb-3">
                           <label for="admin_edit_user_name<?= $getUser_id ?>" class="form-label">Name</label>
-                          <input type="text" class="form-control" id="admin_edit_user_name<?= $getUser_id ?>" name="name" value="<?= $getUser_name ?>" placeholder="<?= $getUser_name ?>">
+                          <input type="text" class="form-control" id="admin_edit_user_name<?= $getUser_id ?>" name="name" onkeyup="javascript:input(this,'admin_edit_user_name<?= $getUser_id ?>',11,'input_name_lastname');" value="<?= $getUser_name ?>" placeholder="<?= $getUser_name ?>">
                         </div>
 
                         <div class="mb-3">
                           <label for="admin_edit_user_lastname<?= $getUser_id ?>" class="form-label">Lastname</label>
-                          <input type="text" class="form-control" id="admin_edit_user_lastname<?= $getUser_id ?>" name="lastname" value="<?= $getUser_last_name ?>" placeholder="<?= $getUser_last_name ?>">
+                          <input type="text" class="form-control" id="admin_edit_user_lastname<?= $getUser_id ?>" name="lastname" onkeyup="javascript:input(this,'admin_edit_user_lastname<?= $getUser_id ?>',11,'input_name_lastname');" value="<?= $getUser_last_name ?>" placeholder="<?= $getUser_last_name ?>">
                         </div>
 
                         <div class="mb-3">
                           <label for="admin_edit_user_email<?= $getUser_id ?>" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="admin_edit_user_email<?= $getUser_id ?>" name="email" value="<?= $getUser_email ?>" placeholder="<?= $getUser_email ?>">
+                          <input type="email" class="form-control" id="admin_edit_user_email<?= $getUser_id ?>" name="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" value="<?= $getUser_email ?>" placeholder="<?= $getUser_email ?>">
                         </div>
 
                         <div class="mb-3">
                           <label for="admin_edit_user_credits<?= $getUser_id ?>" class="form-label">Credits</label>
-                          <input type="text" class="form-control" id="admin_edit_user_credits<?= $getUser_id ?>" name="credits" value="<?= $getUser_credits ?>" placeholder="<?= $getUser_credits ?>">
+                          <input type="text" class="form-control" id="admin_edit_user_credits<?= $getUser_id ?>" name="credits" onkeyup="javascript:input(this,'admin_edit_user_credits<?= $getUser_id ?>',11, 'input_credits_reporting');" value="<?= $getUser_credits ?>" placeholder="<?= $getUser_credits ?>">
                         </div>
 
                         <div class="mb-3">
@@ -176,7 +176,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                         <div class="mb-3">
                           <label for="admin_edit_user_password<?= $getUser_id ?>" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="admin_edit_user_password<?= $getUser_id ?>" name="password" required pattern="^([1-9][0-9])+$" minlength="2">
+                          <input type="password" class="form-control" id="admin_edit_user_password<?= $getUser_id ?>" name="password" onkeyup="javascript:input(this,'admin_edit_user_password<?= $getUser_id ?>',41, 'input_password');" required>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>

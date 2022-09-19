@@ -73,30 +73,30 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 													<label for="admin_contact_lastname<?= $getContact_id ?> class=" form-label"></label>
 													<input type="hidden" class="form-control" id="admin_contact_lastname<?= $getContact_id ?>" name="lastname" value="<?= $getUserInformations_lastname ?>">
 
-													<div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getUserInformations_name ?> <?= $getUserInformations_lastname ?></div>
+													<div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: normal;"><?= $getUserInformations_name ?> <?= $getUserInformations_lastname ?></div>
 												</div>
 
 												<div class="mb-3">
 													<div class="form-label">Email</div>
-													<div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getUserInformations_email ?></div>
+													<div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: normal;"><?= $getUserInformations_email ?></div>
 												</div>
 
 												<div class="mb-3">
 													<div class="form-label">Date</div>
-													<div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getContact_date ?></div>
+													<div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: normal;"><?= $getContact_date ?></div>
 												</div>
 
 												<div class="mb-3">
 													<label for="admin_contact_message<?= $getContact_id ?>" class="form-label">Message</label>
 													<input type="hidden" class="form-control" id="admin_contact_message<?= $getContact_id ?>" name="message" value="<?= $getContact_message  ?>">
 
-													<div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: flex-start;word-break: break-all;"><?= $getContact_message ?></div>
+													<div style="white-space:pre-line; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: flex-start;word-break: normal;"><?= $getContact_message ?></div>
 												</div>
 
 												<div class="mb-3">
 													<label for="admin_contact_notification<?= $getContact_id ?>" class="form-label">Reply</label>
 													<div class="form-floating">
-														<textarea class="form-control" id="admin_contact_notification<?= $getContact_id ?>" style="height: 100px" name="notification"></textarea>
+														<textarea class="form-control" id="admin_contact_notification<?= $getContact_id ?>" style="height: 100px" name="notification" onkeyup="javascript:input(this,'admin_contact_notification<?= $getContact_id ?>',10000, 'input_contact');" required></textarea>
 													</div>
 												</div>
 

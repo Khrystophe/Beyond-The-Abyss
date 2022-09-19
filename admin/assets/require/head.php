@@ -78,12 +78,80 @@ require('session_regenerate.php'); ?>
             position: fixed;
             width: 100vw;
         }
+
+        .modal_messages {
+            display: none;
+            position: fixed;
+            z-index: 1500;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 0, 0, 0.7);
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .modal_messages .modal-content {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .modal_form h2 {
+            font-size: 18px;
+        }
+
+        .modal_form label {
+            font-size: 12px;
+        }
+
+
+        .modal-content {
+            margin: 5% auto;
+            width: 60%;
+            overflow: auto;
+        }
+
+        .modal_form_content {
+            background-color: white;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem 1rem 2rem;
+            display: flex;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .modal_description {
+            overflow: hidden;
+            white-space: pre-line;
+            display: flex;
+            justify-content: center;
+        }
+
+        #input_price,
+        #input_contact,
+        #input_description,
+        #input_composer,
+        #input_title,
+        #input_password,
+        #input_name_lastname,
+        #input_credits_reporting,
+        #input_content {
+            display: none;
+        }
     </style>
 
     <link href="./css/dashboard.css" rel="stylesheet">
 </head>
 
 <body>
+
+    <?php require('errors_success_modal.php') ?>
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Beyond The Abyss</a>

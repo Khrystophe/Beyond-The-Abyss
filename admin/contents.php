@@ -33,18 +33,18 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
 							<div class="mb-3">
 								<label for="admin_title" class="form-label">Title</label>
-								<input type="text" class="form-control" id="admin_title" name="title" required>
+								<input type="text" class="form-control" id="admin_title" name="title" onkeyup="javascript:input(this,'admin_title',21, 'input_title');" required>
 							</div>
 
 							<div class="mb-3">
 								<label for="admin_composer" class="form-label">Composer</label>
-								<input type="text" class="form-control" id="admin_composer" name="composer" required>
+								<input type="text" class="form-control" id="admin_composer" name="composer" onkeyup="javascript:input(this,'admin_composer',21, 'input_composer');" required>
 							</div>
 
 							<div class="mb-3">
 								<label for="admin_description">Description</label>
 								<div class="form-floating">
-									<textarea class="form-control" placeholder="Description" id="admin_description" style="height: 100px" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" required></textarea>
+									<textarea class="form-control" placeholder="Description" id="admin_description" style="height: 100px" name="description" onkeyup="javascript:input(this,'admin_description',251, 'input_description');" required></textarea>
 								</div>
 							</div>
 
@@ -70,13 +70,13 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 							</div>
 
 							<div class="mb-3">
-								<label for="admin_content_add" class="form-label"></label>
-								<input class="form-control" type="file" id="admin_content_add" name="content" onchange="javascript: return validContent('_add')" required>
+								<label for="admin_content_add" class="form-label">Files format : webm/mp4/ogv 128 Mo max.</label>
+								<input class="form-control" type="file" id="admin_content_add" name="content" onchange="javascript:validContent('_add')" required>
 							</div>
 
 							<div class="mb-3">
 								<label for="admin_price" class="form-label">Price : from 1 to 500 or free (type 'Free')</label>
-								<input type="text" id="admin_price" pattern="^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500|Free)$" name="price" required>
+								<input type="text" id="admin_price" name="price" onkeyup="javascript:input(this,'admin_price',5, 'input_price');" required>
 							</div>
 
 							<button type="submit" class="btn btn-primary">Submit</button>
@@ -140,23 +140,23 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
 												<div class="mb-3">
 													<label for="admin_edit_id_users<?= $getAllContent_id ?>" class="form-label">Reporting</label>
-													<input type="text" class="form-control" id="admin_edit_id_users<?= $getAllContent_id ?>" name="reporting" value="<?= $getAllContent_reporting ?>">
+													<input type="text" class="form-control" id="admin_edit_id_users<?= $getAllContent_id ?>" name="reporting" onkeyup="javascript:input(this,'admin_edit_id_users<?= $getAllContent_id ?>',11, 'input_credits_reporting');" value="<?= $getAllContent_reporting ?>">
 												</div>
 
 												<div class="mb-3">
 													<label for="admin_edit_title<?= $getAllContent_id ?>" class="form-label">Title</label>
-													<input type="text" class="form-control" id="admin_edit_title<?= $getAllContent_id ?>" name="title" value="<?= $getAllContent_title ?>" placeholder="<?= $getAllContent_title ?>">
+													<input type="text" class="form-control" id="admin_edit_title<?= $getAllContent_id ?>" name="title" onkeyup="javascript:input(this,'admin_edit_title<?= $getAllContent_id ?>',21, 'input_title');" value="<?= $getAllContent_title ?>" placeholder="<?= $getAllContent_title ?>">
 												</div>
 
 												<div class="mb-3">
 													<label for="admin_edit_composer<?= $getAllContent_id ?>" class="form-label">Composer</label>
-													<input type="text" class="form-control" id="admin_edit_composer<?= $getAllContent_id ?>" name="composer" value="<?= $getAllContent_composer ?>" placeholder="<?= $getAllContent_composer ?>">
+													<input type="text" class="form-control" id="admin_edit_composer<?= $getAllContent_id ?>" name="composer" onkeyup="javascript:input(this,'admin_edit_composer<?= $getAllContent_id ?>',21, 'input_composer');" value="<?= $getAllContent_composer ?>" placeholder="<?= $getAllContent_composer ?>">
 												</div>
 
 												<div class="mb-3">
 													<label for="admin_edit_description<?= $getAllContent_id ?>">Description</label>
 													<div class="form-floating">
-														<textarea class="form-control" id="admin_edit_description<?= $getAllContent_id ?>" style="height: 100px" name="description" onkeyup="javascript:MaxLengthDescription(this, 150);" value="<?= $getAllContent_description  ?>"><?= $getAllContent_description  ?></textarea>
+														<textarea class="form-control" id="admin_edit_description<?= $getAllContent_id ?>" style=" white-space:pre-line; height: 100px" name="description" onkeyup="javascript:input(this,'admin_edit_description<?= $getAllContent_id ?>',251, 'input_description');" value="<?= $getAllContent_description  ?>"><?= $getAllContent_description  ?></textarea>
 													</div>
 												</div>
 
@@ -188,12 +188,12 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
 												<div class="mb-3">
 													<label for="admin_content<?= $getAllContent_id ?>" class="form-label">Content</label>
-													<input class="form-control" type="file" id="admin_content<?= $getAllContent_id ?>" name="content" onchange="javascript: return validContent(<?= $getAllContent_id ?>)">
+													<input class="form-control" type="file" id="admin_content<?= $getAllContent_id ?>" name="content" onchange="javascript:validContent(<?= $getAllContent_id ?>)">
 												</div>
 
 												<div class="mb-3">
 													<label for="admin_edit_price<?= $getAllContent_id ?>" class="form-label">Price : from 1 to 50 or free (type 'Free')</label>
-													<input type="text" id="admin_edit_price<?= $getAllContent_id ?>" pattern="^([1-9]|[1-4][0-9]|50|Free)$" name="price" value="<?= $getAllContent_price ?>" placeholder="<?= $getAllContent_price ?>">
+													<input type="text" id="admin_edit_price<?= $getAllContent_id ?>" name="price" onkeyup="javascript:input(this,'admin_edit_price<?= $getAllContent_id ?>',5, 'input_price');" value="<?= $getAllContent_price ?>" placeholder="<?= $getAllContent_price ?>">
 												</div>
 
 												<button type="submit" class="btn btn-primary">Submit</button>

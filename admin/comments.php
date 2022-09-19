@@ -75,17 +75,17 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 													<label for="admin_comment_lastname<?= $getComment_id ?> class=" form-label"></label>
 													<input type="hidden" class="form-control" id="admin_comment_lastname<?= $getComment_id ?>" name="lastname" value="<?= $getUserInformations_lastname ?>">
 
-													<div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getUserInformations_name ?> <?= $getUserInformations_lastname ?></div>
+													<div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: normal;"><?= $getUserInformations_name ?> <?= $getUserInformations_lastname ?></div>
 												</div>
 
 												<div class="mb-3">
 													<div class="form-label">comment Date</div>
-													<div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getComment_date ?></div>
+													<div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: normal;"><?= $getComment_date ?></div>
 												</div>
 
 												<div class="mb-3">
 													<div class="form-label">comment Message</div>
-													<div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: flex-start;word-break: break-all;"><?= $getComment_message ?></div>
+													<div style="white-space:pre-line; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: flex-start;word-break: normal;"><?= $getComment_message ?></div>
 												</div>
 
 											</form>

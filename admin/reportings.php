@@ -76,12 +76,12 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                           <label for="admin_reporting_lastname<?= $getReporting_id ?> class=" form-label"></label>
                           <input type="hidden" class="form-control" id="admin_reporting_lastname<?= $getReporting_id ?>" name="lastname" value="<?= $getUserInformations_lastname ?>">
 
-                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getUserInformations_name ?> <?= $getUserInformations_lastname ?></div>
+                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: normal;"><?= $getUserInformations_name ?> <?= $getUserInformations_lastname ?></div>
                         </div>
 
                         <div class="mb-3">
                           <div class="form-label">Email</div>
-                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getUserInformations_email ?></div>
+                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: normal;"><?= $getUserInformations_email ?></div>
                         </div>
 
                         <div class="mb-3">
@@ -91,18 +91,18 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
                         <div class="mb-3">
                           <div class="form-label">Title/Composer</div>
-                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getContentInformations_title ?> <?= $getContentInformations_composer ?></div>
+                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: normal;"><?= $getContentInformations_title ?> <?= $getContentInformations_composer ?></div>
                         </div>
 
 
                         <div class="mb-3">
                           <div class="form-label">Reporting Date</div>
-                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getReporting_date ?></div>
+                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: normal;"><?= $getReporting_date ?></div>
                         </div>
 
                         <div class="mb-3">
                           <div class="form-label">Reporting Message</div>
-                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: flex-start;word-break: break-all;"><?= $getReporting_message ?></div>
+                          <div style="white-space:pre-line; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: flex-start;word-break: normal;"><?= $getReporting_message ?></div>
                         </div>
 
                       </form>

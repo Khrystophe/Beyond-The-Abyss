@@ -71,17 +71,17 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                           <label for="admin_notification_lastname<?= $getNotification_id ?> class=" form-label"></label>
                           <input type="hidden" class="form-control" id="admin_notification_lastname<?= $getNotification_id ?>" name="lastname" value="<?= $getUserInformations_lastname ?>">
 
-                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getUserInformations_name ?> <?= $getUserInformations_lastname ?></div>
+                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: normal;"><?= $getUserInformations_name ?> <?= $getUserInformations_lastname ?></div>
                         </div>
 
                         <div class="mb-3">
                           <div class="form-label">notification Date</div>
-                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getNotification_date ?></div>
+                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: normal;"><?= $getNotification_date ?></div>
                         </div>
 
                         <div class="mb-3">
                           <div class="form-label">Notification Message</div>
-                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: flex-start;word-break: break-all;"><?= $getNotification_message ?></div>
+                          <div style="white-space:pre-line; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: flex-start;word-break: normal;"><?= $getNotification_message ?></div>
                         </div>
 
                       </form>

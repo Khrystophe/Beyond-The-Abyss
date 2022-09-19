@@ -1,9 +1,44 @@
 
-function MaxLengthDescription(description, maxlength) {
-  if (description.value.length > maxlength) {
-    description.value = description.value.substring(0, maxlength);
-    alert('Maximum ' + maxlength + ' characters!');
+function input(string, id, maxLength, index) {
+
+  let array_regex ={
+    'input_name_lastname' : /^(?!\s*$)[a-zA-Zéèêàçù '"-]+$/,
+    'input_password' : /^[0-9a-zA-Z]+$/,
+    'input_title' : /^[0-9a-zA-Zéèêàçù '"!?°-]+$/,
+    'input_composer' : /^[0-9a-zA-Zéèêàçù -]+$/,
+    'input_description' : /^[\s\r\n0-9a-zA-Zéèêàçù# ()'".!?,;:°-]+$/,
+    'input_contact' : /^[\s\r\n0-9a-zA-Zéèêàçù# ()'".!?,;:°-]+$/,
+    'input_price' : /^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500|[Free]+)$/,
+    'input_credits_reporting' : /^[0-9]+$/,
+}
+
+let regex = array_regex[index];
+
+if (((string.value.match(regex)) && string.value.length < maxLength) || event.key === 'Tab' || event.key === 'Backspace' || event.key === 'Enter') {
+  
+  return true
+  
+} else {
+  
+  string = document.getElementById(id).value;
+  document.getElementById(id).value = string.substring(0, string.length - 1);
+  
+  let input_modal = document.getElementById("input_modal");
+  let message_regex = document.getElementById(index);
+  
+  input_modal.style.display = "flex"
+  message_regex.style.display = "flex"
+  
+  document.onclick = function() {
+    input_modal.style.display = "none";
+    message_regex.style.display = "none"
   }
+  
+  document.onkeydown= function() {
+    input_modal.style.display = "none";
+    message_regex.style.display = "none"
+  }
+}
 }
 
 function validContent(id){

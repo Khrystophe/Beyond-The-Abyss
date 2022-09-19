@@ -13,7 +13,7 @@ if (isset($getUser) && !empty($getUser)) {
 if (isset($getReporting) && !empty($getReporting)) {
 
   $getReporting_id = htmlspecialchars($getReporting['id']);
-  $getReporting_message = nl2br(htmlspecialchars($getReporting['message']));
+  $getReporting_message = str_replace('<br />', '', nl2br(htmlspecialchars($getReporting['message'])));
   $getReporting_date = htmlspecialchars($getReporting['date']);
   $getReporting_id_users = htmlspecialchars($getReporting['id_users']);
   $getReporting_id_contents = htmlspecialchars($getReporting['id_contents']);
@@ -44,7 +44,7 @@ if (isset($getPurchased_content) && !empty($getPurchased_content)) {
 if (isset($getNotification) && !empty($getNotification)) {
 
   $getNotification_id = htmlspecialchars($getNotification['id']);
-  $getNotification_message = nl2br(htmlspecialchars($getNotification['notification']));
+  $getNotification_message = str_replace('<br />', '', nl2br(htmlspecialchars($getNotification['notification'])));
   $getNotification_date = htmlspecialchars($getNotification['date']);
   $getNotification_id_users = htmlspecialchars($getNotification['id_users']);
 }
@@ -57,7 +57,7 @@ if (isset($getAllContent) && !empty($getAllContent)) {
   $getAllContent_video = htmlspecialchars($getAllContent['content']);
   $getAllContent_category = htmlspecialchars($getAllContent['category']);
   $getAllContent_level = htmlspecialchars($getAllContent['level']);
-  $getAllContent_description = nl2br(htmlspecialchars($getAllContent['description']));
+  $getAllContent_description = str_replace('<br />', '', nl2br(htmlspecialchars($getAllContent['description'])));
   $getAllContent_price = htmlspecialchars($getAllContent['price']);
   $getAllContent_likes = htmlspecialchars($getAllContent['likes']);
   $getAllContent_reporting = htmlspecialchars($getAllContent['reporting']);
@@ -67,7 +67,7 @@ if (isset($getAllContent) && !empty($getAllContent)) {
 if (isset($getContact) && !empty($getContact)) {
 
   $getContact_id = htmlspecialchars($getContact['id']);
-  $getContact_message = nl2br(htmlspecialchars($getContact['message']));
+  $getContact_message = str_replace('<br />', '', nl2br(htmlspecialchars($getContact['message'])));
   $getContact_date = htmlspecialchars($getContact['date']);
   $getContact_id_users = htmlspecialchars($getContact['id_users']);
 }
@@ -75,7 +75,7 @@ if (isset($getContact) && !empty($getContact)) {
 if (isset($getComment) && !empty($getComment)) {
 
   $getComment_id = htmlspecialchars($getComment['id']);
-  $getComment_message = nl2br(htmlspecialchars($getComment['comment']));
+  $getComment_message = str_replace('<br />', '', nl2br(htmlspecialchars($getComment['comment'])));
   $getComment_date = htmlspecialchars($getComment['date']);
   $getComment_likes = htmlspecialchars($getComment['likes']);
   $getComment_id_contents = htmlspecialchars($getComment['id_contents']);
