@@ -77,6 +77,7 @@ if (isset($get_error) || isset($get_success)) {
     57 => 'Content add with success. ',
     58 => 'Content add with success. ',
     59 => 'User none exist. Use the menu to navigate the site ',
+    60 => 'User edited. ',
   ];
 
   if (isset($get_error)) {

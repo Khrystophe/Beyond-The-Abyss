@@ -54,7 +54,7 @@ function validContent(page){
 
     let allowed_extensions = ["webm", "mp4", "ogv"];
     let allowed_mime_types = ["video/webm", "video/mp4", "video/ogv"];
-    let check_files_name = ((typeof split_files_name[0] === 'string' || split_files_name[0] instanceof String) );
+    let check_files_name = (typeof split_files_name[0] === 'string' || split_files_name[0] instanceof String) ;
     let check_files_extension = allowed_extensions.includes(split_files_name[1].toLowerCase());
     let check_files_mime_type = allowed_mime_types.includes(type.toLowerCase());
 
@@ -98,7 +98,6 @@ function validContent(page){
         input_modal.style.display = "none";
         message_regex.style.display = "none"
     }
-
   }
 }
 
@@ -166,6 +165,7 @@ let close = document.getElementById(name+"_close"+id);
       modal.style.display = "none";
     }
   }
+
     window.onclick = function(event) { 
 
       if (event.target == modal){

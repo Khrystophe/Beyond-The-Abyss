@@ -1,3 +1,7 @@
+<?php
+require('page_deco_auto.php');
+require('session_regenerate.php'); ?>
+
 <!doctype html>
 <html lang="fr">
 

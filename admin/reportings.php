@@ -3,13 +3,11 @@ session_start();
 if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
   if ($_SESSION['users']['type'] == 'admin') {
 
-    require('./assets/require/head.php');
     require('./assets/require/co_bdd.php');
     require('./assets/require/functions.php');
+    require('./assets/require/head.php');
 
-    $reportings = getReporting($bdd);
-
-?>
+    $getReportings = getReporting($bdd); ?>
 
 
     <h1>reportings</h1>
@@ -28,41 +26,29 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
         <?php
 
-        foreach ($reportings as $reporting) {
+        foreach ($getReportings as $getReporting) {
 
-          $reporting_id = htmlspecialchars($reporting['id']);
-          $reporting_message = nl2br(htmlspecialchars($reporting['message']));
-          $reporting_date = htmlspecialchars($reporting['date']);
-          $reporting_id_users = htmlspecialchars($reporting['id_users']);
-          $reporting_id_contents = htmlspecialchars($reporting['id_contents']);
+          require('./assets/require/variables.php');
 
-          $user = getUserInformations($bdd, $reporting_id_users);
+          $getUserInformations = getUserInformations($bdd, $getReporting_id_users);
 
-          $user_name = htmlspecialchars($user['name']);
-          $user_lastname = htmlspecialchars($user['lastname']);
-          $user_email = htmlspecialchars($user['email']);
+          $getContentInformations = getContentInformations($bdd, $getReporting_id_contents);
 
-          $getAllContents = getContentInformations($bdd, $reporting_id_contents);
-
-          $content_title = htmlspecialchars($getAllContents['title']);
-          $content_composer = htmlspecialchars($getAllContents['composer']);
-
-
-        ?>
+          require('./assets/require/variables.php'); ?>
 
           <tr>
-            <td scope="col" style="word-break: break-all;"><?= $reporting_id ?></td>
-            <td scope="col" style="word-break: break-all;"><?= $reporting_date ?></td>
-            <td scope="col" style="word-break: break-all;"><?= $reporting_id_users ?></td>
-            <td scope="col" style="word-break: break-all;"><?= $reporting_id_contents ?></td>
+            <td scope="col" style="word-break: break-all;"><?= $getReporting_id ?></td>
+            <td scope="col" style="word-break: break-all;"><?= $getReporting_date ?></td>
+            <td scope="col" style="word-break: break-all;"><?= $getReporting_id_users ?></td>
+            <td scope="col" style="word-break: break-all;"><?= $getReporting_id_contents ?></td>
 
             <td scope="col" style="word-break: break-all;">
 
-              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $reporting_id ?>">
+              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $getReporting_id ?>">
                 See
               </button>
 
-              <div class="modal fade" id="user_editModal<?= $reporting_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="user_editModal<?= $getReporting_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -72,49 +58,49 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                     </div>
 
                     <div class="modal-body">
-                      <form method="post" action="./assets/actions/reply_action.php?id=<?= $reporting_id ?>" enctype="multipart/form-data">
+                      <form method="post" action="./assets/actions/reply_action.php?id=<?= $getReporting_id ?>" enctype="multipart/form-data">
 
                         <div class="mb-3">
-                          <label for="admin_reporting_id_user<?= $reporting_id ?>" class="form-label">Reporting User id</label>
-                          <input type="hidden" class="form-control" id="admin_reporting_id_user<?= $reporting_id ?>" name="id" value="<?= $reporting_id_users ?>">
+                          <label for="admin_reporting_id_user<?= $getReporting_id ?>" class="form-label">Reporting User id</label>
+                          <input type="hidden" class="form-control" id="admin_reporting_id_user<?= $getReporting_id ?>" name="id" value="<?= $getReporting_id_users ?>">
 
-                          <div style="width:10%; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;"><?= $reporting_id_users ?></div>
+                          <div style="width:10%; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;"><?= $getReporting_id_users ?></div>
                         </div>
 
                         <div class="mb-3">
-                          <label for="admin_reporting_name<?= $reporting_id ?> class=" form-label">Name/Lastname</label>
-                          <input type="hidden" class="form-control" id="admin_reporting_name<?= $reporting_id ?>" name="name" value="<?= $user_name ?>">
+                          <label for="admin_reporting_name<?= $getReporting_id ?> class=" form-label">Name/Lastname</label>
+                          <input type="hidden" class="form-control" id="admin_reporting_name<?= $getReporting_id ?>" name="name" value="<?= $getUserInformations_name ?>">
 
-                          <label for="admin_reporting_lastname<?= $reporting_id ?> class=" form-label"></label>
-                          <input type="hidden" class="form-control" id="admin_reporting_lastname<?= $reporting_id ?>" name="lastname" value="<?= $user_lastname ?>">
+                          <label for="admin_reporting_lastname<?= $getReporting_id ?> class=" form-label"></label>
+                          <input type="hidden" class="form-control" id="admin_reporting_lastname<?= $getReporting_id ?>" name="lastname" value="<?= $getUserInformations_lastname ?>">
 
-                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $user_name ?> <?= $user_lastname ?></div>
+                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getUserInformations_name ?> <?= $getUserInformations_lastname ?></div>
                         </div>
 
                         <div class="mb-3">
                           <div class="form-label">Email</div>
-                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $user_email ?></div>
+                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getUserInformations_email ?></div>
                         </div>
 
                         <div class="mb-3">
                           <div class="form-label">Reported Content id</div>
-                          <div style="width:10%; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;"><?= $reporting_id_contents ?></div>
+                          <div style="width:10%; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;"><?= $getReporting_id_contents ?></div>
                         </div>
 
                         <div class="mb-3">
                           <div class="form-label">Title/Composer</div>
-                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $content_title ?> <?= $content_composer ?></div>
+                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getContentInformations_title ?> <?= $getContentInformations_composer ?></div>
                         </div>
 
 
                         <div class="mb-3">
                           <div class="form-label">Reporting Date</div>
-                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $reporting_date ?></div>
+                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;word-break: break-all;"><?= $getReporting_date ?></div>
                         </div>
 
                         <div class="mb-3">
                           <div class="form-label">Reporting Message</div>
-                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: flex-start;word-break: break-all;"><?= $reporting_message ?></div>
+                          <div style=" border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: flex-start;word-break: break-all;"><?= $getReporting_message ?></div>
                         </div>
 
                       </form>
@@ -124,7 +110,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
               </div>
             </td>
 
-            <td scope="col" style="word-break: break-all;"><a href="./assets/actions/delete_reporting_messages.php?id=<?= $reporting_id ?>"><button class="btn btn-danger">Delete</button></a></td>
+            <td scope="col" style="word-break: break-all;"><a href="./assets/actions/delete_reporting_messages.php?id=<?= $getReporting_id ?>"><button class="btn btn-danger">Delete</button></a></td>
 
           </tr>
         <?php } ?>
@@ -137,7 +123,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
     require('./assets/require/foot.php');
   } else {
 
-    header('location: /Diplome/index.php');
+    $bdd = null;
+    header('location: /Diplome/index.php?error=040140');
+    die();
   }
 }
 

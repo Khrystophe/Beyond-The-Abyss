@@ -117,7 +117,7 @@
 
 029 ad/contents       140 error     you_are_not_an_administrator                
 
-030 ad/contact        140 error     you_are_not_an_administrator                
+030 ad/contacts       140 error     you_are_not_an_administrator                
 
 031 ad/comments       140 error     you_are_not_an_administrator   
 
@@ -125,6 +125,7 @@
                       15  error     processing_bad_or_malformed_request
 
 033 ad/edit_user      242 success   user_edited     
+                      260 succes    user edited
                       115 error     email_already_used
                       134 error     forbidden_action 
                       15  error     processing_bad_or_malformed_request
@@ -138,12 +139,13 @@
 036 ad/delete_notif   235 success   notification_deleted
                       15  error     processing_bad_or_malformed_request
 
-038 ad/delete_cont    244 success   messages_deleted                      
+037 ad/delete_cont    244 success   messages_deleted                      
                       15  error     processing_bad_or_malformed_request
 
-039 ad/delete_com     245 success   comment_deleted                      
+038 ad/delete_com     245 success   comment_deleted                      
                       15  error     processing_bad_or_malformed_request
                                                
+039 ad/reportings     140 error     you_are_not_an_administrator   
                                                                                   
 
 

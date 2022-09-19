@@ -3,13 +3,11 @@ session_start();
 if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
   if ($_SESSION['users']['type'] == 'admin') {
 
-    require('./assets/require/head.php');
     require('./assets/require/co_bdd.php');
     require('./assets/require/functions.php');
+    require('./assets/require/head.php');
 
-    $users = getUsers($bdd);
-
-?>
+    $getUsers = getUsers($bdd); ?>
 
 
     <h1>Users</h1>
@@ -26,28 +24,23 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 
       <tbody>
 
-        <?php foreach ($users as $user) {
+        <?php foreach ($getUsers as $getUser) {
 
-          $user_id = htmlspecialchars($user['id']);
-          $user_name = htmlspecialchars($user['name']);
-          $user_last_name = htmlspecialchars($user['lastname']);
-          $user_email = htmlspecialchars($user['email']);
-          $user_credits = htmlspecialchars($user['credits']);
-          $user_type = htmlspecialchars($user['type']); ?>
+          require('./assets/require/variables.php'); ?>
 
 
           <tr>
-            <td scope="col" style="word-break: break-all;"><?= $user_id ?></td>
-            <td scope="col" style="word-break: break-all;"><?= $user_credits ?></td>
-            <td scope="col" style="word-break: break-all;"><?= $user_type ?></td>
+            <td scope="col" style="word-break: break-all;"><?= $getUser_id ?></td>
+            <td scope="col" style="word-break: break-all;"><?= $getUser_credits ?></td>
+            <td scope="col" style="word-break: break-all;"><?= $getUser_type ?></td>
 
             <td scope="col" style="word-break: break-all;">
 
 
-              <?php if ($_SESSION['users']['id'] != $user_id) { ?>
+              <?php if ($_SESSION['users']['id'] != $getUser_id) { ?>
 
 
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $user_id ?>">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $getUser_id ?>">
                   Edit User Informations
                 </button>
 
@@ -55,7 +48,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
               <?php } else { ?>
 
 
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $user_id ?>">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#user_editModal<?= $getUser_id ?>">
                   Your Informations
                 </button>
 
@@ -63,13 +56,13 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
               <?php } ?>
 
 
-              <div class="modal fade" id="user_editModal<?= $user_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="user_editModal<?= $getUser_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
 
 
-                      <?php if ($_SESSION['users']['id'] != $user_id) { ?>
+                      <?php if ($_SESSION['users']['id'] != $getUser_id) { ?>
 
 
                         <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
@@ -88,39 +81,39 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                     </div>
 
                     <div class="modal-body">
-                      <form method="post" action="./assets/actions/edit_user_action.php?id=<?= $user_id ?>" enctype="multipart/form-data">
+                      <form method="post" action="./assets/actions/edit_user_action.php?id=<?= $getUser_id ?>" enctype="multipart/form-data">
 
                         <div class="mb-3">
-                          <label for="admin_edit_id_user<?= $user_id ?>" class="form-label">User id</label>
-                          <input type="hidden" class="form-control" id="admin_edit_id_user<?= $user_id ?>" name="id" value="<?= $user_id ?>">
+                          <label for="admin_edit_id_user<?= $getUser_id ?>" class="form-label">User id</label>
+                          <input type="hidden" class="form-control" id="admin_edit_id_user<?= $getUser_id ?>" name="id" value="<?= $getUser_id ?>">
 
-                          <div style="width:10%; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;"><?= $user_id ?></div>
+                          <div style="width:10%; border-color: #c4c4e9; border-style:solid; border-width: 1px; border-radius: 6px; display: flex; justify-content: center;"><?= $getUser_id ?></div>
                         </div>
 
                         <div class="mb-3">
-                          <label for="admin_edit_user_name<?= $user_id ?>" class="form-label">Name</label>
-                          <input type="text" class="form-control" id="admin_edit_user_name<?= $user_id ?>" name="name" value="<?= $user_name ?>" placeholder="<?= $user_name ?>">
+                          <label for="admin_edit_user_name<?= $getUser_id ?>" class="form-label">Name</label>
+                          <input type="text" class="form-control" id="admin_edit_user_name<?= $getUser_id ?>" name="name" value="<?= $getUser_name ?>" placeholder="<?= $getUser_name ?>">
                         </div>
 
                         <div class="mb-3">
-                          <label for="admin_edit_user_lastname<?= $user_id ?>" class="form-label">Lastname</label>
-                          <input type="text" class="form-control" id="admin_edit_user_lastname<?= $user_id ?>" name="lastname" value="<?= $user_last_name ?>" placeholder="<?= $user_last_name ?>">
+                          <label for="admin_edit_user_lastname<?= $getUser_id ?>" class="form-label">Lastname</label>
+                          <input type="text" class="form-control" id="admin_edit_user_lastname<?= $getUser_id ?>" name="lastname" value="<?= $getUser_last_name ?>" placeholder="<?= $getUser_last_name ?>">
                         </div>
 
                         <div class="mb-3">
-                          <label for="admin_edit_user_email<?= $user_id ?>" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="admin_edit_user_email<?= $user_id ?>" name="email" value="<?= $user_email ?>" placeholder="<?= $user_email ?>">
+                          <label for="admin_edit_user_email<?= $getUser_id ?>" class="form-label">Email</label>
+                          <input type="email" class="form-control" id="admin_edit_user_email<?= $getUser_id ?>" name="email" value="<?= $getUser_email ?>" placeholder="<?= $getUser_email ?>">
                         </div>
 
                         <div class="mb-3">
-                          <label for="admin_edit_user_credits<?= $user_id ?>" class="form-label">Credits</label>
-                          <input type="text" class="form-control" id="admin_edit_user_credits<?= $user_id ?>" name="credits" value="<?= $user_credits ?>" placeholder="<?= $user_credits ?>">
+                          <label for="admin_edit_user_credits<?= $getUser_id ?>" class="form-label">Credits</label>
+                          <input type="text" class="form-control" id="admin_edit_user_credits<?= $getUser_id ?>" name="credits" value="<?= $getUser_credits ?>" placeholder="<?= $getUser_credits ?>">
                         </div>
 
                         <div class="mb-3">
-                          <label for="admin_edit_user_type<?= $user_id ?>" class="form-label">Type</label>
-                          <select class="inputbox" id="admin_edit_user_type<?= $user_id ?>" name="type">
-                            <option value="<?= $user_type ?>">--<?= $user_type ?>--</option>
+                          <label for="admin_edit_user_type<?= $getUser_id ?>" class="form-label">Type</label>
+                          <select class="inputbox" id="admin_edit_user_type<?= $getUser_id ?>" name="type">
+                            <option value="<?= $getUser_type ?>">--<?= $getUser_type ?>--</option>
                             <option value="user">User</option>
                             <option value="admin">Admin</option>
                           </select>
@@ -138,10 +131,10 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
             <td scope="col" style="word-break: break-all;">
 
 
-              <?php if ($_SESSION['users']['id'] != $user_id) { ?>
+              <?php if ($_SESSION['users']['id'] != $getUser_id) { ?>
 
 
-                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#user_editpassword<?= $user_id ?>">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#user_editpassword<?= $getUser_id ?>">
                   Edit User Password
                 </button>
 
@@ -149,7 +142,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
               <?php } else { ?>
 
 
-                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#user_editpassword<?= $user_id ?>">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#user_editpassword<?= $getUser_id ?>">
                   Your Password
                 </button>
 
@@ -157,13 +150,13 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
               <?php } ?>
 
 
-              <div class="modal fade" id="user_editpassword<?= $user_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="user_editpassword<?= $getUser_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
 
 
-                      <?php if ($_SESSION['users']['id'] != $user_id) { ?>
+                      <?php if ($_SESSION['users']['id'] != $getUser_id) { ?>
 
 
                         <h5 class="modal-title" id="exampleModalLabel">Edit Password</h5>
@@ -171,17 +164,17 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
                     </div>
                     <div class="modal-body">
 
-                      <form method="post" action="./assets/actions/edit_password_action.php?id=<?= $user_id ?>" enctype="multipart/form-data">
+                      <form method="post" action="./assets/actions/edit_password_action.php?id=<?= $getUser_id ?>" enctype="multipart/form-data">
 
 
                         <div class="mb-3">
-                          <label for="admin_edit_user_password_id<?= $user_id ?>" class="form-label"></label>
-                          <input type="hidden" class="form-control" id="admin_edit_id_user_password_id<?= $user_id ?>" name="id" value="<?= $user_id ?>">
+                          <label for="admin_edit_user_password_id<?= $getUser_id ?>" class="form-label"></label>
+                          <input type="hidden" class="form-control" id="admin_edit_id_user_password_id<?= $getUser_id ?>" name="id" value="<?= $getUser_id ?>">
                         </div>
 
                         <div class="mb-3">
-                          <label for="admin_edit_user_password<?= $user_id ?>" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="admin_edit_user_password<?= $user_id ?>" name="password" required pattern="^([1-9][0-9])+$" minlength="2">
+                          <label for="admin_edit_user_password<?= $getUser_id ?>" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="admin_edit_user_password<?= $getUser_id ?>" name="password" required pattern="^([1-9][0-9])+$" minlength="2">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -204,10 +197,10 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
             </td>
 
 
-            <?php if ($_SESSION['users']['id'] != $user_id) { ?>
+            <?php if ($_SESSION['users']['id'] != $getUser_id) { ?>
 
 
-              <td scope="col" style="word-break: break-all;"><a href="../../Diplome/assets/actions/delete_users_action.php?id=<?= $user_id ?>&type=admin"><button class="btn btn-danger">Delete</button></a></td>
+              <td scope="col" style="word-break: break-all;"><a href="../../Diplome/assets/actions/delete_users_action.php?id=<?= $getUser_id ?>&type=admin"><button class="btn btn-danger">Delete</button></a></td>
 
 
             <?php } ?>
@@ -228,7 +221,9 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
     require('./assets/require/foot.php');
   } else {
 
-    header('location: /Diplome/index.php');
+    $bdd = null;
+    header('location: /Diplome/index.php?error=025140');
+    die();
   }
 }
 ?>

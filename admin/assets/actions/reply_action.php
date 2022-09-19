@@ -4,28 +4,30 @@ require('../require/check_data.php');
 
 if (
   isset($session_users_id)
+  && (isset($session_users_type) && $session_users_type == 'admin')
   && isset($post_id)
-  && isset($_POST['message'])
-  && isset($_POST['notification'])
-  && isset($_POST['name'])
-  && isset($_POST['lastname'])
+  && isset($post_message)
+  && isset($post_notification)
+  && isset($post_name)
+  && isset($post_lastname)
 ) {
 
   var_dump($post_id);
-  var_dump($_POST['notification']);
+  var_dump($post_notification);
   require('../require/co_bdd.php');
+  require('../require/action_deco_auto.php');
 
   $date = date('Y-m-d H:i:s');
 
   $notification = 'In reply to your message :
     
-    "' . $_POST['message'] . '"  
+    "' . $post_message . '"  
     
     Here is our answer as promised :
 
-    Hello ' . $_POST['name'] . " " . $_POST['lastname'] . ' ! 
+    Hello ' . $post_name . " " . $post_lastname . ' ! 
     
-    ' . $_POST['notification'] . '
+    ' . $post_notification . '
     
     Have a good day';
 
@@ -36,12 +38,12 @@ if (
   $req->execute();
 
   $bdd = null;
-  header('location: ../../contacts.php?success=reply_ok');
+  header('location: ../../contacts.php?success=032241');
   die();
 } else {
 
   $bdd = null;
   http_response_code(400);
-  header('location: ../../contact.php?error=processing_bad_or_malformed_request');
+  header('location: ../../contacts.php?error=03215');
   die();
 }
