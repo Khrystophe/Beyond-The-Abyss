@@ -87,6 +87,7 @@ if (isset($get_error) || isset($get_success)) {
     58 => 'Content add with success',
     59 => 'User none exist. Use the menu to navigate the site',
     60 => 'User edited',
+    61 => 'Reporting deleted',
   ];
 
   if (isset($get_error)) {
@@ -96,7 +97,8 @@ if (isset($get_error) || isset($get_success)) {
       $message = $messages[substr($get_error, 4)];
     } else {
 
-      header('location: index.php?error= 00115');
+      header('location: ../../Diplome/index.php?error= 00115');
+      die();
     }
   } else if (isset($get_success)) {
 
@@ -105,7 +107,8 @@ if (isset($get_error) || isset($get_success)) {
       $message = $messages[substr($get_success, 4)];
     } else {
 
-      header('location: index.php?error= 00115');
+      header('location: ../../Diplome/index.php?error= 00115');
+      die();
     }
   }
 

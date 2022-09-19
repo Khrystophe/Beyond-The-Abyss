@@ -146,6 +146,9 @@
                       15  error     processing_bad_or_malformed_request
                                                
 039 ad/reportings     140 error     you_are_not_an_administrator   
+
+040 ad/reportings     261 success   reporting_deleted
+                      15  error     processing_bad_or_malformed_request   
                                                                                   
 
 

@@ -87,6 +87,7 @@ if (isset($get_error) || isset($get_success)) {
     58 => 'Content add with success',
     59 => 'User none exist. Use the menu to navigate the site',
     60 => 'User edited',
+    61 => 'Reporting deleted',
   ];
 
   if (isset($get_error)) {
@@ -97,6 +98,7 @@ if (isset($get_error) || isset($get_success)) {
     } else {
 
       header('location: index.php?error= 00115');
+      die();
     }
   } else if (isset($get_success)) {
 
@@ -106,6 +108,7 @@ if (isset($get_error) || isset($get_success)) {
     } else {
 
       header('location: index.php?error= 00115');
+      die();
     }
   }
 
