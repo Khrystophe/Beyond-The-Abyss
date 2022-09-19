@@ -107,19 +107,26 @@
                       15  error     processing_bad_or_malformed_request
                       153 error     processing_bad_or_malformed_request
 
-025 ad/users          140 error     you_are_not_an_administrator                
+025 ad/users          140 error     you_are_not_an_administrator  
+                      15  error     processing_bad_or_malformed_request              
 
-026 ad/purchased      140 error     you_are_not_an_administrator                
+026 ad/purchased      140 error     you_are_not_an_administrator 
+                      15  error     processing_bad_or_malformed_request               
 
-027 ad/notif          140 error     you_are_not_an_administrator                
+027 ad/notif          140 error     you_are_not_an_administrator 
+                      15  error     processing_bad_or_malformed_request               
 
-028 ad/index          140 error     you_are_not_an_administrator                
+028 ad/index          140 error     you_are_not_an_administrator 
+                      15  error     processing_bad_or_malformed_request               
 
-029 ad/contents       140 error     you_are_not_an_administrator                
+029 ad/contents       140 error     you_are_not_an_administrator  
+                      15  error     processing_bad_or_malformed_request              
 
-030 ad/contacts       140 error     you_are_not_an_administrator                
+030 ad/contacts       140 error     you_are_not_an_administrator 
+                      15  error     processing_bad_or_malformed_request               
 
-031 ad/comments       140 error     you_are_not_an_administrator   
+031 ad/comments       140 error     you_are_not_an_administrator
+                      15  error     processing_bad_or_malformed_request   
 
 032 ad/reply          241 success   reply_sent
                       15  error     processing_bad_or_malformed_request
@@ -145,9 +152,10 @@
 038 ad/delete_com     245 success   comment_deleted                      
                       15  error     processing_bad_or_malformed_request
                                                
-039 ad/reportings     140 error     you_are_not_an_administrator   
+039 ad/reportings     140 error     you_are_not_an_administrator
+                      15  error     processing_bad_or_malformed_request   
 
-040 ad/reportings     261 success   reporting_deleted
+040 ad/del report     261 success   reporting_deleted
                       15  error     processing_bad_or_malformed_request   
                                                                                   
 
