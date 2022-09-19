@@ -134,7 +134,7 @@ if (isset($getNumbersOfcomments) && !empty($getNumbersOfcomments)) {
   $getNumbersOfcomments_from_user = htmlspecialchars(implode($getNumbersOfcomments));
 }
 
-if (isset($getIdUserFromContent)  && !empty($getIdUserFromContent)) {
+// if (isset($getIdUserFromContent)  && !empty($getIdUserFromContent)) {
 
-  $getIdUserFromContent_author_id = htmlspecialchars($getIdUserFromContent['id_users']);
-}
+//   $getIdUserFromContent_author_id = htmlspecialchars($getIdUserFromContent['id_users']);
+// }

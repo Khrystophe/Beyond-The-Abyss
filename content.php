@@ -39,9 +39,7 @@ if (
 
 			$getIdUserFromContent = getIdUserFromContent($bdd, $get_id);
 
-
-			require('./assets/require/variables.php');
-
+			$getIdUserFromContent = implode($getIdUserFromContent);
 
 			if (empty($getIdUserFromContent)) {
 
@@ -54,11 +52,11 @@ if (
 		<?php } else {
 
 
-			$getIdUserFromContent_author_id = $session_users_id;
+			$getIdUserFromContent = $session_users_id;
 		}
 
 
-		$getContents = getUserContent($bdd, $getIdUserFromContent_author_id);
+		$getContents = getUserContent($bdd, $getIdUserFromContent);
 
 
 		if (empty($getContents)) {
