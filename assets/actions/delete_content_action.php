@@ -62,7 +62,7 @@ if (
     $req->execute();
 
 
-    $date = date('l jS \of F Y h:i:s A');
+    $date = date('Y-m-d H:i:s');
 
     $notification = 'Hello ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' ! 
     

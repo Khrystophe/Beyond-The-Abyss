@@ -12,7 +12,7 @@ if (
   require('../require/co_bdd.php');
   require('../require/action_deco_auto.php');
 
-  $date = date('l jS \of F Y h:i:s A');
+  $date = date('Y-m-d H:i:s');
 
   $req = $bdd->prepare("INSERT INTO comments( comment, date , id_contents, id_users) VALUES (:comment, :date, :id_contents, :id_users)");
   $req->bindParam(':comment', $post_comment, PDO::PARAM_STR);

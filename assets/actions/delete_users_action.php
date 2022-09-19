@@ -54,7 +54,7 @@ if (
             $req->execute();
 
 
-            $date = date('l jS \of F Y h:i:s A');
+            $date = date('Y-m-d H:i:s');
 
             $notification = 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! 
             

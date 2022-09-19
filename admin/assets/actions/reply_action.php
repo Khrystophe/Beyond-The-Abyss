@@ -15,7 +15,7 @@ if (
   var_dump($_POST['notification']);
   require('../require/co_bdd.php');
 
-  $date = date('l jS \of F Y h:i:s A');
+  $date = date('Y-m-d H:i:s');
 
   $notification = 'In reply to your message :
     

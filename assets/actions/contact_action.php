@@ -11,7 +11,7 @@ if (
   require('../require/co_bdd.php');
   require('../require/action_deco_auto.php');
 
-  $date = date('l jS \of F Y h:i:s A');
+  $date = date('Y-m-d H:i:s');
 
   $req = $bdd->prepare("INSERT INTO contact( message, date, id_users) VALUES (:message, :date, :id_users)");
   $req->bindParam(':message', $post_message, PDO::PARAM_STR);
