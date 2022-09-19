@@ -190,7 +190,7 @@ if (isset($session_users_id)) {
 
 								<ul>
 									<li>
-										<a class="contact_button">Administrator</a>
+										<button class="contact_button" onfocus="javascript:contact()">Administrator</button>
 									</li>
 									<li>
 										<a class="lost_password_button">Lost Password</a>
@@ -239,7 +239,7 @@ if (isset($session_users_id)) {
 
 							<ul>
 								<li>
-									<a class="contact_button">Administrator</a>
+									<button class="contact_button" onfocus="javascript:contact()">Administrator</button>
 								</li>
 								<li>
 									<a class="lost_password_button">Lost Password</a>

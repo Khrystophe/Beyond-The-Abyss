@@ -250,6 +250,20 @@ nav {
   text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 0 3px 0 rgb(44, 44, 44), 0 4px 0 rgb(19, 19, 19), 0 5px 0 rgb(12, 12, 12), 0 6px 0 rgb(0, 0, 0), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
 }
 
+.menu__right__inner__item ul li button {
+  color: #8f8f8f;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: color 1s;
+  border: none;
+  background-color: transparent;
+  font-family: var(--primary-font);
+  text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 0 3px 0 rgb(44, 44, 44), 0 4px 0 rgb(19, 19, 19), 0 5px 0 rgb(12, 12, 12), 0 6px 0 rgb(0, 0, 0), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
+}
+.menu__right__inner__item ul li button:hover {
+  color: rgb(36, 36, 36);
+}
+
 .menu__right__inner__item ul li a:hover {
   color: rgb(36, 36, 36);
 }
@@ -315,6 +329,9 @@ nav {
   .menu__right__inner__item ul li a {
     font-size: 1rem;
   }
+  .menu__right__inner__item ul li button {
+    font-size: 1rem;
+  }
 }
 @media all and (max-height: 580px) {
   .toggle {
@@ -336,6 +353,9 @@ nav {
     font-size: 1.25rem;
   }
   .menu__right__inner__item ul li a {
+    font-size: 1rem;
+  }
+  .menu__right__inner__item ul li button {
     font-size: 1rem;
   }
 }
@@ -373,6 +393,19 @@ nav {
   }
   .menu_left_responsive .menu__left__inner__item ul {
     list-style: none;
+  }
+  .menu_left_responsive .menu__left__inner__item ul li button {
+    color: #8f8f8f;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 1s;
+    border: none;
+    background-color: transparent;
+    font-family: var(--primary-font);
+    text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 0 3px 0 rgb(44, 44, 44), 0 4px 0 rgb(19, 19, 19), 0 5px 0 rgb(12, 12, 12), 0 6px 0 rgb(0, 0, 0), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
+  }
+  .menu_left_responsive .menu__left__inner__item ul li button:hover {
+    color: rgb(36, 36, 36);
   }
 }
 @media all and (max-width: 499px) and (max-height: 499px) {

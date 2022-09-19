@@ -88,14 +88,14 @@ function validContent(page){
       document.getElementById(page+'_content').value= '';
       
       
-      let valid_content_modal = document.getElementById("input_modal");
+      let input_modal = document.getElementById("input_modal");
       let message_regex = document.getElementById("input_content");
       
-      valid_content_modal.style.display = "flex"
+      input_modal.style.display = "flex"
       message_regex.style.display = "flex"
       
       document.onclick = function() {
-        valid_content_modal.style.display = "none";
+        input_modal.style.display = "none";
         message_regex.style.display = "none"
     }
 
@@ -117,52 +117,39 @@ function modal(id){
       modal.style.display = "none";
     }
   }
-}
 
+    window.onclick = function(event) { 
 
-let contact_modal = document.getElementById("contact_modal");
-let contact_button = document.getElementsByClassName("contact_button");
-let contact_close = document.getElementById("contact_close");
-
-for(let i=0; i < contact_button.length; i++){
-
-  if (contact_button[i] != undefined){
-      contact_button[i].onclick = function() {
-      contact_modal.style.display = "flex";
-    }
-      contact_close.onclick = function() {
-      contact_modal.style.display = "none";
+      if (event.target == modal){
+      modal.style.display = "none";
     }
   }
 }
 
-window.onclick = function(event) { 
+function contact(){
 
-    if (event.target == search_modal){
-    search_modal.style.display = "none";
+  let modal = document.getElementById("contact_modal");
+  let button = document.getElementsByClassName("contact_button");
+  let close = document.getElementById("contact_close");
 
-  }else if (event.target == edit_modal) {
-    edit_modal.style.display = "none";
-
-  } else if (event.target == comment_modal){
-    comment_modal.style.display = "none";
-
-  }else if (event.target == contact_modal) {
-    contact_modal.style.display = "none";
-
-  }else if (event.target == report_modal) {
-    report_modal.style.display = "none";
-  
-  }else if (event.target == delete_content_modal) {
-    delete_content_modal.style.display = "none";
+  for(let i=0; i < button.length; i++){
     
-  }else if (event.target == delete_users_modal) {
-    delete_users_modal.style.display = "none";
-  
-  }else if (event.target == like_content_modal) {
-    like_content_modal.style.display = "none";
+    if (button[i] != undefined){
+      button[i].onclick = function() {
+        modal.style.display = "flex";
+      }
+        close.onclick = function() {
+        modal.style.display = "none";
+      }
+    }
+
+      window.onclick = function(event) { 
+        
+        if (event.target == modal){
+        modal.style.display = "none";
+      }
+    }
   }
- 
 }
 
 function modalForeach(name, id){
@@ -179,7 +166,17 @@ let close = document.getElementById(name+"_close"+id);
       modal.style.display = "none";
     }
   }
+    window.onclick = function(event) { 
+
+      if (event.target == modal){
+      modal.style.display = "none";
+    }
+  }
 }
+
+
+
+
 
 
 
