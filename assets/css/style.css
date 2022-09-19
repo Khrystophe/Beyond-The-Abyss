@@ -1243,6 +1243,7 @@ nav {
   overflow: hidden;
   text-align: justify;
   white-space: pre-line;
+  font-size: 0.8rem;
 }
 
 .form {
@@ -1537,9 +1538,9 @@ nav {
   margin: 0 10px 0 0;
   white-space: pre-line;
   color: #535353;
-  line-height: 1.5;
   overflow: hidden;
   text-align: justify;
+  font-size: 0.8rem;
 }
 .cardBody .cardStats {
   font-size: 0.9em;

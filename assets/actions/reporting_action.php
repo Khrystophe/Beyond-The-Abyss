@@ -29,7 +29,7 @@ if (
 
   Your reporting :
 
-  " ' . $post_message . '" 
+  "' . $post_message . '" 
   
   has been sent successfully. 
   

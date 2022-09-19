@@ -145,7 +145,7 @@ if (isset($_POST['name']) && !empty($_POST['name'])) {
 
   $check_post_name = is_string($_POST['name'])
     && strlen($_POST['name']) <= 10
-    && preg_match("/^[a-zA-Zéèêàçù '-]+$/", $_POST['name']);
+    && preg_match("/^[a-zA-Zéèêàçù '\"-]+$/", $_POST['name']);
 
   if ($check_post_name === true) {
 
@@ -161,7 +161,7 @@ if (isset($_POST['lastname']) && !empty($_POST['lastname'])) {
 
   $check_post_lastname = is_string($_POST['lastname'])
     && strlen($_POST['lastname']) <= 10
-    && preg_match("/^[a-zA-Zéèêàçù '-]+$/", $_POST['lastname']);
+    && preg_match("/^[a-zA-Zéèêàçù '\"-]+$/", $_POST['lastname']);
 
   if ($check_post_lastname === true) {
 
@@ -253,7 +253,7 @@ if (isset($_POST['title']) && !empty($_POST['title'])) {
 
   $check_post_title = strlen($_POST['title']) <= 20
     && is_string($_POST['title'])
-    && preg_match("/^[0-9a-zA-Zéèêàçù '!?°-]+$/", $_POST['title']);
+    && preg_match("/^[0-9a-zA-Zéèêàçù '\"!?°-]+$/", $_POST['title']);
 
   if ($check_post_title === true) {
 
@@ -321,7 +321,7 @@ if (isset($_POST['price']) && !empty($_POST['price'])) {
 if (isset($_POST['description']) && !empty($_POST['description'])) {
 
   $check_post_description =  is_string($_POST['description'])
-    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$/", $_POST['description'])
+    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['description'])
     && strlen($_POST['description']) <= 250;
 
   if ($check_post_description === true) {
@@ -330,7 +330,7 @@ if (isset($_POST['description']) && !empty($_POST['description'])) {
     $sanitize_two = preg_replace('/^ /', "", $sanitize_one);
     $sanitize_three = preg_replace('/ $/', "", $sanitize_two);
 
-    $regex = '/(\r\n|\n|\t|\r){2,}/';
+    $regex = '/(\r\n|\n|\t|\r){3,}/';
     $replacement = "\r\n\r\n";
 
     $post_description = preg_replace($regex, $replacement, $sanitize_three);
@@ -341,7 +341,7 @@ if (isset($_POST['description']) && !empty($_POST['description'])) {
 if (isset($_POST['comment']) && !empty($_POST['comment'])) {
 
   $check_post_comment =  is_string($_POST['comment'])
-    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$/", $_POST['comment']);
+    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['comment']);
 
   if ($check_post_comment === true) {
 
@@ -349,7 +349,7 @@ if (isset($_POST['comment']) && !empty($_POST['comment'])) {
     $sanitize_two = preg_replace('/^ /', "", $sanitize_one);
     $sanitize_three = preg_replace('/ $/', "", $sanitize_two);
 
-    $regex = '/(\r\n|\n|\t|\r){2,}/';
+    $regex = '/(\r\n|\n|\t|\r){3,}/';
     $replacement = "\r\n\r\n";
 
     $post_comment = preg_replace($regex, $replacement, $sanitize_three);
@@ -360,7 +360,7 @@ if (isset($_POST['comment']) && !empty($_POST['comment'])) {
 if (isset($_POST['message']) && !empty($_POST['message'])) {
 
   $check_post_message =  is_string($_POST['message'])
-    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$/", $_POST['message']);
+    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['message']);
 
   if ($check_post_message === true) {
 
@@ -368,7 +368,7 @@ if (isset($_POST['message']) && !empty($_POST['message'])) {
     $sanitize_two = preg_replace('/^ /', "", $sanitize_one);
     $sanitize_three = preg_replace('/ $/', "", $sanitize_two);
 
-    $regex = '/(\r\n|\n|\t|\r){2,}/';
+    $regex = '/(\r\n|\n|\t|\r){3,}/';
     $replacement = "\r\n\r\n";
 
     $post_message = preg_replace($regex, $replacement, $sanitize_three);

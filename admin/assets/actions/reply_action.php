@@ -19,7 +19,7 @@ if (
 
   $notification = 'In reply to your message :
     
-    " ' . $_POST['message'] . ' "  
+    "' . $_POST['message'] . '"  
     
     Here is our answer as promised :
 
@@ -36,7 +36,7 @@ if (
   $req->execute();
 
   $bdd = null;
-  header('location: ../../contact.php?success=reply_ok');
+  header('location: ../../contacts.php?success=reply_ok');
   die();
 } else {
 

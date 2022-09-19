@@ -28,7 +28,7 @@ if (
 
   Your message :
 
-  " ' . $post_message . '" 
+  "' . $post_message . '" 
   
   has been sent successfully. 
   

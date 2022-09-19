@@ -2,12 +2,12 @@
 function input(string, id, maxLength, index) {
 
     let array_regex ={
-      'input_name_lastname' : /^(?!\s*$)[a-zA-Zéèêàçù \'-]+$/,
+      'input_name_lastname' : /^(?!\s*$)[a-zA-Zéèêàçù '"-]+$/,
       'input_password' : /^[0-9a-zA-Z]+$/,
-      'input_title' : /^[0-9a-zA-Zéèêàçù '!?°-]+$/,
+      'input_title' : /^[0-9a-zA-Zéèêàçù '"!?°-]+$/,
       'input_composer' : /^[0-9a-zA-Zéèêàçù -]+$/,
-      'input_description' : /^[\\s\r\n0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$/,
-      'input_contact' : /^[\\s\r\n0-9a-zA-Zéèêàçù# ()'.!?,;:°-]+$/,
+      'input_description' : /^[\s\r\n0-9a-zA-Zéèêàçù# ()'".!?,;:°-]+$/,
+      'input_contact' : /^[\s\r\n0-9a-zA-Zéèêàçù# ()'".!?,;:°-]+$/,
       'input_price' : /^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500|[Free]+)$/,
   }
   

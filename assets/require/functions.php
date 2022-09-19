@@ -153,7 +153,7 @@ function getComments(PDO $bdd, $get_id)
   ON comments.id_contents = contents.id
   INNER JOIN users
   ON comments.id_users = users.id
-  WHERE comments.id_contents  = :contents_id ORDER BY comments.id');
+  WHERE comments.id_contents  = :contents_id ORDER BY comments.date ASC');
   $req->bindParam(':contents_id', $get_id, PDO::PARAM_INT);
   $req->execute();
   $comments = $req->fetchAll();
@@ -162,7 +162,7 @@ function getComments(PDO $bdd, $get_id)
 
 function getNotifications(PDO $bdd, $session_users_id)
 {
-  $req = $bdd->prepare('SELECT id, notification, date FROM notifications WHERE id_users = :id ORDER BY id');
+  $req = $bdd->prepare('SELECT id, notification, date FROM notifications WHERE id_users = :id ORDER BY date DESC');
   $req->bindParam(':id', $session_users_id, PDO::PARAM_INT);
   $req->execute();
   $notifications = $req->fetchAll();
