@@ -11,10 +11,14 @@
           <div>To see all content do not fill in anything. Just click on the search button</div>
 
           <label for="search_title"></label>
-          <input type="text" class="inputbox" placeholder="Title" id="search_title" name="title" onkeyup="javascript:input(this,'search_title',26, 'input_title');" />
+          <div class="autocomplete">
+            <input type="text" class="inputbox" placeholder="Title" id="search_title" name="title" onkeyup="javascript:input(this,'search_title',26, 'input_title');" />
+          </div>
 
           <label for="search_composer"></label>
-          <input type="text" class="inputbox" placeholder="Composer" id="search_composer" name="composer" onkeyup="javascript:input(this,'search_composer',26, 'input_composer');" />
+          <div class="autocomplete">
+            <input type="text" class="inputbox" placeholder="Composer" id="search_composer" name="composer" onkeyup="javascript:input(this,'search_composer',26, 'input_composer');" />
+          </div>
 
           <label for="search_category"></label>
           <select class="inputbox" id="search_category" name="category">
