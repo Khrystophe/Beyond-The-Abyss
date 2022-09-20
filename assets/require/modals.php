@@ -69,7 +69,7 @@
           <?php } else { ?>
 
             <div>You are not logged in</div>
-            <div class="button green" id="contact_close">Close</div>
+            <button type="button" class="button green" id="contact_close">Close</button>
 
           <?php } ?>
         </form>

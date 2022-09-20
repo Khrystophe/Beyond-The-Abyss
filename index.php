@@ -74,99 +74,120 @@ if (
 			<div class="random_content">
 
 
-				<div class="content_card tuto">
+				<?php if (isset($getRandomTuto) && !empty($getRandomTuto)) {  ?>
 
-					<div class="gradient tuto"></div>
 
-					<div class="info_section tuto">
-						<div class="content_header tuto">
+					<div class="content_card tuto">
+
+						<div class="gradient tuto"></div>
+
+						<div class="info_section tuto">
+
+							<div class="content_header tuto">
+
+								<div>
+									<h2><?= $getRandomTuto_title ?></h2>
+									<h3><?= $getRandomTuto_composer ?></h3>
+
+									<span class="see_content tuto"><a href="./content.php?id=<?= $getRandomTuto_id ?>&category=unique_content" class="btn link_page">Watch</a></span>
+
+								</div>
+							</div>
 
 							<div>
-								<h2><?= $getRandomTuto_title ?></h2>
-								<h3><?= $getRandomTuto_composer ?></h3>
-
-								<span class="see_content tuto"><a href="./single_player_content.php?id=<?= $getRandomTuto_id ?>" class="btn link_page">Watch</a></span>
-
+								<video class="content tuto" src="./assets/videos/<?= $getRandomTuto_content ?>" type="video/mp4"></video>
 							</div>
-						</div>
 
-						<div>
-							<video class="content tuto" src="./assets/videos/<?= $getRandomTuto_content ?>" type="video/mp4"></video>
-						</div>
+							<div class="content_desc tuto">
+								<p class="text">
+									<?= $getRandomTuto_description ?>
+								</p>
+							</div>
 
-						<div class="content_desc tuto">
-							<p class="text">
-								<?= $getRandomTuto_description ?>
-							</p>
 						</div>
-
+						<div class="blur_back tuto_back"></div>
 					</div>
-					<div class="blur_back tuto_back"></div>
-				</div>
 
 
-				<div class="content_card perf">
+				<?php } ?>
 
-					<div class="gradient perf"></div>
 
-					<div class="info_section perf">
-						<div class="content_header perf">
+				<?php if (isset($getRandomPerf) && !empty($getRandomPerf)) {  ?>
+
+
+					<div class="content_card perf">
+
+						<div class="gradient perf"></div>
+
+						<div class="info_section perf">
+							<div class="content_header perf">
+
+								<div>
+									<h2><?= $getRandomPerf_title ?></h2>
+									<h3><?= $getRandomPerf_composer ?></h3>
+
+									<span class="see_content perf"><a href="./content.php?id=<?= $getRandomPerf_id ?>&category=unique_content" class="btn link_page">Watch</a></span>
+
+								</div>
+							</div>
 
 							<div>
-								<h2><?= $getRandomPerf_title ?></h2>
-								<h3><?= $getRandomPerf_composer ?></h3>
-
-								<span class="see_content perf"><a href="./single_player_content.php?id=<?= $getRandomPerf_id ?>" class="btn link_page">Watch</a></span>
-
+								<video class="content perf" src="./assets/videos/<?= $getRandomPerf_content ?>" type="video/mp4">
+								</video>
 							</div>
-						</div>
 
-						<div>
-							<video class="content perf" src="./assets/videos/<?= $getRandomPerf_content ?>" type="video/mp4">
-							</video>
-						</div>
+							<div class="content_desc perf">
+								<p class="text">
+									<?= $getRandomPerf_description ?>
+								</p>
+							</div>
 
-						<div class="content_desc perf">
-							<p class="text">
-								<?= $getRandomPerf_description ?>
-							</p>
 						</div>
-
+						<div class="blur_back perf_back"></div>
 					</div>
-					<div class="blur_back perf_back"></div>
-				</div>
 
 
-				<div class="content_card sheet">
+				<?php } ?>
 
-					<div class="gradient sheet"></div>
 
-					<div class="info_section sheet">
-						<div class="content_header sheet">
+				<?php if (isset($getRandomSheet) && !empty($getRandomSheet)) {  ?>
+
+
+					<div class="content_card sheet">
+
+						<div class="gradient sheet"></div>
+
+						<div class="info_section sheet">
+							<div class="content_header sheet">
+
+								<div>
+									<h2><?= $getRandomSheet_title ?></h2>
+									<h3><?= $getRandomSheet_composer ?></h3>
+
+									<span class="see_content sheet"><a href="./content.php?id=<?= $getRandomSheet_id ?>&category=unique_content" class="btn link_page">Watch</a></span>
+
+								</div>
+							</div>
 
 							<div>
-								<h2><?= $getRandomSheet_title ?></h2>
-								<h3><?= $getRandomSheet_composer ?></h3>
-
-								<span class="see_content sheet"><a href="./single_player_content.php?id=<?= $getRandomSheet_id ?>" class="btn link_page">Watch</a></span>
-
+								<video class="content sheet" src="./assets/videos/<?= $getRandomSheet_content ?>" type="video/mp4">
+								</video>
 							</div>
-						</div>
 
-						<div>
-							<video class="content sheet" src="./assets/videos/<?= $getRandomSheet_content ?>" type="video/mp4">
-							</video>
-						</div>
+							<div class="content_desc sheet">
+								<p class="text">
+									<?= $getRandomSheet_description ?>
+								</p>
+							</div>
 
-						<div class="content_desc sheet">
-							<p class="text">
-								<?= $getRandomSheet_description ?>
-							</p>
 						</div>
-
+						<div class="blur_back sheet_back"></div>
 					</div>
-					<div class="blur_back sheet_back"></div>
-				</div>
+
+
+				<?php } ?>
+
+
 			</div>
 		</div>
 	</main>

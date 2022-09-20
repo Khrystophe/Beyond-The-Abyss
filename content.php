@@ -28,7 +28,27 @@ if (
 	if ($page == 'tutorial' || $page == 'performance' || $page == 'sheet_music') {
 
 
-		$getContents = getContents($bdd, $get_category); ?>
+		$getContents = getContents($bdd, $get_category);
+
+
+		if (empty($getContents)) {
+
+			$bdd = null;
+			header('location: /Diplome/index.php?error=002162');
+			die();
+		} ?>
+
+
+	<?php  } else if ($page == 'unique_content') {
+
+		$getContents = getUniqueContent($bdd, $get_id);
+
+		if (empty($getContents)) {
+
+			$bdd = null;
+			header('location: /Diplome/index.php?error=00219');
+			die();
+		} ?>
 
 
 		<?php } else if ($page == 'user_content') {

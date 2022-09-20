@@ -3,6 +3,9 @@
   max-width: 500px;
   width: 100%;
   margin: auto;
+  &.content_comment{
+    max-width: 100%;
+  }
 }
 
 .deck_account{
@@ -31,7 +34,6 @@
     transform: scale(1.05);
     box-shadow: 0 4px 25px rgba(0,0,0,.4);
 	}
-
 }
 
 .account_card{
@@ -50,7 +52,17 @@
     transform: scale(1.05);
     box-shadow: 0 4px 25px rgba(0,0,0,.4);
 	}
+}
 
+.content_comment_card{
+  position: relative ;
+  background-color: #000000;
+  border: none;
+  border-top: 1.5px solid rgb(36, 36, 36);
+  padding: 0em 1em 0em 1em;
+  z-index: 5;
+  transition: 200ms ease-in-out;
+  max-width: 100%;
 }
 
 .cardHeader{

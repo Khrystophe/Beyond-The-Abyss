@@ -88,6 +88,7 @@ if (isset($get_error) || isset($get_success)) {
     59 => 'User none exist. Use the menu to navigate the site',
     60 => 'User edited',
     61 => 'Reporting deleted',
+    62 => 'No content sorry',
   ];
 
   if (isset($get_error)) {

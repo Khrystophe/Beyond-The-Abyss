@@ -12,6 +12,9 @@
   flex-direction: column;
   justify-content: center;
  }
+ &.content_comment{
+  background-color: transparent;
+ }
 }
 
 .modal_messages {
@@ -52,6 +55,9 @@
   padding: 1rem 2rem 1rem 2rem;
   display: flex;
   flex-direction: column;
+  &.content_comment{
+    padding: 0 0 0.5rem 0;
+  }
 }
 
 .modal_description{

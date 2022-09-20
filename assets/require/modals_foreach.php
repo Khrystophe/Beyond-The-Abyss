@@ -1,5 +1,6 @@
-<?php if (isset($getContent_id)) { ?>
+<?php if (isset($getContent_id)) {
 
+  $getComments = getComments($bdd, $getContent_id); ?>
 
   <div id="buy_modal<?= $getContent_id ?>" class="modal messages">
     <div class="modal-content">
@@ -17,15 +18,19 @@
             <h2>This content is not free !</h2>
             <br>
 
+
             <?php if (isset($session_users_id)) {
 
 
               $message = 'You have ' . $getUserInformations_credits . ' credits.
+
               Do you want to buy ' . $getContent_title . ' of ' . $getContent_composer . ' for ' . $getContent_price . ' credits ?'; ?>
 
               <div class="modal_message"><?= nl2br($message) ?></div>
               <br>
               <button type="submit" class="button red">Buy</button>
+              <br>
+              <button type="button" class="button green" id="content_comment_button" onfocus="javascript:modal('content_comment')">View comments</button>
               <div class="button green" id="buy_close<?= $getContent_id ?>">Close</div>
 
 
@@ -34,6 +39,7 @@
 
               <div>You are not connected.<br>Log in or register.<br>You will get 500 credits.</div>
               <br>
+              <button type="button" class="button green" id="content_comment_button" onfocus="javascript:modal('content_comment')">View comments</button>
               <div class="button green" id="buy_close<?= $getContent_id ?>">Close</div>
 
 
@@ -45,6 +51,54 @@
       </div>
     </div>
   </div>
+
+
+  <div id="content_comment_modal" class="modal messages content_comment">
+    <div class="modal-content">
+      <div class="modal_form">
+        <div class="modal_form_content content_comment">
+          <div class="form_action">
+
+
+            <?php foreach ($getComments as $getComment) {
+
+              require('variables.php'); ?>
+
+
+              <div class='deck content_comment'>
+                <div class='content_comment_card'>
+
+                  <div class='cardHeader'>
+
+                    <span class='cardHeader_date'><?= $getComment_date ?></span>
+                  </div>
+
+                  <div class='cardBody'>
+
+                    <p class='cardText'><?= $getComment_text ?></p>
+
+                    <section class='cardStats'>
+
+
+                      <span class='cardStats_stat cardStats_stat-likes'><?= $getComment_likes ?> <i class="far fa-thumbs-up"></i></span>
+
+                    </section>
+                  </div>
+                </div>
+              </div>
+
+
+            <?php } ?>
+
+
+            <button type="button" class="button green" id="content_comment_close">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 <?php } ?>
 

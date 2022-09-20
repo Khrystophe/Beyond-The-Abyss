@@ -48,6 +48,15 @@ function getContents(PDO $bdd, $get_category)
   return $contents;
 }
 
+function getUniqueContent(PDO $bdd, $get_id)
+{
+  $req = $bdd->prepare('SELECT * FROM contents WHERE id = :get_id ');
+  $req->bindParam(':get_id', $get_id, PDO::PARAM_INT);
+  $req->execute();
+  $content = $req->fetchAll();
+  return $content;
+}
+
 function getUserContentInformations(PDO $bdd, $content_id_user)
 {
   $req = $bdd->prepare('SELECT users.name, users.lastname
