@@ -45,8 +45,9 @@
 
 .modal-content {
   margin: 5% auto; 
-  width: 60%;
+  width: 90%;
   overflow: auto;
+  max-width: 700px;
 }
 
 .modal_form_content {
@@ -70,11 +71,3 @@
 #input_price, #input_contact, #input_description, #input_composer,#input_title,#input_password,#input_name_lastname, #input_content{
   display: none;
 }
-
-
-
-
-
-
-
-

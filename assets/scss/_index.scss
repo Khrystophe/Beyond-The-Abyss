@@ -297,9 +297,6 @@
       }
       
       .see_content{
-        // margin-top: 10px;
-        // border-radius: 5px;
-        // position: relative;
         a{
           padding: 5px 10px;
           border: 2px solid rgb(66,66,66);
@@ -318,8 +315,6 @@
       .text{
         color: rgb(66,66,66);
         white-space: pre-line;
-        // background-color: #0000004d;
-        // border-radius: 50%;
         text-shadow: 1px 1px 1px rgb(0 0 0), 1px 1px 1px rgb(66 66 66);
       }
     }
@@ -379,8 +374,6 @@
     }
   }
   .content_header{
-    // width: 60%;
-
     &.tuto{
       text-align: start;
     }
@@ -442,18 +435,6 @@
       border-radius: 10px;
     }
   }
-  
-  // .blur_back{
-  //   width: 80%;
-
-  //   &.perf_back{
-  //     width: 100%;
-  //   }
-
-  //   &.sheet_back{
-  //     left: 0;
-  //   }
-  // }
 }
 
 @media all and (max-width: 799px) {
@@ -539,40 +520,6 @@
       }
     }
   }
-
-  // .blur_back{
-  //   width: 100%;
-  //   height: 0;
-  // }
-  
-  // .content_header{
-  //   width: 100%;
-
-  //   &.tuto, &.perf, &.sheet{
-  //     text-align: center;
-  //   }
-  // }
-  
-  // .content_desc{
-  //   max-width: 100%;
-  //   .text{
-  //   margin: 1rem;
-  //   }
-  //   &.tuto, &.perf, &.sheet{
-  //     text-align: center;
-  //   }
-  // }
-
-  // .info_section{
-  //   background: linear-gradient(to top, black 33%, transparent 100%);
-  //   display: inline-grid;
-    
-  //   &.tuto, &.sheet, &.perf {
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: center;
-  //   }
-  // }
 }
 
 @media all and (max-height: 580px){

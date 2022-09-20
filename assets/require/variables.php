@@ -42,12 +42,6 @@ if (isset($getRandomSheet) && !empty($getRandomSheet)) {
   $getRandomSheet_id_users = htmlspecialchars($getRandomSheet['id_users']);
 }
 
-// if (isset($getUserInformations) && !empty($getUserInformations)) {
-
-//   $getUserInformations_id = htmlspecialchars($getUserInformations['id']);
-//   $getUserInformations_credits = htmlspecialchars($getUserInformations['credits']);
-// }
-
 if (isset($getContent) && !empty($getContent)) {
 
   $getContent_id = htmlspecialchars($getContent['id']);
@@ -72,7 +66,6 @@ if (isset($getContent) && !empty($getContent)) {
 
 if (isset($getUserContentInformations) && !empty($getUserContentInformations)) {
 
-  // $getUserContentInformations_id = htmlspecialchars($getUserContentInformations['id']);
   $getUserContentInformations_name = htmlspecialchars($getUserContentInformations['name']);
   $getUserContentInformations_lastname = htmlspecialchars($getUserContentInformations['lastname']);
 }
@@ -133,8 +126,3 @@ if (isset($getNumbersOfcomments) && !empty($getNumbersOfcomments)) {
 
   $getNumbersOfcomments_from_user = htmlspecialchars(implode($getNumbersOfcomments));
 }
-
-// if (isset($getIdUserFromContent)  && !empty($getIdUserFromContent)) {
-
-//   $getIdUserFromContent_author_id = htmlspecialchars($getIdUserFromContent['id_users']);
-// }

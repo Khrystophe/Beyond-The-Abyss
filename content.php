@@ -192,59 +192,89 @@ if (
 									<h2 class="card__title"><?= $getContent_title ?></h2>
 									<h2 class="card__composer"><?= $getContent_composer ?></h2>
 									<div class="card__likes"><i class="far fa-thumbs-up"> <?= $getContent_likes ?></i></div>
-									<div class="card__category"><?= $getContent_category ?></div>
-									<p class="card__snippet"></p>
+									<sapn class="card__category"><?= $getContent_category ?></span>
+										<span class="card__level"><?= $getContent_level ?></span>
+										<p class="card__snippet"></p>
 
 
-									<?php if (isset($getUserInformations_id) && !empty($getUserInformations_id)) {
+										<?php if (isset($getUserInformations_id) && !empty($getUserInformations_id)) {
 
 
-										$getIdUserFromPurchasedContent = getIdUserFromPurchasedContent($bdd, $getContent_id);
+											$getIdUserFromPurchasedContent = getIdUserFromPurchasedContent($bdd, $getContent_id);
 
-										$user_session_purchased_content = in_array($getUserInformations_id, array_column($getIdUserFromPurchasedContent, 'id_users'));
-
-
-
-										if ($getContent_price == 0 || $getContent_id_user == $getUserInformations_id) {
+											$user_session_purchased_content = in_array($getUserInformations_id, array_column($getIdUserFromPurchasedContent, 'id_users'));
 
 
-											if ($getContent_price == 0 && $getContent_id_user != $getUserInformations_id) { ?>
+
+											if ($getContent_price == 0 || $getContent_id_user == $getUserInformations_id) {
 
 
-												<div class="card__price">Free</div>
+												if ($getContent_price == 0 && $getContent_id_user != $getUserInformations_id) { ?>
 
 
-											<?php } else if ($getContent_id_user == $getUserInformations_id) { ?>
+													<div class="card__price">Free</div>
 
 
-												<div class="card__price">Your content</div>
+												<?php } else if ($getContent_id_user == $getUserInformations_id) { ?>
+
+
+													<div class="card__price">Your content</div>
+
+
+												<?php } ?>
+
+												<div class="content_button_flex">
+													<a href="single_player_content.php?id=<?= $getContent_id ?>" class="card__button link_page">Watch</a>
+													<a href="content.php?id=<?= $getContent_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $getUserContentInformations_name ?> <?= $getUserContentInformations_lastname ?></a>
+												</div>
+
+
+											<?php } else { ?>
+
+
+												<?php if ($user_session_purchased_content == false) { ?>
+
+
+													<div class="card__price"><?= $getContent_price ?> Credits</div>
+
+													<div class="content_button_flex">
+														<button class="card__button pointer" id="buy_button<?= $getContent_id ?>" onfocus="javascript: modalForeach('buy','<?= $getContent_id ?>')">Watch</button>
+														<a href="content.php?id=<?= $getContent_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $getUserContentInformations_name ?> <?= $getUserContentInformations_lastname ?></a>
+													</div>
+
+												<?php } else if ($user_session_purchased_content == true) { ?>
+
+
+													<div class="card__price">Purchased</div>
+
+													<div class="content_button_flex">
+														<a href="single_player_content.php?id=<?= $getContent_id ?>" class="card__button link_page">Watch</a>
+														<a href="content.php?id=<?= $getContent_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $getUserContentInformations_name ?> <?= $getUserContentInformations_lastname ?></a>
+													</div>
+
+												<?php } ?>
 
 
 											<?php } ?>
 
-											<div class="content_button_flex">
-												<a href="single_player_content.php?id=<?= $getContent_id ?>" class="card__button link_page">Watch</a>
-												<a href="content.php?id=<?= $getContent_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $getUserContentInformations_name ?> <?= $getUserContentInformations_lastname ?></a>
-											</div>
+
+										<?php	} else { ?>
 
 
-										<?php } else { ?>
-
-
-											<?php if ($user_session_purchased_content == false) { ?>
+											<?php if ($getContent_price > 0) { ?>
 
 
 												<div class="card__price"><?= $getContent_price ?> Credits</div>
 
 												<div class="content_button_flex">
-													<button class="card__button pointer" id="buy_button<?= $getContent_id ?>" onfocus="javascript: modalForeach('buy','<?= $getContent_id ?>')">Buy</button>
+													<button class="card__button pointer" id="buy_button<?= $getContent_id ?>" onfocus="javascript: modalForeach('buy','<?= $getContent_id ?>')">Watch</button>
 													<a href="content.php?id=<?= $getContent_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $getUserContentInformations_name ?> <?= $getUserContentInformations_lastname ?></a>
 												</div>
 
-											<?php } else if ($user_session_purchased_content == true) { ?>
+											<?php } else { ?>
 
 
-												<div class="card__price">Purchased</div>
+												<div class="card__price">Free</div>
 
 												<div class="content_button_flex">
 													<a href="single_player_content.php?id=<?= $getContent_id ?>" class="card__button link_page">Watch</a>
@@ -255,35 +285,6 @@ if (
 
 
 										<?php } ?>
-
-
-									<?php	} else { ?>
-
-
-										<?php if ($getContent_price > 0) { ?>
-
-
-											<div class="card__price"><?= $getContent_price ?> Credits</div>
-
-											<div class="content_button_flex">
-												<button class="card__button pointer" id="buy_button<?= $getContent_id ?>" onfocus="javascript: modalForeach('buy','<?= $getContent_id ?>')">Buy</button>
-												<a href="content.php?id=<?= $getContent_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $getUserContentInformations_name ?> <?= $getUserContentInformations_lastname ?></a>
-											</div>
-
-										<?php } else { ?>
-
-
-											<div class="card__price">Free</div>
-
-											<div class="content_button_flex">
-												<a href="single_player_content.php?id=<?= $getContent_id ?>" class="card__button link_page">Watch</a>
-												<a href="content.php?id=<?= $getContent_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $getUserContentInformations_name ?> <?= $getUserContentInformations_lastname ?></a>
-											</div>
-
-										<?php } ?>
-
-
-									<?php } ?>
 
 
 								</figcaption>

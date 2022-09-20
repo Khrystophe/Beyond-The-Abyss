@@ -94,7 +94,6 @@
     margin: 0 10px 0 0;
     white-space: pre-line;
     color: #535353; 
-    // line-height: 1.5;
     overflow: hidden;
     text-align: justify;
     font-size: 0.8rem;
@@ -103,10 +102,8 @@
   .cardStats{
     font-size: .9em;
     text-align: right;
-    width: 20%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-around;
     height: 100px;
     
@@ -151,8 +148,21 @@
         font-weight: lighter;
         color: #8b8b8b;
 			}
-			
 		}
 	}
 }
 
+@media all and (max-width: 500px){
+  .cardBody{
+    flex-direction: column-reverse;
+    .cardText{
+      text-align: left;
+    }
+    .cardStats{
+      height: 30px;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+  }
+}

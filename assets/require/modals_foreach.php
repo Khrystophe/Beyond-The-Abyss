@@ -30,7 +30,7 @@
               <br>
               <button type="submit" class="button red">Buy</button>
               <br>
-              <button type="button" class="button green" id="content_comment_button" onfocus="javascript:modal('content_comment')">View comments</button>
+              <button type="button" class="button green" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
               <div class="button green" id="buy_close<?= $getContent_id ?>">Close</div>
 
 
@@ -39,7 +39,7 @@
 
               <div>You are not connected.<br>Log in or register.<br>You will get 500 credits.</div>
               <br>
-              <button type="button" class="button green" id="content_comment_button" onfocus="javascript:modal('content_comment')">View comments</button>
+              <button type="button" class="button green" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
               <div class="button green" id="buy_close<?= $getContent_id ?>">Close</div>
 
 
@@ -53,7 +53,7 @@
   </div>
 
 
-  <div id="content_comment_modal" class="modal messages content_comment">
+  <div id="content_comment_modal<?= $getContent_id ?>" class="modal messages content_comment">
     <div class="modal-content">
       <div class="modal_form">
         <div class="modal_form_content content_comment">
@@ -91,7 +91,7 @@
             <?php } ?>
 
 
-            <button type="button" class="button green" id="content_comment_close">Close</button>
+            <button type="button" class="button green" id="content_comment_close<?= $getContent_id ?>">Close</button>
 
           </div>
         </div>
