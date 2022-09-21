@@ -174,6 +174,37 @@ let close = document.getElementById(name+"_close"+id);
   }
 }
 
+function foldUnfold (element, target){
+
+  let folder = document.querySelector('.'+'fold_unfold_'+element)
+  let fold_icons = document.querySelectorAll('.'+element)
+  let form = document.getElementById(target);
+
+  console.log(folder);
+  console.log((fold_icons));
+
+  folder.addEventListener('click', function(){
+
+for(let i = 0; i< fold_icons.length; i++){
+
+    if( fold_icons[i].classList.contains('hide') ){
+
+      fold_icons[i].classList.remove('hide')
+      
+      form.style.display = 'none'
+      form.style.height = '0'
+      
+    } else {
+      
+      fold_icons[i].classList.add('hide')
+     
+      form.style.display = 'block'
+      form.style.height = 'auto'
+    }}
+  })
+}
+
+
 
 function autocomplete(input, array) {
 

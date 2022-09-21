@@ -40,9 +40,43 @@
     }
 }
 
+.fold_unfold{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fold {
+    &.name_lastname{
+        display: none;
+        cursor: pointer;
+        .fas{
+            color: #6c6c6c;
+        }
+    }
+    &.hide{
+        display: block;
+    }
+}
+
+.unfold {
+    &.name_lastname{ 
+        display: block;
+        cursor: pointer;
+    }
+    .fas{
+        color: #6c6c6c;
+    }
+    &.hide{
+        display: none;
+    }
+}
 .form_action{
     text-align: center;
     color: rgb(66,66,66);
+    &#show_edit_name_lastname{
+        display: none;
+        height: 0;
+    }
 }
 
 .rightside {

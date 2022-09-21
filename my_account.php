@@ -37,12 +37,19 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 								<div class="margin"></div>
 
-								<h2>Edit your Name/Lastname</h2>
+								<div class="fold_unfold">
+									<h2>Edit your Name/Lastname</h2>
+									<span class="fold_unfold_name_lastname" onclick="javascript:foldUnfold('name_lastname','show_edit_name_lastname')">
+										<span class="fold name_lastname"><i class="fas fa-arrow-square-up"></i></span>
+										<span class="unfold name_lastname"><i class="fas fa-arrow-square-down"></i></span>
+									</span>
+								</div>
 
 								<div class="margin"></div>
 
 
-								<form data-barba-prevent class="form_action" action="./assets/actions/edit_name_lastname_action.php" method="post">
+
+								<form id="show_edit_name_lastname" data-barba-prevent class="form_action foldable" action="./assets/actions/edit_name_lastname_action.php" method="post">
 
 									<label for="my_account_name"></label>
 									<input type="text" class="inputbox" placeholder="<?= $getUserInformations_name ?>" id="my_account_name" value="<?= $getUserInformations_name ?>" name="name" onkeyup="javascript:input(this,'my_account_name',11,'input_name_lastname');" />

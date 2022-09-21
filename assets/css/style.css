@@ -1361,9 +1361,40 @@ nav {
   margin-top: 11rem;
 }
 
+.fold_unfold {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.fold.name_lastname {
+  display: none;
+  cursor: pointer;
+}
+.fold.name_lastname .fas {
+  color: #6c6c6c;
+}
+.fold.hide {
+  display: block;
+}
+
+.unfold.name_lastname {
+  display: block;
+  cursor: pointer;
+}
+.unfold .fas {
+  color: #6c6c6c;
+}
+.unfold.hide {
+  display: none;
+}
+
 .form_action {
   text-align: center;
   color: rgb(66, 66, 66);
+}
+.form_action#show_edit_name_lastname {
+  display: none;
+  height: 0;
 }
 
 .rightside {
