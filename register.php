@@ -12,6 +12,7 @@ if (!isset($session_users_id)) {
 	) {
 
 		$page = "register";
+		require('./assets/require/co_bdd.php');
 		require('./assets/require/head.php'); ?>
 
 

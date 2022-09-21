@@ -1,4 +1,4 @@
-<?php if (isset($getContent_id)) {
+<?php if (isset($getContent_id) && ($page == 'tutorial' || $page == 'search_results') || $page == 'performance' || $page == 'sheet_music' || $page == 'user_content' || $page == 'unique_content') {
 
   $getComments = getComments($bdd, $getContent_id); ?>
 
@@ -103,7 +103,7 @@
 <?php } ?>
 
 
-<?php if (isset($getComment_id)) { ?>
+<?php if (isset($getComment_id) && $page == "single_player") { ?>
 
 
   <div id="edit_comment_modal<?= $getComment_id ?>" class="modal messages">
@@ -164,7 +164,7 @@
 <?php } ?>
 
 
-<?php if (isset($getNotification_id)) { ?>
+<?php if (isset($getNotification_id) && $page == "my_account") { ?>
 
   <div id="delete_notification_modal<?= $getNotification_id ?>" class="modal messages">
     <div class="modal-content">
