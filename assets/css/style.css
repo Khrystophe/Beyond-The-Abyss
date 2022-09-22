@@ -1361,28 +1361,37 @@ nav {
   margin-top: 11rem;
 }
 
-.fold_unfold {
+.fold_unfold_name_lastname, .fold_unfold_password, .fold_unfold_add_content {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  height: 30px;
+  background-color: #1e1e1e;
+  align-items: center;
+  padding: 1rem 1rem 1rem 0.5rem;
+  border-radius: 4px;
+  border-top: 1.5px solid rgb(0, 0, 0);
+  border-bottom: 1.5px solid rgb(64, 64, 64);
 }
 
-.fold.name_lastname {
+.fold.name_lastname, .fold.password, .fold.add_content {
   display: none;
   cursor: pointer;
 }
-.fold.name_lastname .fas {
+.fold.name_lastname .fas, .fold.password .fas, .fold.add_content .fas {
   color: #6c6c6c;
+  margin-left: 15px;
 }
 .fold.hide {
   display: block;
 }
 
-.unfold.name_lastname {
+.unfold.name_lastname, .unfold.password, .unfold.add_content {
   display: block;
   cursor: pointer;
 }
 .unfold .fas {
   color: #6c6c6c;
+  margin-left: 15px;
 }
 .unfold.hide {
   display: none;
@@ -1392,7 +1401,7 @@ nav {
   text-align: center;
   color: rgb(66, 66, 66);
 }
-.form_action#show_edit_name_lastname {
+.form_action#show_name_lastname, .form_action#show_password, .form_action#show_add_content {
   display: none;
   height: 0;
 }
@@ -1442,11 +1451,9 @@ nav {
   border-radius: 50px;
   color: rgb(129, 129, 129);
   font-family: var(--primary-font);
-  font-weight: 400;
   font-size: 0.7rem;
-  margin-top: 10px;
-  min-width: 75px;
-  letter-spacing: 0.11rem;
+  margin-top: 4px;
+  min-width: 163px;
   outline: none;
   transition: color 1s;
   text-decoration: none;

@@ -39,7 +39,15 @@
 
               <div>You are not connected.<br>Log in or register.<br>You will get 500 credits.</div>
               <br>
-              <button type="button" class="button green" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
+
+
+              <?php if (isset($getComments) && !empty($getComments)) { ?>
+
+                <button type="button" class="button green" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
+
+              <?php } ?>
+
+
               <div class="button green" id="buy_close<?= $getContent_id ?>">Close</div>
 
 

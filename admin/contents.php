@@ -198,6 +198,10 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 														<input class="form-control" type="file" id="admin_content<?= $getAllContent_id ?>" name="content" onchange="javascript:validContent(<?= $getAllContent_id ?>)">
 													</div>
 
+													<?php if ($getAllContent_price == '0') {
+														$getAllContent_price = 'Free';
+													} ?>
+
 													<div class="mb-3">
 														<label for="admin_edit_price<?= $getAllContent_id ?>" class="form-label">Price : from 1 to 50 or free (type 'Free')</label>
 														<input type="text" id="admin_edit_price<?= $getAllContent_id ?>" name="price" onkeyup="javascript:input(this,'admin_edit_price<?= $getAllContent_id ?>',5, 'input_price');" value="<?= $getAllContent_price ?>" placeholder="<?= $getAllContent_price ?>">

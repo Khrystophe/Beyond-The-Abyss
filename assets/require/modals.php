@@ -148,6 +148,10 @@
             <label for="single_player_edit_content">Files format : webm/mp4/ogv 128 Mo max.</label>
             <input type="file" class="inputbox" id="single_player_edit_content" name="content" onchange="javascript:validContent('single_player_edit')" />
 
+            <?php if ($getContentAndUserInformations_price == '0') {
+              $getContentAndUserInformations_price = 'Free';
+            } ?>
+
             <label for="single_player_edit_price">Price : (from 1 to 500 or free (type 'Free'))</label>
             <input type="text" class="inputbox" value="<?= $getContentAndUserInformations_price ?>" placeholder="<?= $getContentAndUserInformations_price ?>" id="single_player_edit_price" name="price" onkeyup="javascript:input(this,'single_player_edit_price',5, 'input_price');" />
 

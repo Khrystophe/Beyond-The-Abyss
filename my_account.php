@@ -37,19 +37,17 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 								<div class="margin"></div>
 
-								<div class="fold_unfold">
+								<div class="fold_unfold_name_lastname" onclick="javascript:foldUnfold('name_lastname','show_name_lastname')">
 									<h2>Edit your Name/Lastname</h2>
-									<span class="fold_unfold_name_lastname" onclick="javascript:foldUnfold('name_lastname','show_edit_name_lastname')">
-										<span class="fold name_lastname"><i class="fas fa-arrow-square-up"></i></span>
-										<span class="unfold name_lastname"><i class="fas fa-arrow-square-down"></i></span>
-									</span>
+									<span class="fold name_lastname"><i class="fas fa-arrow-square-up"></i></span>
+									<span class="unfold name_lastname"><i class="fas fa-arrow-square-down"></i></span>
 								</div>
 
 								<div class="margin"></div>
 
 
 
-								<form id="show_edit_name_lastname" data-barba-prevent class="form_action foldable" action="./assets/actions/edit_name_lastname_action.php" method="post">
+								<form id="show_name_lastname" data-barba-prevent class="form_action foldable" action="./assets/actions/edit_name_lastname_action.php" method="post">
 
 									<label for="my_account_name"></label>
 									<input type="text" class="inputbox" placeholder="<?= $getUserInformations_name ?>" id="my_account_name" value="<?= $getUserInformations_name ?>" name="name" onkeyup="javascript:input(this,'my_account_name',11,'input_name_lastname');" />
@@ -64,12 +62,16 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 								<div class="margin"></div>
 
-								<h2>Edit your Password</h2>
+								<div class="fold_unfold_password" onclick="javascript:foldUnfold('password','show_password')">
+									<h2>Edit your Password</h2>
+									<span class="fold password"><i class="fas fa-arrow-square-up"></i></span>
+									<span class="unfold password"><i class="fas fa-arrow-square-down"></i></span>
+								</div>
 
 								<div class="margin"></div>
 
 
-								<form data-barba-prevent class="form_action" action="./assets/actions/edit_password_action.php" method="post">
+								<form id="show_password" data-barba-prevent class="form_action" action="./assets/actions/edit_password_action.php" method="post">
 
 									<label for="my_account_old_password"></label>
 									<input type="password" placeholder=" Old password " class="inputbox" id="my_account_old_password" name="old_password" onkeyup="javascript:input(this,'my_account_old_password',41, 'input_password');" minlength="2" required />
@@ -87,12 +89,16 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 								<div class="margin"></div>
 
-								<h2>Add Content</h2>
+								<div class="fold_unfold_add_content" onclick="javascript:foldUnfold('add_content','show_add_content')">
+									<h2>Add Content</h2>
+									<span class="fold add_content"><i class="fas fa-arrow-square-up"></i></span>
+									<span class="unfold add_content"><i class="fas fa-arrow-square-down"></i></span>
+								</div>
 
 								<div class="margin"></div>
 
 
-								<form class="form_action" action="./assets/actions/add_content_action.php?type=user" method="post" enctype="multipart/form-data">
+								<form id="show_add_content" class="form_action" action="./assets/actions/add_content_action.php?type=user" method="post" enctype="multipart/form-data">
 
 									<label for="my_account_title"></label>
 									<input type="text" class="inputbox" placeholder="Title (max 20 chars)" id="my_account_title" name="title" onkeyup="javascript:input(this,'my_account_title',21, 'input_title');" required />
