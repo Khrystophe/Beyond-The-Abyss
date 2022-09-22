@@ -111,24 +111,31 @@
 
 025 ad/users          140 error     you_are_not_an_administrator  
                       15  error     processing_bad_or_malformed_request              
+                      163 error     not_connected             
 
 026 ad/purchased      140 error     you_are_not_an_administrator 
                       15  error     processing_bad_or_malformed_request               
+                      163 error     not_connected             
 
 027 ad/notif          140 error     you_are_not_an_administrator 
                       15  error     processing_bad_or_malformed_request               
+                      163 error     not_connected             
 
 028 ad/index          140 error     you_are_not_an_administrator 
                       15  error     processing_bad_or_malformed_request               
+                      163 error     not_connected             
 
 029 ad/contents       140 error     you_are_not_an_administrator  
                       15  error     processing_bad_or_malformed_request              
+                      163 error     not_connected             
 
 030 ad/contacts       140 error     you_are_not_an_administrator 
                       15  error     processing_bad_or_malformed_request               
+                      163 error     not_connected             
 
 031 ad/comments       140 error     you_are_not_an_administrator
                       15  error     processing_bad_or_malformed_request   
+                      163 error     not_connected             
 
 032 ad/reply          241 success   reply_sent
                       15  error     processing_bad_or_malformed_request
@@ -156,6 +163,7 @@
                                                
 039 ad/reportings     140 error     you_are_not_an_administrator
                       15  error     processing_bad_or_malformed_request   
+                      163 error     not_connected             
 
 040 ad/del report     261 success   reporting_deleted
                       15  error     processing_bad_or_malformed_request   

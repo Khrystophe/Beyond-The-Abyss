@@ -80,6 +80,10 @@ if (
         foreach ($contents as $content) {
 
             unlink('../videos/' . $content['content']);
+
+            $image = explode('.', $content['content']);
+
+            unlink('../images/' . $image[0] . '.jpg');
         }
 
 

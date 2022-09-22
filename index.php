@@ -95,7 +95,7 @@ if (
 							</div>
 
 							<div>
-								<video class="content tuto" src="./assets/videos/<?= $getRandomTuto_content ?>" type="video/mp4"></video>
+								<img class="content tuto" src="./assets/images/<?= $getRandomTuto_image[0] ?>.jpg" alt="image"></img>
 							</div>
 
 							<div class="content_desc tuto">
@@ -132,8 +132,7 @@ if (
 							</div>
 
 							<div>
-								<video class="content perf" src="./assets/videos/<?= $getRandomPerf_content ?>" type="video/mp4">
-								</video>
+								<img class="content perf" src="./assets/images/<?= $getRandomPerf_image[0] ?>.jpg" alt="image"></img>
 							</div>
 
 							<div class="content_desc perf">
@@ -170,8 +169,7 @@ if (
 							</div>
 
 							<div>
-								<video class="content sheet" src="./assets/videos/<?= $getRandomSheet_content ?>" type="video/mp4">
-								</video>
+								<img class="content sheet" src="./assets/images/<?= $getRandomSheet_image[0] ?>.jpg" alt="image"></img>
 							</div>
 
 							<div class="content_desc sheet">

@@ -201,6 +201,7 @@ if (
 
     if (!isset($content) && empty($content)) {
 
+
         $req = $bdd->prepare('UPDATE contents SET title = :title ,composer = :composer, level = :level, category = :category, price = :price, description = :description, reporting = :reporting  WHERE id = :id');
         $req->bindParam(':title', $post_title, PDO::PARAM_STR);
         $req->bindParam(':composer', $post_composer, PDO::PARAM_STR);
@@ -220,6 +221,12 @@ if (
         $old_content = $req->fetch();
 
         unlink('../videos/' . $old_content['content']);
+
+        $image = explode('.', $old_content['content']);
+
+        unlink('../images/' . $image[0] . '.jpg');
+
+        require('../require/frame.php');
 
         $req = $bdd->prepare('UPDATE contents SET title = :title ,composer = :composer, level = :level, category = :category, price = :price, description = :description, reporting = :reporting, content = :content WHERE id = :id');
         $req->bindParam(':title', $post_title, PDO::PARAM_STR);

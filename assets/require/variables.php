@@ -5,6 +5,7 @@ if (isset($getRandomTuto) && !empty($getRandomTuto)) {
   $getRandomTuto_id = htmlspecialchars($getRandomTuto['id']);
   $getRandomTuto_title = htmlspecialchars($getRandomTuto['title']);
   $getRandomTuto_content = htmlspecialchars($getRandomTuto['content']);
+  $getRandomTuto_image = explode('.', $getRandomTuto_content);
   $getRandomTuto_price = htmlspecialchars($getRandomTuto['price']);
   $getRandomTuto_composer = htmlspecialchars($getRandomTuto['composer']);
   $getRandomTuto_category = htmlspecialchars($getRandomTuto['category']);
@@ -19,6 +20,7 @@ if (isset($getRandomPerf) && !empty($getRandomPerf)) {
   $getRandomPerf_id = htmlspecialchars($getRandomPerf['id']);
   $getRandomPerf_title = htmlspecialchars($getRandomPerf['title']);
   $getRandomPerf_content = htmlspecialchars($getRandomPerf['content']);
+  $getRandomPerf_image = explode('.', $getRandomPerf_content);
   $getRandomPerf_price = htmlspecialchars($getRandomPerf['price']);
   $getRandomPerf_composer = htmlspecialchars($getRandomPerf['composer']);
   $getRandomPerf_category = htmlspecialchars($getRandomPerf['category']);
@@ -33,6 +35,7 @@ if (isset($getRandomSheet) && !empty($getRandomSheet)) {
   $getRandomSheet_id = htmlspecialchars($getRandomSheet['id']);
   $getRandomSheet_title = htmlspecialchars($getRandomSheet['title']);
   $getRandomSheet_content = htmlspecialchars($getRandomSheet['content']);
+  $getRandomSheet_image = explode('.', $getRandomSheet_content);
   $getRandomSheet_price = htmlspecialchars($getRandomSheet['price']);
   $getRandomSheet_composer = htmlspecialchars($getRandomSheet['composer']);
   $getRandomSheet_category = htmlspecialchars($getRandomSheet['category']);
@@ -50,6 +53,7 @@ if (isset($getContent) && !empty($getContent)) {
   $getContent_category = htmlspecialchars($getContent['category']);
   $getContent_level = htmlspecialchars($getContent['level']);
   $getContent_video = htmlspecialchars($getContent['content']);
+  $getContent_image = explode('.', $getContent_video);
   $getContent_price = htmlspecialchars($getContent['price']);
   $getContent_description = str_replace('<br />', '', nl2br(htmlspecialchars($getContent['description'])));
   $getContent_likes = htmlspecialchars($getContent['likes']);

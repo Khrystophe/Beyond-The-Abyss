@@ -122,6 +122,10 @@ if (
 
     unlink('../videos/' . $content['content']);
 
+    $image = explode('.', $content['content']);
+
+    unlink('../images/' . $image[0] . '.jpg');
+
     if ($get_type == 'admin') {
 
         $bdd = null;

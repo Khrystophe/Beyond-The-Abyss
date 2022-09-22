@@ -238,11 +238,18 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
     } ?>
 
 
-<?php  } else {
+  <?php  } else {
 
     $bdd = null;
     header('location: /Diplome/index.php?error=025140');
     die();
-  }
+  } ?>
+
+
+<?php } else {
+
+  $bdd = null;
+  header('location: /Diplome/index.php?error=025163');
+  die();
 }
 ?>

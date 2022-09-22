@@ -89,6 +89,7 @@ if (isset($get_error) || isset($get_success)) {
     60 => 'User edited',
     61 => 'Reporting deleted',
     62 => 'No content sorry',
+    63 => 'You are not connected'
   ];
 
   if (isset($get_error)) {

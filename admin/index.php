@@ -32,6 +32,13 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
     $bdd = null;
     header('location: /Diplome/index.php?error=028140');
     die();
-  }
+  } ?>
+
+  
+<?php } else {
+
+  $bdd = null;
+  header('location: /Diplome/index.php?error=028163');
+  die();
 }
 ?>

@@ -69,13 +69,33 @@ function validContent(id){
       } else{
 
         document.getElementById('admin_content'+id).value = '';
-        return alert('Respect files format : "(0-9a-zA-Zéèêàçù# ()\'!,;°-)(.)(webm/mp4/ogv)" and 128 Mo max.');
+
+        let input_modal = document.getElementById("input_modal");
+        let message_regex = document.getElementById("input_content");
+        
+        input_modal.style.display = "flex"
+        message_regex.style.display = "flex"
+        
+        document.onclick = function() {
+          input_modal.style.display = "none";
+          message_regex.style.display = "none"
+        }
         
       }
   } else {
 
     document.getElementById('admin_content'+id).value= '';
-    return alert ('Respect files format : "(0-9a-zA-Zéèêàçù# ()\'!,;°-)(.)(webm/mp4/ogv)" and 128 Mo max.')
+   
+    let input_modal = document.getElementById("input_modal");
+    let message_regex = document.getElementById("input_content");
+    
+    input_modal.style.display = "flex"
+    message_regex.style.display = "flex"
+    
+    document.onclick = function() {
+      input_modal.style.display = "none";
+      message_regex.style.display = "none"
+  }
 
   }
 }

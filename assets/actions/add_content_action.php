@@ -56,6 +56,8 @@ if (
       }
    }
 
+   require('../require/frame.php');
+
    if ($post_price == 'Free') {
       $post_price = 0;
    }
