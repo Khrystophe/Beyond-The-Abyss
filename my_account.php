@@ -28,7 +28,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 				<div class="min-height" data-barba="container" data-barba-namespace="my_account-section">
 
 					<div class="form">
-						<div class="form_content">
+						<div class="form_content account">
 
 							<div class="rightside">
 
@@ -37,11 +37,11 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 								<div class="margin"></div>
 
-								<div class="fold_unfold_name_lastname" onclick="javascript:foldUnfold('name_lastname','show_name_lastname')">
+								<button class="fold_unfold_name_lastname">
 									<h2>Edit your Name/Lastname</h2>
 									<span class="fold name_lastname"><i class="fas fa-arrow-square-up"></i></span>
 									<span class="unfold name_lastname"><i class="fas fa-arrow-square-down"></i></span>
-								</div>
+								</button>
 
 								<div class="margin"></div>
 
@@ -62,11 +62,11 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 								<div class="margin"></div>
 
-								<div class="fold_unfold_password" onclick="javascript:foldUnfold('password','show_password')">
+								<button class="fold_unfold_password">
 									<h2>Edit your Password</h2>
 									<span class="fold password"><i class="fas fa-arrow-square-up"></i></span>
 									<span class="unfold password"><i class="fas fa-arrow-square-down"></i></span>
-								</div>
+								</button>
 
 								<div class="margin"></div>
 
@@ -89,11 +89,11 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 								<div class="margin"></div>
 
-								<div class="fold_unfold_add_content" onclick="javascript:foldUnfold('add_content','show_add_content')">
+								<button class="fold_unfold_add_content">
 									<h2>Add Content</h2>
 									<span class="fold add_content"><i class="fas fa-arrow-square-up"></i></span>
 									<span class="unfold add_content"><i class="fas fa-arrow-square-down"></i></span>
-								</div>
+								</button>
 
 								<div class="margin"></div>
 

@@ -51,7 +51,7 @@ if (
 
                 <div class="hero">
 
-                  <video src="./assets/videos/<?= $getContentAndUserInformations_video ?>" controls></video>
+                  <video src="./assets/videos/<?= $getContentAndUserInformations_video ?>" controls controlsList="nodownload"></video>
 
                   <div class="details">
                     <h1 class="title1"><?= $getContentAndUserInformations_title ?></h1>
