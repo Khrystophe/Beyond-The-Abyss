@@ -147,7 +147,6 @@
   text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
   font-family: var(--primary-font);
   font-size: 0.9rem;
-  font-weight: bolder;
   margin-top: 4px;
   min-width: 163px;
   outline: none;
@@ -163,7 +162,6 @@
     text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
     font-family: var(--primary-font);
     font-size: 0.9rem;
-    font-weight: bolder;
     margin-top: 4px;
     min-width: 163px;
     outline: none;
@@ -185,7 +183,7 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-      transition: opacity 1.5s linear;
+      transition: opacity 0.7s linear;
       opacity: 0;
     }
   }
@@ -216,7 +214,7 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-      transition: opacity 1.5s linear;
+      transition: opacity 0.7s linear;
       opacity: 0;
     }
   }
@@ -241,7 +239,7 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-      transition: opacity 1.5s linear;
+      transition: opacity 0.7s linear;
       opacity: 0;
     }
   }
@@ -288,7 +286,7 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-      transition: opacity 1.5s linear;
+      transition: opacity 0.7s linear;
       opacity: 0;
     }
   }
@@ -311,7 +309,7 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-      transition: opacity 1.5s linear;
+      transition: opacity 0.7s linear;
       opacity: 0;
     }
   }
@@ -334,7 +332,7 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-      transition: opacity 1.5s linear;
+      transition: opacity 0.7s linear;
       opacity: 0;
     }
   }

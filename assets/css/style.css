@@ -1215,7 +1215,7 @@ nav {
   position: relative;
   z-index: 1;
   color: rgb(91, 91, 91);
-  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px #919191;
+  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px #444444;
   font-family: var(--primary-font);
   padding: 16px;
   font-size: 14px;
@@ -1232,12 +1232,12 @@ nav {
 .player_bottom_bar .dropbtn.gray:hover {
   background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
   color: #000000;
-  text-shadow: 0.5px 0.5px 0.5px #919191, 0.5px 0.5px 0.5px #000000;
+  text-shadow: 0.5px 0.5px 0.5px #343434, 0.5px 0.5px 0.5px rgb(66, 66, 66);
 }
 .player_bottom_bar .drop {
   background: linear-gradient(135deg, #272727 0%, #000000 100%);
   color: rgb(91, 91, 91);
-  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px #919191;
+  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px #444444;
   font-family: var(--primary-font);
   padding: 16px;
   font-size: 14px;
@@ -1462,7 +1462,6 @@ nav {
   text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
   font-family: var(--primary-font);
   font-size: 0.9rem;
-  font-weight: bolder;
   margin-top: 4px;
   min-width: 163px;
   outline: none;
@@ -1479,7 +1478,6 @@ nav {
   text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
   font-family: var(--primary-font);
   font-size: 0.9rem;
-  font-weight: bolder;
   margin-top: 4px;
   min-width: 163px;
   outline: none;
@@ -1500,7 +1498,7 @@ nav {
   bottom: 0;
   left: 0;
   z-index: -1;
-  transition: opacity 1.5s linear;
+  transition: opacity 0.7s linear;
   opacity: 0;
 }
 .button.green:hover {
@@ -1525,7 +1523,7 @@ nav {
   bottom: 0;
   left: 0;
   z-index: -1;
-  transition: opacity 1.5s linear;
+  transition: opacity 0.7s linear;
   opacity: 0;
 }
 .button.orange:hover {
@@ -1546,7 +1544,7 @@ nav {
   bottom: 0;
   left: 0;
   z-index: -1;
-  transition: opacity 1.5s linear;
+  transition: opacity 0.7s linear;
   opacity: 0;
 }
 .button.red:hover {
@@ -1589,7 +1587,7 @@ nav {
   bottom: 0;
   left: 0;
   z-index: -1;
-  transition: opacity 1.5s linear;
+  transition: opacity 0.7s linear;
   opacity: 0;
 }
 .button_drop.green:hover {
@@ -1608,7 +1606,7 @@ nav {
   bottom: 0;
   left: 0;
   z-index: -1;
-  transition: opacity 1.5s linear;
+  transition: opacity 0.7s linear;
   opacity: 0;
 }
 .button_drop.orange:hover {
@@ -1627,7 +1625,7 @@ nav {
   bottom: 0;
   left: 0;
   z-index: -1;
-  transition: opacity 1.5s linear;
+  transition: opacity 0.7s linear;
   opacity: 0;
 }
 .button_drop.red:hover {
@@ -1737,7 +1735,7 @@ nav {
 .single_player_card .dropbtn {
   background: linear-gradient(135deg, #343434 0%, #000000 100%);
   color: rgb(91, 91, 91);
-  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px #919191;
+  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px #444444;
   font-family: var(--primary-font);
   padding: 10px;
   font-size: 14px;
@@ -1754,7 +1752,7 @@ nav {
 .single_player_card .dropbtn.gray:hover {
   background: linear-gradient(135deg, #000000 0%, #343434 100%);
   color: #000000;
-  text-shadow: 0.5px 0.5px 0.5px #919191, 0.5px 0.5px 0.5px #000000;
+  text-shadow: 0.5px 0.5px 0.5px #343434, 0.5px 0.5px 0.5px rgb(66, 66, 66);
 }
 
 .account_card {
