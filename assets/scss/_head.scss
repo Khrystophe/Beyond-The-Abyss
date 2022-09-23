@@ -87,7 +87,7 @@ nav {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  z-index: 20;
+  z-index: 500;
   cursor: pointer;
   position: fixed;
 }
@@ -124,6 +124,7 @@ nav {
   opacity: 0.9;
   width: 100%;
   position: fixed;
+  z-index: -400;
 }
 
 .menu__left, .menu__right {

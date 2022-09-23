@@ -141,7 +141,7 @@ nav {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  z-index: 20;
+  z-index: 500;
   cursor: pointer;
   position: fixed;
 }
@@ -178,6 +178,7 @@ nav {
   opacity: 0.9;
   width: 100%;
   position: fixed;
+  z-index: -400;
 }
 
 .menu__left, .menu__right {
@@ -1341,10 +1342,10 @@ nav {
 }
 .form .email {
   color: rgb(66, 66, 66);
+  word-break: break-all;
 }
 
 .form_content {
-  opacity: 0.7;
   margin: auto;
   position: center;
   align-self: center;
@@ -1353,6 +1354,8 @@ nav {
   width: 90%;
   min-width: 250px;
   max-width: 610px;
+  opacity: 0;
+  z-index: 10;
 }
 .form_content.register {
   margin-top: 7rem;
@@ -1367,12 +1370,14 @@ nav {
 .fold_unfold_name_lastname, .fold_unfold_password, .fold_unfold_add_content {
   display: flex;
   justify-content: space-between;
+  text-align: left;
   height: auto;
   width: 100%;
   background-color: #1e1e1e;
   align-items: center;
   padding: 0.2rem 0.5rem 0.2rem 0.5rem;
   border-radius: 4px;
+  border: none;
   border-top: 1.5px solid rgb(0, 0, 0);
   border-bottom: 1.5px solid rgb(64, 64, 64);
   font-family: var(--primary-font);
@@ -1514,7 +1519,7 @@ nav {
 .modal {
   display: none;
   position: fixed;
-  z-index: 70;
+  z-index: 700;
   left: 0;
   top: 0;
   width: 100%;
@@ -1532,7 +1537,7 @@ nav {
 .modal_messages {
   display: none;
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
@@ -1807,7 +1812,6 @@ footer {
   color: #1A1A1A;
   font-weight: bold;
   position: relative;
-  z-index: 60;
   margin-top: 1rem;
   font-size: 1rem;
 }
