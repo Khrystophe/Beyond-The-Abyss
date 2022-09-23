@@ -726,17 +726,14 @@ nav {
 
 .tuto_back {
   background: url("../img/piano-1846719_1920.jpg");
-  filter: grayscale(1);
 }
 
 .perf_back {
   background: url("../img/stage-curtain-660078_1920.jpg");
-  filter: grayscale(1);
 }
 
 .sheet_back {
   background: url("../img/sheet-music-4121936_1920.jpg");
-  filter: grayscale(1);
 }
 
 @media all and (min-width: 800px) {
@@ -948,7 +945,6 @@ nav {
 
 .card_video {
   width: 100%;
-  filter: grayscale(1);
 }
 
 .box {
@@ -1165,7 +1161,6 @@ nav {
   z-index: -10;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  filter: grayscale(1);
 }
 
 .cover {
@@ -1462,8 +1457,9 @@ nav {
   text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
   font-family: var(--primary-font);
   font-size: 0.9rem;
+  letter-spacing: 0.11rem;
   margin-top: 4px;
-  min-width: 163px;
+  min-width: 190px;
   outline: none;
   transition: color 1s;
   text-decoration: none;
@@ -1478,8 +1474,9 @@ nav {
   text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
   font-family: var(--primary-font);
   font-size: 0.9rem;
+  letter-spacing: 0.11rem;
   margin-top: 4px;
-  min-width: 163px;
+  min-width: 190px;
   outline: none;
   transition: color 1s;
   text-decoration: none;
