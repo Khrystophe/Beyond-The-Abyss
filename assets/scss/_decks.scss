@@ -1,61 +1,65 @@
-.deck{
+.deck {
   position: relative;
   max-width: 500px;
   width: 100%;
   margin: auto;
-  &.content_comment{
+  &.content_comment {
     max-width: 100%;
   }
 }
 
-.deck_account{
+.single_player_card {
   position: relative;
-  min-width: 250px;
-  max-width: 610px;
-  width: 90%;
-  margin: auto;
-  
-}
-
-
-.single_player_card{
-  position: relative ;
   background-color: #161616;
   border: none;
   border-top: 1.5px solid rgb(71, 71, 71);
-  border-bottom: 1.5px solid rgb(0,0,0);
+  border-bottom: 1.5px solid rgb(0, 0, 0);
   padding: 1em;
   z-index: 5;
   border-radius: 10px;
   transition: 200ms ease-in-out;
   margin-top: 1em;
-  &:hover{
-    z-index: 7;
-    transform: scale(1.05);
-    box-shadow: 0 4px 25px rgba(0,0,0,.4);
-	}
+  .dropbtn {
+    background: linear-gradient(135deg, #343434 0%, #000000 100%);
+    color: rgb(91, 91, 91);
+    text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px #919191;
+    font-family: var(--primary-font);
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1.5px solid rgb(0, 0, 0);
+    border-top: 1.5px solid rgb(64, 64, 64);
+    cursor: pointer;
+    border-radius: 7px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    transition: color 1s;
+    &.gray {
+      &:hover {
+        background: linear-gradient(135deg, #000000 0%, #343434 100%);
+        color: #000000;
+        text-shadow: 0.5px 0.5px 0.5px #919191, 0.5px 0.5px 0.5px #000000;
+      }
+    }
+  }
 }
 
-.account_card{
-  position: relative ;
+.account_card {
+  position: relative;
   background-color: #000000;
   border: none;
   border-top: 1.5px solid rgb(71, 71, 71);
-  border-bottom: 1.5px solid rgb(48,48,48);
+  border-bottom: 1.5px solid rgb(48, 48, 48);
   padding: 1em;
   z-index: 5;
   border-radius: 10px;
   transition: 200ms ease-in-out;
   margin-top: 1em;
-  &:hover{
-    z-index: 7;
-    transform: scale(1.05);
-    box-shadow: 0 4px 25px rgba(0,0,0,.4);
-	}
 }
 
-.content_comment_card{
-  position: relative ;
+.content_comment_card {
+  position: relative;
   background-color: #000000;
   border: none;
   border-top: 1.5px solid rgb(36, 36, 36);
@@ -65,100 +69,71 @@
   max-width: 100%;
 }
 
-.cardHeader{
+.cardHeader {
   display: grid;
   justify-items: stretch;
   border-bottom: 1px solid #303030;
   margin-bottom: 1rem;
-  .cardHeader_account{
+  .cardHeader_account {
     font-size: 1em;
     color: #000000;
     font-weight: bolder;
     margin-left: 10px;
-	}
-  
-  .cardHeader_date{
+  }
+
+  .cardHeader_date {
     color: #8b8b8b;
     margin: 10px;
-    font-size: .85em;
+    font-size: 0.85em;
     text-align: right;
-	}
+  }
 }
 
-.cardBody{
+.cardBody {
   display: flex;
   margin: 0 10px 10px;
   justify-content: space-between;
-  
-  .cardText{
+
+  .cardText {
     margin: 0 10px 0 0;
     white-space: pre-line;
-    color: #535353; 
+    color: #535353;
     overflow: hidden;
     text-align: justify;
     font-size: 0.8rem;
-	}
-  
-  .cardStats{
-    font-size: .9em;
+  }
+
+  .cardStats {
+    font-size: 0.9em;
     text-align: right;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 100px;
-    
-    .dropbtn {
-      background: linear-gradient(135deg, #343434 0%, #000000 100%);
-      color: rgb(91, 91, 91);
-      font-family: var(--primary-font);
-      padding: 16px;
-      font-size: 14px;
-      border: none;
-      border-bottom: 1.5px solid rgb(0, 0, 0);
-      border-top: 1.5px solid rgb(64, 64, 64);
-      cursor: pointer;
-      border-radius: 10px;
-      height: 15px;
-      display: flex;
-      align-items: center;
-      transition: color 1s;
-      &.green{
-        &:hover{
-          background:linear-gradient(135deg, #000000 0%, #00ff33 100%);
-          color: #000000; 
-        }
-      }
-      &.orange{
-        &:hover{
-          background:linear-gradient(135deg, #000000 0%, #ffd800 100%);
-          color: #000000; 
-        }
-      }
-    }
-    
-    .cardStats_stat{
+
+    .cardStats_stat {
       display: inline-block;
       white-space: nowrap;
-			
-      &.cardStats_stat-likes{
+
+      &.cardStats_stat-likes {
         font-weight: lighter;
         color: #8b8b8b;
-			}
-      &.cardStats_stat-comments{
+      }
+      &.cardStats_stat-comments {
         font-weight: lighter;
         color: #8b8b8b;
-			}
-		}
-	}
+      }
+    }
+  }
 }
 
-@media all and (max-width: 500px){
-  .cardBody{
+@media all and (max-width: 500px) {
+  .cardBody {
     flex-direction: column-reverse;
-    .cardText{
+    .cardText {
       text-align: left;
     }
-    .cardStats{
+    .cardStats {
       height: 30px;
       flex-direction: row;
       align-items: center;

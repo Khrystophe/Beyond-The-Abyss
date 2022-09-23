@@ -91,12 +91,14 @@ nav {
   border-bottom: 1.5px solid rgb(0, 0, 0);
   border-radius: 10px;
   color: rgb(129, 129, 129);
+  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
   transition: color 1s;
   cursor: pointer;
 }
-.nav_bar .nav_search.green:hover {
-  background: linear-gradient(135deg, #000000 0%, #00ff33 100%);
+.nav_bar .nav_search.gray:hover {
+  background: linear-gradient(135deg, #000000 0%, #535353 100%);
   color: #000000;
+  text-shadow: 0.5px 0.5px 0.5px #343434, 0.5px 0.5px 0.5px rgb(129, 129, 129);
 }
 .nav_bar .user_nav {
   display: flex;
@@ -181,7 +183,8 @@ nav {
   z-index: -400;
 }
 
-.menu__left, .menu__right {
+.menu__left,
+.menu__right {
   width: 50%;
   height: 100%;
   background: rgba(22, 22, 22, 0.1960784314);
@@ -205,7 +208,8 @@ nav {
   overflow: hidden;
 }
 
-.open .menu__left, .open .menu__right {
+.open .menu__left,
+.open .menu__right {
   transform: translateX(0);
 }
 
@@ -365,7 +369,8 @@ nav {
     flex-direction: column-reverse;
     justify-content: space-around;
   }
-  .menu__right, .sep__icon {
+  .menu__right,
+.sep__icon {
     display: none;
   }
   .menu__left {
@@ -1183,9 +1188,9 @@ nav {
   position: absolute;
   top: 3px;
   margin-left: 12px;
-  background: #C4AF3D;
+  background: #c4af3d;
   border-radius: 5px;
-  color: #544C21;
+  color: #544c21;
   font-size: 14px;
   padding: 0px 4px;
 }
@@ -1207,7 +1212,10 @@ nav {
 }
 .player_bottom_bar .dropbtn {
   background: linear-gradient(135deg, #272727 0%, #000000 100%);
+  position: relative;
+  z-index: 1;
   color: rgb(91, 91, 91);
+  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px #919191;
   font-family: var(--primary-font);
   padding: 16px;
   font-size: 14px;
@@ -1221,21 +1229,15 @@ nav {
   align-items: center;
   transition: color 1s;
 }
-.player_bottom_bar .dropbtn.green:hover {
-  background: linear-gradient(135deg, #000000 0%, #00ff33 100%);
+.player_bottom_bar .dropbtn.gray:hover {
+  background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
   color: #000000;
-}
-.player_bottom_bar .dropbtn.orange:hover {
-  background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
-  color: #000000;
-}
-.player_bottom_bar .dropbtn.red:hover {
-  background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
-  color: #000000;
+  text-shadow: 0.5px 0.5px 0.5px #919191, 0.5px 0.5px 0.5px #000000;
 }
 .player_bottom_bar .drop {
   background: linear-gradient(135deg, #272727 0%, #000000 100%);
   color: rgb(91, 91, 91);
+  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px #919191;
   font-family: var(--primary-font);
   padding: 16px;
   font-size: 14px;
@@ -1262,9 +1264,6 @@ nav {
 .player_bottom_bar .dropdown:hover .dropdown-content {
   display: block;
 }
-.player_bottom_bar .dropdown:hover .dropbtn {
-  background-color: #535353;
-}
 
 .description {
   display: flex;
@@ -1277,7 +1276,7 @@ nav {
   margin-left: 4rem;
   background: linear-gradient(135deg, #1c1c1c 0%, #000000 100%);
   width: max-content;
-  padding: 0.3rem;
+  padding: 0.3rem 0rem 0.3rem 0rem;
   border-radius: 5px;
   line-height: 15px;
   font-size: 14px;
@@ -1287,14 +1286,17 @@ nav {
 }
 .column1 a {
   color: rgb(66, 66, 66);
+  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(66, 66, 66);
   text-decoration: none;
   transition: color 1s;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .column1 a:hover {
   color: #000000;
+  text-shadow: 0.5px 0.5px 0.5px #343434, 0.5px 0.5px 0.5px rgb(66, 66, 66);
 }
 .column1.green:hover {
-  background: linear-gradient(135deg, #000000 0%, #00ff33 100%);
+  background: linear-gradient(135deg, #000000 0%, #1c1c1c 100%);
 }
 
 .tag {
@@ -1367,7 +1369,9 @@ nav {
   margin: 0;
 }
 
-.fold_unfold_name_lastname, .fold_unfold_password, .fold_unfold_add_content {
+.fold_unfold_name_lastname,
+.fold_unfold_password,
+.fold_unfold_add_content {
   display: flex;
   justify-content: space-between;
   text-align: left;
@@ -1444,23 +1448,21 @@ nav {
   white-space: pre-line;
 }
 
-.btn_content {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  background-color: transparent;
-  border: 0px;
-}
-
 .button {
   background: linear-gradient(135deg, #363636 0%, #000000 100%);
-  padding: 11px;
+  position: relative;
+  z-index: 1;
+  height: 40px;
+  padding: 8px;
   border: none;
   border-top: 1.5px solid rgb(64, 64, 64);
   border-bottom: 1.5px solid rgb(0, 0, 0);
   border-radius: 50px;
   color: rgb(129, 129, 129);
+  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
   font-family: var(--primary-font);
-  font-size: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: bolder;
   margin-top: 4px;
   min-width: 163px;
   outline: none;
@@ -1468,26 +1470,104 @@ nav {
   text-decoration: none;
   cursor: pointer;
 }
+.button a {
+  position: absolute;
+  z-index: 1;
+  padding: 8px;
+  border-radius: 50px;
+  color: rgb(129, 129, 129);
+  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
+  font-family: var(--primary-font);
+  font-size: 0.9rem;
+  font-weight: bolder;
+  margin-top: 4px;
+  min-width: 163px;
+  outline: none;
+  transition: color 1s;
+  text-decoration: none;
+  cursor: pointer;
+  top: -5px;
+  left: 0px;
+}
+.button.green:before {
+  background-image: linear-gradient(135deg, #000000 0%, #00ff33 100%);
+  padding: 11px;
+  border-radius: 50px;
+  position: absolute;
+  content: "";
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 1.5s linear;
+  opacity: 0;
+}
 .button.green:hover {
-  background: linear-gradient(135deg, #000000 0%, #00ff33 100%);
   color: #000000;
+  text-shadow: 0.5px 0.5px 0.5px #00ff33, 0.5px 0.5px 0.5px rgb(175, 175, 175);
+}
+.button.green:hover::before {
+  opacity: 1;
+}
+.button a:hover {
+  color: #000000;
+  text-shadow: 0.5px 0.5px 0.5px #00ff33, 0.5px 0.5px 0.5px rgb(175, 175, 175);
+}
+.button.orange:before {
+  background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
+  padding: 11px;
+  border-radius: 50px;
+  position: absolute;
+  content: "";
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 1.5s linear;
+  opacity: 0;
 }
 .button.orange:hover {
-  background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
   color: #000000;
+  text-shadow: 0.5px 0.5px 0.5px #ffd800, 0.5px 0.5px 0.5px rgb(175, 175, 175);
+}
+.button.orange:hover::before {
+  opacity: 1;
+}
+.button.red:before {
+  background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
+  padding: 11px;
+  border-radius: 50px;
+  position: absolute;
+  content: "";
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 1.5s linear;
+  opacity: 0;
 }
 .button.red:hover {
-  background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
   color: #000000;
+  text-shadow: 0.5px 0.5px 0.5px #ff0000, 0.5px 0.5px 0.5px rgb(175, 175, 175);
+}
+.button.red:hover::before {
+  opacity: 1;
 }
 
 .button_drop {
   background: linear-gradient(135deg, #363636 0%, #000000 100%);
+  position: relative;
+  z-index: 1;
   padding: 11px;
+  height: 58px;
   border: none;
   border-top: 1.5px solid rgb(64, 64, 64);
   border-bottom: 1.5px solid rgb(0, 0, 0);
   color: rgb(129, 129, 129);
+  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
   font-family: var(--primary-font);
   font-weight: 400;
   font-size: 0.7rem;
@@ -1499,17 +1579,62 @@ nav {
   width: 100%;
   cursor: pointer;
 }
+.button_drop.green:before {
+  background-image: linear-gradient(135deg, #000000 0%, #00ff33 100%);
+  padding: 11px;
+  position: absolute;
+  content: "";
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 1.5s linear;
+  opacity: 0;
+}
 .button_drop.green:hover {
-  background: linear-gradient(135deg, #000000 0%, #00ff33 100%);
   color: #000000;
+}
+.button_drop.green:hover::before {
+  opacity: 1;
+}
+.button_drop.orange:before {
+  background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
+  padding: 11px;
+  position: absolute;
+  content: "";
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 1.5s linear;
+  opacity: 0;
 }
 .button_drop.orange:hover {
-  background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
   color: #000000;
 }
-.button_drop.red:hover {
+.button_drop.orange:hover::before {
+  opacity: 1;
+}
+.button_drop.red:before {
   background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
+  padding: 11px;
+  position: absolute;
+  content: "";
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 1.5s linear;
+  opacity: 0;
+}
+.button_drop.red:hover {
   color: #000000;
+}
+.button_drop.red:hover::before {
+  opacity: 1;
 }
 
 .margin {
@@ -1597,14 +1722,6 @@ nav {
   max-width: 100%;
 }
 
-.deck_account {
-  position: relative;
-  min-width: 250px;
-  max-width: 610px;
-  width: 90%;
-  margin: auto;
-}
-
 .single_player_card {
   position: relative;
   background-color: #161616;
@@ -1617,10 +1734,27 @@ nav {
   transition: 200ms ease-in-out;
   margin-top: 1em;
 }
-.single_player_card:hover {
-  z-index: 7;
-  transform: scale(1.05);
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+.single_player_card .dropbtn {
+  background: linear-gradient(135deg, #343434 0%, #000000 100%);
+  color: rgb(91, 91, 91);
+  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px #919191;
+  font-family: var(--primary-font);
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-bottom: 1.5px solid rgb(0, 0, 0);
+  border-top: 1.5px solid rgb(64, 64, 64);
+  cursor: pointer;
+  border-radius: 7px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  transition: color 1s;
+}
+.single_player_card .dropbtn.gray:hover {
+  background: linear-gradient(135deg, #000000 0%, #343434 100%);
+  color: #000000;
+  text-shadow: 0.5px 0.5px 0.5px #919191, 0.5px 0.5px 0.5px #000000;
 }
 
 .account_card {
@@ -1634,11 +1768,6 @@ nav {
   border-radius: 10px;
   transition: 200ms ease-in-out;
   margin-top: 1em;
-}
-.account_card:hover {
-  z-index: 7;
-  transform: scale(1.05);
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
 }
 
 .content_comment_card {
@@ -1691,30 +1820,6 @@ nav {
   flex-direction: column;
   justify-content: space-around;
   height: 100px;
-}
-.cardBody .cardStats .dropbtn {
-  background: linear-gradient(135deg, #343434 0%, #000000 100%);
-  color: rgb(91, 91, 91);
-  font-family: var(--primary-font);
-  padding: 16px;
-  font-size: 14px;
-  border: none;
-  border-bottom: 1.5px solid rgb(0, 0, 0);
-  border-top: 1.5px solid rgb(64, 64, 64);
-  cursor: pointer;
-  border-radius: 10px;
-  height: 15px;
-  display: flex;
-  align-items: center;
-  transition: color 1s;
-}
-.cardBody .cardStats .dropbtn.green:hover {
-  background: linear-gradient(135deg, #000000 0%, #00ff33 100%);
-  color: #000000;
-}
-.cardBody .cardStats .dropbtn.orange:hover {
-  background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
-  color: #000000;
 }
 .cardBody .cardStats .cardStats_stat {
   display: inline-block;

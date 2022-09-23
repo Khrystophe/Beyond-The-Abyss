@@ -1,14 +1,13 @@
-
 .movie-card {
-	margin: 7rem 0 2rem 0;
+  margin: 7rem 0 2rem 0;
 }
 
 .single_player_container {
   margin: 0 auto;
   width: 610px;
-	background-color: #0c0c0c;
+  background-color: #0c0c0c;
   position: relative;
-	border-radius: 10px;
+  border-radius: 10px;
   border: 1.5px solid rgb(0, 0, 0);
   opacity: 0;
   box-shadow: -7px -7px 10px #090909, 2px 2px 2px #232323;
@@ -16,26 +15,25 @@
 }
 
 .hero {
-  height: 342px;  
-  margin:0;
+  height: 342px;
+  margin: 0;
   position: relative;
   overflow: hidden;
-  z-index:1;
+  z-index: 1;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border: none;
-  border-bottom: 1.5px solid rgb(36,36,36);
-    video{
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			z-index: -10;
-			border-top-left-radius: 10px;
-			border-top-right-radius: 10px;
-      filter: grayscale(1);
-		}
+  border-bottom: 1.5px solid rgb(36, 36, 36);
+  video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -10;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    filter: grayscale(1);
+  }
 }
-
 
 .cover {
   position: absolute;
@@ -45,50 +43,50 @@
 }
 
 .details {
-  
   padding: 20px 0 0 20px;
-  
-  
+
   .title1 {
     color: rgb(218, 218, 218);
     font-size: 44px;
     margin-bottom: 13px;
     text-shadow: 0px 1px 5px black;
-    
+
     span {
       position: absolute;
       top: 3px;
       margin-left: 12px;
-      background: #C4AF3D;
+      background: #c4af3d;
       border-radius: 5px;
-      color: #544C21;
+      color: #544c21;
       font-size: 14px;
       padding: 0px 4px;
-      
     }
   }
 
-  .title2 {    
+  .title2 {
     color: #bcbcbc;
-    font-size: 23px;    
+    font-size: 23px;
     font-weight: 300;
     margin-bottom: 15px;
     text-shadow: 0px 1px 5px black;
   }
 }
 
-.player_bottom_bar{
+.player_bottom_bar {
   display: flex;
   justify-content: space-around;
   margin-top: 1rem;
 
-  .likes{
+  .likes {
     color: #8b8b8b;
   }
 
   .dropbtn {
     background: linear-gradient(135deg, #272727 0%, #000000 100%);
+    position: relative;
+    z-index: 1;
     color: rgb(91, 91, 91);
+    text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px #919191;
     font-family: var(--primary-font);
     padding: 16px;
     font-size: 14px;
@@ -101,29 +99,19 @@
     display: flex;
     align-items: center;
     transition: color 1s;
-    &.green{
-      &:hover{
-          background:linear-gradient(135deg, #000000 0%, #00ff33 100%);
-          color: #000000; 
+    &.gray {
+      &:hover {
+        background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
+        color: #000000;
+        text-shadow: 0.5px 0.5px 0.5px #919191, 0.5px 0.5px 0.5px #000000;
       }
     }
-    &.orange{
-      &:hover{
-          background:linear-gradient(135deg, #000000 0%, #ffd800 100%);
-          color: #000000; 
-      }
-    }
-    &.red{
-      &:hover{
-          background:linear-gradient(135deg, #000000 0%, #ff0000 100%);
-          color: #000000;
-      }
-    }
-  } 
+  }
 
   .drop {
     background: linear-gradient(135deg, #272727 0%, #000000 100%);
     color: rgb(91, 91, 91);
+    text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px #919191;
     font-family: var(--primary-font);
     padding: 16px;
     font-size: 14px;
@@ -135,29 +123,26 @@
     height: 15px;
     display: flex;
     align-items: center;
-  } 
-  
+  }
+
   .dropdown {
     position: relative;
     display: inline-block;
   }
-  
+
   .dropdown-content {
     display: none;
     position: absolute;
     background-color: #161616;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
 
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  
-  .dropdown:hover .dropbtn {
-    background-color: #535353;
-  }
 }
+
 .description {
   display: flex;
   flex-direction: column;
@@ -169,25 +154,29 @@
   margin-left: 4rem;
   background: linear-gradient(135deg, #1c1c1c 0%, #000000 100%);
   width: max-content;
-  padding: 0.3rem;border-radius: 5px;
+  padding: 0.3rem 0rem 0.3rem 0rem;
+  border-radius: 5px;
   line-height: 15px;
   font-size: 14px;
   border: none;
   border-bottom: 1.5px solid rgb(40 40 40);
   border-top: 1.5px solid rgb(64, 64, 64);
-  a{
+  a {
     color: rgb(66 66 66);
+    text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(66, 66, 66);
     text-decoration: none;
     transition: color 1s;
-    &:hover{
-      color: #000000; 
+    padding: 1rem 1rem 1rem 1rem;
+    &:hover {
+      color: #000000;
+      text-shadow: 0.5px 0.5px 0.5px #343434, 0.5px 0.5px 0.5px rgb(66, 66, 66);
     }
   }
-  &.green{
-    &:hover{
-        background:linear-gradient(135deg, #000000 0%, #00ff33 100%);
+  &.green {
+    &:hover {
+      background: linear-gradient(135deg, #000000 0%, #1c1c1c 100%);
     }
-}
+  }
 }
 
 .tag {
@@ -207,11 +196,9 @@
 .column2 {
   margin-left: 4rem;
   margin-right: 4rem;
-  color: rgb(66,66,66);
+  color: rgb(66, 66, 66);
   overflow: hidden;
   text-align: justify;
   white-space: pre-line;
   font-size: 0.8rem;
 }
-
-

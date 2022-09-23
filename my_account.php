@@ -141,49 +141,53 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 
 								<div class="form_action">
-									<button class="btn_content"><a class="button green link_page" href="content.php?name=user&category=user_content">Your Content</a></button>
+									<button class="button green "><a class="link_page" href="content.php?name=user&category=user_content">Your Content</a></button>
 								</div>
 
 								<div class="form_action">
-									<button class="btn_content"><a class="button green link_page" href="content.php?category=user_purchased_content">Purchased Content</a></button>
+									<button class="button green"><a class="link_page" href="content.php?category=user_purchased_content">Purchased Content</a></button>
 								</div>
 
 								<div class="form_action">
 									<button class="button red" id="delete_users_button" onfocus="javascript:modal('delete_users')">Delete my account</button>
 								</div>
+
+								<div class="margin"></div>
+
+
+
+								<?php foreach ($getNotifications as $getNotification) {
+
+
+									require('./assets/require/variables.php');
+
+									require('./assets/require/modals_foreach.php'); ?>
+
+									<h2>Notifications :</h2>
+
+									<div class='deck_account'>
+										<div class='account_card'>
+											<div class='cardHeader'>
+												<span class='cardHeader_date'><?= $getNotification_date ?></span>
+											</div>
+
+											<div class='cardBody'>
+												<p class='cardText'><?= $getNotification_text ?></p>
+											</div>
+
+											<div class="form_action">
+												<button class="btn_content button red" id="delete_notification_button<?= $getNotification_id ?>" onfocus="javascript:modalForeach('delete_notification','<?= $getNotification_id ?>')">Delete</button>
+											</div>
+										</div>
+									</div>
+
+
+								<?php } ?>
+
+
 							</div>
 						</div>
 					</div>
-
-
-					<?php foreach ($getNotifications as $getNotification) {
-
-
-						require('./assets/require/variables.php');
-
-						require('./assets/require/modals_foreach.php'); ?>
-
-
-						<div class='deck_account'>
-							<div class='account_card'>
-								<div class='cardHeader'>
-									<span class='cardHeader_date'><?= $getNotification_date ?></span>
-								</div>
-
-								<div class='cardBody'>
-									<p class='cardText'><?= $getNotification_text ?></p>
-								</div>
-
-								<div class="form_action">
-									<button class="btn_content button red" id="delete_notification_button<?= $getNotification_id ?>" onfocus="javascript:modalForeach('delete_notification','<?= $getNotification_id ?>')">Delete</button>
-								</div>
-							</div>
-						</div>
-
-
-					<?php } ?>
-
-
 				</div>
 			</main>
 

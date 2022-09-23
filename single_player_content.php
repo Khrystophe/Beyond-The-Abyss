@@ -70,7 +70,7 @@ if (
                     if ($getUserInformations_id != $getContentAndUserInformations_id_user) { ?>
 
 
-                      <button class="dropbtn green" id="like_content_button" onfocus="javascript:modal('like_content')">Like</button>
+                      <button class="dropbtn gray" id="like_content_button" onfocus="javascript:modal('like_content')">Like</button>
 
                       <div class="dropdown">
                         <button class="drop">Comment/Report</button>
@@ -84,7 +84,7 @@ if (
                     <?php } else { ?>
 
 
-                      <button class="dropbtn green" id="comment_button" onfocus="javascript:modal('comment')">Comment</button>
+                      <button class="dropbtn gray" id="comment_button" onfocus="javascript:modal('comment')">Comment</button>
 
                       <div class="dropdown">
                         <button class="drop">Edit/Delete</button>
@@ -147,7 +147,6 @@ if (
 
                             <span class='cardStats_stat cardStats_stat-likes'><?= $getComment_likes ?> <i class="far fa-thumbs-up"></i></span>
 
-                            <button class="dropbtn green" id="like_comment_button<?= $getComment_id ?>" onfocus="javascript: modalForeach('like_comment','<?= $getComment_id ?>')">Like</button>
 
                           <?php } else if (isset($session_users_id) && ($session_users_id == $getComment_user_id)) { ?>
 
@@ -155,8 +154,6 @@ if (
                             <span class='cardStats_stat cardStats_stat-comments'><?= $getNumbersOfcomments_from_user ?> <i class='far fa-comment fa-fw'></i></span>
 
                             <span class='cardStats_stat cardStats_stat-likes'><?= $getComment_likes ?> <i class="far fa-thumbs-up"></i></span>
-
-                            <button class="dropbtn orange" id="edit_comment_button<?= $getComment_id ?>" onfocus="javascript: modalForeach('edit_comment', '<?= $getComment_id ?>')">Edit</button>
 
 
                           <?php } else { ?>
@@ -172,6 +169,23 @@ if (
 
                         </section>
                       </div>
+
+
+                      <?php if (isset($session_users_id) && ($session_users_id != $getComment_user_id)) { ?>
+
+
+                        <button class="dropbtn gray" id="like_comment_button<?= $getComment_id ?>" onfocus="javascript: modalForeach('like_comment','<?= $getComment_id ?>')">Like</button>
+
+
+                      <?php } else if (isset($session_users_id) && ($session_users_id == $getComment_user_id)) { ?>
+
+
+                        <button class="dropbtn gray" id="edit_comment_button<?= $getComment_id ?>" onfocus="javascript: modalForeach('edit_comment', '<?= $getComment_id ?>')">Edit</button>
+
+
+                      <?php } ?>
+
+
                     </div>
                   </div>
 
