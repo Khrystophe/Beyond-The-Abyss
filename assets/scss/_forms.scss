@@ -143,8 +143,8 @@
   border-top: 1.5px solid rgb(64, 64, 64);
   border-bottom: 1.5px solid rgb(0, 0, 0);
   border-radius: 50px;
-  color: rgb(129, 129, 129);
-  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
+  color: rgb(91, 91, 91);
+  text-shadow: 1px 1px 1px black, 1px 1px 1px rgb(91, 91, 91);
   font-family: var(--primary-font);
   font-size: 0.9rem;
   letter-spacing: 0.11rem;
@@ -159,8 +159,8 @@
     z-index: 1;
     padding: 8px;
     border-radius: 50px;
-    color: rgb(129, 129, 129);
-    text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
+    color: rgb(91, 91, 91);
+    text-shadow: 1px 1px 1px black, 1px 1px 1px rgb(91, 91, 91);
     font-family: var(--primary-font);
     font-size: 0.9rem;
     letter-spacing: 0.11rem;
@@ -192,7 +192,7 @@
   &.green {
     &:hover {
       color: #000000;
-      text-shadow: 0.5px 0.5px 0.5px #00ff33, 0.5px 0.5px 0.5px rgb(175 175 175);
+      text-shadow: 1px 1px 1px #00ff33, 1px 1px 1px rgb(0, 0, 0);
     }
   }
   &.green:hover::before {
@@ -201,7 +201,7 @@
   a {
     &:hover {
       color: #000000;
-      text-shadow: 0.5px 0.5px 0.5px #00ff33, 0.5px 0.5px 0.5px rgb(175 175 175);
+      text-shadow: 1px 1px 1px #00ff33, 1px 1px 1px rgb(0, 0, 0);
     }
   }
   &.orange {
@@ -223,7 +223,7 @@
   &.orange {
     &:hover {
       color: #000000;
-      text-shadow: 0.5px 0.5px 0.5px #ffd800, 0.5px 0.5px 0.5px rgb(175 175 175);
+      text-shadow: 1px 1px 1px #ffd800, 1px 1px 1px rgb(0, 0, 0);
     }
   }
   &.orange:hover::before {
@@ -248,99 +248,7 @@
   &.red {
     &:hover {
       color: #000000;
-      text-shadow: 0.5px 0.5px 0.5px #ff0000, 0.5px 0.5px 0.5px rgb(175 175 175);
-    }
-  }
-  &.red:hover::before {
-    opacity: 1;
-  }
-}
-
-.button_drop {
-  background: linear-gradient(135deg, #363636 0%, #000000 100%);
-  position: relative;
-  z-index: 1;
-  padding: 11px;
-  height: 58px;
-  border: none;
-  border-top: 1.5px solid rgb(64, 64, 64);
-  border-bottom: 1.5px solid rgb(0, 0, 0);
-  color: rgb(129, 129, 129);
-  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
-  font-family: var(--primary-font);
-  font-weight: 400;
-  font-size: 0.7rem;
-  min-width: 75px;
-  letter-spacing: 0.11rem;
-  outline: none;
-  transition: color 1s;
-  text-decoration: none;
-  width: 100%;
-  cursor: pointer;
-  &.green {
-    &:before {
-      background-image: linear-gradient(135deg, #000000 0%, #00ff33 100%);
-      padding: 11px;
-      position: absolute;
-      content: "";
-      top: 0px;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      transition: opacity 0.7s linear;
-      opacity: 0;
-    }
-  }
-  &.green {
-    &:hover {
-      color: #000000;
-    }
-  }
-  &.green:hover::before {
-    opacity: 1;
-  }
-  &.orange {
-    &:before {
-      background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
-      padding: 11px;
-      position: absolute;
-      content: "";
-      top: 0px;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      transition: opacity 0.7s linear;
-      opacity: 0;
-    }
-  }
-  &.orange {
-    &:hover {
-      color: #000000;
-    }
-  }
-  &.orange:hover::before {
-    opacity: 1;
-  }
-  &.red {
-    &:before {
-      background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
-      padding: 11px;
-      position: absolute;
-      content: "";
-      top: 0px;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      transition: opacity 0.7s linear;
-      opacity: 0;
-    }
-  }
-  &.red {
-    &:hover {
-      color: #000000;
+      text-shadow: 1px 1px 1px #ff0000, 1px 1px 1px rgb(0, 0, 0);
     }
   }
   &.red:hover::before {
