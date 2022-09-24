@@ -1,39 +1,32 @@
-
 footer {
   display: flex;
   justify-content: space-between;
   opacity: 0;
   background: linear-gradient(to top, #383838 4%, #161616 97.46%);
   padding: 2em 1em;
-  color: #1A1A1A;
+  color: #1a1a1a;
   font-weight: bold;
   position: relative;
-  // z-index: 60;
   margin-top: 1rem;
   font-size: 1rem;
-  .creator, span{
+  .creator,
+  span {
     color: #000000;
   }
   a {
     text-decoration: none;
     color: #8f8f8f;
     transition: color 1s;
-    text-shadow:	 
-       0 1px 0 rgb(57, 57, 57),
-       0 2px 0 rgb(52, 52, 52),
-       0 3px 0 rgb(44, 44, 44),
-       0 4px 0 rgb(19, 19, 19),
-       0 5px 0 rgb(12, 12, 12),
-       0 6px 0 rgb(0, 0, 0),
-       6px 7px  5px  rgba(0, 0, 0, .40),
-       6px 12px 10px rgba(0, 0, 0, .30), 
-       6px 17px 20px rgba(0, 0, 0, .20),
-       6px 22px 30px rgba(0, 0, 0, .10);
-       &:hover{
-        color: #4c4c4c;
-       }
+    text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52),
+      0 3px 0 rgb(44, 44, 44), 0 4px 0 rgb(19, 19, 19), 0 5px 0 rgb(12, 12, 12),
+      0 6px 0 rgb(0, 0, 0), 6px 7px 5px rgba(0, 0, 0, 0.4),
+      6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2),
+      6px 22px 30px rgba(0, 0, 0, 0.1);
+    &:hover {
+      color: #4c4c4c;
+    }
   }
-  .social{
+  .social {
     display: flex;
     width: 35%;
     justify-content: space-evenly;
@@ -41,17 +34,17 @@ footer {
 }
 
 @media all and (max-width: 799px) {
-    .copyright{
-       display: flex;
-       flex-direction: column;
+  .copyright {
+    display: flex;
+    flex-direction: column;
   }
 }
 
 @media all and (max-width: 450px) {
-    footer{
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       font-size: 0.9rem;
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
   }
 }

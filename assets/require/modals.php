@@ -40,8 +40,12 @@
           <label for="search_price">Free Content</label>
           <input type="checkbox" class="inputbox" id="search_price" value="Free" name="price">
 
-          <button type="submit" class="button green">Search</button>
-          <div class="button green" id="search_close">Close</div>
+          <button type="submit" class="button gray">Search</button>
+
+          <div class="flex_close">
+            <div class="button gray" id="search_close">Close</div>
+          </div>
+
         </form>
       </div>
     </div>
@@ -69,15 +73,21 @@
             <label for=" contact_message"></label>
             <textarea class="inputbox text" placeholder="Your message (max 10000 chars)" id="contact_message" name="message" onkeyup="javascript:input(this,'contact_message',10000, 'input_contact');" required></textarea>
 
-            <button type="submit" class="button orange">Post</button>
-            <div class="button green" id="contact_close">Close</div>
+            <button type="submit" class="button gray">Post</button>
+
+            <div class="flex_close">
+              <div class="button gray" id="contact_close">Close</div>
+            </div>
 
 
           <?php } else { ?>
 
 
             <div>You are not logged in</div>
-            <button type="button" class="button green" id="contact_close">Close</button>
+
+            <div class="flex_close">
+              <button type="button" class="button gray" id="contact_close">Close</button>
+            </div>
 
 
           <?php } ?>
@@ -155,8 +165,11 @@
             <label for="single_player_edit_price">Price : (from 1 to 500 or free (type 'Free'))</label>
             <input type="text" class="inputbox" value="<?= $getContentAndUserInformations_price ?>" placeholder="<?= $getContentAndUserInformations_price ?>" id="single_player_edit_price" name="price" onkeyup="javascript:input(this,'single_player_edit_price',5, 'input_price');" />
 
-            <button type="submit" class="button orange">Edit</button>
-            <div class="button green" id="edit_close">Close</div>
+            <button type="submit" class="button gray">Edit</button>
+
+            <div class="flex_close">
+              <div class="button gray" id="edit_close">Close</div>
+            </div>
 
           </form>
         </div>
@@ -180,8 +193,11 @@
             <label for="single_player_comment">Comment : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-|)</label>
             <textarea class="inputbox text" id="single_player_comment" name="comment" onkeyup="javascript:input(this,'single_player_comment',10000, 'input_contact');" required></textarea>
 
-            <button type="submit" class="button green">Post Comment</button>
-            <div class="button green" id="comment_close">Close</div>
+            <button type="submit" class="button gray">Post Comment</button>
+
+            <div class="flex_close">
+              <div class="button gray" id="comment_close">Close</div>
+            </div>
 
           </form>
         </div>
@@ -208,8 +224,11 @@
               <label for="single_player_report">Message : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-|)</label>
               <textarea class="inputbox text" id="single_player_report" name="message" onkeyup="javascript:input(this,'single_player_report',10000, 'input_contact');" required></textarea>
 
-              <button type="submit" class="button red">Report</button>
-              <div class="button green" id="report_close">Close</div>
+              <button type="submit" class="button gray">Report</button>
+
+              <div class="flex_close">
+                <div class="button gray" id="report_close">Close</div>
+              </div>
 
             </form>
           </div>
@@ -232,8 +251,11 @@
               <h2>Are you sure you want to delete these content ? This action is irreversible !</h2>
               <br>
 
-              <button type="submit" class="button red">Delete</button>
-              <div class="button green" id="delete_content_close">Close</div>
+              <button type="submit" class="button gray">Delete</button>
+
+              <div class="flex_close">
+                <div class="button gray" id="delete_content_close">Close</div>
+              </div>
 
             </form>
           </div>
@@ -261,8 +283,11 @@
 
               <div><?= nl2br($message) ?></div>
 
-              <button type="submit" class="button green">Like</button>
-              <div class="button green" id="like_content_close">Close</div>
+              <button type="submit" class="button gray">Like</button>
+
+              <div class="flex_close">
+                <div class="button gray" id="like_content_close">Close</div>
+              </div>
 
             </form>
           </div>
@@ -290,8 +315,11 @@
               <h2>Are you sure you want to delete your account and all your content ? This action is irreversible !</h2>
               <br>
 
-              <button type="submit" class="button red">Delete</button>
-              <div class="button green" id="delete_users_close">Close</div>
+              <button type="submit" class="button gray">Delete</button>
+
+              <div class="flex_close">
+                <div class="button gray" id="delete_users_close">Close</div>
+              </div>
 
             </form>
           </div>

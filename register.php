@@ -40,7 +40,7 @@ if (!isset($session_users_id)) {
 								<label for="register_password_confirm"></label>
 								<input type="password" class="inputbox" placeholder="Confirm your password" id="register_password_confirm" name="password_confirm" onkeyup="javascript:input(this,'register_password_confirm',41, 'input_password');" minlength="2" required />
 
-								<button type="submit" class="button green">Register</button>
+								<button type="submit" class="button gray">Register</button>
 							</form>
 						</div>
 					</div>

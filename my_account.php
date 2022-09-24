@@ -55,7 +55,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 									<label for="my_account_lastname"></label>
 									<input type="text" class="inputbox" placeholder="<?= $getUserInformations_lastname ?> " id="my_account_lastname" value="<?= $getUserInformations_lastname ?>" name="lastname" onkeyup="javascript:input(this,'my_account_lastname',11,'input_name_lastname');" />
 
-									<button type="submit" class="button orange">Edit</button>
+									<button type="submit" class="button gray">Edit</button>
 
 								</form>
 
@@ -82,7 +82,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 									<label for="my_account_new_password_confirm"></label>
 									<input type="password" class="inputbox" placeholder="Confirm your new password" id="my_account_new_password_confirm" name="new_password_confirm" onkeyup="javascript:input(this,'my_account_new_password_confirm',41, 'input_password');" minlength="2" required />
 
-									<button type="submit" class="button orange">Edit</button>
+									<button type="submit" class="button gray">Edit</button>
 
 								</form>
 
@@ -132,7 +132,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 									<label for="my_account_price">Price : (from 1 to 500 or free (type 'Free'))</label>
 									<input type="text" class="inputbox" id="my_account_price" name="price" placeholder="Price" onkeyup="javascript:input(this,'my_account_price',5, 'input_price');" required />
 
-									<button type="submit" class="button green">Add Content</button>
+									<button type="submit" class="button gray">Add Content</button>
 
 								</form>
 
@@ -141,15 +141,15 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 
 								<div class="form_action">
-									<button class="button green "><a class="link_page" href="content.php?name=user&category=user_content">Your Content</a></button>
+									<button class="button gray "><a class="link_page" href="content.php?name=user&category=user_content">Your Content</a></button>
 								</div>
 
 								<div class="form_action">
-									<button class="button green"><a class="link_page" href="content.php?category=user_purchased_content">Purchased Content</a></button>
+									<button class="button gray"><a class="link_page" href="content.php?category=user_purchased_content">Purchased Content</a></button>
 								</div>
 
 								<div class="form_action">
-									<button class="button red" id="delete_users_button" onfocus="javascript:modal('delete_users')">Delete My Account</button>
+									<button class="button gray" id="delete_users_button" onfocus="javascript:modal('delete_users')">Delete My Account</button>
 								</div>
 
 								<div class="margin"></div>
@@ -176,7 +176,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 											</div>
 
 											<div class="form_action">
-												<button class="btn_content button red" id="delete_notification_button<?= $getNotification_id ?>" onfocus="javascript:modalForeach('delete_notification','<?= $getNotification_id ?>')">Delete</button>
+												<button class="btn_content button gray" id="delete_notification_button<?= $getNotification_id ?>" onfocus="javascript:modalForeach('delete_notification','<?= $getNotification_id ?>')">Delete</button>
 											</div>
 										</div>
 									</div>

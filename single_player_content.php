@@ -75,8 +75,8 @@ if (
                       <div class="dropdown">
                         <button class="drop">Comment/Report</button>
                         <div class="dropdown-content">
-                          <button class="button_drop green" id="comment_button" onfocus="javascript:modal('comment')">Comment</button>
-                          <button class="button_drop red" id="report_button" onfocus="javascript:modal('report')">Report this Content</button>
+                          <button class="button_drop gray" id="comment_button" onfocus="javascript:modal('comment')">Comment</button>
+                          <button class="button_drop gray" id="report_button" onfocus="javascript:modal('report')">Report this Content</button>
                         </div>
                       </div>
 
@@ -89,8 +89,8 @@ if (
                       <div class="dropdown">
                         <button class="drop">Edit/Delete</button>
                         <div class="dropdown-content">
-                          <button class="button_drop orange" id="edit_button" onfocus="javascript:modal('edit')">Edit Content</button>
-                          <button class="button_drop red" id="delete_content_button" onfocus="javascript:modal('delete_content')">Delete Content</button>
+                          <button class="button_drop gray" id="edit_button" onfocus="javascript:modal('edit')">Edit Content</button>
+                          <button class="button_drop gray" id="delete_content_button" onfocus="javascript:modal('delete_content')">Delete Content</button>
                         </div>
                       </div>
 
@@ -104,7 +104,7 @@ if (
                 </div>
 
                 <div class="description">
-                  <div class="column1 green">
+                  <div class="column1 gray">
                     <a class="link_page" href="content.php?id=<?= $getContentAndUserInformations_id ?>&name=visitor&category=user_content"><?= $getContentAndUserInformations_author_name . " " . $getContentAndUserInformations_author_lastname ?></a>
                   </div>
 

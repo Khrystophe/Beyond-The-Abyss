@@ -28,10 +28,13 @@
 
               <div class="modal_message"><?= nl2br($message) ?></div>
               <br>
-              <button type="submit" class="button red">Buy</button>
+              <button type="submit" class="button gray">Buy</button>
               <br>
-              <button type="button" class="button green" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
-              <div class="button green" id="buy_close<?= $getContent_id ?>">Close</div>
+              <button type="button" class="button gray" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
+
+              <div class="flex_close">
+                <div class="button gray" id="buy_close<?= $getContent_id ?>">Close</div>
+              </div>
 
 
             <?php } else { ?>
@@ -43,12 +46,14 @@
 
               <?php if (isset($getComments) && !empty($getComments)) { ?>
 
-                <button type="button" class="button green" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
+                <button type="button" class="button gray" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
 
               <?php } ?>
 
 
-              <div class="button green" id="buy_close<?= $getContent_id ?>">Close</div>
+              <div class="flex_close">
+                <div class="button gray" id="buy_close<?= $getContent_id ?>">Close</div>
+              </div>
 
 
             <?php } ?>
@@ -99,7 +104,9 @@
             <?php } ?>
 
 
-            <button type="button" class="button green" id="content_comment_close<?= $getContent_id ?>">Close</button>
+            <div class="flex_close">
+              <button type="button" class="button gray" id="content_comment_close<?= $getContent_id ?>">Close</button>
+            </div>
 
           </div>
         </div>
@@ -130,8 +137,11 @@
             <label for="single_player_edit_comment<?= $getComment_id ?>"></label>
             <textarea class="inputbox text" id="single_player_edit_comment<?= $getComment_id ?>" name="comment" onkeyup="javascript:input(this,'single_player_edit_comment<?= $getComment_id ?>',10000, 'input_contact');" value="<?= $getComment_text ?>"><?= $getComment_text ?></textarea>
 
-            <button type="submit" class="button orange">Edit Comment</button>
-            <div class="button green" id="edit_comment_close<?= $getComment_id ?>">Close</div>
+            <button type="submit" class="button gray">Edit Comment</button>
+
+            <div class="flex_close">
+              <div class="button gray" id="edit_comment_close<?= $getComment_id ?>">Close</div>
+            </div>
 
           </form>
         </div>
@@ -159,8 +169,11 @@
 
             <div><?= nl2br($message) ?></div>
 
-            <button type="submit" class="button green">Like</button>
-            <div class="button green" id="like_comment_close<?= $getComment_id ?>">Close</div>
+            <button type="submit" class="button gray">Like</button>
+
+            <div class="flex_close">
+              <div class="button gray" id="like_comment_close<?= $getComment_id ?>">Close</div>
+            </div>
 
           </form>
         </div>
@@ -188,8 +201,11 @@
             <h2>Are you sure you want to delete these notification ? This action is irreversible !</h2>
             <br>
 
-            <button type="submit" class="button red">Delete</button>
-            <div class="button green" id="delete_notification_close<?= $getNotification_id ?>">Close</div>
+            <button type="submit" class="button gray">Delete</button>
+
+            <div class="flex_close">
+              <div class="button gray" id="delete_notification_close<?= $getNotification_id ?>">Close</div>
+            </div>
 
           </form>
         </div>

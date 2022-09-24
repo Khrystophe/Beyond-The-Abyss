@@ -247,7 +247,6 @@
     .content {
       height: 120px;
       box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
-      // filter: grayscale(1);
     }
 
     .content_header {
@@ -310,17 +309,14 @@
 
 .tuto_back {
   background: url("../img/piano-1846719_1920.jpg");
-  // filter: grayscale(1);
 }
 
 .perf_back {
   background: url("../img/stage-curtain-660078_1920.jpg");
-  // filter: grayscale(1);
 }
 
 .sheet_back {
   background: url("../img/sheet-music-4121936_1920.jpg");
-  // filter: grayscale(1);
 }
 
 @media all and (min-width: 800px) {
