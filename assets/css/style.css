@@ -106,6 +106,7 @@ nav {
   align-items: center;
   color: #8f8f8f;
   font-size: 14px;
+  text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
 }
 
 .little_logo {
@@ -1011,7 +1012,7 @@ nav {
   overflow: hidden;
   font-size: 23px;
   line-height: 40px;
-  text-shadow: 2.5px 2.5px 2.5px black, 2.5px 2.5px 2.5px white;
+  text-shadow: 1px 1px 1px black, 1px 1px 1px white;
   text-overflow: ellipsis;
 }
 .card__composer {
@@ -1019,7 +1020,7 @@ nav {
   overflow: hidden;
   font-size: 18px;
   line-height: 30px;
-  text-shadow: 2.5px 2.5px 2.5px black, 2.5px 2.5px 2.5px white;
+  text-shadow: 1px 1px 1px black, 1px 1px 1px white;
   text-overflow: ellipsis;
 }
 .card__likes {
@@ -1029,21 +1030,21 @@ nav {
   position: absolute;
   right: 15px;
   line-height: 26.4px;
-  text-shadow: 2.5px 2.5px 2.5px black, 2.5px 2.5px 2.5px white;
+  text-shadow: 1px 1px 1px black, 1px 1px 1px white;
   text-overflow: ellipsis;
 }
 .card__category {
   max-height: 85px;
   overflow: hidden;
   line-height: 26.4px;
-  text-shadow: 2.5px 2.5px 2.5px black, 2.5px 2.5px 2.5px white;
+  text-shadow: 1px 1px 1px black, 1px 1px 1px white;
   text-overflow: ellipsis;
 }
 .card__level {
   max-height: 85px;
   overflow: hidden;
   line-height: 26.4px;
-  text-shadow: 2.5px 2.5px 2.5px black, 2.5px 2.5px 2.5px white;
+  text-shadow: 1px 1px 1px black, 1px 1px 1px white;
   text-overflow: ellipsis;
 }
 .card__price {
@@ -1053,7 +1054,7 @@ nav {
   top: -40px;
   left: 15px;
   line-height: 26.4px;
-  text-shadow: 2.5px 2.5px 2.5px black, 2.5px 2.5px 2.5px white;
+  text-shadow: 1px 1px 1px black, 1px 1px 1px white;
   text-overflow: ellipsis;
 }
 .card__snippet {
@@ -1072,7 +1073,7 @@ nav {
   border: 1px solid white;
   font-size: 12px;
   text-decoration: none;
-  text-shadow: 2.5px 2.5px 2.5px black, 2.5px 2.5px 2.5px white;
+  text-shadow: 1px 1px 1px black, 1px 1px 1px white;
   transition: 0.3s;
   font-family: var(--primary-font);
   background-color: transparent;
@@ -1436,6 +1437,7 @@ nav {
   height: auto;
   width: 100%;
   background-color: #1e1e1e;
+  text-shadow: 1px 1px 1px black;
   align-items: center;
   padding: 0.2rem 0.5rem 0.2rem 0.5rem;
   border-radius: 4px;
@@ -1483,6 +1485,7 @@ nav {
   width: auto;
   border-radius: 1.5rem;
   padding: 1rem 2rem 1rem 2rem;
+  text-shadow: 3px 3px 3px #000000;
 }
 
 .inputbox {
@@ -1632,6 +1635,7 @@ nav {
   padding: 1rem 2rem 1rem 2rem;
   display: flex;
   flex-direction: column;
+  text-shadow: 0.5px 0.5px 0.5px black;
 }
 .modal_form_content.content_comment {
   padding: 0 0 0.5rem 0;
@@ -1747,6 +1751,7 @@ nav {
   margin: 10px;
   font-size: 0.85em;
   text-align: right;
+  text-shadow: 0.5px 0.5px 0.5px black;
 }
 
 .cardBody {
@@ -1761,6 +1766,7 @@ nav {
   overflow: hidden;
   text-align: left;
   font-size: 0.8rem;
+  text-shadow: 0.5px 0.5px 0.5px black;
 }
 .cardBody .cardStats {
   font-size: 0.9em;
@@ -1777,10 +1783,12 @@ nav {
 .cardBody .cardStats .cardStats_stat.cardStats_stat-likes {
   font-weight: lighter;
   color: #666666;
+  text-shadow: 0.5px 0.5px 0.5px black;
 }
 .cardBody .cardStats .cardStats_stat.cardStats_stat-comments {
   font-weight: lighter;
   color: #666666;
+  text-shadow: 0.5px 0.5px 0.5px black;
 }
 
 .btn_content {

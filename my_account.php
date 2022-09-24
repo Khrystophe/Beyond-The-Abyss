@@ -156,6 +156,15 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 
 
+								<?php if (isset($getNotifications) && !empty($getNotifications)) { ?>
+
+
+									<h2>Notifications :</h2>
+
+
+								<?php } ?>
+
+
 								<?php foreach ($getNotifications as $getNotification) {
 
 
@@ -163,7 +172,6 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 
 									require('./assets/require/modals_foreach.php'); ?>
 
-									<h2>Notifications :</h2>
 
 									<div class='deck_account'>
 										<div class='account_card'>

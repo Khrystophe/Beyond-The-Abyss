@@ -190,7 +190,7 @@
             <h2>Your comment</h2>
             <br>
 
-            <label for="single_player_comment">Comment : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-|)</label>
+            <label for="single_player_comment"></label>
             <textarea class="inputbox text" id="single_player_comment" name="comment" onkeyup="javascript:input(this,'single_player_comment',10000, 'input_contact');" required></textarea>
 
             <button type="submit" class="button gray">Post Comment</button>
@@ -221,7 +221,7 @@
               <h2>Want to report this content? Any improper reporting will result in consequences.</h2>
               <br>
 
-              <label for="single_player_report">Message : (|\\s0-9a-zA-Zéèêàçù# ()'.!?,;:°-|)</label>
+              <label for="single_player_report"></label>
               <textarea class="inputbox text" id="single_player_report" name="message" onkeyup="javascript:input(this,'single_player_report',10000, 'input_contact');" required></textarea>
 
               <button type="submit" class="button gray">Report</button>

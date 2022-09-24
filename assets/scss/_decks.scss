@@ -85,6 +85,7 @@
     margin: 10px;
     font-size: 0.85em;
     text-align: right;
+    text-shadow: 0.5px 0.5px 0.5px black;
   }
 }
 
@@ -100,6 +101,7 @@
     overflow: hidden;
     text-align: left;
     font-size: 0.8rem;
+    text-shadow: 0.5px 0.5px 0.5px black;
   }
 
   .cardStats {
@@ -117,10 +119,12 @@
       &.cardStats_stat-likes {
         font-weight: lighter;
         color: #666666;
+        text-shadow: 0.5px 0.5px 0.5px black;
       }
       &.cardStats_stat-comments {
         font-weight: lighter;
         color: #666666;
+        text-shadow: 0.5px 0.5px 0.5px black;
       }
     }
   }
