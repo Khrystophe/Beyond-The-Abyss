@@ -1,7 +1,6 @@
 .deck {
   position: relative;
-  max-width: 500px;
-  width: 100%;
+  width: 90%;
   margin: auto;
   &.content_comment {
     max-width: 100%;
@@ -99,7 +98,7 @@
     white-space: pre-line;
     color: #535353;
     overflow: hidden;
-    text-align: justify;
+    text-align: left;
     font-size: 0.8rem;
   }
 
@@ -127,12 +126,13 @@
   }
 }
 
+.btn_content {
+  min-width: 120px;
+}
+
 @media all and (max-width: 500px) {
   .cardBody {
     flex-direction: column-reverse;
-    .cardText {
-      text-align: left;
-    }
     .cardStats {
       height: 30px;
       flex-direction: row;
