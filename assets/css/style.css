@@ -83,7 +83,7 @@ nav {
   opacity: 0;
 }
 .nav_bar .nav_search {
-  background: linear-gradient(135deg, #535353 0%, #000000 100%);
+  background: linear-gradient(135deg, #343434 0%, #000000 100%);
   padding: 6px;
   border: none;
   width: 60px;
@@ -91,14 +91,14 @@ nav {
   border-bottom: 1.5px solid rgb(0, 0, 0);
   border-radius: 10px;
   color: rgb(129, 129, 129);
-  text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px rgb(129, 129, 129);
+  text-shadow: 2px 2px 2px black, 2px 2px 2px #444444;
   transition: color 1s;
   cursor: pointer;
 }
 .nav_bar .nav_search.gray:hover {
-  background: linear-gradient(135deg, #000000 0%, #535353 100%);
+  background: linear-gradient(135deg, #000000 0%, #272727 100%);
   color: #000000;
-  text-shadow: 0.5px 0.5px 0.5px #343434, 0.5px 0.5px 0.5px rgb(129, 129, 129);
+  text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(171, 171, 171);
 }
 .nav_bar .user_nav {
   display: flex;
