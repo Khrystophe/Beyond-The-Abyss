@@ -48,7 +48,7 @@
 
 .account_card {
   position: relative;
-  background-color: #000000;
+  background-color: #161616;
   border: none;
   border-top: 1.5px solid rgb(71, 71, 71);
   border-bottom: 1.5px solid rgb(48, 48, 48);
@@ -61,7 +61,7 @@
 
 .content_comment_card {
   position: relative;
-  background-color: #000000;
+  background-color: #161616;
   border: none;
   border-top: 1.5px solid rgb(36, 36, 36);
   padding: 0em 1em 0em 1em;
@@ -83,7 +83,7 @@
   }
 
   .cardHeader_date {
-    color: #8b8b8b;
+    // color: #8b8b8b;
     margin: 10px;
     font-size: 0.85em;
     text-align: right;
@@ -118,11 +118,11 @@
 
       &.cardStats_stat-likes {
         font-weight: lighter;
-        color: #8b8b8b;
+        color: #666666;
       }
       &.cardStats_stat-comments {
         font-weight: lighter;
-        color: #8b8b8b;
+        color: #666666;
       }
     }
   }

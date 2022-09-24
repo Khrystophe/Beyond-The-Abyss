@@ -14,7 +14,7 @@
   }
   h2 {
     font-size: 1rem;
-    color: #6c6c6c;
+    color: rgb(66, 66, 66);
   }
   .email {
     color: rgb(66, 66, 66);
@@ -69,7 +69,7 @@
   &.add_content {
     display: none;
     .fas {
-      color: #6c6c6c;
+      color: rgb(66, 66, 66);
       margin-left: 15px;
     }
   }
@@ -85,7 +85,7 @@
     display: block;
   }
   .fas {
-    color: #6c6c6c;
+    color: rgb(66, 66, 66);
     margin-left: 15px;
   }
   &.hide {
@@ -134,17 +134,18 @@
 }
 
 .button {
-  background: linear-gradient(135deg, #363636 0%, #000000 100%);
+  background: linear-gradient(135deg, #272727 0%, #000000 100%);
   position: relative;
   z-index: 1;
   height: 40px;
   padding: 8px;
   border: none;
-  border-top: 1.5px solid rgb(64, 64, 64);
-  border-bottom: 1.5px solid rgb(0, 0, 0);
+  border-top: 1px solid rgb(36, 36, 36);
+  border-bottom: 1px solid rgb(0, 0, 0);
   border-radius: 50px;
   color: rgb(91, 91, 91);
-  text-shadow: 1px 1px 1px black, 1px 1px 1px rgb(91, 91, 91);
+  // text-shadow: 1px 1px 1px black, 1px 1px 1px rgb(91, 91, 91);
+  text-shadow: 1px 1px 1px black, 1px 1px 1px #444444;
   font-family: var(--primary-font);
   font-size: 0.9rem;
   letter-spacing: 0.11rem;
@@ -157,10 +158,11 @@
   a {
     position: absolute;
     z-index: 1;
-    padding: 8px;
+    padding: 9px;
     border-radius: 50px;
     color: rgb(91, 91, 91);
-    text-shadow: 1px 1px 1px black, 1px 1px 1px rgb(91, 91, 91);
+    // text-shadow: 1px 1px 1px black, 1px 1px 1px rgb(91, 91, 91);
+    text-shadow: 1px 1px 1px black, 1px 1px 1px #444444;
     font-family: var(--primary-font);
     font-size: 0.9rem;
     letter-spacing: 0.11rem;
@@ -175,7 +177,8 @@
   }
   &.green {
     &:before {
-      background-image: linear-gradient(135deg, #000000 0%, #00ff33 100%);
+      // background-image: linear-gradient(135deg, #000000 0%, #00ff33 100%);
+      background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
       padding: 11px;
       border-radius: 50px;
       position: absolute;
@@ -192,7 +195,8 @@
   &.green {
     &:hover {
       color: #000000;
-      text-shadow: 1px 1px 1px #00ff33, 1px 1px 1px rgb(0, 0, 0);
+      // text-shadow: 1px 1px 1px #00ff33, 1px 1px 1px rgb(0, 0, 0);
+      text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
     }
   }
   &.green:hover::before {
@@ -201,12 +205,14 @@
   a {
     &:hover {
       color: #000000;
-      text-shadow: 1px 1px 1px #00ff33, 1px 1px 1px rgb(0, 0, 0);
+      // text-shadow: 1px 1px 1px #00ff33, 1px 1px 1px rgb(0, 0, 0);
+      text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
     }
   }
   &.orange {
     &:before {
-      background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
+      // background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
+      background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
       padding: 11px;
       border-radius: 50px;
       position: absolute;
@@ -223,7 +229,8 @@
   &.orange {
     &:hover {
       color: #000000;
-      text-shadow: 1px 1px 1px #ffd800, 1px 1px 1px rgb(0, 0, 0);
+      // text-shadow: 1px 1px 1px #ffd800, 1px 1px 1px rgb(0, 0, 0);
+      text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
     }
   }
   &.orange:hover::before {
@@ -231,7 +238,8 @@
   }
   &.red {
     &:before {
-      background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
+      // background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
+      background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
       padding: 11px;
       border-radius: 50px;
       position: absolute;
@@ -248,7 +256,8 @@
   &.red {
     &:hover {
       color: #000000;
-      text-shadow: 1px 1px 1px #ff0000, 1px 1px 1px rgb(0, 0, 0);
+      // text-shadow: 1px 1px 1px #ff0000, 1px 1px 1px rgb(0, 0, 0);
+      text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
     }
   }
   &.red:hover::before {

@@ -149,7 +149,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 								</div>
 
 								<div class="form_action">
-									<button class="button red" id="delete_users_button" onfocus="javascript:modal('delete_users')">Delete my account</button>
+									<button class="button red" id="delete_users_button" onfocus="javascript:modal('delete_users')">Delete My Account</button>
 								</div>
 
 								<div class="margin"></div>

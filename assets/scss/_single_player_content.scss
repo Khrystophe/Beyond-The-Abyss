@@ -78,7 +78,7 @@
   margin-top: 1rem;
 
   .likes {
-    color: #8b8b8b;
+    color: #666666;
   }
 
   .dropbtn {
@@ -152,7 +152,7 @@
 }
 
 .button_drop {
-  background: linear-gradient(135deg, #363636 0%, #000000 100%);
+  background: linear-gradient(135deg, #272727 0%, #000000 100%);
   position: relative;
   z-index: 1;
   padding: 11px;
@@ -161,7 +161,8 @@
   border-top: 1.5px solid rgb(64, 64, 64);
   border-bottom: 1.5px solid rgb(0, 0, 0);
   color: rgb(91, 91, 91);
-  text-shadow: 1px 1px 1px black, 1px 1px 1px rgb(91, 91, 91);
+  // text-shadow: 1px 1px 1px black, 1px 1px 1px rgb(91, 91, 91);
+  text-shadow: 1px 1px 1px black, 1px 1px 1px #444444;
   font-family: var(--primary-font);
   font-weight: 400;
   font-size: 0.7rem;
@@ -174,7 +175,8 @@
   cursor: pointer;
   &.green {
     &:before {
-      background-image: linear-gradient(135deg, #000000 0%, #00ff33 100%);
+      // background-image: linear-gradient(135deg, #000000 0%, #00ff33 100%);
+      background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
       padding: 11px;
       position: absolute;
       content: "";
@@ -190,7 +192,8 @@
   &.green {
     &:hover {
       color: #000000;
-      text-shadow: 1px 1px 1px #00ff33, 1px 1px 1px rgb(0, 0, 0);
+      // text-shadow: 1px 1px 1px #00ff33, 1px 1px 1px rgb(0, 0, 0);
+      text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
     }
   }
   &.green:hover::before {
@@ -198,7 +201,8 @@
   }
   &.orange {
     &:before {
-      background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
+      // background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
+      background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
       padding: 11px;
       position: absolute;
       content: "";
@@ -214,7 +218,8 @@
   &.orange {
     &:hover {
       color: #000000;
-      text-shadow: 1px 1px 1px #ffd800, 1px 1px 1px rgb(0, 0, 0);
+      // text-shadow: 1px 1px 1px #ffd800, 1px 1px 1px rgb(0, 0, 0);
+      text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
     }
   }
   &.orange:hover::before {
@@ -222,7 +227,8 @@
   }
   &.red {
     &:before {
-      background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
+      // background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
+      background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
       padding: 11px;
       position: absolute;
       content: "";
@@ -238,7 +244,8 @@
   &.red {
     &:hover {
       color: #000000;
-      text-shadow: 1px 1px 1px #ff0000, 1px 1px 1px rgb(0, 0, 0);
+      // text-shadow: 1px 1px 1px #ff0000, 1px 1px 1px rgb(0, 0, 0);
+      text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
     }
   }
   &.red:hover::before {

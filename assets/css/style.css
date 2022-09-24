@@ -675,7 +675,6 @@ nav {
 .content_card .info_section .content {
   height: 120px;
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
-  filter: grayscale(1);
 }
 .content_card .info_section .content_header {
   line-height: 2.5rem;
@@ -1203,7 +1202,7 @@ nav {
   margin-top: 1rem;
 }
 .player_bottom_bar .likes {
-  color: #8b8b8b;
+  color: #666666;
 }
 .player_bottom_bar .dropbtn {
   background: linear-gradient(135deg, #272727 0%, #000000 100%);
@@ -1267,7 +1266,7 @@ nav {
 }
 
 .button_drop {
-  background: linear-gradient(135deg, #363636 0%, #000000 100%);
+  background: linear-gradient(135deg, #272727 0%, #000000 100%);
   position: relative;
   z-index: 1;
   padding: 11px;
@@ -1276,7 +1275,7 @@ nav {
   border-top: 1.5px solid rgb(64, 64, 64);
   border-bottom: 1.5px solid rgb(0, 0, 0);
   color: rgb(91, 91, 91);
-  text-shadow: 1px 1px 1px black, 1px 1px 1px rgb(91, 91, 91);
+  text-shadow: 1px 1px 1px black, 1px 1px 1px #444444;
   font-family: var(--primary-font);
   font-weight: 400;
   font-size: 0.7rem;
@@ -1289,7 +1288,7 @@ nav {
   cursor: pointer;
 }
 .button_drop.green:before {
-  background-image: linear-gradient(135deg, #000000 0%, #00ff33 100%);
+  background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
   padding: 11px;
   position: absolute;
   content: "";
@@ -1303,13 +1302,13 @@ nav {
 }
 .button_drop.green:hover {
   color: #000000;
-  text-shadow: 1px 1px 1px #00ff33, 1px 1px 1px rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
 }
 .button_drop.green:hover::before {
   opacity: 1;
 }
 .button_drop.orange:before {
-  background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
+  background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
   padding: 11px;
   position: absolute;
   content: "";
@@ -1323,13 +1322,13 @@ nav {
 }
 .button_drop.orange:hover {
   color: #000000;
-  text-shadow: 1px 1px 1px #ffd800, 1px 1px 1px rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
 }
 .button_drop.orange:hover::before {
   opacity: 1;
 }
 .button_drop.red:before {
-  background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
+  background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
   padding: 11px;
   position: absolute;
   content: "";
@@ -1343,7 +1342,7 @@ nav {
 }
 .button_drop.red:hover {
   color: #000000;
-  text-shadow: 1px 1px 1px #ff0000, 1px 1px 1px rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
 }
 .button_drop.red:hover::before {
   opacity: 1;
@@ -1410,7 +1409,7 @@ nav {
 }
 .form h2 {
   font-size: 1rem;
-  color: #6c6c6c;
+  color: rgb(66, 66, 66);
 }
 .form .email {
   color: rgb(66, 66, 66);
@@ -1462,7 +1461,7 @@ nav {
   display: none;
 }
 .fold.name_lastname .fas, .fold.password .fas, .fold.add_content .fas {
-  color: #6c6c6c;
+  color: rgb(66, 66, 66);
   margin-left: 15px;
 }
 .fold.hide {
@@ -1473,7 +1472,7 @@ nav {
   display: block;
 }
 .unfold .fas {
-  color: #6c6c6c;
+  color: rgb(66, 66, 66);
   margin-left: 15px;
 }
 .unfold.hide {
@@ -1519,17 +1518,17 @@ nav {
 }
 
 .button {
-  background: linear-gradient(135deg, #363636 0%, #000000 100%);
+  background: linear-gradient(135deg, #272727 0%, #000000 100%);
   position: relative;
   z-index: 1;
   height: 40px;
   padding: 8px;
   border: none;
-  border-top: 1.5px solid rgb(64, 64, 64);
-  border-bottom: 1.5px solid rgb(0, 0, 0);
+  border-top: 1px solid rgb(36, 36, 36);
+  border-bottom: 1px solid rgb(0, 0, 0);
   border-radius: 50px;
   color: rgb(91, 91, 91);
-  text-shadow: 1px 1px 1px black, 1px 1px 1px rgb(91, 91, 91);
+  text-shadow: 1px 1px 1px black, 1px 1px 1px #444444;
   font-family: var(--primary-font);
   font-size: 0.9rem;
   letter-spacing: 0.11rem;
@@ -1543,10 +1542,10 @@ nav {
 .button a {
   position: absolute;
   z-index: 1;
-  padding: 8px;
+  padding: 9px;
   border-radius: 50px;
   color: rgb(91, 91, 91);
-  text-shadow: 1px 1px 1px black, 1px 1px 1px rgb(91, 91, 91);
+  text-shadow: 1px 1px 1px black, 1px 1px 1px #444444;
   font-family: var(--primary-font);
   font-size: 0.9rem;
   letter-spacing: 0.11rem;
@@ -1560,7 +1559,7 @@ nav {
   left: 0px;
 }
 .button.green:before {
-  background-image: linear-gradient(135deg, #000000 0%, #00ff33 100%);
+  background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
   padding: 11px;
   border-radius: 50px;
   position: absolute;
@@ -1575,17 +1574,17 @@ nav {
 }
 .button.green:hover {
   color: #000000;
-  text-shadow: 1px 1px 1px #00ff33, 1px 1px 1px rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
 }
 .button.green:hover::before {
   opacity: 1;
 }
 .button a:hover {
   color: #000000;
-  text-shadow: 1px 1px 1px #00ff33, 1px 1px 1px rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
 }
 .button.orange:before {
-  background: linear-gradient(135deg, #000000 0%, #ffd800 100%);
+  background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
   padding: 11px;
   border-radius: 50px;
   position: absolute;
@@ -1600,13 +1599,13 @@ nav {
 }
 .button.orange:hover {
   color: #000000;
-  text-shadow: 1px 1px 1px #ffd800, 1px 1px 1px rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
 }
 .button.orange:hover::before {
   opacity: 1;
 }
 .button.red:before {
-  background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
+  background-image: linear-gradient(135deg, #000000 0%, #272727 100%);
   padding: 11px;
   border-radius: 50px;
   position: absolute;
@@ -1621,7 +1620,7 @@ nav {
 }
 .button.red:hover {
   color: #000000;
-  text-shadow: 1px 1px 1px #ff0000, 1px 1px 1px rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
 }
 .button.red:hover::before {
   opacity: 1;
@@ -1681,7 +1680,7 @@ nav {
 }
 
 .modal_form_content {
-  background-color: black;
+  background-color: #161616;
   border: 2px solid rgba(255, 255, 255, 0.1);
   padding: 1rem 2rem 1rem 2rem;
   display: flex;
@@ -1689,6 +1688,9 @@ nav {
 }
 .modal_form_content.content_comment {
   padding: 0 0 0.5rem 0;
+}
+.modal_form_content.messages {
+  background-color: black;
 }
 
 .modal_description {
@@ -1698,7 +1700,14 @@ nav {
   justify-content: center;
 }
 
-#input_price, #input_contact, #input_description, #input_composer, #input_title, #input_password, #input_name_lastname, #input_content {
+#input_price,
+#input_contact,
+#input_description,
+#input_composer,
+#input_title,
+#input_password,
+#input_name_lastname,
+#input_content {
   display: none;
 }
 
@@ -1749,7 +1758,7 @@ nav {
 
 .account_card {
   position: relative;
-  background-color: #000000;
+  background-color: #161616;
   border: none;
   border-top: 1.5px solid rgb(71, 71, 71);
   border-bottom: 1.5px solid rgb(48, 48, 48);
@@ -1762,7 +1771,7 @@ nav {
 
 .content_comment_card {
   position: relative;
-  background-color: #000000;
+  background-color: #161616;
   border: none;
   border-top: 1.5px solid rgb(36, 36, 36);
   padding: 0em 1em 0em 1em;
@@ -1784,7 +1793,6 @@ nav {
   margin-left: 10px;
 }
 .cardHeader .cardHeader_date {
-  color: #8b8b8b;
   margin: 10px;
   font-size: 0.85em;
   text-align: right;
@@ -1817,11 +1825,11 @@ nav {
 }
 .cardBody .cardStats .cardStats_stat.cardStats_stat-likes {
   font-weight: lighter;
-  color: #8b8b8b;
+  color: #666666;
 }
 .cardBody .cardStats .cardStats_stat.cardStats_stat-comments {
   font-weight: lighter;
-  color: #8b8b8b;
+  color: #666666;
 }
 
 @media all and (max-width: 500px) {
