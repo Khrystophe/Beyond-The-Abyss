@@ -12,7 +12,7 @@
    </span>
 </footer>
 
-
+<script src="assets/js/search.js"></script>
 <script src="assets/js/functions.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://unpkg.com/@barba/core"></script>
