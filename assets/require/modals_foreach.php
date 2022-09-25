@@ -3,7 +3,7 @@
   $getComments = getComments($bdd, $getContent_id); ?>
 
   <div id="buy_modal<?= $getContent_id ?>" class="modal messages">
-    <div class="modal-content">
+    <div class="modal_content">
       <div class="modal_form">
         <div class="modal_form_content">
 
@@ -67,7 +67,7 @@
 
 
   <div id="content_comment_modal<?= $getContent_id ?>" class="modal messages content_comment">
-    <div class="modal-content">
+    <div class="modal_content">
       <div class="modal_form">
         <div class="modal_form_content content_comment">
           <div class="form_action">
@@ -122,7 +122,7 @@
 
 
   <div id="edit_comment_modal<?= $getComment_id ?>" class="modal messages">
-    <div class="modal-content">
+    <div class="modal_content">
       <div class="modal_form">
         <div class="modal_form_content">
 
@@ -151,7 +151,7 @@
 
 
   <div id="like_comment_modal<?= $getComment_id ?>" class="modal messages">
-    <div class="modal-content">
+    <div class="modal_content">
       <div class="modal_form">
         <div class="modal_form_content">
 
@@ -188,7 +188,7 @@
 <?php if (isset($getNotification_id) && $page == "my_account") { ?>
 
   <div id="delete_notification_modal<?= $getNotification_id ?>" class="modal messages">
-    <div class="modal-content">
+    <div class="modal_content">
       <div class="modal_form">
         <div class="modal_form_content">
 

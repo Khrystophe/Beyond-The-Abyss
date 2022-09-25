@@ -5,11 +5,20 @@
   box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(16, 16, 16);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(36, 36, 36);
+  border: 1px solid rgb(0, 0, 0);
+}
+
 :root {
-  --primary-color: #16161632;
-  --secondary-color: #4c4c4c;
-  --third-color: #fff;
-  --fourth-color: #8f8f8f;
   --primary-font: "Merienda", cursive;
 }
 
@@ -1627,7 +1636,7 @@ nav {
   flex-direction: column;
   justify-content: center;
 }
-.modal_messages .modal-content {
+.modal_messages .modal_content {
   display: flex;
   justify-content: center;
 }
@@ -1639,7 +1648,7 @@ nav {
   font-size: 12px;
 }
 
-.modal-content {
+.modal_content {
   margin: 5% auto;
   width: 90%;
   overflow: auto;

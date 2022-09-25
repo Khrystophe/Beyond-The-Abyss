@@ -117,7 +117,7 @@ if (isset($get_error) || isset($get_success)) {
 ?>
 
   <div id="messages_modal" class="modal_messages">
-    <div class="modal-content">
+    <div class="modal_content">
       <div class="modal_form">
         <div class="modal_form_content">
 
@@ -144,7 +144,7 @@ if (isset($get_error) || isset($get_success)) {
 
 
 <div id="input_modal" class="modal_messages">
-  <div class="modal-content">
+  <div class="modal_content">
     <div class="modal_form">
       <div class="modal_form_content">
 

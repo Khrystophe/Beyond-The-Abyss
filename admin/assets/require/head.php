@@ -87,7 +87,7 @@ require('session_regenerate.php'); ?>
             justify-content: center;
         }
 
-        .modal_messages .modal-content {
+        .modal_messages .modal_content {
             display: flex;
             justify-content: center;
         }
@@ -102,7 +102,7 @@ require('session_regenerate.php'); ?>
         }
 
 
-        .modal-content {
+        .modal_content {
             margin: 5% auto;
             width: 60%;
             overflow: auto;

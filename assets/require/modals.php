@@ -1,5 +1,5 @@
 <div id="search_modal" class="modal messages">
-  <div class="modal-content">
+  <div class="modal_content">
     <div class="modal_form">
       <div class="modal_form_content">
 
@@ -54,7 +54,7 @@
 
 
 <div id="contact_modal" class="modal messages">
-  <div class="modal-content">
+  <div class="modal_content">
     <div class="modal_form">
       <div class="modal_form_content">
 
@@ -103,7 +103,7 @@
 <?php if (isset($getContentAndUserInformations) && !empty($getContentAndUserInformations)) { ?>
 
   <div id="edit_modal" class="modal messages">
-    <div class="modal-content">
+    <div class="modal_content">
       <div class="modal_form">
         <div class="modal_form_content">
 
@@ -178,7 +178,7 @@
   </div>
 
   <div id="comment_modal" class="modal messages">
-    <div class="modal-content">
+    <div class="modal_content">
       <div class="modal_form">
         <div class="modal_form_content">
 
@@ -209,7 +209,7 @@
 
 
   <div id="report_modal" class="modal messages">
-    <div class="modal-content">
+    <div class="modal_content">
       <div class="modal_form">
         <div class="modal_form_content">
 
@@ -238,7 +238,7 @@
 
 
   <div id="delete_content_modal" class="modal messages">
-    <div class="modal-content">
+    <div class="modal_content">
       <div class="modal_form">
         <div class="modal_form_content">
 
@@ -265,7 +265,7 @@
 
 
   <div id="like_content_modal" class="modal messages">
-    <div class="modal-content">
+    <div class="modal_content">
       <div class="modal_form">
         <div class="modal_form_content">
 
@@ -302,7 +302,7 @@
 <?php if (isset($session_users_id) && $page == 'my_account') { ?>
 
   <div id="delete_users_modal" class="modal messages">
-    <div class="modal-content">
+    <div class="modal_content">
       <div class="modal_form">
         <div class="modal_form_content">
 

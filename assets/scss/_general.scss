@@ -1,19 +1,22 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: rgb(16, 16, 16);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(36, 36, 36);
+  border: 1px solid rgb(0, 0, 0);
+}
 :root {
-  --primary-color: #16161632;
-  --secondary-color: #4c4c4c;
-  --third-color: #fff;
-  --fourth-color: #8f8f8f;
-  
-  --primary-font: 'Merienda', cursive;
+  --primary-font: "Merienda", cursive;
 }
 
 html {
@@ -27,38 +30,36 @@ body {
   opacity: 0;
 }
 
-.min-height{
+.min-height {
   min-height: 100vh;
 }
 
-.autoAlpha{
+.autoAlpha {
   opacity: 1;
 }
 
-textarea{
+textarea {
   resize: none;
 }
 
-
 @keyframes rotate_one {
   from {
-        transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-        transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes rotate_two {
   from {
-        transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-        transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
-
-.messages_logo  img{
+.messages_logo img {
   width: 100px;
   animation: rotate_one 8s linear infinite;
 }
