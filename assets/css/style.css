@@ -18,6 +18,11 @@
   border: 1px solid rgb(0, 0, 0);
 }
 
+*::-webkit-resizer {
+  background-color: rgb(24, 24, 24);
+  border: 1px solid black;
+}
+
 :root {
   --primary-font: "Merienda", cursive;
 }
@@ -42,7 +47,7 @@ body {
 }
 
 textarea {
-  resize: none;
+  resize: vertical;
 }
 
 @keyframes rotate_one {
