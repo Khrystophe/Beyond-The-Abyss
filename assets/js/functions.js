@@ -1,6 +1,5 @@
 let scroll_nav = document.querySelectorAll(".scroll_nav");
 let lastScrollValue = 0;
-console.log(scroll_nav);
 document.addEventListener("scroll", () => {
   let top = document.documentElement.scrollTop;
 
@@ -182,23 +181,130 @@ function foldUnfold(element, target) {
   let fold_icons = document.querySelectorAll("." + element);
   let form = document.getElementById(target);
 
-  folder.addEventListener("click", function () {
-    for (let i = 0; i < fold_icons.length; i++) {
-      if (fold_icons[i].classList.contains("hide")) {
-        fold_icons[i].classList.remove("hide");
+  if (folder !== null) {
+    folder.addEventListener("click", function () {
+      for (let i = 0; i < fold_icons.length; i++) {
+        if (fold_icons[i].classList.contains("hide")) {
+          fold_icons[i].classList.remove("hide");
 
-        form.style.display = "none";
-        form.style.height = "0";
-      } else {
-        fold_icons[i].classList.add("hide");
+          form.style.display = "none";
+          form.style.height = "0";
+        } else {
+          fold_icons[i].classList.add("hide");
 
-        form.style.display = "block";
-        form.style.height = "auto";
+          form.style.display = "block";
+          form.style.height = "auto";
+        }
       }
-    }
-  });
+    });
+  }
 }
 
 foldUnfold("name_lastname", "show_name_lastname");
 foldUnfold("password", "show_password");
 foldUnfold("add_content", "show_add_content");
+
+function autocomplete(input, array) {
+  let currentFocus;
+
+  input.addEventListener("input", function (e) {
+    let a,
+      b,
+      i,
+      val = this.value;
+
+    closeAllLists();
+
+    if (!val) {
+      return false;
+    }
+
+    currentFocus = -1;
+
+    a = document.createElement("DIV");
+    a.setAttribute("id", this.id + "autocomplete-list");
+    a.setAttribute("class", "autocomplete-items");
+
+    this.parentNode.appendChild(a);
+
+    for (i = 0; i < array.length; i++) {
+      if (array[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+        b = document.createElement("DIV");
+        b.innerHTML = "<strong>" + array[i].substr(0, val.length) + "</strong>";
+        b.innerHTML += array[i].substr(val.length);
+        b.innerHTML += "<input type='hidden' value='" + array[i] + "'>";
+
+        b.addEventListener("click", function (e) {
+          input.value = this.getElementsByTagName("input")[0].value;
+          closeAllLists();
+        });
+
+        a.appendChild(b);
+      }
+    }
+  });
+
+  input.addEventListener("keydown", function (e) {
+    let x = document.getElementById(this.id + "autocomplete-list");
+
+    if (x) {
+      x = x.getElementsByTagName("div");
+    }
+
+    if (e.keyCode == 40) {
+      currentFocus++;
+      addActive(x);
+    } else if (e.keyCode == 38) {
+      currentFocus--;
+      addActive(x);
+    } else if (e.keyCode == 13) {
+      e.preventDefault();
+
+      if (currentFocus > -1) {
+        if (x) {
+          x[currentFocus].click();
+        }
+      }
+    }
+  });
+
+  function addActive(x) {
+    if (!x) {
+      return false;
+    }
+
+    removeActive(x);
+
+    if (currentFocus >= x.length) {
+      currentFocus = 0;
+    }
+    if (currentFocus < 0) {
+      currentFocus = x.length - 1;
+    }
+
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+
+  function removeActive(x) {
+    for (let i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+
+  function closeAllLists(elmnt) {
+    let x = document.getElementsByClassName("autocomplete-items");
+
+    for (let i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != input) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+
+  document.addEventListener("click", function (e) {
+    closeAllLists(e.target);
+  });
+}
+
+autocomplete(document.getElementById("search_title"), titles);
+autocomplete(document.getElementById("search_composer"), composers);
