@@ -1,3 +1,19 @@
+let scroll_nav = document.querySelectorAll(".scroll_nav");
+let lastScrollValue = 0;
+console.log(scroll_nav);
+document.addEventListener("scroll", () => {
+  let top = document.documentElement.scrollTop;
+
+  for (let i = 0; i < scroll_nav.length; i++) {
+    if (lastScrollValue < top) {
+      scroll_nav[i].classList.add("hidden");
+    } else {
+      scroll_nav[i].classList.remove("hidden");
+    }
+  }
+  lastScrollValue = top;
+});
+
 function input(string, id, maxLength, index) {
   let array_regex = {
     input_name_lastname: /^(?!\s*$)[a-zA-Zéèêàçù '"-]+$/,

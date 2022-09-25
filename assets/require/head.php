@@ -35,11 +35,6 @@ if (isset($session_users_id)) {
 
 	<div class="loading-container">
 
-		<div class="little_logo">
-			<img class="little_main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-			<div class="little_main_logo_disc"></div>
-		</div>
-
 		<div class="loading-screen">
 			<img class="logo_transition" src="./assets/img/musicgrise.png" alt="">
 			<div class="transition_circle"></div>
@@ -52,13 +47,13 @@ if (isset($session_users_id)) {
 		<nav>
 
 			<a href="#">
-				<div class="little_logo">
+				<div class="little_logo scroll_nav">
 					<img class="little_main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
 					<div class="little_main_logo_disc"></div>
 				</div>
 			</a>
 
-			<div class="nav_bar">
+			<div class="nav_bar scroll_nav">
 
 
 				<button class="nav_search gray" id="search_button" onfocus="javascript:modal('search')"><i class="far fa-search"></i></button>
@@ -73,22 +68,16 @@ if (isset($session_users_id)) {
 
 				<?php } ?>
 
+
 			</div>
 
-			<div class="toggle">
+			<div class="toggle scroll_nav">
 				<div class="ouvrir"></div>
 				<div class="fermer"></div>
 			</div>
 
 
 			<div class="menu">
-
-				<a href="#">
-					<div class="little_logo">
-						<img class="little_main_logo" src="./assets/img/musicgrise.png" alt="ringOfNotes">
-						<div class="little_main_logo_disc"></div>
-					</div>
-				</a>
 
 				<div class="menu__left">
 					<div class="menu__left__inner">

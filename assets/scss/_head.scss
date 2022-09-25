@@ -22,6 +22,11 @@ nav {
   flex-direction: row-reverse;
   z-index: 20;
   opacity: 0;
+  &.scroll_nav {
+    &.hidden {
+      top: -5rem;
+    }
+  }
   .nav_search {
     background: linear-gradient(162.5deg, #343434 0%, #000000 100%);
     padding: 6px;
@@ -60,9 +65,15 @@ nav {
   flex-direction: column;
   align-items: center;
   position: fixed;
-  top: -85px;
+  top: -5.4rem;
   left: 2rem;
   z-index: 50;
+  transition: top 1s;
+  &.scroll_nav {
+    &.hidden {
+      top: -10rem;
+    }
+  }
 
   .little_main_logo {
     margin: 0%;
@@ -94,6 +105,12 @@ nav {
   z-index: 500;
   cursor: pointer;
   position: fixed;
+  transition: top 1s;
+  &.scroll_nav {
+    &.hidden {
+      top: -5rem;
+    }
+  }
 }
 
 .ouvrir {
@@ -208,11 +225,9 @@ nav {
   text-decoration: none;
   font-size: 1.25rem;
   transition: color 1s;
-  text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52),
-    0 3px 0 rgb(44, 44, 44), 0 4px 0 rgb(19, 19, 19), 0 5px 0 rgb(12, 12, 12),
-    0 6px 0 rgb(0, 0, 0), 6px 7px 5px rgba(0, 0, 0, 0.4),
-    6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2),
-    6px 22px 30px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 0 rgb(57 57 57), 0 2px 0 rgb(52 52 52),
+    6px 7px 5px rgb(0 0 0 / 40%), 6px 12px 10px rgb(0 0 0 / 30%),
+    6px 17px 20px rgb(0 0 0 / 20%), 6px 22px 30px rgb(0 0 0 / 10%);
 }
 
 .menu__right__inner__item ul li button {
@@ -223,11 +238,9 @@ nav {
   border: none;
   background-color: transparent;
   font-family: var(--primary-font);
-  text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52),
-    0 3px 0 rgb(44, 44, 44), 0 4px 0 rgb(19, 19, 19), 0 5px 0 rgb(12, 12, 12),
-    0 6px 0 rgb(0, 0, 0), 6px 7px 5px rgba(0, 0, 0, 0.4),
-    6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2),
-    6px 22px 30px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 0 rgb(57 57 57), 0 2px 0 rgb(52 52 52),
+    6px 7px 5px rgb(0 0 0 / 40%), 6px 12px 10px rgb(0 0 0 / 30%),
+    6px 17px 20px rgb(0 0 0 / 20%), 6px 22px 30px rgb(0 0 0 / 10%);
   &:hover {
     color: rgb(36, 36, 36);
   }
@@ -365,6 +378,9 @@ nav {
       font-size: 1rem;
       transition: color 1s;
       list-style: none;
+      text-shadow: 0 1px 0 rgb(57 57 57), 0 2px 0 rgb(52 52 52),
+        6px 7px 5px rgb(0 0 0 / 40%), 6px 12px 10px rgb(0 0 0 / 30%),
+        6px 17px 20px rgb(0 0 0 / 20%), 6px 22px 30px rgb(0 0 0 / 10%);
     }
     .menu__left__inner__item ul li a:hover {
       color: rgb(36, 36, 36);
@@ -380,11 +396,9 @@ nav {
       border: none;
       background-color: transparent;
       font-family: var(--primary-font);
-      text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52),
-        0 3px 0 rgb(44, 44, 44), 0 4px 0 rgb(19, 19, 19),
-        0 5px 0 rgb(12, 12, 12), 0 6px 0 rgb(0, 0, 0),
-        6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3),
-        6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
+      text-shadow: 0 1px 0 rgb(57 57 57), 0 2px 0 rgb(52 52 52),
+        6px 7px 5px rgb(0 0 0 / 40%), 6px 12px 10px rgb(0 0 0 / 30%),
+        6px 17px 20px rgb(0 0 0 / 20%), 6px 22px 30px rgb(0 0 0 / 10%);
       &:hover {
         color: rgb(36, 36, 36);
       }

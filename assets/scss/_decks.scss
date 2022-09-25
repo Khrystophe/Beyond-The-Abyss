@@ -79,13 +79,16 @@
     color: #000000;
     font-weight: bolder;
     margin-left: 10px;
+    text-shadow: 0.5px 0.5px 0.5px #292929;
   }
 
   .cardHeader_date {
     margin: 10px;
     font-size: 0.85em;
     text-align: right;
-    text-shadow: 0.5px 0.5px 0.5px black;
+    text-shadow: 1px 1px 1px rgb(0 0 0);
+    font-weight: bold;
+    color: #363636;
   }
 }
 

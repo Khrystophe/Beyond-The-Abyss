@@ -129,7 +129,7 @@ function contentAnimation() {
     .to(
       ".nav_bar",
       {
-        opacity: 0.9,
+        opacity: 1,
         duration: 1,
       },
       "-=1"
@@ -283,7 +283,7 @@ toggle.addEventListener("click", function () {
       .to(
         ".nav_bar",
         {
-          opacity: 0.9,
+          opacity: 1,
           duration: 1,
         },
         "-=1"

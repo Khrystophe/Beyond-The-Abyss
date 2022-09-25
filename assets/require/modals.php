@@ -162,7 +162,7 @@
               $getContentAndUserInformations_price = 'Free';
             } ?>
 
-            <label for="single_player_edit_price">Price : (from 1 to 500 or free (type 'Free'))</label>
+            <label for="single_player_edit_price">Price : from 1 to 500 or free (type 'Free')</label>
             <input type="text" class="inputbox" value="<?= $getContentAndUserInformations_price ?>" placeholder="<?= $getContentAndUserInformations_price ?>" id="single_player_edit_price" name="price" onkeyup="javascript:input(this,'single_player_edit_price',5, 'input_price');" />
 
             <button type="submit" class="button gray">Edit</button>
@@ -177,7 +177,7 @@
     </div>
   </div>
 
-  < <div id="comment_modal" class="modal messages">
+  <div id="comment_modal" class="modal messages">
     <div class="modal-content">
       <div class="modal_form">
         <div class="modal_form_content">
@@ -203,128 +203,128 @@
         </div>
       </div>
     </div>
-    </div>
+  </div>
 
 
 
 
-    <div id="report_modal" class="modal messages">
-      <div class="modal-content">
-        <div class="modal_form">
-          <div class="modal_form_content">
+  <div id="report_modal" class="modal messages">
+    <div class="modal-content">
+      <div class="modal_form">
+        <div class="modal_form_content">
 
-            <form class="form_action" action="/Diplome/assets/actions/reporting_action.php" method="post">
+          <form class="form_action" action="/Diplome/assets/actions/reporting_action.php" method="post">
 
-              <label for="single_player_id_report"></label>
-              <input type="hidden" id="single_player_id_report" name="id" value="<?= $getContentAndUserInformations_id ?>">
+            <label for="single_player_id_report"></label>
+            <input type="hidden" id="single_player_id_report" name="id" value="<?= $getContentAndUserInformations_id ?>">
 
-              <h2>Want to report this content? Any improper reporting will result in consequences.</h2>
-              <br>
+            <h2>Want to report this content? Any improper reporting will result in consequences.</h2>
+            <br>
 
-              <label for="single_player_report"></label>
-              <textarea class="inputbox text" id="single_player_report" name="message" onkeyup="javascript:input(this,'single_player_report',10000, 'input_contact');" required></textarea>
+            <label for="single_player_report"></label>
+            <textarea class="inputbox text" id="single_player_report" name="message" onkeyup="javascript:input(this,'single_player_report',10000, 'input_contact');" required></textarea>
 
-              <button type="submit" class="button gray">Report</button>
+            <button type="submit" class="button gray">Report</button>
 
-              <div class="flex_close">
-                <div class="button gray" id="report_close">Close</div>
-              </div>
+            <div class="flex_close">
+              <div class="button gray" id="report_close">Close</div>
+            </div>
 
-            </form>
-          </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
 
 
-    <div id="delete_content_modal" class="modal messages">
-      <div class="modal-content">
-        <div class="modal_form">
-          <div class="modal_form_content">
+  <div id="delete_content_modal" class="modal messages">
+    <div class="modal-content">
+      <div class="modal_form">
+        <div class="modal_form_content">
 
-            <form data-barba-prevent class="form_action" action="/Diplome/assets/actions/delete_content_action.php?id=<?= $getContentAndUserInformations_id ?>&type=user" method="post">
+          <form data-barba-prevent class="form_action" action="/Diplome/assets/actions/delete_content_action.php?id=<?= $getContentAndUserInformations_id ?>&type=user" method="post">
 
-              <div class="messages_logo">
-                <img src="./assets/img/musicgrise.png" alt="" />
-              </div>
+            <div class="messages_logo">
+              <img src="./assets/img/musicgrise.png" alt="" />
+            </div>
 
-              <h2>Are you sure you want to delete these content ? This action is irreversible !</h2>
-              <br>
+            <h2>Are you sure you want to delete these content ? This action is irreversible !</h2>
+            <br>
 
-              <button type="submit" class="button gray">Delete</button>
+            <button type="submit" class="button gray">Delete</button>
 
-              <div class="flex_close">
-                <div class="button gray" id="delete_content_close">Close</div>
-              </div>
+            <div class="flex_close">
+              <div class="button gray" id="delete_content_close">Close</div>
+            </div>
 
-            </form>
-          </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
 
 
-    <div id="like_content_modal" class="modal messages">
-      <div class="modal-content">
-        <div class="modal_form">
-          <div class="modal_form_content">
+  <div id="like_content_modal" class="modal messages">
+    <div class="modal-content">
+      <div class="modal_form">
+        <div class="modal_form_content">
 
-            <form class="form_action" action="./assets/actions/like_action.php?name=content&id=<?= $getContentAndUserInformations_id ?>" method="post">
+          <form class="form_action" action="./assets/actions/like_action.php?name=content&id=<?= $getContentAndUserInformations_id ?>" method="post">
 
-              <div class="messages_logo">
-                <img src="./assets/img/musicgrise.png" alt="" />
-              </div>
+            <div class="messages_logo">
+              <img src="./assets/img/musicgrise.png" alt="" />
+            </div>
 
-              <br>
+            <br>
 
-              <?php
-              $message = "Like " . $getContentAndUserInformations_author_name . " " . $getContentAndUserInformations_author_lastname . "'s content ?";
-              ?>
+            <?php
+            $message = "Like " . $getContentAndUserInformations_author_name . " " . $getContentAndUserInformations_author_lastname . "'s content ?";
+            ?>
 
-              <div><?= nl2br($message) ?></div>
+            <div><?= nl2br($message) ?></div>
 
-              <button type="submit" class="button gray">Like</button>
+            <button type="submit" class="button gray">Like</button>
 
-              <div class="flex_close">
-                <div class="button gray" id="like_content_close">Close</div>
-              </div>
+            <div class="flex_close">
+              <div class="button gray" id="like_content_close">Close</div>
+            </div>
 
-            </form>
-          </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
 
-  <?php } ?>
+<?php } ?>
 
 
 
-  <?php if (isset($session_users_id) && $page == 'my_account') { ?>
+<?php if (isset($session_users_id) && $page == 'my_account') { ?>
 
-    <div id="delete_users_modal" class="modal messages">
-      <div class="modal-content">
-        <div class="modal_form">
-          <div class="modal_form_content">
+  <div id="delete_users_modal" class="modal messages">
+    <div class="modal-content">
+      <div class="modal_form">
+        <div class="modal_form_content">
 
-            <form data-barba-prevent class="form_action" action="/Diplome/assets/actions/delete_users_action.php?id=<?= $session_users_id ?>&type=user" method="post">
+          <form data-barba-prevent class="form_action" action="/Diplome/assets/actions/delete_users_action.php?id=<?= $session_users_id ?>&type=user" method="post">
 
-              <div class="messages_logo">
-                <img src="./assets/img/musicgrise.png" alt="" />
-              </div>
+            <div class="messages_logo">
+              <img src="./assets/img/musicgrise.png" alt="" />
+            </div>
 
-              <h2>Are you sure you want to delete your account and all your content ? This action is irreversible !</h2>
-              <br>
+            <h2>Are you sure you want to delete your account and all your content ? This action is irreversible !</h2>
+            <br>
 
-              <button type="submit" class="button gray">Delete</button>
+            <button type="submit" class="button gray">Delete</button>
 
-              <div class="flex_close">
-                <div class="button gray" id="delete_users_close">Close</div>
-              </div>
+            <div class="flex_close">
+              <div class="button gray" id="delete_users_close">Close</div>
+            </div>
 
-            </form>
-          </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
 
-  <?php } ?>
+<?php } ?>

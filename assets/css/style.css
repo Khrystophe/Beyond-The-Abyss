@@ -82,6 +82,9 @@ nav {
   z-index: 20;
   opacity: 0;
 }
+.nav_bar.scroll_nav.hidden {
+  top: -5rem;
+}
 .nav_bar .nav_search {
   background: linear-gradient(162.5deg, #343434 0%, #000000 100%);
   padding: 6px;
@@ -115,9 +118,13 @@ nav {
   flex-direction: column;
   align-items: center;
   position: fixed;
-  top: -85px;
+  top: -5.4rem;
   left: 2rem;
   z-index: 50;
+  transition: top 1s;
+}
+.little_logo.scroll_nav.hidden {
+  top: -10rem;
 }
 .little_logo .little_main_logo {
   margin: 0%;
@@ -147,6 +154,10 @@ nav {
   z-index: 500;
   cursor: pointer;
   position: fixed;
+  transition: top 1s;
+}
+.toggle.scroll_nav.hidden {
+  top: -5rem;
 }
 
 .ouvrir {
@@ -253,7 +264,7 @@ nav {
   text-decoration: none;
   font-size: 1.25rem;
   transition: color 1s;
-  text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 0 3px 0 rgb(44, 44, 44), 0 4px 0 rgb(19, 19, 19), 0 5px 0 rgb(12, 12, 12), 0 6px 0 rgb(0, 0, 0), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
 }
 
 .menu__right__inner__item ul li button {
@@ -264,7 +275,7 @@ nav {
   border: none;
   background-color: transparent;
   font-family: var(--primary-font);
-  text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 0 3px 0 rgb(44, 44, 44), 0 4px 0 rgb(19, 19, 19), 0 5px 0 rgb(12, 12, 12), 0 6px 0 rgb(0, 0, 0), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
 }
 .menu__right__inner__item ul li button:hover {
   color: rgb(36, 36, 36);
@@ -394,6 +405,7 @@ nav {
     font-size: 1rem;
     transition: color 1s;
     list-style: none;
+    text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
   }
   .menu_left_responsive .menu__left__inner__item ul li a:hover {
     color: rgb(36, 36, 36);
@@ -409,7 +421,7 @@ nav {
     border: none;
     background-color: transparent;
     font-family: var(--primary-font);
-    text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 0 3px 0 rgb(44, 44, 44), 0 4px 0 rgb(19, 19, 19), 0 5px 0 rgb(12, 12, 12), 0 6px 0 rgb(0, 0, 0), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
   }
   .menu_left_responsive .menu__left__inner__item ul li button:hover {
     color: rgb(36, 36, 36);
@@ -645,7 +657,6 @@ nav {
 }
 .content_card.tuto:hover {
   border-radius: 10px;
-  box-shadow: 0px 0px 120px -55px rgba(156, 156, 156, 0.7);
 }
 .content_card.perf {
   border-radius: 60px;
@@ -653,7 +664,6 @@ nav {
 }
 .content_card.perf:hover {
   border-radius: 10px;
-  box-shadow: 0px 0px 120px -55px rgba(156, 156, 156, 0.7);
 }
 .content_card.sheet {
   border-radius: 60px;
@@ -661,7 +671,6 @@ nav {
 }
 .content_card.sheet:hover {
   border-radius: 10px;
-  box-shadow: 0px 0px 120px -55px rgba(156, 156, 156, 0.7);
 }
 .content_card .info_section {
   position: relative;
@@ -947,18 +956,11 @@ nav {
   width: 100%;
 }
 
-.box {
-  border-radius: 10px;
-  box-shadow: 10px 10px 10px #090909, -10px -10px 10px #232323;
-}
-
 .card {
   width: 350px;
   margin: 10px;
   background-color: #161616;
   transition: all 0.4s;
-  box-shadow: -10px -11px 5px #090909, 11px 10px 5px #232323;
-  border-radius: 10px;
   overflow: hidden;
 }
 .card .content_button_flex {
@@ -966,7 +968,6 @@ nav {
   justify-content: space-evenly;
 }
 .card:hover {
-  box-shadow: 0px 0px 120px -55px rgba(156, 156, 156, 0.7);
   transform: scale(1.02);
   transition: all 0.4s;
 }
@@ -1301,6 +1302,13 @@ nav {
   opacity: 1;
 }
 
+.description {
+  display: flex;
+  flex-direction: column;
+  width: 88%;
+  margin: auto;
+}
+
 .column1 {
   margin-top: 30px;
   background: linear-gradient(162.5deg, #1c1c1c 0%, #000000 100%);
@@ -1328,18 +1336,12 @@ nav {
   background: linear-gradient(162.5deg, #000000 0%, #1c1c1c 100%);
 }
 
-.description {
-  display: flex;
-  flex-direction: column;
-  width: 88%;
-  margin: auto;
-}
-
 .column2 {
   color: rgb(66, 66, 66);
   overflow: hidden;
   white-space: pre-line;
   font-size: 0.8rem;
+  text-shadow: 1px 1px 1px black;
 }
 
 @media all and (max-width: 400px) {
@@ -1747,12 +1749,15 @@ nav {
   color: #000000;
   font-weight: bolder;
   margin-left: 10px;
+  text-shadow: 0.5px 0.5px 0.5px #292929;
 }
 .cardHeader .cardHeader_date {
   margin: 10px;
   font-size: 0.85em;
   text-align: right;
-  text-shadow: 0.5px 0.5px 0.5px black;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  font-weight: bold;
+  color: #363636;
 }
 
 .cardBody {
@@ -1887,7 +1892,7 @@ footer a {
   text-decoration: none;
   color: #8f8f8f;
   transition: color 1s;
-  text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 0 3px 0 rgb(44, 44, 44), 0 4px 0 rgb(19, 19, 19), 0 5px 0 rgb(12, 12, 12), 0 6px 0 rgb(0, 0, 0), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
 }
 footer a:hover {
   color: #4c4c4c;
