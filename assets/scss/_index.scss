@@ -483,30 +483,23 @@
           h2 {
             font-weight: 400;
             font-size: 1.5rem;
-            color: rgb(255, 255, 255);
-            text-shadow: 0px 2px 2px rgb(0 0 0), 0px 2px 2px rgb(66 66 66);
+            color: rgb(16 16 16);
+            text-shadow: 1px 1px 2px rgb(0 0 0), 1px 1px 1px rgb(255 255 255);
             line-height: 1rem;
           }
           h3 {
             font-weight: 400;
             font-size: 1.2rem;
-            color: rgb(255, 255, 255);
-            text-shadow: 0px 2px 2px rgb(0 0 0), 0px 2px 2px rgb(66 66 66);
+            color: rgb(16 16 16);
+            text-shadow: 1px 1px 2px rgb(0 0 0), 1px 1px 1px rgb(255 255 255);
             line-height: 3rem;
           }
           .see_content {
             a {
-              border: 1px solid rgb(255 255 255);
-              box-shadow: 0px -1px 2px rgb(0 0 0), 0px 1px 2px rgb(0 0 0);
-              color: rgb(255 255 255);
-              text-shadow: 0px 2px 2px rgb(0 0 0), 0px 2px 2px rgb(66 66 66);
-              &:hover {
-                color: rgb(0, 0, 0);
-                background-color: rgb(255, 255, 255);
-                border: 1px solid rgb(0, 0, 0);
-                box-shadow: 0px -1px 2px rgb(255, 255, 255),
-                  0px 1px 2px rgb(255, 255, 255);
-              }
+              border: 1px solid rgb(16, 16, 16);
+              box-shadow: 0px -1px 2px rgb(0 0 0), 0px 0px 2px rgb(255 255 255);
+              color: rgb(16 16 16);
+              text-shadow: 1px 1px 2px rgb(0 0 0), 1px 1px 1px rgb(255 255 255);
             }
           }
         }

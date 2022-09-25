@@ -72,8 +72,8 @@ if (isset($session_users_id)) {
 			</div>
 
 			<div class="toggle scroll_nav">
-				<div class="ouvrir"></div>
-				<div class="fermer"></div>
+				<div class="ouvrir"><i class="fas fa-bars"></i></div>
+				<div class="fermer"><i class="far fa-minus"></i></div>
 			</div>
 
 

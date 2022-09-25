@@ -163,7 +163,7 @@ function contentAnimation() {
 
     .to(".ouvrir", {
       duration: 0.5,
-      display: "block",
+      display: "flex",
     });
 }
 
@@ -207,6 +207,13 @@ toggle.addEventListener("click", function () {
       },
       0
     )
+      .to(
+        " .fermer",
+        {
+          display: "none",
+        },
+        0
+      )
 
       .set(".autoAlpha", {
         autoAlpha: 1,
@@ -317,7 +324,7 @@ toggle.addEventListener("click", function () {
 
       .to(".ouvrir", {
         duration: 0.5,
-        display: "block",
+        display: "flex",
       });
 
     tl1
@@ -475,7 +482,7 @@ toggle.addEventListener("click", function () {
       })
 
       .to(".open .fermer", {
-        display: "block",
+        display: "flex",
         duration: 0.5,
       });
 
@@ -640,6 +647,20 @@ for (let i = 0; i < links_menu.length; i++) {
       body.classList.remove("open");
 
       tl1
+        .to(
+          ".open .fermer",
+          {
+            display: "none",
+          },
+          0
+        )
+        .to(
+          " .fermer",
+          {
+            display: "none",
+          },
+          0
+        )
         .to(".sep", {
           duration: 0.75,
           height: 0,

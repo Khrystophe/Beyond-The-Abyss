@@ -163,10 +163,14 @@ nav {
 .ouvrir {
   width: 40px;
   height: 40px;
-  display: block;
-  border-radius: 131px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(129, 129, 129);
+  font-size: 20px;
+  border-radius: 3px;
   background: #161616;
-  box-shadow: inset 5px -5px 5px #090909, inset -5px 5px 5px #232323;
+  box-shadow: inset 3px -3px 3px #090909, inset -3px 3px 3px #232323;
 }
 
 .fermer {
@@ -180,10 +184,14 @@ nav {
 .open .fermer {
   width: 40px;
   height: 40px;
-  display: block;
-  border-radius: 131px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(129, 129, 129);
+  font-size: 23.3px;
+  border-radius: 3px;
   background: linear-gradient(45deg, #141414, #181818);
-  box-shadow: 5px -5px 5px #090909, -5px 5px 5px #232323;
+  box-shadow: 3px -3px 3px #090909, -3px 3px 3px #232323;
 }
 
 .menu {
@@ -325,17 +333,6 @@ nav {
 }
 
 @media all and (max-width: 799px) {
-  .toggle {
-    top: 1.5rem;
-  }
-  .ouvrir {
-    width: 30px;
-    height: 30px;
-  }
-  .open .fermer {
-    width: 30px;
-    height: 30px;
-  }
   .menu__left__inner__item {
     font-size: 1.25rem;
     margin-bottom: 1rem;
@@ -351,17 +348,6 @@ nav {
   }
 }
 @media all and (max-height: 580px) {
-  .toggle {
-    top: 1.5rem;
-  }
-  .ouvrir {
-    width: 30px;
-    height: 30px;
-  }
-  .open .fermer {
-    width: 30px;
-    height: 30px;
-  }
   .menu__left__inner__item {
     font-size: 1.25rem;
     margin-bottom: 1rem;
@@ -884,28 +870,22 @@ nav {
   .content_card .info_section .content_header.perf h2, .content_card .info_section .content_header.tuto h2, .content_card .info_section .content_header.sheet h2 {
     font-weight: 400;
     font-size: 1.5rem;
-    color: rgb(255, 255, 255);
-    text-shadow: 0px 2px 2px rgb(0, 0, 0), 0px 2px 2px rgb(66, 66, 66);
+    color: rgb(16, 16, 16);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0), 1px 1px 1px rgb(255, 255, 255);
     line-height: 1rem;
   }
   .content_card .info_section .content_header.perf h3, .content_card .info_section .content_header.tuto h3, .content_card .info_section .content_header.sheet h3 {
     font-weight: 400;
     font-size: 1.2rem;
-    color: rgb(255, 255, 255);
-    text-shadow: 0px 2px 2px rgb(0, 0, 0), 0px 2px 2px rgb(66, 66, 66);
+    color: rgb(16, 16, 16);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0), 1px 1px 1px rgb(255, 255, 255);
     line-height: 3rem;
   }
   .content_card .info_section .content_header.perf .see_content a, .content_card .info_section .content_header.tuto .see_content a, .content_card .info_section .content_header.sheet .see_content a {
-    border: 1px solid rgb(255, 255, 255);
-    box-shadow: 0px -1px 2px rgb(0, 0, 0), 0px 1px 2px rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    text-shadow: 0px 2px 2px rgb(0, 0, 0), 0px 2px 2px rgb(66, 66, 66);
-  }
-  .content_card .info_section .content_header.perf .see_content a:hover, .content_card .info_section .content_header.tuto .see_content a:hover, .content_card .info_section .content_header.sheet .see_content a:hover {
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(0, 0, 0);
-    box-shadow: 0px -1px 2px rgb(255, 255, 255), 0px 1px 2px rgb(255, 255, 255);
+    border: 1px solid rgb(16, 16, 16);
+    box-shadow: 0px -1px 2px rgb(0, 0, 0), 0px 0px 2px rgb(255, 255, 255);
+    color: rgb(16, 16, 16);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0), 1px 1px 1px rgb(255, 255, 255);
   }
   .content_card .info_section .content_desc {
     max-width: 100%;
@@ -1212,6 +1192,12 @@ nav {
   font-weight: 300;
   text-shadow: 0px 1px 5px black;
 }
+.details .title3 {
+  color: #bcbcbc;
+  font-size: 19px;
+  font-weight: 300;
+  text-shadow: 0px 1px 5px black;
+}
 
 .player_bottom_bar {
   display: flex;
@@ -1376,6 +1362,9 @@ nav {
   }
   .details .title2 {
     font-size: 1rem;
+  }
+  .details .title3 {
+    font-size: 0.9rem;
   }
   .player_bottom_bar {
     display: flex;

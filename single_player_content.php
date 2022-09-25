@@ -56,10 +56,19 @@ if (
                   <div class="details">
                     <h1 class="title1"><?= $getContentAndUserInformations_title ?></h1>
                     <h2 class="title2"><?= $getContentAndUserInformations_composer ?></h2>
-                    <h2 class="title2"><?= $getContentAndUserInformations_category ?></h2>
-                  </div>
 
+                    <?php if ($getContentAndUserInformations_category == 'tutorial') {
+                      $getContentAndUserInformations_category = 'Tutorial';
+                    } else if ($getContentAndUserInformations_category == 'performance') {
+                      $getContentAndUserInformations_category = 'Performance';
+                    } else if ($getContentAndUserInformations_category == 'sheet_music') {
+                      $getContentAndUserInformations_category = 'Sheet Music';
+                    } ?>
+
+                    <h2 class="title3"><?= $getContentAndUserInformations_category ?> <?= $getContentAndUserInformations_level ?></h2>
+                  </div>
                 </div>
+
                 <div class="player_bottom_bar">
                   <span class="likes"><i class="far fa-thumbs-up"> <?= $getContentAndUserInformations_likes ?></i></span>
 

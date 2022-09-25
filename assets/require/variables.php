@@ -105,14 +105,6 @@ if (isset($getContentAndUserInformations) && !empty($getContentAndUserInformatio
   $getContentAndUserInformations_id_user = htmlspecialchars($getContentAndUserInformations['id_users']);
   $getContentAndUserInformations_author_name = htmlspecialchars($getContentAndUserInformations['name']);
   $getContentAndUserInformations_author_lastname = htmlspecialchars($getContentAndUserInformations['lastname']);
-
-  if ($getContentAndUserInformations_category == 'tutorial') {
-    $getContentAndUserInformations_category = 'Tutorial';
-  } else if ($getContentAndUserInformations_category == 'performance') {
-    $getContentAndUserInformations_category = 'Performance';
-  } else if ($getContentAndUserInformations_category == 'sheet_music') {
-    $getContentAndUserInformations_category = 'Sheet Music';
-  }
 }
 
 if (isset($getComment) && !empty($getComment)) {
