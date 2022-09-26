@@ -165,7 +165,7 @@ if (
 
 
 	<main class="autoAlpha" data-barba="wrapper">
-		<div class="min-height" data-barba="container" data-barba-namespace="content-section">
+		<div class="min-height flex_content" data-barba="container" data-barba-namespace="content-section">
 
 			<div class="container">
 

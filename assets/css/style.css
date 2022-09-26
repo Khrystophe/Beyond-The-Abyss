@@ -963,6 +963,12 @@ nav {
     line-height: 3rem;
   }
 }
+.min-height.flex_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
