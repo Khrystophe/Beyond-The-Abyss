@@ -13,17 +13,30 @@ document.addEventListener("scroll", () => {
   lastScrollValue = top;
 });
 
+let position;
+let old_position;
 function input(string, id, maxLength, index) {
+  function position_event(id) {
+    document.getElementById(id).addEventListener("keydown", function () {
+      position = this.selectionStart;
+      return position;
+    });
+
+    old_position = position;
+    console.log(old_position);
+    return old_position;
+  }
+  position_event(id);
+
   let array_regex = {
-    input_name_lastname: /^(?!\s*$)[a-zA-Zéèêàçù '"-]+$/,
+    input_name_lastname: /^(?!\s*$)[a-zA-Zéèêàâçù '"-]+$/,
     input_password: /^[0-9a-zA-Z]+$/,
-    input_title: /^[0-9a-zA-Zéèêàçù '"!?°-]+$/,
-    input_composer: /^[0-9a-zA-Zéèêàçù -]+$/,
-    input_description: /^[\s\r\n0-9a-zA-Zéèêàçù# ()'".!?,;:°-]+$/,
-    input_contact: /^[\s\r\n0-9a-zA-Zéèêàçù# ()'".!?,;:°-]+$/,
+    input_title: /^[0-9a-zA-Zéèêàâçù '"!?°-]+$/,
+    input_composer: /^[0-9a-zA-Zéèêàâçù -]+$/,
+    input_description: /^[\s\r\n0-9a-zA-Zéèêàâçù# ()'".!?,;:°-]+$/,
+    input_contact: /^[\s\r\n0-9a-zA-Zéèêàâçù# ()'".!?,;:°-]+$/,
     input_price: /^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500|[Free]+)$/,
   };
-
   let regex = array_regex[index];
 
   if (
@@ -34,8 +47,11 @@ function input(string, id, maxLength, index) {
   ) {
     return true;
   } else {
-    string = document.getElementById(id).value;
-    document.getElementById(id).value = string.substring(0, string.length - 1);
+    string_value = document.getElementById(id).value;
+    document.getElementById(id).value = string_value.replace(event.key, "");
+
+    document.getElementById(id).focus();
+    document.getElementById(id).setSelectionRange(old_position, old_position);
 
     let input_modal = document.getElementById("input_modal");
     let message_regex = document.getElementById(index);
