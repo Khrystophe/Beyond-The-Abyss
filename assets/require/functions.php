@@ -195,3 +195,13 @@ function getIdUserFromContent(PDO $bdd, $get_id)
   $author_id = $req->fetch();
   return $author_id;
 }
+
+function maxLength($text, $maxChars)
+{
+  if (strlen($text) >= $maxChars) {
+    $text = substr($text, 0, $maxChars);
+    $space = strrpos($text, " ");
+    $text = substr($text, 0, $space) . " ...";
+  }
+  return $text;
+}

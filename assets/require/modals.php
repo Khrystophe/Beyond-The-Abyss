@@ -128,7 +128,7 @@
             <input type="text" class="inputbox" value="<?= $getContentAndUserInformations_composer ?>" placeholder="<?= $getContentAndUserInformations_composer ?>" id="single_player_edit_composer" name="composer" onkeyup="javascript:input(this,'single_player_edit_composer',21, 'input_composer');" />
 
             <label for="single_player_edit_description"></label>
-            <textarea class="inputbox text" value="<?= $getContentAndUserInformations_description ?>" placeholder="<?= $getContentAndUserInformations_description ?>" id="single_player_edit_description" name="description" onkeyup="javascript:input(this,'single_player_edit_description',251, 'input_description');"><?= $getContentAndUserInformations_description ?></textarea>
+            <textarea class="inputbox text" value="<?= $getContentAndUserInformations_description ?>" placeholder="<?= $getContentAndUserInformations_description ?>" id="single_player_edit_description" name="description" onkeyup="javascript:input(this,'single_player_edit_description',1501, 'input_description');"><?= $getContentAndUserInformations_description ?></textarea>
 
             <?php if ($getContentAndUserInformations_category == 'Tutorial') {
               $getContentAndUserInformations_category = 'tutorial';

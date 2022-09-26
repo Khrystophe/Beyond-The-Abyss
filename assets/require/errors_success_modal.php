@@ -163,7 +163,7 @@ if (isset($get_error) || isset($get_success)) {
 
           <div id="input_price">Price : from 1 to 500 or free (type 'Free')</div>
           <div id="input_contact">Respect format : (0-9a-zA-Zéèêàçù# ()'".!?,;:°-) max 10000 chars </div>
-          <div id="input_description">Respect format : 0-9a-zA-Zéèêàçù# ()'".!?,;:°-) max 250 chars </div>
+          <div id="input_description">Respect format : 0-9a-zA-Zéèêàçù# ()'".!?,;:°-) max 1500 chars </div>
           <div id="input_composer">Respect format : (0-9a-zA-Zéèêàçù -) max 20 chars </div>
           <div id="input_title">Respect format : (0-9a-zA-Zéèêàçù '"!?°-) max 20 chars </div>
           <div id="input_password">Respect format : (0-9a-zA-Z) min 2 max 40 chars</div>

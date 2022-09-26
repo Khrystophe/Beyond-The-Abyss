@@ -107,7 +107,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 									<input type="text" class="inputbox" placeholder="Composer (max 20 chars)" id="my_account_composer" name="composer" onkeyup="javascript:input(this,'my_account_composer',21, 'input_composer');" required />
 
 									<label for="my_account_description"></label>
-									<textarea class="inputbox text" placeholder="Description (max 250 chars)" id="my_account_description" name="description" onkeyup="javascript:input(this,'my_account_description',251, 'input_description');" required></textarea>
+									<textarea class="inputbox text" placeholder="Description (max 250 chars)" id="my_account_description" name="description" onkeyup="javascript:input(this,'my_account_description',1501, 'input_description');" required></textarea>
 
 									<label for="my_account_category"></label>
 									<select class="inputbox" id="my_account_category" name="category" required>

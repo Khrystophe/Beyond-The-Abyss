@@ -30,7 +30,14 @@
               <br>
               <button type="submit" class="button gray">Buy</button>
               <br>
-              <button type="button" class="button gray" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
+
+              <?php if (isset($getComments) && !empty($getComments)) { ?>
+
+
+                <button type="button" class="button gray" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
+
+              <?php } ?>
+
 
               <div class="flex_close">
                 <div class="button gray" id="buy_close<?= $getContent_id ?>">Close</div>

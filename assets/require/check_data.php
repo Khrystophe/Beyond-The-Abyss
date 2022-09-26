@@ -141,10 +141,17 @@ if (isset($_POST['reporting']) && !empty($_POST['reporting'])) {
 }
 
 
+if (isset($_POST['credits']) && !empty($_POST['credits'])) {
+
+  $check_post_credits = is_numeric($_POST['credits'])
+    && preg_match("/^[0-9]+$/", $_POST['credits']);
+}
+
+
 if (isset($_POST['name']) && !empty($_POST['name'])) {
 
   $check_post_name = is_string($_POST['name'])
-    && strlen($_POST['name']) <= 10
+    && strlen($_POST['name']) <= 12
     && preg_match("/^[a-zA-Zéèêàâçù '\"-]+$/", $_POST['name']);
 
   if ($check_post_name === true) {
@@ -160,7 +167,7 @@ if (isset($_POST['name']) && !empty($_POST['name'])) {
 if (isset($_POST['lastname']) && !empty($_POST['lastname'])) {
 
   $check_post_lastname = is_string($_POST['lastname'])
-    && strlen($_POST['lastname']) <= 10
+    && strlen($_POST['lastname']) <= 12
     && preg_match("/^[a-zA-Zéèêàâçù '\"-]+$/", $_POST['lastname']);
 
   if ($check_post_lastname === true) {
@@ -180,6 +187,18 @@ if (isset($_POST['email']) && !empty($_POST['email'])) {
   if ($check_post_email !== false) {
 
     $post_email = $_POST['email'];
+  }
+}
+
+
+if (isset($_POST['type']) && !empty($_POST['type'])) {
+
+  $check_post_type = is_string($_POST['type'])
+    && preg_match("/^[a-z]+$/", $_POST['type']);
+
+  if ($check_post_type === true) {
+
+    $post_type = $_POST['type'];
   }
 }
 
@@ -251,7 +270,7 @@ if (isset($_POST['new_password_confirm']) && !empty($_POST['new_password_confirm
 
 if (isset($_POST['title']) && !empty($_POST['title'])) {
 
-  $check_post_title = strlen($_POST['title']) <= 20
+  $check_post_title = strlen($_POST['title']) <= 22
     && is_string($_POST['title'])
     && preg_match("/^[0-9a-zA-Zéèêàâçù '\"!?°-]+$/", $_POST['title']);
 
@@ -267,7 +286,7 @@ if (isset($_POST['title']) && !empty($_POST['title'])) {
 
 if (isset($_POST['composer']) && !empty($_POST['composer'])) {
 
-  $check_post_composer = strlen($_POST['composer']) <= 20
+  $check_post_composer = strlen($_POST['composer']) <= 22
     && is_string($_POST['composer'])
     && preg_match("/^[0-9a-zA-Zéèêàâçù -]+$/", $_POST['composer']);
 
@@ -322,7 +341,7 @@ if (isset($_POST['description']) && !empty($_POST['description'])) {
 
   $check_post_description =  is_string($_POST['description'])
     && preg_match("/^[\\s0-9a-zA-Zéèêàâçù# ()'\".!?,;:°-]+$/", $_POST['description'])
-    && strlen($_POST['description']) <= 250;
+    && strlen($_POST['description']) <= 1502;
 
   if ($check_post_description === true) {
 
@@ -341,7 +360,8 @@ if (isset($_POST['description']) && !empty($_POST['description'])) {
 if (isset($_POST['comment']) && !empty($_POST['comment'])) {
 
   $check_post_comment =  is_string($_POST['comment'])
-    && preg_match("/^[\\s0-9a-zA-Zéèêàâçù# ()'\".!?,;:°-]+$/", $_POST['comment']);
+    && preg_match("/^[\\s0-9a-zA-Zéèêàâçù# ()'\".!?,;:°-]+$/", $_POST['comment'])
+    && strlen($_POST['comment']) <= 10002;;
 
   if ($check_post_comment === true) {
 
@@ -360,7 +380,8 @@ if (isset($_POST['comment']) && !empty($_POST['comment'])) {
 if (isset($_POST['message']) && !empty($_POST['message'])) {
 
   $check_post_message =  is_string($_POST['message'])
-    && preg_match("/^[\\s0-9a-zA-Zéèêàâçù# ()'\".!?,;:°-]+$/", $_POST['message']);
+    && preg_match("/^[\\s0-9a-zA-Zéèêàâçù# ()'\".!?,;:°-]+$/", $_POST['message'])
+    && strlen($_POST['message']) <= 10002;;
 
   if ($check_post_message === true) {
 
@@ -372,6 +393,25 @@ if (isset($_POST['message']) && !empty($_POST['message'])) {
     $replacement = "\r\n\r\n";
 
     $post_message = preg_replace($regex, $replacement, $sanitize_three);
+  }
+}
+
+
+if (isset($_POST['notification']) && !empty($_POST['notification'])) {
+
+  $check_post_notification =  is_string($_POST['notification'])
+    && preg_match("/^[\\s0-9a-zA-Zéèêàçù# ()'\".!?,;:°-]+$/", $_POST['notification']);
+
+  if ($check_post_notification === true) {
+
+    $sanitize_one = preg_replace('/ +/', " ", $_POST['notification']);
+    $sanitize_two = preg_replace('/^ /', "", $sanitize_one);
+    $sanitize_three = preg_replace('/ $/', "", $sanitize_two);
+
+    $regex = '/(\r\n|\n|\t|\r){3,}/';
+    $replacement = "\r\n\r\n";
+
+    $post_notification = preg_replace($regex, $replacement, $sanitize_three);
   }
 }
 

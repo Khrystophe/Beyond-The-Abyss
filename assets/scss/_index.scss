@@ -238,7 +238,7 @@
     background-blend-mode: multiply;
     z-index: 2;
     border-radius: 10px;
-    max-height: 700px;
+    min-height: 500px;
     overflow: hidden;
 
     .content {
@@ -464,6 +464,7 @@
     .info_section {
       background: linear-gradient(to top, black 33%, transparent 100%);
       display: inline-grid;
+      min-height: 415px;
       &.tuto,
       &.sheet,
       &.perf {

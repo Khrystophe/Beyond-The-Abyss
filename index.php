@@ -89,7 +89,7 @@ if (
 									<h2><?= $getRandomTuto_title ?></h2>
 									<h3><?= $getRandomTuto_composer ?></h3>
 
-									<span class="see_content tuto"><a href="./content.php?id=<?= $getRandomTuto_id ?>&category=unique_content" class="btn link_page">Watch</a></span>
+									<span class="see_content tuto"><a href="./content.php?id=<?= $getRandomTuto_id ?>&category=unique_content" class="btn link_page">See More</a></span>
 
 								</div>
 							</div>
@@ -100,7 +100,7 @@ if (
 
 							<div class="content_desc tuto">
 								<p class="text">
-									<?= $getRandomTuto_description ?>
+									<?= maxLength($getRandomTuto_description, 250) ?>
 								</p>
 							</div>
 
@@ -126,7 +126,7 @@ if (
 									<h2><?= $getRandomPerf_title ?></h2>
 									<h3><?= $getRandomPerf_composer ?></h3>
 
-									<span class="see_content perf"><a href="./content.php?id=<?= $getRandomPerf_id ?>&category=unique_content" class="btn link_page">Watch</a></span>
+									<span class="see_content perf"><a href="./content.php?id=<?= $getRandomPerf_id ?>&category=unique_content" class="btn link_page">See More</a></span>
 
 								</div>
 							</div>
@@ -137,7 +137,7 @@ if (
 
 							<div class="content_desc perf">
 								<p class="text">
-									<?= $getRandomPerf_description ?>
+									<?= maxLength($getRandomPerf_description, 250) ?>
 								</p>
 							</div>
 
@@ -163,7 +163,7 @@ if (
 									<h2><?= $getRandomSheet_title ?></h2>
 									<h3><?= $getRandomSheet_composer ?></h3>
 
-									<span class="see_content sheet"><a href="./content.php?id=<?= $getRandomSheet_id ?>&category=unique_content" class="btn link_page">Watch</a></span>
+									<span class="see_content sheet"><a href="./content.php?id=<?= $getRandomSheet_id ?>&category=unique_content" class="btn link_page">See More</a></span>
 
 								</div>
 							</div>
@@ -174,7 +174,7 @@ if (
 
 							<div class="content_desc sheet">
 								<p class="text">
-									<?= $getRandomSheet_description ?>
+									<?= maxLength($getRandomSheet_description, 250) ?>
 								</p>
 							</div>
 

@@ -51,7 +51,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 								<div class="mb-3">
 									<label for="admin_description">Description</label>
 									<div class="form-floating">
-										<textarea class="form-control" placeholder="Description" id="admin_description" style="height: 100px" name="description" onkeyup="javascript:input(this,'admin_description',251, 'input_description');" required></textarea>
+										<textarea class="form-control" placeholder="Description" id="admin_description" style="height: 100px" name="description" onkeyup="javascript:input(this,'admin_description',1501, 'input_description');" required></textarea>
 									</div>
 								</div>
 
@@ -163,7 +163,7 @@ if (isset($_SESSION['users']) && !empty($_SESSION['users'])) {
 													<div class="mb-3">
 														<label for="admin_edit_description<?= $getAllContent_id ?>">Description</label>
 														<div class="form-floating">
-															<textarea class="form-control" id="admin_edit_description<?= $getAllContent_id ?>" style=" white-space:pre-line; height: 100px" name="description" onkeyup="javascript:input(this,'admin_edit_description<?= $getAllContent_id ?>',251, 'input_description');" value="<?= $getAllContent_description  ?>"><?= $getAllContent_description  ?></textarea>
+															<textarea class="form-control" id="admin_edit_description<?= $getAllContent_id ?>" style=" white-space:pre-line; height: 100px" name="description" onkeyup="javascript:input(this,'admin_edit_description<?= $getAllContent_id ?>',1501, 'input_description');" value="<?= $getAllContent_description  ?>"><?= $getAllContent_description  ?></textarea>
 														</div>
 													</div>
 
