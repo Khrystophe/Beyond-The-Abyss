@@ -23,7 +23,6 @@ function input(string, id, maxLength, index) {
     });
 
     old_position = position;
-    console.log(old_position);
     return old_position;
   }
   position_event(id);
