@@ -878,20 +878,21 @@ nav {
     padding: 1rem;
     line-height: 2.1rem;
     padding: 0;
+    margin-top: 25px;
   }
   .content_card .info_section .content_header.perf, .content_card .info_section .content_header.tuto, .content_card .info_section .content_header.sheet {
     text-align: center;
   }
   .content_card .info_section .content_header.perf h2, .content_card .info_section .content_header.tuto h2, .content_card .info_section .content_header.sheet h2 {
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: rgb(16, 16, 16);
     text-shadow: 1px 1px 2px rgb(0, 0, 0), 1px 1px 1px rgb(255, 255, 255);
     line-height: 1rem;
   }
   .content_card .info_section .content_header.perf h3, .content_card .info_section .content_header.tuto h3, .content_card .info_section .content_header.sheet h3 {
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: rgb(16, 16, 16);
     text-shadow: 1px 1px 2px rgb(0, 0, 0), 1px 1px 1px rgb(255, 255, 255);
     line-height: 3rem;
