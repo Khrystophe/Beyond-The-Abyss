@@ -148,33 +148,9 @@ if (
 
                         <section class='cardStats'>
 
+                          <span class='cardStats_stat cardStats_stat-comments'><?= $getNumbersOfcomments_from_user ?> <i class='far fa-comment fa-fw'></i></span>
 
-                          <?php if (isset($session_users_id) && ($session_users_id != $getComment_user_id)) { ?>
-
-
-                            <span class='cardStats_stat cardStats_stat-comments'><?= $getNumbersOfcomments_from_user ?> <i class='far fa-comment fa-fw'></i></span>
-
-                            <span class='cardStats_stat cardStats_stat-likes'><?= $getComment_likes ?> <i class="far fa-thumbs-up"></i></span>
-
-
-                          <?php } else if (isset($session_users_id) && ($session_users_id == $getComment_user_id)) { ?>
-
-
-                            <span class='cardStats_stat cardStats_stat-comments'><?= $getNumbersOfcomments_from_user ?> <i class='far fa-comment fa-fw'></i></span>
-
-                            <span class='cardStats_stat cardStats_stat-likes'><?= $getComment_likes ?> <i class="far fa-thumbs-up"></i></span>
-
-
-                          <?php } else { ?>
-
-
-                            <span class='cardStats_stat cardStats_stat-comments'><?= $getNumbersOfcomments_from_user ?> <i class='far fa-comment fa-fw'></i></span>
-
-                            <span class='cardStats_stat cardStats_stat-likes'><?= $getComment_likes ?> <i class="far fa-thumbs-up"></i></span>
-
-
-                          <?php } ?>
-
+                          <span class='cardStats_stat cardStats_stat-likes'><?= $getComment_likes ?> <i class="far fa-thumbs-up"></i></span>
 
                         </section>
                       </div>
@@ -237,7 +213,6 @@ if (
 <?php } else {
 
   $bdd = null;
-  http_response_code(400);
   header('location: index.php?error=00615');
   die();
 } ?>
