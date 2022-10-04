@@ -4,10 +4,9 @@ require('session_regenerate.php');
 
 if (isset($session_users_id)) {
 
-	$user = getUserSessionInformations($bdd, $session_users_id);
+	$getUserSessionInformations = getUserSessionInformations($bdd, $session_users_id);
 
-	$name_nav =  htmlspecialchars($user['name']) . " " . htmlspecialchars($user['lastname']);
-	$credits_nav = 'Credits :' . " " . htmlspecialchars($user['credits']);
+	require('variables.php');
 }
 ?>
 
@@ -62,8 +61,8 @@ if (isset($session_users_id)) {
 				<?php if (isset($session_users_id)) { ?>
 
 					<div class="user_nav">
-						<div class="name_nav"><?= $name_nav ?></div>
-						<div class="credits_nav"><?= $credits_nav ?></div>
+						<div class="name_nav"><?= $getUserSessionInformations_name ?> <?= $getUserSessionInformations_lastname ?></div>
+						<div class="credits_nav">Crédits : <?= $getUserSessionInformations_credits ?></div>
 					</div>
 
 				<?php } ?>

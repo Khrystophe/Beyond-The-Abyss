@@ -122,3 +122,10 @@ if (isset($getNumbersOfcomments) && !empty($getNumbersOfcomments)) {
 
   $getNumbersOfcomments_from_user = htmlspecialchars(implode($getNumbersOfcomments));
 }
+
+if (isset($getUserSessionInformations) && !empty($getUserSessionInformations)) {
+
+  $getUserSessionInformations_name = htmlspecialchars($getUserSessionInformations['name']);
+  $getUserSessionInformations_lastname = htmlspecialchars($getUserSessionInformations['lastname']);
+  $getUserSessionInformations_credits = htmlspecialchars($getUserSessionInformations['credits']);
+}
