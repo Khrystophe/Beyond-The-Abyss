@@ -26,7 +26,7 @@ if (
     $author_credits = $req->fetch();
     $author_credits = implode($author_credits);
 
-    $req = $bdd->prepare('SELECT contents.category, contents.title, contents.composer,contents.id_users, contents.reporting, users.name, users.lastname 
+    $req = $bdd->prepare('SELECT contents.price, contents.category, contents.title, contents.composer,contents.id_users, contents.reporting, users.name, users.lastname 
     FROM contents
     INNER JOIN users
     ON users.id = contents.id_users 
@@ -92,71 +92,73 @@ if (
         $new_price = 0;
     }
 
+    if ($content_informations['price'] != $new_price) {
 
-    foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
+        foreach ($repayment_informations as $repayment_informations_foreach_buyer) {
 
-        $original_price = $repayment_informations_foreach_buyer['original_price'];
-        $buyer_repayment = $repayment_informations_foreach_buyer['buyer_repayment'];
-        $old_buyer_repayment = $buyer_repayment;
+            $original_price = $repayment_informations_foreach_buyer['original_price'];
+            $buyer_repayment = $repayment_informations_foreach_buyer['buyer_repayment'];
+            $old_buyer_repayment = $buyer_repayment;
 
 
-        if ($original_price > $new_price) {
+            if ($original_price > $new_price) {
 
-            $buyer_repayment = 0;
-            $buyer_repayment = $original_price - $new_price;
+                $buyer_repayment = 0;
+                $buyer_repayment = $original_price - $new_price;
 
-            $new_sold_of_credits = $repayment_informations_foreach_buyer['credits'] += $buyer_repayment - $old_buyer_repayment;
+                $new_sold_of_credits = $repayment_informations_foreach_buyer['credits'] += $buyer_repayment - $old_buyer_repayment;
 
-            $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
-            $req->bindParam(':credits', $new_sold_of_credits, PDO::PARAM_INT);
-            $req->bindParam(':id', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
+                $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
+                $req->bindParam(':credits', $new_sold_of_credits, PDO::PARAM_INT);
+                $req->bindParam(':id', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
+                $req->execute();
+            } else if ($original_price == $new_price) {
+
+                $new_sold_of_credits = $repayment_informations_foreach_buyer['credits'] -= $buyer_repayment;
+
+                $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
+                $req->bindParam(':credits', $new_sold_of_credits, PDO::PARAM_INT);
+                $req->bindParam(':id', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
+                $req->execute();
+
+                $buyer_repayment = 0;
+            }
+
+
+            $req = $bdd->prepare('UPDATE purchased_contents SET buyer_repayment = :buyer_repayment WHERE id_users = :id_users AND id_contents = :id_contents');
+            $req->bindParam(':buyer_repayment', $buyer_repayment, PDO::PARAM_INT);
+            $req->bindParam(':id_users', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
+            $req->bindParam(':id_contents', $post_id, PDO::PARAM_INT);
             $req->execute();
-        } else if ($original_price == $new_price) {
-
-            $new_sold_of_credits = $repayment_informations_foreach_buyer['credits'] -= $buyer_repayment;
-
-            $req = $bdd->prepare('UPDATE users SET credits = :credits WHERE id = :id');
-            $req->bindParam(':credits', $new_sold_of_credits, PDO::PARAM_INT);
-            $req->bindParam(':id', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
-            $req->execute();
-
-            $buyer_repayment = 0;
-        }
 
 
-        $req = $bdd->prepare('UPDATE purchased_contents SET buyer_repayment = :buyer_repayment WHERE id_users = :id_users AND id_contents = :id_contents');
-        $req->bindParam(':buyer_repayment', $buyer_repayment, PDO::PARAM_INT);
-        $req->bindParam(':id_users', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
-        $req->bindParam(':id_contents', $post_id, PDO::PARAM_INT);
-        $req->execute();
+            $date = date('Y-m-d H:i:s');
 
+            if ($new_price == 0) {
 
-        $date = date('Y-m-d H:i:s');
-
-        if ($new_price == 0) {
-
-            $notification = 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! 
+                $notification = 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! 
             
             Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is now Free. 
             
             You have been reimbursed ';
 
-            $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
-            $req->bindParam(':notification', $notification, PDO::PARAM_STR);
-            $req->bindParam(':date', $date, PDO::PARAM_STR);
-            $req->bindParam(':id_users', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
-            $req->execute();
-        } else {
+                $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
+                $req->bindParam(':notification', $notification, PDO::PARAM_STR);
+                $req->bindParam(':date', $date, PDO::PARAM_STR);
+                $req->bindParam(':id_users', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
+                $req->execute();
+            } else {
 
-            $notification = 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! 
+                $notification = 'Hello ' . $repayment_informations_foreach_buyer['name'] . ' ' . $repayment_informations_foreach_buyer['lastname'] . ' ! 
             
-            Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' is in a different category.';
+            Your new sold of credits is ' . $new_sold_of_credits . ' because ' . $content_informations['title'] . " of " . $content_informations['composer'] . ' by ' . $content_informations['name'] . ' ' . $content_informations['lastname'] . ' has a diffrent price.';
 
-            $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
-            $req->bindParam(':notification', $notification, PDO::PARAM_STR);
-            $req->bindParam(':date', $date, PDO::PARAM_STR);
-            $req->bindParam(':id_users', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
-            $req->execute();
+                $req = $bdd->prepare('INSERT INTO notifications (notification, date, id_users) VALUES (:notification, :date, :id_users) ');
+                $req->bindParam(':notification', $notification, PDO::PARAM_STR);
+                $req->bindParam(':date', $date, PDO::PARAM_STR);
+                $req->bindParam(':id_users', $repayment_informations_foreach_buyer['id_users'], PDO::PARAM_INT);
+                $req->execute();
+            }
         }
     }
 
