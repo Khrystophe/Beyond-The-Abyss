@@ -328,3 +328,157 @@
   </div>
 
 <?php } ?>
+
+
+<div id="privacy_modal" class="modal messages">
+  <div class="modal_content">
+    <div class="modal_form">
+      <div class="modal_form_content messages">
+        <form class="form_action">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <br>
+
+          <h2>Privacy Policy</h2>
+
+          <br>
+
+          <p>We are committed to maintaining the accuracy, confidentiality, and security of your personally identifiable information ("Personal Information"). As part of this commitment, our privacy policy governs our actions as they relate to the collection, use and disclosure of Personal Information. Our privacy policy is based upon the values set by the Canadian Standards Association's Model Code for the Protection of Personal Information and Canada's Personal Information Protection and Electronic Documents Act.</p>
+
+          <br>
+
+          <span> 1. Introduction</span>
+
+          <br>
+          <br>
+
+          <p>We are responsible for maintaining and protecting the Personal Information under our control. We have designated an individual or individuals who is/are responsible for compliance with our privacy policy.</p>
+
+          <br>
+
+          <span>2. Identifying Purposes</span>
+
+          <br>
+          <br>
+
+          <p>We collect, use and disclose Personal Information to provide you with the product or service you have requested and to offer you additional products and services we believe you might be interested in. The purposes for which we collect Personal Information will be identified before or at the time we collect the information. In certain circumstances, the purposes for which information is collected may be clear, and consent may be implied, such as where your name, address and payment information is provided as part of the order process.</p>
+
+
+          <br>
+
+          <span>3. Consent</span>
+
+          <br>
+          <br>
+
+          <p>Knowledge and consent are required for the collection, use or disclosure of Personal Information except where required or permitted by law. Providing us with your Personal Information is always your choice. However, your decision not to provide certain information may limit our ability to provide you with our products or services. We will not require you to consent to the collection, use, or disclosure of information as a condition to the supply of a product or service, except as required to be able to supply the product or service.</p>
+
+          <br>
+
+          <span>4. Limiting Collection</span>
+
+          <br>
+          <br>
+
+          <p>The Personal Information collected will be limited to those details necessary for the purposes identified by us. With your consent, we may collect Personal Information from you in person, over the telephone or by corresponding with you via mail, facsimile, or the Internet.</p>
+
+          <br>
+
+          <span>5. Limiting Use, Disclosure and Retention</span>
+
+          <br>
+          <br>
+
+          <p>Personal Information may only be used or disclosed for the purpose for which it was collected unless you have otherwise consented, or when it is required or permitted by law. Personal Information will only be retained for the period of time required to fulfill the purpose for which we collected it or as may be required by law.</p>
+
+          <br>
+
+          <div class="flex_close">
+            <div class="button gray" id="privacy_close">Close</div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="terms_modal" class="modal messages">
+  <div class="modal_content">
+    <div class="modal_form">
+      <div class="modal_form_content messages">
+        <form class="form_action">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <br>
+
+          <h2>Terms</h2>
+
+          <br>
+
+          <p>You agree to use our website for legitimate purposes and not for any illegal or unauthorized purpose, including without limitation, in violation of any intellectual property or privacy law. By agreeing to the Terms, you represent and warrant that you are at least the age of majority in your state or province of residence and are legally capable of entering into a binding contract.</p>
+
+          <br>
+
+          <p>You agree to not use our website to conduct any activity that would constitute a civil or criminal offence or violate any law. You agree not to attempt to interfere with our website’s network or security features or to gain unauthorized access to our systems.</p>
+
+          <br>
+
+          <p>You agree to provide us with accurate personal information, such as your email address, mailing address and other contact details in order to complete your order or contact you as needed. You agree to promptly update your account and information. You authorize us to collect and use this information to contact you in accordance with our Privacy Policy</p>
+
+          <br>
+
+          <div class="flex_close">
+            <div class="button gray" id="terms_close">Close</div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="about_modal" class="modal messages">
+  <div class="modal_content">
+    <div class="modal_form">
+      <div class="modal_form_content messages">
+        <form class="form_action">
+
+          <div class="messages_logo">
+            <img src="./assets/img/musicgrise.png" alt="" />
+          </div>
+
+          <br>
+
+          <h2>About</h2>
+
+          <br>
+
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis nisl vel justo tempus egestas. Nulla tincidunt nunc lorem, euismod varius sem volutpat in. Etiam a neque lobortis massa dignissim varius id laoreet purus. Sed in diam in lacus suscipit pellentesque nec nec ipsum. Cras accumsan lobortis turpis non mattis. Proin ac tincidunt diam. Vestibulum in ullamcorper orci. Maecenas eu eros massa. Proin et pellentesque erat. Donec ut consequat velit. Cras bibendum erat quis orci blandit efficitur.</p>
+
+          <br>
+
+          <p>Mauris sed mollis arcu. Mauris sem neque, vestibulum ut efficitur id, pulvinar sed mauris. Etiam consectetur pretium massa non feugiat. Phasellus aliquam enim in enim mollis rhoncus. Morbi vulputate ultricies aliquam. Mauris at posuere dui. Aliquam sit amet pellentesque dolor. Pellentesque quis lorem eu massa cursus interdum ultricies id mauris.</p>
+
+          <br>
+
+          <p>Curabitur eu diam eget velit cursus lobortis congue in eros. Quisque malesuada imperdiet purus. Nulla elit leo, feugiat sed feugiat ac, aliquam id eros. Suspendisse ut nunc sed odio dictum posuere nec vitae neque. Pellentesque gravida arcu odio, cursus tincidunt enim ultricies et. Donec a malesuada magna. Nulla posuere nisl sit amet mauris vehicula semper. Nunc ut metus lorem. Suspendisse nec tellus metus. Integer varius neque id ultricies condimentum. Fusce interdum enim et erat aliquam aliquam. Nullam fringilla ut ipsum sit amet fermentum.</p>
+
+          <br>
+
+          <div class="flex_close">
+            <div class="button gray" id="about_close">Close</div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

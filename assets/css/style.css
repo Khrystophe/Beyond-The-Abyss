@@ -1933,6 +1933,20 @@ footer a {
 footer a:hover {
   color: #4c4c4c;
 }
+footer button {
+  cursor: pointer;
+  font-family: var(--primary-font);
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  color: #8f8f8f;
+  transition: color 1s;
+  text-shadow: 0 1px 0 rgb(57, 57, 57), 0 2px 0 rgb(52, 52, 52), 6px 7px 5px rgba(0, 0, 0, 0.4), 6px 12px 10px rgba(0, 0, 0, 0.3), 6px 17px 20px rgba(0, 0, 0, 0.2), 6px 22px 30px rgba(0, 0, 0, 0.1);
+}
+footer button:hover {
+  color: #4c4c4c;
+}
 footer .social {
   display: flex;
   width: 35%;

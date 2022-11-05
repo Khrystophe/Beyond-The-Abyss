@@ -194,19 +194,19 @@ if (isset($session_users_id)) {
 								<ul>
 
 									<li>
-										<a class="link_menu" href="#">Facebook</a>
+										<a href="https://fr-fr.facebook.com/" target="_blank">Facebook</a>
 									</li>
 
 									<li>
-										<a class="link_menu" href="#">Instagram</a>
+										<a href="https://www.instagram.com/?hl=fr" target="_blank">Instagram</a>
 									</li>
 
 									<li>
-										<a class="link_menu" href="#">Youtube</a>
+										<a href="https://www.youtube.com/" target="_blank">Youtube</a>
 									</li>
 
 									<li>
-										<a class="link_menu" href="#">Twitter</a>
+										<a href="https://twitter.com/?lang=fr" target="_blank">Twitter</a>
 									</li>
 
 								</ul>
@@ -244,19 +244,19 @@ if (isset($session_users_id)) {
 							<ul>
 
 								<li>
-									<a class="link_menu" href="#">Facebook</a>
+									<a href="https://fr-fr.facebook.com/" target="_blank">Facebook</a>
 								</li>
 
 								<li>
-									<a class="link_menu" href="#">Instagram</a>
+									<a href="https://www.instagram.com/?hl=fr" target="_blank">Instagram</a>
 								</li>
 
 								<li>
-									<a class="link_menu" href="#">Youtube</a>
+									<a href="https://www.youtube.com/" target="_blank">Youtube</a>
 								</li>
 
 								<li>
-									<a class="link_menu" href="#">Twitter</a>
+									<a href="https://twitter.com/?lang=fr" target="_blank">Twitter</a>
 								</li>
 
 							</ul>

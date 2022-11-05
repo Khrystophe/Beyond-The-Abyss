@@ -3,12 +3,12 @@
       <span class="creator">
          &copy; 2022 Meckler Christophe, Inc. &middot;
       </span>
-      <span> <a href="#">Privacy Policy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">About</a></span>
+      <span> <button id="privacy_button" onfocus="javascript:modal('privacy')">Privacy Policy</button> &middot; <button id="terms_button" onfocus="javascript:modal('terms')">Terms</button> &middot; <button id="about_button" onfocus="javascript:modal('about')">About</button></span>
    </div>
-   <span class="social"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+   <span class="social"><a href="https://fr-fr.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="https://www.instagram.com/?hl=fr" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      <a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+      <a href="https://twitter.com/?lang=fr" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
    </span>
 </footer>
 

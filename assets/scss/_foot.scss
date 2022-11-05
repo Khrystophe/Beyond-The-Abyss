@@ -24,6 +24,22 @@ footer {
       color: #4c4c4c;
     }
   }
+  button {
+    cursor: pointer;
+    font-family: var(--primary-font);
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    color: #8f8f8f;
+    transition: color 1s;
+    text-shadow: 0 1px 0 rgb(57 57 57), 0 2px 0 rgb(52 52 52),
+      6px 7px 5px rgb(0 0 0 / 40%), 6px 12px 10px rgb(0 0 0 / 30%),
+      6px 17px 20px rgb(0 0 0 / 20%), 6px 22px 30px rgb(0 0 0 / 10%);
+    &:hover {
+      color: #4c4c4c;
+    }
+  }
   .social {
     display: flex;
     width: 35%;
