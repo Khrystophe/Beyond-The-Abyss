@@ -41,7 +41,7 @@ function getRandomSheet(PDO $bdd)
 
 function getContents(PDO $bdd, $get_category)
 {
-  $req = $bdd->prepare('SELECT * FROM contents WHERE category = :category ');
+  $req = $bdd->prepare('SELECT * FROM contents WHERE category = :category ORDER BY RAND() ');
   $req->bindParam(':category', $get_category, PDO::PARAM_STR);
   $req->execute();
   $contents = $req->fetchAll();
@@ -111,7 +111,7 @@ function getSearchResults(PDO $bdd, $post_title, $post_composer, $post_category,
   if ($post_price == 'Free') {
     $post_price = 0;
 
-    $req = $bdd->prepare("SELECT * FROM contents WHERE level LIKE :level AND category LIKE :category AND composer LIKE :composer AND title LIKE :title AND price LIKE :price ");
+    $req = $bdd->prepare("SELECT * FROM contents WHERE level LIKE :level AND category LIKE :category AND composer LIKE :composer AND title LIKE :title AND price LIKE :price ORDER BY RAND()");
     $req->bindParam(':level', $level, PDO::PARAM_STR);
     $req->bindParam(':category', $category, PDO::PARAM_STR);
     $req->bindParam(':composer',  $composer, PDO::PARAM_STR);
@@ -122,7 +122,7 @@ function getSearchResults(PDO $bdd, $post_title, $post_composer, $post_category,
     return $contents;
   } else {
 
-    $req = $bdd->prepare("SELECT * FROM contents WHERE level LIKE :level AND category LIKE :category AND composer LIKE :composer AND title LIKE :title");
+    $req = $bdd->prepare("SELECT * FROM contents WHERE level LIKE :level AND category LIKE :category AND composer LIKE :composer AND title LIKE :title ORDER BY RAND()");
     $req->bindParam(':level', $level, PDO::PARAM_STR);
     $req->bindParam(':category', $category, PDO::PARAM_STR);
     $req->bindParam(':composer',  $composer, PDO::PARAM_STR);
