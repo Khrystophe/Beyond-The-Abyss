@@ -29,7 +29,7 @@ if (
 			<div class="wrapp">
 
 				<div class="abyss">
-					<h1><span>Beyond the abyss</span>
+					<h1><span>Beyond the Abyss</span>
 					</h1>
 					<h2>Learning</h2>
 					<h2>Music Videos</h2>
