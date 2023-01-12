@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
 
+$color-1: #03191b;
+$color-2: #12737e;
+$color-3: #343434;
+$color-4: #056096;
+$color-5: #49d6c7;
+$color-6: #8f8f8f;
+$color-7: #073940;
+$color-8: #87a7ab;
+$color-9: #509aab;
+$color-10: #0d5f69;
+$black: black;
+$white: white;
+
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +43,7 @@ html {
 
 body {
   font-family: var(--primary-font);
-  background-color: #161616;
+  background-color: $color-1;
   opacity: 0;
 }
 

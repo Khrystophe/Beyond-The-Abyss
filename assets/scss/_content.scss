@@ -20,7 +20,7 @@
 .card {
   width: 350px;
   margin: 10px;
-  background-color: #161616;
+  background-color: $color-1;
   transition: all 0.4s;
 
   overflow: hidden;
@@ -72,7 +72,7 @@
     top: 75%;
     z-index: 1;
     padding: 0 20px;
-    color: white;
+    color: $white;
     transform: translateY(-50%);
     text-align: center;
     transition: 0.3s;
@@ -83,7 +83,7 @@
     overflow: hidden;
     font-size: 23px;
     line-height: 40px;
-    text-shadow: 1px 1px 1px black, 1px 1px 1px white;
+    text-shadow: 1px 1px 1px $black, 1px 1px 1px $white;
     text-overflow: ellipsis;
   }
 
@@ -92,7 +92,7 @@
     overflow: hidden;
     font-size: 18px;
     line-height: 30px;
-    text-shadow: 1px 1px 1px black, 1px 1px 1px white;
+    text-shadow: 1px 1px 1px $black, 1px 1px 1px $white;
     text-overflow: ellipsis;
   }
 
@@ -103,21 +103,21 @@
     position: absolute;
     right: 15px;
     line-height: 26.4px;
-    text-shadow: 1px 1px 1px black, 1px 1px 1px white;
+    text-shadow: 1px 1px 1px $black, 1px 1px 1px $white;
     text-overflow: ellipsis;
   }
   &__category {
     max-height: 85px;
     overflow: hidden;
     line-height: 26.4px;
-    text-shadow: 1px 1px 1px black, 1px 1px 1px white;
+    text-shadow: 1px 1px 1px $black, 1px 1px 1px $white;
     text-overflow: ellipsis;
   }
   &__level {
     max-height: 85px;
     overflow: hidden;
     line-height: 26.4px;
-    text-shadow: 1px 1px 1px black, 1px 1px 1px white;
+    text-shadow: 1px 1px 1px $black, 1px 1px 1px $white;
     text-overflow: ellipsis;
   }
   &__price {
@@ -127,7 +127,7 @@
     top: -40px;
     left: 15px;
     line-height: 26.4px;
-    text-shadow: 1px 1px 1px black, 1px 1px 1px white;
+    text-shadow: 1px 1px 1px $black, 1px 1px 1px $white;
     text-overflow: ellipsis;
   }
 
@@ -144,11 +144,11 @@
   &__button {
     display: inline-block;
     padding: 0px 5px;
-    color: white;
-    border: 1px solid white;
+    color: $white;
+    border: 1px solid $white;
     font-size: 12px;
     text-decoration: none;
-    text-shadow: 1px 1px 1px black, 1px 1px 1px white;
+    text-shadow: 1px 1px 1px $black, 1px 1px 1px $white;
     transition: 0.3s;
     font-family: var(--primary-font);
     background-color: transparent;
@@ -156,9 +156,9 @@
       cursor: pointer;
     }
     &:hover {
-      color: black;
-      background-color: white;
-      text-shadow: 1px 1px 1px rgb(255, 255, 255), 1px 1px 1px rgb(0, 0, 0);
+      color: $black;
+      background-color: $white;
+      text-shadow: 1px 1px 1px $white, 1px 1px 1px $black;
     }
   }
 }

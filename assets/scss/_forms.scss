@@ -14,10 +14,10 @@
   }
   h2 {
     font-size: 1rem;
-    color: rgb(66, 66, 66);
+    color: $color-2;
   }
   .email {
-    color: rgb(66, 66, 66);
+    color: $color-2;
     word-break: break-all;
   }
 }
@@ -58,8 +58,8 @@
   padding: 0.2rem 0.5rem 0.2rem 0.5rem;
   border-radius: 4px;
   border: none;
-  border-top: 1.5px solid rgb(0, 0, 0);
-  border-bottom: 1.5px solid rgb(64, 64, 64);
+  border-top: 1.5px solid $black;
+  border-bottom: 1.5px solid $color-7;
   font-family: var(--primary-font);
   cursor: pointer;
 }
@@ -70,7 +70,7 @@
   &.add_content {
     display: none;
     .fas {
-      color: rgb(66, 66, 66);
+      color: $color-2;
       margin-left: 15px;
     }
   }
@@ -86,7 +86,7 @@
     display: block;
   }
   .fas {
-    color: rgb(66, 66, 66);
+    color: $color-2;
     margin-left: 15px;
   }
   &.hide {
@@ -95,7 +95,7 @@
 }
 .form_action {
   text-align: center;
-  color: rgb(66, 66, 66);
+  color: $color-2;
   &#show_name_lastname,
   &#show_password,
   &#show_add_content {
@@ -106,11 +106,11 @@
 
 .rightside {
   background-color: #00000080;
-  border: 1.5px solid rgb(64, 64, 64);
+  border: 1.5px solid $color-7;
   width: auto;
   border-radius: 1.5rem;
   padding: 1rem 2rem 1rem 2rem;
-  text-shadow: 3px 3px 3px #000000;
+  text-shadow: 3px 3px 3px $black;
 }
 
 .inputbox {
@@ -119,8 +119,8 @@
   width: 100%;
   padding: 0.5rem;
   border: none;
-  border-top: 1.5px solid rgb(0, 0, 0);
-  border-bottom: 1.5px solid rgb(64, 64, 64);
+  border-top: 1.5px solid $black;
+  border-bottom: 1.5px solid $color-7;
   margin-bottom: 0.4rem;
   border-radius: 0.3rem;
   font-family: "Roboto", sans-serif;
@@ -136,17 +136,17 @@
 }
 
 .button {
-  background: linear-gradient(162.5deg, #272727 0%, #000000 100%);
+  background: linear-gradient(162.5deg, $color-2 0%, $black 100%);
   position: relative;
   z-index: 1;
   height: 40px;
   padding: 8px;
   border: none;
-  border-top: 1px solid rgb(36, 36, 36);
-  border-bottom: 1px solid rgb(0, 0, 0);
+  border-top: 1px solid $color-2;
+  border-bottom: 1px solid $black;
   border-radius: 50px;
-  color: rgb(66, 66, 66);
-  text-shadow: 1px 1px 1px black, 1px 1px 1px #343434;
+  color: $color-2;
+  text-shadow: 1px 1px 1px black, 1px 1px 1px $color-3;
   font-family: var(--primary-font);
   font-size: 0.9rem;
   letter-spacing: 0.11rem;
@@ -161,8 +161,8 @@
     z-index: 1;
     padding: 9px;
     border-radius: 50px;
-    color: rgb(66, 66, 66);
-    text-shadow: 1px 1px 1px black, 1px 1px 1px #343434;
+    color: $color-2;
+    text-shadow: 1px 1px 1px black, 1px 1px 1px $color-3;
     font-family: var(--primary-font);
     font-size: 0.9rem;
     letter-spacing: 0.11rem;
@@ -177,7 +177,7 @@
   }
   &.gray {
     &:before {
-      background-image: linear-gradient(162.5deg, #000000 0%, #272727 100%);
+      background-image: linear-gradient(162.5deg, $black 0%, $color-2 100%);
       padding: 11px;
       border-radius: 50px;
       position: absolute;
@@ -193,8 +193,8 @@
   }
   &.gray {
     &:hover {
-      color: #000000;
-      text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
+      color: $black;
+      text-shadow: 1px 1px 1px $color-3, 1px 1px 1px $color-4;
     }
   }
   &.gray:hover::before {
@@ -202,8 +202,8 @@
   }
   a {
     &:hover {
-      color: #000000;
-      text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
+      color: $black;
+      text-shadow: 1px 1px 1px $color-3, 1px 1px 1px $color-4;
     }
   }
 }

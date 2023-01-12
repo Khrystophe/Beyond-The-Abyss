@@ -6,10 +6,10 @@
   margin: 0 auto;
   width: 90%;
   max-width: 610px;
-  background-color: #0c0c0c;
+  background-color: #00000080;
   position: relative;
   border-radius: 10px;
-  border: 1.5px solid rgb(0, 0, 0);
+  border: 1.5px solid $black;
   opacity: 0;
   box-shadow: -7px -7px 10px #090909, 2px 2px 2px #232323;
   padding-bottom: 1rem;
@@ -80,17 +80,17 @@
   }
 
   .dropbtn {
-    background: linear-gradient(162.5deg, #272727 0%, #000000 100%);
+    background: linear-gradient(162.5deg, $color-2 0%, $black 100%);
     position: relative;
     z-index: 1;
-    color: rgb(66, 66, 66);
-    text-shadow: 1px 1px 1px black, 1px 1px 1px #343434;
+    color: $color-4;
+    text-shadow: 1px 1px 1px black, 1px 1px 1px $color-3;
     font-family: var(--primary-font);
     padding: 16px;
     font-size: 14px;
     border: none;
-    border-bottom: 1.5px solid rgb(0, 0, 0);
-    border-top: 1.5px solid rgb(64, 64, 64);
+    border-bottom: 1.5px solid $black;
+    border-top: 1.5px solid $color-4;
     cursor: pointer;
     border-radius: 10px;
     height: 15px;
@@ -99,23 +99,23 @@
     transition: color 1s;
     &.gray {
       &:hover {
-        background-image: linear-gradient(162.5deg, #000000 0%, #272727 100%);
-        color: #000000;
-        text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
+        background-image: linear-gradient(162.5deg, $black 0%, $color-2 100%);
+        color: $black;
+        text-shadow: 1px 1px 1px $color-3, 1px 1px 1px $color-4;
       }
     }
   }
 
   .drop {
-    background: linear-gradient(162.5deg, #272727 0%, #000000 100%);
-    color: rgb(66, 66, 66);
-    text-shadow: 1px 1px 1px black, 1px 1px 1px #343434;
+    background: linear-gradient(162.5deg, $color-2 0%, $black 100%);
+    color: $color-4;
+    text-shadow: 1px 1px 1px black, 1px 1px 1px $color-3;
     font-family: var(--primary-font);
     padding: 16px;
     font-size: 14px;
     border: none;
-    border-bottom: 1.5px solid rgb(0, 0, 0);
-    border-top: 1.5px solid rgb(64, 64, 64);
+    border-bottom: 1.5px solid $black;
+    border-top: 1.5px solid $color-4;
     cursor: pointer;
     border-radius: 10px;
     height: 15px;
@@ -132,7 +132,7 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #161616;
+    background-color: $color-1;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
@@ -142,24 +142,24 @@
       display: block;
     }
     .drop {
-      background-image: linear-gradient(162.5deg, #000000 0%, #272727 100%);
-      color: #000000;
-      text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
+      background-image: linear-gradient(162.5deg, $black 0%, $color-2 100%);
+      color: $black;
+      text-shadow: 1px 1px 1px $color-3, 1px 1px 1px $color-4;
     }
   }
 }
 
 .button_drop {
-  background: linear-gradient(162.5deg, #272727 0%, #000000 100%);
+  background: linear-gradient(162.5deg, $color-2 0%, $black 100%);
   position: relative;
   z-index: 1;
   padding: 11px;
   height: 58px;
   border: none;
-  border-top: 1.5px solid rgb(64, 64, 64);
-  border-bottom: 1.5px solid rgb(0, 0, 0);
-  color: rgb(66, 66, 66);
-  text-shadow: 1px 1px 1px black, 1px 1px 1px #343434;
+  border-top: 1.5px solid $color-4;
+  border-bottom: 1.5px solid $black;
+  color: $color-4;
+  text-shadow: 1px 1px 1px black, 1px 1px 1px $color-3;
   font-family: var(--primary-font);
   font-weight: 400;
   font-size: 0.7rem;
@@ -172,7 +172,7 @@
   cursor: pointer;
   &.gray {
     &:before {
-      background-image: linear-gradient(162.5deg, #000000 0%, #272727 100%);
+      background-image: linear-gradient(162.5deg, $black 0%, $color-2 100%);
       padding: 11px;
       position: absolute;
       content: "";
@@ -187,8 +187,8 @@
   }
   &.gray {
     &:hover {
-      color: #000000;
-      text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
+      color: $black;
+      text-shadow: 1px 1px 1px $color-3, 1px 1px 1px $color-4;
     }
   }
   &.gray:hover::before {
@@ -205,7 +205,7 @@
 
 .column1 {
   margin-top: 30px;
-  background: linear-gradient(162.5deg, #1c1c1c 0%, #000000 100%);
+  background: linear-gradient(162.5deg, #1c1c1c 0%, $black 100%);
   width: max-content;
   padding: 0.3rem 0rem 0.3rem 0rem;
   border-radius: 5px;
@@ -213,27 +213,27 @@
   font-size: 14px;
   border: none;
   border-bottom: 1.5px solid rgb(40 40 40);
-  border-top: 1.5px solid rgb(64, 64, 64);
+  border-top: 1.5px solid $color-4;
   a {
     color: rgb(66 66 66);
-    text-shadow: 1px 1px 1px black, 1px 1px 1px rgb(66, 66, 66);
+    text-shadow: 1px 1px 1px black, 1px 1px 1px $color-4;
     text-decoration: none;
     transition: color 1s;
     padding: 1rem 1rem 1rem 1rem;
     &:hover {
-      color: #000000;
-      text-shadow: 1px 1px 1px #343434, 1px 1px 1px rgb(66, 66, 66);
+      color: $black;
+      text-shadow: 1px 1px 1px $color-3, 1px 1px 1px $color-4;
     }
   }
   &.gray {
     &:hover {
-      background: linear-gradient(162.5deg, #000000 0%, #1c1c1c 100%);
+      background: linear-gradient(162.5deg, $black 0%, #1c1c1c 100%);
     }
   }
 }
 
 .column2 {
-  color: rgb(66, 66, 66);
+  color: $color-4;
   overflow: hidden;
   white-space: pre-line;
   font-size: 0.8rem;
