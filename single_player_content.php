@@ -79,13 +79,13 @@ if (
                     if ($getUserInformations_id != $getContentAndUserInformations_id_user) { ?>
 
 
-                      <button class="dropbtn gray" id="like_content_button" onfocus="javascript:modal('like_content')">Like</button>
+                      <button role="button" tabindex="1"  class="dropbtn gray" id="like_content_button" onfocus="javascript:modal('like_content')">Like</button>
 
                       <div class="dropdown">
                         <button class="drop">Comment/Report</button>
                         <div class="dropdown-content">
-                          <button class="button_drop gray" id="comment_button" onfocus="javascript:modal('comment')">Comment</button>
-                          <button class="button_drop gray" id="report_button" onfocus="javascript:modal('report')">Report this Content</button>
+                          <button role="button" tabindex="1"  class="button_drop gray" id="comment_button" onfocus="javascript:modal('comment')">Comment</button>
+                          <button role="button" tabindex="1"  class="button_drop gray" id="report_button" onfocus="javascript:modal('report')">Report this Content</button>
                         </div>
                       </div>
 
@@ -93,13 +93,13 @@ if (
                     <?php } else { ?>
 
 
-                      <button class="dropbtn gray" id="comment_button" onfocus="javascript:modal('comment')">Comment</button>
+                      <button role="button" tabindex="1"  class="dropbtn gray" id="comment_button" onfocus="javascript:modal('comment')">Comment</button>
 
                       <div class="dropdown">
                         <button class="drop">Edit/Delete</button>
                         <div class="dropdown-content">
-                          <button class="button_drop gray" id="edit_button" onfocus="javascript:modal('edit')">Edit Content</button>
-                          <button class="button_drop gray" id="delete_content_button" onfocus="javascript:modal('delete_content')">Delete Content</button>
+                          <button role="button" tabindex="1"  class="button_drop gray" id="edit_button" onfocus="javascript:modal('edit')">Edit Content</button>
+                          <button role="button" tabindex="1"  class="button_drop gray" id="delete_content_button" onfocus="javascript:modal('delete_content')">Delete Content</button>
                         </div>
                       </div>
 
@@ -159,13 +159,13 @@ if (
                       <?php if (isset($session_users_id) && ($session_users_id != $getComment_user_id)) { ?>
 
 
-                        <button class="dropbtn gray" id="like_comment_button<?= $getComment_id ?>" onfocus="javascript: modalForeach('like_comment','<?= $getComment_id ?>')">Like</button>
+                        <button role="button" tabindex="1"  class="dropbtn gray" id="like_comment_button<?= $getComment_id ?>" onfocus="javascript: modalForeach('like_comment','<?= $getComment_id ?>')">Like</button>
 
 
                       <?php } else if (isset($session_users_id) && ($session_users_id == $getComment_user_id)) { ?>
 
 
-                        <button class="dropbtn gray" id="edit_comment_button<?= $getComment_id ?>" onfocus="javascript: modalForeach('edit_comment', '<?= $getComment_id ?>')">Edit</button>
+                        <button role="button" tabindex="1"  class="dropbtn gray" id="edit_comment_button<?= $getComment_id ?>" onfocus="javascript: modalForeach('edit_comment', '<?= $getComment_id ?>')">Edit</button>
 
 
                       <?php } ?>

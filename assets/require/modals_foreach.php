@@ -34,7 +34,7 @@
               <?php if (isset($getComments) && !empty($getComments)) { ?>
 
 
-                <button type="button" class="button gray" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
+                <button role="button" tabindex="1"  type="button" class="button gray" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
 
               <?php } ?>
 
@@ -53,7 +53,7 @@
 
               <?php if (isset($getComments) && !empty($getComments)) { ?>
 
-                <button type="button" class="button gray" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
+                <button role="button" tabindex="1"  type="button" class="button gray" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
 
               <?php } ?>
 
@@ -199,7 +199,7 @@
       <div class="modal_form">
         <div class="modal_form_content">
 
-          <form data-barba-prevent class="form_action" action="/Diplome/assets/actions/delete_notification_action.php?id=<?= $getNotification_id ?>" method="post">
+          <form data-barba-prevent class="form_action" action="./assets/actions/delete_notification_action.php?id=<?= $getNotification_id ?>" method="post">
 
             <div class="messages_logo">
               <img src="./assets/img/musicgrise.png" alt="" />

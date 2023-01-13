@@ -34,7 +34,7 @@ if (
 		if (empty($getContents)) {
 
 			$bdd = null;
-			header('location: /Diplome/index.php?error=002162');
+			header('location: index.php?error=002162');
 			die();
 		} ?>
 
@@ -46,7 +46,7 @@ if (
 		if (empty($getContents)) {
 
 			$bdd = null;
-			header('location: /Diplome/index.php?error=00219');
+			header('location: index.php?error=00219');
 			die();
 		} ?>
 
@@ -64,7 +64,7 @@ if (
 			if (empty($getIdUserFromContent)) {
 
 				$bdd = null;
-				header('location: /Diplome/index.php?error=002159');
+				header('location: index.php?error=002159');
 				die();
 			} ?>
 
@@ -82,7 +82,7 @@ if (
 		if (empty($getContents)) {
 
 			$bdd = null;
-			header('location: /Diplome/my_account.php?error=00211');
+			header('location: my_account.php?error=00211');
 			die();
 		} ?>
 
@@ -96,7 +96,7 @@ if (
 		if (empty($getContents)) {
 
 			$bdd = null;
-			header('location: /Diplome/my_account.php?error=00212');
+			header('location: my_account.php?error=00212');
 			die();
 		} ?>
 
@@ -132,7 +132,7 @@ if (
 			if (empty($getContents)) {
 
 				$bdd = null;
-				header('location: /Diplome/index.php?error=002149');
+				header('location: index.php?error=002149');
 				die();
 			} ?>
 
@@ -184,7 +184,7 @@ if (
 					<div class="box">
 						<div class="card">
 							<figure class="card__thumb">
-								<img class="card_video" src="./assets/images/<?= $getContent_image[0] ?>.jpg" alt="image"></img>
+								<video class="card_video" src="./assets/videos/<?= $getContent_video?>" alt="image"></video>
 
 
 								<figcaption class="card__caption">
@@ -238,7 +238,7 @@ if (
 													<div class="card__price"><?= $getContent_price ?> Credits</div>
 
 													<div class="content_button_flex">
-														<button class="card__button pointer" id="buy_button<?= $getContent_id ?>" onfocus="javascript: modalForeach('buy','<?= $getContent_id ?>')">Watch</button>
+														<button role="button" tabindex="1"  class="card__button pointer" id="buy_button<?= $getContent_id ?>" onfocus="javascript: modalForeach('buy','<?= $getContent_id ?>')">Watch</button>
 														<a href="content.php?id=<?= $getContent_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $getUserContentInformations_name ?> <?= $getUserContentInformations_lastname ?></a>
 													</div>
 
@@ -267,7 +267,7 @@ if (
 												<div class="card__price"><?= $getContent_price ?> Credits</div>
 
 												<div class="content_button_flex">
-													<button class="card__button pointer" id="buy_button<?= $getContent_id ?>" onfocus="javascript: modalForeach('buy','<?= $getContent_id ?>')">Watch</button>
+													<button role="button" tabindex="1"  class="card__button pointer" id="buy_button<?= $getContent_id ?>" onfocus="javascript: modalForeach('buy','<?= $getContent_id ?>')">Watch</button>
 													<a href="content.php?id=<?= $getContent_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $getUserContentInformations_name ?> <?= $getUserContentInformations_lastname ?></a>
 												</div>
 

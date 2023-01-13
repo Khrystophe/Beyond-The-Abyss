@@ -17,7 +17,7 @@ if (isset($session_users_id)) {
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Beyond The Abyss</title>
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="./assets/scss/style.css" />
@@ -55,7 +55,7 @@ if (isset($session_users_id)) {
 			<div class="nav_bar scroll_nav">
 
 
-				<button class="nav_search gray" id="search_button" onfocus="javascript:modal('search')"><i class="far fa-search"></i></button>
+				<button role="button" tabindex="1" class="nav_search gray" id="search_button" onfocus="javascript:modal('search')"><i class="far fa-search"></i></button>
 
 
 				<?php if (isset($session_users_id)) { ?>
@@ -179,7 +179,7 @@ if (isset($session_users_id)) {
 
 								<ul>
 									<li>
-										<button class="contact_button" onfocus="javascript:contact()">Administrator</button>
+										<button role="button" tabindex="1"  class="contact_button" onfocus="javascript:contact()">Administrator</button>
 									</li>
 									<li>
 										<a class="lost_password_button">Lost Password</a>
@@ -228,7 +228,7 @@ if (isset($session_users_id)) {
 
 							<ul>
 								<li>
-									<button class="contact_button" onfocus="javascript:contact()">Administrator</button>
+									<button role="button" tabindex="1"  class="contact_button" onfocus="javascript:contact()">Administrator</button>
 								</li>
 								<li>
 									<a class="lost_password_button">Lost Password</a>
