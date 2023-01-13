@@ -20,7 +20,7 @@
   margin-top: 1em;
   .dropbtn {
     background: linear-gradient(162.5deg, $color-2 0%, $black 100%);
-    color: $color-4;
+    color: $color-2;
     text-shadow: 0.5px 0.5px 0.5px $black, 0.5px 0.5px 0.5px $color-3;
     font-family: var(--primary-font);
     padding: 10px;
@@ -31,6 +31,7 @@
     cursor: pointer;
     border-radius: 7px;
     height: 15px;
+    width: max-content;
     display: flex;
     align-items: center;
     transition: color 1s;
@@ -99,7 +100,7 @@
   .cardText {
     margin: 0 10px 0 0;
     white-space: pre-line;
-    color: #535353;
+    color: $color-5;
     overflow: hidden;
     text-align: left;
     font-size: 0.8rem;

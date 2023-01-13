@@ -83,7 +83,7 @@
     background: linear-gradient(162.5deg, $color-2 0%, $black 100%);
     position: relative;
     z-index: 1;
-    color: $color-4;
+    color: $color-2;
     text-shadow: 1px 1px 1px black, 1px 1px 1px $color-3;
     font-family: var(--primary-font);
     padding: 16px;
@@ -108,7 +108,7 @@
 
   .drop {
     background: linear-gradient(162.5deg, $color-2 0%, $black 100%);
-    color: $color-4;
+    color: $color-2;
     text-shadow: 1px 1px 1px black, 1px 1px 1px $color-3;
     font-family: var(--primary-font);
     padding: 16px;
@@ -150,6 +150,9 @@
 }
 
 .button_drop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(162.5deg, $color-2 0%, $black 100%);
   position: relative;
   z-index: 1;
@@ -158,13 +161,12 @@
   border: none;
   border-top: 1.5px solid $color-4;
   border-bottom: 1.5px solid $black;
-  color: $color-4;
+  color: $color-2;
   text-shadow: 1px 1px 1px black, 1px 1px 1px $color-3;
   font-family: var(--primary-font);
   font-weight: 400;
-  font-size: 0.7rem;
-  min-width: 75px;
-  letter-spacing: 0.11rem;
+  font-size: 0.9rem;
+  min-width: 107px;
   outline: none;
   transition: color 1s;
   text-decoration: none;
@@ -205,7 +207,7 @@
 
 .column1 {
   margin-top: 30px;
-  background: linear-gradient(162.5deg, #1c1c1c 0%, $black 100%);
+  background: linear-gradient(162.5deg, $color-2 0%, $black 100%);
   width: max-content;
   padding: 0.3rem 0rem 0.3rem 0rem;
   border-radius: 5px;
@@ -215,7 +217,7 @@
   border-bottom: 1.5px solid rgb(40 40 40);
   border-top: 1.5px solid $color-4;
   a {
-    color: rgb(66 66 66);
+    color: $color-2;
     text-shadow: 1px 1px 1px black, 1px 1px 1px $color-4;
     text-decoration: none;
     transition: color 1s;
@@ -227,13 +229,13 @@
   }
   &.gray {
     &:hover {
-      background: linear-gradient(162.5deg, $black 0%, #1c1c1c 100%);
+      background: linear-gradient(162.5deg, $black 0%, $color-2 100%);
     }
   }
 }
 
 .column2 {
-  color: $color-4;
+  color: $color-2;
   overflow: hidden;
   white-space: pre-line;
   font-size: 0.8rem;

@@ -94,7 +94,11 @@
   }
 }
 .form_action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  flex-direction: column;
   color: $color-2;
   &#show_name_lastname,
   &#show_password,

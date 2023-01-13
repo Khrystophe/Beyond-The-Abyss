@@ -149,7 +149,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 								</div>
 
 								<div class="form_action">
-									<button role="button" tabindex="1"  class="button gray" id="delete_users_button" onfocus="javascript:modal('delete_users')">Delete My Account</button>
+									<a role="button" tabindex="1"  class="button gray" id="delete_users_button" onfocus="javascript:modal('delete_users')">Delete My Account</a>
 								</div>
 
 								<div class="margin"></div>
@@ -184,7 +184,7 @@ if (!empty($_COOKIE["PHPSESSID"])) {
 											</div>
 
 											<div class="form_action">
-												<button role="button" tabindex="1"  class="btn_content button gray" id="delete_notification_button<?= $getNotification_id ?>" onfocus="javascript:modalForeach('delete_notification','<?= $getNotification_id ?>')">Delete</button>
+												<a role="button" tabindex="1"  class="btn_content button gray" id="delete_notification_button<?= $getNotification_id ?>" onfocus="javascript:modalForeach('delete_notification','<?= $getNotification_id ?>')">Delete</a>
 											</div>
 										</div>
 									</div>

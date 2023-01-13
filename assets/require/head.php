@@ -55,7 +55,7 @@ if (isset($session_users_id)) {
 			<div class="nav_bar scroll_nav">
 
 
-				<button role="button" tabindex="1" class="nav_search gray" id="search_button" onfocus="javascript:modal('search')"><i class="far fa-search"></i></button>
+				<a role="button" tabindex="1" class="nav_search gray" id="search_button" onfocus="javascript:modal('search')"><i class="far fa-search"></i></a>
 
 
 				<?php if (isset($session_users_id)) { ?>
@@ -179,7 +179,7 @@ if (isset($session_users_id)) {
 
 								<ul>
 									<li>
-										<button role="button" tabindex="1"  class="contact_button" onfocus="javascript:contact()">Administrator</button>
+										<a role="button" tabindex="1"  class="contact_button" onfocus="javascript:contact()">Administrator</a>
 									</li>
 									<li>
 										<a class="lost_password_button">Lost Password</a>
@@ -228,7 +228,7 @@ if (isset($session_users_id)) {
 
 							<ul>
 								<li>
-									<button role="button" tabindex="1"  class="contact_button" onfocus="javascript:contact()">Administrator</button>
+									<a role="button" tabindex="1"  class="contact_button" onfocus="javascript:contact()">Administrator</a>
 								</li>
 								<li>
 									<a class="lost_password_button">Lost Password</a>

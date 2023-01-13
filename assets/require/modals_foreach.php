@@ -34,7 +34,7 @@
               <?php if (isset($getComments) && !empty($getComments)) { ?>
 
 
-                <button role="button" tabindex="1"  type="button" class="button gray" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
+                <a role="button" tabindex="1"  type="button" class="button gray" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</a>
 
               <?php } ?>
 
@@ -53,7 +53,7 @@
 
               <?php if (isset($getComments) && !empty($getComments)) { ?>
 
-                <button role="button" tabindex="1"  type="button" class="button gray" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</button>
+                <a role="button" tabindex="1"  type="button" class="button gray" id="content_comment_button<?= $getContent_id ?>" onfocus="javascript:modalForeach('content_comment','<?= $getContent_id ?>')">View comments</a>
 
               <?php } ?>
 

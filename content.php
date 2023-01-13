@@ -238,7 +238,7 @@ if (
 													<div class="card__price"><?= $getContent_price ?> Credits</div>
 
 													<div class="content_button_flex">
-														<button role="button" tabindex="1"  class="card__button pointer" id="buy_button<?= $getContent_id ?>" onfocus="javascript: modalForeach('buy','<?= $getContent_id ?>')">Watch</button>
+														<a role="button" tabindex="1"  class="card__button pointer" id="buy_button<?= $getContent_id ?>" onfocus="javascript: modalForeach('buy','<?= $getContent_id ?>')">Watch</a>
 														<a href="content.php?id=<?= $getContent_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $getUserContentInformations_name ?> <?= $getUserContentInformations_lastname ?></a>
 													</div>
 
@@ -267,7 +267,7 @@ if (
 												<div class="card__price"><?= $getContent_price ?> Credits</div>
 
 												<div class="content_button_flex">
-													<button role="button" tabindex="1"  class="card__button pointer" id="buy_button<?= $getContent_id ?>" onfocus="javascript: modalForeach('buy','<?= $getContent_id ?>')">Watch</button>
+													<a role="button" tabindex="1"  class="card__button pointer" id="buy_button<?= $getContent_id ?>" onfocus="javascript: modalForeach('buy','<?= $getContent_id ?>')">Watch</a>
 													<a href="content.php?id=<?= $getContent_id ?>&name=visitor&category=user_content" class="card__button link_page">By <?= $getUserContentInformations_name ?> <?= $getUserContentInformations_lastname ?></a>
 												</div>
 

@@ -462,6 +462,7 @@ nav {
   }
 }
 .autocomplete {
+  width: 100%;
   position: relative;
   text-align: left;
 }
@@ -1258,7 +1259,7 @@ nav {
   background: linear-gradient(162.5deg, #12737e 0%, black 100%);
   position: relative;
   z-index: 1;
-  color: #056096;
+  color: #12737e;
   text-shadow: 1px 1px 1px black, 1px 1px 1px #343434;
   font-family: var(--primary-font);
   padding: 16px;
@@ -1280,7 +1281,7 @@ nav {
 }
 .player_bottom_bar .drop {
   background: linear-gradient(162.5deg, #12737e 0%, black 100%);
-  color: #056096;
+  color: #12737e;
   text-shadow: 1px 1px 1px black, 1px 1px 1px #343434;
   font-family: var(--primary-font);
   padding: 16px;
@@ -1316,6 +1317,9 @@ nav {
 }
 
 .button_drop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(162.5deg, #12737e 0%, black 100%);
   position: relative;
   z-index: 1;
@@ -1324,13 +1328,12 @@ nav {
   border: none;
   border-top: 1.5px solid #056096;
   border-bottom: 1.5px solid black;
-  color: #056096;
+  color: #12737e;
   text-shadow: 1px 1px 1px black, 1px 1px 1px #343434;
   font-family: var(--primary-font);
   font-weight: 400;
-  font-size: 0.7rem;
-  min-width: 75px;
-  letter-spacing: 0.11rem;
+  font-size: 0.9rem;
+  min-width: 107px;
   outline: none;
   transition: color 1s;
   text-decoration: none;
@@ -1367,7 +1370,7 @@ nav {
 
 .column1 {
   margin-top: 30px;
-  background: linear-gradient(162.5deg, #1c1c1c 0%, black 100%);
+  background: linear-gradient(162.5deg, #12737e 0%, black 100%);
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -1380,7 +1383,7 @@ nav {
   border-top: 1.5px solid #056096;
 }
 .column1 a {
-  color: rgb(66, 66, 66);
+  color: #12737e;
   text-shadow: 1px 1px 1px black, 1px 1px 1px #056096;
   text-decoration: none;
   transition: color 1s;
@@ -1391,11 +1394,11 @@ nav {
   text-shadow: 1px 1px 1px #343434, 1px 1px 1px #056096;
 }
 .column1.gray:hover {
-  background: linear-gradient(162.5deg, black 0%, #1c1c1c 100%);
+  background: linear-gradient(162.5deg, black 0%, #12737e 100%);
 }
 
 .column2 {
-  color: #056096;
+  color: #12737e;
   overflow: hidden;
   white-space: pre-line;
   font-size: 0.8rem;
@@ -1535,7 +1538,11 @@ nav {
 }
 
 .form_action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  flex-direction: column;
   color: #12737e;
 }
 .form_action#show_name_lastname, .form_action#show_password, .form_action#show_add_content {
@@ -1754,7 +1761,7 @@ nav {
 }
 .single_player_card .dropbtn {
   background: linear-gradient(162.5deg, #12737e 0%, black 100%);
-  color: #056096;
+  color: #12737e;
   text-shadow: 0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px #343434;
   font-family: var(--primary-font);
   padding: 10px;
@@ -1765,6 +1772,9 @@ nav {
   cursor: pointer;
   border-radius: 7px;
   height: 15px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   display: flex;
   align-items: center;
   transition: color 1s;
@@ -1829,7 +1839,7 @@ nav {
 .cardBody .cardText {
   margin: 0 10px 0 0;
   white-space: pre-line;
-  color: #535353;
+  color: #49d6c7;
   overflow: hidden;
   text-align: left;
   font-size: 0.8rem;
